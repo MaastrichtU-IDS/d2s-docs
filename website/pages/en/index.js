@@ -104,7 +104,7 @@ class Index extends React.Component {
           Link your different data sources together and access them at a single place.
         </MarkdownBlock>
         <MarkdownBlock>
-          Version your data and archive older versions.
+          Version your data and access your archives.
         </MarkdownBlock>
       </div>
     );
@@ -114,7 +114,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              'Integrate various data sources to a common model to build the Knowledge Graph that will power your services.',
+              'Integrate various data sources to comply to a common model and build the Knowledge Graph that will power your services.',
             image: `${baseUrl}img/data2services-broad_vision.png`,
             imageAlign: 'left',
             title: 'Integrate your data in a powerful Knowledge Graph',
@@ -145,7 +145,7 @@ class Index extends React.Component {
               'The Data2Services framework is built on basic principles:<br/> **standardized**, **modular**, **scalable**, **sustainable**.',
             image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
             imageAlign: 'right',
-            title: 'Built on principle',
+            title: 'Built on principles',
           },
         ]}
       </Block>
