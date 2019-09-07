@@ -96,8 +96,16 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <h2>Sustainable Data Science made easy</h2>
+        <MarkdownBlock>
+          Define a mapping files to make sense out of your data.
+        </MarkdownBlock>
+        <MarkdownBlock>
+          Link your different data sources together and access them at a single place.
+        </MarkdownBlock>
+        <MarkdownBlock>
+          Version your data and archive older versions.
+        </MarkdownBlock>
       </div>
     );
 
@@ -134,7 +142,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              'The Data2Services framework is built on a few basic principles:\n **standardized**, **modular**, **scalable**, **sustainable**.',
+              'The Data2Services framework is built on basic principles:<br/> **standardized**, **modular**, **scalable**, **sustainable**.',
             image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
             imageAlign: 'right',
             title: 'Built on principle',
