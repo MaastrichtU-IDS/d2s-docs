@@ -11,13 +11,14 @@
 // List of projects/orgs using your project for the users page.
 const users = [
   {
-    caption: 'User1',
+    caption: 'Maastricht University',
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/img/undraw_open_source.svg',
-    infoLink: 'https://data2services.github.io/',
+    // image: 'img/undraw_open_source.svg',
+    image: 'img/favicon.ico',
+    infoLink: 'https://www.maastrichtuniversity.nl/',
     pinned: true,
-  },
+  }
 ];
 
 const siteConfig = {
@@ -30,7 +31,7 @@ const siteConfig = {
 
   // Deploy to GitHub pages (first generate build dir)
   // npm run build
-  // GIT_USER=<GIT_USER> CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
+  // GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
 
 
   // Used for publishing and more

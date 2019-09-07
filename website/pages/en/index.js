@@ -65,7 +65,7 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button href={docUrl('introduction')}>Get started</Button>
-            <Button href="#try">Data2Services in action</Button>
+            <Button href="#d2sinaction">Data2Services in action</Button>
             {/* <Button href={docUrl('doc2.html')}>Example Link 2</Button> */}
           </PromoSection>
         </div>
@@ -110,7 +110,7 @@ class Index extends React.Component {
     );
 
     const TryOut = () => (
-      <Block id="try">
+      <Block>
         {[
           {
             content:
@@ -124,14 +124,16 @@ class Index extends React.Component {
     );
 
     const Description = () => (
-      <Block background="dark">
+      <Block background="dark" id="d2sinaction">
         {[
           {
             content:
-              'Maastricht University',
+              'Automatically deploy a variety of interfaces and services ([SPARQL](https://www.w3.org/TR/sparql11-overview/), ' +
+              '[GraphQL-LD](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/), [OpenAPI](https://www.openapis.org/), ' +
+              '[GUI](https://github.com/MaastrichtU-IDS/linked-data-browser)) to access your data.',
             image: `${baseUrl}img/undraw_note_list.svg`,
             imageAlign: 'right',
-            title: 'Our users',
+            title: 'Deploy services',
           },
         ]}
       </Block>
@@ -145,7 +147,7 @@ class Index extends React.Component {
               'The Data2Services framework is built on basic principles:<br/> **standardized**, **modular**, **scalable**, **sustainable**.',
             image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
             imageAlign: 'right',
-            title: 'Built on principles',
+            title: 'Universal and sustainable',
           },
         ]}
       </Block>
@@ -155,13 +157,13 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'Using the Resource Description Framework to describe data',
+            content: 'Using the [Resource Description Framework](https://www.w3.org/RDF/) to describe data.',
             image: `${baseUrl}img/rdf_logo.gif`,
             imageAlign: 'top',
-            title: 'Based on standard',
+            title: 'Built on standard',
           },
           {
-            content: 'Every module is a Docker container',
+            content: 'Every module is a [Docker](https://www.docker.com/) container.',
             image: `${baseUrl}img/docker.png`,
             imageAlign: 'top',
             title: 'Runs everywhere',
@@ -188,7 +190,7 @@ class Index extends React.Component {
       return (
         <div className="productShowcaseSection paddingBottom">
           <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
+          <p>This project is used by these people</p>
           <div className="logos">{showcase}</div>
           <div className="more-users">
             <a className="button" href={pageUrl('users.html')}>
