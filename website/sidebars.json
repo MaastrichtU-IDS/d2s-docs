@@ -1,7 +1,7 @@
 {
   "docs": {
     "Introduction": ["getstarted"],
-    "Argo workflows": ["argoinstall"],
+    "Argo workflows": ["argoinstall", "argologin", "argovolume", "argorun", "argodebug", "argosecret"],
     "CWL workflows": ["cwlinstall"]
   },
   "docs-other": {
