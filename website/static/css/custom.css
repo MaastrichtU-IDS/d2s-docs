@@ -14,3 +14,9 @@
 
 @media only screen and (min-width: 1500px) {
 }
+
+html * {
+    font-family: "Open Sans",
+    "Roboto",
+    "Serif";
+}

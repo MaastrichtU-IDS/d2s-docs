@@ -15,15 +15,15 @@ const users = [
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
     image: '/img/undraw_open_source.svg',
-    infoLink: 'https://www.facebook.com',
+    infoLink: 'https://data2services.github.io/',
     pinned: true,
   },
 ];
 
 const siteConfig = {
-  title: 'Test Site', // Title for your website.
-  tagline: 'A website for testing',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
+  title: 'Data2Services', // Title for your website.
+  tagline: 'Automatically deploy user-facing services consuming data from various sources integrated under a common Knowledge Graph',
+  url: 'https://data2services.github.io/', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -31,7 +31,7 @@ const siteConfig = {
 
   // Used for publishing and more
   projectName: 'test-site',
-  organizationName: 'facebook',
+  organizationName: 'Institute of Data Science at Maastricht University',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -54,23 +54,19 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#1d297a',
+    primaryColor: '#1976d2',
     secondaryColor: '#141c55',
   },
 
-  /* Custom fonts for website */
-  /*
-  fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-  },
-  */
+  /* Custom fonts for website. Not working. Directly in custom.css */
+  // fonts: {
+  //   myFont: [
+  //     "Open Sans",
+  //     "Roboto",
+  //     "Serif"
+  //   ]
+  // },
+  
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
@@ -82,6 +78,10 @@ const siteConfig = {
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js'],
+
+  stylesheets: [
+    "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
