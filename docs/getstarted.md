@@ -1,7 +1,6 @@
 ---
 id: getstarted
 title: Get started
-sidebar_label: Example Page
 ---
 
 This is a demonstrator ETL pipeline that **converts** relational databases, tabular files, and XML files **to RDF**. A generic RDF, based on the input data structure, is generated and [SPARQL](https://www.w3.org/TR/sparql11-query/) queries are **designed by the user** to map the generic RDF to a **specific model**.

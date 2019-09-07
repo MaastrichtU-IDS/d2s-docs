@@ -1,6 +1,7 @@
 ---
-id: doc2
-title: document number 2
+id: argoinstall
+title: Argo installation
+sidebar_label: Argo installation
 ---
 
 This is a link to [another document.](doc3.md)  

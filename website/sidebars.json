@@ -1,8 +1,8 @@
 {
   "docs": {
     "Introduction": ["getstarted"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Argo workflows": ["argoinstall"],
+    "CWL workflows": ["cwlinstall"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
