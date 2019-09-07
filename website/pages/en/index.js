@@ -101,10 +101,10 @@ class Index extends React.Component {
           Define a mapping files to make sense out of your data.
         </MarkdownBlock>
         <MarkdownBlock>
-          Link your different data sources together and access them at a single place.
+          Link your different data sources together and access them through a variety of interfaces and services.
         </MarkdownBlock>
         <MarkdownBlock>
-          Version your data and access your archives.
+          Version your data and query your archives.
         </MarkdownBlock>
       </div>
     );
@@ -189,14 +189,14 @@ class Index extends React.Component {
 
       return (
         <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by these people</p>
+          <h2><a href={pageUrl('users.html')}>Who is Using This?</a></h2>
+          <p>This project is used by <a href={pageUrl('users.html')}>these people</a></p>
           <div className="logos">{showcase}</div>
-          <div className="more-users">
+          {/* <div className="more-users">
             <a className="button" href={pageUrl('users.html')}>
               More {siteConfig.title} Users
             </a>
-          </div>
+          </div> */}
         </div>
       );
     };

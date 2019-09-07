@@ -16,12 +16,22 @@
 }
 
 html *:not(.hljs, .hljs-built_in, .hljs-code, .hljs-bullet, .hljs-addition) {
-    font-family: "Open Sans",
-    "Roboto",
-    "Serif";
+    font-family: "Open Sans", "Roboto", "Serif"
+}
+/* Button font won't work if not separated */
+a.button {
+    font-family: "Open Sans", "Roboto"
 }
 
 a:hover {
     color: #ff6f00;
     text-decoration: none;
+}
+
+.darkBackground a:not(:hover) {
+    color: #1565c0;
+}
+
+.button {
+    text-transform: none;
 }

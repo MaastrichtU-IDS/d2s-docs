@@ -2,7 +2,7 @@
   "docs": {
     "Get started": ["introduction", "downloaddataset", "createmappings","ecosystem"],
     "Argo workflows": ["argoinstall", "argologin", "argovolume", "argorun", "argodebug", "argosecret"],
-    "CWL workflows": ["cwlinstall"]
+    "CWL workflows": ["cwlinstall", "cwlservices", "cwlrun"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]

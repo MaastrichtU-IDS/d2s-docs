@@ -33,13 +33,11 @@ const siteConfig = {
   // npm run build
   // GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
 
-
-  // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'Institute of Data Science at Maastricht University',
-  // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
+  /* Colors for website */
+  colors: {
+    primaryColor: '#1565c0',    // Blue
+    secondaryColor: '#ff6f00',  // Orange
+  },
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
@@ -63,13 +61,6 @@ const siteConfig = {
   headerIcon: 'img/favicon.ico',
   footerIcon: 'img/favicon.ico',
   favicon: 'img/favicon.ico',
-
-  /* Colors for website */
-  colors: {
-    primaryColor: '#1565c0',    // Blue
-    secondaryColor: '#ff6f00',  // Orange
-  },
- 
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Institute of Data Science at Maastricht University`,
