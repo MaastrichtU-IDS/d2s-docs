@@ -39,9 +39,9 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    // {doc: 'doc4', label: 'API'},
     {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    // {blog: true, label: 'Blog'},
   ],
 
   // If you have users set above, you add it here:
@@ -57,19 +57,10 @@ const siteConfig = {
     primaryColor: '#1976d2',
     secondaryColor: '#141c55',
   },
-
-  /* Custom fonts for website. Not working. Directly in custom.css */
-  // fonts: {
-  //   myFont: [
-  //     "Open Sans",
-  //     "Roboto",
-  //     "Serif"
-  //   ]
-  // },
-  
+ 
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} Institute of Data Science at Maastricht University`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -105,6 +96,15 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
+
+  /* Custom fonts for website. Not working. Directly in custom.css */
+  // fonts: {
+  //   myFont: [
+  //     "Open Sans",
+  //     "Roboto",
+  //     "Serif"
+  //   ]
+  // },
 };
 
 module.exports = siteConfig;
