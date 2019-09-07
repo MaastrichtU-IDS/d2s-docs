@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Get started": ["introduction", "downloaddataset", "createmappings"],
+    "Get started": ["introduction", "downloaddataset", "createmappings","ecosystem"],
     "Argo workflows": ["argoinstall", "argologin", "argovolume", "argorun", "argodebug", "argosecret"],
     "CWL workflows": ["cwlinstall"]
   },
