@@ -109,7 +109,7 @@ class Index extends React.Component {
               'To make your landing page more attractive, use illustrations! Check out ' +
               '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
               'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
+            image: `${baseUrl}img/data2services-broad_vision.png`,
             imageAlign: 'left',
             title: 'Wonderful SVG Illustrations',
           },
@@ -137,7 +137,7 @@ class Index extends React.Component {
           {
             content:
               'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
+            image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
             imageAlign: 'right',
             title: 'Randomly Generated Theme Colors',
           },
@@ -149,16 +149,16 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
+            content: 'Using the Resource Description Framework to describe data',
+            image: `${baseUrl}img/rdf_logo.gif`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Based on standard',
           },
           {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
+            content: 'Every module is a Docker container',
+            image: `${baseUrl}img/docker.png`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Runs everywhere',
           },
         ]}
       </Block>
