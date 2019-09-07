@@ -1,9 +1,9 @@
 ---
 id: argovolume
-title: Create volumes
+title: Define volumes
 ---
 
-## Create persistent volume
+## Define persistent volume
 
 https://app.dsri.unimaas.nl:8443/console/project/argo/create-pvc
 
@@ -29,7 +29,9 @@ Go to https://app.dsri.unimaas.nl:8443/console/catalog > click `Deploy image`
 
 ---
 
-## Create temporary volume in the workflow
+## Define a temporary volume for a workflow
+
+Temporary volumes can be defined at runtime and are removed when the workflow terminates.
 
 ```yaml
 volumeClaimTemplates:            # define volume, same syntax as k8s Pod spec

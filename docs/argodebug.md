@@ -3,19 +3,11 @@ id: argodebug
 title: Debug Argo workflows
 ---
 
-## Check running workflows
-
-```shell
-argo list
-```
-
----
-
 ## Debug Argo
 
 To get into the container. Create YAML with command `tail /dev/null` to keep it running.
 
-Example with [data2services-download](https://github.com/MaastrichtU-IDS/data2services-download):
+Example for [data2services-download](https://github.com/MaastrichtU-IDS/data2services-download):
 
 ```yaml
 apiVersion: v1
@@ -50,15 +42,21 @@ oc rsh d2s-download-pod
 
 ---
 
-## oc commands
+## Commands
 
-### List pods
+### List running Argo workflows
+
+```shell
+argo list
+```
+
+### List OpenShift pods
 
 ```shell
 oc get pod
 ```
 
-### Create pod from JSON
+### Create OpenShift pod from JSON
 
 ```shell
 oc create -f examples/hello-openshift/hello-pod.json

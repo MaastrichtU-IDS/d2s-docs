@@ -55,7 +55,7 @@ const siteConfig = {
   /* Colors for website */
   colors: {
     primaryColor: '#1565c0',    // Blue
-    secondaryColor: '#d84315',  // Orange
+    secondaryColor: '#ff6f00',  // Orange
   },
  
 
