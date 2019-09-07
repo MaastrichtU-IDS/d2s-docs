@@ -20,3 +20,8 @@ html *:not(.hljs) {
     "Roboto",
     "Serif";
 }
+
+a:hover {
+    color: #ff5722;
+    text-decoration: none;
+}

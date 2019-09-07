@@ -106,12 +106,10 @@ class Index extends React.Component {
         {[
           {
             content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
+              'Integrate various data sources to a common model to build the Knowledge Graph that will power your services.',
             image: `${baseUrl}img/data2services-broad_vision.png`,
             imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
+            title: 'Integrate your data in a powerful Knowledge Graph',
           },
         ]}
       </Block>
@@ -122,10 +120,10 @@ class Index extends React.Component {
         {[
           {
             content:
-              'This is another description of how this project is useful',
+              'Maastricht University',
             image: `${baseUrl}img/undraw_note_list.svg`,
             imageAlign: 'right',
-            title: 'Description',
+            title: 'Our users',
           },
         ]}
       </Block>
@@ -136,10 +134,10 @@ class Index extends React.Component {
         {[
           {
             content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
+              'The Data2Services framework is built on a few basic principles:\n **standardized**, **modular**, **scalable**, **sustainable**.',
             image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
             imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
+            title: 'Built on principle',
           },
         ]}
       </Block>

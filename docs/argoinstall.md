@@ -16,6 +16,10 @@ cd openshift-origin-client*/
 sudo mv oc kubectl /usr/local/bin/
 ```
 
-## Install [Argo](https://argoproj.github.io/argo/)
+---
 
-The [Argo client](https://github.com/argoproj/argo/blob/master/demo.md#1-download-argo) allows to run workflows on the cluster.
+## Install Argo
+
+[Argo](https://argoproj.github.io/argo/) allows you to describe and run workflows on Kubernetes clusters.
+
+Download the [Argo client](https://github.com/argoproj/argo/blob/master/demo.md#1-download-argo) to run workflows on the cluster from your computer.
