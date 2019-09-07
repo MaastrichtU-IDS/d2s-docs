@@ -3,7 +3,7 @@ id: argologin
 title: Login to OpenShift
 ---
 
-[Authenticate yourself to the DSRI cluster](https://app.dsri.unimaas.nl:8443/) using the OpenShift client
+Authenticate yourself to the [DSRI cluster](https://app.dsri.unimaas.nl:8443/) using the [OpenShift client](https://www.okd.io/download.html).
 
 ```shell
 oc login https://openshift_cluster:8443 --token=MY_TOKEN

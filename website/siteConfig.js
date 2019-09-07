@@ -38,11 +38,18 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'getstarted', label: 'Docs'},
-    // {doc: 'doc4', label: 'API'},
+    { search: true },
+    {doc: 'introduction', label: 'Documentation'},
     {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
   ],
+
+  // For search: https://community.algolia.com/docsearch/documentation/
+  algolia: {
+    apiKey: 'my-api-key',
+    indexName: 'my-index-name',
+    algoliaOptions: {} // Optional, if provided by Algolia
+  },
 
   // If you have users set above, you add it here:
   users,

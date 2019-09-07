@@ -3,7 +3,7 @@ id: argorun
 title: Run Argo workflows
 ---
 
-As example we will use config files from [data2services-transform-biolink](https://github.com/MaastrichtU-IDS/data2services-transform-biolink).
+As example we will use [config files](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/support/config) from the [data2services-transform-biolink](https://github.com/MaastrichtU-IDS/data2services-transform-biolink) project.
 
 ## Clone the repository
 
@@ -15,6 +15,8 @@ cd data2services-transform-biolink
 ---
 
 ## Workflow to convert XML to RDF
+
+*Reminder:* you need first to authenticate to the [OpenShift cluster](https://app.dsri.unimaas.nl:8443/) using `oc login` .
 
 ### Steps-based workflow
 
@@ -47,7 +49,3 @@ argo submit data2services-argo-workflows/d2s-workflow-transform-csv.yaml \
 argo submit data2services-argo-workflows/d2s-workflow-transform-csv-dag.yaml \
   -f support/config/config-transform-csv-stitch.yml
 ```
-
-
-
-*Reminder:* you need first to authenticate to the [OpenShift cluster](https://app.dsri.unimaas.nl:8443/) using `oc login` .

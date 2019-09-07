@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: downloaddataset
+title: Add your dataset to download
 ---
 
 ## The Data2Services philosophy

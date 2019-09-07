@@ -5,7 +5,7 @@ title: Define volumes
 
 ## Define persistent volume
 
-https://app.dsri.unimaas.nl:8443/console/project/argo/create-pvc
+Go to https://app.dsri.unimaas.nl:8443/console/project/argo/create-pvc
 
 * Storage class > `maprfs-ephemeral`
 * Shared Acces (RWX)

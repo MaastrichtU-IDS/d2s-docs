@@ -15,7 +15,7 @@
 @media only screen and (min-width: 1500px) {
 }
 
-html *:not(.hljs) {
+html *:not(.hljs, .hljs-built_in, .hljs-code, .hljs-bullet, .hljs-addition) {
     font-family: "Open Sans",
     "Roboto",
     "Serif";
