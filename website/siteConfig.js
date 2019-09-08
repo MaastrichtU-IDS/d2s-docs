@@ -41,6 +41,7 @@ const siteConfig = {
   baseUrl: '/data2services/', // Base URL for your project */
   projectName: 'data2services',  // The name of your GitHub project. Same as above.
   organizationName: 'MaastrichtU-IDS', // Your GitHub username.
+  repoUrl: 'https://github.com/MaastrichtU-IDS/data2services-pipeline',
 
   // Deploy to GitHub pages (first generate build dir)
   // npm run build
@@ -113,10 +114,6 @@ const siteConfig = {
   // enableUpdateBy: true,
   // Show documentation's last update time.
   // enableUpdateTime: true,
-
-  // You may provide arbitrary config keys to be used as needed by your
-  // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
 
   /* Custom fonts for website. Not working. Directly in custom.css */
   // fonts: {

@@ -21,18 +21,18 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
+      content: `Learn more using the [documentation.](${docUrl(
+        'getstarted',
       )})`,
-      title: 'Browse Docs',
+      title: 'Browse the Docs',
     },
     {
-      content: 'Ask questions about the documentation and project',
-      title: 'Join the community',
+      content: 'Browse and submit [issues](https://github.com/MaastrichtU-IDS/data2services-pipeline/issues) or [pull requests](https://github.com/MaastrichtU-IDS/data2services-pipeline/pulls) for bugs you find or any new features you may want implemented.',
+      title: 'GitHub',
     },
     {
-      content: "Find out what's new with this project",
-      title: 'Stay up to date',
+      content: "Feel free to [contact](mailto:vincent.emonet@maastrichtuniversity.nl) the main maintainers if you have any questions.",
+      title: 'Contact us',
     },
   ];
 
@@ -43,7 +43,7 @@ function Help(props) {
           <header className="postHeader">
             <h1>Need help?</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
+          <p>If you need help or have questions about Data2Services try one of the mechanisms above.</p>
           <GridBlock contents={supportLinks} layout="threeColumn" />
         </div>
       </Container>
