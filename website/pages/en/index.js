@@ -31,7 +31,7 @@ class HomeSplash extends React.Component {
 
     const Logo = props => (
       <div className="projectLogo">
-        {/* <img src={props.img_src} alt="Project Logo" /> */}
+        <img src={props.img_src} alt="Project Logo" />
       </div>
     );
 
@@ -60,7 +60,8 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        {/* <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} /> */}
+        {/* <Logo img_src={`${baseUrl}img/favicon.ico`} /> */}
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
@@ -106,6 +107,21 @@ class Index extends React.Component {
         <MarkdownBlock>
           Version your data and query your archives.
         </MarkdownBlock>
+        <MarkdownBlock>
+          Run reproducible pipelines to transform and update your data faithfully.
+        </MarkdownBlock>
+        <Block layout="twoColumn">
+        {[
+          {
+            image: `${baseUrl}img/argo-logo.png`,
+            imageAlign: 'top',
+          },
+          {
+            image: `${baseUrl}img/CWL_logo.png`,
+            imageAlign: 'top',
+          },
+        ]}
+      </Block>
       </div>
     );
 
@@ -118,22 +134,6 @@ class Index extends React.Component {
             image: `${baseUrl}img/data2services-broad_vision.png`,
             imageAlign: 'left',
             title: 'Integrate your data in a powerful Knowledge Graph',
-          },
-        ]}
-      </Block>
-    );
-
-    const Description = () => (
-      <Block background="dark" id="d2sinaction">
-        {[
-          {
-            content:
-              'Automatically deploy a variety of interfaces and services ([SPARQL](https://www.w3.org/TR/sparql11-overview/), ' +
-              '[GraphQL-LD](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/), [OpenAPI](https://www.openapis.org/), ' +
-              '[GUI](https://github.com/MaastrichtU-IDS/linked-data-browser)) to access your data.',
-            image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: 'right',
-            title: 'Deploy services',
           },
         ]}
       </Block>
@@ -157,8 +157,8 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'Using the [Resource Description Framework](https://www.w3.org/RDF/) to describe data.',
-            image: `${baseUrl}img/rdf_logo.gif`,
+            content: 'Like [Elsevier](https://www.w3.org/2001/sw/sweo/public/UseCases/Elsevier/), the [BBC](https://www.bbc.co.uk/ontologies), or [Uber](https://www.zdnet.com/article/ubers-graph-expert-bears-the-scars-of-billions-of-trips/), we are using the [Resource Description Framework](https://www.w3.org/RDF/) to describe your data as a Knowledge Graph.',
+            image: `${baseUrl}img/rdf-icon-simple.png`,
             imageAlign: 'top',
             title: 'Built on standard',
           },
@@ -170,6 +170,24 @@ class Index extends React.Component {
           },
         ]}
       </Block>
+    );
+
+    const Description = () => (
+      <div>
+      <Block background="dark" id="d2sinaction">
+        {[
+          {
+            content:
+              'Automatically deploy a variety of interfaces and services ([SPARQL](https://www.w3.org/TR/sparql11-overview/), ' +
+              '[GraphQL-LD](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/), [OpenAPI](https://www.openapis.org/), ' +
+              '[GUI](https://github.com/MaastrichtU-IDS/linked-data-browser)) to access your data.',
+            image: `${baseUrl}img/undraw_note_list.svg`,
+            imageAlign: 'right',
+            title: 'Deploy services',
+          },
+        ]}
+      </Block>
+    </div>
     );
 
     const Showcase = () => {
@@ -189,11 +207,11 @@ class Index extends React.Component {
 
       return (
         <div className="productShowcaseSection paddingBottom">
-          <h2><a href={pageUrl('users.html')}>Who is Using This?</a></h2>
-          <p>This project is used by <a href={pageUrl('users.html')}>these people</a></p>
+          <h2><a href={pageUrl('users')}>Who uses Data2Services?</a></h2>
+          {/* <p>This project is used by <a href={pageUrl('users')}>these people</a></p> */}
           <div className="logos">{showcase}</div>
           {/* <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
+            <a className="button" href={pageUrl('users')}>
               More {siteConfig.title} Users
             </a>
           </div> */}

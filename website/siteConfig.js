@@ -12,11 +12,20 @@
 const users = [
   {
     caption: 'Maastricht University',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/image.jpg'.
-    // image: 'img/undraw_open_source.svg',
     image: 'img/favicon.ico',
     infoLink: 'https://www.maastrichtuniversity.nl/',
+    pinned: true,
+  }, 
+  {
+    caption: 'Bio2RDF project',
+    image: 'img/bio2rdf.png',
+    infoLink: 'https://bio2rdf.org/',
+    pinned: true,
+  },
+  {
+    caption: 'NCATS Biomedical Data Translator',
+    image: 'img/biolink-logo.png',
+    infoLink: 'https://ncats.nih.gov/translator',
     pinned: true,
   }
 ];

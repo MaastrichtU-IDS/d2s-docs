@@ -9,6 +9,8 @@ Authenticate yourself to the [DSRI cluster](https://app.dsri.unimaas.nl:8443/) u
 
 * Execute the command in your terminal.
 
-```shell
+```bash
 oc login https://openshift_cluster:8443 --token=MY_TOKEN
 ```
+
+<!-- ![](/img/getting-started-preparation-verify.png) -->
