@@ -141,6 +141,7 @@ const siteConfig = {
     // theme: 'tomorrow-night-eighties',
     hljs: function(hljs) {
       // Redefine Shell lang to add some keywords to highlight
+      // className: variable and attr (orange), keyword (purple), symbol and meta (blue), function (grey), subst (red), built_in (light orange)
       hljs.registerLanguage('shell', function(hljs) {
         var VAR = {
           className: 'variable',
@@ -150,10 +151,27 @@ const siteConfig = {
           ]
         };
         var ARGS = {
-          // className: 'symbol', // blue
           className: 'template-variable',
           variants: [
             {begin: /\s-[-]?[\w-]*/},
+          ]
+        };
+        var TOOLS = {
+          className: 'subst', // keyword
+          variants: [
+            {begin: /(?:\s|^)(cd|mv|cp|chmod|chown|sed|wget|curl|tar|oc|brew|git|argo|apt-get|apt|docker|docker-compose|cwl-runner)(?:\s|$)/},
+          ]
+        };
+        var COMMAND = {
+          className: 'built_in',
+          variants: [
+            {begin: /(?:\s|^)(sudo|nohup)(?:\s|$)/},
+          ]
+        };
+        var RARE = {
+          className: 'meta',
+          variants: [
+            {begin: /(?:\s|^)(sudo|nohup)(?:\s|$)/},
           ]
         };
         var QUOTE_STRING = {
@@ -184,8 +202,8 @@ const siteConfig = {
           lexemes: /\b-?[a-z\._]+\b/,
           keywords: {
             keyword:    // purple
-              'if then else elif fi for while in do done case esac function ' 
-              + 'cd mv cp chmod chown sed wget curl tar oc brew git argo apt-get apt docker docker-compose cwl-runner',
+              'if then else elif fi for while in do done case esac function ' ,
+              // + 'cd mv cp chmod chown sed wget curl tar oc brew git argo apt-get apt docker docker-compose cwl-runner',
             literal:
               'true false',
             built_in:   // orange
@@ -206,9 +224,9 @@ const siteConfig = {
               'unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof ' +
               'zpty zregexparse zsocket zstyle ztcp' +
               // Vincent built-ins,
-              'sudo ps nohup config clone submodule pull install up submit terminate delete get create build run stop rsh login xvf',
+              'ps config clone submodule pull install up submit terminate delete get create build run stop rsh login list',
             _:
-              '-ne -eq -lt -gt -f -d -e -s -l -a -o -un -pw --recursive' // relevance booster
+              '-ne -eq -lt -gt -f -d -e -s -l -a' // relevance booster
           },
           contains: [
             {
@@ -228,7 +246,7 @@ const siteConfig = {
             ESCAPED_QUOTE,
             APOS_STRING,
             VAR,
-            ARGS
+            ARGS, TOOLS, RARE
           ]
         };
       }),
