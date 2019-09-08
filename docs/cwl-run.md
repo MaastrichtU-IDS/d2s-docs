@@ -3,10 +3,11 @@ id: cwl-run
 title: Run CWL workflows
 ---
 
+![CWL](/data2services/img/CWL_logo.png)
+
 
 * Go to the `data2services-transform-biolink` root folder (the root of the cloned repository)
   * e.g. `/data/data2services-transform-biolink` to run the CWL workflows.
-
 * You will need to put the SPARQL mapping queries in `/mappings/$dataset_name` and provide 3 parameters:
   * `--outdir`: the [output directory](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/output/stitch) for files outputted by the workflow (except for the downloaded source files that goes automatically to `/input`). 
     * e.g. `output/$dataset_name`.
@@ -14,7 +15,6 @@ title: Run CWL workflows
     * e.g. `data2services-cwl-workflows/workflows/workflow-xml.cwl`
   * The `.yml` [configuration file](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/support/example-config/config-transform-xml-drugbank.yml) with all parameters required to run the workflow
     * e.g. `support/example-config/config-transform-xml-drugbank.yml`
-
 * 3 types of workflows can be run depending on the input data and the tasks executed:
 
 ## Convert XML with [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf)
@@ -68,5 +68,3 @@ nohup cwl-runner --outdir output/drugbank-sample \
 ```
 
 > Write terminal output to `nohup.out`.
-
-![](/data2services/img/CWL_logo.png)

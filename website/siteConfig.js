@@ -82,10 +82,15 @@ const siteConfig = {
   copyright: `Copyright © ${new Date().getFullYear()} Institute of Data Science at Maastricht University`,
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
 
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+    '/data2services/js/code-blocks-buttons.js',
+  ],
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"
+    "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700",
+    '/data2services/css/code-blocks-buttons.css'
   ],
 
   // On page navigation for the current documentation page.

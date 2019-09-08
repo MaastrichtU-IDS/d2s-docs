@@ -32,10 +32,10 @@ a:hover {
     color: #1565c0;
 }
 
-/* Docs images size */
-article p img {
+/* Docs markdown images size */
+article img, article p img {
     max-width: 350px;
-    max-height: 150px;
+    max-height: 100px;
 }
 
 .button {
