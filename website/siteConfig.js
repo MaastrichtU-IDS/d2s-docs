@@ -8,6 +8,10 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
+// const Remarkable = require('remarkable');
+const extlink = require('remarkable-extlink');
+// const md = new Remarkable();
+
 // List of projects/orgs using your project for the users page.
 const users = [
   {
@@ -19,7 +23,7 @@ const users = [
   {
     caption: 'Bio2RDF project',
     image: 'img/bio2rdf.png',
-    infoLink: 'https://bio2rdf.org/',
+    infoLink: 'http://bio2rdf.org/',
     pinned: true,
   },
   {
