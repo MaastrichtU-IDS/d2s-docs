@@ -1,5 +1,5 @@
 ---
-id: cwlrun
+id: cwl-run
 title: Run CWL workflows
 ---
 

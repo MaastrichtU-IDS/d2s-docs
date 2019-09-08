@@ -3,7 +3,10 @@ id: argo-secret
 title: Use OpenShift secrets
 ---
 
-* Access [OpenShift](https://app.dsri.unimaas.nl:8443/) > `Argo` project > `Resources` > `Secret`
+> Access [OpenShift](https://app.dsri.unimaas.nl:8443/) 
+
+>  `Argo` project > `Resources` > `Secret`
+
 * `Secret Type`: Generic Secret
 * `Secret Name`: d2s-sparql-password
 * `Key`: password

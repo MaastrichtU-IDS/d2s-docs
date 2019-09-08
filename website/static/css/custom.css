@@ -35,3 +35,26 @@ a:hover {
 .button {
     text-transform: none;
 }
+
+.promoSection .button {
+    min-width: 5em;
+    margin: 0.5em;
+    padding: 1em;
+    font-size: 20px;
+    font-weight: 600;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+/* .button {
+    position: relative;
+    min-width: 5em;
+    border-radius: 5em;
+    margin: 0.5em;
+    padding: 1em;
+    text-align: center;
+    transition: all 0.2s;
+    background: transparent;
+    border-color: #5645F5;
+    color: #5645F5;
+} */

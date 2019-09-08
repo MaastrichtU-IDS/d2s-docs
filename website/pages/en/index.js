@@ -36,9 +36,9 @@ class HomeSplash extends React.Component {
     );
 
     const ProjectTitle = () => (
-      <h2 className="projectTitle">
+      <h2 className="projectTitle" style={{color: siteConfig.colors.secondaryColor}}>
         {siteConfig.title}
-        <small>{siteConfig.tagline}</small>
+        <small style={{color: siteConfig.colors.primaryColor}}>{siteConfig.tagline}</small>
       </h2>
     );
 

@@ -3,34 +3,34 @@ id: argo-commands
 title: Argo commands
 ---
 
-## Commands
+## List running Argo workflows
 
 ```bash
 argo list
 ```
 
-> List running Argo workflows
+## Stop a workflow
 
 ```bash
 argo terminate my-workflow
 ```
 
-> Stop workflow
+> This might not stop the workflow, in this case use `argo delete`
+
+## Delete a workflow
 
 ```bash
 argo delete my-workflow
 ```
 
-> Delete workflow
+## List OpenShift pods
 
 ```bash
 oc get pod
 ```
 
-> List OpenShift pods
+## Create OpenShift pod from JSON
 
 ```bash
 oc create -f examples/hello-openshift/hello-pod.json
 ```
-
-> Create OpenShift pod from JSON
