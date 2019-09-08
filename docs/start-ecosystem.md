@@ -1,5 +1,5 @@
 ---
-id: ecosystem
+id: start-ecosystem
 title: The Data2Services Ecosystem
 ---
 

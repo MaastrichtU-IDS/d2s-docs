@@ -1,5 +1,5 @@
 ---
-id: create-mappings
+id: start-create-mappings
 title: Define the mappings
 ---
 

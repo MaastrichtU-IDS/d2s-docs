@@ -1,5 +1,5 @@
 ---
-id: steps-to-do
+id: start-process-overview
 title: Overview of the data integration process
 ---
 
