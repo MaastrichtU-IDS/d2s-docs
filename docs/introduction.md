@@ -5,41 +5,29 @@ title: Introduction
 
 ## The Data2Services philosophy
 
-Docker containers running with a few parameters (e.g. input file path, SPARQL endpoint, credentials, mapping file path)
+One task, one container, few parameters (e.g. input file path, SPARQL endpoint, credentials, mapping file path)
 
-- **Build** or pull the Docker images.
-- **Start required services** ([Apache Drill](https://github.com/amalic/apache-drill) and [GraphDB](https://github.com/MaastrichtU-IDS/graphdb)).
-- **Execute the Docker modules** you want, providing the proper parameters.
+- **Pull** or build the Docker images.
+- **Start required services** (e.g. [Apache Drill](https://github.com/amalic/apache-drill) and [GraphDB](https://github.com/MaastrichtU-IDS/graphdb)).
+- **Execute the Docker modules** you want, providing the right parameters.
 
 Modules can easily be integrated to most workflow engines. 
 
-We provide workflows described with [CWL](https://www.commonwl.org/) (for Posix platforms) and [Argo](https://argoproj.github.io/argo/) (for [Kubernetes](https://kubernetes.io/) cluster).
+We support and provide examples for workflows described with [CWL](https://www.commonwl.org/) (for Linux/MacOS) and [Argo](https://argoproj.github.io/argo/) (for [Kubernetes](https://kubernetes.io/) cluster).
 
 ---
 
-## data2services-pipeline
+## Designed to build scalable Knowledge Graphs
 
-This is a demonstrator ETL pipeline that **converts** relational databases, tabular files, and XML files **to RDF**. A generic RDF, based on the input data structure, is generated and [SPARQL](https://www.w3.org/TR/sparql11-query/) queries are **designed by the user** to map the generic RDF to a **specific model**.
+Data2Services offers handy tools to **convert large amount of structured data**, such as relational databases, tabular files or XML files, **to RDF Knowledge Graphs**. 
 
-* Only [Docker](https://docs.docker.com/install/) is required to run the pipeline. Checkout the [Wiki](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Docker-documentation) if you have issues with Docker installation.
-* Following documentation **focuses on Linux & MacOS**.
-* **Windows documentation** can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
-* Modules are from the [Data2Services ecosystem](https://github.com/MaastrichtU-IDS/data2services-ecosystem). 
-* See [data2services-transform-biolink](https://github.com/MaastrichtU-IDS/data2services-transform-biolink) to run Data2Services transformation workflows using [CWL](https://www.commonwl.org/) or [Argo](https://argoproj.github.io/argo/).
+Converting data with Data2Services relies on 3 steps:
 
----
+* A **generic RDF** is automatically generated from the input data structure.
+* [SPARQL](https://www.w3.org/TR/sparql11-query/) queries are designed by the user to **map** the generic RDF **to a target model**. 
+* Extra modules can be added to the workflow to perform operations SPARQL doesn't natively support 
+  * E.g. splitting statements, resolving the preferred URI for an entity.
 
+The [Docker](https://docs.docker.com/install/) modules required for the transformation are run as a single workflow using a workflow orchestration tool. We provide support for [Argo](https://argoproj.github.io/argo/) and [CWL](https://www.commonwl.org/). This makes the transformation easily reproducible, and enables you to rerun it on new data without effort.
 
-```sparql
-INSERT {
-  GRAPH <?_output> {
-    ?Concept a <https://w3id.org/data2services/Concept> .
-  }
-} WHERE {
-  SERVICE <?_service> {
-    GRAPH <?_input> {
-      SELECT * {
-        [] a ?Concept .
-      } LIMIT 10 
-} } }
-```
+It is strongly recommended to use a POSIX system (Linux, MacOS) if you consider running workflows on your laptop, since most workflow orchestration tools are not supported on Windows. Additional documentation for Windows can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
