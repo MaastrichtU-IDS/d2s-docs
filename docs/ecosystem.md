@@ -22,13 +22,15 @@ git submodule update --recursive --remote
 
 We offer a convenience script to build and pull all Docker images. But each [Docker](https://docs.docker.com/install/) image can also be **built independently**.
 
-For *GraphDB* you **need to download** an extra file to put  `./submodules/graphdb`:
+For *GraphDB* you **need to download** an extra file to put in `./submodules/graphdb`:
 
 > **[Download GraphDB standalone zip](https://www.ontotext.com/products/graphdb/)** (register to get an email with the download URL).
 
 ```bash
 ./build.sh
 ```
+
+> You can pull GraphDB directly from [DockerHub](https://hub.docker.com/r/ontotext/graphdb/) if you have a license for the `standard` or `enterprise` edition
 
 ---
 
@@ -49,7 +51,9 @@ docker run -it --rm -v /data/data2services:/data vemonet/data2services-download 
 
 ---
 
-### [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf)
+### xml2rdf
+
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/xml2rdf?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/xml2rdf)
 
 Streams XML to a [generic RDF](https://github.com/MaastrichtU-IDS/xml2rdf#rdf-model) representing the structure of the file. 
 
@@ -65,7 +69,11 @@ docker run --rm -it -v /data:/data vemonet/xml2rdf  \
 
 ---
 
-### [Apache Drill](https://github.com/amalic/apache-drill)
+### Apache Drill
+
+[![Apache Drill](/data2services/img/drill-logo.png)](https://github.com/amalic/apache-drill)
+
+[![](https://img.shields.io/github/stars/amalic/apache-drill?label=GitHub&style=social)](https://github.com/amalic/apache-drill)
 
 Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
 
@@ -82,7 +90,9 @@ docker run -dit --rm -p 8047:8047 -p 31010:31010 \
 
 ---
 
-### [AutoR2RML](https://github.com/amalic/AutoR2RML)
+### AutoR2RML
+
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/AutoR2RML?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/AutoR2RML)
 
 Automatically generate [R2RML](https://www.w3.org/TR/r2rml/) files from Relational databases (SQL, Postgresql).
 
@@ -103,7 +113,9 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 
 ---
 
-### [R2RML](https://github.com/amalic/r2rml)
+### R2RML
+
+[![](https://img.shields.io/github/stars/amalic/r2rml?label=GitHub&style=social)](https://github.com/amalic/r2rml)
 
 Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rml/) mapping language.
 
@@ -121,7 +133,10 @@ docker run -it --rm --link drill:drill --link postgres:postgres \
 
 ---
 
-### [RdfUpload](https://github.com/MaastrichtU-IDS/RdfUpload)
+### RdfUpload
+
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/RdfUpload?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/RdfUpload)
+
 
 Upload RDF files to a triplestore.
 
@@ -139,7 +154,9 @@ docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
 
 ---
 
-### [PyShEx](https://github.com/hsolbrig/PyShEx)
+### PyShEx
+
+[![](https://img.shields.io/github/stars/hsolbrig/PyShEx?label=GitHub&style=social)](https://github.com/hsolbrig/PyShEx)
 
 Validate RDF from a SPARQL endpoint against a [ShEx](http://shex.io/) file.
 
@@ -155,6 +172,8 @@ docker run --rm -it pyshex -gn '' -ss -ut -pr \
 
 ### [BridgeDb](https://github.com/bridgedb/BridgeDb)
 
+[![](https://img.shields.io/github/stars/bridgedb/BridgeDb?label=GitHub&style=social)](https://github.com/bridgedb/BridgeDb)
+
 [BridgeDb](https://www.bridgedb.org/) links URI identifiers from various datasets (Uniprot, PubMed).
 
 ```bash
@@ -166,7 +185,11 @@ docker run -p 8183:8183 bigcatum/bridgedb
 
 ## Store RDF
 
-### [GraphDB](https://github.com/MaastrichtU-IDS/graphdb)
+### GraphDB
+
+[![GraphDB](/data2services/img/graphdb-logo.png)](https://github.com/MaastrichtU-IDS/graphdb)
+
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/graphdb?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/graphdb)
 
 [Ontotext](https://www.ontotext.com/) GraphDB triplestore including GUI and multiple repositories.
 
@@ -185,7 +208,11 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 ---
 
-### [Virtuoso](https://github.com/tenforce/docker-virtuoso)
+### Virtuoso
+
+[![OpenLink Virtuoso](/data2services/img/openlink-virtuoso.png)](https://virtuoso.openlinksw.com/)
+
+[![GitHub](https://img.shields.io/github/stars/tenforce/docker-virtuoso?label=GitHub&style=social)](https://github.com/tenforce/docker-virtuoso)
 
 [Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
 
@@ -207,7 +234,11 @@ docker run --name virtuoso \
 
 ---
 
-### [Linked Data Fragments Server](https://github.com/LinkedDataFragments/Server.js)
+### Linked Data Fragments Server
+
+[![Linked Data Fragments server](/data2services/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
+
+[![GitHub](https://img.shields.io/github/stars/LinkedDataFragments/Server.js?label=GitHub&style=social)](https://github.com/LinkedDataFragments/Server.js)
 
 Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to query over datasets (can be [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/)).
 
@@ -229,7 +260,10 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 
 ---
 
-### [rdf2hdt](https://github.com/vemonet/rdf2hdt)
+
+### rdf2hdt
+
+[![GitHub](https://img.shields.io/github/stars/vemonet/rdf2hdt?label=GitHub&style=social)](https://github.com/vemonet/rdf2hdt)
 
 Convert RDF to [HDT](http://www.rdfhdt.org/) files. *Header, Dictionary, Triples* is a binary serialization format for RDF  that keeps big datasets compressed while maintaining search and browse operations without prior decompression.
 
@@ -243,7 +277,9 @@ docker run -it -v /data/data2services:/data \
 
 ## Access RDF
 
-### [data2services-sparql-operations](https://github.com/MaastrichtU-IDS/data2services-sparql-operations)
+### data2services-sparql-operations
+
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-sparql-operations?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/data2services-sparql-operations)
 
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/).
 
@@ -260,7 +296,11 @@ docker run -it --rm vemonet/data2services-sparql-operations -op select \
 
 ------
 
-### [Comunica](https://github.com/comunica/comunica)
+### Comunica
+
+[![OpenLink Virtuoso](/data2services/img/comunica.svg)](https://comunica.linkeddatafragments.org/)
+
+[![GitHub](https://img.shields.io/github/stars/comunica/comunica?label=GitHub&style=social)](https://github.com/comunica/comunica)
 
 Framework to perform [federated queries](https://www.w3.org/TR/sparql11-federated-query/) over a lot of different stores (triplestores, [TPF](http://linkeddatafragments.org/in-depth/), [HDT](http://www.rdfhdt.org/)).
 
@@ -275,7 +315,9 @@ docker run -it comunica/actor-init-sparql \
 
 ## Linked Data GUI
 
-### [Trifid](https://github.com/vemonet/trifid)
+### Trifid
+
+[![GitHub](https://img.shields.io/github/stars/vemonet/trifid?label=GitHub&style=social)](https://github.com/vemonet/trifid)
 
 Linked Data Server: YASGUI editor, URI dereferencing, custom HTML render.
 
@@ -308,9 +350,13 @@ docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.c
 
 ---
 
-### [YASGUI](https://github.com/OpenTriply/YASGUI.server)
+### YASGUI
 
-[Yet Another Sparql GUI](http://doc.yasgui.org/).
+[![OpenLink Virtuoso](/data2services/img/yasgui-logo.png)](http://doc.yasgui.org/)
+
+[![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI.server?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI.server)
+
+[Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
 
 ```bash
 docker-compose up yasgui
@@ -327,9 +373,11 @@ docker run -it --rm --name yasgui -p 8080:80 \
 
 ---
 
-### [LODEstar](https://github.com/EBISPOT/lodestar)
+### LODEstar
 
 [SPARQL](https://www.w3.org/TR/sparql11-query/) query and URI resolution, available through [DockerHub](https://hub.docker.com/r/netresearch/lodestar).
+
+[![GitHub](https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&style=social)](https://github.com/EBISPOT/lodestar)
 
 ```bash
 docker run --rm -d --name lodestar -p 8082:8080 -e ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/ncats-red-kg -e TOP_RELATIONSHIP=http://w3id.org/biolink/vocab/id,http://w3id.org/biolink/vocab/name,http://w3id.org/biolink/vocab/description -e LABEL=http://w3id.org/biolink/vocab/label -e DESCRIPTION=http://w3id.org/biolink/vocab/description -e MAX_OBJECTS=10 -e SERVICE_BASE_URI=http://localhost:8080/ncats-red-kg netresearch/lodestar

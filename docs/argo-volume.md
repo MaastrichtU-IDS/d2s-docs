@@ -3,6 +3,8 @@ id: argo-volume
 title: Define volumes
 ---
 
+![OpenShift](/data2services/img/ophenshift-logo.png)
+
 ## Define persistent volume
 
 Go to https://app.dsri.unimaas.nl:8443/console/project/argo/create-pvc

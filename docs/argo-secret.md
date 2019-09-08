@@ -3,7 +3,9 @@ id: argo-secret
 title: Use OpenShift secrets
 ---
 
-> Access [OpenShift](https://app.dsri.unimaas.nl:8443/) 
+![OpenShift](/data2services/img/ophenshift-logo.png)
+
+> Access [OpenShift](https://app.dsri.unimaas.nl:8443/). 
 
 >  `Argo` project > `Resources` > `Secret`
 

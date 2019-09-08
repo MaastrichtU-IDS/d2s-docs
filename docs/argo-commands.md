@@ -3,6 +3,8 @@ id: argo-commands
 title: Argo commands
 ---
 
+![Argo project](/data2services/img/argo-logo.png)
+
 ## List running Argo workflows
 
 ```bash
@@ -22,6 +24,10 @@ argo terminate my-workflow
 ```bash
 argo delete my-workflow
 ```
+
+---
+
+![OpenShift](/data2services/img/ophenshift-logo.png)
 
 ## List OpenShift pods
 

@@ -3,7 +3,9 @@ id: argo-run
 title: Run Argo workflows
 ---
 
-We will use [examples](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/support/config) from the [data2services-transform-biolink](https://github.com/MaastrichtU-IDS/data2services-transform-biolink) project.
+[![BioLink model](/data2services/img/biolink-logo.png)](https://github.com/MaastrichtU-IDS/data2services-transform-biolink)
+
+We will use [examples](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/support/config) from the [**data2services-transform-biolink**](https://github.com/MaastrichtU-IDS/data2services-transform-biolink) project.
 
 ## Clone the repository
 
