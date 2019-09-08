@@ -49,3 +49,5 @@ argo submit data2services-argo-workflows/d2s-workflow-transform-csv.yaml \
 argo submit data2services-argo-workflows/d2s-workflow-transform-csv-dag.yaml \
   -f support/config/config-transform-csv-stitch.yml
 ```
+
+![](/data2services/img/argo-logo.png)

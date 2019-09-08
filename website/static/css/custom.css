@@ -32,18 +32,23 @@ a:hover {
     color: #1565c0;
 }
 
+/* Docs images size */
+article p img {
+    max-width: 350px;
+    max-height: 150px;
+}
+
 .button {
     text-transform: none;
+    padding: 1em;
+    border-radius: 7px;
 }
 
 .promoSection .button {
-    min-width: 5em;
     margin: 0.5em;
-    padding: 1em;
     font-size: 20px;
-    font-weight: 600;
     border-width: 2px;
-    border-radius: 10px;
+    font-weight: 600;
 }
 
 /* .button {

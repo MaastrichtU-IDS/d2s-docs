@@ -157,7 +157,7 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'Like [Elsevier](https://www.w3.org/2001/sw/sweo/public/UseCases/Elsevier/), the [BBC](https://www.bbc.co.uk/ontologies), or [Uber](https://www.zdnet.com/article/ubers-graph-expert-bears-the-scars-of-billions-of-trips/), we are using the [Resource Description Framework](https://www.w3.org/RDF/) to describe your data as a Knowledge Graph.',
+            content: 'Like [Elsevier](https://www.w3.org/2001/sw/sweo/public/UseCases/Elsevier/), the [BBC](https://www.bbc.co.uk/ontologies), or [Uber](https://www.zdnet.com/article/ubers-graph-expert-bears-the-scars-of-billions-of-trips/), we are using the [Resource Description Framework](https://www.w3.org/RDF/) to describe data as expressive Knowledge Graphs.',
             image: `${baseUrl}img/rdf-icon-simple.png`,
             imageAlign: 'top',
             title: 'Built on standard',

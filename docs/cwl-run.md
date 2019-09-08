@@ -68,3 +68,5 @@ nohup cwl-runner --outdir output/drugbank-sample \
 ```
 
 > Write terminal output to `nohup.out`.
+
+![](/data2services/img/CWL_logo.png)

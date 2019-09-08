@@ -36,3 +36,17 @@ chmod +x /usr/local/bin/argo
 ```bash
 brew install argoproj/tap/argo
 ```
+
+ <!-- Argo           |  OpenShift            |  Kubernetes          |   MapR
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](/data2services/img/argo-logo.png)  |  ![](/data2services/img/ophenshift-logo.png) | ![](/data2services/img/Kubernetes.png) | ![](/data2services/img/mapr_logo.png) -->
+
+  MapR            |  Kubernetes          |   OpenShift
+:-------------------------:|:-------------------------:|:-------------------------:
+[![](/data2services/img/mapr_logo.png)](https://mapr.com/) | [![](/data2services/img/Kubernetes.png)](https://kubernetes.io/) | [![](/data2services/img/ophenshift-logo.png)](https://www.openshift.com/)
+
+
+[![](/data2services/img/argo-logo.png)](https://argoproj.github.io/argo/)
+<!-- ![](/data2services/img/ophenshift-logo.png)
+![](/data2services/img/Kubernetes.png)
+![](/data2services/img/mapr_logo.png) -->

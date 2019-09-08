@@ -14,6 +14,8 @@ Go to https://app.dsri.unimaas.nl:8443/console/project/argo/create-pvc
 
 ## Mount a filesystem UI
 
+[![](/data2services/img/filebrowser_banner.svg)](https://filebrowser.xyz/)
+
 Deploy [filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) on MapR to access volumes
 
 Go to https://app.dsri.unimaas.nl:8443/console/catalog > click `Deploy image`

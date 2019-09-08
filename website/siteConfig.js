@@ -97,9 +97,16 @@ const siteConfig = {
   // Expand/collapse the links and subcategories under categories.
   docsSideNavCollapsible: false,
 
+  markdownPlugins: [
+    function(md) {
+      extlink(md, {
+        host: 'localhost', // The hrefs that you DON'T want to be external
+      });
+    },
+  ],
+
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
-
   // Show documentation's last update time.
   // enableUpdateTime: true,
 
@@ -122,7 +129,8 @@ const siteConfig = {
     // theme: 'solarized-dark',
     // theme: 'tomorrow-night',
     // theme: 'ocean',
-    theme: 'tomorrow-night-eighties',
+    theme: 'atom-one-dark',
+    // theme: 'tomorrow-night-eighties',
     hljs: function(hljs) {
       hljs.registerLanguage('ttl',function(hljs) {
         var KEYWORDS = {

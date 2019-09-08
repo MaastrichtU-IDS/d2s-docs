@@ -13,4 +13,6 @@ oc login https://openshift_cluster:8443 --token=MY_TOKEN
 
 > Paste the command in your terminal.
 
+![](/data2services/img/ophenshift-logo.png)
+
 <!-- ![](/img/getting-started-preparation-verify.png) -->

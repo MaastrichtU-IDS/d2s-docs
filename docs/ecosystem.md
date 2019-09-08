@@ -20,9 +20,9 @@ git clone --recursive https://github.com/MaastrichtU-IDS/data2services-ecosystem
 git submodule update --recursive --remote
 ```
 
-We offer a convenience script to build and pull all Docker images. Each [Docker](https://docs.docker.com/install/) image can also be **built independently**.
+We offer a convenience script to build and pull all Docker images. But each [Docker](https://docs.docker.com/install/) image can also be **built independently**.
 
-For *Apache Drill* and *GraphDB* you **need to download** an extra file to put  `./submodules/graphdb`:
+For *GraphDB* you **need to download** an extra file to put  `./submodules/graphdb`:
 
 > **[Download GraphDB standalone zip](https://www.ontotext.com/products/graphdb/)** (register to get an email with the download URL).
 
