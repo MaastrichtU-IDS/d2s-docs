@@ -149,6 +149,13 @@ const siteConfig = {
             {begin: /\$\{(.*?)}/}
           ]
         };
+        var ARGS = {
+          // className: 'symbol', // blue
+          className: 'template-variable',
+          variants: [
+            {begin: /\s-[-]?[\w-]*/},
+          ]
+        };
         var QUOTE_STRING = {
           className: 'string',
           begin: /"/, end: /"/,
@@ -199,7 +206,7 @@ const siteConfig = {
               'unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof ' +
               'zpty zregexparse zsocket zstyle ztcp' +
               // Vincent built-ins,
-              'ps nohup config clone submodule pull install sudo submit terminate delete get create build run stop rsh login xvf',
+              'sudo ps nohup config clone submodule pull install up submit terminate delete get create build run stop rsh login xvf',
             _:
               '-ne -eq -lt -gt -f -d -e -s -l -a -o -un -pw --recursive' // relevance booster
           },
@@ -220,7 +227,8 @@ const siteConfig = {
             QUOTE_STRING,
             ESCAPED_QUOTE,
             APOS_STRING,
-            VAR
+            VAR,
+            ARGS
           ]
         };
       }),

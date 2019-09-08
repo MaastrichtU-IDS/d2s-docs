@@ -6,8 +6,8 @@ title: Define the mappings
 [![SPARQL](/data2services/img/sparql_logo.png)](https://www.w3.org/TR/sparql11-overview/)
 
 We use SPARQL to:
-* Map the generic RDF, generated from your input data structure, to a target RDF.
 * Insert metadata about the dataset in the Knowledge Graph
+* Map the generic RDF, generated from your input data structure, to a target RDF and insert the refined RDF in a triplestore.
 
 ---
 
@@ -20,9 +20,9 @@ Each dataset has 2 levels of metadata:
 * The [distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) needs to be defined for each new version *(~6 fields to fill)*
 
 
-> Some metadata from the summary is retrieved for the distribution
+> Some distribution metadata is retrieved from the summary
 
-> Much metadata fields don't need changes between versions
+> Most metadata fields don't need changes between versions
 
 ---
 
