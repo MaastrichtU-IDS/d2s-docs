@@ -47,6 +47,8 @@ const siteConfig = {
     primaryColor: '#1565c0',    // Blue
     secondaryColor: '#ff6f00',  // Orange
   },
+  // themes: ['@docusaurus/theme-live-codeblock'],
+  // npm i @docusaurus/theme-live-codeblock
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
@@ -117,7 +119,7 @@ const siteConfig = {
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     // TODO: add SPARQL
-    theme: 'default',
+    theme: 'solarized-dark',
     hljs: function(hljs) {
       hljs.registerLanguage('ttl',function(hljs) {
         var KEYWORDS = {

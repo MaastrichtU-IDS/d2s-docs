@@ -7,7 +7,7 @@ title: Debug Argo workflows
 
 To get into the container. Create YAML with command `tail /dev/null` to keep it running.
 
-Example for [data2services-download](https://github.com/MaastrichtU-IDS/data2services-download):
+> Example for [data2services-download](https://github.com/MaastrichtU-IDS/data2services-download):
 
 ```yaml
 apiVersion: v1
@@ -31,7 +31,7 @@ spec:
       mountPath: /data
 ```
 
-Then start the pod
+> Then start the pod:
 
 ```shell
 oc create -f archives/d2s-download-pod.yaml
