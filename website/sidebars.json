@@ -3,8 +3,5 @@
     "Get started": ["introduction", "download-dataset", "create-mappings","ecosystem"],
     "Argo workflows": ["argo-install", "argo-login", "argo-volume", "argo-run", "argo-commands", "argo-debug", "argo-secret"],
     "CWL workflows": ["cwl-install", "cwl-services", "cwl-run"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
   }
 }
