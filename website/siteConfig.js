@@ -39,6 +39,8 @@ const siteConfig = {
   tagline: 'Automatically deploy user-facing services consuming data from various sources integrated under a common Knowledge Graph',
   url: 'https://data2services.github.io/', // Your website URL
   baseUrl: '/data2services/', // Base URL for your project */
+  // We deploy at https://data2services.github.io/data2services/
+
   projectName: 'data2services',  // The name of your GitHub project. Same as above.
   organizationName: 'MaastrichtU-IDS', // Your GitHub username.
   repoUrl: 'https://github.com/MaastrichtU-IDS/data2services-pipeline',
