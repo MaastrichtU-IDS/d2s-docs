@@ -1,5 +1,5 @@
 ---
-id: argovolume
+id: argo-volume
 title: Define volumes
 ---
 

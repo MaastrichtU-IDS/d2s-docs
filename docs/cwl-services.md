@@ -1,5 +1,5 @@
 ---
-id: cwlservices
+id: cwl-services
 title: Start services
 ---
 

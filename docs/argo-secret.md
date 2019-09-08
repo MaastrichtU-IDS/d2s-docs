@@ -1,5 +1,5 @@
 ---
-id: argosecret
+id: argo-secret
 title: Use OpenShift secrets
 ---
 

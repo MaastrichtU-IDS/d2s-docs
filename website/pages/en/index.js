@@ -110,7 +110,7 @@ class Index extends React.Component {
         <MarkdownBlock>
           Run reproducible pipelines to transform and update your data faithfully.
         </MarkdownBlock>
-        <Block layout="twoColumn">
+        {/* <Block layout="twoColumn">
         {[
           {
             image: `${baseUrl}img/argo-logo.png`,
@@ -121,7 +121,7 @@ class Index extends React.Component {
             imageAlign: 'top',
           },
         ]}
-      </Block>
+      </Block> */}
       </div>
     );
 

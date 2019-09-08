@@ -1,5 +1,5 @@
 ---
-id: argologin
+id: argo-login
 title: Login to OpenShift
 ---
 

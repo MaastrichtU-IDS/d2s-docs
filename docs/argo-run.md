@@ -1,5 +1,5 @@
 ---
-id: argorun
+id: argo-run
 title: Run Argo workflows
 ---
 

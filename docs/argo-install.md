@@ -1,5 +1,5 @@
 ---
-id: argoinstall
+id: argo-install
 title: Argo installation
 sidebar_label: Argo installation
 ---
