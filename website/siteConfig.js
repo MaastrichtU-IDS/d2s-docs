@@ -119,7 +119,10 @@ const siteConfig = {
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     // TODO: add SPARQL
-    theme: 'solarized-dark',
+    // theme: 'solarized-dark',
+    // theme: 'tomorrow-night',
+    // theme: 'ocean',
+    theme: 'tomorrow-night-eighties',
     hljs: function(hljs) {
       hljs.registerLanguage('ttl',function(hljs) {
         var KEYWORDS = {

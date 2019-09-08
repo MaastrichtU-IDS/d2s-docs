@@ -25,7 +25,8 @@ Go to https://app.dsri.unimaas.nl:8443/console/catalog > click `Deploy image`
 * Go to `argo` project > Click on latest deployment of the `filebrowser`
 * Delete the automatically mounted volume, and add the persistent volume (`data2services-storage`). Should be on `/srv`
 * Add route
-* Access on http://d2s-filebrowser-argo.app.dsri.unimaas.nl/files/
+
+> Access on http://d2s-filebrowser-argo.app.dsri.unimaas.nl/files/
 
 ---
 

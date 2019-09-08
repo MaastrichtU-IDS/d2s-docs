@@ -9,8 +9,6 @@ title: Use OpenShift secrets
 * `Key`: password
 * Enter the password in the text box `Clean Value`
 
-Now in the workflow definition you can use the secret as environment variable
-
 ```yaml
 - name: d2s-sparql-operations
   inputs:
@@ -40,3 +38,5 @@ Now in the workflow definition you can use the secret as environment variable
           name: d2s-sparql-password
           key: password
 ```
+
+> Now you can use the secret as environment variable in the workflow definition.

@@ -16,14 +16,14 @@ cd data2services-transform-biolink
 
 ## Workflow to convert XML to RDF
 
-*Reminder:* you need first to authenticate to the [OpenShift cluster](https://app.dsri.unimaas.nl:8443/) using `oc login` .
-
 ### Steps-based workflow
 
 ```bash
 argo submit data2services-argo-workflows/d2s-workflow-transform-xml.yaml \
   -f support/config/config-transform-xml-drugbank.yml
 ```
+
+> *Reminder:* you need first to authenticate to the [OpenShift cluster](https://app.dsri.unimaas.nl:8443/) using `oc login` .
 
 ### DAG workflow
 

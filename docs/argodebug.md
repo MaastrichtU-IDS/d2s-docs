@@ -33,7 +33,7 @@ spec:
 
 > Then start the pod:
 
-```shell
+```bash
 oc create -f archives/d2s-download-pod.yaml
 
 # Connect with Shell
@@ -44,20 +44,24 @@ oc rsh d2s-download-pod
 
 ## Commands
 
-### List running Argo workflows
-
-```shell
+```bash
 argo list
 ```
 
-### List OpenShift pods
+> List running Argo workflows
 
-```shell
+
+
+```bash
 oc get pod
 ```
 
-### Create OpenShift pod from JSON
+> List OpenShift pods
 
-```shell
+
+
+```bash
 oc create -f examples/hello-openshift/hello-pod.json
 ```
+
+> Create OpenShift pod from JSON

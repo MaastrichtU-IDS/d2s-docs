@@ -46,7 +46,7 @@ docker run -it --rm -v /data/data2services:/data vemonet/data2services-download 
 	--username my_login --password my_password
 ```
 
-See on [DockerHub](https://hub.docker.com/r/vemonet/data2services-download).
+> See on [DockerHub](https://hub.docker.com/r/vemonet/data2services-download).
 
 ---
 
@@ -62,13 +62,13 @@ docker run --rm -it -v /data:/data vemonet/xml2rdf  \
 	-g "https://w3id.org/data2services/graph"
 ```
 
-* See on [DockerHub](https://hub.docker.com/r/vemonet/xml2rdf).
+> See on [DockerHub](https://hub.docker.com/r/vemonet/xml2rdf).
 
 ---
 
 ### [Apache Drill](https://github.com/amalic/apache-drill)
 
-Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets.
+Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
 
 ```bash
 docker-compose up drill
@@ -77,9 +77,9 @@ docker run -dit --rm -p 8047:8047 -p 31010:31010 \
 	--name drill -v /data:/data:ro vemonet/apache-drill
 ```
 
-* Access at [http://localhost:8047/](http://localhost:8047/).
-* Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
-* See on [DockerHub](https://hub.docker.com/r/vemonet/apache-drill).
+> Access at [http://localhost:8047/](http://localhost:8047/).
+
+> See on [DockerHub](https://hub.docker.com/r/vemonet/apache-drill).
 
 ---
 
@@ -98,8 +98,9 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 	-g "https://w3id.org/data2services/graph"
 ```
 
-* Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files.
-* See on [DockerHub](https://hub.docker.com/r/vemonet/autor2rml).
+> Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files
+
+> See on [DockerHub](https://hub.docker.com/r/vemonet/autor2rml).
 
 ---
 
@@ -113,9 +114,11 @@ docker run -it --rm --link drill:drill --link postgres:postgres \
 	-v /data:/data vemonet/r2rml /data/config.properties
 ```
 
-* Require a [config.properties](https://github.com/amalic/r2rml/blob/master/example/config.properties) file
-* Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files.
-* See on [DockerHub](https://hub.docker.com/r/vemonet/r2rml).
+> Require a [config.properties](https://github.com/amalic/r2rml/blob/master/example/config.properties) file
+
+> Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files.
+
+> See on [DockerHub](https://hub.docker.com/r/vemonet/r2rml).
 
 ---
 
@@ -131,8 +134,9 @@ docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
 	-un "username" -pw "password"
 ```
 
-* Only tested on [GraphDB](https://github.com/MaastrichtU-IDS/graphdb) at the moment
-* See on [DockerHub](https://hub.docker.com/r/vemonet/rdf-upload).
+> Only tested on [GraphDB](https://github.com/MaastrichtU-IDS/graphdb) at the moment
+
+> See on [DockerHub](https://hub.docker.com/r/vemonet/rdf-upload).
 
 ---
 
@@ -176,8 +180,9 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 	graphdb
 ```
 
-* Download [standalone zip file](https://www.ontotext.com/products/graphdb/) of free version, and place it in `submodules/graphdb` before *docker build*.
-* Access at [http://localhost:7200/](http://localhost:7200/)
+> Download [standalone zip file](https://www.ontotext.com/products/graphdb/) of free version, and place it in `submodules/graphdb` before *docker build*.
+
+> Access at [http://localhost:7200/](http://localhost:7200/)
 
 ---
 
@@ -197,8 +202,9 @@ docker run --name virtuoso \
     -d tenforce/virtuoso
 ```
 
-* Access at [http://localhost:8890/](http://localhost:8890/)
-* Admin login: `dba`
+> Access at [http://localhost:8890/](http://localhost:8890/)
+
+> Admin login: `dba`
 
 ---
 
@@ -218,8 +224,9 @@ docker run -p 3000:3000 -t -i --rm \
 curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:3000/timegate/dbpedia?subject=http%3A%2F%2Fdata2services%2Fmodel%2Fgo-category%2Fprocess
 ```
 
-* Require a [config.json](https://github.com/LinkedDataFragments/Server.js/blob/develop/config/config-example-memento.json) file
-* Access at [http://localhost:3000](http://localhost:3000)
+> Require a [config.json](https://github.com/LinkedDataFragments/Server.js/blob/develop/config/config-example-memento.json) file
+
+> Access at [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -248,8 +255,9 @@ docker run -it --rm vemonet/data2services-sparql-operations -op select \
   -ep "http://dbpedia.org/sparql"
 ```
 
-* See [documentation](https://maastrichtu-ids.github.io/data2services-sparql-operations/).
-* See on [DockerHub](https://hub.docker.com/r/vemonet/data2services-sparql-operations).
+> See [documentation](https://maastrichtu-ids.github.io/data2services-sparql-operations/).
+
+> See on [DockerHub](https://hub.docker.com/r/vemonet/data2services-sparql-operations).
 
 ------
 
@@ -281,8 +289,9 @@ docker run --rm -ti --name trifid -p 8080:8080 trifid --sparql-endpoint-url=http
 docker run --rm -ti --name trifid -v /home/vemonet/sandbox/trifid:/data -p 8080:8080 trifid --config=/data/config-ncats-red-kg.json
 ```
 
-* Go to http://localhost:8080/dataset/huri/
-* To resolve https://w3id.org/data2services/dataset/huri/ 
+> Go to http://localhost:8080/dataset/huri/
+
+> To resolve https://w3id.org/data2services/dataset/huri/ 
 
 [Original project](https://github.com/zazuko/trifid) available on [DockerHub](https://hub.docker.com/r/zazuko/trifid/). But config not working.
 
@@ -294,8 +303,9 @@ docker run -ti -p 8080:8080 -e TRIFID_CONFIG=config-ncats-red-kg.json zazuko/tri
 docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/test -e DATASET_BASE_URL=https://w3id.org/data2services/ zazuko/trifid
 ```
 
-* Access [default example](https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq) on http://localhost:8080/data/person/mary-cooper to resolve URI.
-* Doesn't support graphs
+> Access [default example](https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq) on http://localhost:8080/data/person/mary-cooper to resolve URI.
+
+> Doesn't support graphs
 
 ---
 
@@ -312,8 +322,9 @@ docker run -it --rm --name yasgui -p 8080:80 \
 	erikap/yasgui
 ```
 
-- Require to [allow Cross-Origin Requests](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/)
-- Access at [http://localhost:8080/](http://localhost:8080/)
+> Require to [allow Cross-Origin Requests](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/)
+
+> Access at [http://localhost:8080/](http://localhost:8080/)
 
 ---
 
@@ -325,5 +336,6 @@ docker run -it --rm --name yasgui -p 8080:80 \
 docker run --rm -d --name lodestar -p 8082:8080 -e ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/ncats-red-kg -e TOP_RELATIONSHIP=http://w3id.org/biolink/vocab/id,http://w3id.org/biolink/vocab/name,http://w3id.org/biolink/vocab/description -e LABEL=http://w3id.org/biolink/vocab/label -e DESCRIPTION=http://w3id.org/biolink/vocab/description -e MAX_OBJECTS=10 -e SERVICE_BASE_URI=http://localhost:8080/ncats-red-kg netresearch/lodestar
 ```
 
-- Access at [http://localhost:8082/ncats-red-kg](http://localhost:8082/ncats-red-kg)
-- Original Docker build available in [Wiki](https://github.com/MaastrichtU-IDS/data2services-ecosystem/wiki/Additional-modules#lodestar)
+> Access at [http://localhost:8082/ncats-red-kg](http://localhost:8082/ncats-red-kg)
+
+> Original Docker build available in [Wiki](https://github.com/MaastrichtU-IDS/data2services-ecosystem/wiki/Additional-modules#lodestar)
