@@ -57,13 +57,13 @@ root-directory
 You can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/metadata/1)
 
 Each dataset has 2 levels of metadata:
-* The [summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) needs to be defined once for each dataset *(~5 fields to fill)*
-* The [distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) needs to be defined for each new version *(~5 fields to fill)*
-  
-  
-> A lot of metadata fields don't need much changes
+* The [summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) needs to be defined once for each dataset *(~10 fields to fill)*
+* The [distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) needs to be defined for each new version *(~6 fields to fill)*
 
-> Some metadata for the distribution is retrieved from the summary
+
+> Some metadata from the summary is retrieved for the distribution
+
+> Much metadata fields don't need changes between versions
 
 ---
 
@@ -97,7 +97,8 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
     * Always split your queries to never iterate over more than one array for a parent node.
     * E.g. if `drug:001` from a XML file has multiple `publications` and multiple `synonyms` nodes in its child, then it is preferable to get them in 2 different queries. Retrieving the 2 arrays in a single query would results in the returned row count be a cartesian product of the 2 arrays, which grows exponentially with the size of each array.
     * Final semantic results are the same, but the performance of the transformation is highly impacted.
-    * [DrugBank](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/transform/1) is a good example of multiple mappings files to handle arrays.
+
+> [DrugBank](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/transform/1) is a good example of multiple mappings files to handle arrays.
 
 ---
 

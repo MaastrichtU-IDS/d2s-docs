@@ -315,41 +315,6 @@ docker run -it comunica/actor-init-sparql \
 
 ## Linked Data GUI
 
-### Trifid
-
-[![GitHub](https://img.shields.io/github/stars/vemonet/trifid?label=GitHub&style=social)](https://github.com/vemonet/trifid)
-
-Linked Data Server: YASGUI editor, URI dereferencing, custom HTML render.
-
-```bash
-git clone https://github.com/vemonet/trifid
-docker build -t trifid ./trifid
-
-docker run --rm -ti --name trifid -p 8080:8080 trifid --sparql-endpoint-url=http://graphdb.dumontierlab.com/repositories/test --dataset-base-url=https://w3id.org/data2services/
-
-docker run --rm -ti --name trifid -v /home/vemonet/sandbox/trifid:/data -p 8080:8080 trifid --config=/data/config-ncats-red-kg.json
-```
-
-> Go to http://localhost:8080/dataset/huri/
-
-> To resolve https://w3id.org/data2services/dataset/huri/ 
-
-[Original project](https://github.com/zazuko/trifid) available on [DockerHub](https://hub.docker.com/r/zazuko/trifid/). But config not working.
-
-```bash
-docker pull zazuko/trifid
-docker run -ti -p 8080:8080 zazuko/trifid
-# Not working, provide env config file?
-docker run -ti -p 8080:8080 -e TRIFID_CONFIG=config-ncats-red-kg.json zazuko/trifid
-docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/test -e DATASET_BASE_URL=https://w3id.org/data2services/ zazuko/trifid
-```
-
-> Access [default example](https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq) on http://localhost:8080/data/person/mary-cooper to resolve URI.
-
-> Doesn't support graphs
-
----
-
 ### YASGUI
 
 [![OpenLink Virtuoso](/data2services/img/yasgui-logo.png)](http://doc.yasgui.org/)
@@ -386,3 +351,38 @@ docker run --rm -d --name lodestar -p 8082:8080 -e ENDPOINT_URL=http://graphdb.d
 > Access at [http://localhost:8082/ncats-red-kg](http://localhost:8082/ncats-red-kg)
 
 > Original Docker build available in [Wiki](https://github.com/MaastrichtU-IDS/data2services-ecosystem/wiki/Additional-modules#lodestar)
+
+---
+
+### Trifid
+
+[![GitHub](https://img.shields.io/github/stars/zazuko/trifid?label=GitHub&style=social)](https://github.com/zazuko/trifid)
+
+Linked Data Server: [URI dereferencing](http://lod.opentransportdata.swiss/sparql/), custom HTML render, [YASGUI SPARQL endpoint](http://lod.opentransportdata.swiss/sparql/).
+
+```bash
+git clone https://github.com/vemonet/trifid
+docker build -t trifid ./trifid
+
+docker run --rm -ti --name trifid -p 8080:8080 trifid --sparql-endpoint-url=http://graphdb.dumontierlab.com/repositories/test --dataset-base-url=https://w3id.org/data2services/
+
+docker run --rm -ti --name trifid -v /home/vemonet/sandbox/trifid:/data -p 8080:8080 trifid --config=/data/config-ncats-red-kg.json
+```
+
+> Go to http://localhost:8080/dataset/huri/ to resolve https://w3id.org/data2services/dataset/huri/ 
+
+> Modified version on [GitHub](https://github.com/vemonet/trifid).
+
+[Original project](https://github.com/zazuko/trifid) available on [DockerHub](https://hub.docker.com/r/zazuko/trifid/). But config not working.
+
+```bash
+docker pull zazuko/trifid
+docker run -ti -p 8080:8080 zazuko/trifid
+# Not working, provide env config file?
+docker run -ti -p 8080:8080 -e TRIFID_CONFIG=config-ncats-red-kg.json zazuko/trifid
+docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/test -e DATASET_BASE_URL=https://w3id.org/data2services/ zazuko/trifid
+```
+
+> Access [default example](https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq) on http://localhost:8080/data/person/mary-cooper to resolve URI.
+
+> Doesn't support graphs

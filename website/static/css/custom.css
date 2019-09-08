@@ -34,8 +34,8 @@ a:hover {
 
 /* Docs markdown images size */
 article img, article p img {
-    max-width: 350px;
-    max-height: 100px;
+    max-width: 250px;
+    max-height: 80px;
 }
 
 .button {

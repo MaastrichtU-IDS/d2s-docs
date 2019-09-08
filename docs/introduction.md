@@ -28,6 +28,6 @@ Converting data with Data2Services relies on 3 steps:
 * Extra modules can be added to the workflow to perform operations SPARQL doesn't natively support 
   * E.g. splitting statements, resolving the preferred URI for an entity.
 
-The [Docker](https://docs.docker.com/install/) modules required for the transformation are run as a single workflow using a workflow orchestration tool. We provide support for [Argo](https://argoproj.github.io/argo/) and [CWL](https://www.commonwl.org/). This makes the transformation easily reproducible, and enables you to rerun it on new data without effort.
+The [Docker](https://docs.docker.com/install/) modules required for the transformation are run in a workflow using a workflow orchestration tool. We provide support for [Argo](https://argoproj.github.io/argo/) and [CWL](https://www.commonwl.org/) workflows. This makes the transformation easily reproducible, and enables you to run the transformation on new data without effort.
 
-It is strongly recommended to use a POSIX system (Linux, MacOS) if you consider running workflows on your laptop, since most workflow orchestration tools are not supported on Windows. Additional documentation for Windows can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
+It is strongly **recommended to use a POSIX system** (Linux, MacOS) if you consider running workflows on your laptop, since most workflow orchestration tools do not support Windows. Additional documentation for Windows can be found [here](/data2services/docs/guide-windows).

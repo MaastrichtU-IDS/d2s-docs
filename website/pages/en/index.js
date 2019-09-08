@@ -163,7 +163,7 @@ class Index extends React.Component {
             title: 'Built on standard',
           },
           {
-            content: 'Every module is a [Docker](https://www.docker.com/) container.',
+            content: 'Each module is a [Docker](https://www.docker.com/) container.',
             image: `${baseUrl}img/docker.png`,
             imageAlign: 'top',
             title: 'Runs everywhere',

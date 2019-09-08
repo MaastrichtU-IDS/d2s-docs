@@ -8,8 +8,9 @@ title: Windows guide
 We **do not recommend** to run Data2Services on Windows.
 
 * Most workflow orchestrators **do not support Windows**, as workflows run Linux container
-  * You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 * [Docker](https://www.docker.com/) runs on Windows, but not natively like [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0), making it much  more prone to errors.
+
+> You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 
 We recommend to use `Git Bash` to clone the repository, and the Windows `PowerShell` terminal (which is easier to use than the basic terminal).
 
@@ -34,7 +35,9 @@ Virtualization and Hyper-V must be [**activated**](https://docs.docker.com/docke
 
 ### Share drive
 
-> Go to Docker config > `Settings` > `Shared Drives` > **Share Drive C** (or the one available, Docker will only be able to access data in Shared Drives)
+Docker will only be able to access folders and files in the `Shared Drives`.
+
+> Go to Docker config > `Settings` > `Shared Drives` > **Share Drive C**
 
 ### Firewall issues
 
