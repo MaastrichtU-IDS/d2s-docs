@@ -6,7 +6,7 @@ title: Setting up MariaDB
 [![](/data2services/img/mariadb.png)](https://mariadb.org/)
 
 ## Run MariaDB
-```bash
+```shell
 docker run --rm --name mariadb -v /data/data2services:/data -e MYSQL_ROOT_PASSWORD=pwd -d mariadb
 ```
 
@@ -16,7 +16,7 @@ docker run --rm --name mariadb -v /data/data2services:/data -e MYSQL_ROOT_PASSWO
 
 ## Connect to MySQL
 
-```bash
+```shell
 docker exec -it mariadb mysql -uroot -ppwd
 ```
 
@@ -31,12 +31,12 @@ SELECT * FROM table_name LIMIT 10;
 ```
 
 ### Load scripts
-```bash
+```shell
 docker exec -i mariadb mysql -uroot -ppwd database_name < /data/load_data.sql
 ```
 
 ## JDBC URL
 
-```bash
+```shell
 jdbc:mariadb://localhost:3306/DB?user=root&password=pwd
 ```

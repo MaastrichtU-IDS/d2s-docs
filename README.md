@@ -6,7 +6,7 @@ Generated using [Docusaurus](https://docusaurus.io/).
 
 To run in the `/website` directory.
 
-```bash
+```shell
 npm install
 npm start
 ```
@@ -15,7 +15,7 @@ npm start
 
 To run in `/website` directory. Make sure the `/website/build` directory has been generated before deploying.
 
-```bash
+```shell
 npm install
 npm run build
 GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
@@ -28,7 +28,7 @@ GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-p
 
 ## Install boostrap tool
 
-```bash
+```shell
 sudo npm install --global yarn
 sudo npm install --global docusaurus-init
 

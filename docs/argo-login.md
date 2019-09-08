@@ -9,7 +9,7 @@ You will first need to authenticate to the [DSRI cluster](https://app.dsri.unima
 
 Get the command from the `Copy Login Command` button, in the user details, at the top right of the [OpenShift webpage](https://app.dsri.unimaas.nl:8443/) (your token is automatically provided).
 
-```bash
+```shell
 oc login https://openshift_cluster:8443 --token=MY_TOKEN
 ```
 

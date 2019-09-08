@@ -9,18 +9,18 @@ AutoR2RML generates the generic RDF predicates out of tabular files columns head
 
 ## CSV
 
-```bash
+```shell
 sed -i '1s/^/column1,column2,column3\n/' *.csv
 ```
 
 ## TSV
 
-```bash
+```shell
 sed -i '1s/^/column1\tcolumn2\tcolumn3\n/' *.tsv
 ```
 
 ## PSV
 
-```bash
+```shell
 sed -i '1s/^/column1|column2|column3\n/' *.psv
 ```

@@ -32,14 +32,14 @@ A Docker image can be run to create a container in 2 ways
 ### Stop a container
 
 To get a Docker container ID and stop it:
-```bash
+```shell
 docker ps
 docker stop my-container
 ```
 
 Automatically delete a container after run
 You can use the `--rm` flag to automatically delete a container after its run. It avoid accumulating containers and wasting memory.
-```bash
+```shell
 docker run -it --rm my-container
 ```
 
@@ -53,13 +53,13 @@ Let's say I have a `/data/data2services/my-file.txt` on my system, and I want to
 * I need to provide he `-v` flag with paths separated by a `:`
   * before the user provide the path of the shared volume on his system
   * after the user provide the path it will be accessible from in the Docker container
-```bash
+```shell
 docker run -it -v /path/on/my/computer:/path/in/container my-container \
 	--input-file "/path/in/container/my-file.txt"
 ```
 
 *  In this example we are sharing the `/data/data2services` volume from our system to `/data` in the Docker container. _my-file.txt_ is then accessible as `/data/my-file.txt` in the container
-```bash
+```shell
 docker run -it -v /data/data2services:/data my-container \
 	--input-file "/data/my-file.txt"
 ```
@@ -105,7 +105,7 @@ networks:
 ```
 
 #### Example of AutoR2RML connecting to the Drill container through a network
-```bash
+```shell
 docker run -it --rm -v /data:/data \
   --network network-pipeline_data2services \
   autor2rml -r \
@@ -124,29 +124,29 @@ docker run -it --rm -v /data:/data \
 Let's say you have a frontend application that needs to query a backend application.
 
 * Run the backend
-```bash
+```shell
 docker run -it --rm --name backend -p 8080:8080 backend-image
 ```
 
 * To access it as http://localhost:8080 in the frontend
-```bash
+```shell
 docker run -it --rm --name frontend --link backend:localhost frontend-image
 ```
 
 
 * To access it as http://backend:8080 in the frontend
-```bash
+```shell
 docker run -it --rm --name frontend --link backend:backend frontend-image
 ```
 
 * You can link to multiple backend in a frontend
-```bash
+```shell
 docker run -it --rm --name frontend --link backend-sql:backend-sql --link backend-redis:backend-redis frontend-image
 ```
 
 
 #### Example of AutoR2RML connecting to Drill container using link
-```bash
+```shell
 # Run Apache Drill service
 docker run -dit --rm -p 8047:8047 -p 31010:31010 --name drill -v /data:/data:ro apache-drill
 

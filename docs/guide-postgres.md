@@ -7,7 +7,7 @@ title: Setting up PostgreSQL
 
 ## Run PostgreSQL
 
-```bash
+```shell
 docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v /data/data2services/:/data postgres
 ```
 
@@ -20,12 +20,12 @@ docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v /data/dat
 ## Connect to Postgres and load scripts
 
 ### Connect to postgres
-```bash
+```shell
 docker exec -it postgres psql -U postgres
 ```
 
 ### Load SQL script
-```bash
+```shell
 docker exec -it postgres psql -U postgres my-db < /data/load_database.sql
 ```
 

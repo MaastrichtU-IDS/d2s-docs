@@ -16,7 +16,7 @@ Install [Docker](https://docs.docker.com/install/) to run the modules. Checkout 
 
 Install [cwltool](https://github.com/common-workflow-language/cwltool#install) to get cwl-runner to run workflows of Docker modules.
 
-```bash
+```shell
 apt-get install cwltool
 ```
 
@@ -30,6 +30,6 @@ apt-get install cwltool
 
 Clone the repository with its submodules
 
-```bash
+```shell
 git clone --recursive https://github.com/MaastrichtU-IDS/data2services-transform-biolink.git
 ```

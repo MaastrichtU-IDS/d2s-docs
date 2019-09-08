@@ -10,7 +10,7 @@ Proof of concept: execute data2services modules by deploying [Jenkins pipelines]
 
 ## Start Jenkins
 
-```bash
+```shell
 docker run -it --name jenkins-container \
   -p 3333:8080  \
   -v /data/jenkins:/data \

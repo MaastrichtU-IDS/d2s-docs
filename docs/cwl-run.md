@@ -19,7 +19,7 @@ title: Run CWL workflows
 
 ## Convert XML with [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf)
 
-```bash
+```shell
 cwl-runner --outdir output/drugbank-sample \
   data2services-cwl-workflows/workflows/workflow-xml.cwl \
   support/example-config/config-transform-xml-drugbank.yml
@@ -29,7 +29,7 @@ cwl-runner --outdir output/drugbank-sample \
 
 ## Convert CSV/TSV with [AutoR2RML](https://github.com/amalic/autor2rml)
 
-```bash
+```shell
 cwl-runner --outdir output/stitch-sample \
   data2services-cwl-workflows/workflows/workflow-csv.cwl \
   support/example-config/config-transform-csv-stitch.yml
@@ -39,7 +39,7 @@ cwl-runner --outdir output/stitch-sample \
 
 ## Convert CSV/TSV with [AutoR2RML](https://github.com/amalic/autor2rml) and split a property
 
-```bash
+```shell
 cwl-runner --outdir output/eggnog-sample \
   data2services-cwl-workflows/workflows/workflow-csv-split.cwl \
   support/example-config/config-transform-split-eggnog.yml
@@ -51,7 +51,7 @@ cwl-runner --outdir output/eggnog-sample \
 
 When you don't have set the mappings for R2RML: generates the generic RDF and template SPARQL mapping files, and load the generic RDF.
 
-```bash
+```shell
 cwl-runner --outdir output/stitch-sample \
   data2services-cwl-workflows/workflows/workflow-csv-generate_mapping.cwl \
   support/example-config/config-transform-csv-stitch.yml
@@ -61,7 +61,7 @@ cwl-runner --outdir output/stitch-sample \
 
 ## Run in the background
 
-```bash
+```shell
 nohup cwl-runner --outdir output/drugbank-sample \
   data2services-cwl-workflows/workflows/workflow-xml.cwl \
   support/example-config/config-transform-xml-drugbank.yml &

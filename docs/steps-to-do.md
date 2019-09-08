@@ -73,3 +73,48 @@ Define SPARQL mapping queries to **transform the generic RDF to the target data 
 Now the mappings have been designed you are done, and just need to start your triplestore if it is not already running, and **run the transformation** using a workflow orchestration tool (such as [Argo](https://argoproj.github.io/argo/) or [CWL](https://www.commonwl.org/)).
 
 > Define the **workflow YAML configuration file**: triplestore URL and credentials, path to mapping files, path to download script, URI of the final graph *(~10')*
+
+---
+
+## Project structure
+
+We recommend you to reproduce the directory structure used in [data2services-transform-biolink](https://github.com/MaastrichtU-IDS/data2services-transform-biolink).
+
+Example of directory structure for the `drugbank` dataset:
+
+```bash
+root-directory
+├── LICENSE
+├── README.md
+├── data2services-argo-workflows (submodule)
+├── data2services-cwl-workflows (submodule)
+├── input
+│   ├── download_failed.log
+│   └── drugbank
+│       ├── download.log
+│       └── drugbank.xml
+├── mapping
+│    └── drugbank
+│       ├── transform
+│       │   └── 1
+│       │       ├── drugbank-drugbank_id.rq
+│       │       └── drugbank-snp_effects.rq
+│       └── metadata
+│           ├── metadata-drugbank-summary.rq
+│           └── 1
+│               └── metadata-drugbank-1.rq
+├── output
+│    └── drugbank
+│       ├── rdf_output.nq
+│       ├── xml2rdf_file_structure.txt
+│       ├── rdf-upload.txt
+│       └── execute-sparql-query-logs.txt
+└── support
+    ├── cwl-custom-workflows
+    ├── cwl-custom-steps
+    └── config
+        ├── config-transform-xml-drugbank.yml
+        └── config-transform-csv-stitch.yml
+```
+
+> TODO: change the structure to include download script (or in `input`?). We don't want the files in the git repository

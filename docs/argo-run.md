@@ -9,7 +9,7 @@ We will use [examples](https://github.com/MaastrichtU-IDS/data2services-transfor
 
 ## Clone the repository
 
-```bash
+```shell
 git clone --recursive https://github.com/MaastrichtU-IDS/data2services-transform-biolink.git
 cd data2services-transform-biolink
 ```
@@ -20,7 +20,7 @@ cd data2services-transform-biolink
 
 ### Steps-based workflow
 
-```bash
+```shell
 argo submit data2services-argo-workflows/d2s-workflow-transform-xml.yaml \
   -f support/config/config-transform-xml-drugbank.yml
 ```
@@ -29,7 +29,7 @@ argo submit data2services-argo-workflows/d2s-workflow-transform-xml.yaml \
 
 ### DAG workflow
 
-```bash
+```shell
 argo submit data2services-argo-workflows/d2s-workflow-transform-xml-dag.yaml \
   -f support/config/config-transform-xml-drugbank.yml
 ```
@@ -40,14 +40,14 @@ argo submit data2services-argo-workflows/d2s-workflow-transform-xml-dag.yaml \
 
 ### Steps-based workflow
 
-```bash
+```shell
 argo submit data2services-argo-workflows/d2s-workflow-transform-csv.yaml \
   -f support/config/config-transform-csv-stitch.yml
 ```
 
 ### DAG workflow
 
-```bash
+```shell
 argo submit data2services-argo-workflows/d2s-workflow-transform-csv-dag.yaml \
   -f support/config/config-transform-csv-stitch.yml
 ```

@@ -13,7 +13,7 @@ Only [Docker](https://docs.docker.com/install/) is required to run the modules. 
 
 Clone recursively the repository to get all submodules.
 
-```bash
+```shell
 git clone --recursive https://github.com/MaastrichtU-IDS/data2services-ecosystem.git
 
 # Update submodules
@@ -26,7 +26,7 @@ For *GraphDB* you **need to download** an extra file to put in `./submodules/gra
 
 > **[Download GraphDB standalone zip](https://www.ontotext.com/products/graphdb/)** (register to get an email with the download URL).
 
-```bash
+```shell
 ./build.sh
 ```
 
@@ -40,7 +40,7 @@ For *GraphDB* you **need to download** an extra file to put in `./submodules/gra
 
 Download datasets using Shell scripts. See [script example](https://github.com/MaastrichtU-IDS/data2services-download/blob/master/datasets/TEMPLATE/download.sh).
 
-```bash
+```shell
 docker pull vemonet/data2services-download:latest
 docker run -it --rm -v /data/data2services:/data vemonet/data2services-download \
 	--download-datasets aeolus,pharmgkb,ctd \
@@ -57,7 +57,7 @@ docker run -it --rm -v /data/data2services:/data vemonet/data2services-download 
 
 Streams XML to a [generic RDF](https://github.com/MaastrichtU-IDS/xml2rdf#rdf-model) representing the structure of the file. 
 
-```bash
+```shell
 docker pull vemonet/xml2rdf:latest
 docker run --rm -it -v /data:/data vemonet/xml2rdf  \
 	-i "/data/data2services/file.xml.gz" \
@@ -77,7 +77,7 @@ docker run --rm -it -v /data:/data vemonet/xml2rdf  \
 
 Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
 
-```bash
+```shell
 docker-compose up drill
 docker pull vemonet/apache-drill:latest
 docker run -dit --rm -p 8047:8047 -p 31010:31010 \
@@ -96,7 +96,7 @@ docker run -dit --rm -p 8047:8047 -p 31010:31010 \
 
 Automatically generate [R2RML](https://www.w3.org/TR/r2rml/) files from Relational databases (SQL, Postgresql).
 
-```bash
+```shell
 docker pull vemonet/autor2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 	vemonet/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
@@ -119,7 +119,7 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 
 Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rml/) mapping language.
 
-```bash
+```shell
 docker pull vemonet/r2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres \
 	-v /data:/data vemonet/r2rml /data/config.properties
@@ -140,7 +140,7 @@ docker run -it --rm --link drill:drill --link postgres:postgres \
 
 Upload RDF files to a triplestore.
 
-```bash
+```shell
 docker pull vemonet/rdf-upload:latest
 docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
 	vemonet/rdf-upload -m "HTTP" -if "/data" \
@@ -160,7 +160,7 @@ docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
 
 Validate RDF from a SPARQL endpoint against a [ShEx](http://shex.io/) file.
 
-```bash
+```shell
 docker build -t pyshex ./submodules/PyShEx/docker
 docker run --rm -it pyshex -gn '' -ss -ut -pr \
 	-sq 'select ?item where{?item a <http://w3id.org/biolink/vocab/Gene>} LIMIT 1' \
@@ -176,7 +176,7 @@ docker run --rm -it pyshex -gn '' -ss -ut -pr \
 
 [BridgeDb](https://www.bridgedb.org/) links URI identifiers from various datasets (Uniprot, PubMed).
 
-```bash
+```shell
 docker pull bigcatum/bridgedb
 docker run -p 8183:8183 bigcatum/bridgedb
 ```
@@ -193,7 +193,7 @@ docker run -p 8183:8183 bigcatum/bridgedb
 
 [Ontotext](https://www.ontotext.com/) GraphDB triplestore including GUI and multiple repositories.
 
-```bash
+```shell
 docker-compose up graphdb
 docker build -t graphdb ./submodules/graphdb
 docker run -d --rm --name graphdb -p 7200:7200 \
@@ -216,7 +216,7 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 [Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
 
-```bash
+```shell
 docker-compose up virtuoso
 docker pull tenforce/virtuoso
 docker run --name virtuoso \
@@ -242,7 +242,7 @@ docker run --name virtuoso \
 
 Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to query over datasets (can be [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/)).
 
-```bash
+```shell
 docker-compose up ldf-server
 docker build -t ldf-server ./submodules/Server.js
 docker run -p 3000:3000 -t -i --rm \
@@ -267,7 +267,7 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 
 Convert RDF to [HDT](http://www.rdfhdt.org/) files. *Header, Dictionary, Triples* is a binary serialization format for RDF  that keeps big datasets compressed while maintaining search and browse operations without prior decompression.
 
-```bash
+```shell
 docker build -t rdf2hdt ./submodules/rdf2hdt
 docker run -it -v /data/data2services:/data \
 	rdf2hdt /data/input.nt /data/output.hdt
@@ -283,7 +283,7 @@ docker run -it -v /data/data2services:/data \
 
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/).
 
-```bash
+```shell
 docker pull vemonet/data2services-sparql-operations
 docker run -it --rm vemonet/data2services-sparql-operations -op select \
   -sp "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
@@ -304,7 +304,7 @@ docker run -it --rm vemonet/data2services-sparql-operations -op select \
 
 Framework to perform [federated queries](https://www.w3.org/TR/sparql11-federated-query/) over a lot of different stores (triplestores, [TPF](http://linkeddatafragments.org/in-depth/), [HDT](http://www.rdfhdt.org/)).
 
-```bash
+```shell
 docker pull comunica/actor-init-sparql
 docker run -it comunica/actor-init-sparql \
 	http://fragments.dbpedia.org/2015-10/en \
@@ -323,7 +323,7 @@ docker run -it comunica/actor-init-sparql \
 
 [Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
 
-```bash
+```shell
 docker-compose up yasgui
 docker pull erikap/yasgui
 docker run -it --rm --name yasgui -p 8080:80 \
@@ -344,7 +344,7 @@ docker run -it --rm --name yasgui -p 8080:80 \
 
 [![GitHub](https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&style=social)](https://github.com/EBISPOT/lodestar)
 
-```bash
+```shell
 docker run --rm -d --name lodestar -p 8082:8080 -e ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/ncats-red-kg -e TOP_RELATIONSHIP=http://w3id.org/biolink/vocab/id,http://w3id.org/biolink/vocab/name,http://w3id.org/biolink/vocab/description -e LABEL=http://w3id.org/biolink/vocab/label -e DESCRIPTION=http://w3id.org/biolink/vocab/description -e MAX_OBJECTS=10 -e SERVICE_BASE_URI=http://localhost:8080/ncats-red-kg netresearch/lodestar
 ```
 
@@ -360,7 +360,7 @@ docker run --rm -d --name lodestar -p 8082:8080 -e ENDPOINT_URL=http://graphdb.d
 
 Linked Data Server: [URI dereferencing](http://lod.opentransportdata.swiss/sparql/), custom HTML render, [YASGUI SPARQL endpoint](http://lod.opentransportdata.swiss/sparql/).
 
-```bash
+```shell
 git clone https://github.com/vemonet/trifid
 docker build -t trifid ./trifid
 
@@ -375,7 +375,7 @@ docker run --rm -ti --name trifid -v /home/vemonet/sandbox/trifid:/data -p 8080:
 
 [Original project](https://github.com/zazuko/trifid) available on [DockerHub](https://hub.docker.com/r/zazuko/trifid/). But config not working.
 
-```bash
+```shell
 docker pull zazuko/trifid
 docker run -ti -p 8080:8080 zazuko/trifid
 # Not working, provide env config file?

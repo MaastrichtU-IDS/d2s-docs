@@ -9,47 +9,6 @@ We use SPARQL to:
 * Map the generic RDF, generated from your input data structure, to a target RDF.
 * Insert metadata about the dataset in the Knowledge Graph
 
-We recommend you to reproduce the directory structure used in [data2services-transform-biolink](https://github.com/MaastrichtU-IDS/data2services-transform-biolink).
-
-Example of directory structure for the `drugbank` dataset:
-
-```
-root-directory
-├── LICENSE
-├── README.md
-├── data2services-argo-workflows (submodule)
-├── data2services-cwl-workflows (submodule)
-├── input
-│   ├── download_failed.log
-│   └── drugbank
-│       ├── download.log
-│       └── drugbank.xml
-├── mapping
-│    └── drugbank
-│       ├── transform
-│       │   └── 1
-│       │       ├── drugbank-drugbank_id.rq
-│       │       └── drugbank-snp_effects.rq
-│       └── metadata
-│           ├── metadata-drugbank-summary.rq
-│           └── 1
-│               └── metadata-drugbank-1.rq
-├── output
-│    └── drugbank
-│       ├── rdf_output.nq
-│       ├── xml2rdf_file_structure.txt
-│       ├── rdf-upload.txt
-│       └── execute-sparql-query-logs.txt
-└── support
-    ├── cwl-custom-workflows
-    ├── cwl-custom-steps
-    └── config
-        ├── config-transform-xml-drugbank.yml
-        └── config-transform-csv-stitch.yml
-```
-
-> TODO: change the structure to include download script (or in `input`?). We don't want the files in the git repository
-
 ---
 
 ## Define metadata

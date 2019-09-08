@@ -14,7 +14,7 @@ GraphDB needs to be built locally, for this:
 * Put the downloaded `.zip` file in the GraphDB repository (cloned from [GitHub](https://github.com/MaastrichtU-IDS/graphdb/)).
 * Run `docker build -t graphdb --build-arg version=CHANGE_ME .` in the GraphDB repository.
 
-```bash
+```shell
 # Start Apache Drill sharing volume with this repository.
 # Here shared locally at /data/data2services-transform-biolink
 docker run -dit --rm -v /data/data2services-transform-biolink:/data:ro -p 8047:8047 -p 31010:31010 --name drill vemonet/apache-drill

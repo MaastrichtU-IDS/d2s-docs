@@ -33,13 +33,13 @@ spec:
 
 > Then start the pod:
 
-```bash
+```shell
 oc create -f archives/d2s-download-pod.yaml
 ```
 
 > Connect with the Shell:
 
-```bash
+```shell
 oc rsh d2s-download-pod
 ```
 

@@ -7,13 +7,13 @@ title: Argo commands
 
 ## List running Argo workflows
 
-```bash
+```shell
 argo list
 ```
 
 ## Stop a workflow
 
-```bash
+```shell
 argo terminate my-workflow
 ```
 
@@ -21,7 +21,7 @@ argo terminate my-workflow
 
 ## Delete a workflow
 
-```bash
+```shell
 argo delete my-workflow
 ```
 
@@ -31,12 +31,12 @@ argo delete my-workflow
 
 ## List OpenShift pods
 
-```bash
+```shell
 oc get pod
 ```
 
 ## Create OpenShift pod from JSON
 
-```bash
+```shell
 oc create -f examples/hello-openshift/hello-pod.json
 ```
