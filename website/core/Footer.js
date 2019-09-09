@@ -37,14 +37,17 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('introduction', this.props.language)}>
+            <a href={this.docUrl('start-introduction', this.props.language)}>
               Get started
             </a>
-            <a href={this.docUrl('argoinstall', this.props.language)}>
+            <a href={this.docUrl('argo-install', this.props.language)}>
               Argo workflows
             </a>
-            <a href={this.docUrl('cwlinstall', this.props.language)}>
+            <a href={this.docUrl('cwl-install', this.props.language)}>
               CWL workflows
+            </a>
+            <a href={this.docUrl('guide-docker', this.props.language)}>
+              Guides
             </a>
           </div>
           <div>
@@ -99,7 +102,7 @@ class Footer extends React.Component {
           <div>
             <h5>Source</h5>
             {/* <a href={`${this.props.config.baseUrl}blog`}>Blog</a> */}
-            <a
+            {/* <a
               className="github-button"
               href={this.props.config.repoUrl}
               // data-icon="octicon-star"
@@ -108,6 +111,17 @@ class Footer extends React.Component {
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
               Data2Services
+            </a> */}
+            <a
+              // className="github-button"
+              href={this.props.config.repoUrl}
+              target="_blank"
+              // data-icon="octicon-star"
+              // data-count-href={`${this.props.config.repoUrl}/stargazers`}
+              // data-show-count="true"
+              // data-count-aria-label="# stargazers on GitHub"
+              aria-label="Star this project on GitHub">
+              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-pipeline?label=data2services-pipeline&style=social"/>
             </a>
           </div>
         </section>

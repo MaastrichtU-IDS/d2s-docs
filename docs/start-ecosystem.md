@@ -319,7 +319,7 @@ docker run -it comunica/actor-init-sparql \
 
 [![OpenLink Virtuoso](/data2services/img/yasgui-logo.png)](http://doc.yasgui.org/)
 
-[![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI.server?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI.server)
+[![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI)
 
 [Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
 

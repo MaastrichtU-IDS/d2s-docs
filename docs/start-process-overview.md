@@ -21,7 +21,7 @@ Here is described everything you will need to do, in practice, to build a Knowle
 
 ---
 
-## Define download script
+## Write the download script
 
 Setup the source data to **download using Bash scripts** via [data2services-download](https://github.com/MaastrichtU-IDS/data2services-download) *(~10')*
 
@@ -31,17 +31,17 @@ Setup the source data to **download using Bash scripts** via [data2services-down
 
 ---
 
-## Automatically convert source to generic RDF
+## Automatically convert source data to generic RDF
 
-**Automatically convert** source data to [**generic RDF**](https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-transform-biolink/master/output/stitch-sample/rdf_output.nq) (usually using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML)) *(~10')*
+Run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML) (tabular files, RDB) to **Automatically convert** source data to [**generic RDF**](https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-transform-biolink/master/output/stitch-sample/rdf_output.nq) *(~10')*
 
 > Template SPARQL mapping queries are generated to help the users to start define the mappings
 
 ---
 
-## Define metadata
+## Define the dataset metadata
 
-Define the dataset **metadata** *(~10')*
+Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/) *(~10')*
 
 * The [summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) needs to be defined once for each dataset *(~10 fields to fill)*
 * The [distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) needs to be defined for each new version *(~6 fields to fill)*
@@ -52,7 +52,7 @@ Define the dataset **metadata** *(~10')*
 
 ---
 
-## Define mappings
+## Define the mappings
 
 Define SPARQL mapping queries to **transform the generic RDF to the target data model** 
 

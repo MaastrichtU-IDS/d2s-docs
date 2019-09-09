@@ -12,13 +12,15 @@ We **do not recommend** to run Data2Services on Windows.
 
 > You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 
-We recommend to use `Git Bash` to clone the repository, and the Windows `PowerShell` terminal (which is easier to use than the basic terminal).
+We recommend to use [git](https://git-scm.com/downloads) to clone the repository, and the Windows `PowerShell` terminal (which is easier to use than the basic terminal).
 
-Windows scripts are in the `resources/windows_scripts` folder and designed to be run from this directory. We recommend running the Docker commands directly as the scripts might be outdated. Feel free to report it in the issues if you meet problems.
+Windows scripts are in the `resources/windows_scripts` folder and designed to be run from this directory. 
 
 ```powershell
 cd resources/windows_scripts
 ```
+
+> In the case Windows scripts are outdated, the commands can be run individually. 
 
 ## Install Docker
 

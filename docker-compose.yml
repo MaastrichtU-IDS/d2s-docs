@@ -17,4 +17,5 @@ services:
       - ./website/siteConfig.js:/app/website/siteConfig.js
     working_dir: /app/website
     environment:
-      - VIRTUAL_HOST=d2s-documentation.137.120.31.101.nip.io
+      - VIRTUAL_HOST=data2services.137.120.31.101.nip.io
+      - VIRTUAL_PORT=3000

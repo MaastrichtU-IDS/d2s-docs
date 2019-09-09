@@ -17,6 +17,20 @@ npm start
 docker-compose up
 ```
 
+> Access at http://localhost:3000/data2services/
+
+## Deploy on server
+
+Using jwilder's [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [nip.io](https://nip.io/).
+
+Set environment `VIRTUAL_HOST` and `VIRTUAL_PORT` in `docker-compose.yml`.
+
+```bash
+docker-compose up -d
+```
+
+> Access at http://d2s-documentation.137.120.31.101.nip.io/data2services/
+
 ## Deploy to GitHub pages
 
 To run in `/website` directory. Make sure the `/website/build` directory has been generated before deploying.

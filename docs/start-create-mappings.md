@@ -11,9 +11,9 @@ We use SPARQL to:
 
 ---
 
-## Define metadata
+## Define the dataset metadata
 
-You can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/metadata/1)
+Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/), you can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/metadata/1).
 
 Each dataset has 2 levels of metadata:
 * The [summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) needs to be defined once for each dataset *(~10 fields to fill)*
@@ -26,7 +26,7 @@ Each dataset has 2 levels of metadata:
 
 ---
 
-## Define mapping queries
+## Define the mappings
 
 You can find example of SPARQL mapping queries for:
 
@@ -61,9 +61,9 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
 
 ---
 
-## Executing the mapping queries
+## Executing the mappings
 
-To perform the transformation, the mappings will be executed using the [data2services-sparql-operations](https://github.com/MaastrichtU-IDS/data2services-sparql-operations) module. 
+To perform the transformation, the SPARQL mapping queries will be executed using the [data2services-sparql-operations](https://github.com/MaastrichtU-IDS/data2services-sparql-operations) module. 
 
 This tool uses the [rdf4j](https://rdf4j.eclipse.org/) framework to execute multiple SPARQL queries files, marked by the `.rq` extension, from a same repository on a SPARQL endpoint.
 
