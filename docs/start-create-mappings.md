@@ -39,7 +39,7 @@ You can find example of SPARQL mapping queries for:
   * [EggNOG](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/eggnog/transform/1/insert-eggnog.rq)
   * [PharmGKB](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq)
 
-Defining the mappings is the hardest and most cumbersome part of data integration. We are working actively on making it easier, by working on mapping automation and graphical user interfaces.
+> Defining the mappings is the hardest and most cumbersome part of data integration. We are working actively on making it easier, by working on mapping automation and graphical user interfaces.
 
 The mapping definition is **straightforward for flat data format** such as CSV, TSV or relational databases. But **nested data representation** such as XML or JSON require more **complex mappings**.
 
@@ -49,8 +49,11 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
   * You just need to generate proper URIs using `BIND`
   * And write the statements corresponding to the target representation
 
+
+> [PharmGKB](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq) is a good example of complex TSV file.
+
 * [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) generates a SPARQL mapping file for each array it detects
-  * Mapping generation for XML is still experimental as it is complex to detext which fields should be mapped.
+  * Mapping generation for XML is still experimental as it is complex to detect which fields should be mapped.
   * Be careful when iterating on multiple different child arrays for a parent node in your SPARQL query. It can blow up the processing time. 
 
     * Always split your queries to never iterate over more than one array for a parent node.
