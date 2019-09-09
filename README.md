@@ -11,6 +11,12 @@ npm install
 npm start
 ```
 
+## Run with Docker
+
+```bash
+docker-compose up
+```
+
 ## Deploy to GitHub pages
 
 To run in `/website` directory. Make sure the `/website/build` directory has been generated before deploying.
