@@ -103,10 +103,10 @@ class Index extends React.Component {
           Link your different data sources together and access them through a variety of interfaces and services.
         </MarkdownBlock>
         <MarkdownBlock>
-          Version your data and query your archives.
+          Run reproducible pipelines to transform and update your data faithfully.
         </MarkdownBlock>
         <MarkdownBlock>
-          Run reproducible pipelines to transform and update your data faithfully.
+          Version your data and query your archives.
         </MarkdownBlock>
         {/* <Block layout="twoColumn">
         {[
