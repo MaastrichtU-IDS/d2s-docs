@@ -29,7 +29,7 @@ Set environment `VIRTUAL_HOST` and `VIRTUAL_PORT` in `docker-compose.yml`.
 docker-compose up -d
 ```
 
-> Access at http://d2s-documentation.137.120.31.101.nip.io/data2services/
+> Access at http://data2services.137.120.31.101.nip.io/data2services/
 
 ## Deploy to GitHub pages
 
