@@ -37,8 +37,8 @@ const users = [
 const siteConfig = {
   title: 'Data2Services', // Title for your website.
   tagline: 'Automatically deploy user-facing services consuming data from various sources integrated under a common Knowledge Graph',
-  url: 'https://data2services.github.io/', // Your website URL
-  baseUrl: '/data2services/', // Base URL for your project */
+  url: 'http://d2s.semanticscience.org/', // Your website URL
+  baseUrl: '/', // Base URL for your project */
   // We deploy at https://data2services.github.io/data2services/
 
   projectName: 'data2services',  // The name of your GitHub project. Same as above.
