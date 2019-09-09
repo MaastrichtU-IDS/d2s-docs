@@ -3,7 +3,7 @@ id: argo-run
 title: Run Argo workflows
 ---
 
-[![BioLink model](/data2services/img/biolink-logo.png)](https://github.com/MaastrichtU-IDS/data2services-transform-biolink)
+[![BioLink model](/img/biolink-logo.png)](https://github.com/MaastrichtU-IDS/data2services-transform-biolink)
 
 We will use [examples](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/support/config) from the [**data2services-transform-biolink**](https://github.com/MaastrichtU-IDS/data2services-transform-biolink) project.
 
@@ -52,4 +52,4 @@ argo submit data2services-argo-workflows/d2s-workflow-transform-csv-dag.yaml \
   -f support/config/config-transform-csv-stitch.yml
 ```
 
-![Argo project](/data2services/img/argo-logo.png)
+![Argo project](/img/argo-logo.png)

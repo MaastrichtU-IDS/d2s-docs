@@ -3,7 +3,7 @@ id: argo-volume
 title: Define volumes
 ---
 
-![OpenShift](/data2services/img/ophenshift-logo.png)
+![OpenShift](/img/ophenshift-logo.png)
 
 ## Define persistent volume
 
@@ -16,7 +16,7 @@ Go to https://app.dsri.unimaas.nl:8443/console/project/argo/create-pvc
 
 ## Mount a filesystem UI
 
-[![filebrowser](/data2services/img/filebrowser_banner.svg)](https://filebrowser.xyz/)
+[![filebrowser](/img/filebrowser_banner.svg)](https://filebrowser.xyz/)
 
 Deploy [filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) on MapR to access volumes
 

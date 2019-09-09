@@ -3,7 +3,7 @@ id: guide-mariadb
 title: Setting up MariaDB
 ---
 
-[![](/data2services/img/mariadb.png)](https://mariadb.org/)
+[![](/img/mariadb.png)](https://mariadb.org/)
 
 ## Run MariaDB
 ```shell

@@ -3,7 +3,7 @@ id: argo-debug
 title: Debug Argo workflow
 ---
 
-![Argo project](/data2services/img/argo-logo.png)
+![Argo project](/img/argo-logo.png)
 
 To get into the container. Create YAML with command `tail /dev/null` to keep it running.
 
@@ -43,4 +43,4 @@ oc create -f archives/d2s-download-pod.yaml
 oc rsh d2s-download-pod
 ```
 
-![OpenShift](/data2services/img/ophenshift-logo.png)
+![OpenShift](/img/ophenshift-logo.png)

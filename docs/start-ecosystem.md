@@ -73,7 +73,7 @@ docker run --rm -it -v /data:/data vemonet/xml2rdf  \
 
 ### Apache Drill
 
-[![Apache Drill](/data2services/img/drill-logo.png)](https://github.com/amalic/apache-drill)
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
 [![](https://img.shields.io/github/stars/amalic/apache-drill?label=GitHub&style=social)](https://github.com/amalic/apache-drill)
 
@@ -189,7 +189,7 @@ docker run -p 8183:8183 bigcatum/bridgedb
 
 ### GraphDB
 
-[![GraphDB](/data2services/img/graphdb-logo.png)](https://github.com/MaastrichtU-IDS/graphdb)
+[![GraphDB](/img/graphdb-logo.png)](https://github.com/MaastrichtU-IDS/graphdb)
 
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/graphdb?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/graphdb)
 
@@ -212,7 +212,7 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 ### Virtuoso
 
-[![OpenLink Virtuoso](/data2services/img/openlink-virtuoso.png)](https://virtuoso.openlinksw.com/)
+[![OpenLink Virtuoso](/img/openlink-virtuoso.png)](https://virtuoso.openlinksw.com/)
 
 [![GitHub](https://img.shields.io/github/stars/tenforce/docker-virtuoso?label=GitHub&style=social)](https://github.com/tenforce/docker-virtuoso)
 
@@ -238,7 +238,7 @@ docker run --name virtuoso \
 
 ### Linked Data Fragments Server
 
-[![Linked Data Fragments server](/data2services/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
+[![Linked Data Fragments server](/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
 
 [![GitHub](https://img.shields.io/github/stars/LinkedDataFragments/Server.js?label=GitHub&style=social)](https://github.com/LinkedDataFragments/Server.js)
 
@@ -300,7 +300,7 @@ docker run -it --rm vemonet/data2services-sparql-operations -op select \
 
 ### Comunica
 
-[![OpenLink Virtuoso](/data2services/img/comunica.svg)](https://comunica.linkeddatafragments.org/)
+[![OpenLink Virtuoso](/img/comunica.svg)](https://comunica.linkeddatafragments.org/)
 
 [![GitHub](https://img.shields.io/github/stars/comunica/comunica?label=GitHub&style=social)](https://github.com/comunica/comunica)
 
@@ -319,7 +319,7 @@ docker run -it comunica/actor-init-sparql \
 
 ### YASGUI
 
-[![OpenLink Virtuoso](/data2services/img/yasgui-logo.png)](http://doc.yasgui.org/)
+[![OpenLink Virtuoso](/img/yasgui-logo.png)](http://doc.yasgui.org/)
 
 [![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI)
 

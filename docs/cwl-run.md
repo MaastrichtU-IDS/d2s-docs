@@ -3,7 +3,7 @@ id: cwl-run
 title: Run CWL workflows
 ---
 
-![CWL](/data2services/img/CWL_logo.png)
+![CWL](/img/CWL_logo.png)
 
 
 * Go to the `data2services-transform-biolink` root folder (the root of the cloned repository)

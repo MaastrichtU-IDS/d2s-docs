@@ -3,7 +3,7 @@ id: guide-docker
 title: Docker guide
 ---
 
-[![](/data2services/img/docker.png)](https://www.docker.com/)
+[![](/img/docker.png)](https://www.docker.com/)
 
 ## Install
 

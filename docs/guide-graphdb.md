@@ -3,7 +3,7 @@ id: guide-graphdb
 title: Setting up GraphDB
 ---
 
-[![](/data2services/img/graphdb-logo.png)](https://graphdb.ontotext.com/)
+[![](/img/graphdb-logo.png)](https://graphdb.ontotext.com/)
 
 Setup your local [GraphDB](http://graphdb.ontotext.com/).
 

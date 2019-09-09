@@ -3,7 +3,7 @@ id: guide-windows
 title: Windows guide
 ---
 
-[![](/data2services/img/windows-logo.png)](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) 
+[![](/img/windows-logo.png)](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) 
 
 We **do not recommend** to run Data2Services on Windows.
 
@@ -116,4 +116,4 @@ Be careful when running docker commands obtained from [Linux](https://tutorials.
 
 Make commands one line (remove newlines and `\` as the PowerShell doesn't handle them).
 
-[![](/data2services/img/linux-logo.png)](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) 
+[![](/img/linux-logo.png)](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) 

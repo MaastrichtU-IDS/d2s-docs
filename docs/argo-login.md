@@ -3,7 +3,7 @@ id: argo-login
 title: Login to OpenShift
 ---
 
-![OpenShift](/data2services/img/ophenshift-logo.png)
+![OpenShift](/img/ophenshift-logo.png)
 
 You will first need to authenticate to the [DSRI cluster](https://app.dsri.unimaas.nl:8443/) using the [OpenShift client](https://www.okd.io/download.html).
 

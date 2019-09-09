@@ -3,7 +3,7 @@ id: guide-postgres
 title: Setting up PostgreSQL
 ---
 
-[![](/data2services/img/postgresql_logo.png)](https://www.postgresql.org/)
+[![](/img/postgresql_logo.png)](https://www.postgresql.org/)
 
 ## Run PostgreSQL
 

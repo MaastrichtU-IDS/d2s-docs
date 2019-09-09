@@ -3,7 +3,7 @@ id: guide-mysql
 title: Setting up MySQL
 ---
 
-[![](/data2services/img/mysql_logo.png)](https://www.mysql.com/)
+[![](/img/mysql_logo.png)](https://www.mysql.com/)
 
 ## Run MySQL database
 ```shell

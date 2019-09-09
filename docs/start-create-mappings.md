@@ -3,7 +3,7 @@ id: start-create-mappings
 title: Define the mappings
 ---
 
-[![SPARQL](/data2services/img/sparql_logo.png)](https://www.w3.org/TR/sparql11-overview/)
+[![SPARQL](/img/sparql_logo.png)](https://www.w3.org/TR/sparql11-overview/)
 
 We use SPARQL to:
 * Insert metadata about the dataset in the Knowledge Graph
@@ -72,4 +72,4 @@ The SPARQL query files to execute can be provided via:
 * The local filesystem repository (sharing volume)
 
 
-[![RDF4J](/data2services/img/RDF4J_logo.png)](https://rdf4j.eclipse.org/)
+[![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.eclipse.org/)

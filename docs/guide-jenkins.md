@@ -3,7 +3,7 @@ id: guide-jenkins
 title: Experimental Jenkins workflows
 ---
 
-[![](/data2services/img/jenkins.png)](https://jenkins.io/)
+[![](/img/jenkins.png)](https://jenkins.io/)
 
 
 Proof of concept: execute data2services modules by deploying [Jenkins pipelines](https://jenkins.io/).

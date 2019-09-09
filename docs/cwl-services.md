@@ -3,8 +3,8 @@ id: cwl-services
 title: Start services
 ---
 
-[![GraphDB](/data2services/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
-[![Apache Drill](/data2services/img/drill-logo.png)](https://github.com/amalic/apache-drill)
+[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
 [Apache Drill](https://github.com/amalic/apache-drill) and [GraphDB](https://github.com/MaastrichtU-IDS/graphdb/) services must be running before executing CWL workflows.
 
