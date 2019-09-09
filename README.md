@@ -46,6 +46,10 @@ GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-p
 * Create the `.md` in `/docs` and define it's `id` in the header (it will be used to build the URL path)
 * Add the page in the right category in `sideBars.json`
 
+## Search with Algolia
+
+https://community.algolia.com/docsearch/
+
 ## Install boostrap tool
 
 ```shell

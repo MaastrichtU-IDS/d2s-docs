@@ -62,15 +62,15 @@ const siteConfig = {
     {doc: 'start-introduction', label: 'Documentation'},
     {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
-    { search: true },
+    // { search: true },
   ],
 
   // For search: https://community.algolia.com/docsearch/documentation/
-  algolia: {
-    apiKey: 'my-api-key',
-    indexName: 'my-index-name',
-    algoliaOptions: {} // Optional, if provided by Algolia
-  },
+  // algolia: {
+  //   apiKey: 'my-api-key',
+  //   indexName: 'my-index-name',
+  //   algoliaOptions: {} // Optional, if provided by Algolia
+  // },
 
   // If you have users set above, you add it here:
   users,
