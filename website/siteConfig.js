@@ -137,8 +137,8 @@ const siteConfig = {
     // theme: 'solarized-dark',
     // theme: 'tomorrow-night',
     // theme: 'ocean',
-    theme: 'atom-one-dark',
     // theme: 'tomorrow-night-eighties',
+    theme: 'atom-one-dark',
     hljs: function(hljs) {
       // Redefine Shell lang to add some keywords to highlight
       // className: variable and attr (orange), keyword (purple), symbol and meta (blue), function (grey), subst (red), built_in (light orange)
@@ -157,15 +157,18 @@ const siteConfig = {
           ]
         };
         var TOOLS = {
-          className: 'subst', // keyword
+          className: 'keyword',
           variants: [
             {begin: /(?:\s|^)(cd|mv|cp|chmod|chown|sed|wget|curl|tar|oc|brew|git|argo|apt-get|apt|docker|docker-compose|cwl-runner)(?:\s|$)/},
           ]
         };
+        // Mysteriously not doing his job, it is defined the same way as ARGS and TOOLS though.
+        // But still finding a way to do it through the built_in in return. 
+        // Note: this highlight framework logic makes no sense and is poorly documented 
         var COMMAND = {
           className: 'built_in',
           variants: [
-            {begin: /(?:\s|^)(sudo|nohup)(?:\s|$)/},
+            {begin: /(?:\s|^)(ps|config|clone|submodule|pull|install|up|submit|terminate|delete|get|create|build|run|stop|rsh|login|list)(?:\s|$)/},
           ]
         };
         var RARE = {
@@ -222,9 +225,9 @@ const siteConfig = {
               'fc fg float functions getcap getln history integer jobs kill limit log noglob popd print ' +
               'pushd pushln rehash sched setcap setopt stat suspend ttyctl unfunction unhash unlimit ' +
               'unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof ' +
-              'zpty zregexparse zsocket zstyle ztcp' +
+              'zpty zregexparse zsocket zstyle ztcp'
               // Vincent built-ins,
-              'ps config clone submodule pull install up submit terminate delete get create build run stop rsh login list',
+              + 'ps clone submodule pull install up submit terminate delete get create build run stop rsh login list',
             _:
               '-ne -eq -lt -gt -f -d -e -s -l -a' // relevance booster
           },
@@ -242,6 +245,7 @@ const siteConfig = {
               relevance: 0
             },
             hljs.HASH_COMMENT_MODE,
+            COMMAND,
             QUOTE_STRING,
             ESCAPED_QUOTE,
             APOS_STRING,
