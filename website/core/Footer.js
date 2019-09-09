@@ -50,6 +50,27 @@ class Footer extends React.Component {
               Guides
             </a>
           </div>
+
+          <div>
+            <h5>Source</h5>
+            {/* <a href={`${this.props.config.baseUrl}blog`}>Blog</a> */}
+            {/* <a
+              className="github-button"
+              href={this.props.config.repoUrl}
+              // data-icon="octicon-star"
+              data-count-href={`${this.props.config.repoUrl}/stargazers`}
+              data-show-count="true"
+              data-count-aria-label="# stargazers on GitHub"
+              aria-label="Star this project on GitHub">
+              Data2Services
+            </a> */}
+            <a href={this.props.config.repoUrl}
+              target="_blank"
+              aria-label="Star this project on GitHub">
+              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-pipeline?label=data2services-pipeline&style=social"/>
+            </a>
+          </div>
+
           <div>
             <h5>Community</h5>
             {/* <a href={this.pageUrl('users.html', this.props.language)}>
@@ -99,31 +120,6 @@ class Footer extends React.Component {
               </div>
             )} */}
           </div>
-          <div>
-            <h5>Source</h5>
-            {/* <a href={`${this.props.config.baseUrl}blog`}>Blog</a> */}
-            {/* <a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              // data-icon="octicon-star"
-              data-count-href={`${this.props.config.repoUrl}/stargazers`}
-              data-show-count="true"
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
-              Data2Services
-            </a> */}
-            <a
-              // className="github-button"
-              href={this.props.config.repoUrl}
-              target="_blank"
-              // data-icon="octicon-star"
-              // data-count-href={`${this.props.config.repoUrl}/stargazers`}
-              // data-show-count="true"
-              // data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
-              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-pipeline?label=data2services-pipeline&style=social"/>
-            </a>
-          </div>
         </section>
 
         {/* <a
@@ -138,7 +134,14 @@ class Footer extends React.Component {
             height="45"
           />
         </a> */}
-        <section className="copyright">{this.props.config.copyright}</section>
+        <section className="copyright">
+          <div>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license" target="_blank">
+              <img src="/data2services/img/cc-by.svg" alt="cc by license"/> 
+            </a>
+          </div>
+          {this.props.config.copyright}
+        </section>
       </footer>
     );
   }
