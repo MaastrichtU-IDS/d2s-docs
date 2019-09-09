@@ -156,6 +156,20 @@ docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
 
 ---
 
+### json2xml
+
+[![](https://img.shields.io/github/stars/lukas-krecan/json2xml?label=GitHub&style=social)](https://github.com/lukas-krecan/json2xml)
+
+Convert JSON to XML using [json2xml](https://github.com/vemonet/json2xml). This XML can be then converted to generic RDF.
+
+```shell
+docker run -it -v /data/data2services:data vemonet/json2xml:latest -i /data/test.json 
+```
+
+> Shared on your machine at `/data/data2services`
+
+---
+
 ### PyShEx
 
 [![](https://img.shields.io/github/stars/hsolbrig/PyShEx?label=GitHub&style=social)](https://github.com/hsolbrig/PyShEx)
