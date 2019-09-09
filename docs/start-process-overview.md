@@ -131,8 +131,9 @@ root-directory
 ├── README.md
 ├── data2services-argo-workflows (submodule)
 ├── data2services-cwl-workflows (submodule)
-├── dataset
+├── datasets
 │   └── drugbank
+│       ├── README.md
 │       ├── config-transform-xml-drugbank.yml	# The workflow config file
 │       ├── input
 │       │   └── download.sh						# Download script goes here
