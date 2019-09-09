@@ -179,7 +179,7 @@ class Index extends React.Component {
               'Automatically deploy a variety of interfaces and services ([SPARQL](https://www.w3.org/TR/sparql11-overview/), ' +
               '[GraphQL-LD](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/), [OpenAPI](https://www.openapis.org/), ' +
               '[GUI](https://github.com/MaastrichtU-IDS/linked-data-browser)) to access your data.',
-            image: `${baseUrl}img/undraw_note_list.svg`,
+            image: `${baseUrl}img/linked-data-browser.png`,
             imageAlign: 'right',
             title: 'Deploy services',
           },
