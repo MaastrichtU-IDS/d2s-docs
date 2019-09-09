@@ -51,6 +51,19 @@ article img, article p img {
     font-weight: 600;
 }
 
+/* Resize index.js image */
+.imageAlignSide .blockImage {
+    flex: 0 1 700px;
+    max-width: 700px;
+}
+
+.imageAlignTop .blockImage {
+    max-width: 100%;
+}
+.gridBlock .fourByGridBlock img {
+    max-height: 130px;
+}
+
 /* .button {
     position: relative;
     min-width: 5em;
