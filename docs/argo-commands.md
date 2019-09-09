@@ -33,10 +33,26 @@ argo delete my-workflow
 
 ```shell
 oc get pod
+
+# Get specific pod
+oc get pod | grep d2s-download
 ```
 
 ## Create OpenShift pod from JSON
 
 ```shell
-oc create -f examples/hello-openshift/hello-pod.json
+oc create -f d2s-download-pod.yaml
 ```
+
+## Delete pod
+
+```shell
+oc delete pod d2s-download-pod
+```
+
+## Get logs
+
+```shell
+oc logs -f d2s-download-pod
+```
+
