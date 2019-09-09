@@ -12,12 +12,14 @@ Here is described everything you will need to do, in practice, to build a Knowle
 
 ## Choose a data model
 
-**Choose** or build **a common data model** (ontology) to represent your data *(10' to 10 weeks)*
+**Choose** or build **a common data model** ([ontology](https://www.w3.org/standards/semanticweb/ontology)) to represent your data *(10' to 10 weeks)*
 
 * Try to reuse existing ontologies and concepts as much as possible.
 * Combine concepts from different ontologies, or define new ones.
 
 > Search for relevant existing models in ontology repositories, such as [BioPortal](https://bioportal.bioontology.org/recommender) for biomedical concepts or [AgroPortal](http://agroportal.lirmm.fr/recommender) for agronomy.
+
+> Use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
 
 ---
 
@@ -70,7 +72,7 @@ Define SPARQL mapping queries to **transform the generic RDF to the target data 
 
 ## Run the workflow
 
-Now the mappings have been designed you are done, and just need to start your triplestore if it is not already running, and **run the transformation** using a workflow orchestration tool (such as [Argo](https://argoproj.github.io/argo/) or [CWL](https://www.commonwl.org/)).
+Now that the mappings have been designed you are done, you need to start your triplestore, if it is not already running, and **run the transformation**, using a workflow orchestration tool (such as [Argo](https://argoproj.github.io/argo/) or [CWL](https://www.commonwl.org/)).
 
 > Define the **workflow YAML configuration file**: triplestore URL and credentials, path to mapping files, path to download script, URI of the final graph *(~10')*
 
@@ -94,27 +96,53 @@ root-directory
 │       ├── download.log
 │       └── drugbank.xml
 ├── mapping
-│    └── drugbank
-│       ├── transform
+│   └── drugbank
+│       ├── transform								# SPARQL mapping queries goes here 
 │       │   └── 1
 │       │       ├── drugbank-drugbank_id.rq
 │       │       └── drugbank-snp_effects.rq
-│       └── metadata
+│       └── metadata								# SPARQL metadata queries goes here 
 │           ├── metadata-drugbank-summary.rq
 │           └── 1
 │               └── metadata-drugbank-1.rq
 ├── output
-│    └── drugbank
-│       ├── rdf_output.nq
+│   └── drugbank
+│       ├── rdf_output.nq							# The generated generic RDF
 │       ├── xml2rdf_file_structure.txt
 │       ├── rdf-upload.txt
 │       └── execute-sparql-query-logs.txt
 └── support
     ├── cwl-custom-workflows
     ├── cwl-custom-steps
-    └── config
+    └── config										# The workflow config file 
         ├── config-transform-xml-drugbank.yml
         └── config-transform-csv-stitch.yml
 ```
 
-> TODO: change the structure to include download script (or in `input`?). We don't want the files in the git repository
+> **TODO**: change the structure to include download script (or put it in `input`?). We don't want the data files in the git repository.
+
+New proposition:
+
+```bash
+root-directory
+├── LICENSE
+├── README.md
+├── data2services-argo-workflows (submodule)
+├── data2services-cwl-workflows (submodule)
+├── dataset
+│   └── drugbank
+│       ├── config-transform-xml-drugbank.yml	# The workflow config file
+│       ├── input
+│       │   └── download.sh						# Download script goes here
+│       ├── mapping
+│       │   └── 1								# SPARQL mapping queries goes here 
+│       │       ├── drugbank-drugbank_id.rq
+│       │       └── drugbank-snp_effects.rq
+│       └── metadata							# SPARQL metadata queries goes here 
+│           ├── metadata-drugbank-summary.rq
+│           └── 1
+│               └── metadata-drugbank-1.rq
+└── support
+    ├── cwl-custom-workflows
+    └── cwl-custom-steps
+```

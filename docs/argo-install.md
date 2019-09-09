@@ -4,9 +4,6 @@ title: Argo installation
 sidebar_label: Argo installation
 ---
 
-<a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/Docusaurus/backers/badge.svg" /></a>
-
-
 
 ## Install the OpenShift client
 

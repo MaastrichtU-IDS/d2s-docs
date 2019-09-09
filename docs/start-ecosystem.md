@@ -36,9 +36,11 @@ For *GraphDB* you **need to download** an extra file to put in `./submodules/gra
 
 ## Convert to RDF
 
-### [data2services-download](https://github.com/MaastrichtU-IDS/data2services-download)
+### data2services-download
 
-Download datasets using Shell scripts. See [script example](https://github.com/MaastrichtU-IDS/data2services-download/blob/master/datasets/TEMPLATE/download.sh).
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-download?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/data2services-download)
+
+Download datasets using Bash scripts. See [script example](https://github.com/MaastrichtU-IDS/data2services-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
 docker pull vemonet/data2services-download:latest
@@ -170,7 +172,7 @@ docker run --rm -it pyshex -gn '' -ss -ut -pr \
 
 ---
 
-### [BridgeDb](https://github.com/bridgedb/BridgeDb)
+### BridgeDb
 
 [![](https://img.shields.io/github/stars/bridgedb/BridgeDb?label=GitHub&style=social)](https://github.com/bridgedb/BridgeDb)
 
