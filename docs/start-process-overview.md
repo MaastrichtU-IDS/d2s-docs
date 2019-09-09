@@ -102,9 +102,11 @@ root-directory
 │       │       ├── drugbank-drugbank_id.rq
 │       │       └── drugbank-snp_effects.rq
 │       └── metadata								# SPARQL metadata queries goes here 
-│           ├── metadata-drugbank-summary.rq
-│           └── 1
-│               └── metadata-drugbank-1.rq
+│           ├── 1
+│           │   ├── metadata-drugbank-summary.rq
+│           │   └── metadata-drugbank-1.rq
+│           └── 2
+│               └── metadata-drugbank-2.rq
 ├── output
 │   └── drugbank
 │       ├── rdf_output.nq							# The generated generic RDF
@@ -139,9 +141,11 @@ root-directory
 │       │       ├── drugbank-drugbank_id.rq
 │       │       └── drugbank-snp_effects.rq
 │       └── metadata							# SPARQL metadata queries goes here 
-│           ├── metadata-drugbank-summary.rq
-│           └── 1
-│               └── metadata-drugbank-1.rq
+│           ├── 1
+│           │   ├── metadata-drugbank-summary.rq
+│           │   └── metadata-drugbank-1.rq
+│           └── 2
+│               └── metadata-drugbank-2.rq
 └── support
     ├── cwl-custom-workflows
     └── cwl-custom-steps
