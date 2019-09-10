@@ -59,3 +59,7 @@ sudo npm install --global docusaurus-init
 npx docusaurus-init
 ```
 
+## Logo created with
+
+[freelogodesign.org](https://preview.freelogodesign.org/?lang=EN&name=&logo=4ecd9498-e2b0-4510-9ff4-54659e900382)
+
