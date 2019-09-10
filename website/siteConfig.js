@@ -64,8 +64,8 @@ const siteConfig = {
 
   // For search: https://community.algolia.com/docsearch/documentation/
   algolia: {
-    apiKey: 'my-api-key',
-    indexName: 'my-index-name',
+    apiKey: '033817e1a5cd4b58df39358119c67809',
+    indexName: 'data2services',
     algoliaOptions: {} // Optional, if provided by Algolia
   },
 
