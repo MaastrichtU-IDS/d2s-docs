@@ -51,6 +51,11 @@ article img, article p img {
     font-weight: 600;
 }
 
+.homeContainer .homeWrapper .projectLogo  {
+    position: inherit;
+    justify-content: center;
+}
+
 /* Resize index.js image */
 .imageAlignSide .blockImage {
     flex: 0 1 700px;

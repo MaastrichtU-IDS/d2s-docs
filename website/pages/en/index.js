@@ -60,7 +60,7 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        {/* <Logo img_src={`${baseUrl}img/favicon.ico`} /> */}
+        <Logo img_src={`${baseUrl}img/d2s-logo.png`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
