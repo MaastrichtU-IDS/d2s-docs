@@ -5,7 +5,7 @@ title: Define the mappings
 
 [![SPARQL](/img/sparql_logo.png)](https://www.w3.org/TR/sparql11-overview/)
 
-We use SPARQL to:
+We use [SPARQL](https://www.w3.org/TR/sparql11-query/) to:
 * Insert metadata about the dataset in the Knowledge Graph
 * Map the generic RDF, generated from your input data structure, to a target RDF and insert the refined RDF in a triplestore.
 
@@ -16,8 +16,8 @@ We use SPARQL to:
 Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/), you can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/metadata/1).
 
 Each dataset has 2 levels of metadata:
-* The [summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) needs to be defined once for each dataset *(~10 fields to fill)*
-* The [distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) needs to be defined for each new version *(~6 fields to fill)*
+* The [summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
+* The [distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
 
 
 > Some distribution metadata is retrieved from the summary
@@ -71,8 +71,8 @@ To perform the transformation, the SPARQL mapping queries will be executed using
 This tool uses the [rdf4j](https://rdf4j.eclipse.org/) framework to execute multiple SPARQL queries files, marked by the `.rq` extension, from a same repository on a SPARQL endpoint.
 
 The SPARQL query files to execute can be provided via:
-* A [URL pointing to a directory](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/transform/1) containing the `.rq` files in a GitHub repository
-* The local filesystem repository (sharing volume)
+* A [URL pointing to a directory](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/tree/master/mapping/drugbank/transform/1) containing the `.rq` files in a GitHub repository.
+* The local filesystem repository (sharing volume).
 
 
 [![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.eclipse.org/)

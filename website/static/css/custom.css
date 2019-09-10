@@ -61,7 +61,7 @@ article img, article p img {
     max-width: 100%;
 }
 .gridBlock .fourByGridBlock img {
-    max-height: 130px;
+    max-height: 100px;
 }
 
 /* .button {

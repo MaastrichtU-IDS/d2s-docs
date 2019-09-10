@@ -45,8 +45,8 @@ Run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https:/
 
 Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/) *(~10')*
 
-* The [summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) needs to be defined once for each dataset *(~10 fields to fill)*
-* The [distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) needs to be defined for each new version *(~6 fields to fill)*
+* [Summary metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
+* [Distribution metadata](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
 
 > Some metadata from the summary is retrieved for the distribution
 
@@ -56,7 +56,7 @@ Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/) *(~1
 
 ## Define the mappings
 
-Define SPARQL mapping queries to **transform the generic RDF to the target data model** 
+Define [SPARQL](https://www.w3.org/TR/sparql11-query/) mapping queries to **transform the generic RDF to the target data model** 
 
 *(~20' for a tabular file, can be hours for a complex XML file)*
 
