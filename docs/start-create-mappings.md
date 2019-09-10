@@ -6,8 +6,8 @@ title: Define the mappings
 [![SPARQL](/img/sparql_logo.png)](https://www.w3.org/TR/sparql11-overview/)
 
 We use [SPARQL](https://www.w3.org/TR/sparql11-query/) to:
-* Insert metadata about the dataset in the Knowledge Graph
-* Map the generic RDF, generated from your input data structure, to a target RDF and insert the refined RDF in a triplestore.
+* Insert metadata about the dataset in the triplestore.
+* Map the generic RDF, generated from your input data structure, to a target RDF and insert the refined RDF in the triplestore.
 
 ---
 

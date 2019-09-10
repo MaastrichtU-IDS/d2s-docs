@@ -72,7 +72,10 @@ Define [SPARQL](https://www.w3.org/TR/sparql11-query/) mapping queries to **tran
 
 ## Run the workflow
 
-Now that the mappings have been designed you are done, you need to start your triplestore, if it is not already running, and **run the transformation**, using a workflow orchestration tool (such as [Argo](https://argoproj.github.io/argo/) or [CWL](https://www.commonwl.org/)).
+Now that the mappings have been designed you are almost done.
+
+* **Start your triplestore** (database for RDF Knowledge Graph), if it is not already running
+* **Run the transformation**, using a workflow orchestration tool (such as [Argo](https://argoproj.github.io/argo/) or [CWL](https://www.commonwl.org/)).
 
 > Define the **workflow YAML configuration file**: triplestore URL and credentials, path to mapping files, path to download script, URI of the final graph *(~10')*
 
