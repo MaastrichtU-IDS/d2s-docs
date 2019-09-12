@@ -5,7 +5,26 @@ title: Setting up GraphDB
 
 [![](/img/graphdb-logo.png)](https://graphdb.ontotext.com/)
 
-Setup your local [GraphDB](http://graphdb.ontotext.com/).
+
+
+[Ontotext GraphDB](http://graphdb.ontotext.com/) triplestore is available on [DockerHub](https://hub.docker.com/r/ontotext/graphdb/) for `standard` and `enterprise edition`.
+
+If you wish to use GraphDB free edition, you will need to download it from Ontotext and build the Docker image.
+
+* Provide informations to get an email with the link to download GraphDB
+  * https://ontotext.com/products/graphdb/
+* Download GraphDB as stand-alone server free version (zip)
+* Put the downloaded `.zip` file in the GraphDB repository (cloned from [GitHub](https://github.com/MaastrichtU-IDS/graphdb/)).
+* Run `docker build -t graphdb --build-arg version=CHANGE_ME .` in the GraphDB repository.
+
+## Docker build and run
+
+```shell
+# Here shared locally at /data/graphdb and /data/graphdb-import
+docker build -t graphdb --build-arg version=8.11.0 .
+
+docker run -d --rm --name graphdb -p 7200:7200 -v /data/graphdb:/opt/graphdb/home -v /data/graphdb-import:/root/graphdb-import graphdb
+```
 
 > Go to http://localhost:7200/
 

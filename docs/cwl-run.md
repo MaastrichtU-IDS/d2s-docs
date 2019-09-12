@@ -17,6 +17,29 @@ title: Run CWL workflows
     * e.g. `support/example-config/config-transform-xml-drugbank.yml`
 * 3 types of workflows can be run depending on the input data and the tasks executed:
 
+  * XML
+  * CSV/TSV
+  * CSV/TSV with split of a statement
+
+
+
+## Pull Docker image
+
+The Docker image used by the workflow needs to be pulled from DockerHub first.
+
+```shell
+docker pull vemonet/autor2rml:latest
+docker pull vemonet/r2rml:latest
+docker pull vemonet/xml2rdf:latest
+docker pull vemonet/rdf-upload:latest
+docker pull vemonet/data2services-sparql-operations:latest
+docker pull vemonet/data2services-download:latest
+```
+
+## Working directory
+
+By default the example files are running using `/data/data2services-transform-biolink` as working directory. If you installed the repository at the different location, you will need to edit the `working-directory` parameter in the [config file](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/support/example-config/config-transform-xml-drugbank.yml#L1).
+
 ## Convert XML with [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf)
 
 ```shell
