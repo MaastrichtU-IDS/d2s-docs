@@ -73,28 +73,6 @@ class Footer extends React.Component {
 
           <div>
             <h5>Community</h5>
-            {/* <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
-            <a
-              href="https://stackoverflow.com/questions/tagged/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Stack Overflow
-            </a> */}
-            {/* <a href="https://discordapp.com/">Project Chat</a> */}
-            <a
-              href="https://www.facebook.com/IDSatUM/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Facebook
-            </a>
-            {/* <a
-              href="https://twitter.com/um_ids"
-              target="_blank"
-              rel="noreferrer noopener">
-              Twitter
-            </a> */}
             {this.props.config.twitterUsername && (
               <div className="social">
                 <a
@@ -106,7 +84,26 @@ class Footer extends React.Component {
                 </a>
               </div>
             )}
-            {/* {this.props.config.facebookAppId && (
+            <a href="https://www.facebook.com/IDSatUM/"
+              target="_blank" rel="noreferrer noopener">
+              Facebook
+            </a>
+            {/* <a href={this.pageUrl('users.html', this.props.language)}>
+              User Showcase
+            </a>
+            <a
+              href="https://stackoverflow.com/questions/tagged/"
+              target="_blank"
+              rel="noreferrer noopener">
+              Stack Overflow
+            </a> 
+            <a
+              href="https://twitter.com/um_ids"
+              target="_blank"
+              rel="noreferrer noopener">
+              Twitter
+            </a>
+            {this.props.config.facebookAppId && (
               <div className="social">
                 <div
                   className="fb-like"
