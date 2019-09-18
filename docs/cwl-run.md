@@ -50,7 +50,9 @@ cwl-runner --outdir output/drugbank-sample \
 
 > See [config file](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/support/example-config/config-transform-xml-drugbank.yml).
 
-## Convert CSV/TSV with [AutoR2RML](https://github.com/amalic/autor2rml)
+## Convert CSV/TSV with AutoR2RML
+
+Using [AutoR2RML](https://github.com/amalic/autor2rml) to generate R2RML mapping based on input data structure.
 
 ```shell
 cwl-runner --outdir output/stitch-sample \
@@ -60,7 +62,9 @@ cwl-runner --outdir output/stitch-sample \
 
 > See [config file](https://github.com/MaastrichtU-IDS/data2services-transform-biolink/blob/master/support/example-config/config-transform-csv-stitch.yml).
 
-## Convert CSV/TSV with [AutoR2RML](https://github.com/amalic/autor2rml) and split a property
+## Convert CSV/TSV with AutoR2RML and split a property
+
+Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements.
 
 ```shell
 cwl-runner --outdir output/eggnog-sample \

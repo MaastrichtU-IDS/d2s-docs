@@ -402,3 +402,25 @@ docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.c
 > Access [default example](https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq) on http://localhost:8080/data/person/mary-cooper to resolve URI.
 
 > Doesn't support graphs
+
+---
+
+## Utility
+
+### Filebrowser
+
+[![filebrowser](/img/filebrowser_banner.svg)](https://filebrowser.xyz/)
+
+Deploy [filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) on files stored on a remote server.
+
+```shell
+docker run -d --rm --name d2s-filebrowser \
+    -v /data/data2services:/srv \
+    -v /path/.filebrowser.json:/.filebrowser.json \
+    -p 8080:80 \
+    filebrowser/filebrowser
+```
+
+> Navigate to http://localhost:8080/files
+
+> admin / admin
