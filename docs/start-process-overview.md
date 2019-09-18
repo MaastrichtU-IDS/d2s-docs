@@ -19,7 +19,9 @@ Here is described everything you will need to do, in practice, to build a Knowle
 
 > Search for relevant existing models in ontology repositories, such as [BioPortal](https://bioportal.bioontology.org/recommender) for biomedical concepts or [AgroPortal](http://agroportal.lirmm.fr/recommender) for agronomy.
 
-> Use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
+> You can use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
+
+> This task only needs to be **done once**, when starting to project. To define the data model the integrated datasets will comply to.
 
 ---
 
