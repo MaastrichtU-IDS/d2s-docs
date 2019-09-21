@@ -76,11 +76,21 @@ cwl-runner --outdir output/eggnog-sample \
 
 ## Generate mappings for AutoR2RML
 
-When you don't have set the mappings for R2RML: generates the generic RDF and template SPARQL mapping files, and load the generic RDF.
+When you don't already have mappings sets for R2RML the workflow can be executed in 2 steps
+
+* Generates the generic RDF and template SPARQL mapping files, and load the generic RDF
 
 ```shell
 cwl-runner --outdir output/stitch-sample \
   data2services-cwl-workflows/workflows/workflow-csv-generate_mapping.cwl \
+  support/example-config/config-transform-csv-stitch.yml
+```
+
+* Run SPARQL mapping queries to transform generic RDF to the target model 
+
+```shell
+cwl-runner --outdir output/stitch-sample \
+  data2services-cwl-workflows/workflows/workflow-csv-transform.cwl \
   support/example-config/config-transform-csv-stitch.yml
 ```
 
