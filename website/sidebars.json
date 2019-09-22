@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Get started": ["start-introduction", "start-process-overview", "start-download-dataset", "start-create-mappings","start-ecosystem"],
+    "Get started": ["start-introduction", "start-run-workflow", "start-process-overview", "start-download-dataset", "start-create-mappings","start-ecosystem"],
     "CWL workflows": ["cwl-install", "cwl-services", "cwl-run"],
     "Argo workflows": ["argo-install", "argo-login", "argo-volume", "argo-run", "argo-commands", "argo-debug", "argo-secret"],
     "Guides": ["guide-docker", "guide-windows", "guide-graphdb", "guide-postgres", "guide-mariadb", "guide-mysql", "guide-tabular-header", "guide-jenkins"]
