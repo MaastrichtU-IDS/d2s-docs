@@ -30,6 +30,21 @@ docker run -d --rm --name graphdb -p 7200:7200 -v /data/graphdb:/opt/graphdb/hom
 
 ## Create repository
 
+### Using cURL
+
+Create the `test` repository 
+
+```shell
+curl -X POST \
+    http://localhost:7200/rest/repositories \
+    -H 'Content-Type: multipart/form-data' \
+    -F "config=@data2services-cwl-workflows/support/graphdb-repo-config.ttl"
+```
+
+> Edit the repository in [graphdb-repo-config.ttl](https://github.com/MaastrichtU-IDS/data2services-cwl-workflows/blob/master/support/graphdb-repo-config.ttl).
+
+### Using the GUI
+
 > Go to `Setup` > `Repositories` > `Create new repository`
 
 - `Repository ID`: `test` (or whatever you want it to be, but you will need to change the examples default config)
