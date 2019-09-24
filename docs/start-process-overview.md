@@ -140,9 +140,9 @@ root-directory
 │   └── drugbank
 │       ├── README.md
 │       ├── config-transform-xml-drugbank.yml	# The workflow config file
-│       ├── input
+│       ├── download
 │       │   └── download.sh						# Download script goes here
-│       ├── mapping
+│       ├── mappings
 │       │   └── 1								# SPARQL mapping queries goes here 
 │       │       ├── drugbank-drugbank_id.rq
 │       │       └── drugbank-snp_effects.rq

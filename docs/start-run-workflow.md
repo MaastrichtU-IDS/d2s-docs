@@ -29,7 +29,7 @@ apt-get install cwltool
 pip install cwlref-runner
 ```
 
-> It is recommended to build the Docker images before running workflows, as the `docker pull` might crash when done through `cwl-runner`.
+> **TODO:** It is recommended to build the Docker images before running workflows, as the `docker pull` might crash when done through `cwl-runner`.
 
 > Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
 

@@ -53,6 +53,21 @@ docker run -it --rm -v /data/data2services:/data vemonet/data2services-download 
 
 ---
 
+### d2s-bash-exec
+
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-bash-exec?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-bash-exec)
+
+Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/data2services-download/blob/master/datasets/TEMPLATE/download.sh).
+
+```shell
+docker pull vemonet/d2s-bash-exec:latest
+docker run -it --rm -v /data/input:/data vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-transform-biolink/master/datasets/stitch/download/download-stitch.sh
+```
+
+> See on [DockerHub](https://hub.docker.com/r/vemonet/d2s-bash-exec).
+
+---
+
 ### xml2rdf
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/xml2rdf?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/xml2rdf)
