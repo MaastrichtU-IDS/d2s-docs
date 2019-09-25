@@ -61,13 +61,13 @@ Choose the services you want to deploy with `docker-compose`
 
 ```shell
 # Start GraphDB and Apache Drill (run this for the example)
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up graphdb drill
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
 
 # Start Virtuoso and Apache Drill
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up virtuoso drill
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso drill
 
 # Start blazegraph and postgres
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up blazegraph postgres
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph postgres
 ```
 
 Stop services
