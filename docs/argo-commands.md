@@ -66,9 +66,9 @@ oc logs -f d2s-download-pod
 
 ## Start services
 
-[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
-
 ### Start apache-drill
+
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
 ```shell
 # Create pod
@@ -79,9 +79,9 @@ oc create -f d2s-service-drill.yaml
 
 > OpenShift should already [propose Apache Drill](https://thenewstack.io/mapr-brings-apache-spark-and-apache-drill-to-kubernetes/) deployment.
 
-[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
-
 ### Start GraphDB
+
+[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
 
 > **TODO**: Require private access to a private GraphDB build.
 
