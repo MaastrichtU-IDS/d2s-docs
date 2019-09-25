@@ -24,7 +24,7 @@ spec:
       claimName: data2services-storage
   containers:
   - name: d2s-download
-    image: vemonet/d2s-download:latest
+    image: maastrichtuids/d2s-download:latest
     command: [ "tail", "-f", "/dev/null"]
     volumeMounts:
     - name: workdir

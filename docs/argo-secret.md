@@ -26,7 +26,7 @@ title: Use OpenShift secrets
     - name: sparql-triplestore-repository
     - name: sparql-triplestore-username
   container:
-    image: vemonet/d2s-sparql-operations:latest
+    image: maastrichtuids/d2s-sparql-operations:latest
     args: ["-ep", "{{inputs.parameters.sparql-triplestore-url}}", 
       "-rep", "{{inputs.parameters.sparql-triplestore-repository}}", 
       "-op", "update", "-f", "{{inputs.parameters.sparql-queries-path}}",

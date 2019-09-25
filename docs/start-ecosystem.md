@@ -43,13 +43,13 @@ For *GraphDB* you **need to download** an extra file to put in `./submodules/gra
 Download datasets using Bash scripts. See [script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
-docker pull vemonet/d2s-download:latest
-docker run -it --rm -v /data/data2services:/data vemonet/d2s-download \
+docker pull maastrichtuids/d2s-download:latest
+docker run -it --rm -v /data/data2services:/data maastrichtuids/d2s-download \
 	--download-datasets aeolus,pharmgkb,ctd \
 	--username my_login --password my_password
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/d2s-download).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-download).
 
 ---
 
@@ -60,11 +60,11 @@ docker run -it --rm -v /data/data2services:/data vemonet/d2s-download \
 Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
-docker pull vemonet/d2s-bash-exec:latest
-docker run -it --rm -v /data/input:/data vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-biolink/master/datasets/stitch/download/download-stitch.sh
+docker pull maastrichtuids/d2s-bash-exec:latest
+docker run -it --rm -v /data/input:/data maastrichtuids/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-biolink/master/datasets/stitch/download/download-stitch.sh
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/d2s-bash-exec).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-bash-exec).
 
 ---
 
@@ -75,14 +75,14 @@ docker run -it --rm -v /data/input:/data vemonet/d2s-bash-exec https://raw.githu
 Streams XML to a [generic RDF](https://github.com/MaastrichtU-IDS/xml2rdf#rdf-model) representing the structure of the file. 
 
 ```shell
-docker pull vemonet/xml2rdf:latest
-docker run --rm -it -v /data:/data vemonet/xml2rdf  \
+docker pull maastrichtuids/xml2rdf:latest
+docker run --rm -it -v /data:/data maastrichtuids/xml2rdf  \
 	-i "/data/data2services/file.xml.gz" \
 	-o "/data/data2services/file.nq.gz" \
 	-g "https://w3id.org/data2services/graph"
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/xml2rdf).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/xml2rdf).
 
 ---
 
@@ -96,14 +96,14 @@ Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large 
 
 ```shell
 docker-compose up drill
-docker pull vemonet/apache-drill:latest
+docker pull maastrichtuids/apache-drill:latest
 docker run -dit --rm -p 8047:8047 -p 31010:31010 \
-	--name drill -v /data:/data:ro vemonet/apache-drill
+	--name drill -v /data:/data:ro maastrichtuids/apache-drill
 ```
 
 > Access at [http://localhost:8047/](http://localhost:8047/).
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/apache-drill).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/apache-drill).
 
 ---
 
@@ -114,9 +114,9 @@ docker run -dit --rm -p 8047:8047 -p 31010:31010 \
 Automatically generate [R2RML](https://www.w3.org/TR/r2rml/) files from Relational databases (SQL, Postgresql).
 
 ```shell
-docker pull vemonet/autor2rml:latest
+docker pull maastrichtuids/autor2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
-	vemonet/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
+	maastrichtuids/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
 	-o "/data/data2services/mapping.trig" \
 	-d "/data/data2services" \
 	-u "postgres" -p "pwd" \
@@ -126,7 +126,7 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 
 > Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/autor2rml).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/autor2rml).
 
 ---
 
@@ -137,16 +137,16 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rml/) mapping language.
 
 ```shell
-docker pull vemonet/r2rml:latest
+docker pull maastrichtuids/r2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres \
-	-v /data:/data vemonet/r2rml /data/config.properties
+	-v /data:/data maastrichtuids/r2rml /data/config.properties
 ```
 
 > Require a [config.properties](https://github.com/amalic/r2rml/blob/master/example/config.properties) file
 
 > Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files.
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/r2rml).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/r2rml).
 
 ---
 
@@ -158,16 +158,16 @@ docker run -it --rm --link drill:drill --link postgres:postgres \
 Upload RDF files to a triplestore.
 
 ```shell
-docker pull vemonet/rdf-upload:latest
+docker pull maastrichtuids/rdf-upload:latest
 docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
-	vemonet/rdf-upload -m "HTTP" -if "/data" \
+	maastrichtuids/rdf-upload -m "HTTP" -if "/data" \
 	-url "http://graphdb:7200" -rep "test" \
 	-un "username" -pw "password"
 ```
 
 > Only tested on [GraphDB](https://github.com/MaastrichtU-IDS/graphdb) at the moment
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/rdf-upload).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/rdf-upload).
 
 ---
 
@@ -315,15 +315,15 @@ docker run -it -v /data/data2services:/data \
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/).
 
 ```shell
-docker pull vemonet/d2s-sparql-operations
-docker run -it --rm vemonet/d2s-sparql-operations -op select \
+docker pull maastrichtuids/d2s-sparql-operations
+docker run -it --rm maastrichtuids/d2s-sparql-operations -op select \
   -sp "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
   -ep "http://dbpedia.org/sparql"
 ```
 
 > See [documentation](https://maastrichtu-ids.github.io/d2s-sparql-operations/).
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/d2s-sparql-operations).
+> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-sparql-operations).
 
 ------
 
