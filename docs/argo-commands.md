@@ -5,13 +5,17 @@ title: Argo commands
 
 ![Argo project](/img/argo-logo.png)
 
-## List running Argo workflows
+
+
+## Argo commands
+
+### List running Argo workflows
 
 ```shell
 argo list
 ```
 
-## Stop a workflow
+### Stop a workflow
 
 ```shell
 argo terminate my-workflow
@@ -19,7 +23,7 @@ argo terminate my-workflow
 
 > This might not stop the workflow, in this case use `argo delete`
 
-## Delete a workflow
+### Delete a workflow
 
 ```shell
 argo delete my-workflow
@@ -29,7 +33,9 @@ argo delete my-workflow
 
 ![OpenShift](/img/ophenshift-logo.png)
 
-## List OpenShift pods
+## OpenShift commands
+
+### List pods
 
 ```shell
 oc get pod
@@ -38,21 +44,45 @@ oc get pod
 oc get pod | grep d2s-download
 ```
 
-## Create OpenShift pod from JSON
+### Create pod from YAML
 
 ```shell
 oc create -f d2s-download-pod.yaml
 ```
 
-## Delete pod
+### Delete pod
 
 ```shell
 oc delete pod d2s-download-pod
 ```
 
-## Get logs
+### Get logs
 
 ```shell
 oc logs -f d2s-download-pod
 ```
 
+---
+
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
+
+## Start services
+
+### Start apache-drill
+
+```shell
+# Create pod
+oc create -f d2s-pod-drill.yaml
+# Create service for the pod
+oc create -f d2s-service-drill.yaml
+```
+
+> OpenShift should already [propose Apache Drill](https://thenewstack.io/mapr-brings-apache-spark-and-apache-drill-to-kubernetes/) deployment.
+
+### Start GraphDB
+
+> **TODO**: Require private access to a private GraphDB build.
+
+### Start Virtuoso
+
+> **TODO**: load nquad files.
