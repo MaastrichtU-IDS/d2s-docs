@@ -14,13 +14,22 @@ Services must be running before executing CWL workflows. E.g. [Apache Drill](htt
 
 ## Build
 
-[GraphDB](https://github.com/MaastrichtU-IDS/graphdb/) triplestore `.zip` file needs to be downloaded manually at https://ontotext.com/products/graphdb/ and placed in [/d2s-cwl-workflows/support/graphdb](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support).
+* [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version* (the download URL will be sent in a email). 
 
-> See [Setting up GraphDB](/docs/guide-graphdb) documentation to build GraphDB free version.
+* Put the downloaded `.zip` file in the [d2s-cwl-workflows/support/graphdb](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support) repository
 
-```shell
-docker build -t graphdb --build-arg version=8.11.0 .
-```
+* Set the right version in the `docker-compose` before running it.
+
+> See [Setting up GraphDB](/docs/guide-graphdb) documentation for more details.
+
+> If no GraphDB repository exist, create the `test` repository:
+>
+> ```shell
+> curl -X POST \
+>  http://localhost:7200/rest/repositories \
+>  -H 'Content-Type: multipart/form-data' \
+>  -F "config=@d2s-cwl-workflows/support/graphdb-repo-config.ttl"
+> ```
 
 
 
@@ -52,13 +61,8 @@ Stop services
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
 
-> [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `support/graphdb` repository, and set the right version in the `docker-compose` before running it.
+Check running services
 
-> For GraphDB, if no repository exist, create the `test` repository:
->
-> ```shell
-> curl -X POST \
->  http://localhost:7200/rest/repositories \
->  -H 'Content-Type: multipart/form-data' \
->  -F "config=@d2s-cwl-workflows/support/graphdb-repo-config.ttl"
-> ```
+```shell
+docker ps
+```
