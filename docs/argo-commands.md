@@ -31,9 +31,9 @@ argo delete my-workflow
 
 ---
 
-![OpenShift](/img/ophenshift-logo.png)
-
 ## OpenShift commands
+
+![OpenShift](/img/ophenshift-logo.png)
 
 ### List pods
 
@@ -64,9 +64,9 @@ oc logs -f d2s-download-pod
 
 ---
 
-[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
-
 ## Start services
+
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
 ### Start apache-drill
 
