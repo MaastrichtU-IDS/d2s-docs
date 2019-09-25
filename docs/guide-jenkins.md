@@ -43,12 +43,12 @@ pipeline {
     stage('Build and install') {
       steps {
         sh "git clone --recursive https://github.com/vemonet/data2services-insert.git"
-        sh 'docker build --rm -t rdf4j-sparql-operations $WORKSPACE/data2services-insert/rdf4j-sparql-operations'
+        sh 'docker build --rm -t d2s-sparql-operations $WORKSPACE/data2services-insert/d2s-sparql-operations'
       }
     }
     stage('Compute and insert statistics') {
       steps {
-        sh "docker run -t --rm --volumes-from jenkins-container rdf4j-sparql-operations -rq '$WORKSPACE/data2services-insert/compute-statistics' -url '${params.SparqlRepositoryUri}' -un ${params.TriplestoreUsername} -pw ${params.TriplestorePassword} -var inputGraph:${params.GraphUri}"
+        sh "docker run -t --rm --volumes-from jenkins-container d2s-sparql-operations -rq '$WORKSPACE/data2services-insert/compute-statistics' -url '${params.SparqlRepositoryUri}' -un ${params.TriplestoreUsername} -pw ${params.TriplestorePassword} -var inputGraph:${params.GraphUri}"
       }
     }
   }
@@ -61,3 +61,5 @@ pipeline {
   }
 }
 ```
+
+> The GitHub URLs in this example need to be updated.

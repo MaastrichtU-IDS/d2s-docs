@@ -36,20 +36,20 @@ For *GraphDB* you **need to download** an extra file to put in `./submodules/gra
 
 ## Convert to RDF
 
-### data2services-download
+### d2s-download
 
-[![](https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-download?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/data2services-download)
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-download?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-download)
 
-Download datasets using Bash scripts. See [script example](https://github.com/MaastrichtU-IDS/data2services-download/blob/master/datasets/TEMPLATE/download.sh).
+Download datasets using Bash scripts. See [script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
-docker pull vemonet/data2services-download:latest
-docker run -it --rm -v /data/data2services:/data vemonet/data2services-download \
+docker pull vemonet/d2s-download:latest
+docker run -it --rm -v /data/data2services:/data vemonet/d2s-download \
 	--download-datasets aeolus,pharmgkb,ctd \
 	--username my_login --password my_password
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/data2services-download).
+> See on [DockerHub](https://hub.docker.com/r/vemonet/d2s-download).
 
 ---
 
@@ -57,11 +57,11 @@ docker run -it --rm -v /data/data2services:/data vemonet/data2services-download 
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-bash-exec?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-bash-exec)
 
-Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/data2services-download/blob/master/datasets/TEMPLATE/download.sh).
+Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
 docker pull vemonet/d2s-bash-exec:latest
-docker run -it --rm -v /data/input:/data vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/data2services-transform-biolink/master/datasets/stitch/download/download-stitch.sh
+docker run -it --rm -v /data/input:/data vemonet/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-biolink/master/datasets/stitch/download/download-stitch.sh
 ```
 
 > See on [DockerHub](https://hub.docker.com/r/vemonet/d2s-bash-exec).
@@ -308,22 +308,22 @@ docker run -it -v /data/data2services:/data \
 
 ## Access RDF
 
-### data2services-sparql-operations
+### d2s-sparql-operations
 
-[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-sparql-operations?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/data2services-sparql-operations)
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-sparql-operations?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-sparql-operations)
 
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/).
 
 ```shell
-docker pull vemonet/data2services-sparql-operations
-docker run -it --rm vemonet/data2services-sparql-operations -op select \
+docker pull vemonet/d2s-sparql-operations
+docker run -it --rm vemonet/d2s-sparql-operations -op select \
   -sp "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
   -ep "http://dbpedia.org/sparql"
 ```
 
-> See [documentation](https://maastrichtu-ids.github.io/data2services-sparql-operations/).
+> See [documentation](https://maastrichtu-ids.github.io/d2s-sparql-operations/).
 
-> See on [DockerHub](https://hub.docker.com/r/vemonet/data2services-sparql-operations).
+> See on [DockerHub](https://hub.docker.com/r/vemonet/d2s-sparql-operations).
 
 ------
 

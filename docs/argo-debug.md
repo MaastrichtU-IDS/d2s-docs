@@ -7,7 +7,7 @@ title: Debug Argo workflow
 
 To get into the container. Create YAML with command `tail /dev/null` to keep it running.
 
-> Example for [data2services-download](https://github.com/MaastrichtU-IDS/data2services-download):
+> Example for [d2s-download](https://github.com/MaastrichtU-IDS/d2s-download):
 
 ```yaml
 apiVersion: v1
@@ -24,7 +24,7 @@ spec:
       claimName: data2services-storage
   containers:
   - name: d2s-download
-    image: vemonet/data2services-download:latest
+    image: vemonet/d2s-download:latest
     command: [ "tail", "-f", "/dev/null"]
     volumeMounts:
     - name: workdir

@@ -25,10 +25,10 @@ docker build -t graphdb --build-arg version=8.11.0 .
 Start Apache Drill sharing volume with this repository.
 
 ```shell
-docker run -dit --rm -v /data/data2services-transform-biolink:/data:ro -p 8047:8047 -p 31010:31010 --name drill vemonet/apache-drill
+docker run -dit --rm -v /data/d2s-transform-biolink:/data:ro -p 8047:8047 -p 31010:31010 --name drill vemonet/apache-drill
 ```
 
-> Here shared locally at `/data/data2services-transform-biolink`
+> Here shared locally at `/data/d2s-transform-biolink`
 
 > Navigate to http://localhost:8047
 

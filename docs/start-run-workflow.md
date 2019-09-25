@@ -36,8 +36,8 @@ pip install cwlref-runner
 ## Clone repository
 
 ```shell
-git clone --recursive https://github.com/MaastrichtU-IDS/data2services-transform-biolink.git
-cd data2services-transform-biolink
+git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-biolink.git
+cd d2s-transform-biolink
 ```
 
 At the moment the repository `/data/red-kg` is used by default as working directory
@@ -47,7 +47,7 @@ At the moment the repository `/data/red-kg` is used by default as working direct
 ## Pull modules
 
 ```shell
-docker-compose -f data2services-cwl-workflows/docker-compose.yaml pull
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 ```
 
 ---
@@ -61,19 +61,19 @@ Choose the services you want to deploy with `docker-compose`
 
 ```shell
 # Start GraphDB and Apache Drill (run this for the example)
-docker-compose -f data2services-cwl-workflows/docker-compose.yaml up graphdb drill
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up graphdb drill
 
 # Start Virtuoso and Apache Drill
-docker-compose -f data2services-cwl-workflows/docker-compose.yaml up virtuoso drill
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up virtuoso drill
 
 # Start blazegraph and postgres
-docker-compose -f data2services-cwl-workflows/docker-compose.yaml up blazegraph postgres
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up blazegraph postgres
 ```
 
 Stop services
 
 ```shell
-docker-compose -f data2services-cwl-workflows/docker-compose.yaml down
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
 
 > [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `support/graphdb` repository, and set the right version in the `docker-compose` before running it.
@@ -84,7 +84,7 @@ docker-compose -f data2services-cwl-workflows/docker-compose.yaml down
 > curl -X POST \
 >     http://localhost:7200/rest/repositories \
 >     -H 'Content-Type: multipart/form-data' \
->     -F "config=@data2services-cwl-workflows/support/graphdb-repo-config.ttl"
+>     -F "config=@d2s-cwl-workflows/support/graphdb-repo-config.ttl"
 > ```
 
 ---
@@ -94,7 +94,7 @@ docker-compose -f data2services-cwl-workflows/docker-compose.yaml down
 Convert stitch TSV (drug-protein associations) to BioLink.
 
 ```shell
-cwl-runner --outdir /data/red-kg/output data2services-cwl-workflows/workflows/workflow-csv.cwl support/example-config/config-transform-csv-stitch.yml
+cwl-runner --outdir /data/red-kg/output d2s-cwl-workflows/workflows/workflow-csv.cwl support/example-config/config-transform-csv-stitch.yml
 ```
 
 ---
@@ -102,7 +102,7 @@ cwl-runner --outdir /data/red-kg/output data2services-cwl-workflows/workflows/wo
 ## Clear Virtuoso triplestore
 
 ```shell
-docker exec -it data2services-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
+docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
 ```
 
 ---
@@ -110,7 +110,7 @@ docker exec -it data2services-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec
 ## Virtuoso bulk load
 
 ```shell
-docker exec -it data2services-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db/output', '*.nq', 'http://test/'); rdf_loader_run();"
+docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db/output', '*.nq', 'http://test/'); rdf_loader_run();"
 ```
 
 ---
@@ -120,7 +120,7 @@ docker exec -it data2services-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec
 Be careful when changing the DBA_PASSWORD for `tenforce/virtuoso`. This doesn't work most of the time, so you might need to use the default `dba` password.
 
 ```shell
-docker run --rm --name data2services-cwl-workflows_virtuoso_1 \
+docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
     -p 8890:8890 -p 1111:1111 \
     -e DBA_PASSWORD=my-password \
     -e SPARQL_UPDATE=true \
