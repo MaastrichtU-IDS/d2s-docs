@@ -10,19 +10,29 @@ The [Common Workflow Language](https://www.commonwl.org/) is used to describe wo
 
 ## Install docker
 
-Install [Docker](https://docs.docker.com/install/) to run the modules. Checkout the [Wiki](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Docker-documentation) if you have issues with Docker installation.
+[Install Docker](https://docs.docker.com/install/) to run the modules. 
+
+> Go to the [Docker guide](http://d2s.semanticscience.org/docs/guide-docker) if you have issues with Docker installation.
 
 ## Install cwltool
 
 Install [cwltool](https://github.com/common-workflow-language/cwltool#install) to get cwl-runner to run workflows of Docker modules.
 
+* On Ubuntu
+
 ```shell
 apt-get install cwltool
 ```
 
-- It is recommended to build the Docker images before running workflows, as the `docker pull` might crash when done through `cwl-runner`.
-- Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
-- Windows documentation to run the docker containers can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
+* Using `pip`
+
+```bash
+pip install cwlref-runner
+```
+
+>  Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
+
+>  Windows documentation to run the docker containers can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
 
 ---
 
@@ -33,3 +43,4 @@ Clone the repository with its submodules
 ```shell
 git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-biolink.git
 ```
+

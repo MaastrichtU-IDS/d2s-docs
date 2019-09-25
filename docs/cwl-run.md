@@ -35,6 +35,8 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 
 By default the example files are running using `/data/d2s-transform-biolink` as working directory. If you installed the repository at the different location, you will need to edit the `working-directory` parameter in the [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/example-config/config-transform-xml-drugbank.yml#L1).
 
+> **TODO:** update doc about config dir and working dir `/data/red-kg`
+
 ## Convert XML with [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf)
 
 ```shell

@@ -29,7 +29,7 @@ apt-get install cwltool
 pip install cwlref-runner
 ```
 
-> Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
+> Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows (see [Windows documentation](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows)).
 
 ---
 
@@ -117,7 +117,7 @@ docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('
 
 ## Starting manually Virtuoso
 
-Be careful when changing the DBA_PASSWORD for `tenforce/virtuoso`. This doesn't work most of the time, so you might need to use the default `dba` password.
+Be careful when changing the DBA_PASSWORD for [tenforce/virtuoso](tenforce/virtuoso). This doesn't work every time, so you might need to use the default `dba` password.
 
 ```shell
 docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
