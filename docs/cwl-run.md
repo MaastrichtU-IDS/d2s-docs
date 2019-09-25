@@ -28,12 +28,7 @@ title: Run CWL workflows
 The Docker image used by the workflow needs to be pulled from DockerHub first.
 
 ```shell
-docker pull vemonet/autor2rml:latest
-docker pull vemonet/r2rml:latest
-docker pull vemonet/xml2rdf:latest
-docker pull vemonet/rdf-upload:latest
-docker pull vemonet/data2services-sparql-operations:latest
-docker pull vemonet/data2services-download:latest
+docker-compose -f data2services-cwl-workflows/docker-compose.yaml pull
 ```
 
 ## Working directory

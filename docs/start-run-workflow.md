@@ -29,8 +29,6 @@ apt-get install cwltool
 pip install cwlref-runner
 ```
 
-> **TODO:** It is recommended to build the Docker images before running workflows, as the `docker pull` might crash when done through `cwl-runner`.
-
 > Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
 
 ---
@@ -46,6 +44,14 @@ At the moment the repository `/data/red-kg` is used by default as working direct
 
 ---
 
+## Pull modules
+
+```shell
+docker-compose -f data2services-cwl-workflows/docker-compose.yaml pull
+```
+
+---
+
 ## Start services
 
 Choose the services you want to deploy with `docker-compose`
@@ -54,9 +60,11 @@ Choose the services you want to deploy with `docker-compose`
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
 ```shell
-# Start Virtuoso and Apache Drill (run this for the example)
-docker-compose -f data2services-cwl-workflows/docker-compose.yaml up virtuoso drill
+# Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f data2services-cwl-workflows/docker-compose.yaml up graphdb drill
+
+# Start Virtuoso and Apache Drill
+docker-compose -f data2services-cwl-workflows/docker-compose.yaml up virtuoso drill
 
 # Start blazegraph and postgres
 docker-compose -f data2services-cwl-workflows/docker-compose.yaml up blazegraph postgres
