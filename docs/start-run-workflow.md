@@ -70,12 +70,6 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph postgres
 ```
 
-Stop services
-
-```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
-```
-
 > [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `support/graphdb` repository, and set the right version in the `docker-compose` before running it.
 
 > For GraphDB, if no repository exist, create the `test` repository:
@@ -86,6 +80,18 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 >     -H 'Content-Type: multipart/form-data' \
 >     -F "config=@d2s-cwl-workflows/support/graphdb-repo-config.ttl"
 > ```
+
+Check running services
+
+```shell
+docker ps
+```
+
+Stop services
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
+```
 
 ---
 
