@@ -79,6 +79,8 @@ oc create -f d2s-service-drill.yaml
 
 > OpenShift should already [propose Apache Drill](https://thenewstack.io/mapr-brings-apache-spark-and-apache-drill-to-kubernetes/) deployment.
 
+[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
+
 ### Start GraphDB
 
 > **TODO**: Require private access to a private GraphDB build.
