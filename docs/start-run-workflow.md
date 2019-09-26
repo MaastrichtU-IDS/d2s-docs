@@ -97,11 +97,29 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 
 ## Run workflow
 
+* `--outdir`: final dir where the final ouput of the workflow is copied.
+* `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
+* `--tmpdir-prefix`: dir used to pass inputs
+
 Convert stitch TSV (drug-protein associations) to BioLink.
 
 ```shell
-cwl-runner --outdir /data/red-kg/output d2s-cwl-workflows/workflows/workflow-csv.cwl support/example-config/config-transform-csv-stitch.yml
+cwl-runner --outdir /data/red-kg/output --tmp-outdir-prefix=/data/red-kg/tmp/ --tmpdir-prefix=/tmp/red-kg/ --custom-net d2s-cwl-workflows_d2s-network d2s-cwl-workflows/workflows/workflow-csv.cwl datasets/stitch/config-transform-csv-stitch.yml
 ```
+
+Define tmp dirs prefixes
+
+```shell
+cwl-runner --tmp-outdir-prefix=/data/red-kg/tmp_inter --tmpdir-prefix=/data/red-kg/tmp --outdir /data/red-kg/output --basedir /data/basedir/ d2s-cwl-workflows/workflows/workflow-csv.cwl datasets/stitch/config-transform-csv-stitch.yml
+```
+
+Test
+
+```shell
+
+```
+
+
 
 ---
 
