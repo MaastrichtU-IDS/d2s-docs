@@ -140,38 +140,3 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
   datasets/eggnog/config-transform-split-eggnog.yml
 ```
-
-
-
----
-
-## Clear Virtuoso triplestore
-
-```shell
-docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
-```
-
----
-
-## Virtuoso bulk load
-
-```shell
-docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db/output', '*.nq', 'http://test/'); rdf_loader_run();"
-```
-
----
-
-## Starting manually Virtuoso
-
-Be careful when changing the DBA_PASSWORD for [tenforce/virtuoso](tenforce/virtuoso). This doesn't work every time, so you might need to use the default `dba` password.
-
-```shell
-docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
-    -p 8890:8890 -p 1111:1111 \
-    -e DBA_PASSWORD=my-password \
-    -e SPARQL_UPDATE=true \
-    -e DEFAULT_GRAPH=http://www.example.com/my-graph \
-    -v /data/red-kg:/data \
-    -d tenforce/virtuoso
-```
-
