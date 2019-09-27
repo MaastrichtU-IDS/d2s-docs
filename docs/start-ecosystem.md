@@ -51,6 +51,8 @@ docker run -it --rm -v /data/data2services:/data maastrichtuids/d2s-download \
 
 > See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-download).
 
+> **TODO**: deprecated, to remove
+
 ---
 
 ### d2s-bash-exec
@@ -90,7 +92,7 @@ docker run --rm -it -v /data:/data maastrichtuids/xml2rdf  \
 
 [![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
-[![](https://img.shields.io/github/stars/amalic/apache-drill?label=GitHub&style=social)](https://github.com/amalic/apache-drill)
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/apache-drill?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/apache-drill)
 
 Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
 
@@ -132,17 +134,22 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 
 ### R2RML
 
-[![](https://img.shields.io/github/stars/amalic/r2rml?label=GitHub&style=social)](https://github.com/amalic/r2rml)
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/r2rml?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/r2rml)
 
 Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rml/) mapping language.
 
 ```shell
 docker pull maastrichtuids/r2rml:latest
-docker run -it --rm --link drill:drill --link postgres:postgres \
-	-v /data:/data maastrichtuids/r2rml /data/config.properties
+docker run -it --rm --net d2s-cwl-workflows_d2s-network \
+  -v /data/d2s:/data \
+  maastrichtuids/r2rml \ 
+  --connectionURL jdbc:drill:drillbit=drill:31010 \
+  --mappingFile /data/mapping.trig \
+  --outputFile /data/rdf_output.nq \
+  --format NQUADS
 ```
 
-> Require a [config.properties](https://github.com/amalic/r2rml/blob/master/example/config.properties) file
+> Shared on `/data/d2s`
 
 > Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files.
 
