@@ -37,45 +37,75 @@ By default the example files are running using `/data/d2s-transform-biolink` as 
 
 > **TODO:** update doc about config dir and working dir `/data/red-kg`
 
-## Convert XML with [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf)
+## Convert XML with xml2rdf
+
+Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure.
+
+Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --outdir output/drugbank-sample \
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
-  support/example-config/config-transform-xml-drugbank.yml
+  datasets/drugbank/config-transform-xml-drugbank.yml
 ```
 
 > See [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/example-config/config-transform-xml-drugbank.yml).
 
 ## Convert CSV/TSV with AutoR2RML
 
-Using [AutoR2RML](https://github.com/amalic/autor2rml) to generate R2RML mapping based on input data structure.
+Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure.
+
+Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --outdir output/stitch-sample \
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv.cwl \
-  support/example-config/config-transform-csv-stitch.yml
+  datasets/stitch/config-transform-csv-stitch.yml
 ```
 
-> See [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/example-config/config-transform-csv-stitch.yml).
+> Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ## Convert CSV/TSV with AutoR2RML and split a property
 
 Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements.
 
 ```shell
-cwl-runner --outdir output/eggnog-sample \
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
-  support/example-config/config-transform-split-eggnog.yml
+  datasets/eggnog/config-transform-split-eggnog.yml
 ```
 
-> See [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/example-config/config-transform-split-eggnog.yml).
+> Example converting the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+
+## Run in the background
+
+```shell
+nohup cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
+  d2s-cwl-workflows/workflows/workflow-xml.cwl \
+  datasets/drugbank/config-transform-xml-drugbank.yml &
+```
+
+> Write terminal output to `nohup.out`.
 
 ## Generate mappings for AutoR2RML
 
+> `TODO`: deprecated
+
 When you don't already have mappings sets for R2RML the workflow can be executed in 2 steps
 
-* Generates the generic RDF and template SPARQL mapping files, and load the generic RDF
+- Generates the generic RDF and template SPARQL mapping files, and load the generic RDF
 
 ```shell
 cwl-runner --outdir output/stitch-sample \
@@ -83,7 +113,7 @@ cwl-runner --outdir output/stitch-sample \
   support/example-config/config-transform-csv-stitch.yml
 ```
 
-* Run SPARQL mapping queries to transform generic RDF to the target model 
+- Run SPARQL mapping queries to transform generic RDF to the target model 
 
 ```shell
 cwl-runner --outdir output/stitch-sample \
@@ -92,13 +122,3 @@ cwl-runner --outdir output/stitch-sample \
 ```
 
 > Same [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/cwl/config/config-transform-csv-stitch.yml) as the regular CSV workflow.
-
-## Run in the background
-
-```shell
-nohup cwl-runner --outdir output/drugbank-sample \
-  d2s-cwl-workflows/workflows/workflow-xml.cwl \
-  support/example-config/config-transform-xml-drugbank.yml &
-```
-
-> Write terminal output to `nohup.out`.

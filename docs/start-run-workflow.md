@@ -102,20 +102,43 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 * `--tmpdir-prefix`: dir used to pass inputs
 * `-basedir /data/basedir/`: to find out
 
-### Convert TSV to BioLink
-
-Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the BioLink model.
-
-```shell
-cwl-runner --outdir /data/red-kg/output --tmp-outdir-prefix=/data/red-kg/tmp/ --tmpdir-prefix=/tmp/red-kg/ --custom-net d2s-cwl-workflows_d2s-network d2s-cwl-workflows/workflows/workflow-csv.cwl datasets/stitch/config-transform-csv-stitch.yml
-```
-
 ### Convert XML to BioLink
 
-Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) (drug associations) to the BioLink model.
+Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```bash
-cwl-runner --outdir /data/red-kg/output --tmp-outdir-prefix=/data/red-kg/tmp/ --tmpdir-prefix=/tmp/red-kg/ --custom-net d2s-cwl-workflows_d2s-network d2s-cwl-workflows/workflows/workflow-xml.cwl datasets/drugbank/config-transform-xml-drugbank.yml
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
+  d2s-cwl-workflows/workflows/workflow-xml.cwl \
+  datasets/drugbank/config-transform-xml-drugbank.yml
+```
+
+### Convert TSV to BioLink
+
+Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+
+```shell
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
+  d2s-cwl-workflows/workflows/workflow-csv.cwl \
+  datasets/stitch/config-transform-csv-stitch.yml
+```
+
+### Convert TSV with split to BioLink
+
+Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+
+```bash
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
+  d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
+  datasets/eggnog/config-transform-split-eggnog.yml
 ```
 
 
