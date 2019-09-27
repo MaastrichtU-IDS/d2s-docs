@@ -3,6 +3,8 @@ id: start-run-workflow
 title: Run your first workflow
 ---
 
+Quickly get on board by running your first CWL workflows to convert biomedical data to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+
 ## Install Docker
 
 Install [Docker](https://docs.docker.com/install/) to run the modules:
