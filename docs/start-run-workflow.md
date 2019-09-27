@@ -120,7 +120,7 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_d2s-network
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
   --outdir /data/red-kg/output \
   --tmp-outdir-prefix=/data/red-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
