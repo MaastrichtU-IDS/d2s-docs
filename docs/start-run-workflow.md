@@ -95,28 +95,27 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 
 ---
 
-## Run workflow
+## Run workflows
 
 * `--outdir`: final dir where the final ouput of the workflow is copied.
 * `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
 * `--tmpdir-prefix`: dir used to pass inputs
+* `-basedir /data/basedir/`: to find out
 
-Convert stitch TSV (drug-protein associations) to BioLink.
+### Convert TSV to BioLink
+
+Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the BioLink model.
 
 ```shell
 cwl-runner --outdir /data/red-kg/output --tmp-outdir-prefix=/data/red-kg/tmp/ --tmpdir-prefix=/tmp/red-kg/ --custom-net d2s-cwl-workflows_d2s-network d2s-cwl-workflows/workflows/workflow-csv.cwl datasets/stitch/config-transform-csv-stitch.yml
 ```
 
-Define tmp dirs prefixes
+### Convert XML to BioLink
 
-```shell
-cwl-runner --tmp-outdir-prefix=/data/red-kg/tmp_inter --tmpdir-prefix=/data/red-kg/tmp --outdir /data/red-kg/output --basedir /data/basedir/ d2s-cwl-workflows/workflows/workflow-csv.cwl datasets/stitch/config-transform-csv-stitch.yml
-```
+Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) (drug associations) to the BioLink model.
 
-Test
-
-```shell
-
+```bash
+cwl-runner --outdir /data/red-kg/output --tmp-outdir-prefix=/data/red-kg/tmp/ --tmpdir-prefix=/tmp/red-kg/ --custom-net d2s-cwl-workflows_d2s-network d2s-cwl-workflows/workflows/workflow-xml.cwl datasets/drugbank/config-transform-xml-drugbank.yml
 ```
 
 
