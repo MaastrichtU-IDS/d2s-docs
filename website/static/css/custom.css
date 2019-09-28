@@ -15,12 +15,8 @@
 @media only screen and (min-width: 1500px) {
 }
 
-html *:not(.hljs, .hljs-built_in, .hljs-code, .hljs-bullet, .hljs-addition) {
+body {
     font-family: "Open Sans", "Roboto", "Serif"
-}
-/* Button font won't work if not separated */
-a.button {
-    font-family: "Open Sans", "Roboto"
 }
 
 a:hover {
