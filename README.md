@@ -2,7 +2,23 @@
 
 Generated using [Docusaurus](https://docusaurus.io/).
 
-## Development
+## Edit documentation pages
+
+Editing a documentation file is as easy as going to https://github.com/MaastrichtU-IDS/d2s-documentation/edit/master/docs/start-introduction.md.
+
+- Edit a page by login with an account that has edit permissions.
+
+- Otherwise fork the repository and modify the files you want. Pull requests are welcome!
+
+Browse all documentation pages [here](https://github.com/MaastrichtU-IDS/d2s-documentation/tree/master/docs).
+
+We recommend using [Typora](https://typora.io/) to edit [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) files on your computer.
+
+> Add new `docs` pages to [website/sidebars.json](https://github.com/MaastrichtU-IDS/d2s-documentation/blob/master/website/sidebars.json).
+
+> Main parameters of the website can be found in [website/siteConfig.js](https://github.com/MaastrichtU-IDS/d2s-documentation/blob/master/website/siteConfig.js).
+
+## Run for development
 
 To run in the `/website` directory.
 
@@ -41,16 +57,11 @@ npm run build
 GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
 ```
 
-## Add new docs page
-
-* Create the `.md` in `/docs` and define it's `id` in the header (it will be used to build the URL path)
-* Add the page in the right category in `sideBars.json`
-
 ## Search with Algolia
 
 https://community.algolia.com/docsearch/
 
-## Install boostrap tool
+## Install Docusaurus boostrap tool
 
 ```shell
 sudo npm install --global yarn
