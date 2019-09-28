@@ -119,6 +119,8 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
   datasets/drugbank/config-transform-xml-drugbank.yml
 ```
 
+> Output goes to `/data/red-kg/output`
+
 ### Convert TSV to BioLink
 
 Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
@@ -132,6 +134,8 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
   datasets/stitch/config-transform-csv-stitch.yml
 ```
 
+> Output goes to `/data/red-kg/output`
+
 ### Convert TSV with split to BioLink
 
 Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
@@ -144,3 +148,5 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
   datasets/eggnog/config-transform-split-eggnog.yml
 ```
+
+> Output goes to `/data/red-kg/output`

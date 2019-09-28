@@ -1,10 +1,11 @@
 ---
-id: cwl-run
-title: Run CWL workflows
+id: cwl-create
+title: Create a CWL tool
 ---
 
 ![CWL](/img/CWL_logo.png)
 
+> **TODO**
 
 * Go to the `d2s-transform-biolink` root folder (the root of the cloned repository)
   * e.g. `/data/d2s-transform-biolink` to run the CWL workflows.

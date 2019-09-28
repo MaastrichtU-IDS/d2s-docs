@@ -36,6 +36,18 @@ pip install cwlref-runner
 
 ---
 
+## Install Rabix Composer GUI
+
+![Optional](https://img.shields.io/static/v1?label=module&message=Optional&color=blue)
+
+[Rabix Composer](https://rabix.io/) is a nice way to visualize CWL workflows.
+
+[Download](https://github.com/rabix/composer/releases) the right installation file and run it.
+
+> Open the `d2s-cwl-workflows` folder in Rabix Composer.
+
+---
+
 ## Clone the repository
 
 Clone the repository with its submodules
