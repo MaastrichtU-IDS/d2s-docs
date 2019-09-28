@@ -172,7 +172,7 @@ class Index extends React.Component {
 
     const Description = () => (
       <div>
-      <Block background="dark" id="d2sinaction">
+      <Block background="light" id="d2sinaction">
         {[
           {
             content:

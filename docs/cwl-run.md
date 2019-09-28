@@ -31,11 +31,18 @@ The Docker image used by the workflow needs to be pulled from DockerHub first.
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 ```
 
-## Working directory
+## Command arguments
 
-By default the example files are running using `/data/d2s-transform-biolink` as working directory. If you installed the repository at the different location, you will need to edit the `working-directory` parameter in the [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/example-config/config-transform-xml-drugbank.yml#L1).
+By default the example files are running using `/data/red-kg` as working directory. If you installed the repository at the different location, you will need to edit the `--outdir` and `--tmp-outdir-prefix` parameters in the command line.
 
-> **TODO:** update doc about config dir and working dir `/data/red-kg`
+- `--outdir`: final dir where the final ouput of the workflow is copied.
+- `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
+- `--tmpdir-prefix`: dir used to pass inputs
+- `-basedir /data/basedir/`: to find out
+
+`outdir` and `tmp-outdir` output files in `/data/red-kg`
+
+`tmpdir` output files in `/tmp/red-kg`
 
 ## Convert XML with xml2rdf
 

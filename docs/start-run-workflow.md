@@ -42,9 +42,7 @@ git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-biolink.g
 cd d2s-transform-biolink
 ```
 
-At the moment the repository `/data/red-kg` is used by default as working directory
-
----
+> The  provided commands to run workflows are designed to be executed from the `d2s-transform-biolink` directory
 
 ## Pull modules
 
@@ -103,6 +101,10 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 * `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
 * `--tmpdir-prefix`: dir used to pass inputs
 * `-basedir /data/basedir/`: to find out
+
+`outdir` and `tmp-outdir` output files in `/data/red-kg`
+
+`tmpdir` output files in `/tmp/red-kg`
 
 ### Convert XML to BioLink
 
