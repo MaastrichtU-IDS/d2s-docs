@@ -43,4 +43,4 @@ oc create -f archives/d2s-download-pod.yaml
 oc rsh d2s-download-pod
 ```
 
-![OpenShift](/img/ophenshift-logo.png)
+![OpenShift](/img/openshift-logo.png)

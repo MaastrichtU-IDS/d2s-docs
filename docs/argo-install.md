@@ -7,7 +7,7 @@ sidebar_label: Argo installation
 
 ## Install the OpenShift client
 
-[![OpenShift](/img/ophenshift-logo.png)](https://www.openshift.com/)
+[![OpenShift](/img/openshift-logo.png)](https://www.openshift.com/)
 
 [Download the oc client](https://www.okd.io/download.html) to connect to the [DSRI OpenShift cluster](https://app.dsri.unimaas.nl:8443/).
 

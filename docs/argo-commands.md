@@ -33,7 +33,7 @@ argo delete my-workflow
 
 ## OpenShift commands
 
-![OpenShift](/img/ophenshift-logo.png)
+![OpenShift](/img/openshift-logo.png)
 
 ### List pods
 
