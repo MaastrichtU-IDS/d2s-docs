@@ -132,3 +132,23 @@ cwl-runner --outdir output/stitch-sample \
 ```
 
 > Same [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/cwl/config/config-transform-csv-stitch.yml) as the regular CSV workflow.
+
+## Load CWL workflows RDF description
+
+http://into-the-prov.137.120.31.101.nip.io/describe?uri=file:%2F%2F%2Fdata%2Fd2s-transform-biolink%2Fd2s-cwl-workflows%2Fworkflows%2Fworkflow-csv.cwl
+
+```shell
+cwl-runner --print-rdf d2s-cwl-workflows/workflows/workflow-csv.cwl
+```
+
+Run workflow
+
+```shell
+cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+  --outdir /data/red-kg/output \
+  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --tmpdir-prefix=/tmp/red-kg/ \
+  d2s-cwl-workflows/workflows/workflow-load-rdf.cwl \
+  d2s-cwl-workflows/support/config-cwl-load-rdf.yml
+```
+
