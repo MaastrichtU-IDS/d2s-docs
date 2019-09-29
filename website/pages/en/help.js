@@ -21,9 +21,9 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation.](${docUrl(
+      content: `Learn more using the [documentation](${docUrl(
         'getstarted',
-      )})`,
+      )}).`,
       title: 'Browse the Docs',
     },
     {
@@ -31,7 +31,7 @@ function Help(props) {
       title: 'GitHub',
     },
     {
-      content: "Feel free to [contact](mailto:vincent.emonet@maastrichtuniversity.nl) the main maintainers if you have any questions.",
+      content: "Feel free to [contact the main maintainers](mailto:vincent.emonet@maastrichtuniversity.nl) if you have any questions.",
       title: 'Contact us',
     },
   ];

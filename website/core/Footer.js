@@ -40,11 +40,11 @@ class Footer extends React.Component {
             <a href={this.docUrl('start-introduction', this.props.language)}>
               Get started
             </a>
-            <a href={this.docUrl('argo-install', this.props.language)}>
-              Argo workflows
-            </a>
             <a href={this.docUrl('cwl-install', this.props.language)}>
               CWL workflows
+            </a>
+            <a href={this.docUrl('argo-install', this.props.language)}>
+              Kubernetes workflows
             </a>
             <a href={this.docUrl('guide-docker', this.props.language)}>
               Guides

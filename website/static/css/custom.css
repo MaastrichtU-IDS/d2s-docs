@@ -23,7 +23,7 @@ a:hover {
     color: #ff6f00;
     text-decoration: none;
 }
-
+/* Links color when dark background (index.js) */
 .darkBackground a:not(:hover) {
     color: #1565c0;
 }
@@ -37,9 +37,6 @@ a:hover {
     font-weight: 400;
 }
 /* Change weight of main index page title */
-.homeContainer h2 {
-    font-weight: 400;
-}
 .projectTitle {
     font-weight: 400;
 }
@@ -48,12 +45,17 @@ a:hover {
     font-weight: 300;
 }
 /* Change weight of Get started button */
-.homeContainer .promoSection .button {
+.promoSection .button {
+    margin: 0.5em;
+    font-size: 20px;
     font-weight: 400;
     border-width: 1px;
 }
 
-
+/* Edit button in docs markdown */
+.edit-page-link {
+    font-size: 12px;
+}
 /* Docs markdown images size */
 article img, article p img {
     max-width: 250px;
@@ -64,13 +66,6 @@ article img, article p img {
     text-transform: none;
     padding: 1em;
     border-radius: 7px;
-}
-
-.promoSection .button {
-    margin: 0.5em;
-    font-size: 20px;
-    border-width: 2px;
-    font-weight: 600;
 }
 
 .homeContainer .homeWrapper .projectLogo  {
@@ -90,16 +85,3 @@ article img, article p img {
 .gridBlock .fourByGridBlock img {
     max-height: 100px;
 }
-
-/* .button {
-    position: relative;
-    min-width: 5em;
-    border-radius: 5em;
-    margin: 0.5em;
-    padding: 1em;
-    text-align: center;
-    transition: all 0.2s;
-    background: transparent;
-    border-color: #5645F5;
-    color: #5645F5;
-} */
