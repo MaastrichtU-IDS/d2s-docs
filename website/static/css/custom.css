@@ -28,6 +28,32 @@ a:hover {
     color: #1565c0;
 }
 
+/* Change weight of Website logo, nav left */
+.headerTitleWithLogo {
+    font-weight: 500;
+}
+/* Change weight of Documentation and Help, nav right */
+.navigationSlider .slidingNav ul li a {
+    font-weight: 400;
+}
+/* Change weight of main index page title */
+.homeContainer h2 {
+    font-weight: 400;
+}
+.projectTitle {
+    font-weight: 400;
+}
+/* Main index page subtitle */
+.projectTitle > small {
+    font-weight: 300;
+}
+/* Change weight of Get started button */
+.homeContainer .promoSection .button {
+    font-weight: 400;
+    border-width: 1px;
+}
+
+
 /* Docs markdown images size */
 article img, article p img {
     max-width: 250px;

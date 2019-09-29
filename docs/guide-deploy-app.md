@@ -35,7 +35,7 @@ docker run -d --rm --name your-app-name -e VIRTUAL_HOST=your-app-name.137.120.31
 
 ## Cleaner URL using free DNS
 
-Register to [afraid.org](https://freedns.afraid.org/) to get a cleaner and stable URL without the IP address for free.
+Register to [afraid.org](https://freedns.afraid.org/) to get a cleaner and stable URL without the inelegant IP address for free.
 
 > E.g. http://into-the-graph.mooo.com/
 
@@ -50,7 +50,7 @@ Register to [afraid.org](https://freedns.afraid.org/) to get a cleaner and stabl
 docker run -d --rm --name your-app-name -e VIRTUAL_HOST=your-app-name.mooo.com your-app-image
 ```
 
-## Deploy in production
+## In production on dumontierlab.com
 
 To access it at **[your-app-name.dumontierlab.com](http://your-app-name.dumontierlab.com)**.
 
