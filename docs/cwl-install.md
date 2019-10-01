@@ -26,7 +26,7 @@ apt-get install cwltool
 
 * Using `pip`
 
-```bash
+```shell
 pip install cwlref-runner
 ```
 

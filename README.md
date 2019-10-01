@@ -35,7 +35,7 @@ npm start
 
 ## Run with Docker
 
-```bash
+```shell
 docker-compose up
 ```
 
@@ -47,7 +47,7 @@ Using jwilder's [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [nip.i
 
 Set environment `VIRTUAL_HOST` and `VIRTUAL_PORT` in `docker-compose.yml`.
 
-```bash
+```shell
 docker-compose up -d
 ```
 
