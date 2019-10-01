@@ -9,9 +9,8 @@ Quickly get on board by running your first CWL workflows to convert biomedical d
 
 Install [Docker](https://docs.docker.com/install/) to run the modules:
 
-* On [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-* On [MacOS](https://docs.docker.com/docker-for-mac/install/)
-* On [Windows](https://docs.docker.com/docker-for-windows/install/)
+* See [our documentation](/docs/guide-docker#on-ubuntu) to install Docker on [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) with [docker-compose](https://docs.docker.com/compose/install/).
+* [Installer available](https://hub.docker.com/?overlay=onboarding) for MacOS and Windows.
 
 ---
 
@@ -22,7 +21,7 @@ Install [cwltool](https://github.com/common-workflow-language/cwltool#install) t
 * On Ubuntu
 
 ```shell
-apt-get install cwltool
+sudo apt install cwltool
 ```
 
 * Using `pip`
@@ -59,6 +58,8 @@ Choose the services you want to deploy with `docker-compose`
 * Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), blazegraph
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
+> [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `support/graphdb` repository, and set the right version in the `docker-compose` before running it.
+
 ```shell
 # On your local system you should first create the workflows working directory
 mkdir -p /data/red-kg
@@ -66,14 +67,11 @@ mkdir -p /data/red-kg
 # Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
 
-# Start Virtuoso and Apache Drill
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso drill
-
-# Start blazegraph and postgres
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph postgres
+# Start Virtuoso and Postgres
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso postgres
 ```
 
-> [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `support/graphdb` repository, and set the right version in the `docker-compose` before running it.
+> See [more documentation](/docs/cwl-services) to start services.
 
 Check running services
 
@@ -91,14 +89,9 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 
 ## Run workflows
 
-* `--outdir`: final dir where the final ouput of the workflow is copied.
-* `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
-* `--tmpdir-prefix`: dir used to pass inputs
-* `-basedir /data/basedir/`: to find out
+> `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/red-kg`
 
-`outdir` and `tmp-outdir` output files in `/data/red-kg`
-
-`tmpdir` output files in `/tmp/red-kg`
+> `tmpdir` output files in `/tmp/red-kg`
 
 ### Convert XML to BioLink
 
