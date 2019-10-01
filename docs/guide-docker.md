@@ -27,23 +27,24 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 > `sudo groupadd docker` might be required before `usermod`
 
-### MacOS
+### MacOS & Windows
 
-An [installer](https://hub.docker.com/?overlay=onboarding) is available to [install on MacOS](https://docs.docker.com/docker-for-mac/install/).
-
-### Windows
-
-An [installer](https://hub.docker.com/?overlay=onboarding) is available to [install on Windows](https://docs.docker.com/docker-for-windows/install/).
+An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/).
 
 ### Fix issues
 
 If Docker can't access internet when building you might want to change the DNS (to use Google's one). 
 
-* E.g.: `wget: unable to resolve host address`
+E.g.: `wget: unable to resolve host address`
 
-> On Linux: `vim /etc/resolv.conf` > `nameserver 8.8.8.8`
+* On Linux
 
-> For issues related to Docker on Windows, see the [Docker on Windows](docs/guide-windows) page.
+  ```shell
+  vim /etc/resolv.conf`
+  	> `nameserver 8.8.8.8`
+  ```
+
+* For issues related to Docker on Windows, see the [Docker on Windows](docs/guide-windows) page.
 
 ---
 
