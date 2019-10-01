@@ -22,16 +22,7 @@ Services must be running before executing CWL workflows. E.g. [Apache Drill](htt
 
 > See [Setting up GraphDB](/docs/guide-graphdb) documentation for more details.
 
-> If no GraphDB repository exist, create the `test` repository:
->
-> ```shell
-> curl -X POST \
->  http://localhost:7200/rest/repositories \
->  -H 'Content-Type: multipart/form-data' \
->  -F "config=@d2s-cwl-workflows/support/graphdb-repo-config.ttl"
-> ```
-
-
+---
 
 ## Start services
 
@@ -41,6 +32,9 @@ Choose the services you want to deploy with `docker-compose`
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
 ```shell
+# On your local system you should first create the workflows working directory
+mkdir -p /data/red-kg
+
 # Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
 

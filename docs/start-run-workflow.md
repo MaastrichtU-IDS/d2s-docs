@@ -1,6 +1,6 @@
 ---
 id: start-run-workflow
-title: Run your first workflow
+title: Quick start
 ---
 
 Quickly get on board by running your first CWL workflows to convert biomedical data to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
@@ -60,6 +60,9 @@ Choose the services you want to deploy with `docker-compose`
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
 ```shell
+# On your local system you should first create the workflows working directory
+mkdir -p /data/red-kg
+
 # Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
 
@@ -71,15 +74,6 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 ```
 
 > [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `support/graphdb` repository, and set the right version in the `docker-compose` before running it.
-
-> For GraphDB, if no repository exist, create the `test` repository:
->
-> ```shell
-> curl -X POST \
->     http://localhost:7200/rest/repositories \
->     -H 'Content-Type: multipart/form-data' \
->     -F "config=@d2s-cwl-workflows/support/graphdb-repo-config.ttl"
-> ```
 
 Check running services
 

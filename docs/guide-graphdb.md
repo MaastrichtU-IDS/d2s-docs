@@ -38,10 +38,10 @@ Create the `test` repository
 curl -X POST \
     http://localhost:7200/rest/repositories \
     -H 'Content-Type: multipart/form-data' \
-    -F "config=@d2s-cwl-workflows/support/graphdb-repo-config.ttl"
+    -F "config=@d2s-cwl-workflows/support/graphdb-test-repo-config.ttl"
 ```
 
-> Edit the repository in [graphdb-repo-config.ttl](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/graphdb-repo-config.ttl).
+> Edit the repository in [graphdb-test-repo-config.ttl](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/graphdb-test-repo-config.ttl).
 
 ### Using the GUI
 
