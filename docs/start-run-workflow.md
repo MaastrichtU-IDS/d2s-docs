@@ -9,7 +9,7 @@ Quickly get on board by running your first CWL workflows to convert biomedical d
 
 Install [Docker](https://docs.docker.com/install/) to run the modules:
 
-* See [our documentation](/docs/guide-docker#on-ubuntu) to install Docker on [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) with [docker-compose](https://docs.docker.com/compose/install/).
+* See [our documentation](/docs/guide-docker#on-ubuntu) to install [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu with [docker-compose](https://docs.docker.com/compose/install/).
 * [Installer available](https://hub.docker.com/?overlay=onboarding) for MacOS and Windows.
 
 ---

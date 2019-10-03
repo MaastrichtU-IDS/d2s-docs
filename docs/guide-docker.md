@@ -7,11 +7,9 @@ title: Docker guide
 
 ## Install
 
-Install Docker [here](https://docs.docker.com/install/).
-
 ### On Ubuntu
 
-Install [Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+Install [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) and [docker-compose](https://docs.docker.com/compose/install/).
 
 ```shell
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -29,7 +27,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ### MacOS & Windows
 
-An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/).
+An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/) (`docker-compose` is included).
 
 ### Fix issues
 
