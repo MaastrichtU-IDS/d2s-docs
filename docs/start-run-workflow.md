@@ -12,6 +12,8 @@ Install [Docker](https://docs.docker.com/install/) to run the modules:
 * See [our documentation](/docs/guide-docker#on-ubuntu) to install [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu with [docker-compose](https://docs.docker.com/compose/install/).
 * [Installer available](https://hub.docker.com/?overlay=onboarding) for MacOS and Windows.
 
+> MacOS users open Docker config > `File Sharing` and make sure the `/tmp` and `/data` directories are shared.
+
 ---
 
 ## Install cwltool
@@ -45,6 +47,8 @@ cd d2s-transform-biolink
 
 ## Pull modules
 
+To run services and workflows, Docker images need to be pulled. Use `docker-compose` to do so.
+
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 ```
@@ -53,21 +57,24 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 
 ## Start services
 
-Choose the services you want to deploy with `docker-compose`
+Choose the services you need, and deploy them with `docker-compose`
 
 * Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), blazegraph
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
-> [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `support/graphdb` repository, and set the right version in the `docker-compose` before running it.
+> [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `d2s-cwl-workflows/support/graphdb` repository, and make sure the GraphDB version defined in the `docker-compose` is right.
 
 ```shell
 # On your local system you should first create the workflows working directory
 mkdir -p /data/red-kg
+sudo mkdir -p /data/red-kg
+sudo chown -R ${USER}:${USER} /data/red-kg
+# You might need to provide a different group (e.g. 'staff' at IDS)
 
 # Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
 
-# Start Virtuoso and Postgres
+# Start Virtuoso and Postgres (TO REMOVE)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso postgres
 ```
 
@@ -84,6 +91,8 @@ Stop services
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
+
+> Access Graphdb on http://localhost:7200 and Drill on http://localhost:8047.
 
 ---
 
