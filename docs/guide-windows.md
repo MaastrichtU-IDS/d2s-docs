@@ -105,7 +105,7 @@ docker run -d --rm --name graphdb -p 7200:7200 -v c:/data/graphdb:/opt/graphdb/h
 ### Run Apache Drill
 
 ```powershell
-docker run -dit --rm -p 8047:8047 -p 31010:31010 --name drill -v c:/data:/data:ro apache-drill
+docker run -dit --rm -p 8047:8047 -p 31011:31010 --name drill -v c:/data:/data:ro apache-drill
 ```
 
 > Create "*test*" repository by accessing http://localhost:7200/repository

@@ -111,7 +111,7 @@ services:
       - /data:/data:ro
     ports:
       - 8047:8047
-      - 31010:31010
+      - 31011:31010
     tty: true
     networks:
       - network
@@ -136,7 +136,7 @@ networks:
 docker run -it --rm -v /data:/data \
   --network network-pipeline_data2services \
   autor2rml -r \
-  -j "jdbc:drill:drillbit=data2services-pipeline_drill_1:31010" \
+  -j "jdbc:drill:drillbit=data2services-pipeline_drill_1:31011" \
   -o "/data/data2services/mapping.trig" -d "/data/data2services" -g "http://data2services/graph/autor2rml"
 ```
 
@@ -175,10 +175,10 @@ docker run -it --rm --name frontend --link backend-sql:backend-sql --link backen
 #### Example of AutoR2RML connecting to Drill container using link
 ```shell
 # Run Apache Drill service
-docker run -dit --rm -p 8047:8047 -p 31010:31010 --name drill -v /data:/data:ro apache-drill
+docker run -dit --rm -p 8047:8047 -p 31011:31010 --name drill -v /data:/data:ro apache-drill
 
 # Run AutoR2RML, linking to the Apache Drill container
 docker run -it --rm --link drill:drill -v /data:/data autor2rml \
-	-j "jdbc:drill:drillbit=drill:31010" -r \
+	-j "jdbc:drill:drillbit=drill:31011" -r \
         -o "/data/data2services/mapping.trig" -d "/data/data2services" -g "http://data2services/graph/autor2rml"
 ```

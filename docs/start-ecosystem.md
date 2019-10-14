@@ -99,7 +99,7 @@ Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large 
 ```shell
 docker-compose up drill
 docker pull maastrichtuids/apache-drill:latest
-docker run -dit --rm -p 8047:8047 -p 31010:31010 \
+docker run -dit --rm -p 8047:8047 -p 31011:31010 \
 	--name drill -v /data:/data:ro maastrichtuids/apache-drill
 ```
 
@@ -118,7 +118,7 @@ Automatically generate [R2RML](https://www.w3.org/TR/r2rml/) files from Relation
 ```shell
 docker pull maastrichtuids/autor2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
-	maastrichtuids/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
+	maastrichtuids/autor2rml -j "jdbc:drill:drillbit=drill:31011" -r \
 	-o "/data/data2services/mapping.trig" \
 	-d "/data/data2services" \
 	-u "postgres" -p "pwd" \
@@ -143,7 +143,7 @@ docker pull maastrichtuids/r2rml:latest
 docker run -it --rm --net d2s-cwl-workflows_d2s-network \
   -v /data/d2s:/data \
   maastrichtuids/r2rml \ 
-  --connectionURL jdbc:drill:drillbit=drill:31010 \
+  --connectionURL jdbc:drill:drillbit=drill:31011 \
   --mappingFile /data/mapping.trig \
   --outputFile /data/rdf_output.nq \
   --format NQUADS
