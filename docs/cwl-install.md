@@ -1,7 +1,6 @@
 ---
 id: cwl-install
 title: CWL installation
-sidebar_label: CWL installation
 ---
 
 [![](/img/CWL_logo.png)](https://www.commonwl.org/)
@@ -14,25 +13,54 @@ The [Common Workflow Language](https://www.commonwl.org/) is used to describe wo
 
 > Go to the [Docker guide](http://d2s.semanticscience.org/docs/guide-docker) if you have issues with Docker installation.
 
+
 ## Install cwltool
 
-Install [cwltool](https://github.com/common-workflow-language/cwltool#install) to get cwl-runner to run workflows of Docker modules.
+Install [cwltool](https://github.com/common-workflow-language/cwltool#install) to get cwl-runner to run workflows of Docker modules:
 
-* On Ubuntu
-
-```shell
-apt-get install cwltool
-```
-
-* Using `pip`
+### On Ubuntu
 
 ```shell
-pip install cwlref-runner
+sudo apt install cwltool
 ```
 
->  Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
+### On MacOS
 
->  Windows documentation to run the docker containers can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
+Using `pip` and `pipx`
+
+```shell
+# Install python3 and pip3
+brew install python3
+# Install pipx
+pip3 install pipx
+# Install CWL runner
+pipx install cwlref-runner
+# Add pipx apps to path
+pipx ensurepath
+```
+
+### On CentOS
+
+Using `pip` and `pipx`
+
+```shell
+# Install python3 and pip3
+yum install python3
+# Install pipx
+pip3 install pipx
+# Install CWL runner
+pipx install cwlref-runner
+# Add pipx apps to path
+#pipx ensurepath
+```
+
+> TODO: test
+
+### On Windows
+
+Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
+
+> Windows documentation to run the docker containers can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
 
 ---
 
@@ -45,6 +73,8 @@ pip install cwlref-runner
 [Download](https://github.com/rabix/composer/releases) the right installation file and run it.
 
 > Open the `d2s-cwl-workflows` folder in Rabix Composer.
+
+> Note that Rabix will overwrite how you original wrote your CWL files, and add `xy` coordinates to steps.
 
 ---
 

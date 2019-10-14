@@ -10,7 +10,7 @@ Quickly get on board by running your first CWL workflows to convert biomedical d
 Install [Docker](https://docs.docker.com/install/) to run the modules:
 
 * See [our documentation](/docs/guide-docker#on-ubuntu) to install [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu with [docker-compose](https://docs.docker.com/compose/install/).
-* [Installer available](https://hub.docker.com/?overlay=onboarding) for MacOS and Windows.
+* [Installer available](https://hub.docker.com/?overlay=onboarding) for MacOS and Windows (requires to login to Docker Hub).
 
 > MacOS users open Docker config > `File Sharing` and make sure the `/tmp` and `/data` directories are shared.
 
@@ -20,19 +20,47 @@ Install [Docker](https://docs.docker.com/install/) to run the modules:
 
 Install [cwltool](https://github.com/common-workflow-language/cwltool#install) to get cwl-runner to run workflows of Docker modules:
 
-* On Ubuntu
+### On Ubuntu
 
 ```shell
 sudo apt install cwltool
 ```
 
-* Using `pip`
+### On MacOS
+
+Using `pip` and `pipx`
 
 ```shell
-pip install cwlref-runner
+# Install python3 and pip3
+brew install python3
+# Install pipx
+pip3 install pipx
+# Install CWL runner
+pipx install cwlref-runner
+# Add pipx apps to path
+pipx ensurepath
 ```
 
-> Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows (see [Windows documentation](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows)).
+### On CentOS
+
+Using `pip` and `pipx`
+
+```shell
+# Install python3 and pip3
+yum install python3
+# Install pipx
+pip3 install pipx
+# Install CWL runner
+pipx install cwlref-runner
+# Add pipx apps to path
+#pipx ensurepath
+```
+
+> TODO: test
+
+### On Windows
+
+Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows. See [Windows documentation](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows) for more details.
 
 ---
 
@@ -44,6 +72,8 @@ cd d2s-transform-biolink
 ```
 
 > The  provided commands to run workflows are designed to be executed from the `d2s-transform-biolink` directory
+
+---
 
 ## Pull modules
 

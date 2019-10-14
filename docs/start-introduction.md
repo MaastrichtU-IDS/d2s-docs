@@ -1,6 +1,7 @@
 ---
 id: start-introduction
 title: Introduction
+sidebar_label: Introduction
 ---
 
 ## The Data2Services philosophy
