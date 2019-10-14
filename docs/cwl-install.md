@@ -31,9 +31,7 @@ Using `pip` and `pipx`
 ```shell
 # Install python3 and pip3
 brew install python3
-# Install pipx
 pip3 install pipx
-# Install CWL runner
 pipx install cwlref-runner
 # Add pipx apps to path
 pipx ensurepath

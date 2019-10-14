@@ -33,9 +33,7 @@ Using `pip` and `pipx`
 ```shell
 # Install python3 and pip3
 brew install python3
-# Install pipx
 pip3 install pipx
-# Install CWL runner
 pipx install cwlref-runner
 # Add pipx apps to path
 pipx ensurepath
@@ -47,10 +45,12 @@ Using `pip` and `pipx`
 
 ```shell
 # Install python3 and pip3
-yum install python3
-# Install pipx
+yum install python36
+yum install python36-devel
+yum install python36-setuptools
+easy_install-3.6 pip
+
 pip3 install pipx
-# Install CWL runner
 pipx install cwlref-runner
 # Add pipx apps to path
 #pipx ensurepath
