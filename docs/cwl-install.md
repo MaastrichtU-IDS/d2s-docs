@@ -26,7 +26,7 @@ sudo apt install cwltool
 
 ### On MacOS
 
-Using `pip` and `pipx`
+Using `pip` and `pipx`.
 
 ```shell
 # Install python3 and pip3
@@ -39,20 +39,16 @@ pipx ensurepath
 
 ### On CentOS
 
-Using `pip` and `pipx`
+Using `pip` and `pipx`.
 
 ```shell
 # Install python3 and pip3
-yum install python3
-# Install pipx
-pip3 install pipx
-# Install CWL runner
+sudo yum install python36
+sudo yum install python36-devel
+sudo easy_install-3.6 pip
+pip3 install --user pipx
 pipx install cwlref-runner
-# Add pipx apps to path
-#pipx ensurepath
 ```
-
-> TODO: test
 
 ### On Windows
 

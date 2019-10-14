@@ -16,9 +16,9 @@ Install [Docker](https://docs.docker.com/install/) to run the modules:
 
 ---
 
-## Install cwltool
+## Install cwl-runner
 
-Install [cwltool](https://github.com/common-workflow-language/cwltool#install) to get cwl-runner to run workflows of Docker modules:
+Install [cwltool](https://github.com/common-workflow-language/cwltool#install) or `cwlref-runner` to get `cwl-runner` to run workflows of Docker modules.
 
 ### On Ubuntu
 
@@ -28,7 +28,7 @@ sudo apt install cwltool
 
 ### On MacOS
 
-Using `pip` and `pipx`
+Using `pip` and `pipx`.
 
 ```shell
 # Install python3 and pip3
@@ -41,26 +41,22 @@ pipx ensurepath
 
 ### On CentOS
 
-Using `pip` and `pipx`
+Using `pip` and `pipx`.
 
 ```shell
 # Install python3 and pip3
-yum install python36
-yum install python36-devel
-yum install python36-setuptools
-easy_install-3.6 pip
-
-pip3 install pipx
+sudo yum install python36
+sudo yum install python36-devel
+sudo easy_install-3.6 pip
+pip3 install --user pipx
 pipx install cwlref-runner
-# Add pipx apps to path
-#pipx ensurepath
 ```
-
-> TODO: test
 
 ### On Windows
 
-Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows. See [Windows documentation](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows) for more details.
+Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
+
+> Windows documentation to run the docker containers can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
 
 ---
 
@@ -96,7 +92,6 @@ Choose the services you need, and deploy them with `docker-compose`
 
 ```shell
 # On your local system you should first create the workflows working directory
-mkdir -p /data/red-kg
 sudo mkdir -p /data/red-kg
 sudo chown -R ${USER}:${USER} /data/red-kg
 # You might need to provide a different group (e.g. 'staff' at IDS)
