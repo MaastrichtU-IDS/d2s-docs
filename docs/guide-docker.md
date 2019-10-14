@@ -179,6 +179,6 @@ docker run -dit --rm -p 8047:8047 -p 31011:31010 --name drill -v /data:/data:ro 
 
 # Run AutoR2RML, linking to the Apache Drill container
 docker run -it --rm --link drill:drill -v /data:/data autor2rml \
-	-j "jdbc:drill:drillbit=drill:31011" -r \
+	-j "jdbc:drill:drillbit=drill:31010" -r \
         -o "/data/data2services/mapping.trig" -d "/data/data2services" -g "http://data2services/graph/autor2rml"
 ```

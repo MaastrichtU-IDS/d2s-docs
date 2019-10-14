@@ -81,6 +81,25 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 
 ---
 
+## Create workflows directories
+
+### On Ubuntu and CentOS
+
+```shell
+sudo mkdir -p /data/red-kg
+sudo chown -R ${USER}:${USER} /data/red-kg
+```
+
+> You might need to provide a different group (e.g. `staff` at IDS).
+
+### On MacOS
+
+```shell
+mkdir -p /data/red-kg
+```
+
+---
+
 ## Start services
 
 Choose the services you need, and deploy them with `docker-compose`
@@ -88,44 +107,44 @@ Choose the services you need, and deploy them with `docker-compose`
 * Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), blazegraph
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
-> [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version*. Put the downloaded `.zip` file in the `d2s-cwl-workflows/support/graphdb` repository, and make sure the GraphDB version defined in the `docker-compose` is right.
+### GraphDB and Apache Drill
+
+[Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version* (you need to register to get download URL via email).
+
+Put the downloaded `.zip` file in the `d2s-cwl-workflows/support/graphdb` repository, and make sure the GraphDB version defined in the `docker-compose` is right.
 
 ```shell
-# On your local system you should first create the workflows working directory
-sudo mkdir -p /data/red-kg
-sudo chown -R ${USER}:${USER} /data/red-kg
-# You might need to provide a different group (e.g. 'staff' at IDS)
-
-# Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
+```
 
-# Start Virtuoso and Postgres (TO REMOVE)
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso postgres
+> Access Graphdb on http://localhost:7200 and Drill on http://localhost:8048.
+
+### Virtuoso and Apache Drill
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso drill
 ```
 
 > See [more documentation](/docs/cwl-services) to start services.
 
-Check running services
+### See running services
 
 ```shell
 docker ps
 ```
 
-Stop services
+### Stop services
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
 
-> Access Graphdb on http://localhost:7200 and Drill on http://localhost:8047.
-
 ---
 
 ## Run workflows
 
-> `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/red-kg`
-
-> `tmpdir` output files in `/tmp/red-kg`
+* `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/red-kg`.
+* `tmpdir` output files in `/tmp/red-kg`.
 
 ### Convert XML to BioLink
 
@@ -142,6 +161,8 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 
 > Output goes to `/data/red-kg/output`
 
+---
+
 ### Convert TSV to BioLink
 
 Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
@@ -156,6 +177,8 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 ```
 
 > Output goes to `/data/red-kg/output`
+
+---
 
 ### Convert TSV with split to BioLink
 

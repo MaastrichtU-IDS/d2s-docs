@@ -118,7 +118,7 @@ Automatically generate [R2RML](https://www.w3.org/TR/r2rml/) files from Relation
 ```shell
 docker pull maastrichtuids/autor2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
-	maastrichtuids/autor2rml -j "jdbc:drill:drillbit=drill:31011" -r \
+	maastrichtuids/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
 	-o "/data/data2services/mapping.trig" \
 	-d "/data/data2services" \
 	-u "postgres" -p "pwd" \
@@ -143,7 +143,7 @@ docker pull maastrichtuids/r2rml:latest
 docker run -it --rm --net d2s-cwl-workflows_d2s-network \
   -v /data/d2s:/data \
   maastrichtuids/r2rml \ 
-  --connectionURL jdbc:drill:drillbit=drill:31011 \
+  --connectionURL jdbc:drill:drillbit=drill:31010 \
   --mappingFile /data/mapping.trig \
   --outputFile /data/rdf_output.nq \
   --format NQUADS
