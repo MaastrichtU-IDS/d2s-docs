@@ -51,7 +51,7 @@ Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF base
 Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
@@ -70,7 +70,7 @@ Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to gener
 Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
@@ -85,7 +85,7 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
@@ -98,7 +98,7 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 ## Run in the background
 
 ```shell
-nohup cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+nohup cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \

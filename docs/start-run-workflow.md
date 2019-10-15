@@ -151,7 +151,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
@@ -168,7 +168,7 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
@@ -185,7 +185,7 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
+cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \

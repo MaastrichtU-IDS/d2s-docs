@@ -140,7 +140,7 @@ Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rm
 
 ```shell
 docker pull maastrichtuids/r2rml:latest
-docker run -it --rm --net d2s-cwl-workflows_d2s-network \
+docker run -it --rm --net d2s-cwl-workflows_network \
   -v /data/d2s:/data \
   maastrichtuids/r2rml \ 
   --connectionURL jdbc:drill:drillbit=drill:31010 \
