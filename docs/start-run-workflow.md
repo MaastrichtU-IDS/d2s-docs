@@ -144,7 +144,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ## Run workflows
 
 * `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/d2s-kg`.
-* `tmpdir` output files in `/tmp/red-kg`.
+* `tmpdir` output files in `/tmp/d2s-kg`.
 
 ### Convert XML to BioLink
 
@@ -154,7 +154,7 @@ Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree
 cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/red-kg/ \
+  --tmpdir-prefix=/tmp/d2s-kg/ \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
   datasets/drugbank/config-transform-xml-drugbank.yml
 ```
@@ -171,7 +171,7 @@ Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/m
 cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/red-kg/ \
+  --tmpdir-prefix=/tmp/d2s-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv.cwl \
   datasets/stitch/config-transform-csv-stitch.yml
 ```
@@ -188,7 +188,7 @@ Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tr
 cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/red-kg/ \
+  --tmpdir-prefix=/tmp/d2s-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
   datasets/eggnog/config-transform-split-eggnog.yml
 ```

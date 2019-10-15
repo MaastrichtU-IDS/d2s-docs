@@ -42,7 +42,7 @@ By default the example files are running using `/data/d2s-kg` as working directo
 
 `outdir` and `tmp-outdir` output files in `/data/d2s-kg`
 
-`tmpdir` output files in `/tmp/red-kg`
+`tmpdir` output files in `/tmp/d2s-kg`
 
 ## Convert XML with xml2rdf
 
@@ -54,7 +54,7 @@ Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-b
 cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/red-kg/ \
+  --tmpdir-prefix=/tmp/d2s-kg/ \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
   datasets/drugbank/config-transform-xml-drugbank.yml
 ```
@@ -73,7 +73,7 @@ Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-bio
 cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/red-kg/ \
+  --tmpdir-prefix=/tmp/d2s-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv.cwl \
   datasets/stitch/config-transform-csv-stitch.yml
 ```
@@ -88,7 +88,7 @@ Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 
 cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/red-kg/ \
+  --tmpdir-prefix=/tmp/d2s-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
   datasets/eggnog/config-transform-split-eggnog.yml
 ```
@@ -101,7 +101,7 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 nohup cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-kg/output \
   --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/red-kg/ \
+  --tmpdir-prefix=/tmp/d2s-kg/ \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
   datasets/drugbank/config-transform-xml-drugbank.yml &
 ```
