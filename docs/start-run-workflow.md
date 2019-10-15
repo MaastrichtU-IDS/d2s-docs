@@ -88,6 +88,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 ```shell
 sudo mkdir -p /data/d2s-kg
 sudo chown -R ${USER}:${USER} /data/d2s-kg
+mkdir -p /tmp/d2s-kg
 ```
 
 > You might need to provide a different group (e.g. `staff` at IDS).
@@ -96,6 +97,7 @@ sudo chown -R ${USER}:${USER} /data/d2s-kg
 
 ```shell
 mkdir -p /data/d2s-kg
+# mkdir -p /tmp/d2s-kg ?
 ```
 
 ---
