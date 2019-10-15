@@ -65,11 +65,11 @@ const siteConfig = {
   ],
 
   // For search: https://community.algolia.com/docsearch/documentation/
-  algolia: {
-    apiKey: '033817e1a5cd4b58df39358119c67809',
-    indexName: 'data2services',
-    algoliaOptions: {} // Optional, if provided by Algolia
-  },
+  // algolia: {
+  //   apiKey: '033817e1a5cd4b58df39358119c67809',
+  //   indexName: 'data2services',
+  //   algoliaOptions: {} // Optional, if provided by Algolia
+  // },
 
   // If you have users set above, you add it here:
   users,
