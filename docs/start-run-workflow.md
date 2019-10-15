@@ -86,8 +86,8 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 ### On Ubuntu and CentOS
 
 ```shell
-sudo mkdir -p /data/red-kg
-sudo chown -R ${USER}:${USER} /data/red-kg
+sudo mkdir -p /data/d2s-kg
+sudo chown -R ${USER}:${USER} /data/d2s-kg
 ```
 
 > You might need to provide a different group (e.g. `staff` at IDS).
@@ -95,7 +95,7 @@ sudo chown -R ${USER}:${USER} /data/red-kg
 ### On MacOS
 
 ```shell
-mkdir -p /data/red-kg
+mkdir -p /data/d2s-kg
 ```
 
 ---
@@ -143,7 +143,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 
 ## Run workflows
 
-* `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/red-kg`.
+* `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/d2s-kg`.
 * `tmpdir` output files in `/tmp/red-kg`.
 
 ### Convert XML to BioLink
@@ -152,14 +152,14 @@ Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
-  --outdir /data/red-kg/output \
-  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --outdir /data/d2s-kg/output \
+  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
   datasets/drugbank/config-transform-xml-drugbank.yml
 ```
 
-> Output goes to `/data/red-kg/output`
+> Output goes to `/data/d2s-kg/output`
 
 ---
 
@@ -169,14 +169,14 @@ Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/m
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
-  --outdir /data/red-kg/output \
-  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --outdir /data/d2s-kg/output \
+  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv.cwl \
   datasets/stitch/config-transform-csv-stitch.yml
 ```
 
-> Output goes to `/data/red-kg/output`
+> Output goes to `/data/d2s-kg/output`
 
 ---
 
@@ -186,11 +186,11 @@ Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tr
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
-  --outdir /data/red-kg/output \
-  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --outdir /data/d2s-kg/output \
+  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
   datasets/eggnog/config-transform-split-eggnog.yml
 ```
 
-> Output goes to `/data/red-kg/output`
+> Output goes to `/data/d2s-kg/output`

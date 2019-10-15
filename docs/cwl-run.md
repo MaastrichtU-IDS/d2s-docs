@@ -33,14 +33,14 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 
 ## Command arguments
 
-By default the example files are running using `/data/red-kg` as working directory. If you installed the repository at the different location, you will need to edit the `--outdir` and `--tmp-outdir-prefix` parameters in the command line.
+By default the example files are running using `/data/d2s-kg` as working directory. If you installed the repository at the different location, you will need to edit the `--outdir` and `--tmp-outdir-prefix` parameters in the command line.
 
 - `--outdir`: final dir where the final ouput of the workflow is copied.
 - `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
 - `--tmpdir-prefix`: dir used to pass inputs
 - `-basedir /data/basedir/`: to find out
 
-`outdir` and `tmp-outdir` output files in `/data/red-kg`
+`outdir` and `tmp-outdir` output files in `/data/d2s-kg`
 
 `tmpdir` output files in `/tmp/red-kg`
 
@@ -52,8 +52,8 @@ Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-b
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
-  --outdir /data/red-kg/output \
-  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --outdir /data/d2s-kg/output \
+  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
   datasets/drugbank/config-transform-xml-drugbank.yml
@@ -61,7 +61,7 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 
 > See [config file](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/support/example-config/config-transform-xml-drugbank.yml).
 
-> Output goes to `/data/red-kg/output`
+> Output goes to `/data/d2s-kg/output`
 
 ## Convert CSV/TSV with AutoR2RML
 
@@ -71,8 +71,8 @@ Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-bio
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
-  --outdir /data/red-kg/output \
-  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --outdir /data/d2s-kg/output \
+  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv.cwl \
   datasets/stitch/config-transform-csv-stitch.yml
@@ -86,8 +86,8 @@ Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
-  --outdir /data/red-kg/output \
-  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --outdir /data/d2s-kg/output \
+  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
   datasets/eggnog/config-transform-split-eggnog.yml
@@ -99,8 +99,8 @@ cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
 
 ```shell
 nohup cwl-runner --custom-net d2s-cwl-workflows_d2s-network \
-  --outdir /data/red-kg/output \
-  --tmp-outdir-prefix=/data/red-kg/tmp/ \
+  --outdir /data/d2s-kg/output \
+  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
   --tmpdir-prefix=/tmp/red-kg/ \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
   datasets/drugbank/config-transform-xml-drugbank.yml &
