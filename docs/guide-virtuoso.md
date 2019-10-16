@@ -27,11 +27,11 @@ docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
     -e DBA_PASSWORD=my-password \
     -e SPARQL_UPDATE=true \
     -e DEFAULT_GRAPH=http://www.example.com/my-graph \
-    -v /data/d2s:/data \
+    -v /data/d2s-workdir:/data \
     -d tenforce/virtuoso
 ```
 
-> Shared in `/data/d2s`
+> Shared in `/data/d2s-workdir`
 
 > Navigate to http://localhost:8890/
 
@@ -48,5 +48,5 @@ docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOB
 ## Virtuoso bulk load
 
 ```shell
-docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db/output', '*.nq', 'http://test/'); rdf_loader_run();"
+docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db', '*.nq', 'http://test/'); rdf_loader_run();"
 ```
