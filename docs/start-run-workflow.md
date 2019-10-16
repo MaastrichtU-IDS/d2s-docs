@@ -83,22 +83,14 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 
 ## Create workflows directories
 
-### On Ubuntu and CentOS
+Required for **Linux distributions** (e.g. Ubuntu, CentOS)
 
 ```shell
-sudo mkdir -p /data/d2s-kg
-sudo chown -R ${USER}:${USER} /data/d2s-kg
-mkdir -p /tmp/d2s-kg
+sudo mkdir -p /data/d2s-workspace/output/tmp-outdir
+sudo chown -R ${USER}:${USER} /data/d2s-workspace
 ```
 
 > You might need to provide a different group (e.g. `staff` at IDS).
-
-### On MacOS
-
-```shell
-mkdir -p /data/d2s-kg
-# mkdir -p /tmp/d2s-kg ?
-```
 
 ---
 
@@ -109,18 +101,6 @@ Choose the services you need, and deploy them with `docker-compose`
 * Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), blazegraph
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
-### GraphDB and Apache Drill
-
-[Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version* (you need to register to get download URL via email).
-
-Put the downloaded `.zip` file in the `d2s-cwl-workflows/support/graphdb` repository, and make sure the GraphDB version defined in the `docker-compose` is right.
-
-```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
-```
-
-> Access Graphdb on http://localhost:7200 and Drill on http://localhost:8048.
-
 ### Virtuoso and Apache Drill
 
 ```shell
@@ -129,7 +109,22 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 
 > See [more documentation](/docs/cwl-services) to start services.
 
-### See running services
+### GraphDB and Apache Drill
+
+GraphDB cannot be pulled directly, it needs to be downloaded manually:
+
+* [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version* (you need to register to get download URL via email).
+
+* Put the downloaded `.zip` file in the `d2s-cwl-workflows/support/graphdb` repository
+* Make sure the GraphDB version defined in the `docker-compose` is right (default is `10.0.1`)
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
+```
+
+> Access Graphdb on http://localhost:7200 and Drill on http://localhost:8048.
+
+### Show running services
 
 ```shell
 docker ps
@@ -145,8 +140,8 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 
 ## Run workflows
 
-* `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/d2s-kg`.
-* `tmpdir` output files in `/tmp/d2s-kg`.
+* `outdir` (final output) and `tmp-outdir` (each step output) share volumes in `/data/d2s-workspace`.
+* `tmpdir` output files in `/tmp/d2s-workspace`.
 
 ### Convert XML to BioLink
 
@@ -154,14 +149,14 @@ Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \
-  --outdir /data/d2s-kg/output \
-  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/d2s-kg/ \
+  --outdir /data/d2s-workspace/output \
+  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
+  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
   d2s-cwl-workflows/workflows/workflow-xml.cwl \
   datasets/drugbank/config-transform-xml-drugbank.yml
 ```
 
-> Output goes to `/data/d2s-kg/output`
+> Output goes to `/data/d2s-workspace/output`
 
 ---
 
@@ -171,14 +166,14 @@ Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/m
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \
-  --outdir /data/d2s-kg/output \
-  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/d2s-kg/ \
+  --outdir /data/d2s-workspace/output \
+  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
+  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
   d2s-cwl-workflows/workflows/workflow-csv.cwl \
   datasets/stitch/config-transform-csv-stitch.yml
 ```
 
-> Output goes to `/data/d2s-kg/output`
+> Output goes to `/data/d2s-workspace/output`
 
 ---
 
@@ -188,11 +183,11 @@ Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tr
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \
-  --outdir /data/d2s-kg/output \
-  --tmp-outdir-prefix=/data/d2s-kg/tmp/ \
-  --tmpdir-prefix=/tmp/d2s-kg/ \
+  --outdir /data/d2s-workspace/output \
+  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
+  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
   d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
   datasets/eggnog/config-transform-split-eggnog.yml
 ```
 
-> Output goes to `/data/d2s-kg/output`
+> Output goes to `/data/d2s-workspace/output`

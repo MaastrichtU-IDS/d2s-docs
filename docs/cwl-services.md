@@ -33,7 +33,7 @@ Choose the services you want to deploy with `docker-compose`
 
 ```shell
 # On your local system you should first create the workflows working directory
-mkdir -p /data/d2s-kg
+mkdir -p /data/d2s-workspace
 
 # Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
@@ -45,7 +45,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph postgres
 ```
 
-> All shared on `/data/d2s-kg`
+> All shared on `/data/d2s-workspace`
 
 >  Navigate to http://localhost:9000 for GraphDB
 
