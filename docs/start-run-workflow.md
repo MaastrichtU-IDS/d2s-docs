@@ -63,11 +63,11 @@ Following documentation focuses on Linux & MacOS, as no workflow engine supports
 ## Clone repository
 
 ```shell
-git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-biolink.git
-cd d2s-transform-biolink
+git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-template.git
+cd d2s-transform-template
 ```
 
-> The  provided commands to run workflows are designed to be executed from the `d2s-transform-biolink` directory
+> The  provided commands to run workflows are designed to be executed from the `d2s-transform-template` directory
 
 ---
 
@@ -145,7 +145,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 
 ### Convert XML to BioLink
 
-Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+Convert [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \
@@ -162,7 +162,7 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 
 ### Convert TSV to BioLink
 
-Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+Convert [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \
@@ -179,7 +179,7 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 
 ### Convert TSV with split to BioLink
 
-Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+Convert the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \

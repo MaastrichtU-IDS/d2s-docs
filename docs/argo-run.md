@@ -3,15 +3,15 @@ id: argo-run
 title: Run Argo workflows
 ---
 
-[![BioLink model](/img/biolink-logo.png)](https://github.com/MaastrichtU-IDS/d2s-transform-biolink)
+[![BioLink model](/img/biolink-logo.png)](https://github.com/MaastrichtU-IDS/d2s-transform-template)
 
-We will use [examples](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/support/config) from the [**d2s-transform-biolink**](https://github.com/MaastrichtU-IDS/d2s-transform-biolink) project.
+We will use [examples](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/support/config) from the [**d2s-transform-template**](https://github.com/MaastrichtU-IDS/d2s-transform-template) project.
 
 ## Clone the repository
 
 ```shell
-git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-biolink.git
-cd d2s-transform-biolink
+git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-template.git
+cd d2s-transform-template
 ```
 
 ---

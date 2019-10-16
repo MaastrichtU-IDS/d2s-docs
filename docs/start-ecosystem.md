@@ -63,7 +63,7 @@ Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainl
 
 ```shell
 docker pull maastrichtuids/d2s-bash-exec:latest
-docker run -it --rm -v /data/input:/data maastrichtuids/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-biolink/master/datasets/stitch/download/download-stitch.sh
+docker run -it --rm -v /data/input:/data maastrichtuids/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
 ```
 
 > See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-bash-exec).

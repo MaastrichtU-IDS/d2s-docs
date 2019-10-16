@@ -5,7 +5,7 @@ title: CWL installation
 
 [![](/img/CWL_logo.png)](https://www.commonwl.org/)
 
-The [Common Workflow Language](https://www.commonwl.org/) is used to describe workflows to transform heterogeneous structured data (CSV, TSV, RDB, XML, JSON) to the [BioLink](https://biolink.github.io/biolink-model/docs/) RDF data model. The user defines [SPARQL queries](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/pharmgkb/insert-pharmgkb.rq) to transform the generic RDF generated depending on the input data structure (AutoR2RML, xml2rdf) to the target BioLink model.
+The [Common Workflow Language](https://www.commonwl.org/) is used to describe workflows to transform heterogeneous structured data (CSV, TSV, RDB, XML, JSON) to the [BioLink](https://biolink.github.io/biolink-model/docs/) RDF data model. The user defines [SPARQL queries](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/pharmgkb/insert-pharmgkb.rq) to transform the generic RDF generated depending on the input data structure (AutoR2RML, xml2rdf) to the target BioLink model.
 
 ## Install docker
 
@@ -77,6 +77,6 @@ Following documentation focuses on Linux & MacOS, as no workflow engine supports
 Clone the repository with its submodules
 
 ```shell
-git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-biolink.git
+git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-template.git
 ```
 

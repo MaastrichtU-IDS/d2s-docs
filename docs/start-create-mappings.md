@@ -13,11 +13,11 @@ We use [SPARQL](https://www.w3.org/TR/sparql11-query/) to:
 
 ## Define the dataset metadata
 
-Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/), you can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/mapping/drugbank/metadata/1).
+Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/), you can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/metadata/1).
 
 Each dataset has 2 levels of metadata:
-* The [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
-* The [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
+* The [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
+* The [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
 
 
 > Some distribution metadata is retrieved from the summary
@@ -31,13 +31,13 @@ Each dataset has 2 levels of metadata:
 You can find example of SPARQL mapping queries for:
 
 * **XML** files
-  * [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/mapping/drugbank/transform/1)
-  * [PubMed](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/mapping/pubmed/transform/1)
+  * [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/transform/1)
+  * [PubMed](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/pubmed/transform/1)
 * **CSV/TSV** files
-  * [Stitch](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/stitch/transform/1/insert-stitch.rq)
-  * [hpo_annotations](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/hpo_annotations/transform/1/genes_to_phenotype.tsv.rq)
-  * [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/eggnog/transform/1/insert-eggnog.rq)
-  * [PharmGKB](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq)
+  * [Stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/stitch/transform/1/insert-stitch.rq)
+  * [hpo_annotations](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/hpo_annotations/transform/1/genes_to_phenotype.tsv.rq)
+  * [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/eggnog/transform/1/insert-eggnog.rq)
+  * [PharmGKB](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq)
 
 > Defining the mappings is the hardest and most cumbersome part of data integration. We are working actively on making it easier, by working on mapping automation and graphical user interfaces.
 
@@ -50,7 +50,7 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
   * And write the statements corresponding to the target representation
 
 
-> [PharmGKB](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq) is a good example of complex TSV file.
+> [PharmGKB](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq) is a good example of complex TSV file.
 
 * [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) generates a SPARQL mapping file for each array it detects
   * Mapping generation for XML is still experimental as it is complex to detect which fields should be mapped.
@@ -60,7 +60,7 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
     * E.g. if `drug:001` from a XML file has multiple `publications` and multiple `synonyms` nodes in its child, then it is preferable to get them in 2 different queries. Retrieving the 2 arrays in a single query would results in the returned row count be a cartesian product of the 2 arrays, which grows exponentially with the size of each array.
     * Final semantic results are the same, but the performance of the transformation is highly impacted.
 
-> [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/mapping/drugbank/transform/1) is a good example of multiple mappings files to handle arrays.
+> [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/transform/1) is a good example of multiple mappings files to handle arrays.
 
 ---
 
@@ -71,7 +71,7 @@ To perform the transformation, the SPARQL mapping queries will be executed using
 This tool uses the [rdf4j](https://rdf4j.eclipse.org/) framework to execute multiple SPARQL queries files, marked by the `.rq` extension, from a same repository on a SPARQL endpoint.
 
 The SPARQL query files to execute can be provided via:
-* A [URL pointing to a directory](https://github.com/MaastrichtU-IDS/d2s-transform-biolink/tree/master/mapping/drugbank/transform/1) containing the `.rq` files in a GitHub repository.
+* A [URL pointing to a directory](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/transform/1) containing the `.rq` files in a GitHub repository.
 * The local filesystem repository (sharing volume).
 
 
