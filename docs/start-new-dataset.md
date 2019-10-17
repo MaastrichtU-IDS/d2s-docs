@@ -3,6 +3,19 @@ id: start-new-dataset
 title: Transform new dataset
 ---
 
+Go to [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template), click on [Use this template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
+
+Clone the created repository on your machine
+
+```shell
+git clone your-repository
+cd your-repository
+```
+
+Copy the template repository
+
+> TODO: template repository
+
 ## Define download script
 
 [![Bash](/img/bash_logo.png)](https://devhints.io/bash)
