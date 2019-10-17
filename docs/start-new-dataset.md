@@ -1,6 +1,6 @@
 ---
 id: start-new-dataset
-title: Transform new dataset
+title: Transform a new dataset
 ---
 
 Go to [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template), click on [Use this template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
@@ -12,23 +12,34 @@ git clone your-repository
 cd your-repository
 ```
 
-Copy the template repository
+## Start from the template
 
-> TODO: template repository
+Copy the [template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template) and rename it to your dataset name.
 
-## Define download script
+### Describe the dataset metadata
+
+* SPARQL insert dataset [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-0-summary.rq) (once by dataset).
+* SPARQL insert dataset [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-1.rq) (for each new version).
+
+### Add files to download
+
+Edit the [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download) script to set the files to download. 
+
+> [Example](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download/download.sh) to download, unzip, add column labels provided.
+
+### Define the SPARQL mappings
+
+Add [SPARQL mappings](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) to convert the RDF based on input data structure to a target data model.
+
+After a first run of the workflow `autor2rml` and `xml2rdf` will have generated a `sparql_mapping_templates` folder in the workflow `output` directory.
+
+> Example provided for [Stitch TSV](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/mappings/1/insert-template.rq) (chemical to protein).
 
 [![Bash](/img/bash_logo.png)](https://devhints.io/bash)
 
-Create a repository with a `download.sh` script to download the dataset files in [/datasets](https://github.com/MaastrichtU-IDS/d2s-download/tree/master/datasets) in the [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository.
-
-> See [template example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
-
-> To come: we will enable to provide the Bash script using a URL, to allow easily hosting it on git.
-
 ---
 
-## Define SPARQL queries
+## SPARQL queries in details
 
 [![SPARQL](/img/sparql_logo.png)](https://www.w3.org/TR/sparql11-overview/)
 
@@ -36,6 +47,8 @@ We use [SPARQL](https://www.w3.org/TR/sparql11-query/) to:
 
 * Insert metadata about the dataset in the triplestore.
 * Map the generic RDF, generated from your input data structure, to a target RDF and insert the refined RDF in the triplestore.
+
+---
 
 ### Define the dataset metadata
 
@@ -52,7 +65,7 @@ Each dataset has 2 levels of metadata:
 
 ---
 
-## Define the mappings
+### Define the mappings
 
 You can find example of SPARQL mapping queries for:
 
@@ -90,7 +103,7 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
 
 ---
 
-## Executing the mappings
+### Execute the mappings
 
 To perform the transformation, the SPARQL mapping queries will be executed using the [d2s-sparql-operations](https://github.com/MaastrichtU-IDS/d2s-sparql-operations) module. 
 
