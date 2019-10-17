@@ -1,17 +1,30 @@
 ---
 id: start-create-mappings
-title: Define the mappings
+title: Transform new dataset
 ---
+
+## Define download script
+
+[![Bash](/img/bash_logo.png)](https://devhints.io/bash)
+
+Create a repository with a `download.sh` script to download the dataset files in [/datasets](https://github.com/MaastrichtU-IDS/d2s-download/tree/master/datasets) in the [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository.
+
+> See [template example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
+
+> To come: we will enable to provide the Bash script using a URL, to allow easily hosting it on git.
+
+---
+
+## Define SPARQL queries
 
 [![SPARQL](/img/sparql_logo.png)](https://www.w3.org/TR/sparql11-overview/)
 
 We use [SPARQL](https://www.w3.org/TR/sparql11-query/) to:
+
 * Insert metadata about the dataset in the triplestore.
 * Map the generic RDF, generated from your input data structure, to a target RDF and insert the refined RDF in the triplestore.
 
----
-
-## Define the dataset metadata
+### Define the dataset metadata
 
 Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/), you can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/metadata/1).
 

@@ -1,6 +1,6 @@
 ---
 id: start-run-workflow
-title: Quick start
+title: Run your first workflow
 ---
 
 Quickly get on board by running your first CWL workflows to convert biomedical data to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
@@ -170,8 +170,7 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
   --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
   --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
   d2s-cwl-workflows/workflows/workflow-csv.cwl \
-  datasets/stitch/config-transforhttps://www.ebi.ac.uk/ols/ontologies
-m-csv-stitch.yml
+  datasets/stitch/config-transform-csv-stitch.yml
 ```
 
 > Output goes to `/data/d2s-workspace/output`

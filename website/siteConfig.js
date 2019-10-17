@@ -58,10 +58,10 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'start-run-workflow', label: 'Documentation'},
+    {doc: 'start-introduction', label: 'Documentation'},
     {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
-    { search: true },
+    { search: false },
   ],
 
   // For search: https://community.algolia.com/docsearch/documentation/
