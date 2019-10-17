@@ -7,10 +7,10 @@ title: Setting up MariaDB
 
 ## Run MariaDB
 ```shell
-docker run --rm --name mariadb -v /data/data2services:/data -e MYSQL_ROOT_PASSWORD=pwd -d mariadb
+docker run --rm --name mariadb -v /data/d2s-workspace:/data -e MYSQL_ROOT_PASSWORD=pwd -d mariadb
 ```
 
-> Shared on your machine at `/data/data2services`
+> Shared on your machine at `/data/d2s-workspace`
 
 > Password is`pwd`
 

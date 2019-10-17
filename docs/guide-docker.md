@@ -76,7 +76,7 @@ docker run -it --rm my-container
 
 A lot of images will require input files, the best way to provide them is to share a volume from your system to the container. It can be done by using `-v` when `docker run`.
 
-Let's say I have a `/data/data2services/my-file.txt` on my system, and I want to provide it as a container input file. 
+Let's say I have a `/data/d2s-workspace/my-file.txt` on my system, and I want to provide it as a container input file. 
 * I need to provide he `-v` flag with paths separated by a `:`
   * before the user provide the path of the shared volume on his system
   * after the user provide the path it will be accessible from in the Docker container
@@ -85,9 +85,9 @@ docker run -it -v /path/on/my/computer:/path/in/container my-container \
 	--input-file "/path/in/container/my-file.txt"
 ```
 
-*  In this example we are sharing the `/data/data2services` volume from our system to `/data` in the Docker container. _my-file.txt_ is then accessible as `/data/my-file.txt` in the container
+*  In this example we are sharing the `/data/d2s-workspace` volume from our system to `/data` in the Docker container. _my-file.txt_ is then accessible as `/data/my-file.txt` in the container
 ```shell
-docker run -it -v /data/data2services:/data my-container \
+docker run -it -v /data/d2s-workspace:/data my-container \
 	--input-file "/data/my-file.txt"
 ```
 
@@ -137,7 +137,7 @@ docker run -it --rm -v /data:/data \
   --network network-pipeline_data2services \
   autor2rml -r \
   -j "jdbc:drill:drillbit=data2services-pipeline_drill_1:31011" \
-  -o "/data/data2services/mapping.trig" -d "/data/data2services" -g "http://data2services/graph/autor2rml"
+  -o "/data/d2s-workspace/mapping.trig" -d "/data/d2s-workspace" -g "http://data2services/graph/autor2rml"
 ```
 
 ---
@@ -180,5 +180,5 @@ docker run -dit --rm -p 8047:8047 -p 31011:31010 --name drill -v /data:/data:ro 
 # Run AutoR2RML, linking to the Apache Drill container
 docker run -it --rm --link drill:drill -v /data:/data autor2rml \
 	-j "jdbc:drill:drillbit=drill:31010" -r \
-        -o "/data/data2services/mapping.trig" -d "/data/data2services" -g "http://data2services/graph/autor2rml"
+        -o "/data/d2s-workspace/mapping.trig" -d "/data/d2s-workspace" -g "http://data2services/graph/autor2rml"
 ```

@@ -8,10 +8,10 @@ title: Setting up PostgreSQL
 ## Run PostgreSQL
 
 ```shell
-docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v /data/data2services/:/data postgres
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v /data/d2s-workspace/:/data postgres
 ```
 
-> Shared on your machine at `/data/data2services`
+> Shared on your machine at `/data/d2s-workspace`
 
 > Password is `pwd`
 
