@@ -21,15 +21,7 @@ title: Run CWL workflows
   * CSV/TSV
   * CSV/TSV with split of a statement
 
-
-
-## Pull Docker image
-
-The Docker image used by the workflow needs to be pulled from DockerHub first.
-
-```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
-```
+---
 
 ## Command arguments
 
@@ -40,9 +32,9 @@ By default the example files are running using `/data/d2s-workspace` as working 
 - `--tmpdir-prefix`: dir used to pass inputs
 - `-basedir /data/basedir/`: to find out
 
-`outdir` and `tmp-outdir` output files in `/data/d2s-workspace`
+`outdir`, `tmp-outdir` and `tmpdir` output files in `/data/d2s-workspace`
 
-`tmpdir` output files in `/tmp/d2s-workspace`
+---
 
 ## Convert XML with xml2rdf
 
@@ -63,6 +55,8 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 
 > Output goes to `/data/d2s-workspace/output`
 
+---
+
 ## Convert CSV/TSV with AutoR2RML
 
 Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure.
@@ -80,6 +74,8 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 
 > Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
+---
+
 ## Convert CSV/TSV with AutoR2RML and split a property
 
 Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements.
@@ -95,6 +91,8 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 
 > Example converting the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
+---
+
 ## Run in the background
 
 ```shell
@@ -107,6 +105,8 @@ nohup cwl-runner --custom-net d2s-cwl-workflows_network \
 ```
 
 > Write terminal output to `nohup.out`.
+
+---
 
 ## Generate mappings for AutoR2RML
 

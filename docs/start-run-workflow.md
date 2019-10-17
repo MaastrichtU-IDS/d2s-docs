@@ -56,7 +56,7 @@ pipx install cwlref-runner
 
 Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
 
-> Windows documentation to run the docker containers can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
+> Windows documentation to run the docker containers can be found [here](/docs/guide-windows).
 
 ---
 

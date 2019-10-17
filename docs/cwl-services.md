@@ -6,11 +6,7 @@ title: Start services
 [![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
 [![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
-
-
 Services must be running before executing CWL workflows. E.g. [Apache Drill](https://github.com/amalic/apache-drill) and [GraphDB](https://github.com/MaastrichtU-IDS/graphdb/) to process tabular files.
-
-
 
 ## Build
 
@@ -32,9 +28,6 @@ Choose the services you want to deploy with `docker-compose`
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
 ```shell
-# On your local system you should first create the workflows working directory
-mkdir -p /data/d2s-workspace
-
 # Start GraphDB and Apache Drill (run this for the example)
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
 
@@ -49,13 +42,17 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 
 >  Navigate to http://localhost:9000 for GraphDB
 
-Stop services
+---
+
+## Stop services
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
 
-Check running services
+---
+
+## Show running services
 
 ```shell
 docker ps

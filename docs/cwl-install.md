@@ -54,7 +54,7 @@ pipx install cwlref-runner
 
 Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
 
-> Windows documentation to run the docker containers can be found [here](https://github.com/MaastrichtU-IDS/data2services-pipeline/wiki/Run-on-Windows).
+> Windows documentation to run the docker containers can be found [here](/docs/guide-windows).
 
 ---
 
@@ -78,5 +78,28 @@ Clone the repository with its submodules
 
 ```shell
 git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-template.git
+cd d2s-transform-template
 ```
 
+---
+
+## Create workflows directories
+
+Required for **Linux distributions** (e.g. Ubuntu, CentOS)
+
+```shell
+sudo mkdir -p /data/d2s-workspace/output/tmp-outdir
+sudo chown -R ${USER}:${USER} /data/d2s-workspace
+```
+
+> You might need to provide a different group (e.g. `staff` at IDS).
+
+---
+
+## Pull Docker images
+
+The Docker images used by the workflow need to be pulled from [DockerHub](https://hub.docker.com/u/umids).
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
+```
