@@ -9,29 +9,6 @@ Feel free to propose new modules using [pull requests](https://github.com/Maastr
 
 Only [Docker](https://docs.docker.com/install/) is required to run the modules. A typical module should only require a few arguments to be run, making it easy to deploy and combine them.
 
-## Build
-
-Clone recursively the repository to get all submodules.
-
-```shell
-git clone --recursive https://github.com/MaastrichtU-IDS/data2services-ecosystem.git
-
-# Update submodules
-git submodule update --recursive --remote
-```
-
-We offer a convenience script to build and pull all Docker images. But each [Docker](https://docs.docker.com/install/) image can also be **built independently**.
-
-For *GraphDB* you **need to download** an extra file to put in `./submodules/graphdb`:
-
-> **[Download GraphDB standalone zip](https://www.ontotext.com/products/graphdb/)** (register to get an email with the download URL).
-
-```shell
-./build.sh
-```
-
-> You can pull GraphDB directly from [DockerHub](https://hub.docker.com/r/ontotext/graphdb/) if you have a license for the `standard` or `enterprise` edition
-
 ---
 
 ## Convert to RDF
@@ -43,13 +20,13 @@ For *GraphDB* you **need to download** an extra file to put in `./submodules/gra
 Download datasets using Bash scripts. See [script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
-docker pull maastrichtuids/d2s-download:latest
-docker run -it --rm -v /data/data2services:/data maastrichtuids/d2s-download \
+docker pull umids/d2s-download:latest
+docker run -it --rm -v /data/d2s-workspace:/data umids/d2s-download \
 	--download-datasets aeolus,pharmgkb,ctd \
 	--username my_login --password my_password
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-download).
+> See on [DockerHub](https://hub.docker.com/r/umids/d2s-download).
 
 > **TODO**: deprecated, to remove
 
@@ -62,11 +39,11 @@ docker run -it --rm -v /data/data2services:/data maastrichtuids/d2s-download \
 Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
-docker pull maastrichtuids/d2s-bash-exec:latest
-docker run -it --rm -v /data/input:/data maastrichtuids/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
+docker pull umids/d2s-bash-exec:latest
+docker run -it --rm -v /data/input:/data umids/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-bash-exec).
+> See on [DockerHub](https://hub.docker.com/r/umids/d2s-bash-exec).
 
 ---
 
@@ -77,14 +54,14 @@ docker run -it --rm -v /data/input:/data maastrichtuids/d2s-bash-exec https://ra
 Streams XML to a [generic RDF](https://github.com/MaastrichtU-IDS/xml2rdf#rdf-model) representing the structure of the file. 
 
 ```shell
-docker pull maastrichtuids/xml2rdf:latest
-docker run --rm -it -v /data:/data maastrichtuids/xml2rdf  \
-	-i "/data/data2services/file.xml.gz" \
-	-o "/data/data2services/file.nq.gz" \
+docker pull umids/xml2rdf:latest
+docker run --rm -it -v /data:/data umids/xml2rdf  \
+	-i "/data/d2s-workspace/file.xml.gz" \
+	-o "/data/d2s-workspace/file.nq.gz" \
 	-g "https://w3id.org/data2services/graph"
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/xml2rdf).
+> See on [DockerHub](https://hub.docker.com/r/umids/xml2rdf).
 
 ---
 
@@ -97,15 +74,15 @@ docker run --rm -it -v /data:/data maastrichtuids/xml2rdf  \
 Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
 
 ```shell
-docker-compose up drill
-docker pull maastrichtuids/apache-drill:latest
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate drill
+docker pull umids/apache-drill:latest
 docker run -dit --rm -p 8047:8047 -p 31011:31010 \
-	--name drill -v /data:/data:ro maastrichtuids/apache-drill
+	--name drill -v /data:/data:ro umids/apache-drill
 ```
 
 > Access at [http://localhost:8047/](http://localhost:8047/).
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/apache-drill).
+> See on [DockerHub](https://hub.docker.com/r/umids/apache-drill).
 
 ---
 
@@ -116,11 +93,11 @@ docker run -dit --rm -p 8047:8047 -p 31011:31010 \
 Automatically generate [R2RML](https://www.w3.org/TR/r2rml/) files from Relational databases (SQL, Postgresql).
 
 ```shell
-docker pull maastrichtuids/autor2rml:latest
+docker pull umids/autor2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
-	maastrichtuids/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
-	-o "/data/data2services/mapping.trig" \
-	-d "/data/data2services" \
+	umids/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
+	-o "/data/d2s-workspace/mapping.trig" \
+	-d "/data/d2s-workspace" \
 	-u "postgres" -p "pwd" \
 	-b "https://w3id.org/data2services/" \
 	-g "https://w3id.org/data2services/graph"
@@ -128,7 +105,7 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 
 > Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/autor2rml).
+> See on [DockerHub](https://hub.docker.com/r/umids/autor2rml).
 
 ---
 
@@ -139,10 +116,10 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rml/) mapping language.
 
 ```shell
-docker pull maastrichtuids/r2rml:latest
+docker pull umids/r2rml:latest
 docker run -it --rm --net d2s-cwl-workflows_network \
   -v /data/d2s:/data \
-  maastrichtuids/r2rml \ 
+  umids/r2rml \ 
   --connectionURL jdbc:drill:drillbit=drill:31010 \
   --mappingFile /data/mapping.trig \
   --outputFile /data/rdf_output.nq \
@@ -153,7 +130,7 @@ docker run -it --rm --net d2s-cwl-workflows_network \
 
 > Can be combined with [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files.
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/r2rml).
+> See on [DockerHub](https://hub.docker.com/r/umids/r2rml).
 
 ---
 
@@ -165,16 +142,16 @@ docker run -it --rm --net d2s-cwl-workflows_network \
 Upload RDF files to a triplestore.
 
 ```shell
-docker pull maastrichtuids/rdf-upload:latest
-docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
-	maastrichtuids/rdf-upload -m "HTTP" -if "/data" \
+docker pull umids/rdf-upload:latest
+docker run -it --rm --link graphdb:graphdb -v /data/d2s-workspace:/data \
+	umids/rdf-upload -m "HTTP" -if "/data" \
 	-url "http://graphdb:7200" -rep "test" \
 	-un "username" -pw "password"
 ```
 
 > Only tested on [GraphDB](https://github.com/MaastrichtU-IDS/graphdb) at the moment
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/rdf-upload).
+> See on [DockerHub](https://hub.docker.com/r/umids/rdf-upload).
 
 ---
 
@@ -185,10 +162,10 @@ docker run -it --rm --link graphdb:graphdb -v /data/data2services:/data \
 Convert JSON to XML using [json2xml](https://github.com/vemonet/json2xml). This XML can be then converted to generic RDF.
 
 ```shell
-docker run -it -v /data/data2services:data vemonet/json2xml:latest -i /data/test.json 
+docker run -it -v /data/d2s-workspace:data vemonet/json2xml:latest -i /data/test.json 
 ```
 
-> Shared on your machine at `/data/data2services`
+> Shared on your machine at `/data/d2s-workspace`
 
 ---
 
@@ -232,8 +209,8 @@ docker run -p 8183:8183 bigcatum/bridgedb
 [Ontotext](https://www.ontotext.com/) GraphDB triplestore including GUI and multiple repositories.
 
 ```shell
-docker-compose up graphdb
-docker build -t graphdb ./submodules/graphdb
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb
+docker build -t graphdb ./d2s-cwl-workflows/support/graphdb
 docker run -d --rm --name graphdb -p 7200:7200 \
 	-v /data/graphdb:/opt/graphdb/home \
 	-v /data/graphdb-import:/root/graphdb-import \
@@ -255,7 +232,7 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 [Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
 
 ```shell
-docker-compose up virtuoso
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso
 docker pull tenforce/virtuoso
 docker run --name virtuoso \
     -p 8890:8890 -p 1111:1111 \
@@ -281,10 +258,10 @@ docker run --name virtuoso \
 Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to query over datasets (can be [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/)).
 
 ```shell
-docker-compose up ldf-server
-docker build -t ldf-server ./submodules/Server.js
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate ldf-server
+# docker build -t ldf-server ./submodules/Server.js
 docker run -p 3000:3000 -t -i --rm \
-	-v /data/data2services:/data \
+	-v /data/d2s-workspace:/data \
 	-v $(pwd)/config.json:/tmp/config.json \
 	ldf-server /tmp/config.json
 
@@ -296,19 +273,22 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 
 > Access at [http://localhost:3000](http://localhost:3000)
 
+> **TODO**
+
 ---
 
 
 ### rdf2hdt
 
-[![GitHub](https://img.shields.io/github/stars/vemonet/rdf2hdt?label=GitHub&style=social)](https://github.com/vemonet/rdf2hdt)
+[![GitHub](https://img.shields.io/github/stars/rdfhdt/hdt-cpp?label=GitHub&style=social)](https://github.com/rdfhdt/hdt-docker)
 
 Convert RDF to [HDT](http://www.rdfhdt.org/) files. *Header, Dictionary, Triples* is a binary serialization format for RDF  that keeps big datasets compressed while maintaining search and browse operations without prior decompression.
 
 ```shell
-docker build -t rdf2hdt ./submodules/rdf2hdt
-docker run -it -v /data/data2services:/data \
-	rdf2hdt /data/input.nt /data/output.hdt
+docker pull rfdhdt/hdt-cpp
+docker run -it --rm rfdhdt/hdt-cpp rdf2hdt -h
+docker run -it --rm -v /data/d2s-workspace:/data \
+  rfdhdt/hdt-cpp rdf2hdt /data/input.nt /data/output.hdt
 ```
 
 ---
@@ -322,15 +302,15 @@ docker run -it -v /data/data2services:/data \
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/).
 
 ```shell
-docker pull maastrichtuids/d2s-sparql-operations
-docker run -it --rm maastrichtuids/d2s-sparql-operations -op select \
+docker pull umids/d2s-sparql-operations
+docker run -it --rm umids/d2s-sparql-operations -op select \
   -sp "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
   -ep "http://dbpedia.org/sparql"
 ```
 
 > See [documentation](https://maastrichtu-ids.github.io/d2s-sparql-operations/).
 
-> See on [DockerHub](https://hub.docker.com/r/maastrichtuids/d2s-sparql-operations).
+> See on [DockerHub](https://hub.docker.com/r/umids/d2s-sparql-operations).
 
 ------
 
@@ -362,7 +342,7 @@ docker run -it comunica/actor-init-sparql \
 [Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
 
 ```shell
-docker-compose up yasgui
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate yasgui
 docker pull erikap/yasgui
 docker run -it --rm --name yasgui -p 8080:80 \
 	-e "DEFAULT_SPARQL_ENDPOINT=http://dbpedia.org/sparql" \
@@ -437,7 +417,7 @@ Deploy [filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) on files 
 
 ```shell
 docker run -d --rm --name d2s-filebrowser \
-    -v /data/data2services:/srv \
+    -v /data/d2s-workspace:/srv \
     -v /path/.filebrowser.json:/.filebrowser.json \
     -p 8080:80 \
     filebrowser/filebrowser

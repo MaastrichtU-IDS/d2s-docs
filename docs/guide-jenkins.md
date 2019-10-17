@@ -43,12 +43,12 @@ pipeline {
     stage('Build and install') {
       steps {
         sh "git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-repository.git"
-        sh 'docker pull maastrichtuids/d2s-sparql-operations'
+        sh 'docker pull umids/d2s-sparql-operations'
       }
     }
     stage('Compute and insert statistics') {
       steps {
-        sh "docker run -t --rm --volumes-from jenkins-container maastrichtuids/d2s-sparql-operations -rq '$WORKSPACE/d2s-transform-repository/sparql/compute-statistics' -url '${params.SparqlRepositoryUri}' -un ${params.TriplestoreUsername} -pw ${params.TriplestorePassword} --var-input:${params.GraphUri}"
+        sh "docker run -t --rm --volumes-from jenkins-container umids/d2s-sparql-operations -rq '$WORKSPACE/d2s-transform-repository/sparql/compute-statistics' -url '${params.SparqlRepositoryUri}' -un ${params.TriplestoreUsername} -pw ${params.TriplestorePassword} --var-input:${params.GraphUri}"
       }
     }
   }
