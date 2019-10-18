@@ -97,14 +97,18 @@ Following documentation focuses on Linux & MacOS, as no workflow engine supports
 
 ## Clone the repository
 
-Clone the repository with its submodules
+Ideally you should create a new repository from the [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository, and use this repository as documented in the [Transform a new dataset](/docs/d2s-new-dataset) page.
+
+> In this example I will directly use the [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository.
+
+Clone the repository with its submodules:
 
 ```shell
 git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-template.git
 cd d2s-transform-template
 ```
 
-> The  provided commands to run workflows are designed to be executed from the `d2s-transform-template` directory
+> The  provided commands to run workflows are designed to be executed from the `d2s-transform-template` directory (or the repository you created).
 
 ---
 
