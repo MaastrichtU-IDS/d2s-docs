@@ -65,7 +65,7 @@ Each dataset has 2 levels of metadata:
 
 ---
 
-### Define the mappings
+### Define mappings to target model
 
 You can find example of SPARQL mapping queries for:
 

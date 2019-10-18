@@ -3,12 +3,7 @@ id: cwl-services
 title: Start services
 ---
 
-[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
-[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
-
 Services must be running before executing CWL workflows. E.g. [Apache Drill](https://github.com/amalic/apache-drill) and [GraphDB](https://github.com/MaastrichtU-IDS/graphdb/) to process tabular files.
-
-## Start services
 
 Choose the services you need, and deploy them with `docker-compose`
 
@@ -17,13 +12,17 @@ Choose the services you need, and deploy them with `docker-compose`
 
 > All shared on `/data/d2s-workspace`.
 
-### Virtuoso and Apache Drill
+## Virtuoso and Apache Drill
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso drill
 ```
 
-### GraphDB and Apache Drill
+> Access Virtuoso on http://localhost:8890 and Drill on http://localhost:8048.
+
+> See [Setting up Virtuoso](/docs/guide-virtuoso) documentation for more details.
+
+## GraphDB and Apache Drill
 
 GraphDB cannot be pulled directly, it needs to be downloaded manually:
 
@@ -40,6 +39,20 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 
 > See [Setting up GraphDB](/docs/guide-graphdb) documentation for more details.
 
+## Virtuoso and Postgres
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso postgres
+```
+
+> **TODO:** expose ports?
+
+> See [Postgres guide](/docs/guide-postgres) page for more details.
+
+---
+
+## Manage services
+
 ### Show running services
 
 ```shell
@@ -51,3 +64,7 @@ docker ps
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
+
+[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
+
