@@ -37,8 +37,8 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('start-run-workflow', this.props.language)}>
-              Quick start
+            <a href={this.docUrl('d2s-introduction', this.props.language)}>
+              Introduction
             </a>
             <a href={this.docUrl('cwl-install', this.props.language)}>
               CWL workflows
