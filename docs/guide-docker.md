@@ -5,44 +5,7 @@ title: Docker guide
 
 [![](/img/docker.png)](https://www.docker.com/)
 
-## Install
-
-### On Ubuntu
-
-Install [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) and [docker-compose](https://docs.docker.com/compose/install/).
-
-```shell
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker ${USER}
-
-# Install docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-```
-
-> `sudo groupadd docker` might be required before `usermod`
-
-### MacOS & Windows
-
-An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/) (`docker-compose` is included).
-
-### Fix issues
-
-If Docker can't access internet when building you might want to change the DNS (to use Google's one). 
-
-E.g.: `wget: unable to resolve host address`
-
-* On Linux
-
-  ```shell
-  vim /etc/resolv.conf`
-  	> `nameserver 8.8.8.8`
-  ```
-
-* For issues related to Docker on Windows, see the [Docker on Windows](docs/guide-windows) page.
+See the [CWL installation instructions](/docs/cwl-install) for Docker installation details.
 
 ---
 

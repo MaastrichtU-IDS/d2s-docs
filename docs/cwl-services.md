@@ -8,52 +8,46 @@ title: Start services
 
 Services must be running before executing CWL workflows. E.g. [Apache Drill](https://github.com/amalic/apache-drill) and [GraphDB](https://github.com/MaastrichtU-IDS/graphdb/) to process tabular files.
 
-## Build
-
-* [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version* (the download URL will be sent in a email). 
-
-* Put the downloaded `.zip` file in the [d2s-cwl-workflows/support/graphdb](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support) repository
-
-* Set the right version in the `docker-compose` before running it.
-
-> See [Setting up GraphDB](/docs/guide-graphdb) documentation for more details.
-
----
-
 ## Start services
 
-Choose the services you want to deploy with `docker-compose`
+Choose the services you need, and deploy them with `docker-compose`
 
 * Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), blazegraph
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
 
-```shell
-# Start GraphDB and Apache Drill (run this for the example)
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
+> All shared on `/data/d2s-workspace`.
 
-# Start Virtuoso and Apache Drill
+### Virtuoso and Apache Drill
+
+```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso drill
-
-# Start blazegraph and postgres
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph postgres
 ```
 
-> All shared on `/data/d2s-workspace`
+### GraphDB and Apache Drill
 
->  Navigate to http://localhost:9000 for GraphDB
+GraphDB cannot be pulled directly, it needs to be downloaded manually:
 
----
+* [Download GraphDB](https://ontotext.com/products/graphdb/) as *stand-alone server free version* (you need to register to get download URL via email).
 
-## Stop services
+* Put the downloaded `.zip` file in the `d2s-cwl-workflows/support/graphdb` repository
+* Make sure the GraphDB version defined in the `docker-compose` is right (default is `10.0.1`)
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
 ```
 
----
+> Access GraphDB on http://localhost:7200 and Drill on http://localhost:8048.
 
-## Show running services
+> See [Setting up GraphDB](/docs/guide-graphdb) documentation for more details.
+
+### Show running services
 
 ```shell
 docker ps
+```
+
+### Stop services
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```

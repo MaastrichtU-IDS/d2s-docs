@@ -1,7 +1,6 @@
 {
   "docs": {
-    "Get started": ["start-introduction", "start-run-workflow", "start-new-dataset","start-ecosystem"],
-    "CWL workflows": ["cwl-install", "cwl-services", "cwl-run", "cwl-create"],
+    "CWL workflows": ["d2s-introduction", "cwl-install", "cwl-services", "cwl-run", "d2s-new-dataset","d2s-ecosystem", "cwl-create"],
     "Kubernetes workflows": ["argo-install", "argo-login", "argo-volume", "argo-run", "argo-commands", "argo-debug", "argo-secret"],
     "Guides": ["guide-docker", "guide-windows", "guide-graphdb", "guide-virtuoso", "guide-postgres", "guide-mariadb", "guide-mysql", "guide-tabular-header", "guide-ontology", "guide-jenkins"]
   }

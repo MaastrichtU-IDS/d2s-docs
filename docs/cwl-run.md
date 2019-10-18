@@ -5,42 +5,9 @@ title: Run CWL workflows
 
 ![CWL](/img/CWL_logo.png)
 
-
-* Go to the `d2s-transform-template` root folder (the root of the cloned repository)
-  * e.g. `/data/d2s-transform-template` to run the CWL workflows.
-* You will need to put the SPARQL mapping queries in `/mappings/$dataset_name` and provide 3 parameters:
-  * `--outdir`: the [output directory](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/output/stitch) for files outputted by the workflow (except for the downloaded source files that goes automatically to `/input`). 
-    * e.g. `output/$dataset_name`.
-  * The `.cwl` [workflow file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/cwl/workflow-xml.cwl)
-    * e.g. `d2s-cwl-workflows/workflows/workflow-xml.cwl`
-  * The `.yml` [configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/example-config/config-transform-xml-drugbank.yml) with all parameters required to run the workflow
-    * e.g. `support/example-config/config-transform-xml-drugbank.yml`
-* 3 types of workflows can be run depending on the input data and the tasks executed:
-
-  * XML
-  * CSV/TSV
-  * CSV/TSV with split of a statement
-
----
-
-## Command arguments
-
-By default the example files are running using `/data/d2s-workspace` as working directory. If you installed the repository at the different location, you will need to edit the `--outdir` and `--tmp-outdir-prefix` parameters in the command line.
-
-- `--outdir`: final dir where the final ouput of the workflow is copied.
-- `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
-- `--tmpdir-prefix`: dir used to pass inputs
-- `-basedir /data/basedir/`: to find out
-
-`outdir`, `tmp-outdir` and `tmpdir` output files in `/data/d2s-workspace`
-
----
-
 ## Convert XML with xml2rdf
 
 Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure.
-
-Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \
@@ -51,7 +18,7 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
   datasets/drugbank/config-transform-xml-drugbank.yml
 ```
 
-> See [config file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/example-config/config-transform-xml-drugbank.yml).
+> Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 > Output goes to `/data/d2s-workspace/output`
 
@@ -60,8 +27,6 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 ## Convert CSV/TSV with AutoR2RML
 
 Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure.
-
-Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
 cwl-runner --custom-net d2s-cwl-workflows_network \
@@ -100,8 +65,8 @@ nohup cwl-runner --custom-net d2s-cwl-workflows_network \
   --outdir /data/d2s-workspace/output \
   --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
   --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
-  d2s-cwl-workflows/workflows/workflow-xml.cwl \
-  datasets/drugbank/config-transform-xml-drugbank.yml &
+  d2s-cwl-workflows/workflows/workflow-csv.cwl \
+  datasets/drugbank/config-transform-csv-stitch.yml &
 ```
 
 > Write terminal output to `nohup.out`.
@@ -131,3 +96,33 @@ cwl-runner --outdir output/stitch-sample \
 ```
 
 > Same [config file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/cwl/config/config-transform-csv-stitch.yml) as the regular CSV workflow.
+
+---
+
+## Workflow details
+
+* You will need to put the SPARQL mapping queries in `/mappings/$dataset_name` and provide 3 parameters:
+  * `--outdir`: the [output directory](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/output/stitch) for files outputted by the workflow (except for the downloaded source files that goes automatically to `/input`). 
+    * e.g. `output/$dataset_name`.
+  * The `.cwl` [workflow file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/cwl/workflow-xml.cwl)
+    * e.g. `d2s-cwl-workflows/workflows/workflow-xml.cwl`
+  * The `.yml` [configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/example-config/config-transform-xml-drugbank.yml) with all parameters required to run the workflow
+    * e.g. `support/example-config/config-transform-xml-drugbank.yml`
+* 3 types of workflows can be run depending on the input data and the tasks executed:
+
+  * XML
+  * CSV/TSV
+  * CSV/TSV with split of a statement
+
+---
+
+### Command arguments
+
+By default the example files are running using `/data/d2s-workspace` as working directory. If you installed the repository at the different location, you will need to edit the `--outdir` and `--tmp-outdir-prefix` parameters in the command line.
+
+- `--outdir`: final dir where the final ouput of the workflow is copied.
+- `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
+- `--tmpdir-prefix`: dir used to pass inputs
+- `-basedir /data/basedir/`: to find out
+
+`outdir`, `tmp-outdir` and `tmpdir` output files in `/data/d2s-workspace`
