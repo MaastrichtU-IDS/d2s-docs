@@ -12,7 +12,10 @@ Files to process (e.g. CSV, XML) needs to be downloaded before running the workf
 Example for `stitch`:
 
 ```shell
-docker run -it -v /data/d2s-transform-template:/srv -v /data/d2s-workspace:/data umids/d2s-bash-exec:latest /srv/datasets/stitch/download/download.sh input/stitch
+docker run -it -v /data/d2s-transform-template:/srv \
+  -v /data/d2s-workspace:/data \
+  umids/d2s-bash-exec:latest \
+  /srv/datasets/stitch/download/download.sh input/stitch
 ```
 
 > You need to be in the `d2s-transform-template` repository. Here on `/data`.
