@@ -14,14 +14,6 @@ We **do not recommend** to run Data2Services on Windows.
 
 We recommend to use [git](https://git-scm.com/downloads) to clone the repository, and the Windows `PowerShell` terminal (which is easier to use than the basic terminal).
 
-Windows scripts are in the `resources/windows_scripts` folder and designed to be run from this directory. 
-
-```powershell
-cd resources/windows_scripts
-```
-
-> In the case Windows scripts are outdated, the commands can be run individually. 
-
 ## Install Docker
 
 See [official documentation](https://docs.docker.com/docker-for-windows/install/).

@@ -5,6 +5,22 @@ title: Run CWL workflows
 
 ![CWL](/img/CWL_logo.png)
 
+## Download files to convert
+
+Files to process (e.g. CSV, XML) needs to be downloaded before running the workflow.
+
+Example for `stitch`:
+
+```shell
+docker run -it -v /data/d2s-transform-template:/srv -v /data/d2s-workspace:/data umids/d2s-bash-exec:latest /srv/datasets/stitch/download/download.sh input/stitch
+```
+
+> You need to be in the `d2s-transform-template` repository. Here on `/data`.
+
+> Downloaded files goes to `/data/d2s-workspace/input/dataset_name`.
+
+> **TODO:** allow to provide directly a URL for `download.sh`.
+
 ## Convert XML with xml2rdf
 
 Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure.

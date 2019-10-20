@@ -33,6 +33,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/) (`docker-compose` is included).
 
+> On Windows you might need to run the `Docker Toolbox` to setup Docker.
+
 ### Fix commons issues
 
 If Docker can't access internet when building you might want to change the DNS (to use Google's one). 
