@@ -125,6 +125,8 @@ cd d2s-transform-template
 
 ## Create workflows directories
 
+### Linux
+
 Required for **Linux distributions** (e.g. Ubuntu, CentOS)
 
 ```shell
