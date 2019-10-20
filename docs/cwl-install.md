@@ -154,6 +154,8 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 
 ## Install Rabix Benten for VSCode
 
+![Optional](https://img.shields.io/static/v1?label=module&message=Optional&color=blue)
+
 [Rabix Benten](https://github.com/rabix/benten) is a plugin for help and completion to edit CWL files in Visual Studio Code.
 
 ```shell
