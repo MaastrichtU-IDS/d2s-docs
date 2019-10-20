@@ -89,9 +89,18 @@ pipx install cwlref-runner
 
 ### On Windows
 
-Following documentation focuses on Linux & MacOS, as no workflow engine supports Windows.
+See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
+
+```shell
+pip install pipx
+pipx install cwlref-runner
+# Add pipx apps to path
+pipx ensurepath
+```
 
 > Windows documentation to run the docker containers can be found [here](/docs/guide-windows).
+
+> Consider doing a `pip install --upgrade pip` to update your pip installation.
 
 ---
 
@@ -123,6 +132,14 @@ sudo chown -R ${USER}:${USER} /data/d2s-workspace
 
 > You might need to provide a different group (e.g. `staff` at IDS).
 
+### Windows
+
+All files should be on the local `c:` drive. And `PowerShell` need to be **run as admin**.  
+
+```shell
+mkdir -p c:/data/d2s-workspace/output/tmp-outdir
+```
+
 ---
 
 ## Pull Docker images
@@ -134,6 +151,16 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 ```
 
 ---
+
+## Install Rabix Benten for VSCode
+
+[Rabix Benten](https://github.com/rabix/benten) is a plugin for help and completion to edit CWL files in Visual Studio Code.
+
+```shell
+pipx install --spec git+https://github.com/rabix/benten.git benten
+```
+
+> Add `Benten` extension to Visual Studio Code.
 
 ## Install Rabix Composer GUI
 
