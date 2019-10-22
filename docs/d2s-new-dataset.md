@@ -23,7 +23,9 @@ Copy the [template repository](https://github.com/MaastrichtU-IDS/d2s-transform-
 
 ### Add files to download
 
-Edit the [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download) script to set the files to download. 
+You can add directly the file to be processed in `/data/d2s-workspace/input/dataset_name`.
+
+Alternatively a [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download) script can be set to download the files automatically.
 
 > [Example](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download/download.sh) to download, unzip, add column labels provided.
 
@@ -31,9 +33,19 @@ Edit the [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template
 
 Add [SPARQL mappings](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) to convert the RDF based on input data structure to a target data model.
 
-After a first run of the workflow `autor2rml` and `xml2rdf` will have generated a `sparql_mapping_templates` folder in the workflow `output` directory.
+After a first run of the workflow `autor2rml` and `xml2rdf` will have generated a `sparql_mapping_templates` folder in the workflow `output` directory: 
+
+`/data/d2s-workspace/output/sparql_mapping_templates`
+
+You can use those mappings as starting point to map the input data to your target model (copy them in [mappings/1](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) folder).
 
 > Example provided for [Stitch TSV](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/mappings/1/insert-template.rq) (chemical to protein).
+
+### Define the config file
+
+Finally the [workflow YAML configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/config-transform-template.yml) needs to be define with the rights paths and credentials.
+
+> Most of it consists in replacing `dataset_name` by your dataset name.
 
 [![Bash](/img/bash_logo.png)](https://devhints.io/bash)
 
