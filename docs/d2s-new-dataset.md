@@ -8,7 +8,7 @@ Go to [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-
 Clone the created repository on your machine
 
 ```shell
-git clone your-repository
+git clone --recursive your-repository
 cd your-repository
 ```
 
@@ -18,8 +18,14 @@ Copy the [template repository](https://github.com/MaastrichtU-IDS/d2s-transform-
 
 ### Describe the dataset metadata
 
+A dozen of metadata needs to be defined through SPARQL query for the summary of the dataset, and then each distribution.
+
 * SPARQL insert dataset [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-0-summary.rq) (once by dataset).
 * SPARQL insert dataset [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-1.rq) (for each new version).
+
+> Change the URIs between `<>` and strings between `""`.
+
+> We recommend using `Stardog RDF Grammars` extension in Visual Studio Code to edit SPARQL queries (`.rq` files).
 
 ### Add files to download
 
@@ -37,7 +43,7 @@ After a first run of the workflow `autor2rml` and `xml2rdf` will have generated 
 
 `/data/d2s-workspace/output/sparql_mapping_templates`
 
-You can use those mappings as starting point to map the input data to your target model (copy them in [mappings/1](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) folder).
+You can use those mappings as starting point to map the input data to your target model (copy them in the [mappings/1](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) folder).
 
 > Example provided for [Stitch TSV](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/mappings/1/insert-template.rq) (chemical to protein).
 
