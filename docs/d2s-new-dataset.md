@@ -10,7 +10,11 @@ Clone the created repository on your machine
 ```shell
 git clone --recursive your-repository
 cd your-repository
+git submodule add https://github.com/MaastrichtU-IDS/d2s-cwl-workflows.git
+git submodule update --init --recursive
 ```
+
+> The `d2s-cwl-workflows` submodule needs to be manually added because not copied by GitHub templates.
 
 ## Start from the template
 
