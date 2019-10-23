@@ -91,6 +91,8 @@ pipx install cwlref-runner
 
 ### On Windows
 
+Install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe).
+
 See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 
 ```shell
