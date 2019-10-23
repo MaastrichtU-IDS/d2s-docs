@@ -65,6 +65,15 @@ docker ps
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
 
+### Reset Virtuoso
+
+[Convenience script](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) to make it faster and easier to reset Virtuoso Triplestore.
+
+```shell
+./restart_virtuoso.sh
+```
+
+
 [![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
 [![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 

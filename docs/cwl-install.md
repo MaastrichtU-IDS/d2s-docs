@@ -125,14 +125,14 @@ cd d2s-transform-template
 
 ---
 
-## Create workflows directories
+## Create workspace
 
 ### Linux
 
-Required for **Linux distributions** (e.g. Ubuntu, CentOS)
+Required for **Linux distributions** (e.g. Ubuntu, CentOS), and make sure your user as permission to write.
 
 ```shell
-sudo mkdir -p /data/d2s-workspace/output/tmp-outdir
+mkdir -p /data/d2s-workspace
 sudo chown -R ${USER}:${USER} /data/d2s-workspace
 ```
 

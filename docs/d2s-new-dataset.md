@@ -16,9 +16,11 @@ git submodule update --init --recursive
 
 > The `d2s-cwl-workflows` submodule needs to be manually added because not copied by GitHub templates.
 
-## Start from the template
+## Start from the template dataset
 
-Copy the [template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template) and rename it to your dataset name.
+Copy the [template folder](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template) and rename it to your dataset name.
+
+> Search for `dataset_name` to find where to fill your dataset name.
 
 ### Describe the dataset metadata
 
@@ -33,7 +35,7 @@ A dozen of metadata needs to be defined through SPARQL query for the summary of 
 
 ### Add files to download
 
-You can add directly the file to be processed in `/data/d2s-workspace/input/dataset_name`.
+You can **add directly the files** to be processed in `/data/d2s-workspace/input/dataset_name`.
 
 Alternatively a [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download) script can be set to download the files automatically.
 
@@ -41,11 +43,20 @@ Alternatively a [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-t
 
 ### Define the SPARQL mappings
 
-Add [SPARQL mappings](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) to convert the RDF based on input data structure to a target data model.
+Generate [SPARQL mapping queries](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) based on the input data structure by running a workflow for the first time. E.g. for `dataset_name` (CSV file).
 
-After a first run of the workflow `autor2rml` and `xml2rdf` will have generated a `sparql_mapping_templates` folder in the workflow `output` directory: 
+```shell
+cwl-runner --custom-net d2s-cwl-workflows_network \
+  --outdir /data/d2s-workspace/output \
+  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
+  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
+  d2s-cwl-workflows/workflows/workflow-csv.cwl \
+  datasets/dataset_name/config-transform-csv-dataset_name.yml
+```
 
-`/data/d2s-workspace/output/sparql_mapping_templates`
+> The workflow should fail at the RDF upload step. Get the mappings in `/data/d2s-workspace/output/sparql_mapping_templates`
+
+After the first run, the workflow will have generated SPARQL mapping queries based on the input data structure in the `/data/d2s-workspace/output/sparql_mapping_templates` folder.
 
 You can use those mappings as starting point to map the input data to your target model (copy them in the [mappings/1](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) folder).
 
@@ -53,7 +64,7 @@ You can use those mappings as starting point to map the input data to your targe
 
 ### Define the config file
 
-Finally the [workflow YAML configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/config-transform-template.yml) needs to be define with the rights paths and credentials.
+Finally the [workflow YAML configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/config-transform-template.yml) needs to be defined with the right paths and credentials.
 
 > Most of it consists in replacing `dataset_name` by your dataset name.
 
