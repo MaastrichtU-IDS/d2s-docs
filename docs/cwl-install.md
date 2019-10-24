@@ -35,16 +35,16 @@ If Docker can't access internet when building you might want to change the DNS (
 
 E.g.: `wget: unable to resolve host address`
 
-* On Linux
+On Linux:
 
-  ```shell
-  vim /etc/resolv.conf`
-  	> `nameserver 8.8.8.8`
-  ```
+```shell
+vim /etc/resolv.conf
+	> nameserver 8.8.8.8
+```
 
-* For issues related to Docker on Windows, see the [Windows guide](docs/guide-windows) page.
+> For issues related to Docker on Windows, see the [Windows guide](/docs/guide-windows) page.
 
-> More details about running Docker on the [Docker guide](/docs/docker-guide) page.
+> For more details on how to run Docker see the [Docker guide](/docs/guide-docker).
 
 
 ## Install cwl-runner
