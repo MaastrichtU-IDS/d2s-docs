@@ -162,7 +162,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml pull
 pipx install --spec git+https://github.com/rabix/benten.git benten
 ```
 
-> Add `Benten` extension to Visual Studio Code.
+> Add `CWL (Rabix/Benten)` extension to Visual Studio Code.
 
 ## Install Rabix Composer GUI
 
