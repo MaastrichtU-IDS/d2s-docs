@@ -91,6 +91,8 @@ pipx install cwlref-runner
 
 ### On Windows
 
+Install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe).
+
 See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 
 ```shell
@@ -123,14 +125,14 @@ cd d2s-transform-template
 
 ---
 
-## Create workflows directories
+## Create workspace
 
 ### Linux
 
-Required for **Linux distributions** (e.g. Ubuntu, CentOS)
+Required for **Linux distributions** (e.g. Ubuntu, CentOS), and make sure your user as permission to write.
 
 ```shell
-sudo mkdir -p /data/d2s-workspace/output/tmp-outdir
+mkdir -p /data/d2s-workspace
 sudo chown -R ${USER}:${USER} /data/d2s-workspace
 ```
 

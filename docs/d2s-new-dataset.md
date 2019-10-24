@@ -8,32 +8,65 @@ Go to [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-
 Clone the created repository on your machine
 
 ```shell
-git clone your-repository
+git clone --recursive your-repository
 cd your-repository
+git submodule add https://github.com/MaastrichtU-IDS/d2s-cwl-workflows.git
+git submodule update --init --recursive
 ```
 
-## Start from the template
+> The `d2s-cwl-workflows` submodule needs to be manually added because not copied by GitHub templates.
 
-Copy the [template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template) and rename it to your dataset name.
+## Start from the template dataset
+
+Copy the [template folder](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template) and rename it to your dataset name.
+
+> Search for `dataset_name` to find where to fill your dataset name.
 
 ### Describe the dataset metadata
+
+A dozen of metadata needs to be defined through SPARQL query for the summary of the dataset, and then each distribution.
 
 * SPARQL insert dataset [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-0-summary.rq) (once by dataset).
 * SPARQL insert dataset [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-1.rq) (for each new version).
 
+> Change the URIs between `<>` and strings between `""`.
+
+> We recommend using `Stardog RDF Grammars` extension in Visual Studio Code to edit SPARQL queries (`.rq` files).
+
 ### Add files to download
 
-Edit the [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download) script to set the files to download. 
+You can **add directly the files** to be processed in `/data/d2s-workspace/input/dataset_name`.
+
+Alternatively a [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download) script can be set to download the files automatically.
 
 > [Example](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download/download.sh) to download, unzip, add column labels provided.
 
 ### Define the SPARQL mappings
 
-Add [SPARQL mappings](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) to convert the RDF based on input data structure to a target data model.
+Generate [SPARQL mapping queries](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) based on the input data structure by running a workflow for the first time. E.g. for `dataset_name` (CSV file).
 
-After a first run of the workflow `autor2rml` and `xml2rdf` will have generated a `sparql_mapping_templates` folder in the workflow `output` directory.
+```shell
+cwl-runner --custom-net d2s-cwl-workflows_network \
+  --outdir /data/d2s-workspace/output \
+  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
+  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
+  d2s-cwl-workflows/workflows/workflow-csv.cwl \
+  datasets/dataset_name/config-transform-csv-dataset_name.yml
+```
+
+> The workflow should fail at the RDF upload step. Get the mappings in `/data/d2s-workspace/output/sparql_mapping_templates`
+
+After the first run, the workflow will have generated SPARQL mapping queries based on the input data structure in the `/data/d2s-workspace/output/sparql_mapping_templates` folder.
+
+You can use those mappings as starting point to map the input data to your target model (copy them in the [mappings/1](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) folder).
 
 > Example provided for [Stitch TSV](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/mappings/1/insert-template.rq) (chemical to protein).
+
+### Define the config file
+
+Finally the [workflow YAML configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/config-transform-template.yml) needs to be defined with the right paths and credentials.
+
+> Most of it consists in replacing `dataset_name` by your dataset name.
 
 [![Bash](/img/bash_logo.png)](https://devhints.io/bash)
 

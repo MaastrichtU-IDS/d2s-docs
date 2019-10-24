@@ -45,6 +45,22 @@ E.g.: `wget: unable to resolve host address`
 
 > Go to `Docker Settings` > `Network` > `DNS Server` > `Fixed: 8.8.8.8`
 
+## Install cwltool
+
+Install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe).
+
+See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
+
+```shell
+pip install pipx
+pipx install cwlref-runner
+# Add pipx apps to path
+pipx ensurepath
+```
+
+> Windows documentation to run the docker containers can be found [here](/docs/guide-windows).
+
+> Consider doing a `pip install --upgrade pip` to update your pip installation
 
 ## Clone
 
