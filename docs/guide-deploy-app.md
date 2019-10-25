@@ -31,7 +31,7 @@ Don't need to register to a new service, just run your Docker image on Node1 wit
 docker run -d --rm --name your-app-name -e VIRTUAL_HOST=your-app-name.137.120.31.101.nip.io your-app-image
 ```
 
-> If your container expose multiple port define the port to expose with`-e VIRTUAL_PORT=8080`
+> If your container expose multiple port define the port to expose with `-e VIRTUAL_PORT=8080` for `-v 8081:8080`.
 
 ## Cleaner URL using free DNS
 
