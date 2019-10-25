@@ -48,10 +48,21 @@ Browse [Argo releases](https://github.com/argoproj/argo/releases).
 
 > [Download the latest release executable](https://github.com/argoproj/argo/releases/latest/download/argo-windows-amd64) for Windows.
 
-  <!-- MapR            |  Kubernetes 
-:-------------------------:|:-------------------------:
-[![MapR](/img/mapr_logo.png)](https://mapr.com/) | [![Kubernetes](/img/Kubernetes.png)](https://kubernetes.io/) -->
+---
 
+## Install on local kubectl
+
+```shell
+kubectl create ns argo
+kubectl apply -n argo -f https://raw.githubusercontent.com/argoproj/argo/v2.2.1/manifests/install.yaml
+
+kubectl create rolebinding default-admin --clusterrole=admin --serviceaccount=default:default
+
+# Expose UI
+kubectl -n argo port-forward deployment/argo-ui 8001:8001
+```
+
+> Then visit: http://127.0.0.1:8001
 
 [![Kubernetes](/img/Kubernetes.png)](https://kubernetes.io/)
 
