@@ -21,8 +21,7 @@ cd d2s-transform-template
 ### Steps-based workflow
 
 ```shell
-argo submit d2s-argo-workflows/d2s-workflow-transform-xml.yaml \
-  -f support/config/config-transform-xml-drugbank.yml
+argo submit d2s-argo-workflows/d2s-workflow-xml.yaml -f datasets/drugbank/config-argo-xml-drugbank.yml
 ```
 
 > *Reminder:* you need first to authenticate to the [OpenShift cluster](https://app.dsri.unimaas.nl:8443/) using `oc login` .

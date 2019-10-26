@@ -60,6 +60,9 @@ kubectl create rolebinding default-admin --clusterrole=admin --serviceaccount=de
 
 # Expose UI
 kubectl -n argo port-forward deployment/argo-ui 8001:8001
+
+# Create volume
+kubectl apply -n argo -f d2s-argo-workflows/storage/storage-mac.yaml
 ```
 
 > Then visit: http://127.0.0.1:8001

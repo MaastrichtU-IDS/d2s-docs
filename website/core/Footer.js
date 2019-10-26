@@ -67,23 +67,17 @@ class Footer extends React.Component {
             <a href={this.props.config.repoUrl}
               target="_blank"
               aria-label="Star this project on GitHub">
-              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/data2services-pipeline?label=data2services-pipeline&style=social"/>
+              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template&style=social"/>
             </a>
           </div>
-
           <div>
             <h5>Community</h5>
-            {this.props.config.twitterUsername && (
-              <div className="social">
-                <a
-                  href={`https://twitter.com/${
-                    this.props.config.twitterUsername
-                  }`}
-                  className="twitter-follow-button">
-                  Follow @{this.props.config.twitterUsername}
-                </a>
-              </div>
-            )}
+            <a href="https://twitter.com/um_ids"
+              target="_blank" rel="noreferrer noopener"
+              aria-label="Follow on Twitter">
+              <img alt="Follow on Twitter" src="https://img.shields.io/twitter/follow/um_ids?style=social"/>
+            </a>
+
             <a href="https://www.facebook.com/IDSatUM/"
               target="_blank" rel="noreferrer noopener">
               Facebook
