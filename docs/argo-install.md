@@ -54,18 +54,44 @@ Browse [Argo releases](https://github.com/argoproj/argo/releases).
 
 ```shell
 kubectl create ns argo
-kubectl apply -n argo -f https://raw.githubusercontent.com/argoproj/argo/v2.2.1/manifests/install.yaml
+kubectl apply -n argo -f https://raw.githubusercontent.com/argoproj/argo/v2.4.2/manifests/install.yaml
 
 kubectl create rolebinding default-admin --clusterrole=admin --serviceaccount=default:default
 
-# Expose UI
-kubectl -n argo port-forward deployment/argo-ui 8001:8001
+# Install Kubernetes UI
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml
+kubectl proxy
+kubectl apply -f d2s-argo-workflows/roles/dashboard-adminuser.yml
+kubectl apply -f d2s-argo-workflows/roles/admin-role-binding.yml
+# Get the Token
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+
+# Expose Argo UI
+kubectl -n argo port-forward deployment/argo-ui 8002:8001
 
 # Create volume
 kubectl apply -n argo -f d2s-argo-workflows/storage/storage-mac.yaml
 ```
 
-> Then visit: http://127.0.0.1:8001
+> Then visit: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+>
+> Provide `$HOME/.kube/config` as Kubeconfig file.
+
+> Argo UI on http://127.0.0.1:8002.
+
+---
+
+## Uninstall
+
+Clean uninstall before 2.2.
+
+```shell
+kubectl get cm workflow-controller-configmap -o yaml -n kube-system --export | kubectl apply -n argo -f -
+kubectl delete -n kube-system cm workflow-controller-configmap
+kubectl delete -n kube-system deploy workflow-controller argo-ui
+kubectl delete -n kube-system sa argo argo-ui
+kubectl delete -n kube-system svc argo-ui
+```
 
 [![Kubernetes](/img/Kubernetes.png)](https://kubernetes.io/)
 

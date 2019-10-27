@@ -16,6 +16,22 @@ cd d2s-transform-template
 
 ---
 
+## Start Virtuoso pod
+
+```shell
+kubectl run dh-vos7 --image=openlink/virtuoso-opensource-7 --port=8890
+kubectl expose deployment dh-vos7 --port=8890 --target-port=8890  --name=dh-vos7
+# --type=LoadBalancer
+
+kubectl describe services dh-vos
+
+kubectl delete deployments.apps dh-vos7
+```
+
+
+
+---
+
 ## Workflow to convert XML to RDF
 
 ### Steps-based workflow
