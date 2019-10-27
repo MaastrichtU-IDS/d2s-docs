@@ -69,23 +69,6 @@ Included in [Docker installation](/docs/cwl-install#on-macos-windows).
 
 ---
 
-### Install Argo
-
-```shell
-kubectl create ns argo
-# On argo namespace
-kubectl apply -n argo -f https://raw.githubusercontent.com/vemonet/argo/master/manifests/namespace-install.yaml
-
-kubectl create rolebinding default-admin --clusterrole=admin --serviceaccount=default:default
-
-# Expose Argo UI
-kubectl -n argo port-forward deployment/argo-ui 8002:8001
-```
-
-> Argo UI on http://localhost:8002.
-
----
-
 ### Install Dashboard UI
 
 ```shell
@@ -100,7 +83,24 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 kubectl proxy
 ```
 
-> Then visit: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+> Then visit: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
+
+---
+
+### Install Argo
+
+```shell
+kubectl create ns argo
+# On argo namespace
+kubectl apply -n argo -f https://raw.githubusercontent.com/vemonet/argo/master/manifests/namespace-install.yaml
+
+kubectl create rolebinding default-admin --clusterrole=admin --serviceaccount=default:default
+
+# Expose Argo UI
+kubectl -n argo port-forward deployment/argo-ui 8002:8001
+```
+
+> Argo UI on http://localhost:8002.
 
 ---
 
