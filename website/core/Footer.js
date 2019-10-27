@@ -37,16 +37,16 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('d2s-introduction', this.props.language)}>
+            <a href={this.docUrl('d2s-introduction')}>
               Introduction
             </a>
-            <a href={this.docUrl('cwl-install', this.props.language)}>
+            <a href={this.docUrl('cwl-services')}>
               CWL workflows
             </a>
-            <a href={this.docUrl('argo-install', this.props.language)}>
+            <a href={this.docUrl('argo-run')}>
               Kubernetes workflows
             </a>
-            <a href={this.docUrl('guide-docker', this.props.language)}>
+            <a href={this.docUrl('guide-docker')}>
               Guides
             </a>
           </div>

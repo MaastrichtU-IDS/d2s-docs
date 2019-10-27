@@ -161,8 +161,8 @@ class Index extends React.Component {
             title: 'Built on standard',
           },
           {
-            content: 'Each module is a [Docker](https://www.docker.com/) container.',
-            image: `${baseUrl}img/docker.png`,
+            content: 'Each module is a [Docker](https://www.docker.com/) image in a [Kubernetes](https://kubernetes.io/) container.',
+            image: `${baseUrl}img/Kubernetes.png`,
             imageAlign: 'top',
             title: 'Runs everywhere',
           },

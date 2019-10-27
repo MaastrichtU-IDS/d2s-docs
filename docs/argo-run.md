@@ -3,9 +3,9 @@ id: argo-run
 title: Run Argo workflows
 ---
 
-[![BioLink model](/img/biolink-logo.png)](https://github.com/MaastrichtU-IDS/d2s-transform-template)
+[![Argo project](/img/argo-logo.png)](https://argoproj.github.io/argo)
 
-We will use [examples](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/support/config) from the [**d2s-transform-template**](https://github.com/MaastrichtU-IDS/d2s-transform-template) project.
+We will use [examples](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) from the [**d2s-transform-template**](https://github.com/MaastrichtU-IDS/d2s-transform-template) project.
 
 ## Clone the repository
 
@@ -28,7 +28,7 @@ kubectl describe services dh-vos
 kubectl delete deployments.apps dh-vos7
 ```
 
-
+> **TODO:** expose it
 
 ---
 
@@ -67,4 +67,3 @@ argo submit d2s-argo-workflows/d2s-workflow-transform-csv-dag.yaml \
   -f support/config/config-transform-csv-stitch.yml
 ```
 
-![Argo project](/img/argo-logo.png)
