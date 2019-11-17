@@ -120,8 +120,14 @@ docker run -dit --rm -p 8047:8047 -p 31011:31010 --name drill -v c:/data:/data:r
 
 ## Docker run on Windows
 
-Be careful when running docker commands obtained from [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) documentation, you will need to make sure the **folder paths point to the right path** within Windows `c:` drive (`c:/data` by default).
+Be careful when running docker commands obtained from [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) documentation, you will need to make sure the **shared volumes point to the right drive** within Windows `c:` drive (`c:/data` by default).
 
 Make commands one line (remove newlines and `\` as the PowerShell doesn't handle them).
+
+Example to run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) on Windows.
+
+```powershell
+docker run --rm -it -v c:/data/d2s-workspace:/data umids/xml2rdf:latest -i "/data/my-file.xml" -o "/data/output.nq" -g 'http://w3id.org/d2s/xml2rdf/graph'
+```
 
 [![](/img/linux-logo.png)](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) 
