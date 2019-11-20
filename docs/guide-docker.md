@@ -54,11 +54,10 @@ docker run -it -v /data/d2s-workspace:/data my-container \
 	--input-file "/data/my-file.txt"
 ```
 
-* Windows requires to provide the drive when sharing volume, e.g. `c:`
+* Windows requires to provide the drive when sharing volume (e.g. `c:`) and the command to be one line.
 
 ```shell
-docker run -it -v c:/data/d2s-workspace:/data my-container \
-	--input-file "/data/my-file.txt"
+docker run -it -v c:/data/d2s-workspace:/data my-container --input-file "/data/my-file.txt"
 ```
 
 ---

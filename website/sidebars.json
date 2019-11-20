@@ -9,7 +9,7 @@
             "argo-install", "argo-login", "argo-volume"
           ]
       }, "argo-run", "argo-commands", "argo-debug", "argo-secret"],
-    "CWL workflows": ["cwl-install", "cwl-services", "cwl-run", "d2s-new-dataset", "cwl-create"],
+    "CWL workflows": ["cwl-install", "cwl-workspace", "cwl-services", "cwl-run", "d2s-new-dataset", "cwl-create"],
     "Guides": ["d2s-ecosystem", "guide-docker", "guide-windows", "guide-graphdb", "guide-virtuoso", "guide-postgres", "guide-mariadb", "guide-mysql", "guide-tabular-header", "guide-ontology", "guide-jenkins"]
   }
 }
