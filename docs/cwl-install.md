@@ -23,7 +23,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 > `sudo groupadd docker` might be required before `usermod`
 
-### On MacOS & Windows
+### On MacOS and Windows
 
 An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/) (`docker-compose` is included).
 
