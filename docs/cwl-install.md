@@ -99,3 +99,29 @@ pipx ensurepath
 > Windows documentation to run the docker containers can be found [here](/docs/guide-windows).
 
 > Consider doing a `pip install --upgrade pip` to update your pip installation.
+
+---
+
+## Install Rabix Benten for VSCode
+
+![Optional](https://img.shields.io/static/v1?label=module&message=Optional&color=blue)
+
+[Rabix Benten](https://github.com/rabix/benten) is a plugin for help and completion to edit CWL files in Visual Studio Code.
+
+```shell
+pipx install --spec git+https://github.com/rabix/benten.git benten
+```
+
+> Add `CWL (Rabix/Benten)` extension to Visual Studio Code.
+
+## Install Rabix Composer GUI
+
+![Optional](https://img.shields.io/static/v1?label=module&message=Optional&color=blue)
+
+[Rabix Composer](https://rabix.io/) is a nice way to visualize CWL workflows.
+
+[Download](https://github.com/rabix/composer/releases) the right installation file and run it.
+
+> Open the `d2s-cwl-workflows` folder in Rabix Composer.
+
+> Note that Rabix will overwrite how you originally wrote your CWL files, and add `xy` coordinates to steps.
