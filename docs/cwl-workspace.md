@@ -5,7 +5,7 @@ title: Create workspace
 
 ## Clone the repository
 
-Ideally you should create a new repository from the [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository, and use this repository as documented in the [Transform a new dataset](/docs/d2s-new-dataset) page.
+Ideally you should create a new repository from the template [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository, and use this repository as documented in the [Transform a new dataset](/docs/d2s-new-dataset) page.
 
 > In this example I will directly use the [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository.
 
