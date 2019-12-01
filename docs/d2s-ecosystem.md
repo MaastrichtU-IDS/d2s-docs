@@ -407,6 +407,25 @@ docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.c
 
 ---
 
+### brwsr
+
+[![GitHub](https://img.shields.io/github/stars/Data2Semantics/brwsr?label=GitHub&style=social)](https://github.com/Data2Semantics/brwsr)
+
+Lightweight Linked Data Browser.
+
+```shell
+git clone https://github.com/Data2Semantics/brwsr
+docker-compose up
+```
+
+> Go to http://localhost:5000.
+
+> Change the SPARQL endpoint in the [docker-compose.yml](https://github.com/Data2Semantics/brwsr/blob/master/docker-compose.yml).
+
+> Doesn't support graphs.
+
+---
+
 ## Utility
 
 ### Filebrowser
