@@ -254,12 +254,14 @@ docker run --name virtuoso \
 A high-performance RDF triplestore. See [documentation for Docker](https://github.com/lyrasis/docker-blazegraph).
 
 ```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph
+
 # Start triplestore with specific UID and GID for the bulk load
 docker run --name blazegraph \
   -e BLAZEGRAPH_UID=$UID \
   -e BLAZEGRAPH_GID=$GROUPS \
   -p 8889:8080 \
-  -v /data/blazegraph:/data \
+  -v /data/d2s-workspace:/data \
   lyrasis/blazegraph:2.1.5
 
 # To bulk load: create the dataloader.txt file
@@ -273,7 +275,7 @@ verbose=0
 closure=false
 durableQueues=true
 
-# And submit it using a HTTP POST query to load all nt files in /data/blazegraph
+# And submit it using a HTTP POST query to load all nt files in /data/d2s-workspace
 curl -X POST \
   --data-binary @dataloader.txt \
   --header 'Content-Type:text/plain' \
