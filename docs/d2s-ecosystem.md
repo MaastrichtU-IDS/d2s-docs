@@ -229,7 +229,7 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 [![GitHub](https://img.shields.io/github/stars/tenforce/docker-virtuoso?label=GitHub&style=social)](https://github.com/tenforce/docker-virtuoso)
 
-[Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
+The popular [Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso
@@ -251,7 +251,9 @@ docker run --name virtuoso \
 
 ### Blazegraph
 
-A high-performance [RDF triplestore](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). Not developed for 4 years but still efficient and used by Wikidata.
+[![GitHub](https://img.shields.io/github/stars/blazegraph/database?label=GitHub&style=social)](https://github.com/blazegraph/database)
+
+A high-performance [RDF graph database](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). Not developed for 4 years but still efficient and used by Wikidata.
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph
