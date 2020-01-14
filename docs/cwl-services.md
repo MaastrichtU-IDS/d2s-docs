@@ -14,7 +14,7 @@ Choose the services you need, and deploy them with `docker-compose`
 
 ## Virtuoso and Apache Drill
 
-At the moment we recommend using the [restart_virtuoso.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) scripts (which copy the required `load.sh` script to the virtuoso repository).
+At the moment for Virtuoso we recommend using the [restart_virtuoso.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) scripts (which copy the required `load.sh` script to the virtuoso repository).
 
 ```shell
 ./restart_virtuoso.sh
@@ -23,7 +23,8 @@ At the moment we recommend using the [restart_virtuoso.sh](https://github.com/Ma
 Or start it using the docker-compose command.
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso drill
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
+  --build --force-recreate virtuoso drill
 ```
 
 > Access Virtuoso on http://localhost:8890 and Drill on http://localhost:8048.
@@ -42,7 +43,8 @@ GraphDB cannot be pulled directly, it needs to be downloaded manually:
 * Make sure the GraphDB version defined in the `docker-compose` is right (default is `10.0.1`)
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb drill
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
+  --build --force-recreate graphdb drill
 ```
 
 > Access GraphDB on http://localhost:7200 and Drill on http://localhost:8048.
@@ -52,7 +54,8 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 ## Virtuoso and Postgres
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso postgres
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
+  --build --force-recreate virtuoso postgres
 ```
 
 > **TODO:** expose ports?
