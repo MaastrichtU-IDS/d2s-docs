@@ -251,7 +251,7 @@ docker run --name virtuoso \
 
 ### Blazegraph
 
-A high-performance RDF triplestore. See [documentation for Docker](https://github.com/lyrasis/docker-blazegraph).
+A high-performance [RDF triplestore](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). Not developed for 4 years but still efficient and used by Wikidata.
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph
