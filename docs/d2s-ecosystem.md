@@ -229,7 +229,7 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 [![GitHub](https://img.shields.io/github/stars/tenforce/docker-virtuoso?label=GitHub&style=social)](https://github.com/tenforce/docker-virtuoso)
 
-The popular [Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
+[OpenLink Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso
@@ -243,9 +243,11 @@ docker run --name virtuoso \
     -d tenforce/virtuoso
 ```
 
-> Access at [http://localhost:8890/](http://localhost:8890/)
+> Access at http://localhost:8890/ and SPARQL endpoint at http://localhost:8890/sparql.
 
 > Admin login: `dba`
+
+> See [Virtuoso documentation](/docs/guide-virtuoso) for more details.
 
 ---
 
@@ -258,7 +260,8 @@ A high-performance [RDF graph database](https://blazegraph.com/). See its [docum
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph
 
-# Start triplestore with specific UID and GID for the bulk load
+# Start triplestore with specific UID and GID for the bulk load (UI)
+# Tested on Ubuntu with $UID=1000 and nothing in $GROUPS (by default)
 docker run --name blazegraph \
   -e BLAZEGRAPH_UID=$UID \
   -e BLAZEGRAPH_GID=$GROUPS \
@@ -288,7 +291,7 @@ http://localhost:8889/bigdata/dataloader
 
 > Access UI at http://localhost:8889/bigdata
 
-> SPARQL endpoint at http://localhost:8889/bigdata/sparql
+> SPARQL endpoint at http://localhost:8080/bigdata/sparql (original port)
 
 To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update) and enter `clear all`
 
