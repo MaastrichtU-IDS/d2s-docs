@@ -249,6 +249,45 @@ docker run --name virtuoso \
 
 ---
 
+### Blazegraph
+
+A high-performance RDF triplestore. See [documentation for Docker](https://github.com/lyrasis/docker-blazegraph).
+
+```shell
+# Start triplestore with specific UID and GID for the bulk load
+docker run --name blazegraph \
+  -e BLAZEGRAPH_UID=$UID \
+  -e BLAZEGRAPH_GID=$GROUPS \
+  -p 8889:8080 \
+  -v /data/blazegraph:/data \
+  lyrasis/blazegraph:2.1.5
+
+# To bulk load: create the dataloader.txt file
+namespace=kb
+propertyFile=/RWStore.properties
+fileOrDirs=/data
+format=n-triples
+defaultGraph=http://defaultGraph
+quiet=false
+verbose=0
+closure=false
+durableQueues=true
+
+# And submit it using a HTTP POST query to load all nt files in /data/blazegraph
+curl -X POST \
+  --data-binary @dataloader.txt \
+  --header 'Content-Type:text/plain' \
+http://localhost:8889/bigdata/dataloader
+```
+
+> UID and Group ID needs to be set in order to have the right permission to bulk load a file (example given for Ubuntu). And `RWStore.properties` can be rewritten, see [example](https://github.com/lyrasis/docker-blazegraph/blob/master/data/RWStore.properties). 
+
+> Access at http://localhost:8889/bigdata
+
+To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update) and enter `clear all`
+
+---
+
 ### Linked Data Fragments Server
 
 [![Linked Data Fragments server](/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
