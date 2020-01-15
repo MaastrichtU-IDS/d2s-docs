@@ -297,6 +297,24 @@ To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update)
 
 ---
 
+### Neo4j
+
+[![Neo4j](/img/neo4j_logo.png)](https://neo4j.com/)
+
+[![GitHub](https://img.shields.io/github/stars/neo4j/neo4j?label=GitHub&style=social)](https://github.com/neo4j/neo4j)
+
+[Neo4j](https://neo4j.com/) property graph database, using [Cypher](https://neo4j.com/docs/cypher-manual/current/) as query language. Deployed from [DockerHub](https://hub.docker.com/_/neo4j).
+
+```shell
+docker run -p 7474:7474 -p 7687:7687 -v /data/d2s-workspace:/data neo4j
+```
+
+> Access at http://localhost:7474.
+
+> Login with `neoj4` / `neo4j` and change the password.
+
+---
+
 ### Linked Data Fragments Server
 
 [![Linked Data Fragments server](/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
