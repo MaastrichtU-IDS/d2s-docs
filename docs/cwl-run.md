@@ -94,7 +94,7 @@ nohup cwl-runner --custom-net d2s-cwl-workflows_network \
 
 ## Generate mappings for AutoR2RML
 
-> `TODO`: deprecated
+> `Do not use`: deprecated
 
 When you don't already have mappings sets for R2RML the workflow can be executed in 2 steps
 
@@ -120,9 +120,16 @@ cwl-runner --outdir output/stitch-sample \
 
 ## Workflow details
 
-* You will need to put the SPARQL mapping queries in `/mappings/$dataset_name` and provide 3 parameters:
-  * `--outdir`: the [output directory](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/output/stitch) for files outputted by the workflow (except for the downloaded source files that goes automatically to `/input`). 
-    * e.g. `output/$dataset_name`.
+* By default the example files are running using `/data/d2s-workspace` as working directory.
+
+* You need to put the SPARQL mapping queries in `/mappings/$dataset_name` and provide those parameters:
+  * `--outdir`: final output directory for files outputted by the workflow
+    * e.g. `/data/d2s-workspace/output/$dataset_name`.
+  * `--tmp-outdir-prefix`: directory for output files (tmp) of each step 
+    * e.g. `/data/d2s-workspace/output/tmp-outdir`
+  * `--tmpdir-prefix`: directory used to pass inputs of each step
+    * e.g. `/data/d2s-workspace/output/tmp-outdir/tmp-`
+  * `--custom-net`: docker network used by all containers run in this workflow
   * The `.cwl` [workflow file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/cwl/workflow-xml.cwl)
     * e.g. `d2s-cwl-workflows/workflows/workflow-xml.cwl`
   * The `.yml` [configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/example-config/config-transform-xml-drugbank.yml) with all parameters required to run the workflow
@@ -132,16 +139,3 @@ cwl-runner --outdir output/stitch-sample \
   * XML
   * CSV/TSV
   * CSV/TSV with split of a statement
-
----
-
-### Command arguments
-
-By default the example files are running using `/data/d2s-workspace` as working directory. If you installed the repository at the different location, you will need to edit the `--outdir` and `--tmp-outdir-prefix` parameters in the command line.
-
-- `--outdir`: final dir where the final ouput of the workflow is copied.
-- `--tmp-outdir-prefix`: dir for output files (tmp) of each step 
-- `--tmpdir-prefix`: dir used to pass inputs
-- `-basedir /data/basedir/`: to find out
-
-`outdir`, `tmp-outdir` and `tmpdir` output files in `/data/d2s-workspace`
