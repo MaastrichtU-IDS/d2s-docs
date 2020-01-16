@@ -12,19 +12,34 @@ Choose the services you need, and deploy them with `docker-compose`
 
 > All shared on `/data/d2s-workspace`.
 
-## Virtuoso and Apache Drill
+## Run with docker-compose
 
-At the moment for Virtuoso we recommend using the [restart_virtuoso.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) scripts (which copy the required `load.sh` script to the virtuoso repository).
+Use the command from your repository, in your case `d2s-transform-template`
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up \
+  -d --build --force-recreate \
+  virtuoso graphdb blazegraph drill postgres
+```
+
+> Remove the services you are not interested in.
+
+### Virtuoso and Apache Drill
+
+At the moment for Virtuoso we recommend using the [restart_virtuoso.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) scripts (which recreate `/data/d2s-workspace/virtuoso` and copy the required [load.sh script](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) to the Virtuoso repository).
 
 ```shell
 ./restart_virtuoso.sh
 ```
 
-Or start it using the docker-compose command.
+Or start it using the `docker-compose` command:
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
   --build --force-recreate virtuoso drill
+  
+# Then copy the load.sh file to be accessible by Virtuoso running container
+cp d2s-cwl-workflows/support/virtuoso/load.sh /data/d2s-workspace/virtuoso
 ```
 
 > Access Virtuoso on http://localhost:8890 and Drill on http://localhost:8048.
@@ -33,7 +48,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
 
 > See [Setting up Virtuoso](/docs/guide-virtuoso) documentation for more details.
 
-## GraphDB and Apache Drill
+### GraphDB and Apache Drill
 
 GraphDB cannot be pulled directly, it needs to be downloaded manually:
 
@@ -51,11 +66,11 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
 
 > See [Setting up GraphDB](/docs/guide-graphdb) documentation for more details.
 
-## Virtuoso and Postgres
+### Blazegraph and Postgres
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
-  --build --force-recreate virtuoso postgres
+  --build --force-recreate blazegraph postgres
 ```
 
 > **TODO:** expose ports?
@@ -74,16 +89,10 @@ docker ps
 
 ### Stop services
 
+From `d2s-transform-template`
+
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
-```
-
-### Reset Virtuoso
-
-[Convenience script](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) to make it faster and easier to reset Virtuoso Triplestore.
-
-```shell
-./restart_virtuoso.sh
 ```
 
 

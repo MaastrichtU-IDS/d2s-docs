@@ -236,10 +236,10 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 docker pull tenforce/virtuoso
 docker run --name virtuoso \
     -p 8890:8890 -p 1111:1111 \
-    -e DBA_PASSWORD=password \
+    -e DBA_PASSWORD=dba \
     -e SPARQL_UPDATE=true \
-    -e DEFAULT_GRAPH=https://w3id.org/data2services/graph \
-    -v /data/virtuoso:/data \
+    -e DEFAULT_GRAPH=https://w3id.org/d2s/graph \
+    -v /data/d2s-workspace/virtuoso:/data \
     -d tenforce/virtuoso
 ```
 
