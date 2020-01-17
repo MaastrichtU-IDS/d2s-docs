@@ -422,6 +422,42 @@ docker run -it --rm --name yasgui -p 8080:80 \
 
 ---
 
+### Linked data browser
+
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a Lightweight RDF linked data browser. Browse a RDF triplestore by providing the SPARQL endpoint URL, browser  supports graphs, includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://www.w3.org/TR/hcls-dataset/).
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate into-the-graph
+docker pull umids/into-the-graph
+docker run --rm -it -p 8082:80 umids/into-the-graph
+```
+
+> Access on http://localhost:8082
+
+> Work in progress. The URL still needs to be changed manually before build (search for http://graphdb.dumontierlab.com/repositories/)
+
+---
+
+### Comunica Widget
+
+[![GitHub](https://img.shields.io/github/stars/comunica/jQuery-Widget.js?label=GitHub&style=social)](https://github.com/comunica/jQuery-Widget.js)
+
+A [jQuery widget](http://query.linkeddatafragments.org/) to query heterogeneous interfaces using Comunica SPARQL and GraphQL.  
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate comunica
+docker pull umids/comunica-sparql-widget
+docker run -p 8084:80 -it --rm umids/comunica-sparql-widget
+```
+
+> Access on http://localhost:8084
+
+> `settings.json` file and `queries` needs to be changed before `docker build`. See [documentation](https://github.com/vemonet/jQuery-Widget.js).
+
+> **TODO**: improve how settings and queries pass (script to download them from URL before starting nginx?.
+
+---
+
 ### LODEstar
 
 [SPARQL](https://www.w3.org/TR/sparql11-query/) query and URI resolution, available through [DockerHub](https://hub.docker.com/r/netresearch/lodestar).

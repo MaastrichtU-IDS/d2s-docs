@@ -125,3 +125,11 @@ pipx install --spec git+https://github.com/rabix/benten.git benten
 > Open the `d2s-cwl-workflows` folder in Rabix Composer.
 
 > Note that Rabix will overwrite how you originally wrote your CWL files, and add `xy` coordinates to steps.
+
+## Try Apache Airflow
+
+[Apache Airflow](https://airflow.apache.org/) allow to run CWL workflows.
+
+[Install Apache Airflow](https://airflow.apache.org/docs/stable/start.html) and the [cwl-airflow](https://cwl-airflow.readthedocs.io/en/latest/readme/run_demo.html) pip package to get started.
+
+> **TODO**
