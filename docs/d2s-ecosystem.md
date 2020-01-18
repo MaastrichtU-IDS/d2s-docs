@@ -417,7 +417,7 @@ docker run --rm -it -p 8082:80 umids/into-the-graph
 
 > Access on http://localhost:8082
 
-> Work in progress. The SPARQL endpoint URL can be changed before build in [settings.json](https://github.com/MaastrichtU-IDS/into-the-graph/blob/master/settings.json)
+> The SPARQL endpoint URL and other parameters can be changed before the build in [settings.json](https://github.com/MaastrichtU-IDS/into-the-graph/blob/master/settings.json). See the [README](https://github.com/MaastrichtU-IDS/into-the-graph#do-a-local-build) for more details.
 
 ---
 
@@ -431,6 +431,9 @@ A [jQuery widget](http://query.linkeddatafragments.org/) to query heterogeneous 
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate comunica
 docker pull umids/comunica-sparql-widget
 docker run -p 8084:80 -it --rm umids/comunica-sparql-widget
+
+# Provide a local queries.json file
+docker run -v $(pwd)/queries.json:/usr/share/nginx/html/queries.json -p 8080:80 -it --rm umids/comunica-sparql-widget
 ```
 
 > Access on http://localhost:8084
