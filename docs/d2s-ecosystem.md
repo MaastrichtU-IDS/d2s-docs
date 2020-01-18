@@ -13,25 +13,6 @@ Only [Docker](https://docs.docker.com/install/) is required to run the modules. 
 
 ## Convert to RDF
 
-### d2s-download
-
-[![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-download?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-download)
-
-Download datasets using Bash scripts. See [script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
-
-```shell
-docker pull umids/d2s-download:latest
-docker run -it --rm -v /data/d2s-workspace:/data umids/d2s-download \
-	--download-datasets aeolus,pharmgkb,ctd \
-	--username my_login --password my_password
-```
-
-> See on [DockerHub](https://hub.docker.com/r/umids/d2s-download).
-
-> **TODO**: deprecated, to remove
-
----
-
 ### d2s-bash-exec
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-bash-exec?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-bash-exec)
