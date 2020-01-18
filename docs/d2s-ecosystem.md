@@ -424,7 +424,9 @@ docker run -it --rm --name yasgui -p 8080:80 \
 
 ### Linked data browser
 
-[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a Lightweight RDF linked data browser. Browse a RDF triplestore by providing the SPARQL endpoint URL, browser  supports graphs, includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://www.w3.org/TR/hcls-dataset/).
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
+
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a Lightweight RDF linked data browser. Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate into-the-graph
@@ -434,7 +436,7 @@ docker run --rm -it -p 8082:80 umids/into-the-graph
 
 > Access on http://localhost:8082
 
-> Work in progress. The URL still needs to be changed manually before build (search for http://graphdb.dumontierlab.com/repositories/)
+> Work in progress. The SPARQL endpoint URL can be changed before build in [settings.json](https://github.com/MaastrichtU-IDS/into-the-graph/blob/master/settings.json)
 
 ---
 
@@ -546,4 +548,4 @@ docker run -d --rm --name d2s-filebrowser \
 
 > Navigate to http://localhost:8080/files
 
-> admin / admin
+> Login with `admin` / `admin`
