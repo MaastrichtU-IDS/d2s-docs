@@ -7,14 +7,14 @@ Services must be running before executing CWL workflows. E.g. [Apache Drill](htt
 
 Choose the services you need, and deploy them with `docker-compose`
 
-* Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), blazegraph
-* Data access: [Apache Drill](https://github.com/amalic/apache-drill), Postgres, MariaDB
+* Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), [blazegraph](https://hub.docker.com/r/lyrasis/blazegraph/dockerfile)
+* Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres), MariaDB
 
 > All shared on `/data/d2s-workspace`.
 
 ## Run the d2s environment
 
-We provide a simple [Shell script](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_d2s_services.sh) to start most services required to run the workflows: Apache Drill, Virtuoso as temporary triplestore, a browser for Virtuoso and a GraphDB triplestore, usually used as final store.
+We provide a simple [Shell script](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_d2s_services.sh) to start most services required to run the workflows: Apache Drill, Virtuoso as temporary triplestore, a browser for Virtuoso and a GraphDB triplestore, a browser for Virtuoso, usually used as final store.
 
 ```shell
 ./restart_d2s_services.sh
@@ -24,9 +24,10 @@ We provide a simple [Shell script](https://github.com/MaastrichtU-IDS/d2s-transf
 
 > This script is mainly required for Virtuoso: to create `/data/d2s-workspace/virtuoso`, copy the required [load.sh script](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) to the Virtuoso repository and set ownerships.
 
-* Access the linked data browser for Vituoso at 
-* Access Virtuoso at 
-* Access GraphDB at 
+* Access the linked data browser for Virtuoso at http://localhost:8891
+* Access Virtuoso at http://localhost:8890
+* Access the  linked data browser for GraphDB at http://localhost:7201
+* Access GraphDB at http://localhost:7200
 
 ## Run with docker-compose
 
@@ -37,7 +38,7 @@ Use the command from your repository, in our case `d2s-transform-template`
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up \
   -d --build --force-recreate \
-  virtuoso graphdb blazegraph drill postgres browse-local-virtuoso browse-local-graphdb
+  postgres virtuoso graphdb blazegraph drill browse-local-virtuoso browse-local-graphdb
 ```
 
 > Remove the services you are not interested in.
