@@ -246,7 +246,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-re
 docker run --name blazegraph \
   -e BLAZEGRAPH_UID=$UID \
   -e BLAZEGRAPH_GID=$GROUPS \
-  -p 8889:8080 \
+  -p 8082:8080 \
   -v /data/d2s-workspace:/data \
   lyrasis/blazegraph:2.1.5
 
@@ -270,7 +270,7 @@ http://localhost:8889/bigdata/dataloader
 
 > UID and Group ID needs to be set in order to have the right permission to bulk load a file (example given for Ubuntu). And `RWStore.properties` can be rewritten, see [example](https://github.com/lyrasis/docker-blazegraph/blob/master/data/RWStore.properties). 
 
-> Access UI at http://localhost:8889/bigdata
+> Access UI at http://localhost:8882/bigdata
 
 > SPARQL endpoint at http://localhost:8080/bigdata/sparql (original port)
 

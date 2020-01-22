@@ -10,7 +10,7 @@ Choose the services you need, and deploy them with `docker-compose`
 * Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), [blazegraph](https://hub.docker.com/r/lyrasis/blazegraph/dockerfile)
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres), MariaDB
 
-> All shared on `/data/d2s-workspace`.
+> All shared on `/data/d2s-workspace`
 
 ## Run the d2s environment
 
@@ -31,21 +31,25 @@ We provide a simple [Shell script](https://github.com/MaastrichtU-IDS/d2s-transf
 
 ## Run with docker-compose
 
-You can use docker-compose to start other services. Note that Virtuoso needs to be started using the [Shell script](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_d2s_services.sh) as it creates the required directories and makes sure the files permissions are properly set.
+You can use `docker-compose` to start other services. Note that Virtuoso needs to be started using the [restart_d2s_services.sh bash script](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_d2s_services.sh) as it creates the required directories and makes sure the files permissions are properly set.
 
 Use the command from your repository, in our case `d2s-transform-template`
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml up \
   -d --build --force-recreate \
-  postgres virtuoso graphdb blazegraph drill browse-local-virtuoso browse-local-graphdb
+  postgres drill virtuoso graphdb blazegraph \
+  browse-local-virtuoso browse-local-graphdb browse-local-blazegraph
 ```
 
 > Remove the services you are not interested in.
 
+* Access the  linked data browser for Blazegraph at http://localhost:8083
+* Access Blazegraph at http://localhost:8082
+
 ### Virtuoso and Apache Drill
 
-At the moment for Virtuoso we recommend using the [restart_virtuoso.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) scripts (which recreate `/data/d2s-workspace/virtuoso` and copy the required [load.sh script](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) to the Virtuoso repository).
+At the moment for Virtuoso we recommend using the [restart_d2s_services.sh script](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_d2s_services.sh) scripts (which recreate `/data/d2s-workspace/virtuoso` and copy the required [load.sh script](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) to the Virtuoso repository).
 
 Or start it using the `docker-compose` command:
 
