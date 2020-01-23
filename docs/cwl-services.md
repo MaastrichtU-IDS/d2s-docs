@@ -23,7 +23,7 @@ We provide a simple [Shell script](https://github.com/MaastrichtU-IDS/d2s-transf
 
 > The shell will ask for a password at the end: `sudo` is used to change ownership of workspace (`chown /data/d2s-workspace`). 
 
-> This script is mainly required for Virtuoso: to create `/data/d2s-workspace/virtuoso`, copy the required [load.sh script](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) to the Virtuoso repository and set ownerships.
+> This script is mainly required for Virtuoso: to create `/data/d2s-workspace/virtuoso`, create a `test` repo in GraphDB, copy the required [load.sh script](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) to the Virtuoso repository and set ownerships.
 
 * Access the linked data browser for Virtuoso at http://localhost:8891
 * Access Virtuoso at http://localhost:8890
@@ -69,6 +69,12 @@ cp d2s-cwl-workflows/support/virtuoso/load.sh /data/d2s-workspace/virtuoso
 > Virtuoso folder in `/data/d2s-workspace/virtuoso/`.
 
 > See [Setting up Virtuoso](/docs/guide-virtuoso) documentation for more details.
+
+You can clear the Virtuoso triplestore using this command:
+
+```shell
+docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
+```
 
 ### GraphDB and Apache Drill
 
