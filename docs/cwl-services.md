@@ -8,7 +8,8 @@ Services must be running before executing CWL workflows. E.g. [Apache Drill](htt
 Choose the services you need, and deploy them with `docker-compose`
 
 * Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), [blazegraph](https://hub.docker.com/r/lyrasis/blazegraph/dockerfile)
-* Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres), MariaDB
+* Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres)
+* User interfaces: [into-the-graph RDF browser](https://github.com/MaastrichtU-IDS/into-the-graph), [yasgui](https://hub.docker.com/r/erikap/yasgui), [comunica](https://github.com/comunica/jQuery-Widget.js)
 
 > All shared on `/data/d2s-workspace`
 
@@ -28,6 +29,8 @@ We provide a simple [Shell script](https://github.com/MaastrichtU-IDS/d2s-transf
 * Access Virtuoso at http://localhost:8890
 * Access the  linked data browser for GraphDB at http://localhost:7201
 * Access GraphDB at http://localhost:7200
+
+> You need to **activate CORS request** to allow communication between those services on your browser. An addon can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf).
 
 ## Run with docker-compose
 
@@ -92,11 +95,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
   --build --force-recreate blazegraph postgres
 ```
 
-> **TODO:** expose ports?
-
 > See [Postgres guide](/docs/guide-postgres) page for more details.
-
----
 
 ## Manage services
 
@@ -106,7 +105,7 @@ docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d \
 docker ps
 ```
 
-### Stop services
+### Stop all services
 
 From `d2s-transform-template`
 
@@ -114,7 +113,11 @@ From `d2s-transform-template`
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml down
 ```
 
+### Stop single service
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml stop graphdb
+```
 
 [![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
-[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
