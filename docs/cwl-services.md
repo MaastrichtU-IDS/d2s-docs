@@ -30,7 +30,7 @@ We provide a simple [Shell script](https://github.com/MaastrichtU-IDS/d2s-transf
 * Access the  linked data browser for GraphDB at http://localhost:7201
 * Access GraphDB at http://localhost:7200
 
-> You need to **activate CORS request** to allow communication between those services on your browser. An addon can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf).
+> You need to **activate CORS request** to allow communication between those services on your browser. An addon can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
 
 ## Run with docker-compose
 

@@ -17,11 +17,13 @@ docker pull tenforce/virtuoso:latest
 
 ### Using convenience script
 
-At the moment for Virtuoso we recommend using the [restart_virtuoso.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_virtuoso.sh) scripts (which recreate `/data/d2s-workspace/virtuoso` and copy the required `load.sh` script to the virtuoso repository).
+At the moment for Virtuoso we recommend using the [restart_d2s_services.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_d2s_services.sh) bash script. It recreates `/data/d2s-workspace/virtuoso` and copies the required [load.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) script to the virtuoso repository).
 
 ```shell
-./restart_virtuoso.sh
+./restart_d2s_services.sh
 ```
+
+The shell will ask for a password at the end: `sudo` is used to change ownership of workspace (`chown /data/d2s-workspace`). 
 
 > Access at http://localhost:8890/ and SPARQL endpoint at http://localhost:8890/sparql.
 
@@ -55,18 +57,18 @@ docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
 
 > Navigate to http://localhost:8890/
 
----
-
 ## Clear Virtuoso triplestore
 
 ```shell
 docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
 ```
 
----
-
 ## Virtuoso bulk load
 
 ```shell
 docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db', '*.nq', 'http://test/'); rdf_loader_run();"
 ```
+
+## Configuration
+
+CORS can be enabled following [this tutorial](http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksCORsEnableSPARQLURLs).
