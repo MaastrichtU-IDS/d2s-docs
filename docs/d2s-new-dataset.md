@@ -3,18 +3,7 @@ id: d2s-new-dataset
 title: Transform a new dataset
 ---
 
-Go to [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template), click on [Use this template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
-
-Clone the created repository on your machine
-
-```shell
-git clone --recursive your-repository
-cd your-repository
-git submodule add https://github.com/MaastrichtU-IDS/d2s-cwl-workflows.git
-git submodule update --init --recursive
-```
-
-> The `d2s-cwl-workflows` submodule needs to be manually added because not copied by GitHub templates.
+In this documentation I will use [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) as example, but you are encouraged to create a new Git repository [using the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
 
 ## Start from the template dataset
 

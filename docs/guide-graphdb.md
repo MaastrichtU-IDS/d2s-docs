@@ -5,8 +5,6 @@ title: Setting up GraphDB
 
 [![](/img/graphdb-logo.png)](https://graphdb.ontotext.com/)
 
-
-
 [Ontotext GraphDB](http://graphdb.ontotext.com/) triplestore is available on [DockerHub](https://hub.docker.com/r/ontotext/graphdb/) for `standard` and `enterprise edition`.
 
 If you wish to use GraphDB free edition, you will need to download it from Ontotext and build the Docker image.

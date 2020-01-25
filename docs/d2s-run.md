@@ -1,5 +1,5 @@
 ---
-id: cwl-run
+id: d2s-run
 title: Run CWL workflows
 ---
 
@@ -9,32 +9,20 @@ title: Run CWL workflows
 
 Files to process (e.g. CSV, XML) needs to be downloaded before running the workflow.
 
-Example for `stitch`:
+Example for `drugbank`:
 
 ```shell
-docker run -it -v /data/d2s-transform-template:/srv \
-  -v /data/d2s-workspace:/data \
-  umids/d2s-bash-exec:latest \
-  /srv/datasets/stitch/download/download.sh input/stitch
+d2s download drugbank
 ```
 
-> You need to be in the `d2s-transform-template` repository. Here on `/data`.
-
-> Downloaded files goes to `/data/d2s-workspace/input/dataset_name`.
-
-> **TODO:** allow to provide directly a URL for `download.sh`.
+> Downloaded files goes to `/data/d2s-workspace/input/drugbank`.
 
 ## Convert XML with xml2rdf
 
 Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_network \
-  --outdir /data/d2s-workspace/output \
-  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
-  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
-  d2s-cwl-workflows/workflows/workflow-xml.cwl \
-  datasets/drugbank/config-transform-xml-drugbank.yml
+d2s run workflow-xml.cwl drugbank
 ```
 
 > Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
@@ -48,29 +36,23 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_network \
-  --outdir /data/d2s-workspace/output \
-  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
-  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
-  d2s-cwl-workflows/workflows/workflow-csv.cwl \
-  datasets/stitch/config-transform-csv-stitch.yml
+d2s download cohd
+d2s run workflow-csv.cwl cohd
 ```
 
-> Example converting [stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/stitch) (drug-protein associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+> Example converting [cohd](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurence) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ---
 
 ## Convert CSV/TSV with AutoR2RML and split a property
 
+> Not tested at the moment. Might need fix.
+
 Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements.
 
 ```shell
-cwl-runner --custom-net d2s-cwl-workflows_network \
-  --outdir /data/d2s-workspace/output \
-  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
-  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
-  d2s-cwl-workflows/workflows/workflow-csv-split.cwl \
-  datasets/eggnog/config-transform-split-eggnog.yml
+d2s download eggnog
+d2s run workflow-csv-split.cwl eggnog
 ```
 
 > Example converting the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
@@ -80,12 +62,7 @@ cwl-runner --custom-net d2s-cwl-workflows_network \
 ## Run in the background
 
 ```shell
-nohup cwl-runner --custom-net d2s-cwl-workflows_network \
-  --outdir /data/d2s-workspace/output \
-  --tmp-outdir-prefix=/data/d2s-workspace/output/tmp-outdir/ \
-  --tmpdir-prefix=/data/d2s-workspace/output/tmp-outdir/tmp- \
-  d2s-cwl-workflows/workflows/workflow-csv.cwl \
-  datasets/drugbank/config-transform-csv-stitch.yml &
+nohup d2s run workflow-xml.cwl drugbank &
 ```
 
 > Write terminal output to `nohup.out`.

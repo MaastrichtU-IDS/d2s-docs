@@ -40,14 +40,14 @@ class Footer extends React.Component {
             <a href={this.docUrl('d2s-introduction')}>
               Introduction
             </a>
-            <a href={this.docUrl('cwl-services')}>
+            <a href={this.docUrl('d2s-services')}>
               CWL workflows
             </a>
             <a href={this.docUrl('argo-run')}>
               Kubernetes workflows
             </a>
-            <a href={this.docUrl('guide-docker')}>
-              Guides
+            <a href={this.docUrl('d2s-ecosystem')}>
+              Data2Services ecosystem
             </a>
           </div>
 
