@@ -46,7 +46,7 @@ d2s
 
 > You need to open a new terminal for the autocomplete to be activated.
 
-> Use `Tab` after a `d2s` command in the terminal to see all the available options (it will adapt to the command and dynamically retrieve your datasets).
+> Use `Tab` after a `d2s` command in the terminal to see all the available options (it will adapt to the command and dynamically retrieve your datasets and workflows!).
 
 ## Install pip
 
