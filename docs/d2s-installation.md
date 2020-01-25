@@ -20,14 +20,44 @@ Requirements:
 * curl
 * pip (we recommed using [pipx](https://pipxproject.github.io/pipx/))
 
-### Install requirements on Ubuntu
+### Enable autocompletion
+
+Enabling commandline autocompletion in the terminal is crucial to have the best experience using the `d2s` client. 
+
+* **Bash**: add the import autocomplete line to `.bashrc`
+```bash
+echo 'eval "$(_D2S_COMPLETE=source d2s)"' > ~/.bashrc
+```
+
+> `nano ~/.bashrc` if issues with the import 
+
+* **ZSH**: add the import autocomplete line to `.zshrc`
+```bash
+echo 'eval "$(_D2S_COMPLETE=source_zsh d2s)"' > ~/.zshrc
+```
+
+> `nano ~/.zshrc` if issues with the import 
+
+### Try the client
+
+```bash
+d2s
+```
+
+> You need to open a new terminal for the autocomplete to be activated.
+
+> Use `Tab` after a `d2s` command in the terminal to see all the available options (it will adapt to the command and dynamically retrieve your datasets).
+
+## Install pip
+
+### Install pip on Ubuntu
 
 ```shell
 sudo apt install pip3
 pip3 install --user pipx
 ```
 
-### Install requirements on MacOS
+### Install pip on MacOS
 
 Using `pip` and `pipx`.
 
@@ -39,7 +69,7 @@ pip3 install pipx
 pipx ensurepath
 ```
 
-### Install requirements on CentOS
+### Install pip on CentOS
 
 Using `pip` and `pipx`.
 
@@ -51,11 +81,9 @@ sudo easy_install-3.6 pip
 pip3 install --user pipx
 ```
 
-### Install requirements on Windows
+### Install pip on Windows
 
-Install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe).
-
-See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
+Install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe). See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 
 ```shell
 pip install pipx
