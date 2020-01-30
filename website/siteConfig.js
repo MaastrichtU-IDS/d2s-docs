@@ -34,7 +34,7 @@ const users = [
 const siteConfig = {
   title: 'Data2Services', // Title for your website.
   tagline: 'Automatically deploy user-facing services consuming data from various sources integrated under a common Knowledge Graph',
-  url: 'http://d2s.semanticscience.org/', // Your website URL
+  url: 'https://d2s.semanticscience.org/', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // We deploy at https://data2services.github.io/data2services/
 
