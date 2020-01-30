@@ -20,6 +20,8 @@ Requirements:
 * curl
 * pip (we recommed using [pipx](https://pipxproject.github.io/pipx/))
 
+> See [below](/docs/d2s-installation#install-pip) for more instructions about pip and docker installation.
+
 ### Enable autocompletion
 
 Enabling commandline autocompletion in the terminal is crucial to have the best experience using the `d2s` client. 
@@ -47,6 +49,29 @@ d2s
 > You need to open a new terminal for the autocomplete to be activated.
 
 > Use `Tab` after a `d2s` command in the terminal to see all the available options (it will adapt to the command and dynamically retrieve your datasets and workflows!).
+
+---
+
+## Download the GraphDB distribution
+
+[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
+
+For licensing reason the GraphDB free edition distribution needs to be downloaded manually.
+
+* Go to https://ontotext.com/products/graphdb/ and provide informations to get an email with the link to download GraphDB
+
+* Download GraphDB as stand-alone server free version `8.10.1` (zip)
+
+* The `d2s` client will ask you to provide the path to the GraphDB distribution `.zip` file when initializing the workspace.
+
+  * By default the `d2s` client takes the file from your home directory (e.g. `/home/my-user`)
+
+    ```bash
+    # Copy the GraphDB distribution file to your home folder
+    cp graphdb-free-8.10.1-dist.zip ~/
+    ```
+
+---
 
 ## Install pip
 
@@ -95,21 +120,6 @@ pipx ensurepath
 > Windows documentation to run the docker containers can be found [here](/docs/guide-windows).
 
 > Consider doing a `pip install --upgrade pip` to update your pip installation.
-
----
-
-## Download GraphDB distribution
-
-[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
-
-For licensing reason the GraphDB free edition distribution needs to be downloaded manually.
-
-* Go to https://ontotext.com/products/graphdb/ and provide informations to get an email with the link to download GraphDB
-
-* Download GraphDB as stand-alone server free version `8.10.1` (zip)
-
-* The `d2s` client will ask you to provide the path to the GraphDB distribution `.zip` file when initializing the workspace.
-  * By default the `d2s` client takes the file from your home directory (e.g. `/home/my-user`)
 
 ---
 
