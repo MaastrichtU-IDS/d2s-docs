@@ -12,7 +12,7 @@ Choose the services you need, and deploy them with `docker-compose`
 * Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres)
 * User interfaces: [into-the-graph RDF browser](https://github.com/MaastrichtU-IDS/into-the-graph), [yasgui](https://hub.docker.com/r/erikap/yasgui), [comunica](https://github.com/comunica/jQuery-Widget.js)
 
-> All shared on `/data/d2s-workspace`
+> All shared on `workspace/`
 
 ## Start common services
 
