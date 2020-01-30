@@ -19,3 +19,4 @@ services:
     environment:
       - VIRTUAL_HOST=d2s.semanticscience.org
       - VIRTUAL_PORT=3000
+      - LETSENCRYPT_HOST=d2s.semanticscience.org
