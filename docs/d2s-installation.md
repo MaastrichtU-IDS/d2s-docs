@@ -26,14 +26,14 @@ Enabling commandline autocompletion in the terminal is crucial to have the best 
 
 * **Bash**: add the import autocomplete line to `.bashrc`
 ```bash
-echo 'eval "$(_D2S_COMPLETE=source d2s)"' > ~/.bashrc
+echo 'eval "$(_D2S_COMPLETE=source d2s)"' >> ~/.bashrc
 ```
 
 > `nano ~/.bashrc` if issues with the import 
 
 * **ZSH**: add the import autocomplete line to `.zshrc`
 ```bash
-echo 'eval "$(_D2S_COMPLETE=source_zsh d2s)"' > ~/.zshrc
+echo 'eval "$(_D2S_COMPLETE=source_zsh d2s)"' >> ~/.zshrc
 ```
 
 > `nano ~/.zshrc` if issues with the import 
