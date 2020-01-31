@@ -126,7 +126,7 @@ class Index extends React.Component {
     );
 
     const PyramidDiagram = () => (
-      <Block>
+      <Block background="light">
         {[
           {
             content:
@@ -161,7 +161,7 @@ class Index extends React.Component {
 
     const DeployServices = () => (
       <div>
-      <Block background="light" id="d2sinaction">
+      <Block id="d2sinaction">
         {[
           {
             content:
@@ -256,8 +256,8 @@ class Index extends React.Component {
           <Features />
           <FeatureCallout />
           <Data2ServicesDiagram />
-          <PyramidDiagram />
           <DeployServices />
+          <PyramidDiagram />
           <Showcase />
         </div>
       </div>
