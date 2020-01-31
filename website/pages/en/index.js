@@ -112,7 +112,7 @@ class Index extends React.Component {
     );
 
     const TryOut = () => (
-      <Block>
+      <Block background="light">
         {[
           {
             content:
@@ -126,7 +126,7 @@ class Index extends React.Component {
     );
 
     const LearnHow = () => (
-      <Block background="light">
+      <Block>
         {[
           {
             content:
@@ -255,8 +255,8 @@ class Index extends React.Component {
           <IntroCodeBlocks />
           <Features />
           <FeatureCallout />
-          <LearnHow />
           <TryOut />
+          <LearnHow />
           <Description />
           <Showcase />
         </div>
