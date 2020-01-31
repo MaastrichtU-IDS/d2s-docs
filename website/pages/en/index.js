@@ -99,6 +99,11 @@ class Index extends React.Component {
         <MarkdownBlock>
           Define a mapping files to make sense out of your data.
         </MarkdownBlock>
+        <pre>
+          <code class="hljs css language-bash">
+          d2s init
+          </code>
+        </pre>
         <MarkdownBlock>
           Link your different data sources together and access them through a variety of interfaces and services.
         </MarkdownBlock>
