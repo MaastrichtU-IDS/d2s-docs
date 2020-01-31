@@ -111,7 +111,7 @@ class Index extends React.Component {
       </div>
     );
 
-    const TryOut = () => (
+    const Data2ServicesDiagram = () => (
       <Block background="light">
         {[
           {
@@ -125,7 +125,7 @@ class Index extends React.Component {
       </Block>
     );
 
-    const LearnHow = () => (
+    const PyramidDiagram = () => (
       <Block>
         {[
           {
@@ -159,7 +159,7 @@ class Index extends React.Component {
       </Block>
     );
 
-    const Description = () => (
+    const DeployServices = () => (
       <div>
       <Block background="light" id="d2sinaction">
         {[
@@ -255,9 +255,9 @@ class Index extends React.Component {
           <IntroCodeBlocks />
           <Features />
           <FeatureCallout />
-          <TryOut />
-          <LearnHow />
-          <Description />
+          <Data2ServicesDiagram />
+          <PyramidDiagram />
+          <DeployServices />
           <Showcase />
         </div>
       </div>
