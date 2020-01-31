@@ -97,7 +97,7 @@ class Index extends React.Component {
         style={{textAlign: 'center'}}>
         <h2>Sustainable Data Science made easy</h2>
         <MarkdownBlock>
-          Define a mapping files to make sense out of your data.
+          Define mapping files to make sense out of your data, and integrate them in a RDF Knowledge Graph.
         </MarkdownBlock>
         <MarkdownBlock>
           Link your different data sources together and access them through a variety of interfaces and services.
@@ -149,8 +149,9 @@ class Index extends React.Component {
             title: 'Built on standard',
           },
           {
-            content: 'Each module is a [Docker](https://www.docker.com/) image in a [Kubernetes](https://kubernetes.io/) container.',
-            image: `${baseUrl}img/Kubernetes.png`,
+            content: 'Each module run as a [Docker](https://www.docker.com/) container, with support for [Kubernetes](https://kubernetes.io/) coming soon.',
+            image: `${baseUrl}img/docker.png`,
+            // image: `${baseUrl}img/Kubernetes.png`,
             imageAlign: 'top',
             title: 'Runs everywhere',
           },
