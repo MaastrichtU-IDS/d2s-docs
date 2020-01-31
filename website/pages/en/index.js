@@ -99,11 +99,6 @@ class Index extends React.Component {
         <MarkdownBlock>
           Define a mapping files to make sense out of your data.
         </MarkdownBlock>
-        {/* <pre>
-          <code class="hljs css language-bash">
-          d2s init
-          </code>
-        </pre> */}
         <MarkdownBlock>
           Link your different data sources together and access them through a variety of interfaces and services.
         </MarkdownBlock>
@@ -113,18 +108,6 @@ class Index extends React.Component {
         <MarkdownBlock>
           Version your data and query your archives.
         </MarkdownBlock>
-        {/* <Block layout="twoColumn">
-        {[
-          {
-            image: `${baseUrl}img/argo-logo.png`,
-            imageAlign: 'top',
-          },
-          {
-            image: `${baseUrl}img/CWL_logo.png`,
-            imageAlign: 'top',
-          },
-        ]}
-      </Block> */}
       </div>
     );
 
@@ -222,10 +205,51 @@ class Index extends React.Component {
       );
     };
 
+    const IntroCodeBlocks = () => (
+      <div className="productShowcaseSection">
+        <h2>Try d2s</h2>
+        <div style={{textAlign: 'left', marginLeft:'30px', marginRight:'30px'}}>
+          <h3>
+            Install the pip packages
+          </h3>
+          <pre>
+            <code class="hljs css language-bash">
+              pip install d2s cwlref-runner
+            </code>
+          </pre>
+          <h3>
+            Initialize your project
+          </h3>
+          <pre>
+            <code class="hljs css language-bash">
+              d2s init
+            </code>
+          </pre>
+          <h3>
+            Start services
+          </h3>
+          <pre>
+            <code class="hljs css language-bash">
+              d2s start postgres drill virtuoso graphdb blazegraph browse-local-graphdb
+            </code>
+          </pre>
+          <h3>
+            Run integration workflows
+          </h3>
+          <pre>
+            <code class="hljs css language-bash">
+              d2s run workflow-xml.cwl drugbank
+            </code>
+          </pre>
+        </div>
+      </div>
+    );
+
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
+          <IntroCodeBlocks />
           <Features />
           <FeatureCallout />
           <LearnHow />
