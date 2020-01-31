@@ -5,11 +5,13 @@ title: Transform a new dataset
 
 In this documentation I will use [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) as example, but you are encouraged to create a new Git repository [using the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
 
-## Start from the template dataset
+## Generate the new dataset
 
-Copy the [template folder](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template) and rename it to your dataset name.
+```shell
+d2s generate dataset
+```
 
-> Search for `dataset_name` to find where to fill your dataset name.
+> You will be asked some informations about the dataset to create.
 
 ### Describe the dataset metadata
 
@@ -46,13 +48,7 @@ d2s run workflow-csv.cwl cohd --copy-mappings
 
 You can use those mappings as starting point to map the input data to your target model.
 
-### Define the config file
-
-Finally the [workflow YAML configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/config-transform-template.yml) needs to be defined with the right paths and credentials.
-
-> Most of it consists in replacing `dataset_name` by your dataset name.
-
-[![Bash](/img/bash_logo.png)](https://devhints.io/bash)
+> Note: nested XML files can generate a plethora of mapping files.
 
 ---
 
@@ -69,11 +65,11 @@ We use [SPARQL](https://www.w3.org/TR/sparql11-query/) to:
 
 ### Define the dataset metadata
 
-Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/), you can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/metadata/1).
+Define the dataset [**HCLS descriptive metadata**](https://www.w3.org/TR/hcls-dataset/), you can find example of metadata for [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank/metadata).
 
 Each dataset has 2 levels of metadata:
-* The [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
-* The [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
+* The [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/metadata/metadata-drugbank-0-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
+* The [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/metadata/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
 
 
 > Some distribution metadata is retrieved from the summary
@@ -87,13 +83,11 @@ Each dataset has 2 levels of metadata:
 You can find example of SPARQL mapping queries for:
 
 * **XML** files
-  * [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/transform/1)
-  * [PubMed](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/pubmed/transform/1)
+  * [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank/mappings)
 * **CSV/TSV** files
-  * [Stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/stitch/transform/1/insert-stitch.rq)
-  * [hpo_annotations](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/hpo_annotations/transform/1/genes_to_phenotype.tsv.rq)
-  * [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/eggnog/transform/1/insert-eggnog.rq)
-  * [PharmGKB](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq)
+  * [COHD clinical data](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/mappings)
+  * [Stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/stitch/mappings/insert-stitch.rq)
+  * [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/eggnog/mappings/insert-eggnog.rq)
 
 > Defining the mappings is the hardest and most cumbersome part of data integration. We are working actively on making it easier, by working on mapping automation and graphical user interfaces.
 
@@ -122,7 +116,7 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
 
 ### Execute the mappings
 
-To perform the transformation, the SPARQL mapping queries will be executed using the [d2s-sparql-operations](https://github.com/MaastrichtU-IDS/d2s-sparql-operations) module. 
+To perform the transformation, the SPARQL mapping queries is executed using the [d2s-sparql-operations](https://github.com/MaastrichtU-IDS/d2s-sparql-operations) module. 
 
 This tool uses the [rdf4j](https://rdf4j.eclipse.org/) framework to execute multiple SPARQL queries files, marked by the `.rq` extension, from a same repository on a SPARQL endpoint.
 
