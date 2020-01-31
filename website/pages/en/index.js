@@ -230,6 +230,7 @@ class Index extends React.Component {
           </h3>
           <pre>
             <code class="hljs css language-bash">
+              d2s update <br/>
               d2s start postgres drill virtuoso graphdb blazegraph browse-local-graphdb
             </code>
           </pre>
@@ -238,6 +239,7 @@ class Index extends React.Component {
           </h3>
           <pre>
             <code class="hljs css language-bash">
+              d2s download drugbank <br/>
               d2s run workflow-xml.cwl drugbank
             </code>
           </pre>
