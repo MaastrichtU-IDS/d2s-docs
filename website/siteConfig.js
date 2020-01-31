@@ -50,7 +50,7 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#1565c0',    // Blue
+    primaryColor: '#1565c0',    // Blue 800 (material color)
     secondaryColor: '#ff6f00',  // Orange
   },
   // themes: ['@docusaurus/theme-live-codeblock'],
@@ -75,7 +75,7 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/d2s-logo.png',
+  headerIcon: 'img/d2s-logo.svg',
   footerIcon: 'img/favicon.ico',
   favicon: 'img/favicon.ico',
 
