@@ -10,7 +10,7 @@ We **do not recommend** to run Data2Services on Windows.
 * Most workflow orchestrators **do not support Windows**, as workflows are based on Linux containers.
 * Windows can run [Docker](https://www.docker.com/), but not natively like [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0), making it much  more prone to errors.
 
-> You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
+> You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). But cwltool developers don't test it on Windows.
 
 We recommend to use [git](https://git-scm.com/downloads) to clone the repository, and the Windows `PowerShell` terminal (which is easier to use than the basic terminal).
 

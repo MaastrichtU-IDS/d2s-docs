@@ -109,16 +109,13 @@ pip3 install --user pipx
 
 ### Install pip on Windows
 
-Install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe). See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
+We do not recommend running `d2s` on Windows, nevertheless if you want to try: install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe) and see [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). More details in the [Windows guide page](/docs/guide-windows).
 
 ```shell
 pip install pipx
 pipx install cwlref-runner
-# Add pipx apps to path
 pipx ensurepath
 ```
-
-> Windows documentation to run the docker containers can be found [here](/docs/guide-windows).
 
 > Consider doing a `pip install --upgrade pip` to update your pip installation.
 
