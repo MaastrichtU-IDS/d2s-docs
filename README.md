@@ -29,8 +29,8 @@ We recommend using [Typora](https://typora.io/) to edit [markdown](https://githu
 To run in the `/website` directory.
 
 ```shell
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 ## Run with Docker
@@ -58,14 +58,10 @@ docker-compose up -d
 To run in `/website` directory. Make sure the `/website/build` directory has been generated before deploying.
 
 ```shell
-npm install
-npm run build
-GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
+yarn install
+yarn build
+GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true yarn run publish-gh-pages
 ```
-
-## Search with Algolia
-
-https://community.algolia.com/docsearch/
 
 ## Install Docusaurus boostrap tool
 
@@ -76,7 +72,8 @@ sudo npm install --global docusaurus-init
 npx docusaurus-init
 ```
 
-## Logo created with
+## Credits
 
-[freelogodesign.org](https://preview.freelogodesign.org/?lang=EN&name=&logo=4ecd9498-e2b0-4510-9ff4-54659e900382)
+Logo created with [Inkscape](https://inkscape.org/).
 
+Diagrams created with [drawio](https://snapcraft.io/install/drawio/ubuntu).
