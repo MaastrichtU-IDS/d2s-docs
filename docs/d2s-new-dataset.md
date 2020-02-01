@@ -7,11 +7,15 @@ In this documentation I will use [d2s-transform-template](https://github.com/Maa
 
 ## Generate the new dataset
 
+The files required to transform the dataset will be generated in `datasets/$dataset_id`
+
 ```shell
 d2s generate dataset
 ```
 
 > You will be asked some informations about the dataset to create.
+
+> **TODO:** should there be a README explaining the role of the different files in the created folder?
 
 ### Describe the dataset metadata
 
@@ -26,11 +30,13 @@ A dozen of metadata needs to be defined through SPARQL query for the summary of 
 
 ### Add files to download
 
-You can **add directly the files** to be processed in `workspace/input/$dataset_id`.
+You can define the bash commands to download your dataset in `datasets/$dataset_id/download/download.sh`.
 
-Alternatively a [download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download) script can be set to download the files automatically.
+The files will be downloaded in `workspace/input/$dataset_id`.
 
-> [Example](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/download/download.sh) to download, unzip, add column labels provided.
+A [template](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh) is provided with examples to download, unzip or add column labels provided.
+
+> `d2s` extract data from csv/tsv files based on their column label. If your tabular doesn't have column you can add them at the end of the [download.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh) file by using the `sed` command.
 
 ### Define the SPARQL mappings
 

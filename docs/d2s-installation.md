@@ -78,7 +78,8 @@ For licensing reason the GraphDB free edition distribution needs to be downloade
 ### Install pip on Ubuntu
 
 ```shell
-sudo apt install pip3
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
 pip3 install --user pipx
 ```
 
