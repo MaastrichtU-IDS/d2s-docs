@@ -1,7 +1,5 @@
 # Data2Services project documentation
 
-Generated using [Docusaurus](https://docusaurus.io/).
-
 ## Edit documentation pages
 
 Editing a documentation file is as easy as going to https://github.com/MaastrichtU-IDS/d2s-documentation/edit/master/docs/start-introduction.md.
@@ -39,11 +37,11 @@ yarn start
 docker-compose up
 ```
 
-> Access at http://localhost:3000/data2services/
+> Access at http://localhost:3000/
 
 ## Deploy on server
 
-Using jwilder's [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [nip.io](https://nip.io/).
+Using jwilder's [nginx-proxy](https://github.com/jwilder/nginx-proxy) 
 
 Set environment `VIRTUAL_HOST` and `VIRTUAL_PORT` in `docker-compose.yml`.
 
@@ -51,7 +49,7 @@ Set environment `VIRTUAL_HOST` and `VIRTUAL_PORT` in `docker-compose.yml`.
 docker-compose up -d
 ```
 
-> Access at http://data2services.137.120.31.101.nip.io/data2services/
+> Access at https://d2s.semanticscience.org
 
 ## Deploy to GitHub pages
 
@@ -73,6 +71,8 @@ npx docusaurus-init
 ```
 
 ## Credits
+
+Documentation website generated using [Docusaurus](https://docusaurus.io/).
 
 Logo created with [Inkscape](https://inkscape.org/).
 
