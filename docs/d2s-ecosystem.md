@@ -3,7 +3,9 @@ id: d2s-ecosystem
 title: The Data2Services Ecosystem
 ---
 
-This repository lists modules available for the **Data2Services framework**, enabling data processing to [RDF](https://www.w3.org/RDF/) and services exposure.
+This repository lists modules available for the **Data2Services framework**, enabling data processing to a [RDF](https://www.w3.org/RDF/) knowledge graph and deployment of services over this data.
+
+> The `d2s` command is provided when available. A `docker run` command is provided for every module.
 
 Feel free to propose new modules using [pull requests](https://github.com/MaastrichtU-IDS/data2services-ecosystem/pulls). The list of modules we are planning to work on can be found in the [Wiki](https://github.com/MaastrichtU-IDS/data2services-ecosystem/wiki/Modules-to-develop).
 
@@ -20,8 +22,7 @@ Only [Docker](https://docs.docker.com/install/) is required to run the modules. 
 Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
-docker pull umids/d2s-bash-exec:latest
-docker run -it --rm -v /data/input:/data umids/d2s-bash-exec https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
+docker run -it --rm -v /data/input:/data umids/d2s-bash-exec:latest https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
 ```
 
 > See on [DockerHub](https://hub.docker.com/r/umids/d2s-bash-exec).
@@ -35,8 +36,7 @@ docker run -it --rm -v /data/input:/data umids/d2s-bash-exec https://raw.githubu
 Streams XML to a [generic RDF](https://github.com/MaastrichtU-IDS/xml2rdf#rdf-model) representing the structure of the file. 
 
 ```shell
-docker pull umids/xml2rdf:latest
-docker run --rm -it -v /data:/data umids/xml2rdf  \
+docker run --rm -it -v /data:/data umids/xml2rdf:latest  \
 	-i "/data/d2s-workspace/file.xml.gz" \
 	-o "/data/d2s-workspace/file.nq.gz" \
 	-g "https://w3id.org/d2s/graph"
@@ -55,10 +55,10 @@ docker run --rm -it -v /data:/data umids/xml2rdf  \
 Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate drill
-docker pull umids/apache-drill:latest
+d2s start drill
+
 docker run -dit --rm -p 8047:8047 -p 31011:31010 \
-	--name drill -v /data:/data:ro umids/apache-drill
+	--name drill -v /data:/data:ro umids/apache-drill:latest
 ```
 
 > Access at [http://localhost:8047/](http://localhost:8047/).
@@ -74,9 +74,8 @@ docker run -dit --rm -p 8047:8047 -p 31011:31010 \
 Automatically generate [R2RML](https://www.w3.org/TR/r2rml/) files from Relational databases (SQL, Postgresql).
 
 ```shell
-docker pull umids/autor2rml:latest
 docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
-	umids/autor2rml -j "jdbc:drill:drillbit=drill:31010" -r \
+	umids/autor2rml:latest -j "jdbc:drill:drillbit=drill:31010" -r \
 	-o "/data/d2s-workspace/mapping.trig" \
 	-d "/data/d2s-workspace" \
 	-u "postgres" -p "pwd" \
@@ -97,10 +96,9 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v /data:/data \
 Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rml/) mapping language.
 
 ```shell
-docker pull umids/r2rml:latest
 docker run -it --rm --net d2s-cwl-workflows_network \
   -v /data/d2s:/data \
-  umids/r2rml \ 
+  umids/r2rml:latest \ 
   --connectionURL jdbc:drill:drillbit=drill:31010 \
   --mappingFile /data/mapping.trig \
   --outputFile /data/rdf_output.nq \
@@ -123,9 +121,8 @@ docker run -it --rm --net d2s-cwl-workflows_network \
 Upload RDF files to a triplestore.
 
 ```shell
-docker pull umids/rdf-upload:latest
 docker run -it --rm --link graphdb:graphdb -v /data/d2s-workspace:/data \
-	umids/rdf-upload -m "HTTP" -if "/data" \
+	umids/rdf-upload:latest -m "HTTP" -if "/data" \
 	-url "http://graphdb:7200" -rep "test" \
 	-un "username" -pw "password"
 ```
@@ -157,7 +154,8 @@ docker run -it -v /data/d2s-workspace:data vemonet/json2xml:latest -i /data/test
 Validate RDF from a SPARQL endpoint against a [ShEx](http://shex.io/) file.
 
 ```shell
-docker build -t pyshex ./submodules/PyShEx/docker
+git clone https://github.com/hsolbrig/PyShEx.git
+docker build -t pyshex ./PyShEx/docker
 docker run --rm -it pyshex -gn '' -ss -ut -pr \
 	-sq 'select ?item where{?item a <http://w3id.org/biolink/vocab/Gene>} LIMIT 1' \
     http://graphdb.dumontierlab.com/repositories/ncats-red-kg \
@@ -190,7 +188,8 @@ docker run -p 8183:8183 bigcatum/bridgedb
 [Ontotext](https://www.ontotext.com/) GraphDB triplestore including GUI and multiple repositories.
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate graphdb
+d2s start graphdb
+
 docker build -t graphdb ./d2s-cwl-workflows/support/graphdb
 docker run -d --rm --name graphdb -p 7200:7200 \
 	-v /data/graphdb:/opt/graphdb/home \
@@ -213,8 +212,8 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 [OpenLink Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso
-docker pull tenforce/virtuoso
+d2s start virtuoso
+
 docker run --name virtuoso \
     -p 8890:8890 -p 1111:1111 \
     -e DBA_PASSWORD=dba \
@@ -239,7 +238,7 @@ docker run --name virtuoso \
 A high-performance [RDF graph database](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). Not developed for 4 years but still efficient and used by Wikidata.
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate blazegraph
+d2s start blazegraph
 
 # Start triplestore with specific UID and GID for the bulk load (UI)
 # Tested on Ubuntu with $UID=1000 and nothing in $GROUPS (by default)
@@ -305,7 +304,6 @@ docker run -p 7474:7474 -p 7687:7687 -v /data/d2s-workspace:/data neo4j
 Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to query over datasets (can be [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/)).
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate ldf-server
 # docker build -t ldf-server ./submodules/Server.js
 docker run -p 3000:3000 -t -i --rm \
 	-v /data/d2s-workspace:/data \
@@ -320,7 +318,7 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 
 > Access at [http://localhost:3000](http://localhost:3000)
 
-> **TODO**
+> **TODO:** add to `d2s start`
 
 ---
 
@@ -332,8 +330,6 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 Convert RDF to [HDT](http://www.rdfhdt.org/) files. *Header, Dictionary, Triples* is a binary serialization format for RDF  that keeps big datasets compressed while maintaining search and browse operations without prior decompression.
 
 ```shell
-docker pull rfdhdt/hdt-cpp
-docker run -it --rm rfdhdt/hdt-cpp rdf2hdt -h
 docker run -it --rm -v /data/d2s-workspace:/data \
   rfdhdt/hdt-cpp rdf2hdt /data/input.nt /data/output.hdt
 ```
@@ -349,8 +345,7 @@ docker run -it --rm -v /data/d2s-workspace:/data \
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/).
 
 ```shell
-docker pull umids/d2s-sparql-operations
-docker run -it --rm umids/d2s-sparql-operations -op select \
+docker run -it --rm umids/d2s-sparql-operations:latest -op select \
   -sp "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
   -ep "http://dbpedia.org/sparql"
 ```
@@ -370,7 +365,6 @@ docker run -it --rm umids/d2s-sparql-operations -op select \
 Framework to perform [federated queries](https://www.w3.org/TR/sparql11-federated-query/) over a lot of different stores (triplestores, [TPF](http://linkeddatafragments.org/in-depth/), [HDT](http://www.rdfhdt.org/)).
 
 ```shell
-docker pull comunica/actor-init-sparql
 docker run -it comunica/actor-init-sparql \
 	http://fragments.dbpedia.org/2015-10/en \
 	"CONSTRUCT WHERE { ?s ?p ?o } LIMIT 100"
@@ -389,7 +383,7 @@ docker run -it comunica/actor-init-sparql \
 [Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate yasgui
+d2s start yasgui
 docker pull erikap/yasgui
 docker run -it --rm --name yasgui -p 8080:80 \
 	-e "DEFAULT_SPARQL_ENDPOINT=http://dbpedia.org/sparql" \
@@ -410,9 +404,9 @@ docker run -it --rm --name yasgui -p 8080:80 \
 [into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a Lightweight RDF linked data browser. Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate into-the-graph
-docker pull umids/into-the-graph
-docker run --rm -it -p 8082:80 umids/into-the-graph
+d2s start into-the-graph browse-local-virtuoso browse-local-graphdb
+
+docker run --rm -it -p 8082:80 umids/into-the-graph:latest
 ```
 
 > Access on http://localhost:8082
@@ -428,8 +422,8 @@ docker run --rm -it -p 8082:80 umids/into-the-graph
 A [jQuery widget](http://query.linkeddatafragments.org/) to query heterogeneous interfaces using Comunica SPARQL and GraphQL.  
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate comunica
-docker pull umids/comunica-sparql-widget
+d2s start comunica
+
 docker run -p 8084:80 -it --rm umids/comunica-sparql-widget
 
 # Provide a local queries.json file
@@ -451,7 +445,13 @@ docker run -v $(pwd)/queries.json:/usr/share/nginx/html/queries.json -p 8080:80 
 [![GitHub](https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&style=social)](https://github.com/EBISPOT/lodestar)
 
 ```shell
-docker run --rm -d --name lodestar -p 8082:8080 -e ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/ncats-red-kg -e TOP_RELATIONSHIP=http://w3id.org/biolink/vocab/id,http://w3id.org/biolink/vocab/name,http://w3id.org/biolink/vocab/description -e LABEL=http://w3id.org/biolink/vocab/label -e DESCRIPTION=http://w3id.org/biolink/vocab/description -e MAX_OBJECTS=10 -e SERVICE_BASE_URI=http://localhost:8080/ncats-red-kg netresearch/lodestar
+docker run --rm -d --name lodestar -p 8082:8080 \
+  -e ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/ncats-red-kg \
+  -e TOP_RELATIONSHIP=http://w3id.org/biolink/vocab/id,http://w3id.org/biolink/vocab/name,http://w3id.org/biolink/vocab/description \
+  -e LABEL=http://w3id.org/biolink/vocab/label \
+  -e DESCRIPTION=http://w3id.org/biolink/vocab/description \
+  -e MAX_OBJECTS=10 \
+  -e SERVICE_BASE_URI=http://localhost:8080/ncats-red-kg netresearch/lodestar
 ```
 
 > Access at [http://localhost:8082/ncats-red-kg](http://localhost:8082/ncats-red-kg)
@@ -467,7 +467,7 @@ docker run --rm -d --name lodestar -p 8082:8080 -e ENDPOINT_URL=http://graphdb.d
 Linked Data Server: [URI dereferencing](http://lod.opentransportdata.swiss/sparql/), custom HTML render, [YASGUI SPARQL endpoint](http://lod.opentransportdata.swiss/sparql/).
 
 ```shell
-git clone https://github.com/vemonet/trifid
+git clone https://github.com/vemonet/trifid.git
 docker build -t trifid ./trifid
 
 docker run --rm -ti --name trifid -p 8080:8080 trifid --sparql-endpoint-url=http://graphdb.dumontierlab.com/repositories/test --dataset-base-url=https://w3id.org/d2s/
@@ -502,7 +502,7 @@ docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.c
 Lightweight Linked Data Browser.
 
 ```shell
-git clone https://github.com/Data2Semantics/brwsr
+git clone https://github.com/Data2Semantics/brwsr.git
 docker-compose up
 ```
 
