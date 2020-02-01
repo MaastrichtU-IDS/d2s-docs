@@ -171,7 +171,6 @@ docker run --rm -it pyshex -gn '' -ss -ut -pr \
 [BridgeDb](https://www.bridgedb.org/) links URI identifiers from various datasets (Uniprot, PubMed).
 
 ```shell
-docker pull bigcatum/bridgedb
 docker run -p 8183:8183 bigcatum/bridgedb
 ```
 
@@ -384,7 +383,7 @@ docker run -it comunica/actor-init-sparql \
 
 ```shell
 d2s start yasgui
-docker pull erikap/yasgui
+
 docker run -it --rm --name yasgui -p 8080:80 \
 	-e "DEFAULT_SPARQL_ENDPOINT=http://dbpedia.org/sparql" \
 	-e "ENABLE_ENDPOINT_SELECTOR=true" \
@@ -482,7 +481,6 @@ docker run --rm -ti --name trifid -v /home/vemonet/sandbox/trifid:/data -p 8080:
 [Original project](https://github.com/zazuko/trifid) available on [DockerHub](https://hub.docker.com/r/zazuko/trifid/). But config not working.
 
 ```shell
-docker pull zazuko/trifid
 docker run -ti -p 8080:8080 zazuko/trifid
 # Not working, provide env config file?
 docker run -ti -p 8080:8080 -e TRIFID_CONFIG=config-ncats-red-kg.json zazuko/trifid
