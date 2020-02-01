@@ -5,6 +5,8 @@ title: Docker guide
 
 [![](/img/docker.png)](https://www.docker.com/)
 
+This guide aims to give more insights about running Docker containers directly using `docker run`. It is recommended to use the `d2s` client to run services, but it can be useful to use `docker run` for applications that still have not been integrated in the client.
+
 See the [CWL installation instructions](/docs/cwl-install) for Docker installation details.
 
 ---
