@@ -208,9 +208,10 @@ class Index extends React.Component {
 
     const IntroCodeBlocks = () => (
       <div className="productShowcaseSection">
-        <h2>Try d2s</h2>
+        <h2 style={{fontWeight: '500'}}>Try d2s</h2>
+        <span className="font300">On Linux or MacOS</span>
         <div style={{textAlign: 'left', marginLeft:'30px', marginRight:'30px'}}>
-          <h3>
+          <h3 className="font300">
             Install the pip packages
           </h3>
           <pre>
@@ -218,7 +219,7 @@ class Index extends React.Component {
               pip install d2s cwlref-runner
             </code>
           </pre>
-          <h3>
+          <h3 className="font300">
             Initialize your project
           </h3>
           <pre>
@@ -226,7 +227,7 @@ class Index extends React.Component {
               d2s init
             </code>
           </pre>
-          <h3>
+          <h3 className="font300">
             Start services
           </h3>
           <pre>
@@ -235,7 +236,7 @@ class Index extends React.Component {
               d2s start postgres drill virtuoso graphdb blazegraph browse-local-graphdb
             </code>
           </pre>
-          <h3>
+          <h3 className="font300">
             Run integration workflows
           </h3>
           <pre>
