@@ -7,7 +7,7 @@ title: Installation
 
 Install the [d2s client](https://pypi.org/project/d2s) and [cwlref-runner](https://pypi.org/project/cwlref-runner/) with `pip`
 
-```bash
+```shell
 pip install d2s cwlref-runner
 ```
 
@@ -27,14 +27,14 @@ Requirements:
 Enabling commandline autocompletion in the terminal is crucial to have the best experience using the `d2s` client. 
 
 * **Bash**: add the import autocomplete line to `.bashrc`
-```bash
+```shell
 echo 'eval "$(_D2S_COMPLETE=source d2s)"' >> ~/.bashrc
 ```
 
 > `nano ~/.bashrc` if issues with the import 
 
 * **ZSH**: add the import autocomplete line to `.zshrc`
-```bash
+```shell
 echo 'eval "$(_D2S_COMPLETE=source_zsh d2s)"' >> ~/.zshrc
 ```
 
@@ -42,7 +42,7 @@ echo 'eval "$(_D2S_COMPLETE=source_zsh d2s)"' >> ~/.zshrc
 
 ### Try the client
 
-```bash
+```shell
 d2s
 ```
 
@@ -66,7 +66,7 @@ For licensing reason the GraphDB free edition distribution needs to be downloade
 
   * By default the `d2s` client takes the file from your home directory (e.g. `/home/my-user`)
 
-    ```bash
+    ```shell
     # Copy the GraphDB distribution file to your home folder
     cp graphdb-free-8.10.1-dist.zip ~/
     ```
@@ -156,7 +156,7 @@ E.g.: `wget: unable to resolve host address`
 On Linux:
 
 ```shell
-vim /etc/resolv.conf
+nano /etc/resolv.conf
 	> nameserver 8.8.8.8
 ```
 

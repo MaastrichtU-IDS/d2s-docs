@@ -197,16 +197,17 @@ const siteConfig = {
         var TOOLS = {
           className: 'keyword',
           variants: [
-            {begin: /(?:\s|^)(cd|mv|cp|chmod|chown|sed|wget|curl|tar|oc|brew|git|argo|apt-get|apt|docker|docker-compose|cwl-runner)(?:\s|$)/},
+            {begin: /(?:\s|^)(d2s|cd|mv|cp|chmod|chown|sed|wget|curl|tar|oc|kubectl|brew|git|argo|apt-get|apt|docker|docker-compose|cwl-runner|mkdir|pip|pip3|pipx|python3|nano)(?:\s|$)/},
           ]
         };
         // Mysteriously not doing his job, it is defined the same way as ARGS and TOOLS though.
         // But still finding a way to do it through the built_in in return. 
         // Note: this highlight framework logic makes no sense and is poorly documented 
+        // TODO: add the keyword below in return statement
         var COMMAND = {
           className: 'built_in',
           variants: [
-            {begin: /(?:\s|^)(ps|config|clone|submodule|pull|install|up|submit|terminate|delete|get|create|build|run|stop|rsh|login|list)(?:\s|$)/},
+            {begin: /(?:\s|^)(ps|config|clone|submodule|pull|install|up|submit|terminate|delete|get|create|build|run|start|stop|generate|init|config|update|download|services|rsh|login|list)(?:\s|$)/},
           ]
         };
         var RARE = {
@@ -265,7 +266,8 @@ const siteConfig = {
               'unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof ' +
               'zpty zregexparse zsocket zstyle ztcp'
               // Vincent built-ins,
-              + 'ps clone submodule pull install up submit terminate delete get create build run stop rsh login list',
+              + ' ps clone submodule pull install up submit terminate delete get create build run rsh login list'
+              + ' start stop generate init config update download services',
             _:
               '-ne -eq -lt -gt -f -d -e -s -l -a' // relevance booster
           },

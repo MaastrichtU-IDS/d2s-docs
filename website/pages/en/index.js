@@ -215,7 +215,7 @@ class Index extends React.Component {
             Install the pip packages
           </h3>
           <pre>
-            <code className="hljs css language-bash">
+            <code className="hljs css language-shell">
               pip install d2s cwlref-runner
             </code>
           </pre>
@@ -223,7 +223,7 @@ class Index extends React.Component {
             Initialize your project
           </h3>
           <pre>
-            <code className="hljs css language-bash">
+            <code className="hljs css language-shell">
               d2s init
             </code>
           </pre>
@@ -231,7 +231,7 @@ class Index extends React.Component {
             Start services
           </h3>
           <pre>
-            <code className="hljs css language-bash">
+            <code className="hljs css language-shell">
               d2s update <br/>
               d2s start postgres drill virtuoso graphdb blazegraph browse-local-graphdb
             </code>
@@ -240,7 +240,7 @@ class Index extends React.Component {
             Run integration workflows
           </h3>
           <pre>
-            <code className="hljs css language-bash">
+            <code className="hljs css language-shell">
               d2s download drugbank <br/>
               d2s run workflow-xml.cwl drugbank
             </code>
