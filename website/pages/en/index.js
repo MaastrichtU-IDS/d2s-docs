@@ -232,7 +232,6 @@ class Index extends React.Component {
           </h3>
           <pre>
             <code className="hljs css language-shell">
-              d2s update <br/>
               d2s start postgres drill virtuoso graphdb blazegraph browse-local-graphdb
             </code>
           </pre>

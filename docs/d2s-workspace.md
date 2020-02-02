@@ -34,7 +34,7 @@ d2s init
 
 ## Pull Docker images
 
-Now that the `d2s` project is set, we need to update the Docker images used by the workflow (pull and build).
+`d2s init` should pull and build all Docker images used by `d2s`, it can also be done manually.
 
 ```shell
 d2s update
