@@ -5,7 +5,10 @@ title: Setting up MySQL
 
 [![](/img/mysql_logo.png)](https://www.mysql.com/)
 
+> Not integrated to the `d2s` client at the moment, [let us know](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) if you would need it to be integrated.
+
 ## Run MySQL database
+
 ```shell
 docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=pwd -d mysql
 ```

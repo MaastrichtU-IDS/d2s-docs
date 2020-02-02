@@ -5,40 +5,26 @@ title: Setting up Virtuoso
 
 [![OpenLink Virtuoso](/img/openlink-virtuoso.png)](https://virtuoso.openlinksw.com/)
 
-## Docker pull
-
 [OpenLink Virtuoso](https://virtuoso.openlinksw.com/) triplestore is available on [DockerHub](https://hub.docker.com/r/tenforce/virtuoso).
-
-```shell
-docker pull tenforce/virtuoso:latest
-```
 
 ## Run it
 
-### Using convenience script
+### Using the client
 
-At the moment for Virtuoso we recommend using the [restart_d2s_services.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/restart_d2s_services.sh) bash script. It recreates `/data/d2s-workspace/virtuoso` and copies the required [load.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) script to the virtuoso repository).
+The [load.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) script needs to be copied to the virtuoso repository for bulk load to work, this is done by `d2s init`).
 
 ```shell
-./restart_d2s_services.sh
+d2s start virtuoso
+  
+# Then copy the load.sh file to be accessible by Virtuoso running container
+cp d2s-cwl-workflows/support/virtuoso/load.sh workspace/virtuoso
 ```
-
-The shell will ask for a password at the end: `sudo` is used to change ownership of workspace (`chown /data/d2s-workspace`). 
 
 > Access at http://localhost:8890/ and SPARQL endpoint at http://localhost:8890/sparql.
 
 > Admin login: `dba`
 
-### Using docker-compose
-
-```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml up -d --build --force-recreate virtuoso
-  
-# Then copy the load.sh file to be accessible by Virtuoso running container
-cp d2s-cwl-workflows/support/virtuoso/load.sh /data/d2s-workspace/virtuoso
-```
-
-### Using Docker run
+### Using docker run
 
 Be careful when changing the DBA_PASSWORD for [tenforce/virtuoso](tenforce/virtuoso). This doesn't work every time, so you might need to use the default `dba` password.
 

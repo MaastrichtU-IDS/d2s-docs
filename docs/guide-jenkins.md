@@ -5,8 +5,9 @@ title: Experimental Jenkins workflows
 
 [![](/img/jenkins.png)](https://jenkins.io/)
 
+**Proof of concept**: execute data2services modules by deploying [Jenkins pipelines](https://jenkins.io/).
 
-Proof of concept: execute data2services modules by deploying [Jenkins pipelines](https://jenkins.io/).
+> Not supported anymore.
 
 ## Start Jenkins
 

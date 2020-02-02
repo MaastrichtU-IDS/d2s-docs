@@ -22,3 +22,8 @@ You can use the [Protégé ontology editor](https://protege.stanford.edu/) to bu
 
 > TODO: tuto use BioPortal recommender
 
+## Resolve prefixes
+
+http://prefix.cc is a handy tool to resolve prefixes
+
+> E.g. http://prefix.cc/bl

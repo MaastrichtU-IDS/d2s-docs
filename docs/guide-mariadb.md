@@ -5,7 +5,10 @@ title: Setting up MariaDB
 
 [![](/img/mariadb.png)](https://mariadb.org/)
 
+> Not integrated to the `d2s` client at the moment, [let us know](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) if you would need it to be integrated.
+
 ## Run MariaDB
+
 ```shell
 docker run --rm --name mariadb -v /data/d2s-workspace:/data -e MYSQL_ROOT_PASSWORD=pwd -d mariadb
 ```

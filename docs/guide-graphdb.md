@@ -15,7 +15,21 @@ If you wish to use GraphDB free edition, you will need to download it from Ontot
 * Put the downloaded `.zip` file in the GraphDB repository (cloned from [GitHub](https://github.com/MaastrichtU-IDS/graphdb/)).
 * Run `docker build -t graphdb --build-arg version=CHANGE_ME .` in the GraphDB repository.
 
-## Docker build and run
+## Run it
+
+### Using the client
+
+You can provide the .zip file required to build GraphDB when doing `d2s init`, otherwise it needs to be placed in [d2s-cwl-workflows/support/graphdb](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support) before running the build.
+
+```shell
+# Build
+d2s update
+
+# Run
+d2s start graphdb
+```
+
+### docker build and run
 
 ```shell
 # Here shared locally at /data/graphdb and /data/graphdb-import
