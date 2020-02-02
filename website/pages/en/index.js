@@ -97,7 +97,7 @@ class Index extends React.Component {
         style={{textAlign: 'center'}}>
         <h2>Sustainable Data Science made easy</h2>
         <MarkdownBlock>
-          Define mapping files to make sense out of your data, and integrate them in a RDF Knowledge Graph.
+          Define mapping files to make sense out of your data and integrate them in a RDF Knowledge Graph.
         </MarkdownBlock>
         <MarkdownBlock>
           Link your different data sources together and access them through a variety of interfaces and services.
@@ -119,7 +119,7 @@ class Index extends React.Component {
               'Integrate various data sources to comply to a common model and build the Knowledge Graph that will power your services.',
             image: `${baseUrl}img/data2services-broad_vision.png`,
             imageAlign: 'left',
-            title: 'Integrate your data in a powerful Knowledge Graph',
+            title: 'Integrate your data in a larger Knowledge Graph',
           },
         ]}
       </Block>
