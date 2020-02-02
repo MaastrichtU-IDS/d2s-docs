@@ -11,7 +11,7 @@
             "argo-install", "argo-login", "argo-volume"
           ]
       }, "argo-run", "argo-commands", "argo-debug", "argo-secret"],
-    "Guides": ["d2s-ecosystem", "guide-docker", "guide-windows", 
+    "Guides": ["d2s-ecosystem", "guide-deploy-app", "guide-docker", "guide-windows", 
       "guide-graphdb", "guide-virtuoso", "guide-postgres", "guide-mariadb", 
       "guide-mysql", "guide-tabular-header", "guide-ontology", "guide-jenkins"]
   }
