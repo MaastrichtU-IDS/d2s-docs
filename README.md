@@ -74,6 +74,6 @@ npx docusaurus-init
 
 Documentation website generated using [Docusaurus](https://docusaurus.io/).
 
-Logo created with [Inkscape](https://inkscape.org/).
+Logo created with [Inkscape](https://inkscape.org/) and https://weareoutman.github.io/rounded-polygon/.
 
 Diagrams created with [drawio](https://snapcraft.io/install/drawio/ubuntu).

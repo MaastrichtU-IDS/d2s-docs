@@ -208,7 +208,7 @@ class Index extends React.Component {
 
     const IntroCodeBlocks = () => (
       <div className="productShowcaseSection">
-        <h2 style={{fontWeight: '500'}}>Try d2s</h2>
+        <h2>Try d2s</h2>
         <span className="font300">On Linux or MacOS</span>
         <div style={{textAlign: 'left', marginLeft:'30px', marginRight:'30px'}}>
           <h3 className="font300">
