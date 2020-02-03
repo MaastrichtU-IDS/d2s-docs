@@ -67,7 +67,7 @@ root-directory
 │       ├── config.yml							# The workflow config file
 │       ├── download
 │       │   └── download.sh						# Download script goes here
-│       ├── mappings							# SPARQL mapping queries goes here 
+│       ├── mapping								# SPARQL mapping queries goes here 
 │       │   ├── drugbank-drugbank_id.rq
 │       │   └── drugbank-snp_effects.rq
 │       └── metadata							# SPARQL metadata queries goes here 
@@ -114,7 +114,7 @@ Setup the source data to **download using Bash scripts** via [d2s-bash-exec](htt
 
 ## Automatically convert source data to generic RDF
 
-Run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML) (tabular files, RDB) to **Automatically convert** source data to [**generic RDF**](https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/output/stitch-sample/rdf_output.nq) *(~10')*
+Run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML) (tabular files, RDB) to **Automatically convert** source data to **generic RDF** *(~10')*
 
 > Template SPARQL mapping queries are generated to help the users to start define the mappings
 
@@ -124,8 +124,8 @@ Run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https:/
 
 Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/) *(~10')*
 
-* [Summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
-* [Distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/drugbank/metadata/1/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
+* [Summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/metadata/metadata-drugbank-0-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
+* [Distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/metadata/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
 
 > Some metadata from the summary is retrieved for the distribution
 
@@ -140,7 +140,7 @@ Define [SPARQL](https://www.w3.org/TR/sparql11-query/) mapping queries to **tran
 *(~20' for a tabular file, can be hours for a complex XML file)*
 
 * Start from the previously generated templates if you don't have mappings for this kind of data.
-* See examples to map [tabular files](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/stitch/transform/1/insert-stitch.rq) or [XML files](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/transform/1).
+* See examples to map [tabular files](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/mapping) or [XML files](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank/mapping).
 * Be careful when iterating on multiple result arrays in SPARQL, it can blow up the processing time(for XML mapping). Always split your queries to never iterate over more than one array for a parent node.
   * E.g. if `drug:001` from a XML file has multiple `publications` and multiple `synonyms` nodes in its child, then it is preferable to get them in 2 different queries. Retrieving the 2 arrays in a single query would results in the returned row count be a cartesian product of the 2 arrays, which grows exponentially with the size of each array.
   * Final semantic results are the same, but the performance of the transformation is highly impacted.
