@@ -67,17 +67,17 @@ class Footer extends React.Component {
             <a href={this.props.config.repoUrl}
               target="_blank"
               aria-label="Star this project on GitHub">
-              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-documentation?label=d2s-documentation&style=social"/>
+              <img alt="GitHub d2s-documentation" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-documentation?label=d2s-documentation&style=social"/>
             </a>
             <a href="https://github.com/MaastrichtU-IDS/d2s-cli"
               target="_blank"
               aria-label="Star this project on GitHub">
-              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-cli?label=d2s-cli&style=social"/>
+              <img alt="GitHub d2s-cli" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-cli?label=d2s-cli&style=social"/>
             </a>
             <a href="https://github.com/MaastrichtU-IDS/d2s-transform-template"
               target="_blank"
               aria-label="Star this project on GitHub">
-              <img alt="GitHub stars" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template&style=social"/>
+              <img alt="GitHub d2s-transform-template" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template&style=social"/>
             </a>
           </div>
           <div>

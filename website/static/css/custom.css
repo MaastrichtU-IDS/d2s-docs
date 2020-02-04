@@ -55,6 +55,9 @@ a:hover {
 .font300 {
     font-weight: 300;
 }
+.font400 {
+    font-weight: 400;
+}
 
 /* Edit button in docs markdown */
 .edit-page-link {
