@@ -13,7 +13,7 @@ const extlink = require('remarkable-extlink');
 const users = [
   {
     caption: 'Maastricht University',
-    image: 'img/favicon.ico',
+    image: 'img/um_logo.svg',
     infoLink: 'https://www.maastrichtuniversity.nl/',
     pinned: true,
   }, 
@@ -76,8 +76,9 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/d2s-logo.svg',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  footerIcon: 'img/um_logo.svg',
+  favicon: 'img/d2s-logo.svg',
+  // favicon: 'img/favicon.ico',
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Institute of Data Science at Maastricht University`,
