@@ -168,11 +168,11 @@ class Index extends React.Component {
         {[
           {
             content:
-              'Use the `d2s` client to deploy Docker containers and run CWL workflows.<br/> '
-              + 'A Desktop UI will be developed to make it more user-friendly.',
+              'The `d2s` Command Line Interface has been developed to make the deployment of Docker containers and execution of CWL workflows easy.<br/> '
+              + 'A Desktop UI will be developed in the future.',
             image: `${baseUrl}img/d2s-architecture.png`,
             imageAlign: 'right',
-            title: 'Using a user-friendly client',
+            title: 'Using a simple client',
           },
         ]}
       </Block>
@@ -248,7 +248,7 @@ class Index extends React.Component {
           </h3>
           <pre>
             <code className="hljs css language-shell">
-              d2s start postgres drill virtuoso graphdb blazegraph browse-local-graphdb
+              d2s start postgres drill virtuoso graphdb blazegraph api browse-local-graphdb comunica
             </code>
           </pre>
           <h3 className="font400">
