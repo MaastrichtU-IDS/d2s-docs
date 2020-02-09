@@ -17,9 +17,9 @@ d2s download drugbank
 
 > Downloaded files goes to `workspace/input/drugbank`.
 
-## Convert XML with xml2rdf
+## Convert XML
 
-Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure:
+Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure:
 
 ```shell
 d2s run workflow-xml.cwl drugbank
@@ -31,9 +31,9 @@ d2s run workflow-xml.cwl drugbank
 
 ---
 
-## Convert CSV/TSV with AutoR2RML
+## Convert CSV/TSV
 
-Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure:
+Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure:
 
 ```shell
 d2s download cohd
@@ -42,13 +42,11 @@ d2s run workflow-csv.cwl cohd
 
 > Example converting [cohd](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurence) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
----
-
-## Convert CSV/TSV with AutoR2RML and split a property
+### Convert CSV/TSV and split a property
 
 > Not tested at the moment. Might need fix.
 
-Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements:
+Convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements):
 
 ```shell
 d2s download eggnog
@@ -69,9 +67,9 @@ nohup d2s run workflow-xml.cwl drugbank &
 
 ---
 
-## Generate mappings based on input data
+## Generate mappings
 
-When you start converting a new dataset `d2s` can help you generating mapping files based on the input data structure. You can then edit the generated SPARQL queries to adapt them to your target model.
+When you start converting a new dataset `d2s` can help you generate mapping files based on the input data structure. You can then edit the generated SPARQL queries to adapt them to your target model.
 
 ```shell
 d2s run workflow-csv.cwl cohd --get-mappings
@@ -83,7 +81,7 @@ d2s run workflow-csv.cwl cohd --get-mappings
 
 ## Workflow details
 
-* By default we are using `workspace` as working directory when running workflows and starting services.
+* By default we are using `workspace/` as working directory when running workflows and starting services.
 
 * You need to put the SPARQL mapping queries in `/mappings/$dataset_name` and provide those parameters:
   * `--outdir`: final output directory for files outputted by the workflow
