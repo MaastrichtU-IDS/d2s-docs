@@ -111,34 +111,6 @@ class Index extends React.Component {
       </div>
     );
 
-    const Data2ServicesDiagram = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'Integrate various data sources to comply to a common model and build the Knowledge Graph that will power your services.',
-            image: `${baseUrl}img/data2services-broad_vision.png`,
-            imageAlign: 'left',
-            title: 'Integrate your data in a larger Knowledge Graph',
-          },
-        ]}
-      </Block>
-    );
-
-    const PyramidDiagram = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'The Data2Services framework is built on basic principles:<br/> **standardized**, **modular**, **scalable**, **sustainable**.',
-            image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
-            imageAlign: 'right',
-            title: 'Universal and sustainable',
-          },
-        ]}
-      </Block>
-    );
-
     const Features = () => (
       <Block layout="fourColumn">
         {[
@@ -159,6 +131,20 @@ class Index extends React.Component {
       </Block>
     );
 
+    const Data2ServicesDiagram = () => (
+      <Block background="light">
+        {[
+          {
+            content:
+              'Integrate various data sources to comply to a common model and build the Knowledge Graph that will power your services.',
+            image: `${baseUrl}img/data2services-broad_vision.png`,
+            imageAlign: 'right',
+            title: 'Integrate your data in a larger Knowledge Graph',
+          },
+        ]}
+      </Block>
+    );
+
     const DeployServices = () => (
       <div>
       <Block id="d2sinaction">
@@ -169,12 +155,42 @@ class Index extends React.Component {
               '[GraphQL-LD](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/), [OpenAPI](https://www.openapis.org/), ' +
               '[Web UI](https://github.com/MaastrichtU-IDS/into-the-graph)) to access your data.',
             image: `${baseUrl}img/linked-data-browser.png`,
-            imageAlign: 'right',
+            imageAlign: 'left',
             title: 'Deploy services',
           },
         ]}
       </Block>
     </div>
+    );
+
+    const ArchitectureDiagram = () => (
+      <Block background="light">
+        {[
+          {
+            content:
+              'Use the `d2s` client to deploy Docker containers and run CWL workflows.<br/> '
+              + 'A Desktop UI will be developed to make it more user-friendly.',
+            image: `${baseUrl}img/d2s-architecture.png`,
+            imageAlign: 'right',
+            title: 'Using a user-friendly client',
+          },
+        ]}
+      </Block>
+    );
+
+
+    const PyramidDiagram = () => (
+      <Block>
+        {[
+          {
+            content:
+              'The Data2Services framework is built on basic principles:<br/> **standardized**, **modular**, **scalable**, **sustainable**.',
+            image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
+            imageAlign: 'left',
+            title: 'Universal and sustainable',
+          },
+        ]}
+      </Block>
     );
 
     const Showcase = () => {
@@ -257,6 +273,7 @@ class Index extends React.Component {
           <FeatureCallout />
           <Data2ServicesDiagram />
           <DeployServices />
+          <ArchitectureDiagram />
           <PyramidDiagram />
           <Showcase />
         </div>
