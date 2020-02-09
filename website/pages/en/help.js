@@ -22,12 +22,12 @@ function Help(props) {
   const supportLinks = [
     {
       content: `Learn more using the [documentation](${docUrl(
-        'getstarted',
+        'd2s-installation',
       )}).`,
       title: 'Browse the Docs',
     },
     {
-      content: 'Browse and submit [issues](https://github.com/MaastrichtU-IDS/data2services-pipeline/issues) or [pull requests](https://github.com/MaastrichtU-IDS/data2services-pipeline/pulls) for bugs you find or any new features you may want implemented.',
+      content: 'Browse and submit [issues](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) or [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) for bugs you find or any new features you may want implemented.',
       title: 'GitHub',
     },
     {
