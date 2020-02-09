@@ -27,7 +27,20 @@ function Help(props) {
       title: 'Browse the Docs',
     },
     {
-      content: 'Browse and submit [issues](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) or [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) for bugs you find or any new features you may want implemented.',
+      content: `<a href="https://github.com/MaastrichtU-IDS/d2s-documentation"
+      target="_blank" aria-label="Star d2s-documentation on GitHub">
+      <img alt="GitHub d2s-documentation" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-documentation?label=d2s-documentation&style=social"/>
+    </a><br/>
+    <a href="https://github.com/MaastrichtU-IDS/d2s-cli"
+    target="_blank" aria-label="Star d2s-cli on GitHub">
+      <img alt="GitHub d2s-cli" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-cli?label=d2s-cli&style=social"/>
+    </a><br/>
+    <a href="https://github.com/MaastrichtU-IDS/d2s-transform-template"
+    target="_blank" aria-label="Star d2s-transform-template on GitHub">
+      <img alt="GitHub d2s-transform-template" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template&style=social"/>
+    </a>
+    <p>Browse and submit [issues](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) or [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) 
+    for bugs you find or any new features you would like to see implemented.</p>`,
       title: 'GitHub',
     },
     {
