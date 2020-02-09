@@ -38,11 +38,9 @@ A [template](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/su
 
 > `d2s` extract data from csv/tsv files based on their column label. If your tabular doesn't have column you can add them at the end of the [download.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh) file by using the `sed` command.
 
-### Define the SPARQL mappings
+---
 
-Generate [SPARQL mapping queries](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/template/mappings/1) based on the input data structure by running a workflow for the first time.
-
-## Generate mappings based on input data
+## Generate mappings
 
 When you start converting a new dataset `d2s` can help you generating mapping files based on the input data structure. You can then edit the generated SPARQL queries to adapt them to your target model.
 
@@ -54,7 +52,7 @@ d2s run workflow-csv.cwl cohd --get-mappings
 
 You can use those mappings as starting point to map the input data to your target model.
 
-> Note: nested XML files can generate a plethora of mapping files.
+> Note: nested XML files can generate a lot of mapping files.
 
 ---
 

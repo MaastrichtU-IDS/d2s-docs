@@ -42,7 +42,7 @@ d2s run workflow-csv.cwl cohd
 
 > Example converting [cohd](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurence) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
-### Convert CSV/TSV and split a property
+### With property split
 
 > Not tested at the moment. Might need fix.
 
