@@ -44,7 +44,7 @@ function Help(props) {
       title: 'GitHub',
     },
     {
-      content: "Feel free to [contact the main maintainers](mailto:vincent.emonet@maastrichtuniversity.nl) if you have any questions.",
+      content: `Feel free to [contact the main maintainers](mailto:vincent.emonet@maastrichtuniversity.nl) if you have any questions.`,
       title: 'Contact us',
     },
   ];

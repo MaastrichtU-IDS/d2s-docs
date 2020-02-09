@@ -43,18 +43,9 @@ It is strongly **recommended to use a POSIX system** (Linux, MacOS) if you consi
 
 ---
 
-## Project structure
+## Project folder structure
 
-The Data2Services client 
-
-* [d2s-cli](https://github.com/MaastrichtU-IDS/d2s-cli): A Command Line Interface to orchestrate the integration of heterogenous  data and the deployment of services consuming the integrated data (Python).
-* [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) as submodule.
-  * [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) (imported as submodule in [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template)): CWL workflows to transform structured data to a target RDF model.
-* [d2s-documentation](https://github.com/MaastrichtU-IDS/d2s-documentation): this documentation website.
-
-The [d2s client](https://pypi.org/manage/project/d2s/releases/) use the following directory structure, which can be found in the example project [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template).
-
-Example of directory structure for the `drugbank` dataset.
+The [d2s client](https://pypi.org/manage/project/d2s/releases/) use the following directory structure, which can be found in the example project [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) (here with the `drugbank` dataset):
 
 ```bash
 root-directory
@@ -62,7 +53,7 @@ root-directory
 ├── LICENSE
 ├── README.md
 ├── d2s-cwl-workflows (submodule)	# CWL workflows & docker-compose files (required)
-├── d2s-argo-workflows (submodule)	# Optional Kubernetes workflows (experimental )
+├── d2s-argo-workflows (submodule)	# Optional Kubernetes workflows (experimental)
 ├── datasets
 │   └── drugbank
 │       ├── config.yml				# The workflow config file
@@ -85,6 +76,17 @@ root-directory
     ├── graphdb
     └── graphdb-import
 ```
+
+---
+
+## Source code repositories
+
+The Data2Services project uses multiples Git repositories:
+
+* [d2s-cli](https://github.com/MaastrichtU-IDS/d2s-cli): A Command Line Interface to orchestrate the integration of heterogenous  data and the deployment of services consuming the integrated data (Python).
+* [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) as submodule.
+  * [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) (imported as submodule in [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template)): CWL workflows to transform structured data to a target RDF model.
+* [d2s-documentation](https://github.com/MaastrichtU-IDS/d2s-documentation): this documentation website.
 
 ---
 
