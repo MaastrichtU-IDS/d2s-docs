@@ -19,7 +19,7 @@ d2s download drugbank
 
 ## Convert XML with xml2rdf
 
-Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure.
+Using [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure:
 
 ```shell
 d2s run workflow-xml.cwl drugbank
@@ -33,7 +33,7 @@ d2s run workflow-xml.cwl drugbank
 
 ## Convert CSV/TSV with AutoR2RML
 
-Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure.
+Using [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure:
 
 ```shell
 d2s download cohd
@@ -48,7 +48,7 @@ d2s run workflow-csv.cwl cohd
 
 > Not tested at the moment. Might need fix.
 
-Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements.
+Also split statements. E.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements:
 
 ```shell
 d2s download eggnog

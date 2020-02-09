@@ -16,7 +16,7 @@ Choose the services you need, and deploy them with `docker-compose`.
 
 ## Start common services
 
-Start the services required to run data transformation workflows
+Start the services required to run data transformation workflows:
 
 ```shell
 d2s start virtuoso graphdb api browse-local-graphdb drill

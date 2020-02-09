@@ -5,7 +5,7 @@ title: Installation
 
 ## Install the d2s client
 
-Install the [d2s client](https://pypi.org/project/d2s) and [cwlref-runner](https://pypi.org/project/cwlref-runner/) with `pip`
+Install the [d2s client](https://pypi.org/project/d2s) and [cwlref-runner](https://pypi.org/project/cwlref-runner/) with `pip`:
 
 ```shell
 pip install d2s cwlref-runner

@@ -9,7 +9,7 @@ Ideally you should **create a new repository from the template [d2s-transform-te
 
 In this example I will directly use the default [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository.
 
-Create the directory you want to use
+Create the directory you want to use:
 
 ```shell
 mkdir my-workflow-project
@@ -20,7 +20,7 @@ cd my-workflow-project
 
 For licensing reason GraphDB free edition needs to be [downloaded manually](https://ontotext.com/products/graphdb/ ). Download the `.zip` standalone distribution version `8.10.1` before `d2s init`
 
-Now initialize your project and workspace
+Now initialize your project and workspace:
 
 ```shell
 d2s init
