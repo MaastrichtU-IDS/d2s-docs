@@ -194,8 +194,31 @@ pipx install --spec git+https://github.com/rabix/benten.git benten
 
 ## Try Apache Airflow
 
-[Apache Airflow](https://airflow.apache.org/) allow to run CWL workflows.
+[Apache Airflow](https://airflow.apache.org/) allow to run and monitor workflows. It requires to install the `cwl-airflow` package to add CWL compatibility.
 
 [Install Apache Airflow](https://airflow.apache.org/docs/stable/start.html) and the [cwl-airflow](https://cwl-airflow.readthedocs.io/en/latest/readme/run_demo.html) pip package to get started.
 
-> **TODO**
+```shell
+pip install apache-airflow
+pip install cwl-airflow --find-links https://michael-kotliar.github.io/cwl-airflow-wheels/
+airflow init
+cwl-airflow init
+```
+
+> `cwl-airflow init` fails: `FileNotFoundError:[Errno 2]No such file or directory:'airflow'`
+
+Start Airflow:
+
+```shell
+airflow webserver -p 8080
+airflow scheduler
+```
+
+Submit a workflow:
+
+```shell
+cwl-airflow submit $workflow $params
+
+# Run demo
+cwl-airflow demo --auto
+```
