@@ -17,21 +17,9 @@ d2s download drugbank
 
 > Downloaded files goes to `workspace/input/drugbank`.
 
-## Convert XML
+## Run a CWL workflow
 
-Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure:
-
-```shell
-d2s run workflow-xml.cwl drugbank
-```
-
-> Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
-
-> Output goes to `workspace/output`
-
----
-
-## Convert CSV/TSV
+### Convert CSV/TSV
 
 Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure:
 
@@ -41,6 +29,24 @@ d2s run workflow-csv.cwl cohd
 ```
 
 > Example converting [cohd](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurence) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+
+> Output goes to `workspace/output`
+
+By default the workflow runs detached from your terminal, so you can close the Windows or leave the SSH sessions. The logs are stored in `workspace/workflow-history`.
+
+You can watch the logs of a running workflow 👀
+
+```shell
+d2s watch workflow-csv.cwl-cohd-20200215-100352.txt
+```
+
+Or display the complete logs of any workflow previously run 📋
+
+```shell
+d2s log workflow-csv.cwl-cohd-20200215-091342.txt
+```
+
+---
 
 ### With property split
 
@@ -57,13 +63,27 @@ d2s run workflow-csv-split.cwl eggnog
 
 ---
 
-## Run in the background
+### Convert XML
+
+Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure:
 
 ```shell
-nohup d2s run workflow-xml.cwl drugbank &
+d2s run workflow-xml.cwl drugbank
 ```
 
-> Write terminal output to `nohup.out`.
+> Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+
+> Output goes to `workspace/output`
+
+---
+
+## Run attached to the terminal
+
+```shell
+d2s run workflow-csv.cwl cohd --watch
+```
+
+> ⚠️ The logs will not be stored in `workspace/workflow-history`.
 
 ---
 
@@ -81,7 +101,7 @@ d2s run workflow-csv.cwl cohd --get-mappings
 
 ## Workflow details
 
-* By default we are using `workspace/` as working directory when running workflows and starting services.
+* We are using `workspace/` as working directory when running workflows and starting services.
 
 * You need to put the SPARQL mapping queries in `/mappings/$dataset_name` and provide those parameters:
   * `--outdir`: final output directory for files outputted by the workflow

@@ -8,9 +8,9 @@ Services must be running before executing CWL workflows, e.g. [Apache Drill](htt
 
 Choose the services you need, and deploy them with `docker-compose`.
 
-* Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), [blazegraph](https://hub.docker.com/r/lyrasis/blazegraph/dockerfile)
-* Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres)
-* User interfaces: [into-the-graph RDF browser](https://github.com/MaastrichtU-IDS/into-the-graph), [yasgui](https://hub.docker.com/r/erikap/yasgui), [comunica](https://github.com/comunica/jQuery-Widget.js)
+* 🔗 Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), [blazegraph](https://hub.docker.com/r/lyrasis/blazegraph/dockerfile)
+* 🗃️ Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres)
+* 🖱️ User interfaces: [into-the-graph RDF browser](https://github.com/MaastrichtU-IDS/into-the-graph), [yasgui](https://hub.docker.com/r/erikap/yasgui), [comunica](https://github.com/comunica/jQuery-Widget.js)
 
 > All shared in the `workspace/` folder.
 
@@ -22,7 +22,7 @@ Start the services required to run data transformation workflows:
 d2s start virtuoso graphdb api browse-local-graphdb drill
 ```
 
-* Access the linked data browser for GraphDB at http://localhost:7201
+* 🧭 Access the linked data browser for GraphDB at http://localhost:7201
 * Access GraphDB at http://localhost:7200
 * Access Virtuoso at http://localhost:8890
 * Access the HTTP Swagger API at http://localhost:8080
@@ -33,8 +33,8 @@ d2s start virtuoso graphdb api browse-local-graphdb drill
 d2s start postgres blazegraph comunica browse-local-virtuoso
 ```
 
-* Access the linked data browser for Virtuoso at http://localhost:8891
-* Access the  linked data browser for Blazegraph at http://localhost:8083
+* 🧭 Access the linked data browser for Virtuoso at http://localhost:8891
+* 🧭 Access the  linked data browser for Blazegraph at http://localhost:8083
 * Access Blazegraph at http://localhost:8082
 * Access Blazegraph at http://localhost:8084
 

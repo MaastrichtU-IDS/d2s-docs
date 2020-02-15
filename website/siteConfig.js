@@ -268,7 +268,7 @@ const siteConfig = {
               'zpty zregexparse zsocket zstyle ztcp'
               // Vincent built-ins,
               + ' ps clone submodule pull install up submit terminate delete get create build run rsh login list'
-              + ' start stop generate init config update download services',
+              + ' start stop generate init config update download services watch',
             _:
               '-ne -eq -lt -gt -f -d -e -s -l -a' // relevance booster
           },
