@@ -18,7 +18,7 @@ cd my-workflow-project
 
 > All `d2s` commands are designed to be run from this directory.
 
-For licensing reason GraphDB free edition needs to be [downloaded manually](https://ontotext.com/products/graphdb/ ). Download the `.zip` standalone distribution version `8.10.1` before `d2s init`
+For licensing reason GraphDB free edition needs to be [downloaded manually](https://ontotext.com/products/graphdb/ ). Download the `.zip` standalone distribution version `9.1.1` before `d2s init`
 
 Now initialize your project and workspace:
 

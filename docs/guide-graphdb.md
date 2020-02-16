@@ -33,7 +33,7 @@ d2s start graphdb
 
 ```shell
 # Here shared locally at /data/graphdb and /data/graphdb-import
-docker build -t graphdb --build-arg version=8.11.0 .
+docker build -t graphdb --build-arg version=9.1.1 .
 
 docker run -d --rm --name graphdb -p 7200:7200 -v /data/graphdb:/opt/graphdb/home -v /data/graphdb-import:/root/graphdb-import graphdb
 ```
