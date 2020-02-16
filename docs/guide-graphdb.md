@@ -69,10 +69,47 @@ curl -X POST \
 
 - `Edit admin user` > `Enter a new password` > `Save`
 - Click on `Security is off` to turn it on.
+  - 🔓Default `admin` user password is `root`
 - `Create new user`
-  - User name: `import_user`
+  - User name: `import_user` (for instance)
   - Password: `my_password`
   - `Repository rights` > Write right on Any data repository
   - Click `Create`
 
+## Use the HTTP API
+
+### Import file
+
+Import the `rdf_output.nq` file (in server import)
+
+```shell
+curl -X POST -u admin:root --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+   "fileNames": [
+     "rdf_output.nq"
+   ]
+ }' 'http://localhost:7200/rest/data/import/server/test'
+```
+
+Check if import is done:
+
+```shell
+curl -X GET --header 'Accept: application/json' 'http://localhost:7200/rest/data/import/server/test'
+
+# Still importing:
+[
+  {
+    "name": "rdf_output.nq",
+    "status": "IMPORTING",
+    "message": ""
+  }
+]
+```
+
+### Export graph
+
+Export a Graph to nquads:
+
+```shell
+curl -X GET --header 'Accept: application/n-quads' 'http://localhost:7200/repositories/test/rdf-graphs/service?graph=https%3A%2F%2Fw3id.org%2Fd2s%2Fgraph%2Fbiolink%2Fcohd'
+```
 

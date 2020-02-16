@@ -51,9 +51,19 @@ docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOB
 
 ## Virtuoso bulk load
 
+This command should work to load all `.nq` files in the `workspace/virtuoso` directory, but it seems to have issues:
+
 ```shell
 docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db', '*.nq', 'http://test/'); rdf_loader_run();"
 ```
+
+This command is used by the CWL workflow, but fails when run manually:
+
+```shell
+docker exec -i d2s-cwl-workflows_virtuoso_1 bash -c "/usr/local/virtuoso-opensource/var/lib/virtuoso/db/load.sh" "/usr/local/virtuoso-opensource/var/lib/virtuoso/db" "rdf_output.nq" "https://w3id.org/d2s/graph/default" "rdf_output_vload.log" "dba"
+```
+
+> For some reason the args are not passed to the script 🚧
 
 ## Configuration
 
