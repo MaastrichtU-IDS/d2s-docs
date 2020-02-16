@@ -19,7 +19,7 @@ Use [d2s-bash-download](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blo
 
 ## Build CWL workflows
 
-Use [workflow-xml.cwl](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/develop/workflows/workflow-xml.cwl) as example, a workflow to convert XML files to a target RDF Knowledge Graph.
+Use [csv-virtuoso.cwl](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/develop/workflows/csv-virtuoso.cwl) as example, a workflow to convert XML files to a target RDF Knowledge Graph.
 
 > **TODO**
 

@@ -257,7 +257,7 @@ class Index extends React.Component {
           <pre>
             <code className="hljs css language-shell">
               d2s download drugbank <br/>
-              d2s run workflow-xml.cwl drugbank
+              d2s run xml-virtuoso.cwl drugbank
             </code>
           </pre>
         </div>
