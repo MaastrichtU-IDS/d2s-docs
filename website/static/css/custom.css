@@ -28,6 +28,14 @@ a:hover {
     color: #1565c0;
 }
 
+/* Make sure the Gitter sidecar is over the navbar */
+aside.gitter-chat-embed {
+    z-index: 9999;
+}
+div.fixedHeaderContainer {
+    z-index: 9998;
+}
+
 /* Change weight of Website logo, nav left */
 .headerTitleWithLogo {
     font-weight: 500;
