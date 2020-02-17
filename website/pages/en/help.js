@@ -21,10 +21,13 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation](${docUrl(
-        'd2s-installation',
-      )}).`,
-      title: 'Browse the Docs',
+      content: `<a href="https://gitter.im/um-dsri/data2services"
+        target="_blank" rel="noreferrer noopener" aria-label="Chat on Gitter">
+        <img alt="Ask on Gitter" 
+        src="https://img.shields.io/gitter/room/um-dsri/data2services"/>
+      </a>
+      <p>Feel free to ask questions, or share issues and successes on [Gitter](https://gitter.im/um-dsri/data2services) 💬</p>`,
+      title: 'Ask on Gitter'
     },
     {
       content: `<a href="https://github.com/MaastrichtU-IDS/d2s-documentation/issues"
@@ -40,11 +43,11 @@ function Help(props) {
       <img alt="GitHub d2s-transform-template" src="https://img.shields.io/github/issues/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template"/>
     </a>
     <p>Browse and submit [issues](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) or [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) 
-    for bugs you find or any new features you would like to see implemented.</p>`,
+    for bugs you find or any new features you would like to see implemented 🔧</p>`,
       title: 'Submit issues',
     },
     {
-      content: `Feel free to [contact the main maintainers](mailto:vincent.emonet@maastrichtuniversity.nl) if you have any questions.`,
+      content: `Feel free to [contact the main maintainers](mailto:vincent.emonet@maastrichtuniversity.nl) if you have any questions 📬`,
       title: 'Contact us',
     },
   ];
