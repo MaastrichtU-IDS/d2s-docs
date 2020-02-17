@@ -28,12 +28,18 @@ a:hover {
     color: #1565c0;
 }
 
-/* Make sure the Gitter sidecar is over the navbar */
+/* Make sure the Gitter sidecar is over the navbar and change color */
 aside.gitter-chat-embed {
     z-index: 9999;
 }
 div.fixedHeaderContainer {
     z-index: 9998;
+}
+.gitter-open-chat-button {
+    background-color: #2196f3ff;
+}
+.gitter-open-chat-button:hover {
+    background-color: #1565c0;
 }
 
 /* Change weight of Website logo, nav left */
