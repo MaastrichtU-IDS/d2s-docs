@@ -19,13 +19,14 @@ Choose the services you need, and deploy them with `docker-compose`.
 Start the services required to run data transformation workflows:
 
 ```shell
-d2s start virtuoso graphdb api browse-local-graphdb drill
+d2s start virtuoso graphdb api browse-local-graphdb drill filebrowser
 ```
 
 * 🧭 Access the linked data browser for GraphDB at http://localhost:7201
 * Access GraphDB at http://localhost:7200
 * Access Virtuoso at http://localhost:8890
 * Access the HTTP Swagger API at http://localhost:8080
+* 📂 Access the filebrowser to download RDF dumps at http://localhost:8081
 
 ## Start more services
 
