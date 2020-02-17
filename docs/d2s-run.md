@@ -9,7 +9,7 @@ title: Run CWL workflows
 
 Files to process (e.g. CSV, XML) needs to be downloaded before running the workflow.
 
-Example for `drugbank`:
+Example for `drugbank` 💊
 
 ```shell
 d2s download drugbank

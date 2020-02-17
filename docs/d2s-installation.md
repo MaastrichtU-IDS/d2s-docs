@@ -56,7 +56,7 @@ d2s
 
 [![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
 
-For licensing reason the GraphDB free edition distribution needs to be downloaded manually.
+For licensing reason the GraphDB free edition distribution needs to be downloaded manually 📥
 
 * Go to https://ontotext.com/products/graphdb/ and provide informations to get an email with the link to download GraphDB
 

@@ -6,11 +6,11 @@ title: Start services
 
 Services must be running before executing CWL workflows, e.g. [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files and triplestores to store data.
 
-Choose the services you need, and deploy them with `docker-compose`.
+Choose the services you need, and deploy them with `docker-compose` 🐳
 
 * 🔗 Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), [blazegraph](https://hub.docker.com/r/lyrasis/blazegraph/dockerfile)
 * 🗃️ Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres)
-* 🖱️ User interfaces: [into-the-graph RDF browser](https://github.com/MaastrichtU-IDS/into-the-graph), [yasgui](https://hub.docker.com/r/erikap/yasgui), [comunica](https://github.com/comunica/jQuery-Widget.js)
+* 🖥️ User interfaces: [into-the-graph RDF browser](https://github.com/MaastrichtU-IDS/into-the-graph), [yasgui](https://hub.docker.com/r/erikap/yasgui), [comunica](https://github.com/comunica/jQuery-Widget.js)
 
 > All shared in the `workspace/` folder.
 

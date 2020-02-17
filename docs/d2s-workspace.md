@@ -20,7 +20,7 @@ cd my-workflow-project
 
 For licensing reason GraphDB free edition needs to be [downloaded manually](https://ontotext.com/products/graphdb/ ). Download the `.zip` standalone distribution version `9.1.1` before `d2s init`
 
-Now initialize your project and workspace:
+Now initialize your project and workspace 🎬
 
 ```shell
 d2s init

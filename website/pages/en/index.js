@@ -136,7 +136,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              'Integrate various data sources to comply to a common model and build the Knowledge Graph that will power your services.',
+              'Integrate various data sources to comply to a common model and build the Knowledge Graph that will power your services 🔋',
             image: `${baseUrl}img/data2services-broad_vision.png`,
             imageAlign: 'right',
             title: 'Integrate your data in a larger Knowledge Graph',
@@ -153,7 +153,7 @@ class Index extends React.Component {
             content:
               'Automatically deploy a variety of interfaces and services ([SPARQL](https://yasgui.triply.cc/), ' +
               '[GraphQL-LD](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/), [OpenAPI](https://www.openapis.org/), ' +
-              '[Web UI](https://github.com/MaastrichtU-IDS/into-the-graph)) to access your data.',
+              '[Web UI](https://github.com/MaastrichtU-IDS/into-the-graph)) to access your data 🔭',
             image: `${baseUrl}img/linked-data-browser.png`,
             imageAlign: 'left',
             title: 'Deploy services',
@@ -169,7 +169,7 @@ class Index extends React.Component {
           {
             content:
               'The `d2s` Command Line Interface has been developed to make the deployment of Docker containers and execution of CWL workflows easy.<br/> '
-              + 'A Desktop UI will be developed in the future.',
+              + 'A Desktop UI will be developed in the future 🖥️',
             image: `${baseUrl}img/d2s-architecture.png`,
             imageAlign: 'right',
             title: 'Using a simple client',
@@ -184,7 +184,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              'The Data2Services framework is built on basic principles:<br/> **standardized**, **modular**, **scalable**, **sustainable**.',
+              'The Data2Services framework is built on basic principles 📄<br/> **Standardized**, **modular**, **scalable**, **sustainable**.',
             image: `${baseUrl}img/data2services-pyramid_diagram.svg`,
             imageAlign: 'left',
             title: 'Universal and sustainable',
