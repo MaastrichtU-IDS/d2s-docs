@@ -143,7 +143,7 @@ class Footer extends React.Component {
           </div>
           {this.props.config.copyright}
         </section>
-        <Gitter room="um-dsri/community" title="Ask about d2s" />
+        <Gitter room="um-dsri/data2services" title="Ask about d2s" />
       </footer>
     );
   }
