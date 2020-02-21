@@ -15,10 +15,9 @@ pip install d2s cwlref-runner
 
 Requirements:
 
-* docker-compose
-* git
-* curl
-* pip (we recommed using [pipx](https://pipxproject.github.io/pipx/))
+* [Python 3.6](https://d2s.semanticscience.org/docs/d2s-installation#install-pip)
+* [docker-compose](https://docs.docker.com/compose/install/)
+* git, curl, time (bash)
 
 > See [below](/docs/d2s-installation#install-pip) for more instructions about pip and docker installation.
 
@@ -26,19 +25,27 @@ Requirements:
 
 Enabling commandline autocompletion in the terminal is crucial to have the best experience using the `d2s` client. 
 
-* **Bash**: add the import autocomplete line to `.bashrc`
-```shell
-echo 'eval "$(_D2S_COMPLETE=source d2s)"' >> ~/.bashrc
-```
+* **ZSH**: add the import autocomplete line to the `~/.zshrc` file.
 
-> `nano ~/.bashrc` if issues with the import 
-
-* **ZSH**: add the import autocomplete line to `.zshrc`
-```shell
+```bash
 echo 'eval "$(_D2S_COMPLETE=source_zsh d2s)"' >> ~/.zshrc
 ```
 
-> `nano ~/.zshrc` if issues with the import 
+> Set your terminal to use [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) by default:
+>
+> ```shell
+> chsh -s /bin/zsh
+> ```
+
+> A [oh-my-zsh](https://ohmyz.sh/) theme can be easily chosen for a personalized experience. See the [zsh-theme-biradate](https://github.com/vemonet/zsh-theme-biradate) to easily install a simple theme and configure your terminal in a few minutes.
+
+* **Bash**: add the import autocomplete line to the `~/.bashrc` file.
+
+```bash
+echo 'eval "$(_D2S_COMPLETE=source d2s)"' >> ~/.bashrc
+```
+
+> **To be tested.**
 
 ### Try the client
 
@@ -75,6 +82,8 @@ For licensing reason the GraphDB free edition distribution needs to be downloade
 
 ## Install pip
 
+If you just want to run `d2s` we recommend you to use `pipx` as it install the app in an isolated environment. It can be compared to `apt`, `brew` or `npx`.
+
 ### Install pip on Ubuntu
 
 ```shell
@@ -85,8 +94,6 @@ pip3 install --user pipx
 
 ### Install pip on MacOS
 
-Using `pip` and `pipx`.
-
 ```shell
 # Install python3 and pip3
 brew install python3
@@ -96,8 +103,6 @@ pipx ensurepath
 ```
 
 ### Install pip on CentOS
-
-Using `pip` and `pipx`.
 
 ```shell
 # Install python3 and pip3
