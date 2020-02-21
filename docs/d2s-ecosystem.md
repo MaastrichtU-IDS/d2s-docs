@@ -400,7 +400,7 @@ docker run -it --rm --name yasgui -p 8080:80 \
 
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
 
-[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a Lightweight RDF linked data browser. Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight and fast RDF linked data browser. Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
 
 ```shell
 d2s start into-the-graph browse-local-virtuoso browse-local-graphdb
@@ -453,9 +453,9 @@ docker run --rm -d --name lodestar -p 8082:8080 \
   -e SERVICE_BASE_URI=http://localhost:8080/ncats-red-kg netresearch/lodestar
 ```
 
-> Access at [http://localhost:8082/ncats-red-kg](http://localhost:8082/ncats-red-kg)
+> Access at [http://localhost:8082/lodestar/sparql](http://localhost:8082/lodestar/sparql)
 
-> Original Docker build available in [Wiki](https://github.com/MaastrichtU-IDS/data2services-ecosystem/wiki/Additional-modules#lodestar)
+> Does not support graphs 🚫
 
 ---
 
@@ -489,7 +489,7 @@ docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.c
 
 > Access [default example](https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq) on http://localhost:8080/data/person/mary-cooper to resolve URI.
 
-> Doesn't support graphs
+> Does not support graphs 🚫
 
 ---
 
@@ -508,7 +508,7 @@ docker-compose up
 
 > Change the SPARQL endpoint in the [docker-compose.yml](https://github.com/Data2Semantics/brwsr/blob/master/docker-compose.yml).
 
-> Doesn't support graphs.
+> Does not support graphs 🚫
 
 ---
 
