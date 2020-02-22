@@ -5,13 +5,13 @@ title: Installation
 
 ## Install the d2s client
 
-Install the [d2s client](https://pypi.org/project/d2s) and [cwlref-runner](https://pypi.org/project/cwlref-runner/) with `pip`:
+Install the [d2s client](https://pypi.org/project/d2s) and [cwlref-runner](https://pypi.org/project/cwlref-runner/) with [pipx](https://pipxproject.github.io/pipx/):
 
 ```shell
-pip install d2s cwlref-runner
+pipx install d2s cwlref-runner
 ```
 
-> Use [pip](https://pypi.org/project/pip/), pip3 or [pipx](https://pipxproject.github.io/pipx/) depending on your preferences.
+> We recommend to use [pipx](https://pipxproject.github.io/pipx/) if you just want to execute `d2s`. You can also install with [pip](https://pypi.org/project/pip/) or pip3 depending on your preferences.
 
 Requirements:
 
@@ -19,7 +19,7 @@ Requirements:
 * [docker-compose](https://docs.docker.com/compose/install/)
 * git, curl, time (bash)
 
-> See [below](/docs/d2s-installation#install-pip) for more instructions about pip and docker installation.
+> See [below](/docs/d2s-installation#install-pipx) for more instructions about [pipx](https://pipxproject.github.io/pipx/) and docker installation.
 
 ### Enable autocompletion
 
@@ -80,19 +80,25 @@ For licensing reason the GraphDB free edition distribution needs to be downloade
 
 ---
 
-## Install pip
+## Install pipx
 
-If you just want to run `d2s` we recommend you to use `pipx` as it install the app in an isolated environment. It can be compared to `apt`, `brew` or `npx`.
+If you just want to run `d2s` we recommend you to use [pipx](https://pipxproject.github.io/pipx/) as it install the tool in an isolated environment. It can be compared to `apt`, `brew` or `npx`.
 
-### Install pip on Ubuntu
+> Consider doing a `pip install --upgrade pip` to update your pip installation.
+
+> Instructions use `pip3` to make sure `pipx` is installed with Python3, but feel free to use your own `pip` installation.
+
+### Install pipx on Ubuntu
 
 ```shell
+# Install pip if necessary
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
+# Install pipx
 pip3 install --user pipx
 ```
 
-### Install pip on MacOS
+### Install pipx on MacOS
 
 ```shell
 # Install python3 and pip3
@@ -102,7 +108,7 @@ pip3 install pipx
 pipx ensurepath
 ```
 
-### Install pip on CentOS
+### Install pipx on CentOS
 
 ```shell
 # Install python3 and pip3
@@ -110,9 +116,10 @@ sudo yum install python36
 sudo yum install python36-devel
 sudo easy_install-3.6 pip
 pip3 install --user pipx
+pipx ensurepath
 ```
 
-### Install pip on Windows
+### Install pipx on Windows
 
 We do not recommend running `d2s` on Windows, nevertheless if you want to try: install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe) and see [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). More details in the [Windows guide page](/docs/guide-windows).
 
@@ -122,7 +129,26 @@ pipx install cwlref-runner
 pipx ensurepath
 ```
 
-> Consider doing a `pip install --upgrade pip` to update your pip installation.
+### Uninstall
+
+```shell
+pipx uninstall d2s cwlref-runner
+```
+
+If you face issues where `d2s` or `cwl-runner` is already installed, try to make sure it is properly uninstall from `pip`:
+
+```shell
+sudo pip uninstall d2s cwlref-runner cwltool
+sudo pip3 uninstall d2s cwlref-runner cwltool
+```
+
+### Upgrade d2s version
+
+Upgrade [d2s](https://pypi.org/project/d2s/) to the latest release:
+
+```shell
+pipx install --upgrade d2s
+```
 
 ---
 
@@ -168,8 +194,6 @@ nano /etc/resolv.conf
 > For issues related to Docker on Windows, see the [Windows guide](/docs/guide-windows) page.
 
 > For more details on how to run Docker see the [Docker guide](/docs/guide-docker).
-
-
 
 ---
 
