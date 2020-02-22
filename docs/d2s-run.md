@@ -7,13 +7,13 @@ title: Run CWL workflows
 
 ## Download files to convert
 
-Files to process (e.g. CSV, XML) needs to be downloaded before running the workflow.
-
-Example for `drugbank` 💊
+Files to process (e.g. CSV, XML) needs to be downloaded before running the workflow. Example downloading a [DrugBank](https://www.drugbank.ca/about) sample 📥
 
 ```shell
 d2s download drugbank
 ```
+
+> Download script defined in [datasets/drugbank/download/download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/download/download.sh).
 
 > Downloaded files goes to `workspace/input/drugbank`.
 
@@ -21,30 +21,16 @@ d2s download drugbank
 
 ### Convert CSV/TSV
 
-Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure:
+Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure. Example converting [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s download cohd
 d2s run csv-virtuoso.cwl cohd
 ```
 
-> Example converting [cohd](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurence) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
-
 > Output goes to `workspace/output`
 
-By default the workflow runs detached from your terminal, so you can close the Windows or leave the SSH sessions. The logs are stored in `workspace/workflow-history`.
-
-You can watch the logs of a running workflow 👀
-
-```shell
-d2s watch csv-virtuoso.cwl-cohd-20200215-100352.txt
-```
-
-Or display the complete logs of any workflow previously run 📋
-
-```shell
-d2s log csv-virtuoso.cwl-cohd-20200215-091342.txt
-```
+By default the workflow runs detached from your terminal, so you can close the Windows or leave the SSH sessions.
 
 ---
 
@@ -52,28 +38,47 @@ d2s log csv-virtuoso.cwl-cohd-20200215-091342.txt
 
 > Not tested at the moment. Might need fix.
 
-Convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements):
+Convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements). Example converting the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s download eggnog
 d2s run split-csv-virtuoso.cwl eggnog
 ```
 
-> Example converting the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
-
 ---
 
 ### Convert XML
 
-Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure:
+Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure. Example converting [DrugBank 💊️](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
+d2s download drugbank
 d2s run xml-virtuoso.cwl drugbank
 ```
 
-> Example converting [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
-
 > Output goes to `workspace/output`
+
+---
+
+## Check your workflows logs
+
+The workflow logs are stored in `workspace/workflow-history`.
+
+### Watch a running workflow
+
+You can watch the logs of a running workflow 👀
+
+```shell
+d2s watch csv-virtuoso.cwl-cohd-20200215-100352.txt
+```
+
+### Display workflow logs
+
+Display the complete logs of any workflow previously run 📋
+
+```shell
+d2s log csv-virtuoso.cwl-cohd-20200215-091342.txt
+```
 
 ---
 
