@@ -276,6 +276,26 @@ To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update)
 
 ---
 
+### AllegroGraph
+
+[![GitHub](https://img.shields.io/github/stars/franzinc/docker-agraph?label=GitHub&style=social)](https://github.com/franzinc/docker-agraph)
+
+[AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications.  
+
+```shell
+d2s start agraph
+
+docker run -d -m 1g -v $PWD/workspace/agraph:/data -p 10000-10035:10000-10035 --shm-size 1g --name agraph franzinc/agraph:v6.6.0
+```
+
+> Access at http://localhost:10035
+
+> Default login: `test` / `xyzzy`
+
+See [official documentation](https://franz.com/agraph/support/documentation/current/agload.html) for bulk load.
+
+---
+
 ### Neo4j
 
 [![Neo4j](/img/neo4j_logo.png)](https://neo4j.com/)
