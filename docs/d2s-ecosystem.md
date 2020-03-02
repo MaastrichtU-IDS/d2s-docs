@@ -307,7 +307,7 @@ Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to q
 docker run -p 3000:3000 -t -i --rm \
 	-v /data/d2s-workspace:/data \
 	-v $(pwd)/config.json:/tmp/config.json \
-	ldf-server /tmp/config.json
+	umids/ldf-server:latest /tmp/config.json
 
 # Query example
 curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:3000/timegate/dbpedia?subject=http%3A%2F%2Fdata2services%2Fmodel%2Fgo-category%2Fprocess
@@ -329,8 +329,8 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 Convert RDF to [HDT](http://www.rdfhdt.org/) files. *Header, Dictionary, Triples* is a binary serialization format for RDF  that keeps big datasets compressed while maintaining search and browse operations without prior decompression.
 
 ```shell
-docker run -it --rm -v /data/d2s-workspace:/data \
-  rfdhdt/hdt-cpp rdf2hdt /data/input.nt /data/output.hdt
+docker run -it --rm -v $PWD:/data \
+  rdfhdt/hdt-cpp rdf2hdt /data/input.nt /data/output.hdt
 ```
 
 ---
@@ -396,11 +396,13 @@ docker run -it --rm --name yasgui -p 8080:80 \
 
 ---
 
-### Linked data browser
+### into-the-graph
 
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
 
-[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight and fast RDF linked data browser. Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser. Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL.
+
+It includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
 
 ```shell
 d2s start into-the-graph browse-local-virtuoso browse-local-graphdb

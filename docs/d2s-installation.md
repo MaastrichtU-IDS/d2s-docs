@@ -142,6 +142,16 @@ sudo pip uninstall d2s cwlref-runner cwltool
 sudo pip3 uninstall d2s cwlref-runner cwltool
 ```
 
+If you are facing issue with `No module name pip found`, it might be due to pip and pipx version issues. Be careful when installing `pip` and `pipx` as you want it to properly use `python3.6`. Those commands will help you uninstalling  `pipx` properly: 
+
+```shell
+rm -rf ~/.local/pipx
+pip uninstall pipx
+pip3 uninstall pipx
+python3.6 -m pip uninstall pipx
+python3.6 -m pip3 uninstall pipx
+```
+
 ### Upgrade d2s version
 
 Upgrade [d2s](https://pypi.org/project/d2s/) to the latest release:
@@ -201,13 +211,15 @@ nano /etc/resolv.conf
 
 ![Optional](https://img.shields.io/static/v1?label=module&message=Optional&color=blue)
 
-[Rabix Benten](https://github.com/rabix/benten) is a plugin for help and completion to edit CWL files in Visual Studio Code.
+[Rabix Benten](https://github.com/rabix/benten) is a plugin for completion, error and warning messages for  CWL files in Visual Studio Code.
+
+Install the package using `pipx`:
 
 ```shell
-pipx install --spec git+https://github.com/rabix/benten.git benten
+pipx install benten --python python3.7
 ```
 
-> Add `CWL (Rabix/Benten)` extension to Visual Studio Code.
+And add `CWL (Rabix/Benten)` extension to Visual Studio Code.
 
 ## Install Rabix Composer GUI
 

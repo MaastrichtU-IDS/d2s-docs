@@ -232,7 +232,7 @@ class Index extends React.Component {
           </h3>
           <pre>
             <code className="hljs css language-shell">
-              pip install d2s cwlref-runner
+              pipx install d2s cwlref-runner
             </code>
           </pre>
           <h3 className="font400">
@@ -240,6 +240,8 @@ class Index extends React.Component {
           </h3>
           <pre>
             <code className="hljs css language-shell">
+              mkdir my-project/
+              cd my-project/
               d2s init
             </code>
           </pre>
