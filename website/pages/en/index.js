@@ -242,9 +242,8 @@ class Index extends React.Component {
           </h3>
           <pre>
             <code className="hljs css language-shell">
-              mkdir my-project/
-              cd my-project/
-              d2s init
+              d2s init my-project-folder
+              cd my-project-folder/
             </code>
           </pre>
           <h3 className="font400">
