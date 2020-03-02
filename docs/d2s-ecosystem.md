@@ -285,7 +285,7 @@ To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update)
 ```shell
 d2s start agraph
 
-docker run -d -m 1g -v $PWD/workspace/agraph:/data -p 10000-10035:10000-10035 --shm-size 1g --name agraph franzinc/agraph:v6.6.0
+docker run -d -m 1g -v $(pwd)/workspace/agraph:/data -p 10000-10035:10000-10035 --shm-size 1g --name agraph franzinc/agraph:v6.6.0
 ```
 
 > Access at http://localhost:10035
@@ -293,6 +293,20 @@ docker run -d -m 1g -v $PWD/workspace/agraph:/data -p 10000-10035:10000-10035 --
 > Default login: `test` / `xyzzy`
 
 See [official documentation](https://franz.com/agraph/support/documentation/current/agload.html) for bulk load.
+
+---
+
+### AnzoGraph
+
+[AnzoGraph® DB](https://www.cambridgesemantics.com/anzograph/) by Cambridge Semantics. See its [official documentation](https://docs.cambridgesemantics.com/anzograph/userdoc/deploy-docker.htm) to deploy with Docker and its [DockerHub repository](https://hub.docker.com/r/cambridgesemantics/anzograph/).
+
+```shell
+docker run -d -p 8086:8080 -p 8443:8443 --name anzograph -v $(pwd)/workspace/anzograph:/opt/anzograph cambridgesemantics/anzograph:2.0.2
+```
+
+> Access at http://localhost:8086
+
+> Default login: `admin` / `Passw0rd1`.
 
 ---
 
