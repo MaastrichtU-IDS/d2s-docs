@@ -223,6 +223,7 @@ class Index extends React.Component {
       );
     };
 
+    // TODO: Not used at the moment, too confusing, better put everything in docs  
     const IntroCodeBlocks = () => (
       <div className="productShowcaseSection">
         <h2>Try d2s</h2>
@@ -271,7 +272,7 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <IntroCodeBlocks />
+          {/* <IntroCodeBlocks /> */}
           <Features />
           <FeatureCallout />
           <Data2ServicesDiagram />
