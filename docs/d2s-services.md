@@ -31,13 +31,15 @@ d2s start virtuoso graphdb api browse-local-graphdb drill filebrowser
 ## Start more services
 
 ```shell
-d2s start postgres blazegraph comunica browse-local-virtuoso
+d2s start postgres blazegraph anzograph allegrograph comunica browse-local-virtuoso
 ```
 
 * Access the linked data browser for Virtuoso at http://localhost:8891
-* Access the  linked data browser for Blazegraph at http://localhost:8083
+* Access the linked data browser for Blazegraph at http://localhost:8083
 * Access Blazegraph at http://localhost:8082
-* Access Blazegraph at http://localhost:8084
+* Access AllegroGraph at http://localhost:10035
+* Access AnzoGraph at http://localhost:8086
+* Access Comunica at http://localhost:8084
 
 > See [Postgres guide](/docs/guide-postgres) page for more details.
 
