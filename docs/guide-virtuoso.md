@@ -43,13 +43,15 @@ docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
 
 > Navigate to http://localhost:8890/
 
-## Clear Virtuoso triplestore
+## Virtuoso commands
+
+### Clear Virtuoso triplestore
 
 ```shell
 docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
 ```
 
-## Virtuoso bulk load
+### Virtuoso bulk load
 
 This command should work to load all `.nq` files in the `workspace/virtuoso` directory, but it seems to have issues:
 
@@ -64,6 +66,30 @@ docker exec -i d2s-cwl-workflows_virtuoso_1 bash -c "/usr/local/virtuoso-opensou
 ```
 
 > For some reason the args are not passed to the script 🚧
+
+### Dump one graph
+
+See [Virtuoso documentation](http://vos.openlinksw.com/owiki/wiki/VOS/VirtRDFDatasetDump#Dump%20One%20Graph) to dump a specific graph as Turtle (`.ttl`)
+
+> First create the `dump_one_graph` procedure according to the [documentation](http://vos.openlinksw.com/owiki/wiki/VOS/VirtRDFDatasetDump#Dump%20One%20Graph).
+
+See example to dump the Bio2RDF ClinicalTrials Graph from Virtuoso:
+
+```shell
+docker exec -i d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="dump_one_graph ('http://bio2rdf.org/clinicaltrials_resource:bio2rdf.dataset.clinicaltrials.R3', '/usr/local/virtuoso-opensource/var/lib/virtuoso/db/dumps/clinicaltrials', 999999999999999);"
+```
+
+### Dump all graphs
+
+See [Virtuoso documentation](http://vos.openlinksw.com/owiki/wiki/VOS/VirtRDFDumpNQuad) to dump all graphs as Nquads.
+
+> First create the `dump_nquads` procedure according to the [documentation](http://vos.openlinksw.com/owiki/wiki/VOS/VirtRDFDumpNQuad).
+
+See example to dump a complete Virtuoso triplestore:
+
+```shell
+docker exec -i d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="dump_nquads ('dumps', 1, 999999999999999, 1);"
+```
 
 ## Configuration
 
