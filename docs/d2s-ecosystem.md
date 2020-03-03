@@ -283,9 +283,9 @@ To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update)
 [AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications.  
 
 ```shell
-d2s start agraph
+d2s start allegrograph
 
-docker run -d -m 1g -v $(pwd)/workspace/agraph:/data -p 10000-10035:10000-10035 --shm-size 1g --name agraph franzinc/agraph:v6.6.0
+docker run -d -m 1g -v $(pwd)/workspace/allegrograph:/data -p 10000-10035:10000-10035 --shm-size 1g --name allegrograph franzinc/agraph:v6.6.0
 ```
 
 > Access at http://localhost:10035
@@ -298,15 +298,50 @@ See [official documentation](https://franz.com/agraph/support/documentation/curr
 
 ### AnzoGraph
 
-[AnzoGraph® DB](https://www.cambridgesemantics.com/anzograph/) by Cambridge Semantics. See its [official documentation](https://docs.cambridgesemantics.com/anzograph/userdoc/deploy-docker.htm) to deploy with Docker and its [DockerHub repository](https://hub.docker.com/r/cambridgesemantics/anzograph/).
+[AnzoGraph® DB](https://www.cambridgesemantics.com/anzograph/) by [Cambridge Semantics](https://www.cambridgesemantics.com/). See its [official documentation](https://docs.cambridgesemantics.com/anzograph/userdoc/deploy-docker.htm) to deploy with Docker, or its [DockerHub repository](https://hub.docker.com/r/cambridgesemantics/anzograph/). 
+
+* Unregistered Free edition limited to 8G RAM, single user and single node deployment. 
+* [Register](https://docs.cambridgesemantics.com/anzograph/userdoc/register-license.htm) to access the 16G single node deployment for free.
+
+* Deploy AnzoGraph on multi-server cluster for horizontal scaling with the [Enterprise Edition 💶](https://customercenter.cambridgesemantics.com/products/anzograph/comparisonMatrix.html)
 
 ```shell
+d2s start anzograph
+
 docker run -d -p 8086:8080 -p 8443:8443 --name anzograph -v $(pwd)/workspace/anzograph:/opt/anzograph cambridgesemantics/anzograph:2.0.2
 ```
 
 > Access at http://localhost:8086
 
 > Default login: `admin` / `Passw0rd1`.
+
+> [Kubernetes deployment](https://docs.cambridgesemantics.com/anzograph/userdoc/deploy-k8s-helm.htm) available using Helm.
+
+---
+
+### MarkLogic
+
+Licensed triplestore 📜
+
+Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-marklogic) to deploy it.
+
+> You will need to download the [MarkLogic Server 📥](https://developer.marklogic.com/products/marklogic-server/10.0)
+
+---
+
+### Stardog
+
+Licensed triplestore 📜
+
+See the [official Stardog documentation](https://www.stardog.com/docs/#_docker) for Docker, or the [DockerHub repository](https://hub.docker.com/r/stardog/stardog). A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
+
+```shell
+docker run -v $(pwd)/workspace/stardog-license:/var/opt/stardog -e STARDOG_SERVER_JAVA_ARGS="-Xmx8g -Xms8g -XX:MaxDirectMemorySize=2g" stardog/stardog:latest
+```
+
+> ✔️ If you have a Stardog license, then put `stardog-license-key.bin` in the `workspace/stardog-license` folder.
+
+> ❌ If you don't have a license key, you will be able to retrieve a trial license-key via the command line once you start Stardog.
 
 ---
 

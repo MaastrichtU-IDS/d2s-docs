@@ -90,7 +90,8 @@ const siteConfig = {
     '/js/code-blocks-buttons.js',
   ],
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700",
+    'https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700',
+    'https://fonts.googleapis.com/css?family=Raleway',
     '/css/code-blocks-buttons.css'
   ],
 

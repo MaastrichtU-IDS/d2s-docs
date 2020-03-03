@@ -4,13 +4,13 @@ title: Start services
 ---
 
 
-Services must be running before executing CWL workflows, e.g. [Apache Drill](https://github.com/amalic/apache-drill) to process tabular files and triplestores to store data.
+Services must be running before executing CWL workflows, e.g. [Apache Drill](https://github.com/MaastrichtU-IDS/apache-drill) to process tabular files and triplestores to store data.
 
 Choose the services you need, and deploy them with `docker-compose` 🐳
 
-* 🔗 Triplestores: [GraphDB](https://github.com/MaastrichtU-IDS/graphdb), [Virtuoso](https://hub.docker.com/r/tenforce/virtuoso/), [blazegraph](https://hub.docker.com/r/lyrasis/blazegraph/dockerfile)
-* 🗃️ Data access: [Apache Drill](https://github.com/amalic/apache-drill), [Postgres](https://hub.docker.com/_/postgres)
-* 🖥️ User interfaces: [into-the-graph RDF browser](https://github.com/MaastrichtU-IDS/into-the-graph), [yasgui](https://hub.docker.com/r/erikap/yasgui), [comunica](https://github.com/comunica/jQuery-Widget.js)
+* 🔗 Triplestores: [GraphDB](/docs/d2s-ecosystem#graphdb), [Virtuoso](/docs/d2s-ecosystem#virtuoso), [Blazegraph](/docs/d2s-ecosystem#blazegraph), [AllegroGraph](/docs/d2s-ecosystem#allegrograph), [AnzoGraph](/docs/d2s-ecosystem#anzograph)
+* 🗃️ Data access: [Apache Drill](/docs/d2s-ecosystem#apache-drill), [Postgres](/docs/guide-postgres)
+* 🖥️ User interfaces: [into-the-graph SPARQL browser](/docs/d2s-ecosystem#into-the-graph), [YASGUI](/docs/d2s-ecosystem#yasgui), [comunica](/docs/d2s-ecosystem#comunica-widget)
 
 > All shared in the `workspace/` folder.
 
@@ -22,11 +22,11 @@ Start the services required to run data transformation workflows:
 d2s start virtuoso graphdb api browse-local-graphdb drill filebrowser
 ```
 
-* 🧭 Access the linked data browser for GraphDB at http://localhost:7201
+* Access the linked data browser for GraphDB at http://localhost:7201 🧭 
 * Access GraphDB at http://localhost:7200
 * Access Virtuoso at http://localhost:8890
 * Access the HTTP Swagger API at http://localhost:8080
-* 📂 Access the filebrowser to download RDF dumps at http://localhost:8081
+* Access the filebrowser to download RDF dumps at http://localhost:8081 📂 
 
 ## Start more services
 
@@ -34,8 +34,8 @@ d2s start virtuoso graphdb api browse-local-graphdb drill filebrowser
 d2s start postgres blazegraph comunica browse-local-virtuoso
 ```
 
-* 🧭 Access the linked data browser for Virtuoso at http://localhost:8891
-* 🧭 Access the  linked data browser for Blazegraph at http://localhost:8083
+* Access the linked data browser for Virtuoso at http://localhost:8891
+* Access the  linked data browser for Blazegraph at http://localhost:8083
 * Access Blazegraph at http://localhost:8082
 * Access Blazegraph at http://localhost:8084
 
