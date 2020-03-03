@@ -294,6 +294,8 @@ docker run -d -m 1g -v $(pwd)/workspace/allegrograph:/data -p 10000-10035:10000-
 
 See [official documentation](https://franz.com/agraph/support/documentation/current/agload.html) for bulk load.
 
+> **TODO:** fix shared volumes
+
 ---
 
 ### AnzoGraph
