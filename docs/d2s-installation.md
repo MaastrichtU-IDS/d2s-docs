@@ -258,8 +258,28 @@ airflow scheduler
 Submit a workflow:
 
 ```shell
-cwl-airflow submit $workflow $params
+cwl-airflow submit d2s-cwl-workflows/workflows/csv-virtuoso.cwl datasets/cohd/config.yml
 
 # Run demo
 cwl-airflow demo --auto
 ```
+
+> To be tested.
+
+## Try Toil
+
+[Toil](https://toil.readthedocs.io/en/latest/running/cwl.html) is a Python workflow manager which allows to run CWL workflows.
+
+[Install Toil](https://toil.readthedocs.io/en/latest/gettingStarted/quickStart.html#running-a-basic-cwl-workflow) for CWL:
+
+```shell
+pipx install toil
+```
+
+Run a workflow
+
+```shell
+toil-cwl-runner --workdir workspace/output/tmp --outdir workspace/output d2s-cwl-workflows/workflows/csv-virtuoso.cwl datasets/cohd/config.yml
+```
+
+> To be tested.
