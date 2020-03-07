@@ -1,6 +1,6 @@
 ---
-id: guide-tabular-header
-title: Fix tabular files without header
+id: guide-preprocessing
+title: Preprocess input files
 ---
 
 ![](/img/csv-logo.png)
@@ -9,19 +9,21 @@ title: Fix tabular files without header
 
 > See the [example](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh#L68) in the dataset template.
 
-## CSV
+## Add Tabular file header label
+
+### CSV
 
 ```shell
 sed -i '1s/^/column1,column2,column3\n/' *.csv
 ```
 
-## TSV
+### TSV
 
 ```shell
 sed -i '1s/^/column1\tcolumn2\tcolumn3\n/' *.tsv
 ```
 
-## PSV
+### PSV
 
 ```shell
 sed -i '1s/^/column1|column2|column3\n/' *.psv
@@ -29,7 +31,9 @@ sed -i '1s/^/column1|column2|column3\n/' *.psv
 
 ## Split huge files
 
-You might want to split huge files if Apache Drill faces memory issues.
+To process large CSV or TSV file, you might need to increase the `max_memory_per_node` in Apache Drill options (accessible through the Drill web UI at http://localhost:8048/options) . The maximum value of this parameter is `8589934592` on our servers. See [this page](https://d2s.semanticscience.org/docs/guide-tabular-header#split-huge-files) for more details.
+
+In case increasing the `max_memory_per_node` parameter don't solve the issue, you can split the file:
 
 ```shell
 mkdir split
@@ -43,6 +47,8 @@ do
 done
 sed -i '1s/^/dataset_id\tconcept_id_1\tconcept_id_2\tconcept_count\tconcept_prevalence\tchi_square_t\tchi_square_p\texpected_count\tln_ratio\trel_freq_1\trel_freq_2\n/' */*.tsv
 ```
+
+> Their generated type is based on the filename, not its path. So if 
 
 Test Drill
 
