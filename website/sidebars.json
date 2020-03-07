@@ -1,7 +1,15 @@
 {
   "docs": {
     "CWL workflows": ["d2s-introduction", "d2s-installation", "d2s-workspace", 
-      "d2s-services", "d2s-run", "d2s-new-dataset", "cwl-create"],
+      "d2s-services", "d2s-run", "d2s-new-dataset", "cwl-create",
+      {
+        "type": "subcategory",
+        "label": "Services",
+        "ids": [
+          "services-access-rdf", "services-triplestores", "services-webui", "services-convert"
+        ]
+      } 
+    ],
     "Kubernetes workflows": 
       [ 
         {
@@ -11,7 +19,7 @@
             "argo-install", "argo-login", "argo-volume"
           ]
       }, "argo-run", "argo-commands", "argo-debug", "argo-secret"],
-    "Guides": ["d2s-ecosystem", "guide-deploy-app", "guide-docker", "guide-windows", 
+    "Guides": ["guide-deploy-app", "guide-utilities", "guide-docker", "guide-windows", 
       "guide-graphdb", "guide-virtuoso", "guide-postgres", "guide-mariadb", 
       "guide-mysql", "guide-tabular-header", "guide-ontology", "guide-jenkins"]
   }
