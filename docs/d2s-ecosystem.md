@@ -442,7 +442,28 @@ docker run -it comunica/actor-init-sparql \
 
 ---
 
+### d2s-api
+
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-api?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-api)
+
+[Web services](https://github.com/MaastrichtU-IDS/d2s-api) described following the [OpenAPI 3.0](http://spec.openapis.org/oas/v3.0.1) specifications. The generated services enable the user to query a [BioLink-compliant](https://biolink.github.io/biolink-model/) RDF knowledge graph using HTTP request following the [Reasoner API Specifications](https://github.com/NCATS-Tangerine/NCATS-ReasonerStdAPI/tree/master/API). 
+
+```shell
+d2s start api
+
+docker run -it --rm -p 8080:8080 \
+  --net d2s-cwl-workflows_network \
+  -e ENDPOINT="http://graphdb:7200/repositories/test" \
+  umids/d2s-api
+```
+
+> Access on http://localhost:8080
+
+---
+
 ## Linked Data GUI
+
+Web UI to browse a triplestore through its SPARQL endpoint: resolve URI, SPARQL query editor.
 
 ### YASGUI
 
@@ -450,20 +471,18 @@ docker run -it comunica/actor-init-sparql \
 
 [![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI)
 
-[Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
+The popular [Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
 
 ```shell
-d2s start yasgui
-
-docker run -it --rm --name yasgui -p 8080:80 \
+docker run -it --rm --name yasgui -p 8088:80 \
 	-e "DEFAULT_SPARQL_ENDPOINT=http://dbpedia.org/sparql" \
 	-e "ENABLE_ENDPOINT_SELECTOR=true" \
 	erikap/yasgui
 ```
 
-> Require to [allow Cross-Origin Requests](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/)
+> Require the SPARQL endpoint to [allow Cross-Origin Requests](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/).
 
-> Access at [http://localhost:8080/](http://localhost:8080/)
+> Access at http://localhost:8088
 
 ---
 
@@ -471,9 +490,9 @@ docker run -it --rm --name yasgui -p 8080:80 \
 
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
 
-[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser. Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL.
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs ✔️
 
-It includes a YASGUI editor and provide insights using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
+Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
 
 ```shell
 d2s start into-the-graph browse-local-virtuoso browse-local-graphdb
@@ -582,6 +601,19 @@ docker-compose up
 > Change the SPARQL endpoint in the [docker-compose.yml](https://github.com/Data2Semantics/brwsr/blob/master/docker-compose.yml).
 
 > Does not support graphs 🚫
+
+---
+
+### TriplyDB
+
+See [official documentation](https://triply.cc/docs/triply-db-getting-started). It allows to deploy the following services over a triplestore:
+
+* [YASGUI SPARQL endpoint](https://triplydb.com/wouter/linkedmdb/sparql/linkedmdb)
+* [Search index](https://triplydb.com/wouter/linkedmdb/search/search) using ElasticSearch.
+* [Web UI](https://triplydb.com/wouter/linkedmdb/id/actor/1) to resolve and browse a triplestore
+* Supports graphs in the [TPF table browser](https://triplydb.com/wouter/linkedmdb/table) (not in the [browser](https://triplydb.com/wouter/linkedmdb/browser?resource=https%3A%2F%2Ftriplydb.com%2Fwouter%2Flinkedmdb%2Fvocab%2FActor&focus=forward))
+
+> [TriplyDB](https://triplydb.com/) is hosted centrally and cannot be deployed locally 🚫
 
 ---
 
