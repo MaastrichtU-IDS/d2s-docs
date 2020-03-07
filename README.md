@@ -1,5 +1,7 @@
 # Data2Services project documentation
 
+[![Gitter](https://badges.gitter.im/um-dsri/data2services.svg)](https://gitter.im/um-dsri/data2services?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ## Edit documentation pages
 
 Editing a documentation file is as easy as going to https://github.com/MaastrichtU-IDS/d2s-documentation/edit/master/docs/start-introduction.md.

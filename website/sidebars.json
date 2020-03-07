@@ -6,7 +6,7 @@
         "type": "subcategory",
         "label": "Services",
         "ids": [
-          "services-access-rdf", "services-triplestores", "services-webui", "services-convert"
+          "services-triplestores", "services-access-rdf", "services-webui", "services-convert"
         ]
       } 
     ],

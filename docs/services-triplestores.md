@@ -3,13 +3,15 @@ id: services-triplestores
 title: Triplestores
 ---
 
-## GraphDB
+## Ontotext GraphDB
 
-[![GraphDB](/img/graphdb-logo.png)](https://github.com/MaastrichtU-IDS/graphdb)
+[![GraphDB](/img/graphdb-logo.png)](https://www.ontotext.com/products/graphdb/)
 
-[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/graphdb?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/graphdb)
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/ontotext/graphdb)](https://hub.docker.com/r/ontotext/graphdb/)
 
-[Ontotext](https://www.ontotext.com/) GraphDB triplestore including GUI and multiple repositories.
+[Ontotext GraphDB](https://www.ontotext.com/) triplestore including a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html) and the possibility to deploy multiple repositories.
+
+[Download the zip file](https://www.ontotext.com/products/graphdb/) of GraphDB standalone free version, and place it in `submodules/graphdb` before building the image using [our Docker build 📥](https://github.com/MaastrichtU-IDS/graphdb/)
 
 ```shell
 d2s start graphdb
@@ -21,9 +23,11 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 	graphdb
 ```
 
-> Download [standalone zip file](https://www.ontotext.com/products/graphdb/) of free version, and place it in `submodules/graphdb` before *docker build*.
-
 > Access at [http://localhost:7200/](http://localhost:7200/)
+
+> See [Ontotext GraphDB documentation](http://graphdb.ontotext.com/documentation/) for more details.
+
+> [Obtain a license](https://www.ontotext.com/products/graphdb/graphdb-enterprise/) to easily deploy using the [official Ontotext GraphDB DockerHub image](https://hub.docker.com/r/ontotext/graphdb/) 📜
 
 ---
 
@@ -33,7 +37,9 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 [![GitHub](https://img.shields.io/github/stars/tenforce/docker-virtuoso?label=GitHub&style=social)](https://github.com/tenforce/docker-virtuoso)
 
-[OpenLink Virtuoso](https://virtuoso.openlinksw.com/) triplestore.
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/tenforce/virtuoso)](https://hub.docker.com/r/tenforce/virtuoso)
+
+[OpenLink Virtuoso](https://virtuoso.openlinksw.com/) triplestore. Available on [DockerHub](https://hub.docker.com/r/tenforce/virtuoso/).
 
 ```shell
 d2s start virtuoso
@@ -59,7 +65,9 @@ docker run --name virtuoso \
 
 [![GitHub](https://img.shields.io/github/stars/blazegraph/database?label=GitHub&style=social)](https://github.com/blazegraph/database)
 
-A high-performance [RDF graph database](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). Not developed for 4 years but still efficient and used by Wikidata.
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/lyrasis/blazegraph)](https://hub.docker.com/r/lyrasis/blazegraph)
+
+A high-performance [RDF graph database](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). Not developed for 4 years but still efficient and used by Wikidata. Available on [DockerHub](lyrasis/blazegraph).
 
 ```shell
 d2s start blazegraph
@@ -105,7 +113,9 @@ To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update)
 
 [![GitHub](https://img.shields.io/github/stars/franzinc/docker-agraph?label=GitHub&style=social)](https://github.com/franzinc/docker-agraph)
 
-[AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications.  
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/franzinc/agraph)](https://hub.docker.com/r/franzinc/agraph)
+
+[AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications.  Available on [DockerHub](https://github.com/franzinc/agraph).
 
 ```shell
 d2s start allegrograph
@@ -124,6 +134,8 @@ See [official documentation](https://franz.com/agraph/support/documentation/curr
 ---
 
 ## AnzoGraph
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/cambridgesemantics/anzograph)](https://hub.docker.com/r/cambridgesemantics/anzograph)
 
 [AnzoGraph® DB](https://www.cambridgesemantics.com/anzograph/) by [Cambridge Semantics](https://www.cambridgesemantics.com/). See its [official documentation](https://docs.cambridgesemantics.com/anzograph/userdoc/deploy-docker.htm) to deploy with Docker, or its [DockerHub repository](https://hub.docker.com/r/cambridgesemantics/anzograph/). 
 
@@ -146,17 +158,9 @@ docker run -d -p 8086:8080 -p 8443:8443 --name anzograph -v $(pwd)/workspace/anz
 
 ---
 
-## MarkLogic
-
-Licensed triplestore 📜
-
-Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-marklogic) to deploy it.
-
-> You will need to download the [MarkLogic Server 📥](https://developer.marklogic.com/products/marklogic-server/10.0)
-
----
-
 ## Stardog
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stardog/stardog)](https://hub.docker.com/r/stardog/stardog)
 
 Licensed triplestore 📜
 
@@ -172,11 +176,23 @@ docker run -v $(pwd)/workspace/stardog-license:/var/opt/stardog -e STARDOG_SERVE
 
 ---
 
+## MarkLogic
+
+Licensed triplestore 📜
+
+Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-marklogic) to deploy it.
+
+> You will need to download the [MarkLogic Server 📥](https://developer.marklogic.com/products/marklogic-server/10.0)
+
+---
+
 ## Linked Data Fragments Server
 
 [![Linked Data Fragments server](/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
 
 [![GitHub](https://img.shields.io/github/stars/LinkedDataFragments/Server.js?label=GitHub&style=social)](https://github.com/LinkedDataFragments/Server.js)
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/linkeddatafragments/server.js)](https://hub.docker.com/r/linkeddatafragments/server.js)
 
 Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to query over datasets (can be [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/)).
 
@@ -202,6 +218,8 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 [![Neo4j](/img/neo4j_logo.png)](https://neo4j.com/)
 
 [![GitHub](https://img.shields.io/github/stars/neo4j/neo4j?label=GitHub&style=social)](https://github.com/neo4j/neo4j)
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/_/neo4j)](https://hub.docker.com/r/_/neo4j)
 
 Technically not a triplestore, [Neo4j](https://neo4j.com/) is a property graph database, it uses [Cypher](https://neo4j.com/docs/cypher-manual/current/) as query language. Available on [DockerHub](https://hub.docker.com/_/neo4j).
 
