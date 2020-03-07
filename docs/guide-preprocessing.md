@@ -29,9 +29,9 @@ sed -i '1s/^/column1\tcolumn2\tcolumn3\n/' *.tsv
 sed -i '1s/^/column1|column2|column3\n/' *.psv
 ```
 
-## Split huge files
+## Split big files
 
-To process large CSV or TSV file, you might need to increase the `max_memory_per_node` in Apache Drill options (accessible through the Drill web UI at http://localhost:8048/options) . The maximum value of this parameter is `8589934592` on our servers. See [this page](https://d2s.semanticscience.org/docs/guide-tabular-header#split-huge-files) for more details.
+To process large CSV or TSV file, you might need to increase the `max_memory_per_node` in Apache Drill options (accessible through the Drill web UI at http://localhost:8048/options) . The maximum value of this parameter is `8589934592` on our servers.
 
 In case increasing the `max_memory_per_node` parameter don't solve the issue, you can split the file:
 
@@ -46,11 +46,13 @@ do
 	count=$((count+1))
 done
 sed -i '1s/^/dataset_id\tconcept_id_1\tconcept_id_2\tconcept_count\tconcept_prevalence\tchi_square_t\tchi_square_p\texpected_count\tln_ratio\trel_freq_1\trel_freq_2\n/' */*.tsv
+# Remove the extra header line in the first split
+sed -i -e "1d" 1/paired_concept_counts_associations.tsv
 ```
 
 > Their generated type is based on the filename, not its path. So if 
 
-Test Drill
+Test Drill query:
 
 ```sql
 select row_number() over (partition by filename) as autor2rml_rownum

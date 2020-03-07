@@ -30,7 +30,7 @@ d2s start virtuoso graphdb api browse-local-graphdb drill filebrowser
 * Access the HTTP Swagger API at http://localhost:8080
 * Access the filebrowser to download RDF dumps at http://localhost:8081 📂 
 
-> To process large CSV or TSV file, you might need to increase the `max_memory_per_node` in Apache Drill options (accessible through the Drill web UI at http://localhost:8048/options) . The maximum value of this parameter is `8589934592` on our servers. See [this page](https://d2s.semanticscience.org/docs/guide-tabular-header#split-huge-files) for more details.
+> You might face issues when processing large CSV or TSV file, see [this documentation](https://d2s.semanticscience.org/docs/guide-preprocessing#split-big-files) to deal with big files.
 
 ### Start more services
 
