@@ -97,7 +97,7 @@ class Index extends React.Component {
         style={{textAlign: 'center'}}>
         <h2>Build and consume RDF Knowledge Graphs</h2>
         <MarkdownBlock>
-          Define mapping (SPARQL, RML, Python) to convert your structured data (CSV, SQL, XML) to a RDF Knowledge Graph.
+          Define mappings (SPARQL, RML, Python) to convert your structured data (CSV, SQL, XML) to a RDF Knowledge Graph.
         </MarkdownBlock>
         <MarkdownBlock>
           Use standard Ontologies to link your different data sources under a same model.
@@ -140,7 +140,7 @@ class Index extends React.Component {
         style={{textAlign: 'center'}}>
           <script id="asciicast-w3yoKaYBudlFCK39cmU0rpWWu" height='300px' 
             src="https://asciinema.org/a/w3yoKaYBudlFCK39cmU0rpWWu.js" 
-            data-autoplay="true"  data-loop="1" data-speed="3"
+            data-autoplay="true"  data-loop="1" data-speed="2.5"
             data-rows="25" async></script>
       </div>
     )
