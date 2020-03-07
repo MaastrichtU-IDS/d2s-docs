@@ -4,17 +4,19 @@ title: Start services
 ---
 
 
-Services must be running before executing CWL workflows, e.g. [Apache Drill](https://github.com/MaastrichtU-IDS/apache-drill) to process tabular files and triplestores to store data.
+Run services such as triplestores, to store your RDF knowledge graph, interfaces or web UI to access the triplestore data:
 
-Choose the services you need, and deploy them with `docker-compose` 🐳
-
-* 🔗 Triplestores: [GraphDB](/docs/services-triplestores#graphdb), [Virtuoso](/docs/services-triplestores#virtuoso), [Blazegraph](/docs/services-triplestores#blazegraph), [AllegroGraph](/docs/services-triplestores#allegrograph), [AnzoGraph](/docs/services-triplestores#anzograph)
+* 🔗 Triplestores: [Ontotext GraphDB](/docs/services-triplestores#graphdb), [Virtuoso](/docs/services-triplestores#virtuoso), [Blazegraph](/docs/services-triplestores#blazegraph), [AllegroGraph](/docs/services-triplestores#allegrograph), [AnzoGraph](/docs/services-triplestores#anzograph)
 * 🗃️ Data access: [Apache Drill](/docs/services-convert#apache-drill), [Postgres](/docs/guide-postgres), [Linked Data Fragments server](/docs/services-triplestores#linked-data-fragments-server)
 * 🖥️ User interfaces: [into-the-graph SPARQL browser](/docs/services-webui#into-the-graph), [YASGUI](/docs/services-webui#yasgui), [comunica](/docs/services-webui#comunica-widget), [RESTful-like HTTP OpenAPI](/docs/services-access-rdf#d2s-api)
 
 > Volumes of all containers started by `d2s` are shared in the `workspace/` folder.
 
-## Start common services
+> `d2s` uses `docker-compose` to run the different servives 🐳
+
+## Start services
+
+### Start common services
 
 Start the services required to run data transformation workflows:
 
@@ -28,9 +30,9 @@ d2s start virtuoso graphdb api browse-local-graphdb drill filebrowser
 * Access the HTTP Swagger API at http://localhost:8080
 * Access the filebrowser to download RDF dumps at http://localhost:8081 📂 
 
-> To process large CSV or TSV file, you might need to increase the `max_memory_per_node` in Apache Drill options (accessible through the Drill web UI at http://localhost:8048/options) . The maximum value of this parameter is `8589934592` on our servers.
+> To process large CSV or TSV file, you might need to increase the `max_memory_per_node` in Apache Drill options (accessible through the Drill web UI at http://localhost:8048/options) . The maximum value of this parameter is `8589934592` on our servers. See [this page](https://d2s.semanticscience.org/docs/guide-tabular-header#split-huge-files) for more details.
 
-## Start more services
+### Start more services
 
 ```shell
 d2s start postgres blazegraph anzograph allegrograph comunica browse-local-virtuoso
@@ -69,7 +71,7 @@ d2s stop browse-local-virtuoso browse-local-graphdb
 
 ### Clear Virtuoso triplestore
 
-You can clear the Virtuoso triplestore using this command:
+You can easily clear the Virtuoso triplestore using this command:
 
 ```shell
 docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
