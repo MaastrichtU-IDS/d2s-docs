@@ -32,9 +32,16 @@ sed -i '1s/^/column1|column2|column3\n/' *.psv
 You might want to split huge files if Apache Drill faces memory issues.
 
 ```shell
-split -l 24639941 paired_concept_counts_associations.tsv split
-sed -i '1s/^/<added columns header> /' file
-sed -i '1s/^/dataset_id\tconcept_id_1\tconcept_id_2\tconcept_count\tconcept_prevalence\tchi_square_t\tchi_square_p\texpected_count\tln_ratio\trel_freq_1\trel_freq_2/' */*.tsv
+mkdir split
+split -l 12319980 paired_concept_counts_associations.tsv split/
+count=1
+for file in split/*
+do
+	mkdir $count
+	mv $file $count/paired_concept_counts_associations.tsv
+	count=$((count+1))
+done
+sed -i '1s/^/dataset_id\tconcept_id_1\tconcept_id_2\tconcept_count\tconcept_prevalence\tchi_square_t\tchi_square_p\texpected_count\tln_ratio\trel_freq_1\trel_freq_2\n/' */*.tsv
 ```
 
 Test Drill

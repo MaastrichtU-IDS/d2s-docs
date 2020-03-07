@@ -11,7 +11,7 @@ Web UI to browse a triplestore through its SPARQL endpoint: resolve URI, SPARQL 
 
 [![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI)
 
-The popular [Yet Another Sparql GUI](https://hub.docker.com/r/erikap/yasgui).
+The popular [Yet Another Sparql Graphical User Interface](https://hub.docker.com/r/erikap/yasgui).
 
 ```shell
 docker run -it --rm --name yasgui -p 8088:80 \
@@ -73,9 +73,9 @@ See [documentation](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/)
 
 ## LODEstar
 
-[SPARQL](https://www.w3.org/TR/sparql11-query/) query and URI resolution, available through [DockerHub](https://hub.docker.com/r/netresearch/lodestar).
-
 [![GitHub](https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&style=social)](https://github.com/EBISPOT/lodestar)
+
+[SPARQL](https://www.w3.org/TR/sparql11-query/) query and URI resolution, available through [DockerHub](https://hub.docker.com/r/netresearch/lodestar).
 
 ```shell
 docker run --rm -d --name lodestar -p 8082:8080 \

@@ -131,6 +131,17 @@ class Index extends React.Component {
       </Block>
     );
 
+    const Demo = () => (
+      <div
+        className="productShowcaseSection paddingBottom"
+        style={{textAlign: 'center'}}>
+          <script id="asciicast-ez5ZuULr803kXzVkmYgNLY65f" height='300px' 
+            src="https://asciinema.org/a/ez5ZuULr803kXzVkmYgNLY65f.js" 
+            data-autoplay="true"  data-loop="1" data-speed="3"
+            data-rows="25" async></script>
+      </div>
+    )
+
     const ArchitectureDiagram = () => (
       <Block background="light">
         {[
@@ -274,6 +285,7 @@ class Index extends React.Component {
           {/* <IntroCodeBlocks /> */}
           <Features />
           <FeatureCallout />
+          <Demo />
           <ArchitectureDiagram />
           <Data2ServicesDiagram />
           <DeployServices />
