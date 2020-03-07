@@ -527,6 +527,8 @@ docker run -v $(pwd)/queries.json:/usr/share/nginx/html/queries.json -p 8080:80 
 
 > **TODO**: improve how settings and queries pass (script to download them from URL before starting nginx?.
 
+See [documentation](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/) about Comunica's GraphQL-LD implementation.
+
 ---
 
 ### LODEstar

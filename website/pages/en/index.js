@@ -131,38 +131,6 @@ class Index extends React.Component {
       </Block>
     );
 
-    const Data2ServicesDiagram = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'Integrate various data sources to comply to a common data model (ontology) and build the Knowledge Graph that will power different interfaces and services 🔋',
-            image: `${baseUrl}img/data2services-broad_vision.png`,
-            imageAlign: 'right',
-            title: 'Integrate your data in a larger Knowledge Graph',
-          },
-        ]}
-      </Block>
-    );
-
-    const DeployServices = () => (
-      <div>
-      <Block id="d2sinaction">
-        {[
-          {
-            content:
-              'Automatically deploy a variety of interfaces and services ([SPARQL](https://yasgui.triply.cc/), ' +
-              '[GraphQL-LD](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/), [OpenAPI](https://www.openapis.org/), ' +
-              '[Web UI](https://github.com/MaastrichtU-IDS/into-the-graph)) to access your data 🔭',
-            image: `${baseUrl}img/linked-data-browser.png`,
-            imageAlign: 'left',
-            title: 'Deploy services',
-          },
-        ]}
-      </Block>
-    </div>
-    );
-
     const ArchitectureDiagram = () => (
       <Block background="light">
         {[
@@ -177,6 +145,38 @@ class Index extends React.Component {
           },
         ]}
       </Block>
+    );
+
+    const Data2ServicesDiagram = () => (
+      <Block>
+        {[
+          {
+            content:
+              'Integrate various data sources to comply to a common data model (ontology) and build the Knowledge Graph that will power different interfaces and services 🔋',
+            image: `${baseUrl}img/data2services-broad_vision.png`,
+            imageAlign: 'left',
+            title: 'Integrate your data in a larger Knowledge Graph',
+          },
+        ]}
+      </Block>
+    );
+
+    const DeployServices = () => (
+      <div>
+      <Block background="light" id="d2sinaction">
+        {[
+          {
+            content:
+              'Automatically deploy a variety of interfaces and services ([SPARQL](/docs/d2s-ecosystem#yasgui), ' +
+              '[GraphQL-LD](/docs/d2s-ecosystem#comunica-widget), [OpenAPI](/docs/d2s-ecosystem#d2s-api), ' +
+              '[Web UI](/docs/d2s-ecosystem#into-the-graph)) to access your data 🔭',
+            image: `${baseUrl}img/linked-data-browser.png`,
+            imageAlign: 'right',
+            title: 'Deploy services',
+          },
+        ]}
+      </Block>
+    </div>
     );
 
 
@@ -274,9 +274,9 @@ class Index extends React.Component {
           {/* <IntroCodeBlocks /> */}
           <Features />
           <FeatureCallout />
+          <ArchitectureDiagram />
           <Data2ServicesDiagram />
           <DeployServices />
-          <ArchitectureDiagram />
           <PyramidDiagram />
           <Showcase />
         </div>
