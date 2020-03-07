@@ -27,7 +27,7 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 > See [Ontotext GraphDB documentation](http://graphdb.ontotext.com/documentation/) for more details.
 
-> [Obtain a license](https://www.ontotext.com/products/graphdb/graphdb-enterprise/) to easily deploy Ontotext GraphDB using the [official DockerHub image 📜](https://hub.docker.com/r/ontotext/graphdb/) 
+> [Obtain a license 📜](https://www.ontotext.com/products/graphdb/graphdb-enterprise/) for more features such as performance improvement, easy deployment using the [official DockerHub image](https://hub.docker.com/r/ontotext/graphdb/) or distributed deployment on multiple nodes with Kubernetes.
 
 ---
 
@@ -55,7 +55,7 @@ docker run --name virtuoso \
 
 > Access at http://localhost:8890/ and SPARQL endpoint at http://localhost:8890/sparql.
 
-> Admin login: `dba`
+> Admin username: `dba` 
 
 > See [Virtuoso documentation](/docs/guide-virtuoso) for more details.
 
