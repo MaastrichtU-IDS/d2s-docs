@@ -95,18 +95,21 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Sustainable Data Science made easy</h2>
+        <h2>Build and consume RDF Knowledge Graphs</h2>
         <MarkdownBlock>
-          Define mapping files to make sense out of your data and integrate them in a RDF Knowledge Graph.
+          Define mapping (SPARQL, RML, Python) to convert your structured data (CSV, SQL, XML) to a RDF Knowledge Graph.
         </MarkdownBlock>
         <MarkdownBlock>
-          Link your different data sources together and access them through a variety of interfaces and services.
+          Use standard Ontologies to link your different data sources under a same model.
+        </MarkdownBlock>
+        <MarkdownBlock>
+          Deploy a variety of interfaces and services (SPARQL, HTTP OpenAPI, Web UI) to access the integrated data.
         </MarkdownBlock>
         <MarkdownBlock>
           Run reproducible pipelines to transform and update your data faithfully.
         </MarkdownBlock>
         <MarkdownBlock>
-          Version your data and query your archives.
+          Version your data and query the archives.
         </MarkdownBlock>
       </div>
     );
@@ -115,7 +118,7 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'Like [Elsevier](https://www.w3.org/2001/sw/sweo/public/UseCases/Elsevier/), the [BBC](https://www.bbc.co.uk/ontologies), or [Uber](https://www.zdnet.com/article/ubers-graph-expert-bears-the-scars-of-billions-of-trips/), we are using the [Resource Description Framework](https://www.w3.org/RDF/) to describe data as expressive Knowledge Graphs.',
+            content: 'Like [Elsevier](https://www.w3.org/2001/sw/sweo/public/UseCases/Elsevier/), the [BBC](https://www.bbc.co.uk/ontologies), or [Uber](https://www.zdnet.com/article/ubers-graph-expert-bears-the-scars-of-billions-of-trips/), we are using the [Resource Description Framework](https://www.w3.org/RDF/) to describe data as an expressive Knowledge Graph.',
             image: `${baseUrl}img/rdf-icon-simple.png`,
             imageAlign: 'top',
             title: 'Built on standard',
