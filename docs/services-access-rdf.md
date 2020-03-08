@@ -80,6 +80,12 @@ Deploy a Jupyter notebook over your RDF knowledge graph. The proposed deployment
 
 ```shell
 d2s start notebook
+
+docker run --rm -it -p 8888:8888 \
+  -v $(pwd)/workspace/notebooks:/notebooks \
+  -e PASSWORD="<your_secret>" \
+  -e GIT_URL="https://github.com/vemonet/translator-sparql-notebook" \
+  umids/jupyterlab:latest
 ```
 
 > Access on http://localhost:8888
