@@ -26,8 +26,8 @@ See more exhaustive lists for [Graph databases](/docs/services-graph-databases),
 * [Blazegraph](/docs/services-graph-databases#blazegraph)
 * [AllegroGraph](/docs/services-graph-databases#allegrograph)
 * [AnzoGraph](/docs/services-graph-databases#anzograph)
-* [Linked Data Fragments server](/docs/services-graph-databases#linked-data-fragments-server)
-* [Neo4j](/docs/services-graph-databases#neo4j)
+* [Linked Data Fragments server](/docs/services-graph-databases#linked-data-fragments-server): store and query compressed HDT files
+* [Neo4j](/docs/services-graph-databases#neo4j): property graph database
 
 🖥️ Interfaces
 
@@ -38,8 +38,8 @@ See more exhaustive lists for [Graph databases](/docs/services-graph-databases),
 
 🗃️ Utilities
 
-* [Apache Drill](/docs/services-rdf-utilities#apache-drill)
-* [Postgres](/docs/guide-postgres)
+* [Apache Drill](/docs/services-rdf-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL 
+* [Postgres](/docs/guide-postgres): popular OpenSource SQL database
 
 ## Start demo 
 
