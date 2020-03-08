@@ -133,6 +133,44 @@ docker run -it -v /data/d2s-workspace:data vemonet/json2xml:latest -i /data/test
 
 > Shared on your machine at `/data/d2s-workspace`
 
+## RML
+
+[![RMLMapper](https://img.shields.io/github/stars/RMLio/rmlmapper-java?label=GitHub&style=social)](https://github.com/RMLio/rmlmapper-java)
+
+Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF. The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of RML in development. See the [documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy it using Docker.
+
+Start the required services:
+
+```shell
+d2s start rmljob rmltask
+```
+
+* Go to http://localhost:8078
+
+* Download the [latest release of the rmlmapper.jar](https://github.com/RMLio/rmlmapper-java/releases).
+
+* `Submit New Job`
+
+  * Click `+ Add New` in the upper left corner. Select the [rmlmapper.jar](https://github.com/RMLio/rmlmapper-java/releases) you want to deploy
+
+  * Provide command line arguments for the RMLMapper
+
+    ```shell
+    -m /mnt/data/mapping.ttl -o /mnt/data/output.nt
+    ```
+
+> **TODO**: facing issue with log conflicts when running the `rmlmapper.jar`
+>
+> ```
+> 2020-02-19 21:18:44,240 ERROR be.ugent.rml.cli.Main                                         - org.slf4j.impl.Log4jLoggerAdapter cannot be cast to ch.qos.logback.classic.Logger
+> java.lang.ClassCastException: org.slf4j.impl.Log4jLoggerAdapter 
+> 	cannot be cast to ch.qos.logback.classic.Logger
+> ```
+>
+> See [StackOverflow related issue](https://stackoverflow.com/questions/31433246/classcastexception-org-slf4j-impl-log4jloggeradapter-cannot-be-cast-to-ch-qos-l).
+
+> **TODO**: [improve deployment](https://ci.apache.org/projects/flink/flink-docs-release-1.9/ops/cli.html) to add `rmlmapper.jar` to Apache Flink automatically.
+
 ---
 
 ## PyShEx
