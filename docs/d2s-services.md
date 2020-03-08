@@ -31,10 +31,10 @@ See more exhaustive lists for [Graph databases](/docs/services-graph-databases),
 
 🖥️ Interfaces
 
-* [into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser
-* [RESTful-like HTTP OpenAPI](/docs/services-interfaces#d2s-api) to query RDF triplestores
-* [YASGUI](/docs/services-webui#yasgui)
-* [Comunica widget](/docs/services-webui#comunica-widget)
+* [Into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser
+* [HTTP OpenAPI](/docs/services-interfaces#d2s-api): HTTP API with Swagger UI to query RDF triplestores
+* [YASGUI](/docs/services-webui#yasgui): SPARQL query editor
+* [Comunica widget](/docs/services-webui#comunica-widget): query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
 
 🗃️ Utilities
 
@@ -56,6 +56,20 @@ d2s start demo
 
 > You need to **activate CORS request** to allow communication between the into-the-graph browser and the **Blazegraph** or **Virtuoso triplestore** on your browser. An add-on can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
 
+### Use a deployment config
+
+Services can be started with a specific deployment config. This enables to define variable specific to a deployment in a complementary `docker-compose.my_deployment.yaml`, such as the virtual host URL or a different image tag.
+
+See the [demo](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.demo.yaml) or [trek](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.trek.yaml) deployment config as examples.
+
+Start services with a deployment config:
+
+```shell
+d2s start graphdb virtuoso drill api -d trek
+```
+
+> Feel free to define a new deployment config if your services requires different parameters than the one defined in the main [docker-compose.yaml](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yaml)
+
 ## Manage services
 
 ### Show running services
@@ -73,7 +87,7 @@ d2s stop --all
 ### Stop specific services
 
 ```shell
-d2s stop browse-local-virtuoso browse-local-graphdb
+d2s stop virtuoso api
 ```
 
 ### Clear Virtuoso triplestore
