@@ -121,7 +121,7 @@ class Index extends React.Component {
             content: 'Like [Elsevier](https://www.w3.org/2001/sw/sweo/public/UseCases/Elsevier/), the [BBC](https://www.bbc.co.uk/ontologies), or [Uber](https://www.zdnet.com/article/ubers-graph-expert-bears-the-scars-of-billions-of-trips/), we are using the [Resource Description Framework](https://www.w3.org/RDF/) to describe data as an expressive Knowledge Graph.',
             image: `${baseUrl}img/rdf-icon-simple.png`,
             imageAlign: 'top',
-            title: 'Built on standard',
+            title: 'Built on standards',
           },
           {
             content: 'Each module run as a [Docker](https://www.docker.com/) container, with support for [Kubernetes](https://kubernetes.io/) coming soon.',

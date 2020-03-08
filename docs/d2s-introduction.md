@@ -4,42 +4,38 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-Integrating data has never been effortless, this framework aims to make it easier by bringing together commonly accepted standards and modern scalable technologies.
+Integrating and querying heterogeneous data sources has never been effortless, the `d2s` CLI and this documentation aims to provide a framework and comprehensive documentation to help deploying a service or run a tool within a workflow.
 
-Here is described everything you will need to do, in practice, to build a Knowledge Graph out of your data.
+We will describe here everything you need to do to build a RDF Knowledge Graph out of your structured data and deploy various interfaces and services over the integrated data.
 
-We provide a [GitHub template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to run example workflows and start building your own pipelines.
+We provide a [GitHub template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to run example workflows and start building your own pipelines. Feel free to create a new GitHub repository from this template to start your own Knowledge Graph project.
 
 ---
 
-## Designed to build scalable Knowledge Graphs
+## Build a RDF Knowledge Graph
 
-### The Data2Services philosophy
+Run and define [CWL workflows](https://www.commonwl.org/) to orchestrate the execution of multiple steps (Docker containers) to integrate heterogeneous structured data sources in a RDF Knowledge Graph.
 
-One task, one container, few parameters (e.g. input file path, SPARQL endpoint, credentials, mapping file path)
+Data2Services offers handy workflows to convert large amount of structured data, such as relational databases, tabular files or XML files, to RDF Knowledge Graphs. Converting data with Data2Services relies on 3 steps:
 
-- **Pull** or build the Docker images.
-- **Start required services** (e.g. [Apache Drill](https://github.com/amalic/apache-drill) and [GraphDB](https://github.com/MaastrichtU-IDS/graphdb)).
-- **Execute the Docker modules** you want, providing the right parameters.
-
-Modules can easily be integrated to most workflow engines. 
-
-We support and provide examples for workflows described with [CWL](https://www.commonwl.org/) (for Linux/MacOS) and [Argo](https://argoproj.github.io/argo/) (for [Kubernetes](https://kubernetes.io/) cluster).
-
-### Convert structured data to a target knowledge graph
-
-Data2Services offers handy tools to **convert large amount of structured data**, such as relational databases, tabular files or XML files, **to RDF Knowledge Graphs**. 
-
-Converting data with Data2Services relies on 3 steps:
-
-* A **generic RDF** is automatically generated from the input data structure.
+* A **generic RDF** is automatically **generated** from the input data structure.
 * [SPARQL](https://www.w3.org/TR/sparql11-query/) queries are designed by the user to **map** the generic RDF **to a target model**. 
 * Extra modules can be added to the workflow to perform operations SPARQL doesn't natively support 
   * E.g. splitting statements, resolving the preferred URI for an entity.
 
-The [Docker](https://docs.docker.com/install/) modules required for the transformation are run in a workflow using a workflow orchestration tool. We provide support for [Argo](https://argoproj.github.io/argo/) and [CWL](https://www.commonwl.org/) workflows. This makes the transformation easily reproducible, and enables you to run the transformation on new data without effort.
-
 It is strongly **recommended to use a POSIX system** (Linux, MacOS) if you consider running workflows on your laptop, since most workflow orchestration tools do not support Windows. Additional documentation for Windows can be found [here](/docs/guide-windows).
+
+## Deploy services
+
+Once your data has been integrated in a RDF Knowledge Graph you might want to deploy interfaces to access your data or use a difference triplestore.
+
+Data2Services aims to provide an exhaustive documentation to run and deploy RDF-related services and tools using Docker. The `d2s` CLI uses `docker-compose` to start various services
+
+🔗 Graph databases: [Ontotext GraphDB](/docs/services-graph-databases#graphdb), [Virtuoso](/docs/services-graph-databases#virtuoso), [Blazegraph](/docs/services-graph-databases#blazegraph), [AllegroGraph](/docs/services-graph-databases#allegrograph), [AnzoGraph](/docs/services-graph-databases#anzograph), [Linked Data Fragments server](/docs/services-graph-databases#linked-data-fragments-server), [Neo4j](/docs/services-graph-databases#neo4j)
+
+🖥️ Interfaces: [Into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser, [HTTP OpenAPI](/docs/services-interfaces#d2s-api) to query RDF triplestores, [YASGUI](/docs/services-webui#yasgui) SPARQL query editor, [Comunica widget](/docs/services-webui#comunica-widget)
+
+🗃️ Utilities: [Apache Drill](/docs/services-utilities#apache-drill), [Postgres](/docs/guide-postgres)
 
 ---
 
@@ -54,25 +50,25 @@ root-directory
 ├── README.md
 ├── d2s-cwl-workflows (submodule)	# CWL workflows & docker-compose files (required)
 ├── d2s-argo-workflows (submodule)	# Optional Kubernetes workflows (experimental)
-├── datasets
-│   └── drugbank
+├── datasets		# Folders of the different dataset integrated in the KG 
+│   └── drugbank		# Folder for files to convert DrugBanl
 │       ├── config.yml				# The workflow config file
 │       ├── download
-│       │   └── download.sh			# Download script goes here
-│       ├── mapping					# SPARQL mapping queries goes here 
+│       │   └── download.sh			# Script to download input files
+│       ├── mapping					# SPARQL mapping queries to build the KG 
 │       │   ├── drugbank-drugbank_id.rq
 │       │   └── drugbank-snp_effects.rq
-│       └── metadata				# SPARQL metadata queries goes here 
+│       └── metadata				# SPARQL queries to insert metadata about the dataset 
 │           ├── metadata-drugbank-summary.rq
 │           ├── metadata-drugbank-1.rq
 │           └── metadata-drugbank-2.rq
-├── support
-│   ├── cwl-custom-workflows
-│   └── cwl-custom-steps
-└── workspace
-    ├── input						# Downloaded file to process
-    ├── output						# Every file generated by the workflow
-    ├── virtuoso					# Folders used by the triplestores
+└── workspace		# Contains all files required to run the KG and services
+    ├── input				# Downloaded file to process
+    ├── output				# Every file generated by the workflow
+    ├── workflow-history	# History of the workflows run logs
+    ├── download			# Nquads and RDF file dumps of the KG graphs
+    ├── virtuoso			# Folders used by the triplestores
+    ├── blazegraph
     ├── graphdb
     └── graphdb-import
 ```
@@ -90,9 +86,15 @@ The Data2Services project uses multiples Git repositories:
 
 ---
 
-## Choose a data model
+## Build a RDF Knowledge Graph with Data2Services
 
-**Choose** or build **a common data model** ([ontology](https://www.w3.org/standards/semanticweb/ontology)) to represent your data *(10' to 10 weeks)*
+The following documentation explain the logic and mechanisms behind Data2Services.
+
+Fast forward to the [d2s installation](/docs/d2s-installation) if you want a hands-on discovery of `d2s`.
+
+### Choose a data model
+
+**Choose** or build **a common data model** ([ontology](https://www.w3.org/standards/semanticweb/ontology)) to represent your data.
 
 * Try to reuse existing ontologies and concepts as much as possible.
 * Combine concepts from different ontologies, or define new ones.
@@ -101,13 +103,13 @@ The Data2Services project uses multiples Git repositories:
 
 > You can use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
 
-> This task only needs to be **done once**, when starting to project. To define the data model the integrated datasets will comply to.
+This task only needs to be **done once**, when starting to project. To define the data model the integrated datasets will comply to.
 
 ---
 
-## Write the download script
+### Write the download script
 
-Setup the source data to **download using Bash scripts** via [d2s-bash-exec](https://github.com/MaastrichtU-IDS/d2s-bash-exec) *(~10')*
+Setup the source data to **download using Bash scripts**
 
 > Most of the time, if the data is properly distributed, it should consist in a simple `wget -N` 
 
@@ -115,7 +117,7 @@ Setup the source data to **download using Bash scripts** via [d2s-bash-exec](htt
 
 ---
 
-## Automatically convert source data to generic RDF
+### Automatically convert source data to generic RDF
 
 Run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML) (tabular files, RDB) to **Automatically convert** source data to **generic RDF** *(~10')*
 
@@ -123,9 +125,9 @@ Run [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) or [AutoR2RML](https:/
 
 ---
 
-## Define the dataset metadata
+### Define the dataset metadata
 
-Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/) *(~10')*
+Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/) 
 
 * [Summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/metadata/metadata-drugbank-0-summary.rq) need to be defined once for each dataset *(~10 fields to fill)*
 * [Distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/metadata/metadata-drugbank-1.rq) need to be defined for each new version *(~6 fields to fill)*
@@ -136,11 +138,9 @@ Define the dataset [**HCLS metadata**](https://www.w3.org/TR/hcls-dataset/) *(~1
 
 ---
 
-## Define the mappings
+### Define the mappings
 
 Define [SPARQL](https://www.w3.org/TR/sparql11-query/) mapping queries to **transform the generic RDF to the target data model** 
-
-*(~20' for a tabular file, can be hours for a complex XML file)*
 
 * Start from the previously generated templates if you don't have mappings for this kind of data.
 * See examples to map [tabular files](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/mapping) or [XML files](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank/mapping).
@@ -152,7 +152,7 @@ Define [SPARQL](https://www.w3.org/TR/sparql11-query/) mapping queries to **tran
 
 ---
 
-## Run the workflow
+### Run the workflow
 
 Now that the mappings have been designed you are almost done.
 
