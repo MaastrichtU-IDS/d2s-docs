@@ -3,51 +3,58 @@ id: d2s-services
 title: Start services
 ---
 
+Run services such as triplestores, to store your RDF knowledge graph, interfaces or web UI to access the triplestore data. A specific deployment config can be passed using the `-d` flag.
 
-Run services such as triplestores, to store your RDF knowledge graph, interfaces or web UI to access the triplestore data:
-
-* 🔗 Triplestores: [Ontotext GraphDB](/docs/services-triplestores#graphdb), [Virtuoso](/docs/services-triplestores#virtuoso), [Blazegraph](/docs/services-triplestores#blazegraph), [AllegroGraph](/docs/services-triplestores#allegrograph), [AnzoGraph](/docs/services-triplestores#anzograph)
-* 🗃️ Data access: [Apache Drill](/docs/services-rdf-utilities#apache-drill), [Postgres](/docs/guide-postgres), [Linked Data Fragments server](/docs/services-triplestores#linked-data-fragments-server)
-* 🖥️ User interfaces: [into-the-graph SPARQL browser](/docs/services-webui#into-the-graph), [YASGUI](/docs/services-webui#yasgui), [comunica](/docs/services-webui#comunica-widget), [RESTful-like HTTP OpenAPI](/docs/services-interfaces#d2s-api)
+```shell
+d2s start <service_name> -d <optional_deployment_config>
+```
 
 > Volumes of all containers started by `d2s` are shared in the `workspace/` folder.
 
-> `d2s` uses `docker-compose` to run the different servives 🐳
+> `d2s` uses `docker-compose` to run the different services 🐳
 
-## Start services
+In this documentation we will use a set of services to build the knowledge graph and access it using various interfaces.
 
-### Start common services
+## List of services
 
-Start the services required to run data transformation workflows:
+See more exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) or [RDF utilities](/docs/services-rdf-utilities).
+
+🔗 Graph databases
+
+* [Ontotext GraphDB](/docs/services-graph-databases#graphdb)
+* [Virtuoso](/docs/services-graph-databases#virtuoso)
+* [Blazegraph](/docs/services-graph-databases#blazegraph)
+* [AllegroGraph](/docs/services-graph-databases#allegrograph)
+* [AnzoGraph](/docs/services-graph-databases#anzograph)
+* [Linked Data Fragments server](/docs/services-graph-databases#linked-data-fragments-server)
+* [Neo4j](/docs/services-graph-databases#neo4j)
+
+🖥️ Interfaces
+
+* [into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser
+* [RESTful-like HTTP OpenAPI](/docs/services-interfaces#d2s-api) to query RDF triplestores
+* [YASGUI](/docs/services-webui#yasgui)
+* [Comunica widget](/docs/services-webui#comunica-widget)
+
+🗃️ Utilities
+
+* [Apache Drill](/docs/services-rdf-utilities#apache-drill)
+* [Postgres](/docs/guide-postgres)
+
+## Start demo 
+
+Start services required to run data transformation demonstration workflows: Blazegraph triplestore, into-the-graph browser, Open API and Virtuoso as temporary triplestore
 
 ```shell
-d2s start virtuoso graphdb api browse-local-graphdb drill filebrowser
+d2s start demo
 ```
 
-* Access the linked data browser for GraphDB at http://localhost:7201
-* Access GraphDB at http://localhost:7200
-* Access Virtuoso at http://localhost:8890
+* Access the into-the-graph browser for Blazegraph at http://localhost:8079
 * Access the HTTP Swagger API at http://localhost:8080
-* Access the filebrowser to download RDF dumps at http://localhost:8081 📂 
-
-> You might face issues when processing large CSV or TSV file, see [this documentation](https://d2s.semanticscience.org/docs/guide-preprocessing#split-big-files) to deal with big files.
-
-### Start more services
-
-```shell
-d2s start postgres blazegraph anzograph allegrograph comunica browse-local-virtuoso
-```
-
-* Access the linked data browser for Virtuoso at http://localhost:8891
-* Access the linked data browser for Blazegraph at http://localhost:8083
 * Access Blazegraph at http://localhost:8082
-* Access AllegroGraph at http://localhost:10035
-* Access AnzoGraph at http://localhost:8086
-* Access Comunica at http://localhost:8084
+* Access the temporary Virtuoso at http://localhost:8890
 
-> See [Postgres guide](/docs/guide-postgres) page for more details.
-
-> You need to **activate CORS request** to allow communication between the linked data browser and the **Virtuoso triplestore** on your browser. An add-on can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
+> You need to **activate CORS request** to allow communication between the into-the-graph browser and the **Blazegraph** or **Virtuoso triplestore** on your browser. An add-on can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
 
 ## Manage services
 

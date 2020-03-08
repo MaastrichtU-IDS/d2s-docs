@@ -7,9 +7,7 @@ title: Initialize workspace
 
 Ideally you should **create a new repository from the template [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository**, and provide this repository URL when asked by `d2s init`.
 
-In this example I will directly use the default [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository.
-
-> All `d2s` commands are designed to be run from this directory.
+In this example I will directly use the default [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository, feel free to do the same to start.
 
 For licensing reason the GraphDB triplestore free edition needs to be [downloaded manually](https://ontotext.com/products/graphdb/ ). Download the `.zip` standalone distribution version `9.1.1` before `d2s init`
 
@@ -22,6 +20,8 @@ d2s init my-project-folder-name
 > Follow the instructions to initialize your project.
 
 > Your project settings are stored in `.d2sconfig`
+
+> All `d2s` commands are designed to be run from this directory.
 
 ---
 

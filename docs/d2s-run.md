@@ -21,7 +21,9 @@ d2s download drugbank
 
 ### Convert CSV/TSV
 
-Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure. Example converting [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
+Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure. 
+
+We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s download cohd
@@ -32,13 +34,17 @@ d2s run csv-virtuoso.cwl cohd
 
 By default the workflow runs detached from your terminal, so you can close the Windows or leave the SSH sessions.
 
+> You might face issues when processing large CSV or TSV file, see [this documentation](https://d2s.semanticscience.org/docs/guide-preprocessing#split-big-files) to deal with big files.
+
 ---
 
 ### With property split
 
 > Not tested at the moment. Might need fix.
 
-Convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements). Example converting the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
+Convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements). 
+
+We provide a example converting a sample of the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s download eggnog
@@ -49,7 +55,9 @@ d2s run split-csv-virtuoso.cwl eggnog
 
 ### Convert XML
 
-Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure. Example converting [DrugBank 💊️](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure. 
+
+We provide a example converting a sample of [DrugBank 💊️](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
 d2s download drugbank
@@ -60,7 +68,7 @@ d2s run xml-virtuoso.cwl drugbank
 
 ---
 
-## Check your workflows logs
+## Check the workflows logs
 
 The workflow logs are stored in `workspace/workflow-history`.
 

@@ -101,11 +101,11 @@ http://localhost:8889/bigdata/dataloader
 
 > UID and Group ID needs to be set in order to have the right permission to bulk load a file (example given for Ubuntu). And `RWStore.properties` can be rewritten, see [example](https://github.com/lyrasis/docker-blazegraph/blob/master/data/RWStore.properties). 
 
-> Access UI at http://localhost:8882/bigdata
+> Access UI at http://localhost:8082/bigdata
 
 > SPARQL endpoint at http://localhost:8080/bigdata/sparql (original port)
 
-To clear the graph go to the [update tab](http://localhost:8889/bigdata/#update) and enter `clear all`
+To clear the graph go to the [update tab](http://localhost:8082/bigdata/#update) and enter `clear all`
 
 ---
 
