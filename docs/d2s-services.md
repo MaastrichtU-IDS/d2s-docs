@@ -7,8 +7,8 @@ title: Start services
 Run services such as triplestores, to store your RDF knowledge graph, interfaces or web UI to access the triplestore data:
 
 * 🔗 Triplestores: [Ontotext GraphDB](/docs/services-triplestores#graphdb), [Virtuoso](/docs/services-triplestores#virtuoso), [Blazegraph](/docs/services-triplestores#blazegraph), [AllegroGraph](/docs/services-triplestores#allegrograph), [AnzoGraph](/docs/services-triplestores#anzograph)
-* 🗃️ Data access: [Apache Drill](/docs/services-convert#apache-drill), [Postgres](/docs/guide-postgres), [Linked Data Fragments server](/docs/services-triplestores#linked-data-fragments-server)
-* 🖥️ User interfaces: [into-the-graph SPARQL browser](/docs/services-webui#into-the-graph), [YASGUI](/docs/services-webui#yasgui), [comunica](/docs/services-webui#comunica-widget), [RESTful-like HTTP OpenAPI](/docs/services-access-rdf#d2s-api)
+* 🗃️ Data access: [Apache Drill](/docs/services-rdf-utilities#apache-drill), [Postgres](/docs/guide-postgres), [Linked Data Fragments server](/docs/services-triplestores#linked-data-fragments-server)
+* 🖥️ User interfaces: [into-the-graph SPARQL browser](/docs/services-webui#into-the-graph), [YASGUI](/docs/services-webui#yasgui), [comunica](/docs/services-webui#comunica-widget), [RESTful-like HTTP OpenAPI](/docs/services-interfaces#d2s-api)
 
 > Volumes of all containers started by `d2s` are shared in the `workspace/` folder.
 

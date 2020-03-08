@@ -1,6 +1,6 @@
 ---
-id: services-triplestores
-title: Triplestores
+id: services-graph-databases
+title: Graph databases
 ---
 
 ## Ontotext GraphDB
@@ -221,7 +221,7 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/_/neo4j)](https://hub.docker.com/r/_/neo4j)
 
-Technically not a triplestore, [Neo4j](https://neo4j.com/) is a property graph database, it uses [Cypher](https://neo4j.com/docs/cypher-manual/current/) as query language. Available on [DockerHub](https://hub.docker.com/_/neo4j).
+Not supporting RDF, [Neo4j](https://neo4j.com/) is a property graph database. It uses [Cypher](https://neo4j.com/docs/cypher-manual/current/) as query language.
 
 ```shell
 docker run -p 7474:7474 -p 7687:7687 -v /data/d2s-workspace:/data neo4j

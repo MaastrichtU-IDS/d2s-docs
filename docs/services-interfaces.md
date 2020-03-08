@@ -1,9 +1,50 @@
 ---
-id: services-webui
-title: RDF Web UI
+id: services-interfaces
+title: Interfaces
 ---
 
 Web UI to browse a triplestore through its SPARQL endpoint: resolve URI, SPARQL query editor.
+
+## into-the-graph
+
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
+
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs ✔️
+
+Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
+
+```shell
+d2s start into-the-graph browse-local-virtuoso browse-local-graphdb
+
+docker run --rm -it -p 8082:80 umids/into-the-graph:latest
+```
+
+> Access on http://localhost:8082
+
+> The SPARQL endpoint URL and other parameters can be changed before the build in [settings.json](https://github.com/MaastrichtU-IDS/into-the-graph/blob/master/settings.json). See the [README](https://github.com/MaastrichtU-IDS/into-the-graph#do-a-local-build) for more details.
+
+---
+
+## d2s-api
+
+[![OpenAPI](/img/openapi-logo.png)](https://www.openapis.org/)
+
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-api?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-api)
+
+[Web services](https://github.com/MaastrichtU-IDS/d2s-api) described following the [OpenAPI 3.0](http://spec.openapis.org/oas/v3.0.1) specifications. The generated services enable the user to query a [BioLink-compliant](https://biolink.github.io/biolink-model/) RDF knowledge graph using HTTP request following the [Reasoner API Specifications](https://github.com/NCATS-Tangerine/NCATS-ReasonerStdAPI/tree/master/API). 
+
+```shell
+d2s start api
+
+docker run -it --rm -p 8080:8080 \
+  --net d2s-cwl-workflows_network \
+  -e ENDPOINT="http://graphdb:7200/repositories/test" \
+  umids/d2s-api
+```
+
+> Access on http://localhost:8080
+
+---
 
 ## YASGUI
 
@@ -23,26 +64,6 @@ docker run -it --rm --name yasgui -p 8088:80 \
 > Require the SPARQL endpoint to [allow Cross-Origin Requests](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/).
 
 > Access at http://localhost:8088
-
----
-
-## into-the-graph
-
-[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
-
-[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs ✔️
-
-Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
-
-```shell
-d2s start into-the-graph browse-local-virtuoso browse-local-graphdb
-
-docker run --rm -it -p 8082:80 umids/into-the-graph:latest
-```
-
-> Access on http://localhost:8082
-
-> The SPARQL endpoint URL and other parameters can be changed before the build in [settings.json](https://github.com/MaastrichtU-IDS/into-the-graph/blob/master/settings.json). See the [README](https://github.com/MaastrichtU-IDS/into-the-graph#do-a-local-build) for more details.
 
 ---
 
