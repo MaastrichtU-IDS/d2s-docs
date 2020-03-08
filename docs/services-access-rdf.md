@@ -15,6 +15,8 @@ Only [Docker](https://docs.docker.com/install/) is required to run the modules. 
 
 ## d2s-sparql-operations
 
+[![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.org/)
+
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-sparql-operations?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-sparql-operations)
 
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/). Available on [DockerHub](https://hub.docker.com/r/umids/d2s-sparql-operations).
@@ -23,6 +25,12 @@ Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL
 docker run -it --rm umids/d2s-sparql-operations:latest -op select \
   -sp "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
   -ep "http://dbpedia.org/sparql"
+  
+# Provide the URL to a GitHub folder to execute all .rq files in it
+docker run -it --rm umids/d2s-sparql-operations \
+  -ep "http://graphdb.dumontierlab.com/repositories/public/statements" \
+  -op update -un my_username -pw my_password \
+  -f "https://github.com/MaastrichtU-IDS/d2s-sparql-operations/tree/master/src/main/resources/insert-examples"
 ```
 
 > See [documentation](https://maastrichtu-ids.github.io/d2s-sparql-operations/).
@@ -47,6 +55,8 @@ docker run -it comunica/actor-init-sparql \
 
 ## d2s-api
 
+[![OpenAPI](/img/openapi-logo.png)](https://www.openapis.org/)
+
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-api?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-api)
 
 [Web services](https://github.com/MaastrichtU-IDS/d2s-api) described following the [OpenAPI 3.0](http://spec.openapis.org/oas/v3.0.1) specifications. The generated services enable the user to query a [BioLink-compliant](https://biolink.github.io/biolink-model/) RDF knowledge graph using HTTP request following the [Reasoner API Specifications](https://github.com/NCATS-Tangerine/NCATS-ReasonerStdAPI/tree/master/API). 
@@ -61,3 +71,15 @@ docker run -it --rm -p 8080:8080 \
 ```
 
 > Access on http://localhost:8080
+
+---
+
+## Jupyter notebook
+
+Deploy a Jupyter notebook over your RDF knowledge graph. The proposed deployment comes with various libraries for data science and RDF pre-installed.
+
+```shell
+d2s start notebook
+```
+
+> Access on http://localhost:8888

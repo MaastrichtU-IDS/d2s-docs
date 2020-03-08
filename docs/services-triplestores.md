@@ -9,7 +9,7 @@ title: Triplestores
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/ontotext/graphdb)](https://hub.docker.com/r/ontotext/graphdb/)
 
-[Ontotext GraphDB](https://www.ontotext.com/) triplestore including a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html) and the possibility to deploy multiple repositories.
+[Ontotext GraphDB™](https://www.ontotext.com/) triplestore including a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html),[SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), powerful [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html)  to infer new triples and the possibility to deploy multiple repositories.
 
 [Download the zip file](https://www.ontotext.com/products/graphdb/) of GraphDB standalone free version, and place it in `submodules/graphdb` before building the image using [our Docker build 📥](https://github.com/MaastrichtU-IDS/graphdb/) (this step is prompted during `d2s init`).
 
@@ -25,9 +25,9 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 > Access at [http://localhost:7200/](http://localhost:7200/)
 
-> See [Ontotext GraphDB documentation](http://graphdb.ontotext.com/documentation/) for more details.
+> See [Ontotext GraphDB™ documentation](http://graphdb.ontotext.com/documentation/) for more details.
 
-> [Obtain a license 📜](https://www.ontotext.com/products/graphdb/graphdb-enterprise/) for more features such as performance improvement, easy deployment using the [official DockerHub image](https://hub.docker.com/r/ontotext/graphdb/) or distributed deployment on multiple nodes with Kubernetes.
+> [Obtain a license](https://www.ontotext.com/products/graphdb/graphdb-enterprise/) for more features such as performance improvement, easy deployment using the [official DockerHub image](https://hub.docker.com/r/ontotext/graphdb/) or distributed deployment on multiple nodes with Kubernetes.
 
 ---
 
