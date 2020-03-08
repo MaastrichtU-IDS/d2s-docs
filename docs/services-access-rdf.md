@@ -74,7 +74,7 @@ docker run -it --rm -p 8080:8080 \
 
 ---
 
-## Jupyter notebook
+## Jupyter notebooks
 
 Deploy a Jupyter notebook over your RDF knowledge graph. The proposed deployment comes with various libraries for data science and RDF pre-installed.
 

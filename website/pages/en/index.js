@@ -183,7 +183,7 @@ class Index extends React.Component {
             content:
               'Automatically deploy a variety of interfaces and services ([SPARQL](/docs/services-webui#yasgui), ' +
               '[GraphQL-LD](/docs/services-webui#comunica-widget), [OpenAPI](/docs/services-access-rdf#d2s-api), ' +
-              '[Web UI](/docs/services-webui#into-the-graph)) to access your data 🔭',
+              '[Web UI](/docs/services-webui#into-the-graph), [Jupyter Notebooks](/docs/services-access-rdf#jupyter-notebooks)) to access your data 🔭',
             image: `${baseUrl}img/linked-data-browser.png`,
             imageAlign: 'right',
             title: 'Deploy services',
