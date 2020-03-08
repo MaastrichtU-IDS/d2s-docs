@@ -37,7 +37,8 @@ In case increasing the `max_memory_per_node` parameter don't solve the issue, yo
 
 ```shell
 mkdir split
-split -l 12319980 paired_concept_counts_associations.tsv split/
+# Split in less than 1G files for COHD
+split -l 6150000 paired_concept_counts_associations.tsv split/
 count=1
 for file in split/*
 do
@@ -45,6 +46,8 @@ do
 	mv $file $count/paired_concept_counts_associations.tsv
 	count=$((count+1))
 done
+rmdir split
+# Add columns header for every file
 sed -i '1s/^/dataset_id\tconcept_id_1\tconcept_id_2\tconcept_count\tconcept_prevalence\tchi_square_t\tchi_square_p\texpected_count\tln_ratio\trel_freq_1\trel_freq_2\n/' */*.tsv
 # Remove the extra header line in the first split
 sed -i -e "1d" 1/paired_concept_counts_associations.tsv
