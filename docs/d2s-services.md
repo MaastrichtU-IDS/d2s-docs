@@ -17,7 +17,7 @@ In this documentation we will use a set of services to build the knowledge graph
 
 ## List of services
 
-See more exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) or [RDF utilities](/docs/services-rdf-utilities).
+See more exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) or [RDF utilities](/docs/services-utilities).
 
 🔗 Graph databases
 
@@ -38,7 +38,7 @@ See more exhaustive lists for [Graph databases](/docs/services-graph-databases),
 
 🗃️ Utilities
 
-* [Apache Drill](/docs/services-rdf-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL 
+* [Apache Drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL 
 * [Postgres](/docs/guide-postgres): popular OpenSource SQL database
 
 ## Start demo 

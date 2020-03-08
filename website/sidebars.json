@@ -7,7 +7,7 @@
         "type": "subcategory",
         "label": "Services",
         "ids": [
-          "services-rdf-utilities", "services-graph-databases", "services-interfaces"
+          "services-utilities", "services-graph-databases", "services-interfaces"
         ]
       } 
     ],

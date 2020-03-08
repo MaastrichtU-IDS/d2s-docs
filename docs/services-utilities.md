@@ -1,6 +1,6 @@
 ---
-id: services-rdf-utilities
-title: RDF utilities
+id: services-utilities
+title: Utilities
 ---
 
 We list here the services available for deployment within a Data2Services project.
