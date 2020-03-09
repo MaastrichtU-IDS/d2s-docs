@@ -121,6 +121,22 @@ docker run -dit --rm -p 8047:8047 -p 31011:31010 \
 
 ---
 
+## Postgres
+
+Popular SQL database.
+
+```shell
+d2s start postgres
+
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v $(pwd)/workspace/postgres:/data postgres
+```
+
+> Password is `pwd`
+
+> See the [Postgres guide](/docs/guide-postgres) for more details.
+
+---
+
 ## AutoR2RML
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/AutoR2RML?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/AutoR2RML)
@@ -279,3 +295,4 @@ docker run -it --rm -v $PWD:/data \
 ```shell
 docker run -p 8183:8183 bigcatum/bridgedb
 ```
+
