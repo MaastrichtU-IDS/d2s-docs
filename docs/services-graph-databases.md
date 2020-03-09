@@ -107,6 +107,8 @@ http://localhost:8889/bigdata/dataloader
 
 To clear the graph go to the [update tab](http://localhost:8082/bigdata/#update) and enter `clear all`
 
+Follow [those instructions](https://sourceforge.net/p/bigdata/discussion/676946/thread/bf76fb62/) to enable CORS on Blazegraph SPARQL endpoint.
+
 ---
 
 ## AllegroGraph
