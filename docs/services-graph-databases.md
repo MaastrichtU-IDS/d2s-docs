@@ -57,7 +57,7 @@ docker run --name virtuoso \
 
 > Admin username: `dba` 
 
-> See [Virtuoso documentation](/docs/guide-virtuoso) for more details.
+> CORS can be enabled following [those instructions](http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksCORsEnableSPARQLURLs). See the complete [Virtuoso documentation](/docs/guide-virtuoso) for more details.
 
 ---
 
