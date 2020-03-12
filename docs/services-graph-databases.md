@@ -59,6 +59,12 @@ docker run --name virtuoso \
 
 > CORS can be enabled following [those instructions](http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksCORsEnableSPARQLURLs). See the complete [Virtuoso documentation](/docs/guide-virtuoso) for more details.
 
+Clear the Virtuoso triplestore using this command:
+
+```shell
+docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
+```
+
 ---
 
 ## Blazegraph

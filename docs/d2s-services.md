@@ -90,14 +90,22 @@ d2s stop --all
 d2s stop virtuoso api
 ```
 
-### Clear Virtuoso triplestore
+### Show running workflows
 
-You can easily clear the Virtuoso triplestore using this command:
+You can get process information about running workflows, such as its process ID.
 
 ```shell
-docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
+d2s process-running
 ```
 
-[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
+### Stop running workflow
+
+Autocomplete will show only the PID of running workflows.
+
+```shell
+d2s process-stop <workflow_pid>
+```
+
+> If autocomplete doesn't work, retrieve the PID using `d2s process-running`
 
 
