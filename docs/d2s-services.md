@@ -43,18 +43,22 @@ See more exhaustive lists for [Graph databases](/docs/services-graph-databases),
 
 ## Start demo 
 
-Start services required to run data transformation demonstration workflows: Blazegraph triplestore, into-the-graph browser, Open API and Virtuoso as temporary triplestore
+Different solutions can used as final triplestore, here we will use [Ontotext GraphDB](/docs/services#ontotext-graphdb) as final triplestores for the Knowledge Graph. From our experience GraphDB is more stable and faster performing federated queries, and it offers a user-friendly administration. GraphDB [needs to be downloaded](https://www.ontotext.com/products/graphdb/graphdb-free/) for licensing reason, provide your address and you will receive an email with the URL to download the [GraphDB standalone zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) (`graphdb-free-9.1.1-dist.zip`). 
+
+> To **easily install GraphDB,** we recommend you to place it in your `home` folder before running `d2s init`, it is the default when the path to the GraphDB zip file is asked.
+
+Start services required to run data transformation demonstration workflows: GraphDB triplestore, into-the-graph browser, Open API and Virtuoso as temporary triplestore
 
 ```shell
 d2s start demo
 ```
 
-* Access the into-the-graph browser for Blazegraph at http://localhost:8079
+* Access the into-the-graph browser for GraphDB at http://localhost:8079
 * Access the HTTP Swagger API at http://localhost:8080
-* Access Blazegraph at http://localhost:8082
+* Access GraphDB at http://localhost:7200
 * Access the temporary Virtuoso at http://localhost:8890
 
-> You need to **activate CORS request** to allow communication between the into-the-graph browser and the **Blazegraph** or **Virtuoso triplestore** on your browser. An add-on can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
+> If you use  **Blazegraph** or **Virtuoso** as final triplestore, you will need to **activate CORS request** to allow communication between the into-the-graph browser and the triplestore on your browser. An add-on can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
 
 ### Use a deployment config
 
