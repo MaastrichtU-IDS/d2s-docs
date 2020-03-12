@@ -36,9 +36,10 @@ To process large CSV or TSV file, you might need to increase the `max_memory_per
 In case increasing the `max_memory_per_node` parameter don't solve the issue, you can split the file:
 
 ```shell
+rm -rf {1..90}
 mkdir split
 # Split in less than 1G files for COHD
-split -l 6150000 paired_concept_counts_associations.tsv split/
+split -l 3075000 paired_concept_counts_associations.tsv split/
 count=1
 for file in split/*
 do
@@ -51,6 +52,10 @@ rmdir split
 sed -i '1s/^/dataset_id\tconcept_id_1\tconcept_id_2\tconcept_count\tconcept_prevalence\tchi_square_t\tchi_square_p\texpected_count\tln_ratio\trel_freq_1\trel_freq_2\n/' */*.tsv
 # Remove the extra header line in the first split
 sed -i -e "1d" 1/paired_concept_counts_associations.tsv
+
+# Copy the splitted file in the workspace
+rm -rf /data/ddbiolink/workspace/input/cohd/{1..90}
+cp -r /data/translator/cohd/{1..90} /data/ddbiolink/workspace/input/cohd/
 ```
 
 > Their generated type is based on the filename, not its path. So if 
