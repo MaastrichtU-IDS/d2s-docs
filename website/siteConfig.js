@@ -75,9 +75,9 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/d2s-logo.svg',
+  headerIcon: 'img/d2s-logo.png',
   footerIcon: 'img/um_logo.svg',
-  favicon: 'img/d2s-logo.svg',
+  favicon: 'img/d2s-logo.png',
   // favicon: 'img/favicon.ico',
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
@@ -91,7 +91,6 @@ const siteConfig = {
   ],
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700',
-    'https://fonts.googleapis.com/css?family=Raleway',
     '/css/code-blocks-buttons.css'
   ],
 
