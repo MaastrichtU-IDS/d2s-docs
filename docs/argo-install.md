@@ -4,6 +4,13 @@ title: Argo installation
 sidebar_label: Argo installation
 ---
 
+## Work in progress
+
+Running services and workflows using Argo on Kubernetes/OpenShift is a work in progress and has not been integrated to the `d2s` tool 🔧
+
+Argo can be used to perform XML conversion. Apache Drill needs to be deployed on Kubernetes to process tabular files.
+
+---
 
 ## Install the OpenShift client
 
