@@ -9,9 +9,9 @@ title: Graph databases
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/ontotext/graphdb)](https://hub.docker.com/r/ontotext/graphdb/)
 
-[Ontotext GraphDB™](https://www.ontotext.com/) triplestore including a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), RDFS or OWL [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html)  to infer new triples and the possibility to deploy multiple repositories.
+[Ontotext GraphDB™](https://www.ontotext.com/) triplestore includes a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), RDFS/OWL [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html) to infer new triples and the possibility to deploy multiple repositories.
 
-[Download the zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) of GraphDB standalone free version, and place it in `d2s-cwl-workflows/support/graphdb` before building the image using `d2s update`(this step is also prompted during `d2s init`).
+[Download the zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) of GraphDB standalone free version `9.1.1`, and place it in `d2s-cwl-workflows/support/graphdb` before building the image using `d2s update`(this step is also prompted during `d2s init`).
 
 ```shell
 d2s start graphdb

@@ -4,19 +4,19 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-Integrating and querying heterogeneous data sources has never been effortless, the `d2s` CLI and this documentation aims to provide a framework and comprehensive documentation to help deploying a service or run a tool within a workflow.
+Integrating and querying heterogeneous data sources has never been effortless, the `d2s` CLI and this documentation aims to provide a framework and comprehensive documentation to build a RDF Knowledge Graph out of your structured data and deploy various interfaces and services over the integrated data.
 
-We will describe here everything you need to do to build a RDF Knowledge Graph out of your structured data and deploy various interfaces and services over the integrated data.
+We provide a [GitHub template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to run example workflows to  start building your a RDF Knowledge Graph from structured data. 
 
-We provide a [GitHub template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to run example workflows and start building your own pipelines. Feel free to create a new GitHub repository from this template to start your own Knowledge Graph project.
+Feel free to use directly the `d2s-transform-template` repository or create a new GitHub repository from this template to start your own project.
 
 ---
 
 ## Build a RDF Knowledge Graph
 
-Run and define [CWL workflows](https://www.commonwl.org/) to orchestrate the execution of multiple steps (Docker containers) to integrate heterogeneous structured data sources in a RDF Knowledge Graph.
+We use [CWL workflows](https://www.commonwl.org/) to orchestrate the execution of multiple steps (Docker containers) to integrate heterogeneous structured data sources in a RDF Knowledge Graph.
 
-Data2Services offers handy workflows to convert large amount of structured data, such as relational databases, tabular files or XML files, to RDF Knowledge Graphs. Converting data with Data2Services relies on 3 steps:
+Data2Services offers pre-defined workflows to convert large amount of structured data, such as relational databases, tabular files or XML files, to RDF Knowledge Graphs. Converting data with Data2Services relies on 3 steps:
 
 * A **generic RDF** is automatically **generated** from the input data structure.
 * [SPARQL](https://www.w3.org/TR/sparql11-query/) queries are designed by the user to **map** the generic RDF **to a target model**. 
@@ -80,9 +80,10 @@ root-directory
 The Data2Services project uses multiples Git repositories:
 
 * [d2s-cli](https://github.com/MaastrichtU-IDS/d2s-cli): A Command Line Interface to orchestrate the integration of heterogenous  data and the deployment of services consuming the integrated data (Python).
+  * It will clone and use a [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository to store your project services and workflows settings.
 * [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) as submodule.
   * [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) (imported as submodule in [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template)): CWL workflows to transform structured data to a target RDF model.
-* [d2s-documentation](https://github.com/MaastrichtU-IDS/d2s-documentation): this documentation website.
+* [d2s-documentation](https://github.com/MaastrichtU-IDS/d2s-documentation): source code of this documentation.
 
 ---
 
@@ -111,9 +112,9 @@ This task only needs to be **done once**, when starting to project. To define th
 
 Setup the source data to **download using Bash scripts**
 
-> Most of the time, if the data is properly distributed, it should consist in a simple `wget -N` 
+> If the data is properly distributed, it should consist in a simple `wget -N` to download the files.
 
-> We provide [a template](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh) for common operations, such as extracting URLs from an HTML file, recursive download, uncompressing files, adding missing columns headers to tabular files...
+> We provide [a template](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh) for common download operations using Bash, such as extracting URLs from an HTML file, recursive download, uncompressing files, adding missing columns headers to tabular files...
 
 ---
 
@@ -152,11 +153,15 @@ Define [SPARQL](https://www.w3.org/TR/sparql11-query/) mapping queries to **tran
 
 ---
 
+### Define the workflow config file
+
+Define the [workflow YAML configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/config.yml): triplestore URL and credentials, path to mapping files, path to download script, URI of the final graph.
+
+---
+
 ### Run the workflow
 
-Now that the mappings have been designed you are almost done.
+Now that the mappings have been designed you can run the workflow:
 
-* **Start your triplestore** (database for RDF Knowledge Graph), if it is not already running
-* **Run the transformation**, using a workflow orchestration tool (such as [CWL](https://www.commonwl.org/) or [Argo](https://argoproj.github.io/argo/)).
-
-> Define the **workflow YAML configuration file**: triplestore URL and credentials, path to mapping files, path to download script, URI of the final graph *(~10')*
+* **Start your triplestore** and services (database for RDF Knowledge Graph), if it is not already running
+* **Run the workflow**, using a workflow orchestration tool (such as [CWL](https://www.commonwl.org/) or [Argo](https://argoproj.github.io/argo/)).

@@ -31,15 +31,18 @@ sed -i '1s/^/column1|column2|column3\n/' *.psv
 
 ## Split big files
 
-To process large CSV or TSV file, you might need to increase the `max_memory_per_node` in Apache Drill options (accessible through the Drill web UI at http://localhost:8048/options) . The maximum value of this parameter is `8589934592` on our servers.
+To process large CSV or TSV file with Apache Drill, you might need to change some parameters in the [Drill web UI](http://localhost:8048/options) at http://localhost:8048/options:
 
-In case increasing the `max_memory_per_node` parameter don't solve the issue, you can split the file:
+*  Increase the `max_memory_per_node`. The maximum value of this parameter is `8589934592` on our servers.
+* Try increasing `planner.memory_limit` to `8589934592`
+
+In case changing the parameters doesn't solve the issue, you can try to split the file:
 
 ```shell
 rm -rf {1..90}
 mkdir split
 # Split in less than 1G files for COHD
-split -l 3075000 paired_concept_counts_associations.tsv split/
+split -l 6150000 paired_concept_counts_associations.tsv split/
 count=1
 for file in split/*
 do
