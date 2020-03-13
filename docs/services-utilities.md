@@ -231,7 +231,7 @@ d2s start rmljob rmltask
 
 * Download the [latest release of the RMLStreamer.jar](https://github.com/RMLio/RMLStreamer/releases).
 
-* Put your `rml-mappings.ttl` file in the input folder of your dataset (e.g. `datasets/input/cohd/rml-mappings.ttl`) 
+* Put the `rml-mappings.ttl` file in the input folder of your dataset (e.g. `datasets/input/cohd/rml-mappings.ttl`) 
 
   * Make sure the RMLStreamer can write to the `workspace/input` folder
 
@@ -239,7 +239,7 @@ d2s start rmljob rmltask
     chmod -R 777 workspace/input
     ```
 
-* `Submit New Job`
+* Go to `Submit New Job`
 
   * Click `+ Add New` in the upper left corner. Select the [RMLStreamer.jar](https://github.com/RMLio/RMLStreamer/releases) you want to deploy
 
