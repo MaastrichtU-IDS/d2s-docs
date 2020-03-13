@@ -129,6 +129,15 @@ pipx install cwlref-runner
 pipx ensurepath
 ```
 
+
+### Upgrade d2s version
+
+Upgrade [d2s](https://pypi.org/project/d2s/) to the latest release:
+
+```shell
+pipx upgrade d2s
+```
+
 ### Uninstall
 
 ```shell
@@ -150,14 +159,6 @@ pip uninstall pipx
 pip3 uninstall pipx
 python3.6 -m pip uninstall pipx
 python3.6 -m pip3 uninstall pipx
-```
-
-### Upgrade d2s version
-
-Upgrade [d2s](https://pypi.org/project/d2s/) to the latest release:
-
-```shell
-pipx install --upgrade d2s
 ```
 
 ---
