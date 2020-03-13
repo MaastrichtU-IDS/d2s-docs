@@ -138,8 +138,8 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-          <script id="asciicast-ssSYx23MhadfAnG8k7npwHhBf" height='300px' 
-            src="https://asciinema.org/a/ssSYx23MhadfAnG8k7npwHhBf.js" 
+          <script id="asciicast-Hd5C0Y281g3cBFHVjvveymY6r" height='300px' 
+            src="https://asciinema.org/a/Hd5C0Y281g3cBFHVjvveymY6r.js" 
             data-autoplay="true"  data-loop="1" data-speed="2.5"
             data-rows="25" async></script>
       </div>
