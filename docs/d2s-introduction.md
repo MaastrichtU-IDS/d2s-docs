@@ -6,9 +6,9 @@ sidebar_label: Introduction
 
 Integrating and querying heterogeneous data sources has never been effortless, the `d2s` CLI and this documentation aims to provide a framework and comprehensive documentation to build a RDF Knowledge Graph out of your structured data and deploy various interfaces and services over the integrated data.
 
-We provide a [GitHub template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to run example workflows to  start building your a RDF Knowledge Graph from structured data. 
+We provide a [GitHub template repository](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to run example workflows to  start building your RDF Knowledge Graph from structured data. 
 
-Feel free to use directly the `d2s-transform-template` repository or create a new GitHub repository from this template to start your own project.
+Feel free to use directly the `d2s-transform-template` repository or create a new GitHub repository [from the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to start your own project.
 
 ---
 
@@ -33,7 +33,7 @@ Data2Services aims to provide an exhaustive documentation to run and deploy RDF-
 
 🔗 Graph databases: [Ontotext GraphDB](/docs/services-graph-databases#graphdb), [Virtuoso](/docs/services-graph-databases#virtuoso), [Blazegraph](/docs/services-graph-databases#blazegraph), [AllegroGraph](/docs/services-graph-databases#allegrograph), [AnzoGraph](/docs/services-graph-databases#anzograph), [Linked Data Fragments server](/docs/services-graph-databases#linked-data-fragments-server), [Neo4j](/docs/services-graph-databases#neo4j)
 
-🖥️ Interfaces: [Into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser, [HTTP OpenAPI](/docs/services-interfaces#d2s-api) to query RDF triplestores, [YASGUI](/docs/services-webui#yasgui) SPARQL query editor, [Comunica widget](/docs/services-webui#comunica-widget)
+🖥️ Interfaces: [into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser, [HTTP OpenAPI](/docs/services-interfaces#d2s-api) to query RDF triplestores, [YASGUI](/docs/services-webui#yasgui) SPARQL query editor, [Comunica widget](/docs/services-webui#comunica-widget)
 
 🗃️ Utilities: [Apache Drill](/docs/services-utilities#apache-drill), [Postgres](/docs/guide-postgres)
 

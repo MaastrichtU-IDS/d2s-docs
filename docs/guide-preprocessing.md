@@ -43,6 +43,9 @@ rm -rf {1..90}
 mkdir split
 # Split in less than 1G files for COHD
 split -l 6150000 paired_concept_counts_associations.tsv split/
+# 3000000
+split -l 1000000 paired_concept_counts_associations.tsv split
+# 1000000 : 100M ...
 count=1
 for file in split/*
 do
@@ -61,7 +64,9 @@ rm -rf /data/ddbiolink/workspace/input/cohd/{1..90}
 cp -r /data/translator/cohd/{1..90} /data/ddbiolink/workspace/input/cohd/
 ```
 
-> Their generated type is based on the filename, not its path. So if 
+Processing large files on node2 can lead to generating an important amount of logs which is overloading the memory. Logs generated in `/var/lib/docker/overlay2`
+
+To clear the memory perform `docker system prune`
 
 Test Drill query:
 
