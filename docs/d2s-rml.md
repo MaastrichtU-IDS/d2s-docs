@@ -45,7 +45,7 @@ d2s rml cohd
 
 ## RML editor
 
-A [Matey Web UI editor](https://rml.io/yarrrml/matey/#edit) is available to conveniently write the RML mappings using a simplified language: [YARRRML](https://rml.io/yarrrml/). The mappings can then be tested in the browser on a sample of the file to transform.
+The [Matey Web UI editor](https://rml.io/yarrrml/matey/#edit) is available to conveniently write the RML mappings using the [YARRRML](https://rml.io/yarrrml/) simplified language. The mappings can then be tested in the browser on a sample of the file to transform.
 
 RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs/rml/).
 
