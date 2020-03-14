@@ -39,9 +39,9 @@ We provide an example converting a sample of [COHD](https://github.com/Maastrich
 d2s rml cohd
 ```
 
-> See running RML executions at http://localhost:8078
+> See running RML executions at http://localhost:8078/#/job/running
 
-> Output goes to `workspace/graphdb-import/rml-output-sample.nt`
+> Output goes to `workspace/graphdb-import/rml-cohd-output.nt`
 
 ## RML Specifications
 

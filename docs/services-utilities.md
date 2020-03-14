@@ -215,7 +215,9 @@ docker run -it -v /data/d2s-workspace:data vemonet/json2xml:latest -i /data/test
 
 > Shared on your machine at `/data/d2s-workspace`
 
-## RML Streamer
+---
+
+## RMLStreamer
 
 [![RMLMapper](https://img.shields.io/github/stars/RMLio/rmlmapper-java?label=GitHub&style=social)](https://github.com/RMLio/rmlmapper-java)
 
@@ -226,6 +228,16 @@ Start the required services:
 ```shell
 d2s start rmljob rmltask
 ```
+
+Run the RMLStreamer:
+
+```shell
+d2s rml cohd
+```
+
+> Output goes to `workspace/graphdb-import/rml-cohd-output.nt`
+
+The RML Streamer can also be used from the [Flink web UI](http://localhost:8078):
 
 * Download the [RMLStreamer.jar](https://github.com/vemonet/RMLStreamer/raw/fix-mainclass/target/RMLStreamer-1.2.2.jar).
 
@@ -238,14 +250,12 @@ d2s start rmljob rmltask
   * Provide command line arguments for the RMLMapper:
 
     ```shell
-    --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/output/rml-output.nt
-    
-    docker exec -d d2s-cwl-workflows_rmljob_1 /opt/flink/bin/flink run -p 8 /mnt/workspace/RMLStreamer.jar --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/output/rml-output.nt
+    --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/graphdb-import/rml-output.nt
     ```
     
     > See your job running in http://localhost:8078/#/job/running.
     >
-    > Output file in `workspace/output`
+    > Output file in `workspace/graphdb-import`
 
 * Complementary command to convert TSV to CSV to be parsed by RML:
 
@@ -253,16 +263,14 @@ d2s start rmljob rmltask
 sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.tsv > dataset.csv
 ```
 
-* Entry Class if needed: `io.rml.framework.Main`
+* If needed, Entry Class is `io.rml.framework.Main`
 
-> **TODO**: [improve deployment](https://ci.apache.org/projects/flink/flink-docs-release-1.9/ops/cli.html) to add `RMLStreamer.jar` to Apache Flink automatically.
-
->  See the [original documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy it using Docker.
+>  See the [original RMLStreamer documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy using Docker.
 
 > `workspace` and `datasets` folder are shared in `/mnt` in the RML containers. Make sure the RMLStreamer can write to the output folder
 >
 > ```shell
-> chmod -R 777 workspace/output
+> chmod -R 777 workspace/graphdb-import
 > ```
 
 ---
