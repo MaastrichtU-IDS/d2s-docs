@@ -37,8 +37,15 @@ cd my-project-folder-name
 
 ## Pull Docker images
 
-`d2s init` should pull and build all Docker images used by `d2s`, it can also be done manually.
+Docker images should be pulled when starting the services. You can pull and build all updated Docker images used by `d2s`:
 
 ```shell
 d2s update
 ```
+
+Update a single service:
+
+```shell
+d2s update <my_service>
+```
+
