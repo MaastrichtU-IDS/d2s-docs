@@ -43,6 +43,19 @@ d2s rml cohd
 
 > Output goes to `workspace/graphdb-import/rml-cohd-output.nt`
 
+## Compute HCLS metadata
+
+[HCLS descriptive metadata and statistics](https://www.w3.org/TR/hcls-dataset/) for datasets can easily be computed and inserted for the generated graph by running a CWL workflow:
+
+```shell
+d2s run compute-hcls-metadata.cwl cohd
+```
+
+* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
+* [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.
+
+> TODO: delete previous metadata before inserting a new one?
+
 ## RML editor
 
 [![](/img/yarrrml-logo.png)](https://rml.io/yarrrml/)
