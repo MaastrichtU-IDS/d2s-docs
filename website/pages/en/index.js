@@ -153,7 +153,7 @@ class Index extends React.Component {
               'The `d2s` Command Line Interface has been developed to make the deployment of Docker containers and execution of CWL workflows easy.<br/> '
               + 'Simply start a new project with <br/>`d2s init my-project`<br/> '
               + 'A Desktop UI might be developed in the future 🖥️',
-            image: `${baseUrl}img/d2s-architecture.png`,
+            image: `${baseUrl}img/d2s-simplified.png`,
             imageAlign: 'right',
             title: 'Use a simple client',
           },
@@ -167,7 +167,7 @@ class Index extends React.Component {
           {
             content:
               'Integrate various data sources to comply to a common data model (ontology) and build the Knowledge Graph that will power different interfaces and services 🔋',
-            image: `${baseUrl}img/data2services-broad_vision.png`,
+            image: `${baseUrl}img/d2s-architecture.png`,
             imageAlign: 'left',
             title: 'Integrate your data in a larger Knowledge Graph',
           },

@@ -6,7 +6,7 @@ sidebar_label: Introduction
 
 Integrating and querying heterogeneous data sources has never been effortless, the `d2s` CLI and this documentation aims to provide a framework and comprehensive documentation to build a RDF Knowledge Graph out of structured data and deploy various interfaces and services to access the integrated data.
 
-<img src="/img/data2services-broad_vision.png" alt="Data2Services infrastructure" style="max-width: 100%; max-height: 100%;" />
+<img src="/img/d2s-architecture.png" alt="Data2Services infrastructure" style="max-width: 100%; max-height: 100%;" />
 
 We provide [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template/), a GitHub template repository with example workflows to  start building your RDF Knowledge Graph from structured data. 
 
