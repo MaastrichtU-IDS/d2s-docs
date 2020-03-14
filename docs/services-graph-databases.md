@@ -233,9 +233,11 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 Not supporting RDF, [Neo4j](https://neo4j.com/) is a property graph database. It uses [Cypher](https://neo4j.com/docs/cypher-manual/current/) as query language.
 
 ```shell
-docker run -p 7474:7474 -p 7687:7687 -v /data/d2s-workspace:/data neo4j
+d2s start neo4j
+
+docker run -p 7474:7474 -p 7687:7687 -v $(pwd)/workspace/neo4j:/data neo4j
 ```
 
-> Access at http://localhost:7474
+> Access at http://localhost:7474, volume shared at `workspace/neo4j`
 
 > Login with `neoj4` / `neo4j` and change the password.
