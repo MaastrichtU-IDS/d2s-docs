@@ -41,7 +41,7 @@ d2s rml cohd
 
 > See running RML executions at http://localhost:8078/#/job/running
 
-> Output goes to `workspace/graphdb-import/rml-cohd-output.nt`
+> Output goes to `workspace/graphdb-import/rml-cohd-output.nt` and can then be loaded to a triplestore.
 
 ## Compute HCLS metadata
 
