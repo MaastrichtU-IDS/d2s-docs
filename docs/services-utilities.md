@@ -226,7 +226,7 @@ Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured dat
 Start the required services:
 
 ```shell
-d2s start rmljob rmltask
+d2s start rmlstreamer rmltask
 ```
 
 Run the RMLStreamer:

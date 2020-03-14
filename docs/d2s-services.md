@@ -38,7 +38,7 @@ See more exhaustive lists for [Graph databases](/docs/services-graph-databases),
 
 🗃️ Utilities
 
-* [RMLStreamer](/docs/services-utilities#rml-streamer): Apache Flink (`rmljob` and `rmltask`)
+* [RMLStreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
 * [Apache Drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL 
 * [Postgres](/docs/guide-postgres): popular OpenSource SQL database
 
@@ -72,7 +72,7 @@ See the [demo](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/
 Start services with a deployment config:
 
 ```shell
-d2s start graphdb virtuoso drill api -d trek
+d2s start graphdb virtuoso drill api rmlstreamer rmltask -d trek
 ```
 
 > Feel free to define a new deployment config if your services requires different parameters than the one defined in the main [docker-compose.yaml](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yaml)

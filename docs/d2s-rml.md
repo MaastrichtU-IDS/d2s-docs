@@ -24,7 +24,7 @@ d2s download cohd
 Start [Apache Flink](https://flink.apache.org/), required to stream the files:
 
 ```shell
-d2s start rmljob rmltask
+d2s start rmlstreamer rmltask
 ```
 
 > Access at http://localhost:8078
