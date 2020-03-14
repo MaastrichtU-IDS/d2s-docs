@@ -202,22 +202,23 @@ Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-m
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/linkeddatafragments/server.js)](https://hub.docker.com/r/linkeddatafragments/server.js)
 
-Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to query over datasets (can be [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/)).
+Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to timestamped SPARQL querying over multiple linked data sources, e.g. [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/).
 
 ```shell
-# docker build -t ldf-server ./submodules/Server.js
-docker run -p 3000:3000 -t -i --rm \
-	-v /data/d2s-workspace:/data \
-	-v $(pwd)/config.json:/tmp/config.json \
+d2s start ldf-server
+
+docker run -p 8085:3000 -t -i --rm \
+	-v $(pwd)/workspace/hdt-archives:/data \
+	-v $(pwd)/workspace/ldfserver-config.json:/tmp/config.json \
 	umids/ldf-server:latest /tmp/config.json
 
 # Query example
 curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:3000/timegate/dbpedia?subject=http%3A%2F%2Fdata2services%2Fmodel%2Fgo-category%2Fprocess
 ```
 
-> Require a [config.json](https://github.com/LinkedDataFragments/Server.js/blob/develop/config/config-example-memento.json) file
+> HDT archives goes in `workspace/hdt-archives` and the [config file](https://github.com/LinkedDataFragments/Server.js/blob/develop/config/config-example-memento.json) is in `workspace/ldfserver-config.json`
 
-> Access at [http://localhost:3000](http://localhost:3000)
+> Access at http://localhost:8085
 
 ---
 

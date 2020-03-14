@@ -263,11 +263,11 @@ The RML Streamer can also be used from the [Flink web UI](http://localhost:8078)
 sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.tsv > dataset.csv
 ```
 
-* If needed, Entry Class is `io.rml.framework.Main`
+* If needed, Entry Class is `-c io.rml.framework.Main`
 
 >  See the [original RMLStreamer documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy using Docker.
 
-> `workspace` and `datasets` folder are shared in `/mnt` in the RML containers. Make sure the RMLStreamer can write to the output folder
+> The `workspace` and `datasets` folders are shared in `/mnt` in the RML containers. Make sure the RMLStreamer can write to the output folder
 >
 > ```shell
 > chmod -R 777 workspace/graphdb-import

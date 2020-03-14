@@ -56,8 +56,6 @@ d2s run compute-hcls-metadata.cwl cohd
 * Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
 * [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.
 
-> TODO: delete previous metadata before inserting a new one?
-
 ## Web-based RML editor
 
 [![](/img/yarrrml-logo.png)](https://rml.io/yarrrml/matey/#edit)
