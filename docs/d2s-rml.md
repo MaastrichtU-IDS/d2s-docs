@@ -3,9 +3,9 @@ id: d2s-rml
 title: Run RML transformations
 ---
 
-The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of the [RDF Mapping Language Specifications](https://rml.io/specs/rml/).
+Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF using a declarative mapping language. 
 
-Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF using a declarative mapping language and execute the transformations. 
+The [RMLStreamer](/docs/services-utilities#rmlstreamer) is a scalable implementation of the [RDF Mapping Language Specifications](https://rml.io/specs/rml/) to generate RDF out of structured input data streams.
 
 ## Download files to convert
 
@@ -17,7 +17,7 @@ d2s download cohd
 
 > Download script defined in [datasets/cohd/download/download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/download/download.sh).
 
-> Downloaded files goes to `workspace/input/cohd`.
+> Downloaded files goes to `workspace/input/cohd`
 
 ## Start Apache Flink
 
@@ -29,7 +29,7 @@ d2s start rmljob rmltask
 
 > Access at http://localhost:8078
 
-## Run RMLStreamer
+## Run the RMLStreamer
 
 The [RML mappings](https://rml.io/specs/rml/) needs to be defined as `rml-mappings.ttl` in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/rml-mappings.ttl`
 
@@ -43,8 +43,10 @@ d2s rml cohd
 
 > Output goes to `workspace/graphdb-import/rml-cohd-output.nt`
 
-## RML Specifications
+## RML editor
+
+A [Matey Web UI editor](https://rml.io/yarrrml/matey/#edit) is available to conveniently write the RML mappings using a simplified language: [YARRRML](https://rml.io/yarrrml/). The mappings can then be tested in the browser on a sample of the file to transform.
 
 RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs/rml/).
 
-See the [rml.io](https://rml.io/) website for more documentation about RML and the various tools built and deployed by Ghent University.
+> See the [rml.io](https://rml.io/) website for more documentation about RML and the various tools built and deployed by Ghent University.

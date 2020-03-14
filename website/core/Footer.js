@@ -64,7 +64,7 @@ class Footer extends React.Component {
               aria-label="Star this project on GitHub">
               Data2Services
             </a> */}
-            <a href={this.props.config.repoUrl}
+            {/* <a href={this.props.config.repoUrl}
               target="_blank"
               aria-label="Star this project on GitHub">
               <img alt="GitHub d2s-documentation" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-documentation?label=d2s-documentation&style=social"/>
@@ -78,6 +78,18 @@ class Footer extends React.Component {
               target="_blank"
               aria-label="Star this project on GitHub">
               <img alt="GitHub d2s-transform-template" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template&style=social"/>
+            </a> */}
+            <a href={this.props.config.repoUrl}
+              target="_blank">
+                Documentation
+            </a>
+            <a href="https://github.com/MaastrichtU-IDS/d2s-cli"
+              target="_blank">
+                Command Line Interface
+            </a>
+            <a href="https://github.com/MaastrichtU-IDS/d2s-transform-template"
+              target="_blank">
+                Template project folder
             </a>
           </div>
           <div>
