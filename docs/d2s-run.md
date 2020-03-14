@@ -19,7 +19,7 @@ d2s download <dataset_id>
 
 > Downloaded files goes to `workspace/input/dataset_id`.
 
-## Run a CWL workflow
+## Run CWL workflows
 
 Run a CWL workflow defined in [d2s-cwl-workflows/workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/workflows) on a specific dataset:
 
@@ -29,7 +29,7 @@ d2s run <workflow_filename>.cwl <dataset_id>
 
 > Output goes to `workspace/output`
 
-### Convert CSV/TSV
+### Convert CSV/TSV to RDF
 
 Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure. 
 
@@ -44,13 +44,7 @@ By default the workflow runs detached from your terminal, so you can close the W
 
 > You might face issues when processing large CSV or TSV file, see [this documentation](https://d2s.semanticscience.org/docs/guide-preprocessing#split-big-files) to deal with big files.
 
----
-
-### With property split
-
-> Not tested at the moment. Might need fix.
-
-Convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements). 
+A workflow allows to **split a property** object: convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements). 
 
 We provide a example converting a sample of the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
@@ -59,9 +53,11 @@ d2s download eggnog
 d2s run split-csv-virtuoso.cwl eggnog
 ```
 
+> Not tested at the moment. Might need to be fixed.
+
 ---
 
-### Convert XML
+### Convert XML to RDF
 
 Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure. 
 
@@ -76,7 +72,20 @@ d2s run xml-virtuoso.cwl drugbank
 
 ---
 
-## Check the workflows logs
+### Compute HCLS metadata
+
+[HCLS descriptive metadata and statistics](https://www.w3.org/TR/hcls-dataset/) for datasets can easily be computed and inserted for the generated graph by running a CWL workflow:
+
+```shell
+d2s run compute-hcls-metadata.cwl cohd
+```
+
+* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
+* [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.
+
+---
+
+## Access workflows logs
 
 The workflow logs are stored in `workspace/workflow-history`.
 
@@ -120,7 +129,7 @@ d2s run csv-virtuoso.cwl cohd --get-mappings
 
 ---
 
-## Workflow details
+## Further details
 
 * We are using `workspace/` as working directory when running workflows and starting services.
 

@@ -21,6 +21,8 @@ d2s download cohd
 
 ## Start Apache Flink
 
+[![Apache Flink](/img/flink-logo.png)](https://flink.apache.org/)
+
 Start [Apache Flink](https://flink.apache.org/), required to stream the files:
 
 ```shell
@@ -56,11 +58,11 @@ d2s run compute-hcls-metadata.cwl cohd
 
 > TODO: delete previous metadata before inserting a new one?
 
-## RML editor
+## Web-based RML editor
 
-[![](/img/yarrrml-logo.png)](https://rml.io/yarrrml/)
+[![](/img/yarrrml-logo.png)](https://rml.io/yarrrml/matey/#edit)
 
-The [Matey Web UI editor](https://rml.io/yarrrml/matey/#edit) is available to conveniently write RML mappings using the [YARRRML](https://rml.io/yarrrml/) simplified language. The mappings can then be conveniently tested in the browser on a sample of the file to transform.
+The **[Matey Web UI editor 🦜](https://rml.io/yarrrml/matey/#edit)** is available to conveniently write RML mappings using the [YARRRML](https://rml.io/yarrrml/) simplified language. The mappings can be conveniently tested in the browser on a sample of the file to transform.
 
 RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs/rml/).
 
