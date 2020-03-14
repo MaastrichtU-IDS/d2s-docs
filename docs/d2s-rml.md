@@ -3,13 +3,13 @@ id: d2s-rml
 title: Run RML transformation
 ---
 
-The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of the [RML Specifications](https://rml.io/specs/rml/).
+The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of the [RDF Mapping Language Specifications](https://rml.io/specs/rml/).
 
-Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF. 
+Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF using a declarative mapping language and execute the transformations. 
 
 ## Download files to convert
 
-The following documentation will use the COHD clinical data CSV as example. Download the dataset:
+The following documentation will use the COHD Clinical CSV data as example. Download the dataset, if not already done:
 
 ```shell
 d2s download cohd
@@ -31,7 +31,7 @@ d2s start rmljob rmltask
 
 ## Run RMLStreamer
 
-The [RML mappings](https://rml.io/specs/rml/) needs to be defined as `rml-mappings.ttl` in the mapping folder of the dataset, e.g. `datasets/dataset_id/mapping/rml-mappings.ttl`
+The [RML mappings](https://rml.io/specs/rml/) needs to be defined as `rml-mappings.ttl` in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/rml-mappings.ttl`
 
 We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/mapping/rml-mappings.ttl) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
