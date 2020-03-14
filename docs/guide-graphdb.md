@@ -76,6 +76,20 @@ curl -X POST \
   - `Repository rights` > Write right on Any data repository
   - Click `Create`
 
+## Create Search Index
+
+Execute this insert SPARQL query in the repository:
+
+```SPARQL
+PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
+INSERT DATA { 
+    # luc:moleculeSize luc:setParam "1" .
+    luc:includePredicates luc:setParam "http://www.w3.org/2000/01/rdf-schema#label https://w3id.org/biolink/vocab/name http://w3id.org/biolink/vocab/name" .
+    luc:useRDFRank luc:setParam "yes" .
+    luc:searchIndex luc:createIndex "true" .
+}
+```
+
 ## Use the HTTP API
 
 ### Import file

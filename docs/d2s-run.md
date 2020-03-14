@@ -5,17 +5,19 @@ title: Run CWL workflows
 
 ![CWL](/img/CWL_logo.png)
 
+[CWL workflows](https://www.commonwl.org/) can be run to perform various task such as executing transformation pipeline to build a RDF Knowledge Graph.
+
 ## Download files to convert
 
-Files to process (e.g. CSV, XML) needs to be downloaded before running the workflow. Example downloading a [DrugBank](https://www.drugbank.ca/about) sample 📥
+Files to process (e.g. CSV, XML) needs to be downloaded before running a workflow 📥
 
 ```shell
-d2s download drugbank
+d2s download <dataset_id>
 ```
 
-> Download script defined in [datasets/drugbank/download/download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/drugbank/download/download.sh).
+> Download script defined in [datasets/dataset_id/download/download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/download/download.sh).
 
-> Downloaded files goes to `workspace/input/drugbank`.
+> Downloaded files goes to `workspace/input/dataset_id`.
 
 ## Run a CWL workflow
 

@@ -227,43 +227,43 @@ Start the required services:
 d2s start rmljob rmltask
 ```
 
+* Download the [RMLStreamer.jar](https://github.com/vemonet/RMLStreamer/raw/fix-mainclass/target/RMLStreamer-1.2.2.jar).
+
 * Go to http://localhost:8078
-
-* Download the [latest release of the RMLStreamer.jar](https://github.com/RMLio/RMLStreamer/releases).
-
-* Put the `rml-mappings.ttl` file in the input folder of your dataset (e.g. `datasets/input/cohd/rml-mappings.ttl`) 
-
-  * Make sure the RMLStreamer can write to the `workspace/input` folder
-
-    ```shell
-    chmod -R 777 workspace/input
-    ```
 
 * Go to `Submit New Job`
 
-  * Click `+ Add New` in the upper left corner. Select the [RMLStreamer.jar](https://github.com/RMLio/RMLStreamer/releases) you want to deploy
+  * Click `+ Add New` in the upper left corner. Upload the [RMLStreamer.jar](https://github.com/vemonet/RMLStreamer/raw/fix-mainclass/target/RMLStreamer-1.2.2.jar) you want to deploy
 
-  * Entry Class:
-
-    ```
-    io.rml.framework.Main
-    ```
-  
   * Provide command line arguments for the RMLMapper:
-  
-    ```shell
-    --path /mnt/data/cohd/rml-mappings.ttl --outputPath /mnt/data/cohd/output.nt
-    ```
 
-Convert TSV to CSV to be parsed by RML:
+    ```shell
+    --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/output/rml-output.nt
+    
+    docker exec -d d2s-cwl-workflows_rmljob_1 /opt/flink/bin/flink run -p 8 /mnt/workspace/RMLStreamer.jar --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/output/rml-output.nt
+    ```
+    
+    > See your job running in http://localhost:8078/#/job/running.
+    >
+    > Output file in `workspace/output`
+
+* Complementary command to convert TSV to CSV to be parsed by RML:
 
 ```shell
-sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' dataset.tsv > dataset.csv
+sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.tsv > dataset.csv
 ```
+
+* Entry Class if needed: `io.rml.framework.Main`
 
 > **TODO**: [improve deployment](https://ci.apache.org/projects/flink/flink-docs-release-1.9/ops/cli.html) to add `RMLStreamer.jar` to Apache Flink automatically.
 
 >  See the [original documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy it using Docker.
+
+> `workspace` and `datasets` folder are shared in `/mnt` in the RML containers. Make sure the RMLStreamer can write to the output folder
+>
+> ```shell
+> chmod -R 777 workspace/output
+> ```
 
 ---
 

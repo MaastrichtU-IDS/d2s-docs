@@ -38,6 +38,7 @@ See more exhaustive lists for [Graph databases](/docs/services-graph-databases),
 
 🗃️ Utilities
 
+* [RMLStreamer](/docs/services-utilities#rml-streamer): Apache Flink (`rmljob` and `rmltask`)
 * [Apache Drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL 
 * [Postgres](/docs/guide-postgres): popular OpenSource SQL database
 
