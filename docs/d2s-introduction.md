@@ -8,7 +8,7 @@ Integrating and querying heterogeneous data sources has never been effortless, t
 
 <img src="/img/d2s-architecture.png" alt="Data2Services infrastructure" style="max-width: 100%; max-height: 100%;" />
 
-We provide [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template/), a GitHub template repository with example workflows to  start building your RDF Knowledge Graph from structured data. 
+We provide [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template/), a GitHub template repository with example mappings and workflows to  start building your RDF Knowledge Graph from structured data. 
 
 Feel free to use directly the `d2s-transform-template` repository or create a new GitHub repository [from the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to start your own project.
 

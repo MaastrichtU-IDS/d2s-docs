@@ -14,7 +14,7 @@ Web UI to browse a triplestore through its SPARQL endpoint: resolve URI, SPARQL 
 Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
 
 ```shell
-d2s start into-the-graph browse-local-virtuoso browse-local-graphdb
+d2s start into-the-graph
 
 docker run --rm -it -p 8082:80 umids/into-the-graph:latest
 ```

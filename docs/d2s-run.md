@@ -21,6 +21,14 @@ d2s download <dataset_id>
 
 ## Run a CWL workflow
 
+Run a CWL workflow defined in [d2s-cwl-workflows/workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/workflows) on a specific dataset:
+
+```shell
+d2s run <workflow_filename>.cwl <dataset_id>
+```
+
+> Output goes to `workspace/output`
+
 ### Convert CSV/TSV
 
 Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure. 
@@ -31,8 +39,6 @@ We provide an example converting a sample of [COHD](https://github.com/Maastrich
 d2s download cohd
 d2s run csv-virtuoso.cwl cohd
 ```
-
-> Output goes to `workspace/output`
 
 By default the workflow runs detached from your terminal, so you can close the Windows or leave the SSH sessions.
 
