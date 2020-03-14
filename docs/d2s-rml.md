@@ -1,6 +1,6 @@
 ---
 id: d2s-rml
-title: Run RML transformation
+title: Run RML transformations
 ---
 
 The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of the [RDF Mapping Language Specifications](https://rml.io/specs/rml/).
