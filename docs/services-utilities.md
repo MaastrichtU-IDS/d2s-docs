@@ -55,7 +55,9 @@ docker run -it comunica/actor-init-sparql \
 
 ## Jupyter notebooks
 
-Deploy a Jupyter notebook over your RDF knowledge graph. The proposed deployment comes with various libraries for data science and RDF pre-installed.
+Deploy a Jupyter notebook over your RDF knowledge graph to  easily start querying it through the HTTP OpenAPI or SPARQL endpoint  using Python or R. 
+
+The proposed deployment comes with example queries to start with, and various libraries for data science and RDF pre-installed.
 
 ```shell
 d2s start notebook
