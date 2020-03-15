@@ -306,6 +306,16 @@ docker run -it --rm -v $PWD:/data \
 
 ---
 
+## rdf2neo
+
+[![GitHub](https://img.shields.io/github/stars/Rothamsted/rdf2neo?label=GitHub&style=social)](https://github.com/Rothamsted/rdf2neo)
+
+Convert RDF data to a neo4j property graph by mapping the RDF to Cypher queries using [Rothamsted/rdf2neo](https://github.com/Rothamsted/rdf2neo).
+
+> To be developed.
+
+---
+
 ## BridgeDb
 
 [![](https://img.shields.io/github/stars/bridgedb/BridgeDb?label=GitHub&style=social)](https://github.com/bridgedb/BridgeDb)
