@@ -79,3 +79,10 @@ Documentation website generated using [Docusaurus](https://docusaurus.io/).
 Logo created with [Inkscape](https://inkscape.org/) and https://weareoutman.github.io/rounded-polygon/.
 
 Diagrams created with [drawio](https://snapcraft.io/install/drawio/ubuntu).
+
+Screencast recorded using [asciinema](https://asciinema.org/).
+
+```bash
+# Failing to convert to gif
+docker run --rm -v $PWD:/data asciinema/asciicast2gif -t solarized-dark -h 25 -s 2.5 https://asciinema.org/a/309866.json d2s_demo.gif
+```
