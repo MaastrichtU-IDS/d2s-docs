@@ -9,7 +9,7 @@ Web UI to browse a triplestore through its SPARQL endpoint: resolve URI, SPARQL 
 
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
 
-[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs ✔️
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs.
 
 Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
 
