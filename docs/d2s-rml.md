@@ -29,7 +29,7 @@ Start [Apache Flink](https://flink.apache.org/), required to stream the files:
 d2s start rmlstreamer rmltask
 ```
 
-> Access at http://localhost:8078
+> Access at http://localhost:8078 to see running jobs.
 
 ## Run the RMLStreamer
 
@@ -40,8 +40,6 @@ We provide an example converting a sample of [COHD](https://github.com/Maastrich
 ```shell
 d2s rml cohd
 ```
-
-> See running RML executions at http://localhost:8078/#/job/running
 
 > Output goes to `workspace/import/rmlstreamer-associations-mapping_rml_ttl-cohd.nt` and can then be loaded to a triplestore.
 

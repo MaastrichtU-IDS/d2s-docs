@@ -59,27 +59,6 @@ d2s
 
 ---
 
-## Download the GraphDB distribution
-
-[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
-
-For licensing reason the GraphDB free edition distribution needs to be downloaded manually 📥
-
-* Go to https://ontotext.com/products/graphdb/ and provide informations to get an email with the link to download GraphDB
-
-* Download GraphDB as stand-alone server free version `8.10.1` (zip)
-
-* The `d2s` client will ask you to provide the path to the GraphDB distribution `.zip` file when initializing the workspace.
-
-  * By default the `d2s` client takes the file from your home directory (e.g. `/home/my-user`)
-
-    ```shell
-    # Copy the GraphDB distribution file to your home folder
-    cp graphdb-free-8.10.1-dist.zip ~/
-    ```
-
----
-
 ## Install pipx
 
 If you just want to run `d2s` we recommend you to use [pipx](https://pipxproject.github.io/pipx/) as it install the tool in an isolated environment. It can be compared to `apt`, `brew` or `npx`.
@@ -205,6 +184,27 @@ nano /etc/resolv.conf
 > For issues related to Docker on Windows, see the [Windows guide](/docs/guide-windows) page.
 
 > For more details on how to run Docker see the [Docker guide](/docs/guide-docker).
+
+---
+
+## Download the GraphDB distribution
+
+[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
+
+For licensing reason the GraphDB free edition distribution needs to be [downloaded manually 📥](https://ontotext.com/products/graphdb/ )
+
+* Go to https://ontotext.com/products/graphdb/ and provide informations to get an email with the link to download GraphDB
+
+* Download GraphDB as stand-alone server free version `8.10.1` (zip)
+
+* The `d2s` client will ask you to provide the path to the GraphDB distribution `.zip` file when initializing the workspace.
+
+  * By default the `d2s` client takes the file from your home directory (e.g. `/home/my-user`)
+
+    ```shell
+    # Copy the GraphDB distribution file to your home folder
+    cp graphdb-free-8.10.1-dist.zip ~/
+    ```
 
 ---
 

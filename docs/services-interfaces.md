@@ -92,6 +92,26 @@ See [documentation](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/)
 
 ---
 
+## Jupyter notebooks
+
+Deploy a Jupyter notebook over your RDF knowledge graph to  easily start querying it through the HTTP OpenAPI or SPARQL endpoint  using Python or R. 
+
+The proposed deployment comes with example queries to start with, and various libraries for data science and RDF pre-installed.
+
+```shell
+d2s start notebook
+
+docker run --rm -it -p 8888:8888 \
+  -v $(pwd)/workspace/notebooks:/notebooks \
+  -e PASSWORD="<your_secret>" \
+  -e GIT_URL="https://github.com/vemonet/translator-sparql-notebook" \
+  umids/jupyterlab:latest
+```
+
+> Access on http://localhost:8888
+
+---
+
 ## LODEstar
 
 [![GitHub](https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&style=social)](https://github.com/EBISPOT/lodestar)

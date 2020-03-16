@@ -13,6 +13,34 @@ Only [Docker](https://docs.docker.com/install/) is required to run the modules. 
 
 ---
 
+## RMLStreamer
+
+[![RMLMapper](https://img.shields.io/github/stars/RMLio/rmlmapper-java?label=GitHub&style=social)](https://github.com/RMLio/rmlmapper-java)
+
+Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF. The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of RML in development.
+
+The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
+
+Start the required services:
+
+```shell
+d2s start rmlstreamer rmltask
+```
+
+> Access at http://localhost:8078 to see running jobs.
+
+Run the RMLStreamer:
+
+```shell
+d2s rml cohd
+```
+
+> Output goes to `workspace/import/associations-mapping_rml_ttl-cohd.nt`
+
+>  See the [original RMLStreamer documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy using Docker.
+
+---
+
 ## d2s-sparql-operations
 
 [![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.org/)
@@ -53,89 +81,21 @@ docker run -it comunica/actor-init-sparql \
 
 ---
 
-## Jupyter notebooks
+## RdfUpload
 
-Deploy a Jupyter notebook over your RDF knowledge graph to  easily start querying it through the HTTP OpenAPI or SPARQL endpoint  using Python or R. 
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/RdfUpload?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/RdfUpload)
 
-The proposed deployment comes with example queries to start with, and various libraries for data science and RDF pre-installed.
 
-```shell
-d2s start notebook
-
-docker run --rm -it -p 8888:8888 \
-  -v $(pwd)/workspace/notebooks:/notebooks \
-  -e PASSWORD="<your_secret>" \
-  -e GIT_URL="https://github.com/vemonet/translator-sparql-notebook" \
-  umids/jupyterlab:latest
-```
-
-> Access on http://localhost:8888
-
-## d2s-bash-exec
-
-[![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-bash-exec?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-bash-exec)
-
-Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
+Upload RDF files to a triplestore.
 
 ```shell
-docker run -it --rm -v /data/input:/data umids/d2s-bash-exec:latest https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
+docker run -it --rm --link graphdb:graphdb -v /data/d2s-workspace:/data \
+	umids/rdf-upload:latest -m "HTTP" -if "/data" \
+	-url "http://graphdb:7200" -rep "test" \
+	-un "username" -pw "password"
 ```
 
-> See on [DockerHub](https://hub.docker.com/r/umids/d2s-bash-exec).
-
----
-
-## xml2rdf
-
-[![](https://img.shields.io/github/stars/MaastrichtU-IDS/xml2rdf?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/xml2rdf)
-
-Streams XML to a [generic RDF](https://github.com/MaastrichtU-IDS/xml2rdf#rdf-model) representing the structure of the file. 
-
-```shell
-docker run --rm -it -v /data:/data umids/xml2rdf:latest  \
-	-i "/data/d2s-workspace/file.xml.gz" \
-	-o "/data/d2s-workspace/file.nq.gz" \
-	-g "https://w3id.org/d2s/graph"
-```
-
-> See on [DockerHub](https://hub.docker.com/r/umids/xml2rdf).
-
----
-
-## Apache Drill
-
-[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
-
-[![](https://img.shields.io/github/stars/MaastrichtU-IDS/apache-drill?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/apache-drill)
-
-Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
-
-```shell
-d2s start drill
-
-docker run -dit --rm -p 8047:8047 -p 31011:31010 \
-	--name drill -v /data:/data:ro umids/apache-drill:latest
-```
-
-> Access at [http://localhost:8047/](http://localhost:8047/).
-
-> See on [DockerHub](https://hub.docker.com/r/umids/apache-drill).
-
----
-
-## Postgres
-
-Popular SQL database.
-
-```shell
-d2s start postgres
-
-docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v $(pwd)/workspace/postgres:/data postgres
-```
-
-> Password is `pwd`
-
-> See the [Postgres guide](/docs/guide-postgres) for more details.
+> See on [DockerHub](https://hub.docker.com/r/umids/rdf-upload).
 
 ---
 
@@ -185,23 +145,57 @@ docker run -it --rm --net d2s-cwl-workflows_network \
 
 ---
 
-## RdfUpload
+## Apache Drill
 
-[![](https://img.shields.io/github/stars/MaastrichtU-IDS/RdfUpload?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/RdfUpload)
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
 
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/apache-drill?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/apache-drill)
 
-Upload RDF files to a triplestore.
+Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
 
 ```shell
-docker run -it --rm --link graphdb:graphdb -v /data/d2s-workspace:/data \
-	umids/rdf-upload:latest -m "HTTP" -if "/data" \
-	-url "http://graphdb:7200" -rep "test" \
-	-un "username" -pw "password"
+d2s start drill
+
+docker run -dit --rm -p 8047:8047 -p 31011:31010 \
+	--name drill -v /data:/data:ro umids/apache-drill:latest
 ```
 
-> Only tested on [GraphDB](https://github.com/MaastrichtU-IDS/graphdb) at the moment
+> Access at [http://localhost:8047/](http://localhost:8047/).
 
-> See on [DockerHub](https://hub.docker.com/r/umids/rdf-upload).
+> See on [DockerHub](https://hub.docker.com/r/umids/apache-drill).
+
+---
+
+## Postgres
+
+Popular SQL database.
+
+```shell
+d2s start postgres
+
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v $(pwd)/workspace/postgres:/data postgres
+```
+
+> Password is `pwd`
+
+> See the [Postgres guide](/docs/guide-postgres) for more details.
+
+---
+
+## xml2rdf
+
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/xml2rdf?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/xml2rdf)
+
+Streams XML to a [generic RDF](https://github.com/MaastrichtU-IDS/xml2rdf#rdf-model) representing the structure of the file. 
+
+```shell
+docker run --rm -it -v /data:/data umids/xml2rdf:latest  \
+	-i "/data/d2s-workspace/file.xml.gz" \
+	-o "/data/d2s-workspace/file.nq.gz" \
+	-g "https://w3id.org/d2s/graph"
+```
+
+> See on [DockerHub](https://hub.docker.com/r/umids/xml2rdf).
 
 ---
 
@@ -216,66 +210,6 @@ docker run -it -v /data/d2s-workspace:data vemonet/json2xml:latest -i /data/test
 ```
 
 > Shared on your machine at `/data/d2s-workspace`
-
----
-
-## RMLStreamer
-
-[![RMLMapper](https://img.shields.io/github/stars/RMLio/rmlmapper-java?label=GitHub&style=social)](https://github.com/RMLio/rmlmapper-java)
-
-Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF. The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of RML in development.
-
-The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
-
-Start the required services:
-
-```shell
-d2s start rmlstreamer rmltask
-```
-
-Run the RMLStreamer:
-
-```shell
-d2s rml cohd
-```
-
-> Output goes to `workspace/import/associations-mapping_rml_ttl-cohd.nt`
-
-The RML Streamer can also be used from the [Flink web UI](http://localhost:8078):
-
-* Download the [RMLStreamer.jar](https://github.com/vemonet/RMLStreamer/raw/fix-mainclass/target/RMLStreamer-1.2.2.jar).
-
-* Go to http://localhost:8078
-
-* Go to `Submit New Job`
-
-  * Click `+ Add New` in the upper left corner. Upload the [RMLStreamer.jar](https://github.com/vemonet/RMLStreamer/raw/fix-mainclass/target/RMLStreamer-1.2.2.jar) you want to deploy
-
-  * Provide command line arguments for the RMLMapper:
-
-    ```shell
-    --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/import/rml-output.nt
-    ```
-    
-    > See your job running in http://localhost:8078/#/job/running.
-    >
-    > Output file in `workspace/import`
-
-* Complementary command to convert TSV to CSV to be parsed by RML:
-
-```shell
-sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.tsv > dataset.csv
-```
-
-* If needed, Entry Class is `-c io.rml.framework.Main`
-
->  See the [original RMLStreamer documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy using Docker.
-
-> The `workspace` and `datasets` folders are shared in `/mnt` in the RML containers. Make sure the RMLStreamer can write to the output folder
->
-> ```shell
-> chmod -R 777 workspace/import
-> ```
 
 ---
 
@@ -330,3 +264,16 @@ Convert RDF data to a neo4j property graph by mapping the RDF to Cypher queries 
 docker run -p 8183:8183 bigcatum/bridgedb
 ```
 
+---
+
+## d2s-bash-exec
+
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-bash-exec?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-bash-exec)
+
+Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
+
+```shell
+docker run -it --rm -v /data/input:/data umids/d2s-bash-exec:latest https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
+```
+
+> See on [DockerHub](https://hub.docker.com/r/umids/d2s-bash-exec).
