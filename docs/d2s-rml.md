@@ -43,7 +43,7 @@ d2s rml cohd
 
 > See running RML executions at http://localhost:8078/#/job/running
 
-> Output goes to `workspace/graphdb-import/associations-mapping_rml_ttl-cohd.nt` and can then be loaded to a triplestore.
+> Output goes to `workspace/graphdb-import/rmlstreamer-associations-mapping_rml_ttl-cohd.nt` and can then be loaded to a triplestore.
 
 The command run detached by default, you can keep the terminal attached and watch the execution:
 
@@ -61,6 +61,16 @@ d2s run compute-hcls-metadata.cwl cohd
 
 * Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
 * [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.
+
+## Run the RMLMapper
+
+For small files the [rmlmapper-java](https://github.com/RMLio/rmlmapper-java/) can be used.
+
+```shell
+d2s rml cohd --mapper
+```
+
+> Output goes to `workspace/graphdb-import/rmlmapper-associations-mapping_rml_ttl-cohd.nt`
 
 ## Web-based RML editor
 
