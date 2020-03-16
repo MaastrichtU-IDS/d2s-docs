@@ -87,7 +87,7 @@ d2s run compute-hcls-metadata.cwl cohd
 
 ## Access workflows logs
 
-The workflow logs are stored in `workspace/workflow-history`.
+The workflow logs are stored in `workspace/logs`.
 
 ### Watch a running workflow
 
@@ -113,7 +113,7 @@ d2s log csv-virtuoso.cwl-cohd-20200215-091342.txt
 d2s run csv-virtuoso.cwl cohd --watch
 ```
 
-> ⚠️ The logs will not be stored in `workspace/workflow-history`.
+> ⚠️ The logs will not be stored in `workspace/logs`.
 
 ---
 
