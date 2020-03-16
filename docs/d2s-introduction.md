@@ -52,13 +52,13 @@ root-directory
 ├── d2s-argo-workflows (submodule)	# Optional Kubernetes workflows (experimental)
 ├── datasets		# Folders of the different dataset integrated in the KG 
 │   └── drugbank		# Folder for files to convert DrugBank
-│       ├── config.yml				# The workflow config file
+│       ├── config.yml			# The workflow config file
 │       ├── download
-│       │   └── download.sh			# Script to download input files
-│       ├── mapping					# SPARQL mapping queries to build the KG 
+│       │   └── download.sh		# Script to download input files
+│       ├── mapping				# SPARQL mapping queries to build the KG 
 │       │   ├── drugbank-drugbank_id.rq
 │       │   └── drugbank-snp_effects.rq
-│       └── metadata				# SPARQL queries to insert metadata about the dataset 
+│       └── metadata			# SPARQL queries to insert metadata about the dataset 
 │           ├── metadata-drugbank-summary.rq
 │           ├── metadata-drugbank-1.rq
 │           └── metadata-drugbank-2.rq
