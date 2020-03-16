@@ -225,6 +225,8 @@ docker run -it -v /data/d2s-workspace:data vemonet/json2xml:latest -i /data/test
 
 Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF. The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of RML in development.
 
+The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
+
 Start the required services:
 
 ```shell
@@ -237,7 +239,7 @@ Run the RMLStreamer:
 d2s rml cohd
 ```
 
-> Output goes to `workspace/graphdb-import/rml-cohd-output.nt`
+> Output goes to `workspace/graphdb-import/associations-mapping_rml_ttl-cohd.nt`
 
 The RML Streamer can also be used from the [Flink web UI](http://localhost:8078):
 

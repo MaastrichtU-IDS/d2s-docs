@@ -33,9 +33,9 @@ d2s start rmlstreamer rmltask
 
 ## Run the RMLStreamer
 
-The [RML mappings](https://rml.io/specs/rml/) needs to be defined as `rml-mappings.ttl` in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/rml-mappings.ttl`
+The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
 
-We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/mapping/rml-mappings.ttl) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
+We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/mapping/associations-mapping.rml.ttl) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s rml cohd
@@ -43,7 +43,13 @@ d2s rml cohd
 
 > See running RML executions at http://localhost:8078/#/job/running
 
-> Output goes to `workspace/graphdb-import/rml-cohd-output.nt` and can then be loaded to a triplestore.
+> Output goes to `workspace/graphdb-import/associations-mapping_rml_ttl-cohd.nt` and can then be loaded to a triplestore.
+
+The command run detached by default, you can keep the terminal attached and watch the execution:
+
+```shell
+d2s rml cohd --watch
+```
 
 ## Compute HCLS metadata
 
