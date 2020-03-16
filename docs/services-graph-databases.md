@@ -16,10 +16,10 @@ title: Graph databases
 ```shell
 d2s start graphdb
 
-docker build -t graphdb ./d2s-cwl-workflows/support/graphdb
+docker build -t graphdb d2s-cwl-workflows/support/graphdb
 docker run -d --rm --name graphdb -p 7200:7200 \
-	-v /data/graphdb:/opt/graphdb/home \
-	-v /data/graphdb-import:/root/graphdb-import \
+	-v $(pwd)/workspace/graphdb:/opt/graphdb/home \
+	-v $(pwd)/workspace/import:/root/graphdb-import \
 	graphdb
 ```
 

@@ -239,7 +239,7 @@ Run the RMLStreamer:
 d2s rml cohd
 ```
 
-> Output goes to `workspace/graphdb-import/associations-mapping_rml_ttl-cohd.nt`
+> Output goes to `workspace/import/associations-mapping_rml_ttl-cohd.nt`
 
 The RML Streamer can also be used from the [Flink web UI](http://localhost:8078):
 
@@ -254,12 +254,12 @@ The RML Streamer can also be used from the [Flink web UI](http://localhost:8078)
   * Provide command line arguments for the RMLMapper:
 
     ```shell
-    --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/graphdb-import/rml-output.nt
+    --path /mnt/datasets/cohd/mapping/rml-mappings.ttl --outputPath /mnt/workspace/import/rml-output.nt
     ```
     
     > See your job running in http://localhost:8078/#/job/running.
     >
-    > Output file in `workspace/graphdb-import`
+    > Output file in `workspace/import`
 
 * Complementary command to convert TSV to CSV to be parsed by RML:
 
@@ -274,7 +274,7 @@ sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.t
 > The `workspace` and `datasets` folders are shared in `/mnt` in the RML containers. Make sure the RMLStreamer can write to the output folder
 >
 > ```shell
-> chmod -R 777 workspace/graphdb-import
+> chmod -R 777 workspace/import
 > ```
 
 ---
