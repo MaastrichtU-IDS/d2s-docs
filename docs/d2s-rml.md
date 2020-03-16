@@ -49,6 +49,12 @@ The command run detached by default, you can keep the terminal attached and watc
 d2s rml cohd --watch
 ```
 
+Generate NQuads by adding the graph infos in the `rr:subjectMap` in RML mappings:
+
+```turtle
+rr:graphMap [ rr:constant <https://w3id.org/trek/graph/drugbank> ];
+```
+
 ## Compute HCLS metadata
 
 [HCLS descriptive metadata and statistics](https://www.w3.org/TR/hcls-dataset/) for datasets can easily be computed and inserted for the generated graph by running a CWL workflow:
