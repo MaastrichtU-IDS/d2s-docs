@@ -9,6 +9,14 @@ title: Preprocess input files
 
 > See the [example](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh#L68) in the dataset template.
 
+## Convert TSV to CSV
+
+Can be helpful, especially for processing RML mappings.
+
+```shell
+sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.tsv > dataset.csv
+```
+
 ## Add Tabular file header label
 
 ### CSV

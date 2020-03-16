@@ -49,3 +49,13 @@ Update a single service:
 d2s update <my_service>
 ```
 
+---
+
+## Update folders permissions
+
+You might encounter issues with folder permissions, e.g. [RMLStreamer](/docs/services-utilities#rmlstreamer) not able to write to output. You can update the permissions of `workspace/graphdb-import` and `workspace/tmp-virtuoso` to make them writable:
+
+```shell
+d2s update --permissions
+```
+
