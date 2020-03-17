@@ -9,7 +9,7 @@ title: Graph databases
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/ontotext/graphdb)](https://hub.docker.com/r/ontotext/graphdb/)
 
-[Ontotext GraphDB™](https://www.ontotext.com/) triplestore includes a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), RDFS/OWL [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html) to infer new triples and the possibility to deploy multiple repositories.
+[Ontotext GraphDB™](https://www.ontotext.com/) triplestore includes a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), RDFS/OWL [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html) to infer new triples and the possibility to deploy multiple repositories. It uses mainly the [rdf4j](https://rdf4j.org/) framework.
 
 [Download the zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) of GraphDB standalone free version `9.1.1`, and place it in `d2s-cwl-workflows/support/graphdb` before building the image using `d2s update`(this step is also prompted during `d2s init`).
 
@@ -73,7 +73,9 @@ docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOB
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/lyrasis/blazegraph)](https://hub.docker.com/r/lyrasis/blazegraph)
 
-A high-performance [RDF graph database](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). Not developed for 4 years but still efficient and used by Wikidata. Available on [DockerHub](lyrasis/blazegraph).
+A high-performance [RDF graph database](https://blazegraph.com/). See its [documentation for Docker](https://github.com/lyrasis/docker-blazegraph). 
+
+Not developed for 4 years but still efficient and used by Wikidata.  It uses mainly the [rdf4j](https://rdf4j.org/) framework.
 
 ```shell
 d2s start blazegraph
@@ -123,7 +125,7 @@ Follow [those instructions](https://sourceforge.net/p/bigdata/discussion/676946/
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/franzinc/agraph)](https://hub.docker.com/r/franzinc/agraph)
 
-[AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications.  Available on [DockerHub](https://github.com/franzinc/agraph).
+[AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications. 
 
 ```shell
 d2s start allegrograph
@@ -141,11 +143,41 @@ See [official documentation](https://franz.com/agraph/support/documentation/curr
 
 ---
 
+## Jena Fuseki 
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stain/jena-fuseki)](https://hub.docker.com/r/stain/jena-fuseki)
+
+[Fuseki](http://jena.apache.org/documentation/fuseki2/index.html) is a SPARQL server on top of [Apache TDB](https://jena.apache.org/documentation/tdb/) RDF store, for single machines. It uses mainly the [Jena](https://jena.apache.org/) framework.
+
+```shell
+d2s start fuseki
+
+docker run -d --name fuseki -p 3030:3030 -v $(pwd)/workspace/fuseki:/fuseki -v $(pwd)/workspace/import:/staging stain/jena-fuseki
+```
+
+> Access at http://localhost:3030
+
+Bulk load files in `workspace/import` (container needs to be stopped):
+
+```shell
+docker-compose -f d2s-cwl-workflows/docker-compose.yaml \
+  run -v $(pwd)/workspace/import:/staging \
+  stain/jena-fuseki ./load.sh demo test1.ttl test2.nt
+```
+
+> If you don't specify any filenames to `load.sh`, all filenames directly under `/staging` that match these GLOB patterns will be loaded:
+>
+> ```
+> *.rdf *.rdf.gz *.ttl *.ttl.gz *.owl *.owl.gz *.nt *.nt.gz *.nquads *.nquads.gz
+> ```
+
+---
+
 ## AnzoGraph
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/cambridgesemantics/anzograph)](https://hub.docker.com/r/cambridgesemantics/anzograph)
 
-[AnzoGraph® DB](https://www.cambridgesemantics.com/anzograph/) by [Cambridge Semantics](https://www.cambridgesemantics.com/). See its [official documentation](https://docs.cambridgesemantics.com/anzograph/userdoc/deploy-docker.htm) to deploy with Docker, or its [DockerHub repository](https://hub.docker.com/r/cambridgesemantics/anzograph/). 
+[AnzoGraph® DB](https://www.cambridgesemantics.com/anzograph/) by [Cambridge Semantics](https://www.cambridgesemantics.com/). See its [official documentation](https://docs.cambridgesemantics.com/anzograph/userdoc/deploy-docker.htm) to deploy with Docker.
 
 * Unregistered Free edition limited to 8G RAM, single user and single node deployment. 
 * [Register](https://docs.cambridgesemantics.com/anzograph/userdoc/register-license.htm) to access the 16G single node deployment for free.
@@ -172,7 +204,7 @@ docker run -d -p 8086:8080 -p 8443:8443 --name anzograph -v $(pwd)/workspace/anz
 
 Licensed triplestore 📜
 
-See the [official Stardog documentation](https://www.stardog.com/docs/#_docker) for Docker, or the [DockerHub repository](https://hub.docker.com/r/stardog/stardog). A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
+See the [official Stardog documentation](https://www.stardog.com/docs/#_docker) for Docker. A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
 
 ```shell
 docker run -v $(pwd)/workspace/stardog-license:/var/opt/stardog -e STARDOG_SERVER_JAVA_ARGS="-Xmx8g -Xms8g -XX:MaxDirectMemorySize=2g" stardog/stardog:latest
