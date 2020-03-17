@@ -16,7 +16,7 @@ d2s start postgres
 ### Use docker run
 
 ```shell
-docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v /data/d2s-workspace/:/data postgres
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v $(pwd)/workspace/postgres:/data postgres
 ```
 
 > Shared on your machine at `/data/d2s-workspace`

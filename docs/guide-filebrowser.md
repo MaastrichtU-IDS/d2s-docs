@@ -1,5 +1,5 @@
 ---
-id: guide-utilities
+id: guide-filebrowser
 title: Filebrowser utilities
 ---
 
