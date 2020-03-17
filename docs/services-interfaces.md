@@ -79,7 +79,7 @@ d2s start comunica
 docker run -p 8084:80 -it --rm umids/comunica-sparql-widget
 
 # Provide a local queries.json file
-docker run -v $(pwd)/queries.json:/usr/share/nginx/html/queries.json -p 8080:80 -it --rm umids/comunica-sparql-widget
+docker run -v $(pwd)/workspace/comunica-settings.json:/usr/share/nginx/html/queries.json -p 8080:80 -it --rm umids/comunica-sparql-widget
 ```
 
 > Access on http://localhost:8084

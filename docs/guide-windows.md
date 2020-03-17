@@ -110,6 +110,12 @@ In a production environment it is considered that both **Apache Drill** and **Gr
 docker run -d --rm --name graphdb -p 7200:7200 -v c:/data/graphdb:/opt/graphdb/home -v c:/data/graphdb-import:/root/graphdb-import graphdb
 ```
 
+> Try using relative paths?
+>
+> ```shell
+> docker run -d --rm --name graphdb -p 7200:7200 -v $(pwd)/workspace/graphdb:/opt/graphdb/home -v $(pwd)/workspace/import:/root/graphdb-import graphdb
+> ```
+
 ### Run Apache Drill
 
 ```powershell

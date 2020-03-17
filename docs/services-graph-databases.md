@@ -49,7 +49,7 @@ docker run --name virtuoso \
     -e DBA_PASSWORD=dba \
     -e SPARQL_UPDATE=true \
     -e DEFAULT_GRAPH=https://w3id.org/d2s/graph \
-    -v /data/d2s-workspace/virtuoso:/data \
+    -v $(pwd)/workspace/virtuoso:/data \
     -d tenforce/virtuoso
 ```
 
@@ -86,7 +86,7 @@ docker run --name blazegraph \
   -e BLAZEGRAPH_UID=$UID \
   -e BLAZEGRAPH_GID=$GROUPS \
   -p 8082:8080 \
-  -v /data/d2s-workspace:/data \
+  -v $(pwd)/workspace/import:/data \
   lyrasis/blazegraph:2.1.5
 
 # To bulk load: create the dataloader.txt file
@@ -157,7 +157,7 @@ docker run -d --name fuseki -p 3030:3030 -v $(pwd)/workspace/fuseki:/fuseki -v $
 
 > Access at http://localhost:3030
 
-Bulk load files in `workspace/import` (container needs to be stopped):
+Bulk load files in `demo` dataset from `workspace/import` (container needs to be stopped):
 
 ```shell
 docker-compose -f d2s-cwl-workflows/docker-compose.yaml \
