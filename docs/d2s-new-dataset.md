@@ -15,7 +15,11 @@ d2s generate dataset
 
 > You will be asked some informations about the dataset to create.
 
-> **TODO:** should there be a README explaining the role of the different files in the created folder?
+The dataset mappings, metadata and download files are created in the `dataset/$dataset_id` folder.
+
+The dataset folder is generated based on [this template folder](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support/template/dataset). Example mapping files are provided for DrugBank XML data and Columbia Open Health clinical Data TSV data.
+
+> [Let us know](/help) if those examples are helpful, or if they would need to be more explicit.
 
 ### Describe the dataset metadata
 

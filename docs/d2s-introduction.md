@@ -12,6 +12,8 @@ We provide [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-trans
 
 Feel free to use directly the `d2s-transform-template` repository or create a new GitHub repository [from the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to start your own project.
 
+> See [this presentation](/resources/2020-03-16-data2services-ncats_translator_presentation.pdf) for more details about the Data2Services project.
+
 ## Build a RDF Knowledge Graph
 
 We use [CWL workflows](https://www.commonwl.org/) to orchestrate the execution of multiple steps (Docker containers) to integrate heterogeneous structured data sources in a RDF Knowledge Graph.
