@@ -23,22 +23,30 @@ You can provide the .zip file required to build GraphDB when doing `d2s init`, o
 
 ```shell
 # Build
-d2s update
+d2s update graphdb
 
 # Run
 d2s start graphdb
 ```
 
-### docker build and run
+### Docker build and run
 
 ```shell
 # Here shared locally at /data/graphdb and /data/graphdb-import
 docker build -t graphdb --build-arg version=9.1.1 .
 
-docker run -d --rm --name graphdb -p 7200:7200 -v /data/graphdb:/opt/graphdb/home -v /data/graphdb-import:/root/graphdb-import graphdb
+docker run -d --rm --name graphdb -p 7200:7200 -v $(pwd)/workspace/graphdb:/opt/graphdb/home -v $(pwd)/workspaceimport:/root/graphdb-import graphdb
 ```
 
 > Go to http://localhost:7200/
+
+### Permission issues
+
+If you face permissions issues with importing files try the following command (it will `chmod 777` the import folder):
+
+```shell
+d2s update --permissions
+```
 
 ## Create repository
 

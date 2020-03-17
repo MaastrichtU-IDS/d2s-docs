@@ -64,6 +64,14 @@ docker run -it -v /data/d2s-workspace:/data my-container \
 docker run -it -v c:/data/d2s-workspace:/data my-container --input-file "/data/my-file.txt"
 ```
 
+* We usually provide a relative path using `$pwd)`
+
+```shell
+docker run -it -v $(pwd)/workspace:/data my-container --input-file "/data/my-file.txt"
+```
+
+> To be tested on Windows.
+
 ---
 
 ## Link and network
