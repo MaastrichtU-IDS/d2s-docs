@@ -37,9 +37,6 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('d2s-introduction')}>
-              Introduction
-            </a>
             <a href={this.docUrl('d2s-installation')}>
               Installation
             </a>
@@ -94,16 +91,24 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
+
+            <a href="https://maastrichtu-ids.github.io/dsri-documentation/"
+              target="_blank" rel="noreferrer noopener">
+              Data Science Research Infrastructure
+            </a>
+
             <a href="https://twitter.com/um_ids"
               target="_blank" rel="noreferrer noopener"
               aria-label="Follow on Twitter">
-              <img alt="Follow on Twitter" src="https://img.shields.io/twitter/follow/um_ids?style=social"/>
+              Twitter
+              {/* <img alt="Follow on Twitter" src="https://img.shields.io/twitter/follow/um_ids?style=social"/> */}
             </a>
 
             <a href="https://www.facebook.com/IDSatUM/"
               target="_blank" rel="noreferrer noopener">
               Facebook
             </a>
+
             {/* <a href={this.pageUrl('users.html', this.props.language)}>
               User Showcase
             </a>

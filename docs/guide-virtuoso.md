@@ -43,6 +43,14 @@ docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
 
 > Navigate to http://localhost:8890/
 
+## Use the Search Index
+
+Example working on DBpedia and Bio2RDF:
+
+```SPARQL
+SELECT ?foundUri ?foundLabel WHERE {?foundUri <http://www.w3.org/2000/01/rdf-schema#label> ?foundLabel . ?foundLabel bif:contains '$TEXT_TO_SEARCH' . } LIMIT 200
+```
+
 ## Virtuoso commands
 
 ### Clear Virtuoso triplestore

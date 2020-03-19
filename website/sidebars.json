@@ -10,11 +10,12 @@
         ]
       } 
     ],
+    "Guides": ["guide-preprocessing", "guide-deploy-app", "guide-filebrowser", 
+      "guide-ontology", "cwl-create",  "guide-graphdb", "guide-virtuoso", 
+      "guide-postgres", "guide-mariadb", "guide-mysql", 
+      "guide-docker", "guide-windows", "guide-jenkins"],
     "Kubernetes workflows": 
       ["argo-install", "argo-login", "argo-volume" , 
-        "argo-run", "argo-commands", "argo-debug", "argo-secret"],
-    "Guides": ["guide-preprocessing", "guide-deploy-app", "guide-filebrowser", "guide-docker", "guide-windows", 
-      "guide-graphdb", "guide-virtuoso", "guide-postgres", "guide-mariadb", 
-      "guide-mysql", "guide-ontology", "cwl-create", "guide-jenkins"]
+        "argo-run", "argo-commands", "argo-debug", "argo-secret"]
   }
 }

@@ -3,9 +3,11 @@ id: guide-preprocessing
 title: Preprocess input files
 ---
 
-![](/img/csv-logo.png)
+We recommend you to define Bash commands to preprocess your data (convert to CSV, add column header, split) in the download.sh script of the dataset. See the example for COHD clinical converted from TSV to CSV.
 
 ## Convert TSV to CSV
+
+![](/img/csv-logo.png)
 
 Can be helpful, especially for [processing RML mappings](/docs/d2s-rml).
 

@@ -102,8 +102,6 @@ INSERT DATA {
 
 See the [official Ontotext GraphDB documentation](http://graphdb.ontotext.com/documentation/standard/query-behaviour.html#how-to-query-explicit-and-implicit-statements).
 
-
-
 ## Use the HTTP API
 
 ### Import file

@@ -26,7 +26,8 @@ function Help(props) {
         <img alt="Ask on Gitter" 
         src="https://img.shields.io/gitter/room/um-dsri/data2services"/>
       </a>
-      <p>Feel free to ask questions, or share issues and successes on [Gitter](https://gitter.im/um-dsri/data2services) 💬</p>`,
+      <p>Feel free to ask questions, or share issues and successes on the [Gitter Chat](https://gitter.im/um-dsri/data2services) 💬</p>
+      <p>Easy login with your GitHub or GitLab account.</p>`,
       title: 'Ask on Gitter'
     },
     {

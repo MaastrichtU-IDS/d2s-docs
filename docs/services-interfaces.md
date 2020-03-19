@@ -11,7 +11,9 @@ Web UI to browse a triplestore through its SPARQL endpoint: resolve URI, SPARQL 
 
 [into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs.
 
-Browse a RDF triplestore and its graphs by providing the SPARQL endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
+Browse various SPARQL endpoints and their graphs by providing the endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
+
+See an example deployment at [trek.semanticscience.org](http://trek.semanticscience.org). The SPARQL endpoint can be changed directly on the web app in [/settings](http://trek.semanticscience.org/settings).
 
 ```shell
 d2s start into-the-graph
@@ -20,10 +22,6 @@ docker run --rm -it -p 8082:80 umids/into-the-graph:latest
 ```
 
 > Access on http://localhost:8082
-
-> The SPARQL endpoint URL and other parameters can be changed before the build in [settings.json](https://github.com/MaastrichtU-IDS/into-the-graph/blob/master/settings.json). See the [README](https://github.com/MaastrichtU-IDS/into-the-graph#do-a-local-build) for more details.
-
----
 
 ## d2s-api
 
