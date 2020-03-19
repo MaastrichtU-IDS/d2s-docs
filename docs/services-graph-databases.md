@@ -57,7 +57,7 @@ docker run --name virtuoso \
 
 > Admin username: `dba` 
 
-> CORS can be enabled following [those instructions](http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksCORsEnableSPARQLURLs). See the complete [Virtuoso documentation](/docs/guide-virtuoso) for more details.
+> CORS can be enabled following [those instructions](http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksCORsEnableSPARQLURLs). See our complete [Virtuoso documentation](/docs/guide-virtuoso) for more details.
 
 Clear the Virtuoso triplestore using this command:
 
@@ -272,4 +272,4 @@ docker run -p 7474:7474 -p 7687:7687 -v $(pwd)/workspace/neo4j:/data neo4j
 
 > Access at http://localhost:7474, volume shared at `workspace/neo4j`
 
-> Login with `neoj4` / `neo4j` and change the password.
+> Login with `neoj4` / `neo4j` and change the password.virtu

@@ -51,15 +51,13 @@ Example working on DBpedia and Bio2RDF:
 SELECT ?foundUri ?foundLabel WHERE {?foundUri <http://www.w3.org/2000/01/rdf-schema#label> ?foundLabel . ?foundLabel bif:contains '$TEXT_TO_SEARCH' . } LIMIT 200
 ```
 
-## Virtuoso commands
-
-### Clear Virtuoso triplestore
+## Clear Virtuoso triplestore
 
 ```shell
 docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
 ```
 
-### Virtuoso bulk load
+## RDF bulk load
 
 This command should work to load all `.nq` files in the `workspace/virtuoso` directory, but it seems to have issues:
 
@@ -74,6 +72,10 @@ docker exec -i d2s-cwl-workflows_virtuoso_1 bash -c "/usr/local/virtuoso-opensou
 ```
 
 > For some reason the args are not passed to the script 🚧
+
+## Dump graphs
+
+See the [official documentation for dumping and loading graphs](http://docs.openlinksw.com/virtuoso/rdfperfdumpandreloadgraphs/).
 
 ### Dump one graph
 
