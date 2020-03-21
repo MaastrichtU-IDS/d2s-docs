@@ -5,13 +5,15 @@ title: Installation
 
 ## Install the d2s client
 
-Install the [d2s client](https://pypi.org/project/d2s) and [cwlref-runner](https://pypi.org/project/cwlref-runner/) with [pipx](https://pipxproject.github.io/pipx/):
+Install the [d2s client](https://pypi.org/project/d2s) and [cwlref-runner](https://pypi.org/project/cwlref-runner/) with [pipx](https://pipxproject.github.io/pipx/) on Linux and MacOS:
 
 ```shell
 pipx install d2s cwlref-runner
 ```
 
 > We recommend to use [pipx](https://pipxproject.github.io/pipx/) if you just want to execute `d2s`. You can also install with [pip](https://pypi.org/project/pip/) or pip3 depending on your preferences.
+
+See those [instructions to install d2s on Windows](/docs/install-windows) using Chocolatey.
 
 Requirements:
 
@@ -100,7 +102,7 @@ pipx ensurepath
 
 ### Install pipx on Windows
 
-We do not recommend running `d2s` on Windows, nevertheless if you want to try: install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe) and see [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). More details in the [Windows guide page](/docs/guide-windows).
+We do not recommend running `d2s` on Windows, nevertheless if you want to try: install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe) and see [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). More details in the [Windows guide page](/docs/install-windows).
 
 ```shell
 pip install pipx
@@ -181,7 +183,7 @@ nano /etc/resolv.conf
 	> nameserver 8.8.8.8
 ```
 
-> For issues related to Docker on Windows, see the [Windows guide](/docs/guide-windows) page.
+> For issues related to Docker on Windows, see the [Windows guide](/docs/install-windows) page.
 
 > For more details on how to run Docker see the [Docker guide](/docs/guide-docker).
 
