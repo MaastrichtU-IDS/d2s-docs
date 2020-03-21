@@ -49,9 +49,9 @@ E.g.: `wget: unable to resolve host address`
 
 ### Install Chocolatey
 
-We will use the Chocolatey Package manager for Windows on the PowerShell.
+We will use the [Chocolatey package manager](https://chocolatey.org/) for Windows on the [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-7).
 
-* Open the PowerShell as administrator
+* Open the PowerShell **as administrator** to install Chocolatey and its packages.
 * Check and fix system restrictions:
 
 ```shell
@@ -73,7 +73,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ### Install pip
 
-Using Chocolatey
+Using Chocolatey to install Python 3.8 and pip:
 
 ```shell
 choco install python pip
@@ -83,10 +83,18 @@ choco install python pip
 
 ### Install d2s
 
-Using pip. You don't need to use an administrative shell anymore, a normal PowerShell should work.
+Use `pip` to install the [latest d2s release](https://pypi.org/project/d2s/) from pypi. You don't need to use an administrative shell anymore, a normal PowerShell should work.
 
 ```shell
 pip install d2s
+```
+
+### Initialize a project
+
+Initialize your first project:
+
+```shell
+d2s init my-project-folder-name
 ```
 
 ## Install cwltool
