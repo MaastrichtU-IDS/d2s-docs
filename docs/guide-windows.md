@@ -79,7 +79,15 @@ Using Chocolatey
 choco install python pip
 ```
 
+> A **reboot** of your system is required to complete the installation.
 
+### Install d2s
+
+Using pip. You don't need to use an administrative shell anymore, a normal PowerShell should work.
+
+```shell
+pip install d2s
+```
 
 ## Install cwltool
 
