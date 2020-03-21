@@ -14,37 +14,6 @@ We do not recommend to run Data2Services on Windows.
 
 We recommend to use [git](https://git-scm.com/downloads) to clone the repository, and the Windows `PowerShell` terminal (which is easier to use than the basic terminal).
 
-## Install Docker
-
-See [official documentation](https://docs.docker.com/docker-for-windows/install/).
-
-> You will need to create an account on [Docker Hub](https://hub.docker.com/editions/community/docker-ce-desktop-windows) to use the Docker Desktop installation.
-
-### Activate Virtualization
-
-Virtualization and Hyper-V must be [**activated**](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization).
-* Docker will propose to install virtualization automatically after the Docker installation, if they are not installed.
-* Note that Docker Hyper-V is not available for Windows 10 Home edition (you will need Pro or Enterprise edition)
-* You might need to access the BIOS to enable VT-x virtualization
-
-### Share drive
-
-Docker will only be able to access folders and files in the `Shared Drives`.
-
-> Go to Docker config > `Settings` > `Shared Drives` > **Share Drive C**
-
-### Firewall issues
-
-Firewall detected issue: common, see with your IT department or deactivate your firewall
-
-### Docker build can't access internet
-
-If Docker can't access internet when building you might want to change the DNS (to use Google's one). 
-
-E.g.: `wget: unable to resolve host address`
-
-> Go to `Docker Settings` > `Network` > `DNS Server` > `Fixed: 8.8.8.8`
-
 ## Install d2s
 
 ### Install Chocolatey
@@ -96,6 +65,64 @@ Initialize your first project:
 ```shell
 d2s init my-project-folder-name
 ```
+
+---
+
+## Install Docker
+
+See [official documentation](https://docs.docker.com/docker-for-windows/install/).
+
+> You will need to create an account on [Docker Hub](https://hub.docker.com/editions/community/docker-ce-desktop-windows) to use the Docker Desktop installation.
+
+### Use Chocolatey
+
+Use docker-desktop for an easier installation if you have Windows Pro or Enterprise and a DockerHub account:
+
+```shell
+choco install docker-desktop
+```
+
+If you have Windows home or don't want to create a DockerHub account, use [docker-toolbox](https://chocolatey.org/packages/docker-toolbox):
+
+```shell
+choco install docker-toolbox -ia /COMPONENTS="kitematic,virtualbox,dockercompose" -ia /TASKS="desktopicon,modifypath,upgradevm"
+```
+
+Open  the `Docker Quickstart Terminal `to start Docker.
+
+If the previous instructions did not work, try:
+
+``````shell
+choco install docker-kitematic virtualbox
+``````
+
+### Activate Virtualization
+
+Virtualization and Hyper-V must be [**activated**](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization). Check in the `Task Manager `, in tab `Performance` if *Virtualization* is `enabled`. Or else:
+
+* Docker-desktop installation will propose to install virtualization automatically after the Docker installation, if they are not installed.
+* Note that Docker Hyper-V is not available for Windows 10 Home edition (you will need Pro or Enterprise edition)
+* You might need to access the BIOS to enable VT-x virtualization
+
+### Share drive
+
+Docker will only be able to access folders and files in the `Shared Drives`.
+
+> Go to Docker config > `Settings` > `Shared Drives` > **Share Drive C**
+
+### Firewall issues
+
+Firewall detected issue: common, see with your IT department or deactivate your firewall
+
+### Docker build can't access internet
+
+If Docker can't access internet when building you might want to change the DNS (to use Google's one). 
+
+E.g.: `wget: unable to resolve host address`
+
+> Go to `Docker Settings` > `Network` > `DNS Server` > `Fixed: 8.8.8.8`
+
+---
 
 ## Install cwltool
 

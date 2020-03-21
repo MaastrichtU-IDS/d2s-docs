@@ -198,7 +198,7 @@ const siteConfig = {
         var TOOLS = {
           className: 'keyword',
           variants: [
-            {begin: /(?:\s|^)(d2s|cd|mv|cp|chmod|chown|sed|wget|curl|tar|oc|kubectl|brew|git|argo|apt-get|apt|docker|docker-compose|cwl-runner|mkdir|pip|pip3|pipx|python3|nano)(?:\s|$)/},
+            {begin: /(?:\s|^)(d2s|cd|mv|cp|chmod|chown|sed|wget|curl|tar|oc|kubectl|brew|choco|git|argo|apt-get|apt|docker|docker-compose|cwl-runner|mkdir|pip|pip3|pipx|python3|nano)(?:\s|$)/},
           ]
         };
         // Mysteriously not doing his job, it is defined the same way as ARGS and TOOLS though.
