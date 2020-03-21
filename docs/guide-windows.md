@@ -5,9 +5,9 @@ title: Windows guide
 
 [![](/img/windows-logo.png)](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) 
 
-We **do not recommend** to run Data2Services on Windows.
+We do not recommend to run Data2Services on Windows.
 
-* Most workflow orchestrators **do not support Windows**, as workflows are based on Linux containers.
+* Most workflow orchestrators do not support Windows, as workflows are based on Linux containers, see CWL workflows and [Nextflow](https://www.nextflow.io/).
 * Windows can run [Docker](https://www.docker.com/), but not natively like [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0), making it much  more prone to errors.
 
 > You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). But cwltool developers don't test it on Windows.
@@ -18,7 +18,7 @@ We recommend to use [git](https://git-scm.com/downloads) to clone the repository
 
 See [official documentation](https://docs.docker.com/docker-for-windows/install/).
 
-> You will need to create an account on [Docker Hub](https://hub.docker.com/editions/community/docker-ce-desktop-windows).
+> You will need to create an account on [Docker Hub](https://hub.docker.com/editions/community/docker-ce-desktop-windows) to use the Docker Desktop installation.
 
 ### Activate Virtualization
 
@@ -44,6 +44,42 @@ If Docker can't access internet when building you might want to change the DNS (
 E.g.: `wget: unable to resolve host address`
 
 > Go to `Docker Settings` > `Network` > `DNS Server` > `Fixed: 8.8.8.8`
+
+## Install d2s
+
+### Install Chocolatey
+
+We will use the Chocolatey Package manager for Windows on the PowerShell.
+
+* Open the PowerShell as administrator
+* Check and fix system restrictions:
+
+```shell
+Get-ExecutionPolicy
+# If returns Restricted:  
+Set-ExecutionPolicy Bypass -Scope Process
+# or Set-ExecutionPolicy AllSigned
+```
+
+* Install Chocolatey on PowerShell:
+
+```shell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+
+> See the [official Chocolatey documentation](https://chocolatey.org/docs/installation#install-with-powershellexe).
+
+> Chocolatey can also be installed using a non-administrative shell. See [the documentation](https://chocolatey.org/docs/installation#non-administrative-install).
+
+### Install pip
+
+Using Chocolatey
+
+```shell
+choco install python pip
+```
+
+
 
 ## Install cwltool
 
