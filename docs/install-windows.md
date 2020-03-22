@@ -5,10 +5,10 @@ title: Install d2s on Windows
 
 [![](/img/windows-logo.png)](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0) 
 
-Support of the d2s  tool on Windows is a work in progress.
+Support of the [d2s tool](https://pypi.org/project/d2s/) on Windows is a work in progress.
 
 * Most workflow orchestrators do not support Windows, as workflows are based on Linux containers, see CWL workflows and [Nextflow](https://www.nextflow.io/).
-* Windows can run [Docker](https://www.docker.com/), but not natively like [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0), making it much  more prone to errors.
+* Windows can run [Docker](https://www.docker.com/), but not natively like [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0), making it more prone to errors.
 
 > You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). But it is not tested on Windows.
 
@@ -42,7 +42,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ### Install pip and pipx
 
-Using [Chocolatey](https://chocolatey.org/) to install Python 3.8 and pip:
+Open the PowerShell **as administrator** and use [Chocolatey](https://chocolatey.org/) to install Python 3.8 and pip:
 
 ```shell
 choco install python pip
@@ -50,7 +50,9 @@ choco install python pip
 
 > A **reboot** of your system is required to complete the installation.
 
-We recommend using [pipx](https://pipxproject.github.io/pipx/) if you are not developing on [d2s](https://pypi.org/project/d2s/):
+> Pip does not need to be run as administrator (only `choco install`)
+
+We recommend using [pipx](https://pipxproject.github.io/pipx/) if you are not developing on the [d2s Python CLI](https://pypi.org/project/d2s/):
 
 ``````shell
 pip install pipx
@@ -66,6 +68,8 @@ pipx install d2s cwlref-runner
 # Or use pip
 pip install d2s cwlref-runner
 ```
+
+> To run CWL workflows, see the [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 
 ### Initialize a project and continue
 
@@ -119,7 +123,7 @@ By default `docker-desktop` and `docker-toolbox` are sharing your `C:/Users` vol
 
 > On `docker-desktop` you can change it in Docker config > `Settings` > `Shared Drives` > **Share Drive C**
 
-> On `docker-toolbox` you need to chqnge the settings of the Virtual Box
+> On `docker-toolbox` you need to change the settings of the Virtual Box
 
 ### Known issues
 
@@ -134,24 +138,3 @@ If Docker can't access internet when building, you might want to change the DNS 
 E.g.: when getting `wget: unable to resolve host address`
 
 > Go to `Docker Settings` > `Network` > `DNS Server` > `Fixed: 8.8.8.8`
-
----
-
-## Install cwltool
-
-> **To be tested**.
-
-Install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe).
-
-See [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
-
-```shell
-pip install pipx
-pipx install cwlref-runner
-# Add pipx apps to path
-pipx ensurepath
-```
-
-> Windows documentation to run the docker containers can be found [here](/docs/install-windows).
-
-> Consider doing a `pip install --upgrade pip` to update your pip installation
