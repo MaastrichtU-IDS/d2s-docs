@@ -13,7 +13,7 @@ pipx install d2s cwlref-runner
 
 > We recommend to use [pipx](https://pipxproject.github.io/pipx/) if you just want to execute `d2s`. You can also install with [pip](https://pypi.org/project/pip/) or pip3 depending on your preferences.
 
-See those [instructions to install d2s on Windows](/docs/install-windows) using Chocolatey.
+See those [instructions to install d2s on Windows](/docs/install-windows) using Chocolatey. To run CWL workflows on Windows, see the [official CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
 
 Requirements:
 
@@ -48,6 +48,17 @@ echo 'eval "$(_D2S_COMPLETE=source d2s)"' >> ~/.bashrc
 ```
 
 > **To be tested.**
+
+### Windows support
+
+Support of the [d2s tool](https://pypi.org/project/d2s/) on Windows is a work in progress.
+
+* Most workflow orchestrators do not support Windows, as workflows are based on Linux containers, see CWL workflows and [Nextflow](https://www.nextflow.io/).
+* Windows can run [Docker](https://www.docker.com/), but not natively like [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0), making it more prone to errors.
+
+> You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). But it is not tested on Windows.
+
+We recommend to use the Windows [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell) terminal (which is easier to use than the basic terminal).
 
 ### Try the client
 
@@ -102,13 +113,44 @@ pipx ensurepath
 
 ### Install pipx on Windows
 
-We do not recommend running `d2s` on Windows, nevertheless if you want to try: install [Python 3.7](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe) and see [CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). More details in the [Windows guide page](/docs/install-windows).
+We will use the [Chocolatey package manager](https://chocolatey.org/) for Windows on the [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-7). To install Chocolatey:
+
+* Open the PowerShell **as administrator** to install Chocolatey and its packages.
+* Check and fix system restrictions:
 
 ```shell
-pip install pipx
-pipx install cwlref-runner
-pipx ensurepath
+Get-ExecutionPolicy
+# If returns Restricted:  
+Set-ExecutionPolicy Bypass -Scope Process
+# or Set-ExecutionPolicy AllSigned
 ```
+
+* Install Chocolatey on PowerShell:
+
+```shell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+
+> See the [official Chocolatey documentation](https://chocolatey.org/docs/installation#install-with-powershellexe).
+
+> Chocolatey can also be installed using a non-administrative shell. See [the documentation](https://chocolatey.org/docs/installation#non-administrative-install).
+
+Open the PowerShell **as administrator** and use [Chocolatey](https://chocolatey.org/) to install Python 3.8 and pip:
+
+```shell
+choco install python pip
+```
+
+> A **reboot** of your system is required to complete the installation.
+
+> Pip does not need to be run as administrator (only `choco install`)
+
+We recommend using [pipx](https://pipxproject.github.io/pipx/) if you are not developing on the [d2s Python CLI](https://pypi.org/project/d2s/):
+
+``````shell
+pip install pipx
+pipx ensurepath
+``````
 
 
 ### Upgrade d2s version
@@ -164,26 +206,70 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 > `sudo groupadd docker` might be required before `usermod`
 
-### On MacOS and Windows
+### On MacOS
 
-An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/) (`docker-compose` is included).
+An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) (`docker-compose` is included).
 
-> On Windows you might need to run the `Docker Toolbox` to setup Docker.
+### On Windows
 
-### Fix commons issues
+We use [Chocolatey](https://chocolatey.org/) to install [Docker](https://docs.docker.com/install/).
 
-If Docker can't access internet when building you might want to change the DNS (to use Google's one). 
-
-E.g.: `wget: unable to resolve host address`
-
-On Linux:
+Use [docker-desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows) for an easier installation if you have Windows Pro or Enterprise and a [DockerHub account](https://hub.docker.com/editions/community/docker-ce-desktop-windows):
 
 ```shell
-nano /etc/resolv.conf
-	> nameserver 8.8.8.8
+choco install docker-desktop
 ```
 
-> For issues related to Docker on Windows, see the [Windows guide](/docs/install-windows) page.
+If you have Windows home or don't want to create a DockerHub account, use [docker-toolbox](https://chocolatey.org/packages/docker-toolbox):
+
+```shell
+choco install docker-toolbox -ia /COMPONENTS="kitematic,virtualbox,dockercompose" -ia /TASKS="desktopicon,modifypath,upgradevm"
+```
+
+Open  the `Docker Quickstart Terminal `to start Docker.
+
+> Additional components that might be needed to install (VM and GUI):
+>
+> ````shell
+> choco install virtualbox docker-kitematic
+> ````
+
+#### Activate Virtualization
+
+Virtualization and Hyper-V must be [**activated**](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization). Check in the `Task Manager `, in tab `Performance` if *Virtualization* is `enabled`. 
+
+Check the [documentation to enable it](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization).
+
+* Docker-desktop installation will propose to install virtualization automatically after the Docker installation, if they are not installed.
+* Note that Docker Hyper-V is not available for Windows 10 Home edition (you will need Pro or Enterprise edition)
+* You might need to access the BIOS to enable VT-x virtualization
+
+* Share drive
+
+By default `docker-desktop` and `docker-toolbox` are sharing your `C:/Users` volume. Docker will only be able to access folders and files in the `Shared Drives`. So make sure you execute `d2s init` somewhere in your users directories. 
+
+> On `docker-desktop` you can change it in Docker config > `Settings` > `Shared Drives` > **Share Drive C**
+
+> On `docker-toolbox` you need to change the settings of the Virtual Box
+
+### Fix known issues
+
+* **DNS issue**: Docker build can't access the internet. E.g.: getting `wget: unable to resolve host address`
+
+  * If Docker can't access internet when building you might want to change the DNS (to use Google's one). 
+
+  * On Linux:
+
+    ```shell
+    nano /etc/resolv.conf
+    	> nameserver 8.8.8.8
+    ```
+
+  * On Windows: go to `Docker Settings` > `Network` > `DNS Server` > `Fixed: 8.8.8.8`
+
+* **Firewall issue on Windows**: it is common to face a firewall when Docker tries to connect to the internet
+  * This could be due to local services: try deactivate your firewall and/or antivirus 
+  * If you are running it on your office network you might face issues related to the office network firewall. Try at home and contact your IT department if needed.
 
 > For more details on how to run Docker see the [Docker guide](/docs/guide-docker).
 
