@@ -5,7 +5,7 @@ authorURL: vemonet.github.io/
 ---
 
 
-Generate a RDF knowledge graph integrating geographical and economics data from WorldBank and GeoNames.
+Generate a RDF knowledge graph integrating geographical and economics data from **[WorldBank](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD)** and **[GeoNames](https://www.geonames.org/)**.
 
 <!--truncate-->
 
@@ -53,7 +53,7 @@ We improved the metadata for GeoNames and WorldBank datasets by editing those fi
 
 ## Define RML mapping files
 
-Some templates mapping files are generated when creating a new dataset to help start mappings different king of file. Delete them and define mapping files for WorldBank and geoName
+Some [templates mapping files](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support/template/dataset/mapping) are generated when creating a new dataset to help start mappings different king of file. Delete them and define mapping files for WorldBank and GeoName.
 
 * WorldBank mappings in [datasets/worldbank/mapping/gdp_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/worldbank/mapping/gdp_mapping.rml.ttl)
 
@@ -63,7 +63,7 @@ Some templates mapping files are generated when creating a new dataset to help s
 
 ## Download input files
 
-Use the `d2s` tool to download datasets files defined in their respective `download.sh` file:
+Use the `d2s` tool to download datasets files defined in their respective `download/download.sh` file:
 
 ```shell
 d2s download worldbank
