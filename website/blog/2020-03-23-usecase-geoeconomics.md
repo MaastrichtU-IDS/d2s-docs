@@ -1,7 +1,7 @@
 ---
 title: Use case - Geoeconomics
 author: Vincent Emonet
-authorURL: vemonet.github.io/
+authorURL: https://vemonet.github.io/
 ---
 
 
