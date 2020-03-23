@@ -10,7 +10,7 @@
         ]
       } 
     ],
-    "Guides": ["guide-preprocessing", "guide-deploy-app", "guide-filebrowser", 
+    "Guides": ["usecase-geoeconomics", "guide-preprocessing", "guide-deploy-app", "guide-filebrowser", 
       "guide-ontology", "cwl-create",  "guide-graphdb", "guide-virtuoso", 
       "guide-postgres", "guide-mariadb", "guide-mysql", 
       "guide-docker", "guide-jenkins"],
