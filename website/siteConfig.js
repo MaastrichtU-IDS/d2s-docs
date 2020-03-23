@@ -59,6 +59,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'd2s-introduction', label: 'Documentation'},
+    { blog: true, label: 'Use-cases' },
     {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
     { search: false },
