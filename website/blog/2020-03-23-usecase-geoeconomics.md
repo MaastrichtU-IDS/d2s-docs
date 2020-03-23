@@ -5,7 +5,7 @@ authorURL: vemonet.github.io/
 ---
 
 
-Generate a RDF knowledge graph integrating geographical and economics data from **[WorldBank](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD)** and **[GeoNames](https://www.geonames.org/)**.
+Generate a RDF knowledge graph integrating geographical and economics data from **[WorldBank](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD)** and **[GeoNames](https://www.geonames.org/)**. Using Linux or MacOS is recommended as the [d2s tool](https://pypi.org/project/d2s/) support for Windows is still a work in progress.
 
 <!--truncate-->
 
