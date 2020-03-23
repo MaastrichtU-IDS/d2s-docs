@@ -11,10 +11,11 @@ Generate a RDF knowledge graph integrating geographical and economics data from 
 
 ## Install the d2s tool
 
-See the [installation documentation](https://d2s.semanticscience.org/docs/d2s-installation) to install the [d2s tool](https://pypi.org/project/d2s/) using pip.
+See the [complete installation documentation](https://d2s.semanticscience.org/docs/d2s-installation) to install pip, [pipx](https://pipxproject.github.io/pipx/) and Docker using Chocolatey. Then  install the [d2s tool](https://pypi.org/project/d2s/) using pipx:
 
 ```shell
 pipx install d2s cwlref-runner
+d2s init my-project-folder
 ```
 
 > We recommend using [pipx](https://pipxproject.github.io/pipx/), but `pip` would work too.
@@ -148,14 +149,14 @@ Access the Knowledge Graph we built at http://trek.semanticscience.org/describe?
 
 Edit the config.yml to define the parameters of the workflow that will compute metadata for the dataset
 
-* sparql_final_graph_uri: your graph
+* `sparql_final_graph_uri`: your graph
   * e.g. https://w3id.org/d2s/graph/geonames
 
-* sparql_final_triplestore_url: SPARQL endpoint to compute and load the RDF 
+* `sparql_final_triplestore_url`: SPARQL endpoint to compute and load the RDF 
   * e.g. http://graphdb:7200/repositories/geoeconomics/statements
-* sparql_final_triplestore_username
+* `sparql_final_triplestore_username`: triplestore username with Insert permissions.
   * e.g. admin
-* sparql_final_triplestore_password
+* `sparql_final_triplestore_password`: triplestore password
   * e.g. password
 
 Fix permissions: `d2s update --permissions`
@@ -167,3 +168,187 @@ d2s run compute-hcls-metadata.cwl worldbank
 d2s run compute-hcls-metadata.cwl geonames
 ```
 
+## Some SPARQL queries
+
+From IDS KG course.
+
+### Population and area comparison
+
+List all countries with population less than 50,000 and order them from the smallest to the largest in terms of landmass area (square kilometres) [Geonames]
+
+```SPARQL
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX wb: <http://data.worldbank.org/>
+select ?countryUri ?countryLabel ?population ?area where {
+  ?countryUri a gn:Country ;
+      rdfs:label ?countryLabel ;
+      dbo:areaTotal ?area ;
+      dbo:populationTotal ?population .
+  FILTER (xsd:integer(?population) < 50000)
+} ORDER BY xsd:double(?area)
+```
+
+### Highest GDP in 2017
+
+List the countries with the top 10 highest GDP values in 2017 [WorldBank and GeoNames]
+
+```SPARQL
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX wb: <http://data.worldbank.org/>
+SELECT * WHERE {
+    ?gdp17 a dbr:Gross_domestic_product ;
+        dbp:gdpNominalYear "2017"^^xsd:gYear ;
+        dbp:gdpNominal ?gdpValue ;
+        dbo:country ?worldbankCountry .
+    ?worldbankCountry rdfs:label ?countryLabel .
+    ?geonamesCountry owl:sameAs ?worldbankCountry ;
+} ORDER BY DESC(?gdpValue) LIMIT 10
+```
+
+> We map WorldBank countries with GeoNames countries on owl:sameAs to filter out non-countries entities, such as World (WLD) and OECD members (OED).
+
+### Highest GDP increase
+
+List the countries with the top 10 highest **increases** in GDP between 1960 and 2017 [WorldBank and GeoNames].
+
+```SPARQL
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX wb: <http://data.worldbank.org/>
+SELECT DISTINCT ?countryLabel ((?gdpValue2017-?gdpValue1960) AS ?gdpIncrease) ?worldbankCountry
+WHERE {
+    ?gdp2017 a dbr:Gross_domestic_product ;
+        dbp:gdpNominalYear "2017"^^xsd:gYear ;
+        dbp:gdpNominal ?gdpValue2017 ;
+        dbo:country ?worldbankCountry .
+
+    ?gdp1960 a dbr:Gross_domestic_product ;
+        dbp:gdpNominalYear "1960"^^xsd:gYear ;
+        dbp:gdpNominal ?gdpValue1960 ;
+        dbo:country ?worldbankCountry .
+
+    ?worldbankCountry rdfs:label ?countryLabel .
+    ?geonamesCountry owl:sameAs ?worldbankCountry ;
+    FILTER(str(?gdpValue1960) != "")
+    FILTER(str(?gdpValue2017) != "")
+} ORDER BY DESC(?gdpIncrease) LIMIT 10
+```
+
+> We filter out WorldBank countries without GDP values for wanted years and that are not countries using GeoNames mappings, and compute we the GDP increase in the Select statement.
+
+### Most GDP increase in continents
+
+For each continent, count the number of countries in that continent that are in the top 20 for highest increases in GDP between 1960 and 2017. Your answer should contain 2 values: the continent and the number of countries from the top 20 that are located in those continents (For example, Asia - 15, Europe - 5)
+
+```SPARQL
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX wb: <http://data.worldbank.org/>
+SELECT ?continent (count(?continent) AS ?countryCount)
+WHERE {
+  {
+       SELECT DISTINCT ?worldbankCountry ?continent ((?gdpValue2017-?gdpValue1960) AS ?gdpIncrease)
+       WHERE {
+          ?gdp2017 a dbr:Gross_domestic_product ;
+              dbp:gdpNominalYear "2017"^^xsd:gYear ;
+              dbp:gdpNominal ?gdpValue2017 ;
+              dbo:country ?worldbankCountry .
+
+          ?gdp1960 a dbr:Gross_domestic_product ;
+              dbp:gdpNominalYear "1960"^^xsd:gYear ;
+              dbp:gdpNominal ?gdpValue1960 ;
+              dbo:country ?worldbankCountry .
+
+        ?geonamesCountry owl:sameAs ?worldbankCountry ;
+            dbo:continent ?continent .
+        FILTER(str(?gdpValue1960) != "")
+        FILTER(str(?gdpValue2017) != "")
+      } ORDER BY DESC(?gdpIncrease) LIMIT 20
+  }
+} GROUP BY ?continent ORDER BY DESC(?countryCount)
+```
+
+> We include the previous SPARQL query in a select subquery with a LIMIT 20, then group by on continent, and compute the country count in the select statement. 
+
+### Construct GDP per capita
+
+Construct the triples representing the GDP per capita for each country in 2017 [Geonames, WorldBank]
+
+```SPARQL
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX wb: <http://data.worldbank.org/>
+CONSTRUCT { 
+    ?worldbankCountry dbp:gdpPerCapita ?gdpPerCapita .
+} WHERE {
+    ?gdp2017 a dbr:Gross_domestic_product ;
+              dbp:gdpNominalYear "2017"^^xsd:gYear ;
+              dbp:gdpNominal ?gdpValue2017 ;
+              dbo:country ?worldbankCountry .
+    ?country rdfs:label ?countryLabel .
+    ?geonamesCountry owl:sameAs ?worldbankCountry ;
+        dbo:populationTotal ?population .
+   
+    BIND( (?gdpValue2017/?population) AS ?gdpPerCapita )
+}
+```
+
+> The GDP per capita calculation is done inside a BIND instead of the Select statement (not required, just for example purpose)
+
+### Insert GDP per capita
+
+Directly insert the triples representing the GDP per capita for each country in 2017, into your triplestore on GraphDB in the graph namespace “http://kg-course/query” [Geonames, WorldBank]
+
+```SPARQL
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX wb: <http://data.worldbank.org/>
+INSERT {
+    GRAPH <http://kg-course/query> { 
+        ?worldbankCountry dbp:gdpPerCapita ?gdpPerCapita 
+    }
+} WHERE {
+    ?gdp2017 a dbr:Gross_domestic_product ;
+              dbp:gdpNominalYear "2017"^^xsd:gYear ;
+              dbp:gdpNominal ?gdpValue2017 ;
+              dbo:country ?worldbankCountry .
+    ?country rdfs:label ?countryLabel .
+    ?geonamesCountry owl:sameAs ?worldbankCountry ;
+        dbo:populationTotal ?population .
+    BIND( (?gdpValue2017/?population) AS ?gdpPerCapita )
+}
+```
+
+> In an INSERT query the graph can be defined in the Insert block, which is not possible for a Construct which generates only N-triples. Make sure you have correct permissions to Insert the statements in the queried SPARQL endpoint.
