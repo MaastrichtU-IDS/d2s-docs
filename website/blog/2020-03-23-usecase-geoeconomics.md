@@ -141,9 +141,9 @@ d2s start graphdb
 
 The [into-the-graph Web UI](https://d2s.semanticscience.org/docs/services-interfaces#into-the-graph) can be used to browse the SPARQL endpoint hosting the generated RDF Knowledge Graph.
 
-Access the Knowledge Graph we built at http://trek.semanticscience.org/describe?uri=https://w3id.org/d2s/graph/geonames&endpoint=http://graphdb.dumontierlab.com/repositories/geoeconomics
+Access the Knowledge Graph we built at http://trek.semanticscience.org/describe?uri=https://w3id.org/d2s/graph/geonames&endpoint=https://graphdb.dumontierlab.com/repositories/geoeconomics
 
-> Make sure the SPARQL endpoint URL is set on [http://graphdb.dumontierlab.com/repositories/geoeconomics](http://trek.semanticscience.org/describe?uri=https://w3id.org/d2s/graph/geonames&endpoint=http://graphdb.dumontierlab.com/repositories/geoeconomics)
+> Make sure the SPARQL endpoint URL is set on [https://graphdb.dumontierlab.com/repositories/geoeconomics](http://trek.semanticscience.org/describe?uri=https://w3id.org/d2s/graph/geonames&endpoint=https://graphdb.dumontierlab.com/repositories/geoeconomics)
 
 ## Optional: compute and load metadata
 

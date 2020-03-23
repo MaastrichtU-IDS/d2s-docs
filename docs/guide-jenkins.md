@@ -36,7 +36,7 @@ pipeline {
   agent any
   parameters {
     string(name: 'GraphUri', defaultValue: 'https://w3id.org/data2services/graph/biolink/date', description: 'URI of the Graph to validate')
-    string(name: 'SparqlRepositoryUri', defaultValue: 'http://graphdb.dumontierlab.com/repositories/public/statements', description: 'URI of the repository used to insert the computed statistics')
+    string(name: 'SparqlRepositoryUri', defaultValue: 'https://graphdb.dumontierlab.com/repositories/public/statements', description: 'URI of the repository used to insert the computed statistics')
     string(name: 'TriplestoreUsername', defaultValue: 'import_user', description: 'Username for the triplestore')
     string(name: 'TriplestorePassword', defaultValue: 'changeme', description: 'Password for the triplestore')
   }

@@ -118,7 +118,7 @@ docker run --rm -it -p 8888:8888 \
 
 ```shell
 docker run --rm -d --name lodestar -p 8082:8080 \
-  -e ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/ncats-red-kg \
+  -e ENDPOINT_URL=https://graphdb.dumontierlab.com/repositories/ncats-red-kg \
   -e TOP_RELATIONSHIP=http://w3id.org/biolink/vocab/id,http://w3id.org/biolink/vocab/name,http://w3id.org/biolink/vocab/description \
   -e LABEL=http://w3id.org/biolink/vocab/label \
   -e DESCRIPTION=http://w3id.org/biolink/vocab/description \
@@ -142,7 +142,7 @@ Linked Data Server: [URI dereferencing](http://lod.opentransportdata.swiss/sparq
 git clone https://github.com/vemonet/trifid.git
 docker build -t trifid ./trifid
 
-docker run --rm -ti --name trifid -p 8080:8080 trifid --sparql-endpoint-url=http://graphdb.dumontierlab.com/repositories/test --dataset-base-url=https://w3id.org/d2s/
+docker run --rm -ti --name trifid -p 8080:8080 trifid --sparql-endpoint-url=https://graphdb.dumontierlab.com/repositories/test --dataset-base-url=https://w3id.org/d2s/
 
 docker run --rm -ti --name trifid -v /home/vemonet/sandbox/trifid:/data -p 8080:8080 trifid --config=/data/config-ncats-red-kg.json
 ```
@@ -157,7 +157,7 @@ docker run --rm -ti --name trifid -v /home/vemonet/sandbox/trifid:/data -p 8080:
 docker run -ti -p 8080:8080 zazuko/trifid
 # Not working, provide env config file?
 docker run -ti -p 8080:8080 -e TRIFID_CONFIG=config-ncats-red-kg.json zazuko/trifid
-docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=http://graphdb.dumontierlab.com/repositories/test -e DATASET_BASE_URL=https://w3id.org/d2s/ zazuko/trifid
+docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=https://graphdb.dumontierlab.com/repositories/test -e DATASET_BASE_URL=https://w3id.org/d2s/ zazuko/trifid
 ```
 
 > Access [default example](https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq) on http://localhost:8080/data/person/mary-cooper to resolve URI.

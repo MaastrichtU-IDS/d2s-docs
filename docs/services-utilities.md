@@ -56,7 +56,7 @@ docker run -it --rm umids/d2s-sparql-operations:latest -op select \
   
 # Provide the URL to a GitHub folder to execute all .rq files in it
 docker run -it --rm umids/d2s-sparql-operations \
-  -ep "http://graphdb.dumontierlab.com/repositories/public/statements" \
+  -ep "https://graphdb.dumontierlab.com/repositories/public/statements" \
   -op update -un my_username -pw my_password \
   -f "https://github.com/MaastrichtU-IDS/d2s-sparql-operations/tree/master/src/main/resources/insert-examples"
 ```
@@ -224,7 +224,7 @@ git clone https://github.com/hsolbrig/PyShEx.git
 docker build -t pyshex ./PyShEx/docker
 docker run --rm -it pyshex -gn '' -ss -ut -pr \
 	-sq 'select ?item where{?item a <http://w3id.org/biolink/vocab/Gene>} LIMIT 1' \
-    http://graphdb.dumontierlab.com/repositories/ncats-red-kg \
+    https://graphdb.dumontierlab.com/repositories/ncats-red-kg \
     https://github.com/biolink/biolink-model/raw/master/shex/biolink-modelnc.shex
 ```
 
