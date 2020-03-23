@@ -65,6 +65,11 @@ const siteConfig = {
     { search: false },
   ],
 
+  blogSidebarTitle: { 
+    default: 'Use-cases', 
+    // all: 'Use-cases' 
+  },
+
   // For search: https://community.algolia.com/docsearch/documentation/
   // algolia: {
   //   apiKey: '033817e1a5cd4b58df39358119c67809',

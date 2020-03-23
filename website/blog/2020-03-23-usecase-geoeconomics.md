@@ -1,5 +1,5 @@
 ---
-title: Use case - Geoeconomics
+title: Geoeconomics datasets
 author: Vincent Emonet
 authorURL: https://vemonet.github.io/
 ---
