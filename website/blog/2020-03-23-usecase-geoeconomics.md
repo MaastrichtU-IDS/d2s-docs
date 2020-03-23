@@ -9,6 +9,16 @@ Generate a RDF knowledge graph integrating geographical and economics data from 
 
 <!--truncate-->
 
+## Install the d2s tool
+
+See the [installation documentation](https://d2s.semanticscience.org/docs/d2s-installation) to install the [d2s tool](https://pypi.org/project/d2s/) using pip.
+
+```shell
+pipx install d2s cwlref-runner
+```
+
+> We recommend using [pipx](https://pipxproject.github.io/pipx/), but `pip` would work too.
+
 ## Generate datasets
 
 Generate the WorldBank and GeoNames datasets:
