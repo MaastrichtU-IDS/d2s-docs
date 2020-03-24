@@ -11,7 +11,7 @@ Expose publicly all files in a directory and its subdirectories using [mohamnag/
 d2s start filebrowser
 
 docker run -p 8081:80 \
-  -v $PWD/workspace/download:/opt/www/files \
+  -v $(pwd)/workspace/download:/opt/www/files \
   mohamnag/nginx-file-browser:latest
 ```
 
@@ -27,8 +27,8 @@ Deploy a [filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) to acce
 
 ```shell
 docker run -d --rm --name d2s-filebrowser \
-    -v /data/d2s-workspace:/srv \
-    -v /path/.filebrowser.json:/.filebrowser.json \
+    -v $(pwd)/workspace/imports:/srv \
+    -v $(pwd)/.filebrowser.json:/.filebrowser.json \
     -p 8080:80 \
     filebrowser/filebrowser
 ```
@@ -36,3 +36,5 @@ docker run -d --rm --name d2s-filebrowser \
 > Access at http://localhost:8080/files 📂
 
 > Login with `admin` / `admin` and change password 🔒
+
+An example of the `.filebrowser.json` can be found [here for Docker](https://github.com/filebrowser/filebrowser/blob/master/.docker.json).
