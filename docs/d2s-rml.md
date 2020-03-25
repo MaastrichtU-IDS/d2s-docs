@@ -88,6 +88,8 @@ RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs
 
 ## Run on the DSRI OpenShift
 
+[![](/img/openshift-logo.png)](https://maastrichtu-ids.github.io/dsri-documentation/)
+
 Still experimental, the RMLStreamer can be run on the [Data Science Research Infrastructure OpenShift](https://maastrichtu-ids.github.io/dsri-documentation/) cluster.
 
 * See the [DSRI documentation](https://maastrichtu-ids.github.io/dsri-documentation/docs/deploy-services#apache-flink) to deploy Apache Flink.
