@@ -25,7 +25,9 @@ Requirements:
 
 ### Enable autocompletion
 
-Enabling commandline autocompletion in the terminal is crucial to have the best experience using the `d2s` client. 
+![Optional](https://img.shields.io/static/v1?label=module&message=Optional&color=blue)
+
+Enabling commandline autocompletion in the terminal provides a better experience using the `d2s` client. 
 
 * **ZSH**: add the import autocomplete line to the `~/.zshrc` file.
 
@@ -47,7 +49,7 @@ echo 'eval "$(_D2S_COMPLETE=source_zsh d2s)"' >> ~/.zshrc
 echo 'eval "$(_D2S_COMPLETE=source d2s)"' >> ~/.bashrc
 ```
 
-> **To be tested.**
+> **Bash autocompletion needs to be tested.**
 
 ### Windows support
 
