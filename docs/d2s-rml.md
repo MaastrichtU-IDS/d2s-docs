@@ -91,18 +91,21 @@ RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs
 Still experimental, the RMLStreamer can be run on the [Data Science Research Infrastructure OpenShift](https://maastrichtu-ids.github.io/dsri-documentation/) cluster.
 
 * See the [DSRI documentation](https://maastrichtu-ids.github.io/dsri-documentation/docs/deploy-services#apache-flink) to deploy Apache Flink.
-* Copy the RMLStreamer.jar file, your mapping files and data files to the pod. Here we are using `cohd` dataset as example
+
+* Copy the RMLStreamer.jar file, your mapping files and data files to the pod. It will be proposed when running `d2s rml` but they could be loaded manually before. 
 
 ```shell
-oc cp workspace/RMLStreamer.jar  <flink-jobmanager-id>:/mnt/RMLStreamer.jar
-oc cp workspace/input/cohd  <flink-jobmanager-id>:/mnt/input/
-oc cp datasets <flink-jobmanager-id>:/mnt/
+oc rsync workspace/resources <flink-jobmanager-id>:/mnt/workspace/
+oc rsync workspace/input <flink-jobmanager-id>:/mnt/workspace/
+oc rsync datasets <flink-jobmanager-id>:/mnt/
 ```
 
-* Run the RMLStreamer job
+> Transferring the files to the Apache Flink storage easily is still a work in progress.
+
+* Run the RMLStreamer job on the GeoNames example
 
 ```shell
-oc exec <flink-jobmanager-id> -- /opt/flink/bin/flink run -c io.rml.framework.Main /mnt/RMLStreamer.jar --path /mnt/datasets/cohd/mapping/associations-mapping.rml.ttl --outputPath /mnt/rdf_output-associations-mapping.nt --job-name "[d2s] RMLStreamer associations-mapping.rml.ttl - COHD"
+d2s rml geonames --openshift
 ```
 
 > The progress of the job can be checked in the Apache Flink web UI.
