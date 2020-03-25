@@ -85,3 +85,28 @@ The **[Matey Web UI editor 🦜](https://rml.io/yarrrml/matey/#edit)** is availa
 RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs/rml/).
 
 > See the [rml.io](https://rml.io/) website for more documentation about RML and the various tools built and deployed by Ghent University.
+
+## Run on the DSRI OpenShift
+
+Still experimental, the RMLStreamer can be run on the [Data Science Research Infrastructure OpenShift](https://maastrichtu-ids.github.io/dsri-documentation/) cluster.
+
+* See the [DSRI documentation](https://maastrichtu-ids.github.io/dsri-documentation/docs/deploy-services#apache-flink) to deploy Apache Flink.
+* Copy the RMLStreamer.jar file, your mapping files and data files to the pod. Here we are using `cohd` dataset as example
+
+```shell
+oc cp workspace/RMLStreamer.jar  <flink-jobmanager-id>:/mnt/workspace/RMLStreamer.jar
+oc cp workspace/input/cohd  <flink-jobmanager-id>:/mnt/workspace/input/
+oc cp datasets <flink-jobmanager-id>:/mnt/workspace/
+```
+
+* Run the RMLStreamer job
+
+```shell
+oc exec <flink-jobmanager-id> -- /opt/flink/bin/flink run -c io.rml.framework.Main /mnt/workspace/RMLStreamer.jar --path /mnt/workspace/datasets/cohd/mapping/associations-mapping.rml.ttl --outputPath /mnt/workspace/rdf_output-associations-mapping.nt --job-name "[d2s] RMLStreamer associations-mapping.rml.ttl - COHD"
+```
+
+> The progress of the job can be checked in the Apache Flink web UI.
+
+> Output in `/mnt/workspace/rdf_output-associations-mapping.nt` in the pod
+>
+> Or `/workspace` in the persistent storage.

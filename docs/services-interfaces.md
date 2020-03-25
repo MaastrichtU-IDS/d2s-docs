@@ -185,6 +185,21 @@ docker-compose up
 
 ---
 
+## RhizomerEye
+
+[RhizomerEye](https://rhizomer.rhizomik.net/about) is a tool to expose a SPARQL endpoint as REST API and deploy a Web UI to browse the triplestore.
+
+See the source code for the [RhizomerAPI](https://github.com/rhizomik/rhizomerAPI) and [RhizomerEye](https://github.com/rhizomik/rhizomerEye).
+
+The Web UI has been deployed publicly for a few triplestores:
+
+* [COVID-19](https://rhizomer.rhizomik.net/datasets/covid19/ucsb:Record)
+* [DBpedia](https://rhizomer.rhizomik.net/datasets/dbpedia/describe?uri=http:%2F%2Fdbpedia.org%2Fresource%2FEngland)
+
+> Deployment will be integrated in [d2s](https://pypi.org/project/d2s/) soon.
+
+---
+
 ## TriplyDB
 
 See [official documentation](https://triply.cc/docs/triply-db-getting-started). It allows to deploy the following services over a triplestore:
