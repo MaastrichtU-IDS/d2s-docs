@@ -94,19 +94,19 @@ Still experimental, the RMLStreamer can be run on the [Data Science Research Inf
 * Copy the RMLStreamer.jar file, your mapping files and data files to the pod. Here we are using `cohd` dataset as example
 
 ```shell
-oc cp workspace/RMLStreamer.jar  <flink-jobmanager-id>:/mnt/workspace/RMLStreamer.jar
-oc cp workspace/input/cohd  <flink-jobmanager-id>:/mnt/workspace/input/
-oc cp datasets <flink-jobmanager-id>:/mnt/workspace/
+oc cp workspace/RMLStreamer.jar  <flink-jobmanager-id>:/mnt/RMLStreamer.jar
+oc cp workspace/input/cohd  <flink-jobmanager-id>:/mnt/input/
+oc cp datasets <flink-jobmanager-id>:/mnt/
 ```
 
 * Run the RMLStreamer job
 
 ```shell
-oc exec <flink-jobmanager-id> -- /opt/flink/bin/flink run -c io.rml.framework.Main /mnt/workspace/RMLStreamer.jar --path /mnt/workspace/datasets/cohd/mapping/associations-mapping.rml.ttl --outputPath /mnt/workspace/rdf_output-associations-mapping.nt --job-name "[d2s] RMLStreamer associations-mapping.rml.ttl - COHD"
+oc exec <flink-jobmanager-id> -- /opt/flink/bin/flink run -c io.rml.framework.Main /mnt/RMLStreamer.jar --path /mnt/datasets/cohd/mapping/associations-mapping.rml.ttl --outputPath /mnt/rdf_output-associations-mapping.nt --job-name "[d2s] RMLStreamer associations-mapping.rml.ttl - COHD"
 ```
 
 > The progress of the job can be checked in the Apache Flink web UI.
 
-> Output in `/mnt/workspace/rdf_output-associations-mapping.nt` in the pod
+> Output in `/mnt/rdf_output-associations-mapping.nt` in the pod
 >
-> Or `/workspace` in the persistent storage.
+> Or `/apache-flink` in the persistent storage.
