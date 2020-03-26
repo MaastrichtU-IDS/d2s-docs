@@ -48,7 +48,7 @@ const siteConfig = {
   // npm run build
   // GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
 
-  /* Colors for website */
+  /* Colors for website, using https://material.io/resources/color/#!/ */
   colors: {
     primaryColor: '#1565c0',    // Blue 800 (material color)
     secondaryColor: '#ff6f00',  // Orange
