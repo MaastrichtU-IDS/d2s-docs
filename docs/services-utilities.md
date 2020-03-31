@@ -261,7 +261,7 @@ Convert RDF data to a neo4j property graph by mapping the RDF to Cypher queries 
 Start the LIMES server:
 
 ```bash
-d2s start limes
+d2s start limes-server
 ```
 
 > Access at http://localhost:8090
