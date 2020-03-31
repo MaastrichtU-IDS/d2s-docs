@@ -30,6 +30,58 @@ You can use the [Protégé ontology editor](https://protege.stanford.edu/) to bu
 
 ## Resolve prefixes
 
-http://prefix.cc is a handy tool to resolve prefixes
+http://prefix.cc is a handy service to resolve prefixes.
 
 > E.g. http://prefix.cc/bl
+
+## Try the Zazuko Ontology manager
+
+[Collaborative ontology editor](https://zazuko.github.io/ontology-manager/). See the demo ontology editor at http://editor.zazuko.com/
+
+To deploy it using Docker:
+
+```shell
+git clone https://github.com/zazuko/ontology-manager zazuko-ontology-manager
+cd zazuko-ontology-manager
+
+# Add environment var to docker-compose.yml app:
+environment:
+  VIRTUAL_HOST: my-host.nip.io
+
+# Update env variables in file
+mv .env.example .env
+
+# Run this in terminal also?
+CUSTOMER_NAME=ids
+POSTGRESQL_PASSWORD=make-this-secret
+POSTGRESQL_HOST=db
+POSTGRESQL_USER=postgres
+POSTGRESQL_DATABASE=postgres
+POSTGRAPHILE_TOKEN_SECRET=this-is-secret-as-well
+# Token used as hash/salt, keep it secret for JWT security
+
+# Optional variables
+OAUTH_HOST=https://github.com/login/oauth
+OAUTH_CLIENT_ID=
+OAUTH_CLIENT_SECRET=
+GITHUB_PERSONAL_ACCESS_TOKEN=
+DEBUG=editor:*
+```
+
+Build and run
+
+```shell
+docker-compose build
+docker-compose up -d
+```
+
+> Finish installation at http://my-host.nip.io/install
+
+> Go to http://my-host.nip.io
+
+Check logs
+
+```shell
+docker-compose logs -f app nginx
+```
+

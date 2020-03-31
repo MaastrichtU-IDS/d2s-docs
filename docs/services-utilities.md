@@ -254,6 +254,26 @@ Convert RDF data to a neo4j property graph by mapping the RDF to Cypher queries 
 
 ---
 
+## LIMES interlinking
+
+[LIMES](https://github.com/dice-group/LIMES) is a tool developed by DICE group to perform interlinking between RDF entities using [various metrics](http://dice-group.github.io/LIMES/#/user_manual/configuration_file/defining_link_specifications?id=implemented-measures): Cosine, ExactMatch, Levenshtein... 
+
+Start the LIMES server:
+
+```bash
+d2s start limes
+```
+
+> Access at http://localhost:8090
+
+See the [official documentation to use the deployed REST API](http://dice-group.github.io/LIMES/#/user_manual/running_limes?id=using-the-cli-server) to submit LIMES jobs.
+
+>[Postman](https://www.postman.com/product/api-client) can be used to perform HTTP POST queries on the API.
+
+> A newly released [public Web UI](http://limes.aksw.org/) can also be tried in the browser.
+
+---
+
 ## BridgeDb
 
 [![](https://img.shields.io/github/stars/bridgedb/BridgeDb?label=GitHub&style=social)](https://github.com/bridgedb/BridgeDb)

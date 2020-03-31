@@ -86,6 +86,12 @@ RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs
 
 > See the [rml.io](https://rml.io/) website for more documentation about RML and the various tools built and deployed by Ghent University.
 
+YARRRML can also be parsed locally using a npm package:
+
+```shell
+npm i @rmlio/yarrrml-parser -g
+```
+
 ## Run on the DSRI OpenShift
 
 [![](/img/openshift-logo.png)](https://maastrichtu-ids.github.io/dsri-documentation/)
@@ -97,7 +103,7 @@ Still experimental, the RMLStreamer can be run on the [Data Science Research Inf
 * Copy the RMLStreamer.jar file, your mapping files and data files to the pod. It will be proposed when running `d2s rml` but they could be loaded manually before. 
 
 ```shell
-oc rsync workspace/resources <flink-jobmanager-id>:/mnt/workspace/
+oc exec <flink-jobmanager-id> -- mkdir -p /mnt/workspace/import
 oc rsync workspace/input <flink-jobmanager-id>:/mnt/workspace/
 oc rsync datasets <flink-jobmanager-id>:/mnt/
 ```
@@ -112,6 +118,6 @@ d2s rml geonames --openshift
 
 > The progress of the job can be checked in the Apache Flink web UI.
 
-> Output in `/mnt/rdf_output-associations-mapping.nt` in the pod
+> Output file in `/mnt/rdf_output-associations-mapping.nt` in the pod
 >
-> Or `/apache-flink` in the persistent storage.
+> Or in `/apache-flink` in the persistent storage.
