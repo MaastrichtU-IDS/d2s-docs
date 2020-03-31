@@ -13,7 +13,7 @@ pipx install d2s cwlref-runner
 
 > We recommend to use [pipx](https://pipxproject.github.io/pipx/) if you just want to execute `d2s`. You can also install with [pip](https://pypi.org/project/pip/) or pip3 depending on your preferences.
 
-See those [instructions to install d2s on Windows](/docs/install-windows) using Chocolatey. To run CWL workflows on Windows, see the [official CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md).
+See those [instructions to install d2s on Windows](/docs/d2s-installation#install-pipx-on-windows) using Chocolatey and pipx. Some features support on Windows is still a work in progress, such as CWL workflows (see the [official CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md) to make it work).
 
 Requirements:
 
