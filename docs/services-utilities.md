@@ -244,6 +244,19 @@ docker run -it --rm -v $(pwd)/workspace:/data \
 
 ---
 
+## Raptor rdf2rdf
+
+[Raptor](http://librdf.org/raptor/rapper.html) is a small Bash tool to convert from a RDF format to another (nq, nt, ttl, rdf/xml). It can help fix triple normalization and encoding issues.
+
+```shell
+docker run -it --rm -v $(pwd)/workspace:/data \
+  umids/raptor-rdf2rdf -i ntriples -o rdfxml /data/kg.nt > /data/kg.xml
+```
+
+> Also available: `turtle`, `nquads`. JSON-LD not available.
+
+> See [GitHub repository](https://github.com/pheyvaer/raptor-docker) for Docker build.
+
 ## rdf2neo
 
 [![GitHub](https://img.shields.io/github/stars/Rothamsted/rdf2neo?label=GitHub&style=social)](https://github.com/Rothamsted/rdf2neo)
