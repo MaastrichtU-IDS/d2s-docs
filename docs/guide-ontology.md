@@ -20,13 +20,13 @@ Search for relevant existing models in ontology repositories:
   ) by the EBI
 * [AgroPortal](http://agroportal.lirmm.fr/recommender) for agronomy by INRIA.
 
+> The [BioPortal Recommender](https://bioportal.bioontology.org/recommender) and [Search](https://bioportal.bioontology.org/search) services are efficient to look for concepts in most existing biomedical ontologies.
+
 ## Ontology design with Protégé
 
 You can use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
 
 [Install Protégé](http://protegeproject.github.io/protege/installation/) on your computer for better performance than the web hosted service.
-
-> TODO: tuto use BioPortal recommender
 
 ## Resolve prefixes
 
