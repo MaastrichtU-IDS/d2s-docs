@@ -104,6 +104,8 @@ See the [official Ontotext GraphDB documentation](http://graphdb.ontotext.com/do
 
 ## Use the HTTP API
 
+See the [Swagger UI](https://graphdb.dumontierlab.com/webapi).
+
 ### Import file
 
 Import the `rdf_output.nq` file (in server import)
@@ -112,8 +114,11 @@ Import the `rdf_output.nq` file (in server import)
 curl -X POST -u admin:root --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
    "fileNames": [
      "rdf_output.nq"
-   ]
- }' 'http://localhost:7200/rest/data/import/server/test'
+   ],
+   "importSettings": {
+      "context": "https://w3id.org/d2s/graph"
+    }
+ }' 'http://localhost:7200/rest/data/import/server/$GRAPHDB_REPOSITORY'
 ```
 
 Check if import is done:
@@ -130,6 +135,19 @@ curl -X GET --header 'Accept: application/json' 'http://localhost:7200/rest/data
   }
 ]
 ```
+
+### Import URL
+
+Does not seems to work.
+
+```shell
+curl -X POST -u admin:root --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+   "baseURI": "https://archive.monarchinitiative.org/latest/rdf/ctd.ttl",
+   "context": :
+ }' 'http://localhost:7200/rest/data/import/upload/test/url'
+```
+
+> e.g. https://archive.monarchinitiative.org/latest/rdf/ctd.ttl
 
 ### Export graph
 
