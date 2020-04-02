@@ -310,3 +310,19 @@ docker run -it --rm -v $(pwd)/workspace/input:/data umids/d2s-bash-exec:latest h
 ```
 
 > See on [DockerHub](https://hub.docker.com/r/umids/d2s-bash-exec).
+
+---
+
+## LinkedPipes
+
+[LinkedPipes](https://linkedpipes.com/) is a Suite for Linked Data, with [ETL](https://etl.linkedpipes.com/) and [Visualization](https://visualization.linkedpipes.com/) services.
+
+Try the [ETL web UI](https://demo.etl.linkedpipes.com/#/pipelines) to define data transformation pipelines to RDF:
+
+```bash
+git clone https://github.com/linkedpipes/etl linkedpipes-etl
+cd linkedpipes-etl
+LP_ETL_PORT=8091 docker-compose up -d
+```
+
+> Access at http://localhost:8091
