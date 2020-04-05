@@ -43,6 +43,12 @@ d2s rml cohd
 
 > Output goes to `workspace/import/rmlstreamer-associations-mapping_rml_ttl-cohd.nt` and can then be loaded to a triplestore.
 
+You can also provide [YARRRML](https://rml.io/yarrrml/spec/) files with the extensions `.yarrr.yml` to be processed to `.rml.ttl` files before running RML:
+
+```shell
+d2s rml geonames --yarrrml
+```
+
 The command run detached by default, you can keep the terminal attached and watch the execution:
 
 ```shell
@@ -76,11 +82,17 @@ d2s rml cohd --mapper
 
 > Output goes to `workspace/import/rmlmapper-associations-mapping_rml_ttl-cohd.nt`
 
+Or using [YARRRML](https://rml.io/yarrrml/spec/) mappings:
+
+```shell
+d2s rml cohd --yarrrml --mapper
+```
+
 ## Web-based RML editor
 
 [![](/img/yarrrml-logo.png)](https://rml.io/yarrrml/matey/#edit)
 
-The **[Matey Web UI editor 🦜](https://rml.io/yarrrml/matey/#edit)** is available to easily write RML mappings using the [YARRRML](https://rml.io/yarrrml/) simplified mapping language. The mappings can be conveniently tested in the browser on a sample of the file to transform.
+The **[Matey Web UI editor 🦜](https://rml.io/yarrrml/matey/#edit)** is available to easily write RML mappings in [YAML](https://yaml.org/) files using the [YARRRML](https://rml.io/yarrrml/) simplified mapping language. The mappings can be conveniently tested in the browser on a sample of the file to transform.
 
 RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs/rml/).
 
