@@ -16,10 +16,9 @@ pipx install d2s cwlref-runner
 Requirements:
 
 * [Python 3.6](https://d2s.semanticscience.org/docs/d2s-installation#install-pip)
-* [docker-compose](https://docs.docker.com/compose/install/)
-* git (download [git for Windows](https://git-scm.com/download/win))
-* The [OpenShift CLI](https://maastrichtu-ids.github.io/dsri-documentation/docs/openshift-install) (`oc` command) is required if you want to use OpenShift features
-* Time (bash)
+* [Docker-compose](https://docs.docker.com/compose/install/)
+* Git (download [Git for Windows](https://git-scm.com/download/win))
+* The [OpenShift CLI](https://maastrichtu-ids.github.io/dsri-documentation/docs/openshift-install) (`oc` command) is required if you want to use experimental features to run services and workflows on OpenShift
 
 See those [instructions to install d2s on Windows](/docs/d2s-installation#install-pipx-on-windows) using Chocolatey and pipx. Some features support on Windows is still a work in progress, such as CWL workflows (see the [official CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md) to make it work).
 
