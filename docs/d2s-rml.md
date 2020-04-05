@@ -121,3 +121,32 @@ d2s rml geonames --openshift
 > Output file in `/mnt/rdf_output-associations-mapping.nt` in the pod
 >
 > Or in `/apache-flink` in the persistent storage.
+
+## Notice about using functions
+
+RML functions are still not implemented in the RMLStreamer, use the RML mapper if you want to make use of them. See the [full list of available default functions](https://rml.io/docs/rmlmapper/default-functions/).
+
+Example using the [split function](https://rml.io/docs/rmlmapper/default-functions/#split):
+
+```yaml
+prefixes:
+  grel: "http://users.ugent.be/~bjdmeest/function/grel.ttl#"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  gn: "http://www.geonames.org/ontology#"
+
+mappings:
+  neighbours:
+    sources:
+      - ['/mnt/workspace/input/geonames/dataset-geonames-countryInfo.csv~csv']
+    s: http://www.geonames.org/ontology#$(ISO)
+    po:
+      - [a, gn:Country]
+      - p: gn:neighbours
+        o:
+            function: grel:string_split
+            parameters:
+                - [grel:valueParameter, $(neighbours)]
+                - [grel:p_string_sep, "|"]
+            language: en
+```
+
