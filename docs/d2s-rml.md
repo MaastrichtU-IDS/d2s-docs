@@ -85,7 +85,7 @@ d2s rml cohd --mapper
 Or using [YARRRML](https://rml.io/yarrrml/spec/) mappings:
 
 ```shell
-d2s rml cohd --yarrrml --mapper
+d2s rml geonames --yarrrml --mapper
 ```
 
 ## Web-based RML editor
