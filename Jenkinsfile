@@ -1,5 +1,11 @@
 pipeline {
   agent any
+  options {
+    skipDefaultCheckout true
+  }
+  when {
+    branch 'master'
+  }  
   stages {
     stage('checkout') {
       steps {
