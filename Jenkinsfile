@@ -3,8 +3,8 @@ pipeline {
   options {
     skipDefaultCheckout true
   }
-  if(env.BRANCH_NAME == 'master'){
-    stages {
+  stages {
+    if(env.BRANCH_NAME == 'master'){
       stage('checkout') {
         steps {
           git 'https://github.com/MaastrichtU-IDS/d2s-documentation.git'
