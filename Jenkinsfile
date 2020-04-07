@@ -13,7 +13,7 @@ pipeline {
     }
     stage('remove') {
       steps {
-        sh 'docker stop d2s-documentation'
+        sh 'docker stop d2s-documentation || true'
       }
     }
     stage('deploy') {
