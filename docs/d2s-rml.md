@@ -177,7 +177,7 @@ mappings:
             language: en
 ```
 
-> GREL separators needs to be escaped.
+> `grel:p_string_sep` separators needs to be escaped with `\`
 
 Additional function can be added by integrating them in a `.jar` file, see the [documentation](https://github.com/RMLio/rmlmapper-java#including-functions).
 
