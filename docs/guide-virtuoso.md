@@ -51,6 +51,8 @@ Example working on DBpedia and Bio2RDF:
 SELECT ?foundUri ?foundLabel WHERE {?foundUri <http://www.w3.org/2000/01/rdf-schema#label> ?foundLabel . ?foundLabel bif:contains '$TEXT_TO_SEARCH' . } LIMIT 200
 ```
 
+> Enable Virtuoso full text index following [this documentation](http://docs.openlinksw.com/virtuoso/rdfsparqlrulefulltext/).
+
 ## Clear Virtuoso triplestore
 
 ```shell
