@@ -20,20 +20,20 @@ pipeline {
         sh 'docker build -t umids/d2s-documentation:latest .'
       }
     }
-    stage('remove') {
-      when {
-          branch 'master'
-      }
-      steps {
-        sh 'docker stop d2s-documentation || true'
-      }
-    }
     stage('deploy') {
       when {
           branch 'master'
       }
       steps {
-        sh 'docker run -d --rm --name d2s-documentation -e VIRTUAL_HOST=d2s.semanticscience.org -e LETSENCRYPT_HOST=d2s.semanticscience.org -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
+        parallel(
+          push: {
+            sh 'docker push umids/d2s-documentation:latest'
+          },
+          deploy: {
+            sh 'docker stop d2s-documentation || true'
+            sh 'docker run -d --rm --name d2s-documentation -e VIRTUAL_HOST=d2s.semanticscience.org -e LETSENCRYPT_HOST=d2s.semanticscience.org -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
+          }
+        )
       }
     }
   }
