@@ -18,7 +18,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'docker run -d -rm --name d2s-documentation -e VIRTUAL_HOST=d2s.137.120.31.102.nip.io -e LETSENCRYPT_HOST=d2s.137.120.31.102.nip.io -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
+        sh 'docker run -d --rm --name d2s-documentation -e VIRTUAL_HOST=d2s.137.120.31.102.nip.io -e LETSENCRYPT_HOST=d2s.137.120.31.102.nip.io -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
       }
     }
   }
