@@ -5,25 +5,53 @@ title: Run RML transformations
 
 Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF using a declarative mapping language. 
 
-The [RMLStreamer](/docs/services-utilities#rmlstreamer) is a scalable implementation of the [RDF Mapping Language Specifications](https://rml.io/specs/rml/) to generate RDF out of structured input data streams.
+By default we use YARRRML, a YAML mapping language, to make the definition of RML mappings easier. RML mappings defined using Turtle can also be executed.
 
 ## Download files to convert
 
-The following documentation will use the COHD Clinical CSV data as example. Download the dataset, if not already done:
+The following documentation will use the COHD Clinical CSV data and a Geonames TSV dataset as example. Download the dataset, if not already done:
 
 ```shell
-d2s download cohd
+d2s download cohd geonames
 ```
 
-> Download script defined in [datasets/cohd/download/download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/download/download.sh).
+> See the download Bash scripts for [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/download/download.sh) and [GeoNames](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/geonames/download/download.sh).
 
 > Downloaded files goes to `workspace/input/cohd`
 
-## Start Apache Flink
+## Run RML Mapper
+
+The [rmlmapper-java](https://github.com/RMLio/rmlmapper-java/) execute RML mappings to generate RDF Knowledge Graphs. It loads all data in memory, so be aware when working with big datasets.
+
+By default `d2s rml` will execute RML files defined in the RDF Turtle format, in files with the extension `.rml.ttl` (e.g. `datasets/<dataset_id>/mapping/associations-mapping.rml.ttl`)
+
+```shell
+d2s rml cohd --mapper
+```
+
+> Output goes to `workspace/import/rmlmapper-associations-mapping_rml_ttl-cohd.nt`
+
+You can execute [YARRRML](https://rml.io/yarrrml/spec/) mappings defined in files with the extension `.yarrr.yml`, by providing the argument `--yarrrml`:
+
+```shell
+d2s rml geonames --yarrrml --mapper
+```
+
+> If you face memory issues, you might need to change the maximum memory allocated to Java (`-xmx`), or try using the RMLStreamer documented below.
+
+## Run RML Streamer
+
+The [RMLStreamer](/docs/services-utilities#rmlstreamer) is a scalable implementation of the [RDF Mapping Language Specifications](https://rml.io/specs/rml/) to generate RDF out of structured input data streams.
+
+> ⚠️ The RMLStreamer is still in development, some features such as functions are yet to be implemented.
+
+The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
+
+### Start Apache Flink
 
 [![Apache Flink](/img/flink-logo.png)](https://flink.apache.org/)
 
-Start [Apache Flink](https://flink.apache.org/), required to stream the files:
+Starting [Apache Flink](https://flink.apache.org/) is required to stream the files:
 
 ```shell
 d2s start rmlstreamer rmltask
@@ -31,9 +59,7 @@ d2s start rmlstreamer rmltask
 
 > Access at http://localhost:8078 to see running jobs.
 
-## Run the RMLStreamer
-
-The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
+### Run job
 
 We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/mapping/associations-mapping.rml.ttl) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
@@ -61,34 +87,39 @@ Generate NQuads by adding the graph infos in the `rr:subjectMap` in RML mappings
 rr:graphMap [ rr:constant <https://w3id.org/trek/graph/drugbank> ];
 ```
 
-## Compute HCLS metadata
+### Run on OpenShift
 
-[HCLS descriptive metadata and statistics](https://www.w3.org/TR/hcls-dataset/) for datasets can easily be computed and inserted for the generated graph by running a CWL workflow:
+[![](/img/openshift-logo.png)](https://maastrichtu-ids.github.io/dsri-documentation/)
 
-```shell
-d2s run compute-hcls-metadata.cwl cohd
-```
+Still experimental, the RMLStreamer can be run on the **[Data Science Research Infrastructure](https://maastrichtu-ids.github.io/dsri-documentation/)** OpenShift cluster.
 
-* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
-* [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.
+* See the [DSRI documentation](https://maastrichtu-ids.github.io/dsri-documentation/docs/deploy-services#apache-flink) to deploy Apache Flink.
 
-## Run the RMLMapper
-
-For small files the [rmlmapper-java](https://github.com/RMLio/rmlmapper-java/) can be used.
+* Copy the RMLStreamer.jar file, your mapping files and data files to the pod. It will be proposed when running `d2s rml` but they could be loaded manually before. 
 
 ```shell
-d2s rml cohd --mapper
+oc exec <flink-jobmanager-id> -- mkdir -p /mnt/workspace/import
+oc rsync workspace/input <flink-jobmanager-id>:/mnt/workspace/
+oc rsync datasets <flink-jobmanager-id>:/mnt/
 ```
 
-> Output goes to `workspace/import/rmlmapper-associations-mapping_rml_ttl-cohd.nt`
+> Transferring the files to the Apache Flink storage easily is still a work in progress.
 
-Or using [YARRRML](https://rml.io/yarrrml/spec/) mappings:
+* Run the RMLStreamer job on the GeoNames example:
 
 ```shell
-d2s rml geonames --yarrrml --mapper
+d2s rml geonames --openshift
 ```
 
-## Web-based RML editor
+> The progress of the job can be checked in the Apache Flink web UI.
+
+> Output file in `/mnt/rdf_output-associations-mapping.nt` in the pod
+>
+> Or in `/apache-flink` in the persistent storage.
+
+## Edit RML mappings
+
+### YARRRML Matey web editor
 
 [![](/img/yarrrml-logo.png)](https://rml.io/yarrrml/matey/#edit)
 
@@ -104,39 +135,24 @@ YARRRML can also be parsed locally using a npm package:
 npm i @rmlio/yarrrml-parser -g
 ```
 
-## Run on the DSRI OpenShift
+### Mapeathor
 
-[![](/img/openshift-logo.png)](https://maastrichtu-ids.github.io/dsri-documentation/)
+[Mapeathor](https://github.com/oeg-upm/Mapeathor) converts Excel mappings into R2RML, RML or YARRRML mappings. Functions not supported.
 
-Still experimental, the RMLStreamer can be run on the [Data Science Research Infrastructure OpenShift](https://maastrichtu-ids.github.io/dsri-documentation/) cluster.
-
-* See the [DSRI documentation](https://maastrichtu-ids.github.io/dsri-documentation/docs/deploy-services#apache-flink) to deploy Apache Flink.
-
-* Copy the RMLStreamer.jar file, your mapping files and data files to the pod. It will be proposed when running `d2s rml` but they could be loaded manually before. 
+Run Mapeathor locally:
 
 ```shell
-oc exec <flink-jobmanager-id> -- mkdir -p /mnt/workspace/import
-oc rsync workspace/input <flink-jobmanager-id>:/mnt/workspace/
-oc rsync datasets <flink-jobmanager-id>:/mnt/
+git clone https://github.com/oeg-upm/Mapeathor
+docker-compose up -d
+cp <mapping_spreadsheet>.xlsx ./data/
+docker exec -it mapeathor ./run.sh /Mapeathor/data/<mapping_spreadsheet>.xlsx YARRRML
 ```
 
-> Transferring the files to the Apache Flink storage easily is still a work in progress.
+> Output format can be `RML`, `R2RML` and `YARRRML`
 
-* Run the RMLStreamer job on the GeoNames example
+### Using functions
 
-```shell
-d2s rml geonames --openshift
-```
-
-> The progress of the job can be checked in the Apache Flink web UI.
-
-> Output file in `/mnt/rdf_output-associations-mapping.nt` in the pod
->
-> Or in `/apache-flink` in the persistent storage.
-
-## Notice about using functions
-
-RML functions are still not implemented in the RMLStreamer, use the RML mapper if you want to make use of them. See the [full list of available default functions](https://rml.io/docs/rmlmapper/default-functions/).
+RML functions are still not implemented in the RMLStreamer, use the RML Mapper if you want to make use of them. See the [full list of available default functions](https://rml.io/docs/rmlmapper/default-functions/).
 
 Example using the [split function](https://rml.io/docs/rmlmapper/default-functions/#split):
 
@@ -145,7 +161,6 @@ prefixes:
   grel: "http://users.ugent.be/~bjdmeest/function/grel.ttl#"
   rdfs: "http://www.w3.org/2000/01/rdf-schema#"
   gn: "http://www.geonames.org/ontology#"
-
 mappings:
   neighbours:
     sources:
@@ -158,7 +173,21 @@ mappings:
             function: grel:string_split
             parameters:
                 - [grel:valueParameter, $(neighbours)]
-                - [grel:p_string_sep, "|"]
+                - [grel:p_string_sep, "\|"]
             language: en
 ```
 
+> GREL separators needs to be escaped.
+
+Additional function can be added by integrating them in a `.jar` file, see the [documentation](https://github.com/RMLio/rmlmapper-java#including-functions).
+
+## Compute HCLS metadata
+
+After the RDF Knowledge Graph has been generated and loaded in a triplestore, [HCLS descriptive metadata and statistics](https://www.w3.org/TR/hcls-dataset/) can be easily computed and inserted for the different datasets (graphs in the triplestore), by running a CWL workflow:
+
+```shell
+d2s run compute-hcls-metadata.cwl cohd
+```
+
+* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
+* [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.
