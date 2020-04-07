@@ -103,7 +103,7 @@ oc rsync workspace/input <flink-jobmanager-id>:/mnt/workspace/
 oc rsync datasets <flink-jobmanager-id>:/mnt/
 ```
 
-> Transferring the files to the Apache Flink storage easily is still a work in progress.
+> Transferring the files to the Apache Flink storage easily is still a work in progress. Use `oc cp` if rsync does not work.
 
 * Run the RMLStreamer job on the GeoNames example:
 
