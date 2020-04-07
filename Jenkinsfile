@@ -33,7 +33,7 @@ pipeline {
           branch 'master'
       }
       steps {
-        sh 'docker run -d --rm --name d2s-documentation -e VIRTUAL_HOST=d2s.semanticscience.org -e LETSENCRYPT_HOST=d2s.semanticscience.org -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
+        sh 'docker run -d --rm --name d2s-documentation -w /app/website -e VIRTUAL_HOST=d2s.semanticscience.org -e LETSENCRYPT_HOST=d2s.semanticscience.org -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
       }
     }
   }
