@@ -143,12 +143,13 @@ Run Mapeathor locally:
 
 ```shell
 git clone https://github.com/oeg-upm/Mapeathor
+cd Mapeathor
 docker-compose up -d
 cp <mapping_spreadsheet>.xlsx ./data/
 docker exec -it mapeathor ./run.sh /Mapeathor/data/<mapping_spreadsheet>.xlsx YARRRML
 ```
 
-> Output format can be `RML`, `R2RML` and `YARRRML`
+> Output format can be `RML`, `R2RML` and `YARRRML`.
 
 ### Using functions
 
