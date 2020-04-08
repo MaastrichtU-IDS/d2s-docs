@@ -17,7 +17,7 @@ pipeline {
           branch 'master'
       }
       steps {
-        sh 'docker build -t umids/d2s-documentation:latest .'
+        sh 'docker build -t --no-cache umids/d2s-documentation:latest .'
       }
     }
     stage('deploy') {
