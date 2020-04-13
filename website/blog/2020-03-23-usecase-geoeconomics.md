@@ -16,6 +16,7 @@ See the [complete installation documentation](https://d2s.semanticscience.org/do
 ```shell
 pipx install d2s cwlref-runner
 d2s init my-project-folder
+cd my-project-folder
 ```
 
 > We recommend using [pipx](https://pipxproject.github.io/pipx/), but `pip` would work too.

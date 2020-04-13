@@ -18,6 +18,7 @@ Then  install the [d2s tool](https://pypi.org/project/d2s/) using pipx or pip:
 ```shell
 pipx install d2s cwlref-runner
 d2s init my-project-folder
+cd my-project-folder
 ```
 
 > We recommend using [pipx](https://pipxproject.github.io/pipx/), but you can use `pip` or `pip3` depending on your preferences.
