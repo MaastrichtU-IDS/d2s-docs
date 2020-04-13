@@ -326,3 +326,20 @@ LP_ETL_PORT=8091 docker-compose up -d
 ```
 
 > Access at http://localhost:8091
+
+## Nanobench
+
+[Nanobench](https://github.com/peta-pico/nanobench) is a web UI to publish [Nanopublications](http://nanopub.org/).
+
+```shell
+d2s start nanobench
+
+docker run -d --rm --name nanobench -p 37373:37373 \
+  -v $(pwd)/workspace/.nanopub:/root/.nanopub 
+  -e NANOBENCH_API_INSTANCES=http://grlc.np.dumontierlab.com/api/local/local/ http://grlc.nanopubs.lod.labs.vu.nl/api/local/local/ http://130.60.24.146:7881/api/local/local/ \
+  nanopub/nanobench
+```
+
+> Access on http://localhost:37373
+
+> Follow the web UI instructions to get started and publish nanopublications.
