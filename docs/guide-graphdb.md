@@ -65,25 +65,27 @@ curl -X POST \
 
 ### Using the GUI
 
-> Go to `Setup` > `Repositories` > `Create new repository`
+Go to **Setup** > **Repositories** > **Create new repository**
 
-- `Repository ID`: `test` (or whatever you want it to be, but you will need to change the examples default config)
-- Check `Use context index`
-- `Create`
+- **Repository ID**: `test` (or whatever you want it to be, but you will need to change the examples default config)
+- Check the box **Use context index**
+- Click **Create**
 
-## Create user
+## Manage user
 
-> Go to `Setup` > `Users and access`
+🔓Default `admin` user password is `root`
 
-- `Edit admin user` > `Enter a new password` > `Save`
-- Click on `Security is off` to turn it on.
-  - 🔓Default `admin` user password is `root`
-- `Create new user`
-  - User name: `import_user` (for instance)
-  - Password: `my_password`
-  - `Repository rights` > Write right on Any data repository
-  - Click `Create`
+Go to **Setup**, then **Users and access**
 
+To change your password:
+
+1. Click **Edit admin user**
+2. **Enter a new password**
+3. Click **Save**
+
+By default security is not enabled, click on **Security is off** to turn it on.
+
+To create a new user click **Create new user**
 ## Create Search Index
 
 Execute this insert SPARQL query in the repository:

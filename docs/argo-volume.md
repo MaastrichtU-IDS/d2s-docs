@@ -20,12 +20,12 @@ Go to https://app.dsri.unimaas.nl:8443/console/project/argo/create-pvc
 
 Deploy [filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) on MapR to access volumes
 
-Go to https://app.dsri.unimaas.nl:8443/console/catalog > click `Deploy image`
+Go to https://app.dsri.unimaas.nl:8443/console/catalog > click **Deploy image**
 
 * Add to Project: `argo`
 * Image Name: `filebrowser/filebrowser` 
 * Give a name to your image: `filebrowser`
-* Click `Deploy`
+* Click **Deploy**
 * Go to `argo` project > Click on latest deployment of the `filebrowser`
 * Delete the automatically mounted volume, and add the persistent volume (`data2services-storage`). Should be on `/srv`
 * Add route
