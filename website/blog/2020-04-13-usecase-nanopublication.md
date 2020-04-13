@@ -38,7 +38,7 @@ d2s start nanobench
 
 ## Complete your profile
 
-Follow the instructions provided by the [Nanobench web UI](http://localhost:37373/) to complete your profile and publish your first nanopublication.
+Follow the instructions provided by the [locally deployed Nanobench web UI](http://localhost:37373/) to complete your profile, and publish your first nanopublication:
 
 * Provide your [ORCID](https://orcid.org) identifier. If you don't have one you can create an account at https://orcid.org.
 
@@ -48,6 +48,6 @@ Follow the instructions provided by the [Nanobench web UI](http://localhost:3737
 
 ## Publish your first nanopublications
 
-Follow the tutorial to publish your first nanopublications.
+Follow the tutorial from the [locally deployed Nanobench web UI](http://localhost:37373/) to publish your first nanopublications to the Maastricht University Institute of Data Science and and the official Nanopub servers! 
 
-Your first Nanopublications has been published to the Maastricht University Institute of Data Science and and the official Nanopub servers! Feel free to publish new nanopublications anytime you want 📢
+Feel free to publish new nanopublications anytime you want 📢
