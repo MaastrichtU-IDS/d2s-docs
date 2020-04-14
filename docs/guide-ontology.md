@@ -3,7 +3,10 @@ id: guide-ontology
 title: Choose an ontology
 ---
 
-![](/img/protege-logo.png)
+## Use the Semanticscience Integrated Ontology (SIO)
+
+The Semanticscience Integrated Ontology (SIO) provides a simple, integrated ontology of types and relations for rich description of objects, processes and their attributes. See the [website](https://github.com/MaastrichtU-IDS/semanticscience) for more details.
+
 
 ## Import the BioLink ontology
 
@@ -23,6 +26,8 @@ Search for relevant existing models in ontology repositories:
 > The [BioPortal Recommender](https://bioportal.bioontology.org/recommender) and [Search](https://bioportal.bioontology.org/search) services are efficient to look for concepts in most existing biomedical ontologies.
 
 ## Ontology design with Protégé
+
+![](/img/protege-logo.png)
 
 You can use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
 
