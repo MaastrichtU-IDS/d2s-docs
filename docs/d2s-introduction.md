@@ -4,11 +4,13 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-Integrating and querying heterogeneous data sources has never been effortless, the `d2s` CLI and this documentation aims to provide a framework and comprehensive documentation to build a RDF Knowledge Graph out of structured data and deploy various interfaces and services to access the integrated data.
+This documentation explains how to build and deploy [RDF](https://www.w3.org/RDF/) Knowledge Graphs using the [d2s](https://pypi.org/project/d2s/) command line tool. [d2s](https://pypi.org/project/d2s/) is a command line interface that helps you define download scripts, metadata, and mappings to integrate multiple datasets into a RDF Knowledge Graph complying with a defined data model. This documentation is intended for people who are familiar with [Docker](https://www.docker.com/) and running simple commands in a terminal. It is also preferable to be familiar with the [SPARQL](https://www.w3.org/TR/sparql11-query/) query language.
+
+Integrating and querying heterogeneous data sources has never been effortless, the [d2s](https://pypi.org/project/d2s/) CLI and this documentation aims to provide a framework and comprehensive documentation to build a RDF Knowledge Graph out of structured data and deploy various interfaces and services to access the integrated data.
 
 <img src="/img/d2s-architecture.png" alt="Data2Services infrastructure" style="max-width: 100%; max-height: 100%;" />
 
-We provide [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template/), a GitHub template repository with example mappings and workflows to  start building your RDF Knowledge Graph from structured data. 
+We provide [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template/), a GitHub template repository with example mappings and workflows to start building your RDF Knowledge Graph from structured data. 
 
 Feel free to use directly the `d2s-transform-template` repository or create a new GitHub repository [from the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to start your own project.
 
