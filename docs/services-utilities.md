@@ -335,7 +335,7 @@ LP_ETL_PORT=8091 docker-compose up -d
 d2s start nanobench
 
 docker run -d --rm --name nanobench -p 37373:37373 \
-  -v $(pwd)/workspace/.nanopub:/root/.nanopub 
+  -v $(pwd)/workspace/.nanopub:/root/.nanopub \
   -e NANOBENCH_API_INSTANCES=http://grlc.np.dumontierlab.com/api/local/local/ http://grlc.nanopubs.lod.labs.vu.nl/api/local/local/ http://130.60.24.146:7881/api/local/local/ \
   nanopub/nanobench
 ```

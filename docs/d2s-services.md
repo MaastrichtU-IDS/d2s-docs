@@ -17,30 +17,35 @@ In this documentation we will use a set of services to build the knowledge graph
 
 ## List of services
 
-See more exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) or [RDF utilities](/docs/services-utilities).
+See the exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) or [RDF utilities](/docs/services-utilities).
 
-🔗 Graph databases
+Start the following services using `d2s start <service_name>`
 
-* [Ontotext GraphDB](/docs/services-graph-databases#graphdb)
-* [Virtuoso](/docs/services-graph-databases#virtuoso)
-* [Blazegraph](/docs/services-graph-databases#blazegraph)
-* [AllegroGraph](/docs/services-graph-databases#allegrograph)
-* [AnzoGraph](/docs/services-graph-databases#anzograph)
-* [Linked Data Fragments server](/docs/services-graph-databases#linked-data-fragments-server): store and query compressed HDT files
-* [Neo4j](/docs/services-graph-databases#neo4j): property graph database
+[🔗 Graph databases](/docs/services-graph-databases)
 
-🖥️ Interfaces
+* [graphdb](/docs/services-graph-databases#graphdb)
+* [virtuoso](/docs/services-graph-databases#virtuoso)
+* [blazegraph](/docs/services-graph-databases#blazegraph)
+* [allegroGraph](/docs/services-graph-databases#allegrograph)
+* [anzoGraph](/docs/services-graph-databases#anzograph)
+* [ldf-server](/docs/services-graph-databases#linked-data-fragments-server): Linked Data Fragments server, store and query compressed HDT files
+* [neo4j](/docs/services-graph-databases#neo4j): property graph database
 
-* [Into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser
-* [HTTP OpenAPI](/docs/services-interfaces#d2s-api): HTTP API with Swagger UI to query RDF triplestores
-* [YASGUI](/docs/services-webui#yasgui): SPARQL query editor
-* [Comunica widget](/docs/services-webui#comunica-widget): query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
+[🖥️ Interfaces](/docs/services-interfaces)
 
-🗃️ Utilities
+* [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser
+* [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query RDF triplestores
+* [comunica](/docs/services-interfaces#comunica-widget): widget to query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
+* [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to query the triplestore.
 
-* [RMLStreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
-* [Apache Drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL 
-* [Postgres](/docs/guide-postgres): popular OpenSource SQL database
+[🗃️ Utilities](/docs/services-utilities)
+
+* [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
+  * rmltask: dependency of the rmlstreamer, the 2 services are required to run.
+* [drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL using Apache Drill
+* [postgres](/docs/services-utilities#postgres): popular OpenSource SQL database
+* [limes](/docs/services-utilities#limes-interlinking): server to perform interlinking between RDF entities using various metrics
+* [nanobench](/docs/services-utilities#nanobench): web UI to publish Nanopublications
 
 ## Start demo 
 
