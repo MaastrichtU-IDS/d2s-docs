@@ -23,10 +23,12 @@ The dataset folder is generated based on [this template folder](https://github.c
 
 ### Describe the dataset metadata
 
+You are encouraged to improve the metadata description of your dataset in `datasets/$dataset_id/metadata`.
+
 A dozen of metadata needs to be defined through SPARQL query for the summary of the dataset, and then each distribution.
 
-* SPARQL insert dataset [summary metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-0-summary.rq) (once by dataset).
-* SPARQL insert dataset [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/template/metadata/1/metadata-template-1.rq) (for each new version).
+* SPARQL insert dataset [summary metadata](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/metadata/metadata-template-0-summary.rq) (once by dataset).
+* SPARQL insert dataset [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/metadata/metadata-template-1.rq) (for each new version).
 
 > Change the URIs between `<>` and strings between `""`.
 

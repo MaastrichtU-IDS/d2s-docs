@@ -37,6 +37,15 @@ d2s start nanobench
 
 > See [official documentation for Docker](https://github.com/peta-pico/nanobench/blob/master/INSTALL-with-Docker.md).
 
+Alternatively Nanobench can be run directly using `docker run` if [d2s](https://pypi.org/project/d2s/) is not installed
+
+```shell
+docker run -d --rm --name nanobench -p 37373:37373 \
+  -v $(pwd)/workspace/.nanopub:/root/.nanopub \
+  -e NANOBENCH_API_INSTANCES=http://grlc.np.dumontierlab.com/api/local/local/ http://grlc.nanopubs.lod.labs.vu.nl/api/local/local/ http://130.60.24.146:7881/api/local/local/ \
+  nanopub/nanobench
+```
+
 ## Complete your profile
 
 Follow the instructions provided by the [locally deployed Nanobench web UI](http://localhost:37373/) to complete your profile, and publish your first nanopublication:
