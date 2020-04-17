@@ -56,9 +56,11 @@ http://prefix.cc is a handy service to resolve prefixes.
 
 ## Try the Zazuko Ontology manager
 
-[Collaborative ontology editor](https://zazuko.github.io/ontology-manager/). See the demo ontology editor at http://editor.zazuko.com/
+[Collaborative ontology editor](https://zazuko.github.io/ontology-manager/).
 
-To deploy it using Docker:
+See the demo ontology editor at http://editor.zazuko.com.
+
+You can deploy it using Docker:
 
 ```shell
 git clone https://github.com/zazuko/ontology-manager zazuko-ontology-manager
