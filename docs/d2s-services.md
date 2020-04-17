@@ -21,24 +21,24 @@ See the exhaustive lists for [Graph databases](/docs/services-graph-databases), 
 
 Start the following services using `d2s start <service_name>`
 
-[🔗 Graph databases](/docs/services-graph-databases)
+[🔗 **Graph databases**](/docs/services-graph-databases)
 
-* [graphdb](/docs/services-graph-databases#graphdb)
-* [virtuoso](/docs/services-graph-databases#virtuoso)
-* [blazegraph](/docs/services-graph-databases#blazegraph)
-* [allegroGraph](/docs/services-graph-databases#allegrograph)
-* [anzoGraph](/docs/services-graph-databases#anzograph)
+* [graphdb](/docs/services-graph-databases#graphdb): triplestore with a web UI and multiple repositories
+* [virtuoso](/docs/services-graph-databases#virtuoso): Open Source triplestore with a faceted browser
+* [blazegraph](/docs/services-graph-databases#blazegraph): Open Source lightweight triplestore 
+* [allegroGraph](/docs/services-graph-databases#allegrograph): triplestore
+* [anzoGraph](/docs/services-graph-databases#anzograph): triplestore
 * [ldf-server](/docs/services-graph-databases#linked-data-fragments-server): Linked Data Fragments server, store and query compressed HDT files
 * [neo4j](/docs/services-graph-databases#neo4j): property graph database
 
-[🖥️ Interfaces](/docs/services-interfaces)
+[🖥️ **Interfaces**](/docs/services-interfaces)
 
 * [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser
 * [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query RDF triplestores
 * [comunica](/docs/services-interfaces#comunica-widget): widget to query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
 * [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to query the triplestore.
 
-[🗃️ Utilities](/docs/services-utilities)
+[🗃️ **Utilities**](/docs/services-utilities)
 
 * [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
   * rmltask: dependency of the rmlstreamer, the 2 services are required to run.
@@ -46,6 +46,7 @@ Start the following services using `d2s start <service_name>`
 * [postgres](/docs/services-utilities#postgres): popular OpenSource SQL database
 * [limes](/docs/services-utilities#limes-interlinking): server to perform interlinking between RDF entities using various metrics
 * [nanobench](/docs/services-utilities#nanobench): web UI to publish Nanopublications
+* [mapeathor](/docs/d2s-rml#mapeathor): converts Excel files into RML or YARRRML mappings
 
 ## Start demo 
 
