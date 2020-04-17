@@ -19,13 +19,15 @@ In this documentation we will use a set of services to build the knowledge graph
 
 See the exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) and [RDF utilities](/docs/services-utilities). The services deployments are defined in a [docker-compose file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yaml).
 
-Start the following services using:
+Start the services described below using:
 
 ```shell
 d2s start <service_name>
 ```
 
-[🔗 **Graph databases**](/docs/services-graph-databases)
+### 🔗 Graph databases
+
+See the [detailed lists of available graph databases](/docs/services-graph-databases)
 
 * [graphdb](/docs/services-graph-databases#graphdb): triplestore with a web UI and multiple repositories
 * [virtuoso](/docs/services-graph-databases#virtuoso): Open Source triplestore with a faceted browser
@@ -35,14 +37,18 @@ d2s start <service_name>
 * [ldf-server](/docs/services-graph-databases#linked-data-fragments-server): Linked Data Fragments server, store and query compressed HDT files
 * [neo4j](/docs/services-graph-databases#neo4j): property graph database
 
-[🖥️ **Interfaces**](/docs/services-interfaces)
+### 🖥️ Interfaces
+
+See the [detailed lists of available interfaces](/docs/services-interfaces) 
 
 * [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser
 * [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query a RDF triplestore
 * [comunica](/docs/services-interfaces#comunica-widget): widget to query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
 * [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to query the triplestore.
 
-[🗃️ **Utilities**](/docs/services-utilities)
+### 🔧 Utilities
+
+See the [detailed lists of RDF utilities](/docs/services-utilities) services.
 
 * [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
   * rmltask: dependency of the rmlstreamer, the 2 services are required to run.
