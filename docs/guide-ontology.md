@@ -23,6 +23,7 @@ The [Linked Open Vocabulary (LOV)](https://lov.linkeddata.es/dataset/lov/) provi
 * [schema.org](https://schema.org/docs/schemas.html)
   * Various classes described such as [Person](https://schema.org/Person), [MedicalGuideline](https://schema.org/MedicalGuideline), or [Review](https://schema.org/Review)
   * Extensions available, such as [BioSchemas](https://bioschemas.org/profiles/Dataset/0.3-RELEASE-2019_06_14/) for biological data
+  * Alternatively you can look into [Google Data Types](https://developers.google.com/search/docs/data-types/article), which are mainly built from schema.org and allow to describe and index your website using RDF (JSON-LD)
 * [DublinCore (dc, dct, dctypes)](https://dublincore.org/specifications/dublin-core/dcmi-terms): one of the most generic vocabulary (dc:identifier, dct:description, dct:creator, dct:license, dct:rights...)
 * [Provenance, Authoring and Versioning ontology (PAV)](https://pav-ontology.github.io/pav/)
 * [The Provenance Ontology (PROV)](https://www.w3.org/TR/prov-o/)
