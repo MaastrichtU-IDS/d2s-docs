@@ -1,6 +1,6 @@
 ---
 id: d2s-new-dataset
-title: Transform a new dataset
+title: Integrate a new dataset
 ---
 
 In this documentation I will use [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) as example, but you are encouraged to create a new Git repository [using the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
@@ -23,7 +23,7 @@ The dataset folder is generated based on [this template folder](https://github.c
 
 ### Describe the dataset metadata
 
-You are encouraged to improve the metadata description of your dataset in `datasets/$dataset_id/metadata`.
+You are encouraged to improve the metadata description of your dataset by editing the 2 metadata files generated in `datasets/$dataset_id/metadata`.
 
 A dozen of metadata needs to be defined through SPARQL query for the summary of the dataset, and then each distribution.
 

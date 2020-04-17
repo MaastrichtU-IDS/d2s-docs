@@ -17,9 +17,13 @@ In this documentation we will use a set of services to build the knowledge graph
 
 ## List of services
 
-See the exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) or [RDF utilities](/docs/services-utilities).
+See the exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) and [RDF utilities](/docs/services-utilities). The services deployments are defined in a [docker-compose file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yaml).
 
-Start the following services using `d2s start <service_name>`
+Start the following services using:
+
+```shell
+d2s start <service_name>
+```
 
 [🔗 **Graph databases**](/docs/services-graph-databases)
 
@@ -34,7 +38,7 @@ Start the following services using `d2s start <service_name>`
 [🖥️ **Interfaces**](/docs/services-interfaces)
 
 * [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser
-* [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query RDF triplestores
+* [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query a RDF triplestore
 * [comunica](/docs/services-interfaces#comunica-widget): widget to query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
 * [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to query the triplestore.
 

@@ -10,10 +10,17 @@
         ]
       } 
     ],
-    "Guides": ["guide-preprocessing", "guide-deploy-app", "guide-filebrowser", 
-      "guide-ontology", "cwl-create",  "guide-graphdb", "guide-virtuoso", 
-      "guide-postgres", "guide-mariadb", "guide-mysql", 
-      "guide-docker", "guide-jenkins"],
+    "Guides": ["guide-ontology", "guide-preprocessing", "guide-deploy-app", "guide-filebrowser", "cwl-create", 
+      "guide-docker", "guide-jenkins",
+      {
+        "type": "subcategory",
+        "label": "Setup databases",
+        "ids": [
+          "guide-graphdb", "guide-virtuoso", "guide-postgres", 
+          "guide-mariadb", "guide-mysql"
+        ]
+      } 
+    ],
     "Kubernetes workflows": 
       ["argo-install", "argo-login", "argo-volume" , 
         "argo-run", "argo-commands", "argo-debug", "argo-secret"]
