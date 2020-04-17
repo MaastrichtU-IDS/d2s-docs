@@ -17,7 +17,7 @@ In this documentation we will use a set of services to build the knowledge graph
 
 ## List of services
 
-See the exhaustive lists for [Graph databases](/docs/services-graph-databases), [interfaces](/docs/services-interfaces) and [RDF utilities](/docs/services-utilities). The services deployments are defined in a [docker-compose file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yaml).
+The services deployments are defined in a [docker-compose file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yaml).
 
 Start the services described below using:
 
