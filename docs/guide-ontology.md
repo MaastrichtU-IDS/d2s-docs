@@ -20,14 +20,14 @@ If you are using the BioLink model, the ontology can be imported from the [BioLi
 
 The [Linked Open Vocabulary (LOV)](https://lov.linkeddata.es/dataset/lov/) provide an overview of existing ontologies and the links between them.
 
-* [schema.org](https://schema.org/docs/schemas.html)
-  * Various classes described such as [Person](https://schema.org/Person), [MedicalGuideline](https://schema.org/MedicalGuideline), or [Review](https://schema.org/Review)
+* [**Schema.org**](https://schema.org/docs/schemas.html), a collaborative project to define schemes for structured data on the Internet, on web pages, in email messages, and beyond.
+  * Various classes described such as [Person](https://schema.org/Person), [MedicalGuideline](https://schema.org/MedicalGuideline), [Review](https://schema.org/Review), [ScholarlyArticle](https://schema.org/ScholarlyArticle), [MedicalScholarlyArticle](https://schema.org/MedicalScholarlyArticle), [Dataset](https://schema.org/Dataset), [etc](https://schema.org/docs/full.html).
   * Extensions available, such as [BioSchemas](https://bioschemas.org/profiles/Dataset/0.3-RELEASE-2019_06_14/) for biological data
   * Alternatively you can look into [Google Data Types](https://developers.google.com/search/docs/data-types/article), which are mainly built from schema.org and allow to describe and index your website using RDF (JSON-LD)
-* [DublinCore (dc, dct, dctypes)](https://dublincore.org/specifications/dublin-core/dcmi-terms): one of the most generic vocabulary (dc:identifier, dct:description, dct:creator, dct:license, dct:rights...)
-* [Provenance, Authoring and Versioning ontology (PAV)](https://pav-ontology.github.io/pav/)
-* [The Provenance Ontology (PROV)](https://www.w3.org/TR/prov-o/)
-* [Data Catalog Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat-2/): to describe datasets
+* [**DublinCore** (dc, dct, dctypes)](https://dublincore.org/specifications/dublin-core/dcmi-terms), one of the most generic vocabulary (dc:identifier, dct:description, dct:creator, dct:license, dct:rights...)
+* [**PAV**: Provenance, Authoring and Versioning ontology](https://pav-ontology.github.io/pav/)
+* [**PROV**: The Provenance Ontology](https://www.w3.org/TR/prov-o/)
+* [**DCAT**: Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-2/), to describe datasets
 
 ### Search for ontologies
 
