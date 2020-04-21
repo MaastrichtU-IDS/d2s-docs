@@ -13,31 +13,25 @@ Only [Docker](https://docs.docker.com/install/) is required to run the modules. 
 
 ---
 
-## RMLStreamer
+## Jupyter Notebooks
 
-[![RMLMapper](https://img.shields.io/github/stars/RMLio/rmlmapper-java?label=GitHub&style=social)](https://github.com/RMLio/rmlmapper-java)
+Deploy [JupyterLab](https://github.com/amalic/Jupyterlab) to use Notebooks to build or consume your RDF Knowledge Graph. Query your knowledge graph through its SPARQL endpoint, or the [HTTP OpenAPI](/docs/services-interfaces#d2s-api) using Python, or R. 
 
-Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF. The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of RML in development.
-
-The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
-
-Start the required services:
+The proposed deployment comes with example queries to perform data processing using tools such as [Dipper](https://github.com/monarch-initiative/dipper), [BioThings](https://docs.biothings.io/en/latest/), or various RDF and Data Science libraries. Example are also provided to start querying data from the produced RDF Knowledge Graph. See the [GitHub repository](https://github.com/vemonet/translator-sparql-notebook).
 
 ```shell
-d2s start rmlstreamer rmltask
+d2s start notebook
+
+docker run --rm -it -p 8888:8888 \
+  -v $(pwd)/workspace/notebooks:/notebooks \
+  -e PASSWORD="<your_secret>" \
+  -e GIT_URL="https://github.com/vemonet/translator-sparql-notebook" \
+  umids/jupyterlab:latest
 ```
 
-> Access at http://localhost:8078 to see running jobs.
+> Access on http://localhost:8888
 
-Run the RMLStreamer:
-
-```shell
-d2s rml cohd
-```
-
-> Output goes to `workspace/import/associations-mapping_rml_ttl-cohd.nt`
-
->  See the [original RMLStreamer documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy using Docker.
+> Change the Notebook password in the [docker-compose.yml file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows). Different passwords can be defined for different deployments.
 
 ---
 
@@ -79,6 +73,34 @@ docker run -d --rm --name docket \
 ```
 
 > Access Notebooks at http://localhost:8002
+
+---
+
+## RMLStreamer
+
+[![RMLMapper](https://img.shields.io/github/stars/RMLio/rmlmapper-java?label=GitHub&style=social)](https://github.com/RMLio/rmlmapper-java)
+
+Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF. The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of RML in development.
+
+The [RML mappings](https://rml.io/specs/rml/) needs to be defined as in a file with the extension `.rml.ttl`, in the mapping folder of the dataset to transform, e.g. `datasets/dataset_id/mapping/associations-mapping.rml.ttl`
+
+Start the required services:
+
+```shell
+d2s start rmlstreamer rmltask
+```
+
+> Access at http://localhost:8078 to see running jobs.
+
+Run the RMLStreamer:
+
+```shell
+d2s rml cohd
+```
+
+> Output goes to `workspace/import/associations-mapping_rml_ttl-cohd.nt`
+
+>  See the [original RMLStreamer documentation](https://github.com/RMLio/RMLStreamer/blob/master/docker/README.md) to deploy using Docker.
 
 ---
 

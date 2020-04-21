@@ -90,28 +90,6 @@ See [documentation](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/)
 
 ---
 
-## Jupyter Notebooks
-
-Deploy [JupyterLab](https://github.com/amalic/Jupyterlab) to use Notebooks to build or consume your RDF Knowledge Graph. Query your knowledge graph through its SPARQL endpoint, or the [HTTP OpenAPI](/docs/services-interfaces#d2s-api) using Python, or R. 
-
-The proposed deployment comes with example queries to perform data processing using tools such as [Dipper](https://github.com/monarch-initiative/dipper), [BioThings](https://docs.biothings.io/en/latest/), or various RDF and Data Science libraries. Example are also provided to start querying data from the produced RDF Knowledge Graph. See the [GitHub repository](https://github.com/vemonet/translator-sparql-notebook).
-
-```shell
-d2s start notebook
-
-docker run --rm -it -p 8888:8888 \
-  -v $(pwd)/workspace/notebooks:/notebooks \
-  -e PASSWORD="<your_secret>" \
-  -e GIT_URL="https://github.com/vemonet/translator-sparql-notebook" \
-  umids/jupyterlab:latest
-```
-
-> Access on http://localhost:8888
-
-> Change the Notebook password in the [docker-compose.yml file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows). Different passwords can be defined for different deployments.
-
----
-
 ## LODEstar
 
 [![GitHub](https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&style=social)](https://github.com/EBISPOT/lodestar)
