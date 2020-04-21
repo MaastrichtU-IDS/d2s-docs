@@ -90,11 +90,11 @@ See [documentation](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/)
 
 ---
 
-## Jupyter notebooks
+## Jupyter Notebooks
 
-Deploy a Jupyter notebook over your RDF knowledge graph to  easily start querying it through the HTTP OpenAPI or SPARQL endpoint  using Python or R. 
+Deploy [JupyterLab](https://github.com/amalic/Jupyterlab) to use Notebooks to build or consume your RDF Knowledge Graph. Query your knowledge graph through its SPARQL endpoint, or the [HTTP OpenAPI](/docs/services-interfaces#d2s-api) using Python, or R. 
 
-The proposed deployment comes with example queries to start with, and various libraries for data science and RDF pre-installed.
+The proposed deployment comes with example queries to perform data processing using tools such as [Dipper](https://github.com/monarch-initiative/dipper), [BioThings](https://docs.biothings.io/en/latest/), or various RDF and Data Science libraries. Example are also provided to start querying data from the produced RDF Knowledge Graph. See the [GitHub repository](https://github.com/vemonet/translator-sparql-notebook).
 
 ```shell
 d2s start notebook
@@ -107,6 +107,8 @@ docker run --rm -it -p 8888:8888 \
 ```
 
 > Access on http://localhost:8888
+
+> Change the Notebook password in the [docker-compose.yml file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows). Different passwords can be defined for different deployments.
 
 ---
 

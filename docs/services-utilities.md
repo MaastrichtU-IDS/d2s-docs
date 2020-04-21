@@ -63,6 +63,25 @@ docker run -d --rm --name studio \
 
 ---
 
+## Docket
+
+[![DOCKET](https://img.shields.io/github/stars/PriceLab/DOCKET?label=GitHub&style=social)](https://github.com/PriceLab/DOCKET)
+
+[DOCKET](https://github.com/PriceLab/DOCKET) is a Dataset Overview, Comparison and Knowledge Extraction Tool built for the [NCATS Translator project](https://ncats.nih.gov/translator). See the [DOCKET presentation](/resources/20200319-docket-multiomics_provider.pdf) for more details about its mechanisms.
+
+```shell
+d2s start docket
+
+docker run -d --rm --name docket \
+  -p 8002:8888 -e PYTHONPATH=/app \
+  -v $(pwd)/workspace/docket:/data \
+  umids/docket:latest
+```
+
+> Access Notebooks at http://localhost:8002
+
+---
+
 ## d2s-sparql-operations
 
 [![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.org/)

@@ -27,19 +27,20 @@ d2s start <service_name>
 
 ### 🔗 Graph databases
 
-See the [detailed lists of available graph databases](/docs/services-graph-databases)
+See the [detailed lists of available graph databases](/docs/services-graph-databases).
 
-* [graphdb](/docs/services-graph-databases#graphdb): triplestore with a web UI and multiple repositories
+* [graphdb](/docs/services-graph-databases#graphdb): commercial triplestore with a web UI and multiple repositories
 * [virtuoso](/docs/services-graph-databases#virtuoso): Open Source triplestore with a faceted browser
 * [blazegraph](/docs/services-graph-databases#blazegraph): Open Source lightweight triplestore 
-* [allegroGraph](/docs/services-graph-databases#allegrograph): triplestore
-* [anzoGraph](/docs/services-graph-databases#anzograph): triplestore
-* [ldf-server](/docs/services-graph-databases#linked-data-fragments-server): Linked Data Fragments server, store and query compressed HDT files
-* [neo4j](/docs/services-graph-databases#neo4j): property graph database
+* [fuseki](/docs/services-graph-databases#fuseki): Open Source SPARQL server built on top of Apache Jena and TDB. 
+* [allegroGraph](/docs/services-graph-databases#allegrograph): commercial triplestore
+* [anzoGraph](/docs/services-graph-databases#anzograph): commercial triplestore
+* [ldf-server](/docs/services-graph-databases#linked-data-fragments-server): Open Source Linked Data Fragments server, store and query compressed HDT files
+* [neo4j](/docs/services-graph-databases#neo4j): commercial property graph database
 
 ### 🖥️ Interfaces
 
-See the [detailed lists of available interfaces](/docs/services-interfaces) 
+See the [detailed lists of available interfaces](/docs/services-interfaces).
 
 * [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser
 * [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query a RDF triplestore
@@ -48,13 +49,14 @@ See the [detailed lists of available interfaces](/docs/services-interfaces)
 
 ### 🔧 Utilities
 
-See the [detailed lists of RDF utilities](/docs/services-utilities) services.
+See the [detailed lists of RDF utilities](/docs/services-utilities).
 
 * [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
-  * rmltask: dependency of the rmlstreamer, the 2 services are required to run.
-* [biothings-studio](/docs/services-utilities#biothings-studio): build and deploy BioThings APIs.
+  * rmltask: dependency of the rmlstreamer, the 2 services are required to run
+* [biothings-studio](/docs/services-utilities#biothings-studio): build and deploy BioThings APIs
+* [docket](/docs/services-utilities#docket): multiomics tool for dataset overview, comparison and knowledge extraction using Jupyter notebooks.
 * [drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL using Apache Drill
-* [postgres](/docs/services-utilities#postgres): popular OpenSource SQL database
+* [postgres](/docs/services-utilities#postgres): popular Open Source SQL database
 * [limes](/docs/services-utilities#limes-interlinking): server to perform interlinking between RDF entities using various metrics
 * [nanobench](/docs/services-utilities#nanobench): web UI to publish Nanopublications
 * [mapeathor](/docs/d2s-rml#mapeathor): converts Excel files into RML or YARRRML mappings
