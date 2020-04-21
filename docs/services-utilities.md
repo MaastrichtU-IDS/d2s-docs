@@ -63,7 +63,7 @@ docker run -d --rm --name studio \
 
 [![DOCKET](https://img.shields.io/github/stars/PriceLab/DOCKET?label=GitHub&style=social)](https://github.com/PriceLab/DOCKET)
 
-[DOCKET](https://github.com/PriceLab/DOCKET) is a Dataset Overview, Comparison and Knowledge Extraction Tool built for the [NCATS Translator project](https://ncats.nih.gov/translator). See the [DOCKET presentation](/resources/20200319-docket-multiomics_provider.pdf) for more details about its mechanisms.
+[DOCKET](https://github.com/PriceLab/DOCKET) is a Dataset Overview, Comparison and Knowledge Extraction Tool built for the [NCATS Translator project](https://ncats.nih.gov/translator).
 
 ```shell
 d2s start docket
