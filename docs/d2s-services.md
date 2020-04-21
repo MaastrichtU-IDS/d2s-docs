@@ -42,19 +42,20 @@ See the [detailed lists of available graph databases](/docs/services-graph-datab
 
 See the [detailed lists of available interfaces](/docs/services-interfaces).
 
-* [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser
+* [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser, with YASGUI editor.
 * [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query a RDF triplestore
 * [comunica](/docs/services-interfaces#comunica-widget): widget to query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
-* [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to query the triplestore.
 
 ### 🔧 Utilities
 
 See the [detailed lists of RDF utilities](/docs/services-utilities).
 
-* [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
-  * rmltask: dependency of the rmlstreamer, the 2 services are required to run
+* [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to build and query the triplestore.
 * [biothings-studio](/docs/services-utilities#biothings-studio): build and deploy BioThings APIs
 * [docket](/docs/services-utilities#docket): multiomics tool for dataset overview, comparison and knowledge extraction using Jupyter notebooks.
+* [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
+  * rmltask: dependency of the rmlstreamer, the 2 services are required to run
+
 * [drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL using Apache Drill
 * [postgres](/docs/services-utilities#postgres): popular Open Source SQL database
 * [limes](/docs/services-utilities#limes-interlinking): server to perform interlinking between RDF entities using various metrics
