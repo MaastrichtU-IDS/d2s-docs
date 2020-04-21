@@ -13,7 +13,9 @@ Only [Docker](https://docs.docker.com/install/) is required to run the modules. 
 
 ---
 
-## Jupyter Notebooks
+## Integrated services
+
+### Jupyter Notebooks
 
 Deploy [JupyterLab](https://github.com/amalic/Jupyterlab) to use Notebooks to build or consume your RDF Knowledge Graph. Query your knowledge graph through its SPARQL endpoint, or the [HTTP OpenAPI](/docs/services-interfaces#d2s-api) using Python, or R. 
 
@@ -35,7 +37,7 @@ docker run --rm -it -p 8888:8888 \
 
 ---
 
-## BioThings Studio
+### BioThings Studio
 
 [![RMLMapper](https://img.shields.io/github/stars/biothings/biothings_studio?label=GitHub&style=social)](https://github.com/biothings/biothings_studio)
 
@@ -57,7 +59,7 @@ docker run -d --rm --name studio \
 
 ---
 
-## Docket
+### Docket
 
 [![DOCKET](https://img.shields.io/github/stars/PriceLab/DOCKET?label=GitHub&style=social)](https://github.com/PriceLab/DOCKET)
 
@@ -76,7 +78,7 @@ docker run -d --rm --name docket \
 
 ---
 
-## RMLStreamer
+### RMLStreamer
 
 [![RMLMapper](https://img.shields.io/github/stars/RMLio/rmlmapper-java?label=GitHub&style=social)](https://github.com/RMLio/rmlmapper-java)
 
@@ -104,7 +106,87 @@ d2s rml cohd
 
 ---
 
-## d2s-sparql-operations
+### Nanobench
+
+[Nanobench](https://github.com/peta-pico/nanobench) is a web UI to publish [Nanopublications](http://nanopub.org/).
+
+```shell
+d2s start nanobench
+
+docker run -d --rm --name nanobench -p 37373:37373 \
+  -v $(pwd)/workspace/.nanopub:/root/.nanopub \
+  -e NANOBENCH_API_INSTANCES=http://grlc.np.dumontierlab.com/api/local/local/ http://grlc.nanopubs.lod.labs.vu.nl/api/local/local/ http://130.60.24.146:7881/api/local/local/ \
+  nanopub/nanobench
+```
+
+> Access on http://localhost:37373
+
+> Follow the web UI instructions to get started and publish nanopublications.
+
+> You can easily create and publish new templates following instructions at the [nanobench-templates repository](https://github.com/MaastrichtU-IDS/nanobench-templates).
+
+---
+
+### Apache Drill
+
+[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
+
+[![](https://img.shields.io/github/stars/MaastrichtU-IDS/apache-drill?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/apache-drill)
+
+Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
+
+```shell
+d2s start drill
+
+docker run -dit --rm -p 8047:8047 -p 31011:31010 \
+	--name drill -v $(pwd)/workspace/input:/data:ro umids/apache-drill:latest
+```
+
+> Access at [http://localhost:8047/](http://localhost:8047/).
+
+> See on [DockerHub](https://hub.docker.com/r/umids/apache-drill).
+
+---
+
+### Postgres
+
+Popular SQL database.
+
+```shell
+d2s start postgres
+
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v $(pwd)/workspace/postgres:/data postgres
+```
+
+> Password is `pwd`
+
+> See the [Postgres guide](/docs/guide-postgres) for more details.
+
+---
+
+### LIMES interlinking
+
+[LIMES](https://github.com/dice-group/LIMES) is a tool developed by DICE group to perform interlinking between RDF entities using [various metrics](http://dice-group.github.io/LIMES/#/user_manual/configuration_file/defining_link_specifications?id=implemented-measures): Cosine, ExactMatch, Levenshtein... 
+
+Start the LIMES server:
+
+```bash
+d2s start limes-server
+```
+
+> Access at http://localhost:8090
+
+See the [official documentation to use the deployed REST API](http://dice-group.github.io/LIMES/#/user_manual/running_limes?id=using-the-cli-server) to submit LIMES jobs.
+
+>[Postman](https://www.postman.com/product/api-client) can be used to perform HTTP POST queries on the API.
+
+> A newly released [public Web UI](http://limes.aksw.org/) can also be tried in the browser.
+
+---
+
+## Executables and modules
+
+### d2s-sparql-operations
 
 [![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.org/)
 
@@ -128,7 +210,7 @@ docker run -it --rm umids/d2s-sparql-operations \
 
 ------
 
-## Comunica
+### Comunica
 
 [![OpenLink Virtuoso](/img/comunica.svg)](https://comunica.linkeddatafragments.org/)
 
@@ -144,7 +226,7 @@ docker run -it comunica/actor-init-sparql \
 
 ---
 
-## RdfUpload
+### RdfUpload
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/RdfUpload?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/RdfUpload)
 
@@ -162,7 +244,7 @@ docker run -it --rm --link graphdb:graphdb -v $(pwd)/workspace/import:/data \
 
 ---
 
-## AutoR2RML
+### AutoR2RML
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/AutoR2RML?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/AutoR2RML)
 
@@ -184,7 +266,7 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v $(pwd)/worksp
 
 ---
 
-## R2RML
+### R2RML
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/r2rml?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/r2rml)
 
@@ -208,44 +290,7 @@ docker run -it --rm --net d2s-cwl-workflows_network \
 
 ---
 
-## Apache Drill
-
-[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
-
-[![](https://img.shields.io/github/stars/MaastrichtU-IDS/apache-drill?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/apache-drill)
-
-Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
-
-```shell
-d2s start drill
-
-docker run -dit --rm -p 8047:8047 -p 31011:31010 \
-	--name drill -v $(pwd)/workspace/input:/data:ro umids/apache-drill:latest
-```
-
-> Access at [http://localhost:8047/](http://localhost:8047/).
-
-> See on [DockerHub](https://hub.docker.com/r/umids/apache-drill).
-
----
-
-## Postgres
-
-Popular SQL database.
-
-```shell
-d2s start postgres
-
-docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=pwd -d -v $(pwd)/workspace/postgres:/data postgres
-```
-
-> Password is `pwd`
-
-> See the [Postgres guide](/docs/guide-postgres) for more details.
-
----
-
-## xml2rdf
+### xml2rdf
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/xml2rdf?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/xml2rdf)
 
@@ -262,7 +307,7 @@ docker run --rm -it -v $(pwd)/workspace/input:/data umids/xml2rdf:latest  \
 
 ---
 
-## json2xml
+### json2xml
 
 [![](https://img.shields.io/github/stars/lukas-krecan/json2xml?label=GitHub&style=social)](https://github.com/lukas-krecan/json2xml)
 
@@ -276,7 +321,7 @@ docker run -it -v $(pwd)/workspace/input:data vemonet/json2xml:latest -i /data/t
 
 ---
 
-## PyShEx
+### PyShEx
 
 [![](https://img.shields.io/github/stars/hsolbrig/PyShEx?label=GitHub&style=social)](https://github.com/hsolbrig/PyShEx)
 
@@ -294,7 +339,7 @@ docker run --rm -it pyshex -gn '' -ss -ut -pr \
 ---
 
 
-## rdf2hdt
+### rdf2hdt
 
 [![GitHub](https://img.shields.io/github/stars/rdfhdt/hdt-cpp?label=GitHub&style=social)](https://github.com/rdfhdt/hdt-docker)
 
@@ -307,7 +352,7 @@ docker run -it --rm -v $(pwd)/workspace:/data \
 
 ---
 
-## Raptor rdf2rdf
+### Raptor rdf2rdf
 
 [Raptor](http://librdf.org/raptor/rapper.html) is a small and efficient Bash tool to convert from a RDF format to another (nq, nt, ttl, rdf/xml). It can help fix triple normalization and encoding issues.
 
@@ -320,7 +365,7 @@ docker run -it --rm -v $(pwd)/workspace:/data \
 
 > See [GitHub repository](https://github.com/pheyvaer/raptor-docker) for Docker build.
 
-## rdf2neo
+### rdf2neo
 
 [![GitHub](https://img.shields.io/github/stars/Rothamsted/rdf2neo?label=GitHub&style=social)](https://github.com/Rothamsted/rdf2neo)
 
@@ -330,39 +375,7 @@ Convert RDF data to a neo4j property graph by mapping the RDF to Cypher queries 
 
 ---
 
-## LIMES interlinking
-
-[LIMES](https://github.com/dice-group/LIMES) is a tool developed by DICE group to perform interlinking between RDF entities using [various metrics](http://dice-group.github.io/LIMES/#/user_manual/configuration_file/defining_link_specifications?id=implemented-measures): Cosine, ExactMatch, Levenshtein... 
-
-Start the LIMES server:
-
-```bash
-d2s start limes-server
-```
-
-> Access at http://localhost:8090
-
-See the [official documentation to use the deployed REST API](http://dice-group.github.io/LIMES/#/user_manual/running_limes?id=using-the-cli-server) to submit LIMES jobs.
-
->[Postman](https://www.postman.com/product/api-client) can be used to perform HTTP POST queries on the API.
-
-> A newly released [public Web UI](http://limes.aksw.org/) can also be tried in the browser.
-
----
-
-## BridgeDb
-
-[![](https://img.shields.io/github/stars/bridgedb/BridgeDb?label=GitHub&style=social)](https://github.com/bridgedb/BridgeDb)
-
-[BridgeDb](https://www.bridgedb.org/) links URI identifiers from various datasets (Uniprot, PubMed).
-
-```shell
-docker run -p 8183:8183 bigcatum/bridgedb
-```
-
----
-
-## d2s-bash-exec
+### d2s-bash-exec
 
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-bash-exec?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-bash-exec)
 
@@ -376,7 +389,21 @@ docker run -it --rm -v $(pwd)/workspace/input:/data umids/d2s-bash-exec:latest h
 
 ---
 
-## LinkedPipes
+## Additional services
+
+### BridgeDb
+
+[![](https://img.shields.io/github/stars/bridgedb/BridgeDb?label=GitHub&style=social)](https://github.com/bridgedb/BridgeDb)
+
+[BridgeDb](https://www.bridgedb.org/) links URI identifiers from various datasets (Uniprot, PubMed).
+
+```shell
+docker run -p 8183:8183 bigcatum/bridgedb
+```
+
+---
+
+### LinkedPipes
 
 [LinkedPipes](https://linkedpipes.com/) is a Suite for Linked Data, with [ETL](https://etl.linkedpipes.com/) and [Visualization](https://visualization.linkedpipes.com/) services.
 
@@ -389,20 +416,3 @@ LP_ETL_PORT=8091 docker-compose up -d
 ```
 
 > Access at http://localhost:8091
-
-## Nanobench
-
-[Nanobench](https://github.com/peta-pico/nanobench) is a web UI to publish [Nanopublications](http://nanopub.org/).
-
-```shell
-d2s start nanobench
-
-docker run -d --rm --name nanobench -p 37373:37373 \
-  -v $(pwd)/workspace/.nanopub:/root/.nanopub \
-  -e NANOBENCH_API_INSTANCES=http://grlc.np.dumontierlab.com/api/local/local/ http://grlc.nanopubs.lod.labs.vu.nl/api/local/local/ http://130.60.24.146:7881/api/local/local/ \
-  nanopub/nanobench
-```
-
-> Access on http://localhost:37373
-
-> Follow the web UI instructions to get started and publish nanopublications.
