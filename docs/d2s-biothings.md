@@ -17,9 +17,3 @@ d2s start biothings-studio
 
 > Access BioThings API at http://localhost:8000
 
-Or run it directly using Docker:
-
-```shell
-docker run --rm -it -p 8888:8888 -v $(pwd)/notebooks:/notebooks -e GIT_URL="https://github.com/MaastrichtU-IDS/covid-kg-notebooks" -e PASSWORD="<your_secret>" umids/jupyterlab:latest
-```
-

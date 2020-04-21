@@ -41,6 +41,28 @@ d2s rml cohd
 
 ---
 
+## BioThings Studio
+
+[![RMLMapper](https://img.shields.io/github/stars/biothings/biothings_studio?label=GitHub&style=social)](https://github.com/biothings/biothings_studio)
+
+[BioThings Studio](https://github.com/biothings/biothings_studio) enables to deploy a Docker container with all dependencies required to build BioThings APIs. See the [BioThings Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
+
+```shell
+d2s start biothings-studio
+
+docker run -d --rm --name studio \
+  -p 8001:8080 -p 8000:8000 -p 9000:9000 \
+  -p 7022:7022 -p 7080:7080 -p 9200:9200 -p 27017:27017 \
+  -v $(pwd)/workspace/biothings:/data \
+  biothings/biothings-studio:0.2a
+```
+
+> Access web UI at http://localhost:8001
+
+> Access BioThings API at http://localhost:8000
+
+---
+
 ## d2s-sparql-operations
 
 [![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.org/)

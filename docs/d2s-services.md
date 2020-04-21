@@ -52,6 +52,7 @@ See the [detailed lists of RDF utilities](/docs/services-utilities) services.
 
 * [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
   * rmltask: dependency of the rmlstreamer, the 2 services are required to run.
+* [biothings-studio](/docs/services-utilities#biothings-studio): build and deploy BioThings APIs.
 * [drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL using Apache Drill
 * [postgres](/docs/services-utilities#postgres): popular OpenSource SQL database
 * [limes](/docs/services-utilities#limes-interlinking): server to perform interlinking between RDF entities using various metrics
