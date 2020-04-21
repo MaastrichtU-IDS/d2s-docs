@@ -309,7 +309,7 @@ docker run -it --rm -v $(pwd)/workspace:/data \
 
 ## Raptor rdf2rdf
 
-[Raptor](http://librdf.org/raptor/rapper.html) is a small Bash tool to convert from a RDF format to another (nq, nt, ttl, rdf/xml). It can help fix triple normalization and encoding issues.
+[Raptor](http://librdf.org/raptor/rapper.html) is a small and efficient Bash tool to convert from a RDF format to another (nq, nt, ttl, rdf/xml). It can help fix triple normalization and encoding issues.
 
 ```shell
 docker run -it --rm -v $(pwd)/workspace:/data \
