@@ -127,6 +127,20 @@ docker run -d --rm --name nanobench -p 37373:37373 \
 
 ---
 
+### FAIR Data Point
+
+[![](https://img.shields.io/github/stars/FAIRDataTeam/FAIRDataPoint?label=GitHub&style=social)](https://github.com/FAIRDataTeam/FAIRDataPoint)
+
+[FAIR Data Point (FDP)](https://github.com/FAIRDataTeam/FAIRDataPoint) is a REST API for creating, storing, and serving FAIR metadata. This FDP implementation also presents a Web-based graphical user interface (GUI). The metadata contents are generated `semi-automatically` according to the [FAIR Data Point software specification](https://github.com/FAIRDataTeam/FAIRDataPoint-Spec) document.
+
+More information about FDP and how to deploy can be found at [FDP Deployment Documentation](https://fairdatapoint.readthedocs.io/).
+
+```shell
+d2s start fairdatapoint
+```
+
+---
+
 ### Apache Drill
 
 [![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)

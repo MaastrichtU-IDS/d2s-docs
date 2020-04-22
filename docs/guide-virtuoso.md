@@ -11,13 +11,8 @@ title: Setting up Virtuoso
 
 ### Using the client
 
-The [load.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/virtuoso/load.sh) script needs to be copied to the virtuoso repository for bulk load to work, this is done by `d2s init`).
-
 ```shell
 d2s start virtuoso
-  
-# Then copy the load.sh file to be accessible by Virtuoso running container
-cp d2s-cwl-workflows/support/virtuoso/load.sh workspace/virtuoso
 ```
 
 > Access at http://localhost:8890/ and SPARQL endpoint at http://localhost:8890/sparql.
@@ -29,14 +24,14 @@ cp d2s-cwl-workflows/support/virtuoso/load.sh workspace/virtuoso
 Be careful when changing the DBA_PASSWORD for [tenforce/virtuoso](tenforce/virtuoso). This doesn't work every time, so you might need to use the default `dba` password.
 
 ```shell
-docker run --rm --name d2s-cwl-workflows_virtuoso_1 \
+docker run --rm --name d2s-virtuoso \
 	--network d2s-cwl-workflows_network \
     -p 8890:8890 -p 1111:1111 \
     -e DBA_PASSWORD=dba \
     -e SPARQL_UPDATE=true \
     -e DEFAULT_GRAPH=https://w3id.org/d2s/graph \
     -v /data/d2s-workspace:/data \
-    -d tenforce/virtuoso
+    -d umids/d2s-virtuoso
 ```
 
 > Shared in `/data/d2s-workspace`
@@ -56,7 +51,7 @@ SELECT ?foundUri ?foundLabel WHERE {?foundUri <http://www.w3.org/2000/01/rdf-sch
 ## Clear Virtuoso triplestore
 
 ```shell
-docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
+docker exec -it d2s-virtuoso isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
 ```
 
 ## RDF bulk load
@@ -64,13 +59,13 @@ docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOB
 This command should work to load all `.nq` files in the `workspace/virtuoso` directory, but it seems to have issues:
 
 ```shell
-docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db', '*.nq', 'http://test/'); rdf_loader_run();"
+docker exec -it d2s-virtuoso isql-v -U dba -P dba exec="ld_dir('/usr/local/virtuoso-opensource/var/lib/virtuoso/db', '*.nq', 'http://test/'); rdf_loader_run();"
 ```
 
 This command is used by the CWL workflow, but fails when run manually:
 
 ```shell
-docker exec -i d2s-cwl-workflows_virtuoso_1 bash -c "/usr/local/virtuoso-opensource/var/lib/virtuoso/db/load.sh" "/usr/local/virtuoso-opensource/var/lib/virtuoso/db" "rdf_output.nq" "https://w3id.org/d2s/graph/default" "rdf_output_vload.log" "dba"
+docker exec -i d2s-virtuoso bash -c "/load.sh" "/usr/local/virtuoso-opensource/var/lib/virtuoso/db" "rdf_output.nq" "https://w3id.org/d2s/graph/default" "rdf_output_vload.log" "dba"
 ```
 
 > For some reason the args are not passed to the script 🚧
@@ -88,7 +83,7 @@ See [Virtuoso documentation](http://vos.openlinksw.com/owiki/wiki/VOS/VirtRDFDat
 See example to dump the Bio2RDF ClinicalTrials Graph from Virtuoso:
 
 ```shell
-docker exec -i d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="dump_one_graph ('http://bio2rdf.org/clinicaltrials_resource:bio2rdf.dataset.clinicaltrials.R3', '/usr/local/virtuoso-opensource/var/lib/virtuoso/db/dumps/clinicaltrials', 999999999999999);"
+docker exec -i d2s-virtuoso isql-v -U dba -P dba exec="dump_one_graph ('http://bio2rdf.org/clinicaltrials_resource:bio2rdf.dataset.clinicaltrials.R3', '/usr/local/virtuoso-opensource/var/lib/virtuoso/db/dumps/clinicaltrials', 999999999999999);"
 ```
 
 ### Dump all graphs
@@ -100,7 +95,7 @@ See [Virtuoso documentation](http://vos.openlinksw.com/owiki/wiki/VOS/VirtRDFDum
 See example to dump a complete Virtuoso triplestore:
 
 ```shell
-docker exec -i d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="dump_nquads ('dumps', 1, 999999999999999, 1);"
+docker exec -i d2s-virtuoso isql-v -U dba -P dba exec="dump_nquads ('dumps', 1, 999999999999999, 1);"
 ```
 
 ## Configuration

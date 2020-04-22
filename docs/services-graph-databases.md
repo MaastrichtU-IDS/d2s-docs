@@ -62,7 +62,7 @@ docker run --name virtuoso \
 Clear the Virtuoso triplestore using this command:
 
 ```shell
-docker exec -it d2s-cwl-workflows_virtuoso_1 isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
+docker exec -it d2s-virtuoso isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
 ```
 
 ---
