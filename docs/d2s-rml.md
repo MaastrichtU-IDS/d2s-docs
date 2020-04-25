@@ -98,6 +98,9 @@ Still experimental, the RMLStreamer can be run on the **[Data Science Research I
 * Copy the RMLStreamer.jar file, your mapping files and data files to the pod. It will be proposed when running `d2s rml` but they could be loaded manually before. 
 
 ```shell
+# get flink pod id
+oc get pod --selector app=flink --selector component=jobmanager --no-headers -o=custom-columns=NAME:.metadata.name
+
 oc exec <flink-jobmanager-id> -- mkdir -p /mnt/workspace/import
 oc rsync workspace/input <flink-jobmanager-id>:/mnt/workspace/
 oc rsync datasets <flink-jobmanager-id>:/mnt/
