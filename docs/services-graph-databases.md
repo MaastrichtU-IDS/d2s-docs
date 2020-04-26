@@ -160,7 +160,7 @@ docker run -d --name fuseki -p 3030:3030 -v $(pwd)/workspace/fuseki:/fuseki -v $
 Bulk load files in `demo` dataset from `workspace/import` (container needs to be stopped):
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yaml \
+docker-compose -f d2s-cwl-workflows/docker-compose.yml \
   run -v $(pwd)/workspace/import:/staging \
   stain/jena-fuseki ./load.sh demo test1.ttl test2.nt
 ```

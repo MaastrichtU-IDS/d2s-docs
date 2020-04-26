@@ -82,7 +82,7 @@ Containers can be linked using 2 ways: `--link` flag and `--network`.
 
 Especially used when running services using docker-compose. The `--link` flag method can be easier to use in simple cases.
 
-#### Example of a network setup in the [docker-compose.yaml](https://github.com/MaastrichtU-IDS/data2services-pipeline/blob/master/docker-compose.yaml)
+#### Example of a network setup in the [docker-compose.yml](https://github.com/MaastrichtU-IDS/data2services-pipeline/blob/master/docker-compose.yml)
 ```yaml
 version: "3"
 services:

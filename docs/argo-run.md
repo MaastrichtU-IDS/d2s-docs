@@ -37,7 +37,7 @@ kubectl delete deployments.apps dh-vos7
 ### Steps-based workflow
 
 ```shell
-argo submit d2s-argo-workflows/workflows/d2s-workflow-xml.yaml -f datasets/drugbank/config-argo-xml-drugbank.yml
+argo submit d2s-argo-workflows/workflows/d2s-workflow-xml.yml -f datasets/drugbank/config-argo-xml-drugbank.yml
 ```
 
 > *Reminder:* you need first to authenticate to the [OpenShift cluster](https://app.dsri.unimaas.nl:8443/) using `oc login` .
@@ -45,7 +45,7 @@ argo submit d2s-argo-workflows/workflows/d2s-workflow-xml.yaml -f datasets/drugb
 ### DAG workflow
 
 ```shell
-argo submit d2s-argo-workflows/workflows/d2s-workflow-transform-xml-dag.yaml \
+argo submit d2s-argo-workflows/workflows/d2s-workflow-transform-xml-dag.yml \
   -f support/config/config-transform-xml-drugbank.yml
 ```
 
@@ -56,14 +56,14 @@ argo submit d2s-argo-workflows/workflows/d2s-workflow-transform-xml-dag.yaml \
 ### Steps-based workflow
 
 ```shell
-argo submit d2s-argo-workflows/workflows/d2s-workflow-transform-csv.yaml \
+argo submit d2s-argo-workflows/workflows/d2s-workflow-transform-csv.yml \
   -f support/config/config-transform-csv-stitch.yml
 ```
 
 ### DAG workflow
 
 ```shell
-argo submit d2s-argo-workflows/workflows/d2s-workflow-transform-csv-dag.yaml \
+argo submit d2s-argo-workflows/workflows/d2s-workflow-transform-csv-dag.yml \
   -f support/config/config-transform-csv-stitch.yml
 ```
 

@@ -19,7 +19,7 @@ Deploy [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) on port 80:
 d2s start proxy
 ```
 
-> You can now modify the [docker-compose.yaml](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yaml#L15) to set the URL of the deployed services as the environment variable `VIRTUAL_HOST`.
+> You can now modify the [docker-compose.yml](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yml#L15) to set the URL of the deployed services as the environment variable `VIRTUAL_HOST`.
 
 > If only one port is exposed it should pick it up. Otherwise you can set the port to expose using the environment variable `VIRTUAL_PORT`.
 
@@ -72,7 +72,7 @@ Register to [afraid.org](https://freedns.afraid.org/) to get a cleaner and stabl
 
 * Destination: `137.120.31.101` (IDS server IP address)
 
-* Then change the `docker-compose.yaml` environment variables.
+* Then change the `docker-compose.yml` environment variables.
 
   * Or run your Docker image providing your app URL as an environment variable: `-e VIRTUAL_HOST=`
 

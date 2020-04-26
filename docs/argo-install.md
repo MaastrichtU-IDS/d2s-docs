@@ -80,7 +80,7 @@ Included in [Docker installation](/docs/cwl-install#on-macos-windows).
 
 ```shell
 # Install Kubernetes UI
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yml
 kubectl apply -f d2s-argo-workflows/roles/dashboard-adminuser.yml
 kubectl apply -f d2s-argo-workflows/roles/admin-role-binding.yml
 # Get the Token
@@ -99,7 +99,7 @@ kubectl proxy
 ```shell
 kubectl create ns argo
 # On argo namespace
-kubectl apply -n argo -f https://raw.githubusercontent.com/vemonet/argo/master/manifests/namespace-install.yaml
+kubectl apply -n argo -f https://raw.githubusercontent.com/vemonet/argo/master/manifests/namespace-install.yml
 
 kubectl create rolebinding default-admin --clusterrole=admin --serviceaccount=default:default
 
@@ -115,7 +115,7 @@ kubectl -n argo port-forward deployment/argo-ui 8002:8001
 
 ```shell
 # Create volume
-kubectl apply -n argo -f d2s-argo-workflows/storage/storage-mac.yaml
+kubectl apply -n argo -f d2s-argo-workflows/storage/storage-mac.yml
 ```
 
 > **TODO:** Not working at the moment.

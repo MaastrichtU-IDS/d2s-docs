@@ -5,11 +5,11 @@ title: Utilities
 
 We list here the services available for deployment within a Data2Services project.
 
-> The `d2s` command is provided when available. A `docker run` command is provided for every module.
+> The `d2s start` command is provided when available. A `docker run` command is provided for every module.
 
-Feel free to propose new services using [pull requests](https://github.com/MaastrichtU-IDS/data2services-ecosystem/pulls) or creating a [new issue](https://github.com/MaastrichtU-IDS/d2s-documentation/issues). The list of modules we are planning to work on can be found in the [Wiki](https://github.com/MaastrichtU-IDS/data2services-ecosystem/wiki/Modules-to-develop).
+Feel free to propose new services using [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) or creating a [new issue](https://github.com/MaastrichtU-IDS/d2s-documentation/issues).
 
-Only [Docker](https://docs.docker.com/install/) is required to run the modules. A typical module should only require a few arguments to be run, making it easy to deploy and combine them.
+Each service is run using [Docker](https://docs.docker.com/install/). They have been configured to be deployed on a common network, sharing volumes in `workspace/`. Services configuration can be changed in the docker-compose.yml file or using deployments.
 
 ---
 
@@ -59,11 +59,11 @@ docker run -d --rm --name studio \
 
 ---
 
-### Docket
+### Docket multiomics data provider
 
 [![DOCKET](https://img.shields.io/github/stars/PriceLab/DOCKET?label=GitHub&style=social)](https://github.com/PriceLab/DOCKET)
 
-[DOCKET](https://github.com/PriceLab/DOCKET) is a Dataset Overview, Comparison and Knowledge Extraction Tool built for the [NCATS Translator project](https://ncats.nih.gov/translator).
+[DOCKET](https://github.com/PriceLab/DOCKET) is a Dataset Overview, Comparison and Knowledge Extraction Tool built as Multiomics provider for the [NCATS Translator project](https://ncats.nih.gov/translator).
 
 ```shell
 d2s start docket

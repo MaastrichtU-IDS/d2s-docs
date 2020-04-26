@@ -47,7 +47,7 @@ oc get pod | grep d2s-download
 ### Create pod from YAML
 
 ```shell
-oc create -f d2s-download-pod.yaml
+oc create -f d2s-download-pod.yml
 ```
 
 ### Delete pod
@@ -70,9 +70,9 @@ oc logs -f d2s-download-pod
 
 ```shell
 # Create pod
-oc create -f d2s-pod-drill.yaml
+oc create -f d2s-pod-drill.yml
 # Create service for the pod
-oc create -f d2s-service-drill.yaml
+oc create -f d2s-service-drill.yml
 ```
 
 > OpenShift should already [propose Apache Drill](https://thenewstack.io/mapr-brings-apache-spark-and-apache-drill-to-kubernetes/) deployment.
