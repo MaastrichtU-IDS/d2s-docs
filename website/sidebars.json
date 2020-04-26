@@ -1,18 +1,16 @@
 {
   "docs": {
-    "CWL workflows": ["d2s-introduction", "d2s-installation", "d2s-workspace", 
-      "d2s-services",  "d2s-new-dataset", "d2s-rml", "d2s-run", 
-      "d2s-dipper", "d2s-biothings",
-      {
-        "type": "subcategory",
-        "label": "Services",
-        "ids": [
-          "services-utilities", "services-graph-databases", "services-interfaces"
-        ]
-      } 
+    "Get started": [
+      "d2s-introduction", "d2s-installation", "d2s-workspace", "d2s-services",
+      "d2s-services", "services-utilities", "services-graph-databases", "services-interfaces"
     ],
-    "Guides": ["guide-ontology", "guide-preprocessing", "guide-deploy-app", "guide-filebrowser", "cwl-create", 
-      "guide-docker", "guide-jenkins",
+    "Integrate data": [
+      "d2s-new-dataset", "d2s-rml", "d2s-run", 
+      "d2s-dipper", "d2s-biothings"
+    ],
+    "Guides": [
+      "guide-ontology", "guide-preprocessing", "guide-deploy-app", "guide-filebrowser", 
+      "cwl-create", "guide-docker", "guide-jenkins",
       {
         "type": "subcategory",
         "label": "Setup databases",
@@ -22,8 +20,9 @@
         ]
       } 
     ],
-    "Kubernetes workflows": 
-      ["argo-install", "argo-login", "argo-volume" , 
-        "argo-run", "argo-commands", "argo-debug", "argo-secret"]
+    "Kubernetes workflows": [
+      "argo-install", "argo-login", "argo-volume" , 
+      "argo-run", "argo-commands", "argo-debug", "argo-secret"
+    ]
   }
 }

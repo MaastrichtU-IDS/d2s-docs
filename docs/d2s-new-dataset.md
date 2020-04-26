@@ -1,6 +1,6 @@
 ---
 id: d2s-new-dataset
-title: Integrate a new dataset
+title: Add a new dataset
 ---
 
 In this documentation I will use [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) as example, but you are encouraged to create a new Git repository [using the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
