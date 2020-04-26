@@ -25,7 +25,7 @@ Be careful when changing the DBA_PASSWORD for [tenforce/virtuoso](tenforce/virtu
 
 ```shell
 docker run --rm --name d2s-virtuoso \
-	--network d2s-cwl-workflows_network \
+	--network d2s-core_network \
     -p 8890:8890 -p 1111:1111 \
     -e DBA_PASSWORD=dba \
     -e SPARQL_UPDATE=true \

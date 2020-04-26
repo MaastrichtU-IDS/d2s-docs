@@ -350,7 +350,7 @@ airflow scheduler
 Submit a workflow:
 
 ```shell
-cwl-airflow submit d2s-cwl-workflows/workflows/csv-virtuoso.cwl datasets/cohd/config.yml
+cwl-airflow submit d2s-core/cwl/workflows/csv-virtuoso.cwl datasets/cohd/config.yml
 
 # Run demo
 cwl-airflow demo --auto
@@ -371,7 +371,7 @@ pipx install toil
 Run a workflow
 
 ```shell
-toil-cwl-runner --workdir workspace/output/tmp --outdir workspace/output d2s-cwl-workflows/workflows/csv-virtuoso.cwl datasets/cohd/config.yml
+toil-cwl-runner --workdir workspace/output/tmp --outdir workspace/output d2s-core/cwl/workflows/csv-virtuoso.cwl datasets/cohd/config.yml
 ```
 
 > To be tested.

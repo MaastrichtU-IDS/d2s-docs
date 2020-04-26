@@ -35,7 +35,7 @@ docker run --rm -it -p 8082:80 umids/into-the-graph:latest
 d2s start api
 
 docker run -it --rm -p 8080:8080 \
-  --net d2s-cwl-workflows_network \
+  --net d2s-core_network \
   -e ENDPOINT="http://graphdb:7200/repositories/test" \
   umids/d2s-api
 ```

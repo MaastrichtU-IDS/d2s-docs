@@ -19,7 +19,7 @@ If you wish to use GraphDB free edition, you will need to download it from Ontot
 
 ### Using the client
 
-You can provide the .zip file required to build GraphDB when doing `d2s init`, otherwise it needs to be placed in [d2s-cwl-workflows/support/graphdb](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support) before running the build.
+You can provide the .zip file required to build GraphDB when doing `d2s init`, otherwise it needs to be placed in [d2s-core/support/graphdb](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support) before running the build.
 
 ```shell
 # Build
@@ -58,7 +58,7 @@ Create the `test` repository
 curl -X POST \
     http://localhost:7200/rest/repositories \
     -H 'Content-Type: multipart/form-data' \
-    -F "config=@d2s-cwl-workflows/support/graphdb-test-repo-config.ttl"
+    -F "config=@d2s-core/support/graphdb-test-repo-config.ttl"
 ```
 
 > Edit the repository in [graphdb-test-repo-config.ttl](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/graphdb-test-repo-config.ttl).

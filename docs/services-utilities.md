@@ -287,7 +287,7 @@ docker run -it --rm --link drill:drill --link postgres:postgres -v $(pwd)/worksp
 Convert Relational Databases to RDF using the [R2RML](https://www.w3.org/TR/r2rml/) mapping language.
 
 ```shell
-docker run -it --rm --net d2s-cwl-workflows_network \
+docker run -it --rm --net d2s-core_network \
   -v $(pwd)/workspace/input:/data \
   umids/r2rml:latest \ 
   --connectionURL jdbc:drill:drillbit=drill:31010 \

@@ -21,7 +21,7 @@ d2s download <dataset_id>
 
 ## Run CWL workflows
 
-Run a CWL workflow defined in [d2s-cwl-workflows/workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/workflows) on a specific dataset:
+Run a CWL workflow defined in [d2s-core/cwl/workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/workflows) on a specific dataset:
 
 ```shell
 d2s run <workflow_filename>.cwl <dataset_id>
@@ -142,7 +142,7 @@ d2s run csv-virtuoso.cwl cohd --get-mappings
     * e.g. `workspace/output/tmp-outdir/tmp-`
   * `--custom-net`: docker network used by all containers run in this workflow
   * The `.cwl` [workflow file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/cwl/xml-virtuoso.cwl)
-    * e.g. `d2s-cwl-workflows/workflows/xml-virtuoso.cwl`
+    * e.g. `d2s-core/cwl/workflows/xml-virtuoso.cwl`
   * The `.yml` [configuration file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/support/example-config/config-transform-xml-drugbank.yml) with all parameters required to run the workflow
     * e.g. `support/example-config/config-transform-xml-drugbank.yml`
 * 3 types of workflows can be run depending on the input data and the tasks executed:

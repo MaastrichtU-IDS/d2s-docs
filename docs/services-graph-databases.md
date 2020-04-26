@@ -11,12 +11,12 @@ title: Graph databases
 
 [Ontotext GraphDB™](https://www.ontotext.com/) triplestore includes a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), RDFS/OWL [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html) to infer new triples and the possibility to deploy multiple repositories. It uses mainly the [rdf4j](https://rdf4j.org/) framework.
 
-[Download the zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) of GraphDB standalone free version `9.1.1`, and place it in `d2s-cwl-workflows/support/graphdb` before building the image using `d2s update`(this step is also prompted during `d2s init`).
+[Download the zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) of GraphDB standalone free version `9.1.1`, and place it in `d2s-core/support/graphdb` before building the image using `d2s update`(this step is also prompted during `d2s init`).
 
 ```shell
 d2s start graphdb
 
-docker build -t graphdb d2s-cwl-workflows/support/graphdb
+docker build -t graphdb d2s-core/support/graphdb
 docker run -d --rm --name graphdb -p 7200:7200 \
 	-v $(pwd)/workspace/graphdb:/opt/graphdb/home \
 	-v $(pwd)/workspace/import:/root/graphdb-import \
@@ -160,7 +160,7 @@ docker run -d --name fuseki -p 3030:3030 -v $(pwd)/workspace/fuseki:/fuseki -v $
 Bulk load files in `demo` dataset from `workspace/import` (container needs to be stopped):
 
 ```shell
-docker-compose -f d2s-cwl-workflows/docker-compose.yml \
+docker-compose -f d2s-core/docker-compose.yml \
   run -v $(pwd)/workspace/import:/staging \
   stain/jena-fuseki ./load.sh demo test1.ttl test2.nt
 ```
