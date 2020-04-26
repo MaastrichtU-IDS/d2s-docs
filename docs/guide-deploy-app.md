@@ -19,7 +19,7 @@ Deploy [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) on port 80:
 d2s start proxy
 ```
 
-> You can now modify the [docker-compose.yml](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yml#L15) to set the URL of the deployed services as the environment variable `VIRTUAL_HOST`.
+> You can now modify the [docker-compose.yml](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml#L15) to set the URL of the deployed services as the environment variable `VIRTUAL_HOST`.
 
 > If only one port is exposed it should pick it up. Otherwise you can set the port to expose using the environment variable `VIRTUAL_PORT`.
 

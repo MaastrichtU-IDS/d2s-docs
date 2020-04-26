@@ -17,7 +17,7 @@ In this documentation we will use a set of services to build the knowledge graph
 
 ## List of services
 
-The services deployments are defined in a [docker-compose file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yml).
+The services deployments are defined in a [docker-compose file](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml).
 
 Start the services described below using:
 
@@ -87,7 +87,7 @@ d2s start demo
 
 Services can be started with a specific deployment config. This enables to define variable specific to a deployment in a complementary `docker-compose.my_deployment.yml`, such as the virtual host URL or a different image tag.
 
-See the [demo](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.demo.yml) or [trek](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.trek.yml) deployment config as examples.
+See the [demo](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/deployments/demo.yml) or [trek](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/deployments/trek.yml) deployment config as examples.
 
 Start services with a deployment config:
 
@@ -95,7 +95,7 @@ Start services with a deployment config:
 d2s start graphdb virtuoso drill api rmlstreamer rmltask -d trek
 ```
 
-> Feel free to define a new deployment config if your services requires different parameters than the one defined in the main [docker-compose.yml](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/docker-compose.yml)
+> Feel free to define a new deployment config if your services requires different parameters than the one defined in the main [docker-compose.yml](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml)
 
 ## Manage services
 

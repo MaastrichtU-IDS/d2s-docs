@@ -321,7 +321,7 @@ And add `CWL (Rabix/Benten)` extension to Visual Studio Code.
 
 [Download](https://github.com/rabix/composer/releases) the right installation file and run it.
 
-> Open the `d2s-cwl-workflows` folder in Rabix Composer.
+> Open the `d2s-core` folder in Rabix Composer.
 
 > Note that Rabix will overwrite how you originally wrote your CWL files, and add `xy` coordinates to steps.
 

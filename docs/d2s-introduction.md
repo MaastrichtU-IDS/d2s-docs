@@ -85,8 +85,8 @@ The Data2Services project uses multiples Git repositories:
 
 * [d2s-cli](https://github.com/MaastrichtU-IDS/d2s-cli): A Command Line Interface to orchestrate the integration of heterogenous  data and the deployment of services consuming the integrated data (Python).
   * It will clone and use a [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository to store your project services and workflows settings.
-* [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) as submodule.
-  * [d2s-cwl-workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows) (imported as submodule in [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template)): CWL workflows to transform structured data to a target RDF model.
+* [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) as submodule.
+  * [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) (imported as submodule in [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template)): CWL workflows to transform structured data to a target RDF model.
 * [d2s-documentation](https://github.com/MaastrichtU-IDS/d2s-documentation): source code of this documentation.
 
 ---

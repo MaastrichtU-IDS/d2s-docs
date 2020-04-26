@@ -65,7 +65,7 @@ We improved the metadata for GeoNames and WorldBank datasets by editing those fi
 
 ## Define RML mapping files
 
-Some [templates mapping files](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support/template/dataset/mapping) are generated when creating a new dataset to help start mappings different king of file. Delete them and define mapping files for WorldBank and GeoName.
+Some [templates mapping files](https://github.com/MaastrichtU-IDS/d2s-core/tree/master/support/template/dataset/mapping) are generated when creating a new dataset to help start mappings different king of file. Delete them and define mapping files for WorldBank and GeoName.
 
 * WorldBank mappings in [datasets/worldbank/mapping/gdp_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/worldbank/mapping/gdp_mapping.rml.ttl)
 * GeoName mappings in [datasets/geonames/mapping/country_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/geonames/mapping/country_mapping.rml.ttl)

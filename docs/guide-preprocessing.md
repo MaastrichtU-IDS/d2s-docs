@@ -17,9 +17,9 @@ sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.t
 
 ## Add Tabular file header label
 
-[AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML) generates the generic RDF predicates out of tabular files columns header. If the tabular files to process don't have a header, it can easily be added by using the `sed` command in the [download.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh#L68) script.
+[AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML) generates the generic RDF predicates out of tabular files columns header. If the tabular files to process don't have a header, it can easily be added by using the `sed` command in the [download.sh](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/download/download_examples.sh#L68) script.
 
-> See the [example](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh#L68) in the dataset template.
+> See the [example](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/download/download_examples.sh#L68) in the dataset template.
 
 ### CSV
 

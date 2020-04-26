@@ -33,7 +33,7 @@ docker run --rm -it -p 8888:8888 \
 
 > Access on http://localhost:8888
 
-> Change the Notebook password in the [docker-compose.yml file](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows). Different passwords can be defined for different deployments.
+> Change the Notebook password in the [docker-compose.yml file](https://github.com/MaastrichtU-IDS/d2s-core). Different passwords can be defined for different deployments.
 
 ---
 

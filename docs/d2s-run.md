@@ -21,7 +21,7 @@ d2s download <dataset_id>
 
 ## Run CWL workflows
 
-Run a CWL workflow defined in [d2s-core/cwl/workflows](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/workflows) on a specific dataset:
+Run a CWL workflow defined in [d2s-core/cwl/workflows](https://github.com/MaastrichtU-IDS/d2s-core/tree/master/cwl/workflows) on a specific dataset:
 
 ```shell
 d2s run <workflow_filename>.cwl <dataset_id>

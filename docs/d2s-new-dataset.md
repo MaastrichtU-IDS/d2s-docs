@@ -17,7 +17,7 @@ d2s generate dataset
 
 The dataset mappings, metadata and download files are created in the `dataset/$dataset_id` folder.
 
-The dataset folder is generated based on [this template folder](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/tree/master/support/template/dataset). Example mapping files are provided for DrugBank XML data and Columbia Open Health clinical Data TSV data.
+The dataset folder is generated based on [this template folder](https://github.com/MaastrichtU-IDS/d2s-core/tree/master/support/template/dataset). Example mapping files are provided for DrugBank XML data and Columbia Open Health clinical Data TSV data.
 
 > [Let us know](/help) if those examples are helpful, or if they would need to be more explicit.
 
@@ -27,8 +27,8 @@ You are encouraged to improve the metadata description of your dataset by editin
 
 A dozen of metadata needs to be defined through SPARQL query for the summary of the dataset, and then each distribution.
 
-* SPARQL insert dataset [summary metadata](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/metadata/metadata-template-0-summary.rq) (once by dataset).
-* SPARQL insert dataset [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/metadata/metadata-template-1.rq) (for each new version).
+* SPARQL insert dataset [summary metadata](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/metadata/metadata-template-0-summary.rq) (once by dataset).
+* SPARQL insert dataset [distribution metadata](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/metadata/metadata-template-1.rq) (for each new version).
 
 > Change the URIs between `<>` and strings between `""`.
 
@@ -40,9 +40,9 @@ You can define the bash commands to download your dataset in `datasets/$dataset_
 
 The files will be downloaded in `workspace/input/$dataset_id`.
 
-A [template](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh) is provided with examples to download, unzip or add column labels provided.
+A [template](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/download/download_examples.sh) is provided with examples to download, unzip or add column labels provided.
 
-> `d2s` extract data from csv/tsv files based on their column label. If your tabular doesn't have column you can add them at the end of the [download.sh](https://github.com/MaastrichtU-IDS/d2s-cwl-workflows/blob/master/support/template/dataset/download/download_examples.sh) file by using the `sed` command.
+> `d2s` extract data from csv/tsv files based on their column label. If your tabular doesn't have column you can add them at the end of the [download.sh](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/download/download_examples.sh) file by using the `sed` command.
 
 ---
 
