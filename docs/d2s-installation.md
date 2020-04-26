@@ -211,11 +211,17 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ### On MacOS
 
-An [installer](https://hub.docker.com/?overlay=onboarding) is available for [MacOS](https://docs.docker.com/docker-for-mac/install/) (`docker-compose` is included).
+Use the [Docker installer for MacOS](https://download.docker.com/mac/beta/Docker.dmg) (`.dmg` file) to install Docker and `docker-compose`.
+
+If you have a DockerHub account you can also use the [DockerHub installer](https://hub.docker.com/?overlay=onboarding).
+
+You can change Docker settings by clicking on the Docker icon 🐳 in the top bar, then click **Preferences...**
+
+The volumes `/Users` and `/tmp` should be shared by default. It is recommended to create the `d2s` project folder in a subfolder of `/Users`.
 
 ### On Windows
 
-We use [Chocolatey](https://chocolatey.org/) to install [Docker](https://docs.docker.com/install/).
+We use [Chocolatey](https://chocolatey.org/) to install [Docker](https://docs.docker.com/install/). See the [pipx installation section to install Chocolatey](https://d2s.semanticscience.org/docs/d2s-installation#install-pipx-on-windows).
 
 Use [docker-desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows) for an easier installation if you have Windows Pro or Enterprise and a [DockerHub account](https://hub.docker.com/editions/community/docker-ce-desktop-windows):
 
