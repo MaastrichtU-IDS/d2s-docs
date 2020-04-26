@@ -53,9 +53,9 @@ docker run -d --rm --name studio \
   biothings/biothings-studio:0.2a
 ```
 
-> Access web UI at http://localhost:8001
+> Access BioThings Studio web UI at http://localhost:8880
 
-> Access BioThings API at http://localhost:8000
+> Access BioThings API at http://localhost:7080
 
 ---
 

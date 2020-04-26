@@ -11,14 +11,14 @@ BioThings APIs can then be queries by the [BioThings Explorer](https://biothings
 
 ## Deploy BioThings Studio
 
-[BioThings Studio](https://github.com/biothings/biothings_studio) enables to deploy a Docker container with all dependencies required to build and expose BioThings APIs. See the [BioThings Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
+[BioThings Studio](https://github.com/biothings/biothings_studio) enables to deploy a Docker container with all dependencies required to build and expose BioThings APIs. See the [BioThings Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html#part-1-single-datasource).
 
 ```shell
 d2s start biothings-studio
 ```
 
-> Access web UI at http://localhost:8001
+> Access BioThings Studio web UI at http://localhost:8880
 
-> Access BioThings API at http://localhost:8000
+> Access BioThings API at http://localhost:7080
 
 Volume shared in `workspace/biothings`.

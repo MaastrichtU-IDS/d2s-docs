@@ -51,7 +51,7 @@ See the [detailed lists of available interfaces](/docs/services-interfaces).
 See the [detailed lists of RDF utilities](/docs/services-utilities).
 
 * [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to build and query the triplestore.
-* [biothings-studio](/docs/services-utilities#biothings-studio): build and deploy BioThings APIs
+* [biothings-studio](/docs/services-utilities#biothings-studio): web UI to build and deploy BioThings APIs 
 * [docket](/docs/services-utilities#docket): multiomics tool for dataset overview, comparison and knowledge extraction using Jupyter notebooks.
 * [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
   * rmltask: dependency of the rmlstreamer, the 2 services are required to run
