@@ -417,6 +417,44 @@ docker run -p 8183:8183 bigcatum/bridgedb
 
 ---
 
+### LinkedDataHub
+
+[![](https://img.shields.io/github/stars/AtomGraph/LinkedDataHub?label=GitHub&style=social)](https://github.com/AtomGraph/LinkedDataHub)
+
+[LinkedDataHub](https://atomgraph.github.io/LinkedDataHub/) is an [Open Source](https://github.com/AtomGraph/LinkedDataHub) Knowledge Graph management system. You can use it to manage data, create visualizations and build apps on RDF Knowledge Graphs.
+
+Clone the repository and prepare the environment file:
+
+```shell
+git clone https://github.com/AtomGraph/LinkedDataHub.git
+cd LinkedDataHub
+cp .env_sample .env
+```
+
+Start LinkedDataHub:
+
+```shell
+docker-compose up -d
+```
+
+> Access LinkedDataHub web UI at **https://localhost:4443**
+
+You will need to **accept the risk** due to self-signed certificates.
+
+You can now follow the web UI instructions to create an account to login to your LinkedDataHub.
+
+> Access Fuseki admin UI at http://localhost:3030/ds
+
+> Access Fuseki end user UI at [http://localhost:3031/ds](http://localhost:3030/ds?query=select%20*%20where%20{?s%20?p%20?o%20.}%20limit%2010)
+
+Stop LinkedDataHub (in `LinkedDataHub` folder):
+
+```shell
+docker-compose down
+```
+
+---
+
 ### LinkedPipes
 
 [LinkedPipes](https://linkedpipes.com/) is a Suite for Linked Data, with [ETL](https://etl.linkedpipes.com/) and [Visualization](https://visualization.linkedpipes.com/) services.

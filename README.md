@@ -29,6 +29,7 @@ We recommend using [Typora](https://typora.io/) to edit [markdown](https://githu
 To run in the `/website` directory.
 
 ```shell
+cd website
 yarn install
 yarn start
 ```

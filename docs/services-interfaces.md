@@ -3,7 +3,7 @@ id: services-interfaces
 title: Interfaces
 ---
 
-Web UI to browse a triplestore through its SPARQL endpoint: resolve URI, SPARQL query editor.
+Interfaces to browse and consume Knowledge Graphs data.
 
 ## into-the-graph
 

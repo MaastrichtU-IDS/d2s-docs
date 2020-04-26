@@ -3,7 +3,11 @@ id: services-graph-databases
 title: Graph databases
 ---
 
-## Ontotext GraphDB
+List of graph databases: RDF triplestores and property graphs.
+
+## RDF triplestores
+
+### Ontotext GraphDB
 
 [![GraphDB](/img/graphdb-logo.png)](https://www.ontotext.com/products/graphdb/)
 
@@ -31,7 +35,7 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 ---
 
-## Virtuoso
+### Virtuoso
 
 [![OpenLink Virtuoso](/img/openlink-virtuoso.png)](https://virtuoso.openlinksw.com/)
 
@@ -67,7 +71,7 @@ docker exec -it d2s-virtuoso isql-v -U dba -P dba exec="RDF_GLOBAL_RESET ();"
 
 ---
 
-## Blazegraph
+### Blazegraph
 
 [![GitHub](https://img.shields.io/github/stars/blazegraph/database?label=GitHub&style=social)](https://github.com/blazegraph/database)
 
@@ -119,31 +123,7 @@ Follow [those instructions](https://sourceforge.net/p/bigdata/discussion/676946/
 
 ---
 
-## AllegroGraph
-
-[![GitHub](https://img.shields.io/github/stars/franzinc/docker-agraph?label=GitHub&style=social)](https://github.com/franzinc/docker-agraph)
-
-[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/franzinc/agraph)](https://hub.docker.com/r/franzinc/agraph)
-
-[AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications. 
-
-```shell
-d2s start allegrograph
-
-docker run -d -m 1g -v $(pwd)/workspace/allegrograph:/data -p 10000-10035:10000-10035 --shm-size 1g --name allegrograph franzinc/agraph:v6.6.0
-```
-
-> Access at http://localhost:10035
-
-> Default login: `test` / `xyzzy`
-
-See [official documentation](https://franz.com/agraph/support/documentation/current/agload.html) for bulk load.
-
-> **TODO:** fix shared volumes
-
----
-
-## Jena Fuseki 
+### Jena Fuseki 
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stain/jena-fuseki)](https://hub.docker.com/r/stain/jena-fuseki)
 
@@ -173,7 +153,31 @@ docker-compose -f d2s-core/docker-compose.yml \
 
 ---
 
-## AnzoGraph
+### AllegroGraph
+
+[![GitHub](https://img.shields.io/github/stars/franzinc/docker-agraph?label=GitHub&style=social)](https://github.com/franzinc/docker-agraph)
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/franzinc/agraph)](https://hub.docker.com/r/franzinc/agraph)
+
+[AllegroGraph®](https://franz.com/agraph/) is a modern, high-performance, persistent graph database. It supports SPARQL, RDFS++, and Prolog reasoning from numerous client applications. 
+
+```shell
+d2s start allegrograph
+
+docker run -d -m 1g -v $(pwd)/workspace/allegrograph:/data -p 10000-10035:10000-10035 --shm-size 1g --name allegrograph franzinc/agraph:v6.6.0
+```
+
+> Access at http://localhost:10035
+
+> Default login: `test` / `xyzzy`
+
+See [official documentation](https://franz.com/agraph/support/documentation/current/agload.html) for bulk load.
+
+> **TODO:** fix shared volumes
+
+---
+
+### AnzoGraph
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/cambridgesemantics/anzograph)](https://hub.docker.com/r/cambridgesemantics/anzograph)
 
@@ -198,35 +202,7 @@ docker run -d -p 8086:8080 -p 8443:8443 --name anzograph -v $(pwd)/workspace/anz
 
 ---
 
-## Stardog
-
-[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stardog/stardog)](https://hub.docker.com/r/stardog/stardog)
-
-Licensed triplestore 📜
-
-See the [official Stardog documentation](https://www.stardog.com/docs/#_docker) for Docker. A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
-
-```shell
-docker run -v $(pwd)/workspace/stardog-license:/var/opt/stardog -e STARDOG_SERVER_JAVA_ARGS="-Xmx8g -Xms8g -XX:MaxDirectMemorySize=2g" stardog/stardog:latest
-```
-
-> ✔️ If you have a Stardog license, then put `stardog-license-key.bin` in the `workspace/stardog-license` folder.
-
-> ❌ If you don't have a license key, you will be able to retrieve a trial license-key via the command line once you start Stardog.
-
----
-
-## MarkLogic
-
-Licensed triplestore 📜
-
-Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-marklogic) to deploy it.
-
-> You will need to download the [MarkLogic Server 📥](https://developer.marklogic.com/products/marklogic-server/10.0)
-
----
-
-## Linked Data Fragments Server
+### Linked Data Fragments Server
 
 [![Linked Data Fragments server](/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
 
@@ -234,7 +210,7 @@ Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-m
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/linkeddatafragments/server.js)](https://hub.docker.com/r/linkeddatafragments/server.js)
 
-Server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to timestamped SPARQL querying over multiple linked data sources, e.g. [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/).
+Technically not a triplestore, server supporting the [Memento](https://mementoweb.org/guide/rfc/) protocol to timestamped SPARQL querying over multiple linked data sources, e.g. [HDT](http://www.rdfhdt.org/) or [SPARQL](https://www.w3.org/TR/sparql11-query/).
 
 ```shell
 d2s start ldf-server
@@ -254,7 +230,9 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 
 ---
 
-## Neo4j
+## Property graphs
+
+### Neo4j
 
 [![Neo4j](/img/neo4j_logo.png)](https://neo4j.com/)
 
@@ -273,3 +251,33 @@ docker run -p 7474:7474 -p 7687:7687 -v $(pwd)/workspace/neo4j:/data neo4j
 > Access at http://localhost:7474, volume shared at `workspace/neo4j`
 
 > Login with `neoj4` / `neo4j` and change the password.virtu
+
+---
+
+## Additional triplestores
+
+### Stardog
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stardog/stardog)](https://hub.docker.com/r/stardog/stardog)
+
+Licensed RDF triplestore 📜
+
+See the [official Stardog documentation](https://www.stardog.com/docs/#_docker) for Docker. A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
+
+```shell
+docker run -v $(pwd)/workspace/stardog-license:/var/opt/stardog -e STARDOG_SERVER_JAVA_ARGS="-Xmx8g -Xms8g -XX:MaxDirectMemorySize=2g" stardog/stardog:latest
+```
+
+> ✔️ If you have a Stardog license, then put `stardog-license-key.bin` in the `workspace/stardog-license` folder.
+
+> ❌ If you don't have a license key, you will be able to retrieve a trial license-key via the command line once you start Stardog.
+
+---
+
+### MarkLogic
+
+Licensed RDF triplestore 📜
+
+Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-marklogic) to deploy it.
+
+> You will need to download the [MarkLogic Server 📥](https://developer.marklogic.com/products/marklogic-server/10.0)
