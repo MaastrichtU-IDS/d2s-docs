@@ -1,6 +1,6 @@
 ---
 id: d2s-workspace
-title: Initialize workspace
+title: Initialize and update
 ---
 
 ## Initialize the project
@@ -40,13 +40,13 @@ cd my-project-folder-name
 Docker images should be pulled when starting the services. You can pull and build all updated Docker images used by `d2s`:
 
 ```shell
-d2s update
+d2s update --images
 ```
 
 Update a single service:
 
 ```shell
-d2s update <my_service>
+d2s update --images <my_service>
 ```
 
 ---
@@ -57,5 +57,13 @@ You might encounter issues with folder permissions, e.g. [RMLStreamer](/docs/ser
 
 ```shell
 d2s update --permissions
+```
+
+## Update d2s-core submodule
+
+The d2s-core submodule, containing Docker deployments and workflows definitions, can be updated using:
+
+```shell
+d2s update --submodules
 ```
 
