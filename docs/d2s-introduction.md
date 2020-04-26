@@ -52,8 +52,7 @@ root-directory
 ├── .d2sconfig						# The project config file
 ├── LICENSE
 ├── README.md
-├── d2s-cwl-workflows (submodule)	# CWL workflows & docker-compose files (required)
-├── d2s-argo-workflows (submodule)	# Optional Kubernetes workflows (experimental)
+├── d2s-core (submodule)	# docker-compose, CWL, Argo workflows files
 ├── datasets		# Folders of the different dataset integrated in the KG 
 │   └── drugbank		# Folder for files to convert DrugBank
 │       ├── config.yml			# The workflow config file

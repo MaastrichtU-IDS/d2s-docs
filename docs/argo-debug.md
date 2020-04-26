@@ -9,7 +9,7 @@ title: Debug Argo workflow
 
 To get into the container. Create YAML with command `tail /dev/null` to keep it running.
 
-> Example of test pod in [tests/test-devnull-pod.yml](https://github.com/MaastrichtU-IDS/d2s-argo-workflows/blob/master/tests/test-devnull-pod.yml):
+> Example of test pod in [tests/test-devnull-pod.yml](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/argo/tests/test-devnull-pod.yml):
 
 ```yaml
 apiVersion: v1
@@ -54,7 +54,7 @@ oc rsh test-devnull-pod
 
 ## Debug an Argo workflow
 
-Pod can also be tested within an Argo workflow, see [tests/test-devnull-argo.yml](https://github.com/MaastrichtU-IDS/d2s-argo-workflows/blob/master/tests/test-devnull-argo.yml).
+Pod can also be tested within an Argo workflow, see [tests/test-devnull-argo.yml](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/argo/tests/test-devnull-argo.yml).
 
 ```shell
 argo submit tests/test-devnull-argo.yml

@@ -81,8 +81,8 @@ Included in [Docker installation](/docs/cwl-install#on-macos-windows).
 ```shell
 # Install Kubernetes UI
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yml
-kubectl apply -f d2s-argo-workflows/roles/dashboard-adminuser.yml
-kubectl apply -f d2s-argo-workflows/roles/admin-role-binding.yml
+kubectl apply -f d2s-core/argo/roles/dashboard-adminuser.yml
+kubectl apply -f d2s-core/argo/roles/admin-role-binding.yml
 # Get the Token
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
 
@@ -115,7 +115,7 @@ kubectl -n argo port-forward deployment/argo-ui 8002:8001
 
 ```shell
 # Create volume
-kubectl apply -n argo -f d2s-argo-workflows/storage/storage-mac.yml
+kubectl apply -n argo -f d2s-core/argo/storage/storage-mac.yml
 ```
 
 > **TODO:** Not working at the moment.
