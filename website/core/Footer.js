@@ -43,13 +43,13 @@ class Footer extends React.Component {
             <a href={this.docUrl('d2s-services')}>
               Start services
             </a>
-            <a href={this.docUrl('d2s-run')}>
-              Run CWL workflows
+            <a href={this.docUrl('d2s-new-dataset')}>
+              Add a new dataset
             </a>
           </div>
 
           <div>
-            <h5>Source</h5>
+            <h5>Source Code</h5>
             {/* <a href={`${this.props.config.baseUrl}blog`}>Blog</a> */}
             {/* <a
               className="github-button"
@@ -78,15 +78,15 @@ class Footer extends React.Component {
             </a> */}
             <a href={this.props.config.repoUrl}
               target="_blank">
-                Documentation
+                This documentation
             </a>
             <a href="https://github.com/MaastrichtU-IDS/d2s-cli"
               target="_blank">
-                Command Line Interface
+                The d2s tool
             </a>
             <a href="https://github.com/MaastrichtU-IDS/d2s-transform-template"
               target="_blank">
-                Template project folder
+                The template project folder
             </a>
           </div>
           <div>

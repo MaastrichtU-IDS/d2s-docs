@@ -37,28 +37,6 @@ docker run --rm -it -p 8888:8888 \
 
 ---
 
-### BioThings Studio
-
-[![RMLMapper](https://img.shields.io/github/stars/biothings/biothings_studio?label=GitHub&style=social)](https://github.com/biothings/biothings_studio)
-
-[BioThings Studio](https://github.com/biothings/biothings_studio) enables to deploy a Docker container with all dependencies required to build BioThings APIs. See the [BioThings Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
-
-```shell
-d2s start biothings-studio
-
-docker run -d --rm --name studio \
-  -p 8001:8080 -p 8000:8000 -p 9000:9000 \
-  -p 7022:7022 -p 7080:7080 -p 9200:9200 -p 27017:27017 \
-  -v $(pwd)/workspace/biothings:/data \
-  biothings/biothings-studio:0.2a
-```
-
-> Access BioThings Studio web UI at http://localhost:8880
-
-> Access BioThings API at http://localhost:7080
-
----
-
 ### Docket multiomics data provider
 
 [![DOCKET](https://img.shields.io/github/stars/PriceLab/DOCKET?label=GitHub&style=social)](https://github.com/PriceLab/DOCKET)
@@ -370,12 +348,17 @@ docker run -it --rm -v $(pwd)/workspace:/data \
 
 [Raptor](http://librdf.org/raptor/rapper.html) is a small and efficient Bash tool to convert from a RDF format to another (nq, nt, ttl, rdf/xml). It can help fix triple normalization and encoding issues.
 
+JSON-LD not available, available format: 
+
+* `ntriples`
+* `turtle`
+* `nquads`
+* `rdfxml`
+
 ```shell
 docker run -it --rm -v $(pwd)/workspace:/data \
   umids/raptor-rdf2rdf -i ntriples -o rdfxml /data/kg.nt > /data/kg.xml
 ```
-
-> Also available: `turtle`, `nquads`. JSON-LD not available.
 
 > See [GitHub repository](https://github.com/pheyvaer/raptor-docker) for Docker build.
 
@@ -414,57 +397,3 @@ docker run -it --rm -v $(pwd)/workspace/input:/data umids/d2s-bash-exec:latest h
 ```shell
 docker run -p 8183:8183 bigcatum/bridgedb
 ```
-
----
-
-### LinkedDataHub
-
-[![](https://img.shields.io/github/stars/AtomGraph/LinkedDataHub?label=GitHub&style=social)](https://github.com/AtomGraph/LinkedDataHub)
-
-[LinkedDataHub](https://atomgraph.github.io/LinkedDataHub/) is an [Open Source](https://github.com/AtomGraph/LinkedDataHub) Knowledge Graph management system. You can use it to manage data, create visualizations and build apps on RDF Knowledge Graphs.
-
-Clone the repository and prepare the environment file:
-
-```shell
-git clone https://github.com/AtomGraph/LinkedDataHub.git
-cd LinkedDataHub
-cp .env_sample .env
-```
-
-Start LinkedDataHub:
-
-```shell
-docker-compose up -d
-```
-
-> Access LinkedDataHub web UI at **https://localhost:4443**
-
-You will need to **accept the risk** due to self-signed certificates.
-
-You can now follow the web UI instructions to create an account to login to your LinkedDataHub.
-
-> Access Fuseki admin UI at http://localhost:3030/ds
-
-> Access Fuseki end user UI at [http://localhost:3031/ds](http://localhost:3030/ds?query=select%20*%20where%20{?s%20?p%20?o%20.}%20limit%2010)
-
-Stop LinkedDataHub (in `LinkedDataHub` folder):
-
-```shell
-docker-compose down
-```
-
----
-
-### LinkedPipes
-
-[LinkedPipes](https://linkedpipes.com/) is a Suite for Linked Data, with [ETL](https://etl.linkedpipes.com/) and [Visualization](https://visualization.linkedpipes.com/) services.
-
-Try the [ETL web UI](https://demo.etl.linkedpipes.com/#/pipelines) to define data transformation pipelines to RDF:
-
-```bash
-git clone https://github.com/linkedpipes/etl linkedpipes-etl
-cd linkedpipes-etl
-LP_ETL_PORT=8091 docker-compose up -d
-```
-
-> Access at http://localhost:8091

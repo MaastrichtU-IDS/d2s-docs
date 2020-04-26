@@ -5,7 +5,29 @@ title: Interfaces
 
 Interfaces to browse and consume Knowledge Graphs data.
 
-## into-the-graph
+## Integrated interfaces
+
+### BioThings Studio
+
+[![RMLMapper](https://img.shields.io/github/stars/biothings/biothings_studio?label=GitHub&style=social)](https://github.com/biothings/biothings_studio)
+
+[BioThings Studio](https://github.com/biothings/biothings_studio) enables to deploy a Docker container with all dependencies required to build BioThings APIs. See the [BioThings Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
+
+```shell
+d2s start biothings-studio
+
+docker run -d --rm --name studio \
+  -p 8001:8080 -p 8000:8000 -p 9000:9000 \
+  -p 7022:7022 -p 7080:7080 -p 9200:9200 -p 27017:27017 \
+  -v $(pwd)/workspace/biothings:/data \
+  biothings/biothings-studio:0.2a
+```
+
+> Access BioThings Studio web UI at http://localhost:8880
+
+> Access BioThings API at http://localhost:7080
+
+### into-the-graph
 
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
 
@@ -23,7 +45,7 @@ docker run --rm -it -p 8082:80 umids/into-the-graph:latest
 
 > Access on http://localhost:8082
 
-## d2s-api
+### d2s-api
 
 [![OpenAPI](/img/openapi-logo.png)](https://www.openapis.org/)
 
@@ -44,28 +66,7 @@ docker run -it --rm -p 8080:8080 \
 
 ---
 
-## YASGUI
-
-[![OpenLink Virtuoso](/img/yasgui-logo.png)](http://doc.yasgui.org/)
-
-[![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI)
-
-The popular [Yet Another Sparql Graphical User Interface](https://hub.docker.com/r/erikap/yasgui).
-
-```shell
-docker run -it --rm --name yasgui -p 8088:80 \
-	-e "DEFAULT_SPARQL_ENDPOINT=http://dbpedia.org/sparql" \
-	-e "ENABLE_ENDPOINT_SELECTOR=true" \
-	erikap/yasgui
-```
-
-> Require the SPARQL endpoint to [allow Cross-Origin Requests](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/).
-
-> Access at http://localhost:8088
-
----
-
-## Comunica Widget
+### Comunica Widget
 
 [![GitHub](https://img.shields.io/github/stars/comunica/jQuery-Widget.js?label=GitHub&style=social)](https://github.com/comunica/jQuery-Widget.js)
 
@@ -90,7 +91,87 @@ See [documentation](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/)
 
 ---
 
-## LODEstar
+## Additional interfaces
+
+### LinkedDataHub
+
+[![](https://img.shields.io/github/stars/AtomGraph/LinkedDataHub?label=GitHub&style=social)](https://github.com/AtomGraph/LinkedDataHub)
+
+[LinkedDataHub](https://atomgraph.github.io/LinkedDataHub/) is an [Open Source](https://github.com/AtomGraph/LinkedDataHub) Knowledge Graph management system. You can use it to manage data, create visualizations and build apps on RDF Knowledge Graphs.
+
+Clone the repository and prepare the environment file:
+
+```shell
+git clone https://github.com/AtomGraph/LinkedDataHub.git
+cd LinkedDataHub
+cp .env_sample .env
+```
+
+Start LinkedDataHub:
+
+```shell
+docker-compose up -d
+```
+
+> Access LinkedDataHub web UI at **https://localhost:4443**
+
+You will need to **accept the risk** due to self-signed certificates.
+
+You can now follow the web UI instructions to create an account to login to your LinkedDataHub.
+
+> Access Fuseki admin UI at http://localhost:3030/ds
+
+> Access Fuseki end user UI at [http://localhost:3031/ds](http://localhost:3030/ds?query=select%20*%20where%20{?s%20?p%20?o%20.}%20limit%2010)
+
+Stop LinkedDataHub (in `LinkedDataHub` folder):
+
+```shell
+docker-compose down
+```
+
+---
+
+### LinkedPipes
+
+[LinkedPipes](https://linkedpipes.com/) is a Suite for Linked Data, with [ETL](https://etl.linkedpipes.com/) and [Visualization](https://visualization.linkedpipes.com/) services.
+
+Try the [ETL web UI](https://demo.etl.linkedpipes.com/#/pipelines) to define data transformation pipelines to RDF:
+
+```bash
+git clone https://github.com/linkedpipes/etl linkedpipes-etl
+cd linkedpipes-etl
+LP_ETL_PORT=8091 docker-compose up -d
+```
+
+> Access at http://localhost:8091
+
+LinkedPipes proposes [various visualisation services](https://visualization.linkedpipes.com/):
+
+* [LinkedPipes Visualization Assistant](https://github.com/ldvm/LDVMi/tree/master/doc/assistant): lets you configure interactive views based on Linked Data
+* [LinkedPipes Applications](https://docs.applications.linkedpipes.com/): visualization web platform that allows the users to explore, visualize and publish LinkedData based visualizer applications
+
+### YASGUI
+
+[![OpenLink Virtuoso](/img/yasgui-logo.png)](http://doc.yasgui.org/)
+
+[![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI)
+
+The popular [Yet Another Sparql Graphical User Interface](https://hub.docker.com/r/erikap/yasgui). Integrated to [into-the-graph](/docs/services-interfaces#into-the-graph).
+
+```shell
+docker run -it --rm --name yasgui -p 8088:80 \
+	-e "DEFAULT_SPARQL_ENDPOINT=http://dbpedia.org/sparql" \
+	-e "ENABLE_ENDPOINT_SELECTOR=true" \
+	erikap/yasgui
+```
+
+> Require the SPARQL endpoint to [allow Cross-Origin Requests](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/).
+
+> Access at http://localhost:8088
+
+---
+
+### LODEstar
 
 [![GitHub](https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&style=social)](https://github.com/EBISPOT/lodestar)
 
@@ -112,7 +193,7 @@ docker run --rm -d --name lodestar -p 8082:8080 \
 
 ---
 
-## Trifid
+### Trifid
 
 [![GitHub](https://img.shields.io/github/stars/zazuko/trifid?label=GitHub&style=social)](https://github.com/zazuko/trifid)
 
@@ -146,7 +227,7 @@ docker run -ti -p 8080:8080 -e SPARQL_ENDPOINT_URL=https://graphdb.dumontierlab.
 
 ---
 
-## brwsr
+### brwsr
 
 [![GitHub](https://img.shields.io/github/stars/Data2Semantics/brwsr?label=GitHub&style=social)](https://github.com/Data2Semantics/brwsr)
 
@@ -165,7 +246,7 @@ docker-compose up
 
 ---
 
-## RhizomerEye
+### RhizomerEye
 
 [RhizomerEye](https://rhizomer.rhizomik.net/about) is a tool to expose a SPARQL endpoint as REST API and deploy a Web UI to browse the triplestore.
 
@@ -180,7 +261,7 @@ The Web UI has been deployed publicly for a few triplestores:
 
 ---
 
-## TriplyDB
+### TriplyDB
 
 See [official documentation](https://triply.cc/docs/triply-db-getting-started). It allows to deploy the following services over a triplestore:
 
