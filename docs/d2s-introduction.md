@@ -4,9 +4,22 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-This documentation explains how to build and deploy [RDF](https://www.w3.org/RDF/) Knowledge Graphs using the [d2s](https://pypi.org/project/d2s/) command line tool. [d2s](https://pypi.org/project/d2s/) is a command line interface that helps you define download scripts, metadata, and mappings to integrate multiple datasets into a RDF Knowledge Graph complying with a defined data model. This documentation is intended for people who are familiar with [Docker](https://www.docker.com/) and running simple commands in a terminal. It is also preferable to be familiar with the [SPARQL](https://www.w3.org/TR/sparql11-query/) query language.
+This documentation explains how to use the [d2s](https://pypi.org/project/d2s/) Command Line Interface to deploy services to integrate and access data in a Knowledge Graph:
 
-Integrating and querying heterogeneous data sources has never been effortless, the [d2s](https://pypi.org/project/d2s/) CLI and this documentation aims to provide a framework and comprehensive documentation to build a RDF Knowledge Graph out of structured data and deploy various interfaces and services to access the integrated data.
+* Integrate any structured data using various solutions:
+  * RML mappings or SPARQL queries to build RDF Knowledge Graphs
+  * BioThings Studio to build BioThings APIs
+  * DOCKET to integrate omics data
+  * Python scripts and notebooks, using library such as Dipper ETL, rdflib or Pandas
+  * Define CWL workflows to build and share your data transformation pipelines
+* Deploy various interfaces to consume the Knowledge Graph data.
+* Deploy user-friendly web UI to access the integrated data.
+
+[d2s](https://pypi.org/project/d2s/) is a Command Line Interface, written in Python, that helps you define download scripts, metadata, mappings and Jupyter notebooks to integrate multiple datasets into a Knowledge Graph complying with a defined data model. `d2s` has been developed using mainly [RDF](https://www.w3.org/RDF/) Knowledge Graphs, but property graphs, such as Neo4j, can also be used. 
+
+This documentation is intended for people who are familiar with [Docker](https://www.docker.com/) and running simple commands in a Terminal. It is also preferable to be familiar with the [SPARQL](https://www.w3.org/TR/sparql11-query/) query language.
+
+The `d2s` tool is following the Data2Services framework detailed in this figure:
 
 <img src="/img/d2s-architecture.png" alt="Data2Services infrastructure" style="max-width: 100%; max-height: 100%;" />
 
