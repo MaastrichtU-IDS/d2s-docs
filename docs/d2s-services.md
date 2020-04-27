@@ -43,8 +43,8 @@ See the [detailed lists of available graph databases](/docs/services-graph-datab
 See the [detailed lists of available interfaces](/docs/services-interfaces).
 
 * [biothings-studio](/docs/services-utilities#biothings-studio): web UI to build and deploy BioThings APIs 
-* [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser leveraging HCLS metadata, with YASGUI editor.
-* [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query a RDF triplestore
+* [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser leveraging HCLS metadata, with YASGUI editor
+* [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query a RDF triplestore, accept ReasonerStd queries
 * [comunica](/docs/services-interfaces#comunica-widget): widget to query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
 
 ### 🔧 Utilities
