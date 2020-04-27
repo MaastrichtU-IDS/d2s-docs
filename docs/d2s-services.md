@@ -51,11 +51,11 @@ See the [detailed lists of available interfaces](/docs/services-interfaces).
 
 See the [detailed lists of RDF utilities](/docs/services-utilities).
 
-* [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to build and query the triplestore.
+* [notebook](/docs/services-utilities#jupyter-notebooks): JupyterLab with template Notebooks to build and query the triplestore.
+* [spark-notebook](/docs/services-utilities#jupyter-notebooks): all Spark JupyterLab to process data.
 * [docket](/docs/services-utilities#docket): multiomics tool for dataset overview, comparison and knowledge extraction using Jupyter notebooks.
 * [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
   * rmltask: dependency of the rmlstreamer, the 2 services are required to run
-
 * [drill](/docs/services-utilities#apache-drill): exposes tabular text files (CSV, TSV, PSV) as SQL using Apache Drill
 * [postgres](/docs/services-utilities#postgres): popular Open Source SQL database
 * [limes](/docs/services-utilities#limes-interlinking): server to perform interlinking between RDF entities using various metrics

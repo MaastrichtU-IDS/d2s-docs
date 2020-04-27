@@ -17,6 +17,8 @@ Each service is run using [Docker](https://docs.docker.com/install/). They have 
 
 ### Jupyter Notebooks
 
+[![JupyterLab](https://img.shields.io/github/stars/amalic/Jupyterlab?label=GitHub&style=social)](https://github.com/amalic/Jupyterlab)
+
 Deploy [JupyterLab](https://github.com/amalic/Jupyterlab) to use Notebooks to build or consume your RDF Knowledge Graph. Query your knowledge graph through its SPARQL endpoint, or the [HTTP OpenAPI](/docs/services-interfaces#d2s-api) using Python, or R. 
 
 The proposed deployment comes with example queries to perform data processing using tools such as [Dipper](https://github.com/monarch-initiative/dipper), [BioThings](https://docs.biothings.io/en/latest/), or various RDF and Data Science libraries. Example are also provided to start querying data from the produced RDF Knowledge Graph. See the [GitHub repository](https://github.com/vemonet/translator-sparql-notebook).
@@ -25,7 +27,8 @@ The proposed deployment comes with example queries to perform data processing us
 d2s start notebook
 
 docker run --rm -it -p 8888:8888 \
-  -v $(pwd)/workspace/notebooks:/notebooks \
+  -v $(pwd)/workspace:/notebooks/workspace \
+  -v $(pwd)/datasets:/notebooks/datasets \
   -e PASSWORD="<your_secret>" \
   -e GIT_URL="https://github.com/vemonet/translator-sparql-notebook" \
   umids/jupyterlab:latest
@@ -34,6 +37,36 @@ docker run --rm -it -p 8888:8888 \
 > Access on http://localhost:8888
 
 > Change the Notebook password in the [docker-compose.yml file](https://github.com/MaastrichtU-IDS/d2s-core). Different passwords can be defined for different deployments.
+
+---
+
+### Spark Notebooks
+
+[![Spark JupyterLab](https://img.shields.io/github/stars/vemonet/jupyterlab-spark?label=GitHub&style=social)](https://github.com/vemonet/jupyterlab-spark)
+
+Deploy [JupyterLab](https://github.com/vemonet/jupyterlab-spark) to use Notebooks to process data using [Apache Spark](https://spark.apache.org/). See the [GitHub repository](https://github.com/vemonet/jupyterlab-spark) for more details about the build.
+
+```shell
+d2s start spark-notebook
+
+docker run --rm -it -p 8889:8888 \
+  -v $(pwd)/workspace:/home/jovyan/work/workspace
+  -v $(pwd)/datasets:/home/jovyan/work/datasets
+  -e JUPYTER_ENABLE_LAB=yes \
+  umids/jupyterlab-spark \
+  start-notebook.sh  --NotebookApp.password='sha1:9316432938f9:93985dffbb854d31308dfe0602a51db947fb7d80'
+```
+
+> Access on http://localhost:8889
+
+> Default password is `password`
+
+> Generate a hash for your password in a Notebook by running:
+>
+> ```python
+> from notebook.auth import passwd
+> passwd()
+> ```
 
 ---
 
