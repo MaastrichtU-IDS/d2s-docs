@@ -96,8 +96,9 @@ pip3 install --user pipx
 
 ### Install pipx on MacOS
 
+Install `python3` and `pip3` if not installed.
+
 ```shell
-# Install python3 and pip3
 brew install python3
 pip3 install pipx
 # Add pipx apps to path
@@ -214,7 +215,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 Use the [Docker installer for MacOS](https://download.docker.com/mac/beta/Docker.dmg) (`.dmg` file) to install Docker and `docker-compose`.
 
-If you have a DockerHub account you can also use the [DockerHub installer](https://hub.docker.com/?overlay=onboarding).
+> If you have a [DockerHub account](https://hub.docker.com/?overlay=onboarding) you can use the [DockerHub installer](https://hub.docker.com/?overlay=onboarding) instead.
 
 You can change Docker settings by clicking on the Docker icon 🐳 in the top bar, then click **Preferences...**
 
