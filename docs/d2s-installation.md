@@ -86,7 +86,8 @@ If you just want to run `d2s` we recommend you to use [pipx](https://pipxproject
 ### Install pipx on Ubuntu
 
 ```shell
-# Install pip if necessary
+# Install Python3.6 and pip if necessary
+sudo apt-get install python3 python3-venv python3-dev python3-distutils
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
 # Install pipx
