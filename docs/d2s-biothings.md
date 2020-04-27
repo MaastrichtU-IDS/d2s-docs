@@ -22,3 +22,7 @@ d2s start biothings-studio
 > Access BioThings API at http://localhost:7080
 
 Volume shared in `workspace/biothings`.
+
+## Expose a new data source
+
+> To be developed.
