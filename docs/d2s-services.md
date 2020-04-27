@@ -11,13 +11,13 @@ d2s start <service_name> -d <optional_deployment_config>
 
 > Volumes of all containers started by `d2s` are shared in the `workspace/` folder.
 
-> `d2s` uses `docker-compose` to run the different services 🐳
+> `d2s` uses [docker-compose](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml) to run the different services 🐳
 
 In this documentation we will use a set of services to build the knowledge graph and access it using various interfaces.
 
 ## List of services
 
-The services deployments are defined in a [docker-compose file](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml).
+The services deployments are defined in the [d2s-core/docker-compose.yml file](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml).
 
 Start the services described below using:
 
@@ -42,7 +42,8 @@ See the [detailed lists of available graph databases](/docs/services-graph-datab
 
 See the [detailed lists of available interfaces](/docs/services-interfaces).
 
-* [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser, with YASGUI editor.
+* [biothings-studio](/docs/services-utilities#biothings-studio): web UI to build and deploy BioThings APIs 
+* [into-the-graph](/docs/services-interfaces#into-the-graph): SPARQL web browser leveraging HCLS metadata, with YASGUI editor.
 * [api](/docs/services-interfaces#d2s-api): HTTP Open API  with Swagger UI to query a RDF triplestore
 * [comunica](/docs/services-interfaces#comunica-widget): widget to query heterogeneous interfaces (SPARQL, HDT) using Comunica SPARQL and GraphQL
 
@@ -51,7 +52,6 @@ See the [detailed lists of available interfaces](/docs/services-interfaces).
 See the [detailed lists of RDF utilities](/docs/services-utilities).
 
 * [notebook](/docs/services-interfaces#jupyter-notebooks): JupyterLab with template Notebooks to build and query the triplestore.
-* [biothings-studio](/docs/services-utilities#biothings-studio): web UI to build and deploy BioThings APIs 
 * [docket](/docs/services-utilities#docket): multiomics tool for dataset overview, comparison and knowledge extraction using Jupyter notebooks.
 * [rmlstreamer](/docs/services-utilities#rml-streamer): Apache Flink to process RML mappings
   * rmltask: dependency of the rmlstreamer, the 2 services are required to run
@@ -70,24 +70,33 @@ GraphDB [needs to be downloaded](https://www.ontotext.com/products/graphdb/graph
 
 > To **easily install GraphDB,** we recommend you to place it in your `home` folder before running `d2s init`, it is the default when the path to the GraphDB zip file is asked.
 
-Start services required to run data transformation demonstration workflows: GraphDB triplestore, into-the-graph linked data browser, Open API and Virtuoso as temporary triplestore
+Start services required to run data transformation demonstration workflows: GraphDB triplestore, Apache Drill and Virtuoso as temporary triplestore.
 
 ```shell
 d2s start demo
 ```
+
+> ⚠️ GraphDB might fail to start if not enough resources are available. We recommend raising the resources limit for Docker, and stopping resource-intensive apps, such as Slack, VSCode, Skype.
 
 * Access the into-the-graph browser for GraphDB at http://localhost:8079
 * Access the HTTP Swagger API at http://localhost:8080
 * Access GraphDB at http://localhost:7200
 * Access the temporary Virtuoso at http://localhost:8890
 
-> If you use  **Blazegraph** or **Virtuoso** as final triplestore, you will need to **activate CORS request** to allow communication between the into-the-graph browser and the triplestore on your browser. An add-on can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
+If you use  **Blazegraph** or **Virtuoso** as final triplestore, you will need to **activate CORS request** to allow communication between the into-the-graph browser and the triplestore on your browser. 
+
+> An **add-on to enable CORS** can be easily installed for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/) or [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). 
 
 ### Use a deployment config
 
-Services can be started with a specific deployment config. This enables to define variable specific to a deployment in a complementary `docker-compose.my_deployment.yml`, such as the virtual host URL or a different image tag.
+Services can be started with a specific deployment config. This enables to define variable and docker parameters for a specific deployment in a complementary YAML file in the [d2s-core/deployments folder](https://github.com/MaastrichtU-IDS/d2s-core/tree/master/deployments).
 
-See the [demo](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/deployments/demo.yml) or [trek](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/deployments/trek.yml) deployment config as examples.
+See the [deployments/**trek**.yml](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/deployments/trek.yml) config as example, the following parameters are usually defined in deployment config:
+
+* the service public URL (nginx Virtual Host)
+* different Docker image tag for a service (to use different version)
+* password
+* resources limitations
 
 Start services with a deployment config:
 
