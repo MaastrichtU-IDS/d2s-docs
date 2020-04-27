@@ -2,7 +2,7 @@
   "docs": {
     "Get started": [
       "d2s-introduction", "d2s-installation", "d2s-workspace", "d2s-services",
-      "d2s-services", "services-utilities", "services-graph-databases", "services-interfaces"
+      "d2s-services", "services-graph-databases", "services-interfaces", "services-utilities"
     ],
     "Integrate data": [
       "d2s-new-dataset", "d2s-rml", "d2s-run", 
