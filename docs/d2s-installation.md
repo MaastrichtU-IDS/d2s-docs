@@ -13,16 +13,14 @@ pipx install d2s cwlref-runner
 
 > We recommend to use [pipx](https://pipxproject.github.io/pipx/) if you just want to execute `d2s`. You can also install with [pip](https://pypi.org/project/pip/) or pip3 depending on your preferences.
 
-Requirements:
+Requirements (see below for installation instructions):
 
-* [Python 3.6](https://d2s.semanticscience.org/docs/d2s-installation#install-pip)
+* [Python 3.6](https://d2s.semanticscience.org/docs/d2s-installation#install-pip) and pip
 * [Docker-compose](https://docs.docker.com/compose/install/)
 * Git (download [Git for Windows](https://git-scm.com/download/win))
 * The [OpenShift CLI](https://maastrichtu-ids.github.io/dsri-documentation/docs/openshift-install) (`oc` command) is required if you want to use experimental features to run services and workflows on OpenShift
 
 See those [instructions to install d2s on Windows](/docs/d2s-installation#install-pipx-on-windows) using Chocolatey and pipx. Some features support on Windows is still a work in progress, such as CWL workflows (see the [official CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md) to make it work).
-
-> See [below](/docs/d2s-installation#install-pipx) for more instructions about [pipx](https://pipxproject.github.io/pipx/) and docker installation.
 
 ### Enable autocompletion
 
@@ -72,6 +70,27 @@ d2s
 > You need to open a new terminal for the autocomplete to be activated.
 
 > Use `Tab` after a `d2s` command in the terminal to see all the available options (it will adapt to the command and dynamically retrieve your datasets and workflows!).
+
+---
+
+## Download the GraphDB triplestore
+
+[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
+
+For licensing reason the GraphDB RDF triplestore free edition distribution needs to be [downloaded manually 📥](https://ontotext.com/products/graphdb/ )
+
+* Go to https://ontotext.com/products/graphdb/ and provide informations to get an email with the link to download GraphDB
+
+* Download the latest version of GraphDB as stand-alone server free version (`.zip` file)
+
+* The `d2s` client will ask you to provide the path to the GraphDB distribution `.zip` file when initializing the workspace.
+
+  * By default the `d2s` client will try to get the file from your home directory (e.g. `/home/my-user`)
+
+    ```shell
+    # Copy the GraphDB distribution file to your home folder
+    cp graphdb-free-*-dist.zip ~/
+    ```
 
 ---
 
@@ -283,27 +302,6 @@ By default `docker-desktop` and `docker-toolbox` are sharing your `C:/Users` vol
   * If you are running it on your office network you might face issues related to the office network firewall. Try at home and contact your IT department if needed.
 
 > For more details on how to run Docker see the [Docker guide](/docs/guide-docker).
-
----
-
-## Download the GraphDB distribution
-
-[![GraphDB](/img/graphdb-logo.png)](https://ontotext.com/products/graphdb/)
-
-For licensing reason the GraphDB free edition distribution needs to be [downloaded manually 📥](https://ontotext.com/products/graphdb/ )
-
-* Go to https://ontotext.com/products/graphdb/ and provide informations to get an email with the link to download GraphDB
-
-* Download GraphDB as stand-alone server free version `8.10.1` (zip)
-
-* The `d2s` client will ask you to provide the path to the GraphDB distribution `.zip` file when initializing the workspace.
-
-  * By default the `d2s` client takes the file from your home directory (e.g. `/home/my-user`)
-
-    ```shell
-    # Copy the GraphDB distribution file to your home folder
-    cp graphdb-free-8.10.1-dist.zip ~/
-    ```
 
 ---
 
