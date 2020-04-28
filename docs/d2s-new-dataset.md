@@ -54,7 +54,7 @@ A [template](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/tem
 
 ## Integrate data
 
-Multiple solutions available:
+Multiple solutions are available to integrate data in a standard Knowledge Graph:
 
 * [RML mappings](/docs/d2s-rml) (RDF Mapping Language)
 * [CWL workflows](https://d2s.semanticscience.org/docs/d2s-run) defined to convert structured files to RDF using SPARQL queries

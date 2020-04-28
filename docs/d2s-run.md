@@ -135,6 +135,13 @@ d2s run csv-virtuoso.cwl cohd --watch
 
 ## Further details on SPARQL mappings
 
+Converting data with Data2Services relies on 3 steps:
+
+* A **generic RDF** is automatically **generated** from the input data structure.
+* [SPARQL](https://www.w3.org/TR/sparql11-query/) queries are designed by the user to **map** the generic RDF **to a target model**. 
+* Extra modules can be added to the workflow to perform operations SPARQL doesn't natively support 
+  * E.g. splitting statements, resolving the preferred URI for an entity.
+
 You can find example of SPARQL mapping queries for:
 
 * **XML** files

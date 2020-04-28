@@ -6,12 +6,7 @@ sidebar_label: Introduction
 
 This documentation explains how to use the [d2s](https://pypi.org/project/d2s/) Command Line Interface to deploy services to integrate and access data in a Knowledge Graph:
 
-* Integrate any structured data using various solutions:
-  * RML mappings or SPARQL queries to build RDF Knowledge Graphs
-  * BioThings Studio to build BioThings APIs
-  * DOCKET to integrate omics data
-  * Python scripts and notebooks, using library such as Dipper ETL, rdflib or Pandas
-  * Define CWL workflows to build and share your data transformation pipelines
+* Integrate any structured data using various solutions.
 * Deploy various interfaces to consume the Knowledge Graph data.
 * Deploy user-friendly web UI to access the integrated data.
 
@@ -31,34 +26,30 @@ Feel free to use directly the `d2s-transform-template` repository or create a ne
 
 ## Build a RDF Knowledge Graph
 
-We use [CWL workflows](https://www.commonwl.org/) to orchestrate the execution of multiple steps (Docker containers) to integrate heterogeneous structured data sources in a RDF Knowledge Graph.
+1. Initialize a `d2s` project
+2. [Add a new dataset](/docs/d2s-new-dataset)
+3. Choose a solution to integrate your data
 
-Data2Services offers pre-defined workflows to convert large amount of structured data, such as relational databases, tabular files or XML files, to RDF Knowledge Graphs. Converting data with Data2Services relies on 3 steps:
+Multiple solutions available to integrate data in a standard Knowledge Graph:
 
-* A **generic RDF** is automatically **generated** from the input data structure.
-* [SPARQL](https://www.w3.org/TR/sparql11-query/) queries are designed by the user to **map** the generic RDF **to a target model**. 
-* Extra modules can be added to the workflow to perform operations SPARQL doesn't natively support 
-  * E.g. splitting statements, resolving the preferred URI for an entity.
+* [RML mappings](/docs/d2s-rml) (RDF Mapping Language)
+* [CWL workflows](https://d2s.semanticscience.org/docs/d2s-run) defined to convert structured files to RDF using SPARQL queries
+* [BioThings Studio](/docs/d2s-biothings) to build BioThings APIs (exposed to the Translator using the ReasonerStd API)
+* [DOCKET](/docs/services-utilities#docket-multiomics-data-provider) to integrate omics data
+* Python scripts and notebooks, such as [Dipper ETL](/docs/d2s-dipper), rdflib or pandas
 
-It is strongly **recommended to use a POSIX system** (Linux, MacOS) if you consider running workflows on your laptop, since most workflow orchestration tools do not support Windows. Additional documentation for Windows can be found [here](/docs/install-windows).
+* Define new [CWL workflows](https://www.commonwl.org/) to build and share your data transformation pipelines
+  * It is strongly **recommended to use a POSIX system** (Linux, MacOS) if you consider running workflows on your laptop, since most workflow orchestration tools do not support Windows.
 
 ## Deploy services
 
-Once your data has been integrated in a RDF Knowledge Graph you might want to deploy interfaces to access your data or use a difference triplestore.
+Once your data has been integrated in a RDF Knowledge Graph you can deploy interfaces and services to access your data.
 
-Data2Services aims to provide an exhaustive documentation to run and deploy RDF-related services and tools using Docker. The `d2s` CLI uses `docker-compose` to start various services
-
-🔗 Graph databases: [Ontotext GraphDB](/docs/services-graph-databases#graphdb), [Virtuoso](/docs/services-graph-databases#virtuoso), [Blazegraph](/docs/services-graph-databases#blazegraph), [AllegroGraph](/docs/services-graph-databases#allegrograph), [AnzoGraph](/docs/services-graph-databases#anzograph), [Linked Data Fragments server](/docs/services-graph-databases#linked-data-fragments-server), [Neo4j](/docs/services-graph-databases#neo4j)
-
-🖥️ Interfaces: [into-the-graph](/docs/services-webui#into-the-graph) SPARQL browser, [HTTP OpenAPI](/docs/services-interfaces#d2s-api) to query RDF triplestores, [YASGUI](/docs/services-webui#yasgui) SPARQL query editor, [Comunica widget](/docs/services-webui#comunica-widget)
-
-🗃️ Utilities: [Apache Drill](/docs/services-utilities#apache-drill), [Postgres](/docs/guide-postgres)
-
----
+Data2Services aims to provide an [exhaustive documentation](/docs/d2s-services) to run and deploy RDF and Knowledge Graph related services using Docker. The `d2s` CLI uses `docker-compose` to start and link locally the different services.
 
 ## Project folder structure
 
-The [d2s client](https://pypi.org/manage/project/d2s/releases/) use the following directory structure, which can be found in the example project [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) (here with the `drugbank` dataset):
+The [d2s client](https://pypi.org/manage/project/d2s/releases/) use the following directory structure, which can be found in the example project [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) (here with the `cohd` dataset):
 
 ```bash
 root-directory
@@ -67,17 +58,19 @@ root-directory
 ├── README.md
 ├── d2s-core (submodule)	# docker-compose, CWL, Argo workflows files
 ├── datasets		# Folders of the different dataset integrated in the KG 
-│   └── drugbank		# Folder for files to convert DrugBank
-│       ├── config.yml			# The workflow config file
+│   └── cohd		# Folder for files to convert COHD
+│       ├── process-cohd.ipynb	# Notebook for COHD data processing
+│       ├── config.yml					# The workflow config file
 │       ├── download
 │       │   └── download.sh		# Script to download input files
 │       ├── mapping				# SPARQL mapping queries to build the KG 
-│       │   ├── drugbank-drugbank_id.rq
-│       │   └── drugbank-snp_effects.rq
+│       │   ├── concepts.rq											# SPARQL query mappings
+│       │   ├── associations-mapping.yarrr.yml	# YARRRML mappings
+│       │   └── associations-mapping.rml.ttl		# RML mappings
 │       └── metadata			# SPARQL queries to insert metadata about the dataset 
-│           ├── metadata-drugbank-summary.rq
-│           ├── metadata-drugbank-1.rq
-│           └── metadata-drugbank-2.rq
+│           ├── metadata-cohd-summary.rq
+│           ├── metadata-cohd-1.rq
+│           └── metadata-cohd-2.rq
 └── workspace		# Contains all files required to run the KG and services
     ├── input		# Downloaded file to process
     ├── output		# Every file generated by the workflow
@@ -89,8 +82,6 @@ root-directory
     ├── tmp-virtuoso
     └── blazegraph
 ```
-
----
 
 ## Source code repositories
 
