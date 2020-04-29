@@ -274,3 +274,7 @@ Access:
 * The BioThings Explorer web UI: https://biothings.io/explorer
 * [BioThings Explorer GitHub repository](https://github.com/biothings/biothings_explorer)
 * [Prototype presentation](https://docs.google.com/presentation/d/1r3gAO3P_YxHUch3Rn9gHZf4FBPp6VxK3O98iVK1_JfI/edit#slide=id.p)
+
+## Additional Translator resources
+
+Access [Jupyter Notebook to combine data from various Knowledge Providers](https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb), produced during the Relay Days.
