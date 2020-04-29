@@ -1,9 +1,9 @@
 ---
 id: translator-prototypes-registry
-title: Translator Prototypes registry
+title: Translator Prototypes
 ---
 
-NCATS Biomedical Data Translator prototypes registry.
+[NCATS Biomedical Data Translator](https://ncats.nih.gov/translator) prototypes registry.
 
 ## Knowledge Providers (KP)
 
