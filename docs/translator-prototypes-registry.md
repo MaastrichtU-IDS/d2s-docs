@@ -47,9 +47,9 @@ A Molecular Data Provider translating molecular scale to systems scale through a
 
 Access:
 
-* Open API at https://translator.broadinstitute.org/molecular_data_provider/api
-* Reasoner API at https://translator.broadinstitute.org/molepro_reasoner/predicates
-* [GitHub repository](https://github.com/broadinstitute/molecular-data-provider)
+* Open API: https://translator.broadinstitute.org/molecular_data_provider/api
+* Reasoner API: https://translator.broadinstitute.org/molepro_reasoner/predicates
+* GitHub: https://github.com/broadinstitute/molecular-data-provider
 * [MolePro prototype presentation](https://drive.google.com/file/d/1FdCPB0DsTP0nfhcFmzJx0D6RHuwxW_TO/view).
 
 ### Translator Genetic Knowledge Provider
@@ -58,8 +58,8 @@ A tool to curate genetic associations for complex diseases, interpret their biol
 
 Access:
 
-* Access Reasoner API at https://translator.broadinstitute.org/genetics_data_provider/query
-* [GitHub repository](https://github.com/broadinstitute/genetics-kp-dev)
+* Reasoner API: https://translator.broadinstitute.org/genetics_data_provider/query
+* GitHub: https://github.com/broadinstitute/genetics-kp-dev
 * [Translator Genetic Knowledge Provider presentation](https://drive.google.com/file/d/1w1CeLbiGQIfBUv5KwkJbJLs53PusI35N/view).
 
 ### ARAGORN
@@ -73,9 +73,11 @@ Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowle
 Access:
 
 * Reasoner and Open API at https://automat.renci.org
-* [GitHub repository](https://github.com/TranslatorIIPrototypes/KITCHEN)
+* [KITCHEN GitHub repository](https://github.com/TranslatorIIPrototypes/KITCHEN)
+* Question Enhancement Resources
+  * Open API: https://questionaugmentation.renci.org/apidocs
+  * GitHub: https://github.com/ranking-agent/QuestionRewrite
 * [Prototype presentation](https://docs.google.com/presentation/d/1Nt9GbEw-1R5ftAoqa1yJM4S7O5nxH0Ndo1NnoZTWdtE/edit#slide=id.p)
-* Additional [Question Enhancement Resources](https://docs.google.com/presentation/d/1Nt9GbEw-1R5ftAoqa1yJM4S7O5nxH0Ndo1NnoZTWdtE/edit#slide=id.g714ebe013b_1_25).
 
 Deploy:
 
@@ -93,10 +95,12 @@ Provides:
 
 Access:
 
-* [ICEES+ OpenAPI](http://icees.renci.org:16339/apidocs/)
-* [icees-api GitHub repository](https://github.com/NCATS-Tangerine/icees-api)
-* Prototype [ICEES+ Wireframe UI](http://robokop.renci.org:3001/)
-* TranQL: https://tranql.renci.org/
+* ICEES+
+  * Open API: http://icees.renci.org:16339/apidocs/
+  * GitHub: https://github.com/NCATS-Tangerine/icees-api
+  * Prototype ICEES+ Wireframe UI: http://robokop.renci.org:3001/
+* TranQL: 
+  * Web UI: https://tranql.renci.org/
 * [Prototype presentation](https://docs.google.com/presentation/d/1EOPFjExxdXahKS9vWICl9Bjw3QrWprcyhgMEHkCjxCE/edit#slide=id.p1)
 * [Resources summary slide](https://docs.google.com/presentation/d/1EOPFjExxdXahKS9vWICl9Bjw3QrWprcyhgMEHkCjxCE/edit#slide=id.g7122d33760_7_86)
 
@@ -115,13 +119,15 @@ Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reas
 
 Access:
 
-* [API](https://tiny.cc/arax-api-docs)
-* [ARAX GitHub repository](https://github.com/RTXteam/RTX/tree/master/code/ARAX) (see readme for documentation)
-* [ARAX examples Notebook](https://github.com/RTXteam/RTX/blob/demo/code/ARAX/Examples/ARAX_Example4.ipynb)
-* [ARAXi documentation](https://tiny.cc/araxi-docs)
+* ARAX
+  * Open API: https://tiny.cc/arax-api-docs
+  * GitHub: https://github.com/RTXteam/RTX/tree/master/code/ARAX
+  * [ARAX examples Notebook](https://github.com/RTXteam/RTX/blob/demo/code/ARAX/Examples/ARAX_Example4.ipynb)
+  * ARAXi documentation: https://tiny.cc/araxi-docs
+* RTX-KG2
+  * RTX-KG2 Neo4j UI: https://tiny.cc/arax-kg2-neo4j
+  * GitHub: https://github.com/RTXteam/RTX/tree/demo/code/kg2
 * [ARAX prototype presentation](https://docs.google.com/presentation/d/1a93XbdMr0YGWh0BnuJEmcOoudZ9MGNdAh0N4XUTmVyE/edit#slide=id.p)
-* [RTX-KG2 GitHub repository](https://github.com/RTXteam/RTX/tree/demo/code/kg2)
-* [RTX-KG2 Neo4j UI](https://tiny.cc/arax-kg2-neo4j)
 
 ### Text Mining Provider
 
@@ -129,7 +135,7 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 
 Access:
 
-* [Roadmap on GitHub for issue tracking](https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap)
+* Roadmap on GitHub: https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap
 * [Prototype presentation](https://docs.google.com/presentation/d/1pF7MVm6pDdQLqKaHpGG40H3VjFY1ubfjYBy1Wx_lXHk/edit#slide=id.p)
 
 ### Connections Hypothesis Provider
@@ -174,7 +180,7 @@ Based on the [miniKanren](http://minikanren.org/) logic programming language for
 
 Access:
 
-* [MediKanren GitHub repository](https://github.com/webyrd/mediKanren)
+* GitHub: https://github.com/webyrd/mediKanren
 * [MediKanren BioLink interface on GitHub](https://github.com/webyrd/mediKanren/tree/master/biolink)
 
 * [Prototype presentation](https://www.dropbox.com/sh/rh3vtiaulz0ln8i/AACDx4_Cyz0Ez1bprJ0rhvZUa?dl=0&preview=ncats2020launchtalk-pdf.pdf)
@@ -192,26 +198,24 @@ Access:
 * BioLink Model Lookup service
   * Open API: https://bl-lookup-sri.renci.org/apidocs/
   * [BioLink Lookup Jupyter Notebook](https://github.com/TranslatorIIPrototypes/bl_lookup/blob/master/documentation/BiolinkLookup.ipynb) for documentation
-  * [BioLink Lookup GitHub repository](https://github.com/TranslatorIIPrototypes/bl_lookup)
+  * GitHub: https://github.com/TranslatorIIPrototypes/bl_lookup
 * NodeNormalization Service
   * Open API: https://nodenormalization-sri.renci.org/apidocs/ 
   * [NodeNormalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NodeNormalization/blob/master/documentation/NodeNormalization.ipynb) for documentation
-  * [NodeNormalization GitHub repository](https://github.com/TranslatorIIPrototypes/NodeNormalization)
+  * GitHub: https://github.com/TranslatorIIPrototypes/NodeNormalization
 * EdgeNormalization Service
   * Open API: https://edgenormalization-sri.renci.org/apidocs/
   * [EdgeNormnalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/EdgeNormalization/blob/master/documentation/EdgeNormalization.ipynb) for documentation
-  * [EdgeNormalization GitHub repository](https://github.com/TranslatorIIPrototypes/EdgeNormalization
-    )
+  * GitHub: https://github.com/TranslatorIIPrototypes/EdgeNormalization
 * NameResolution
   * Open API: http://robokop.renci.org:2434/docs
   * [NameResolution Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NameResolution/blob/master/documentation/NameResolution.ipynb) for documentation
-  * [NameResolution GitHub repository](https://github.com/TranslatorIIPrototypes/NameResolution
-    )
+  * GitHub: https://github.com/TranslatorIIPrototypes/NameResolution
 * BLCompliance
   * Open API: https://monarch-sandbox.cgrb.oregonstate.edu/docs
   * [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb
     ) for documentation
-  * [BLCompliance GitHub repository](https://github.com/TranslatorIIPrototypes/BLComplianceService)
+  * GitHub: https://github.com/TranslatorIIPrototypes/BLComplianceService
 * [Prototype presentation](https://docs.google.com/presentation/d/1wGwe9syBvKI9-qiw-VOzg486skvUsB-G8vdgCO6jJG8/edit#slide=id.p)
 
 ### (im)proving agent
@@ -227,8 +231,10 @@ Provides:
 
 Access:
 
-* [SPOKE PSEV GitHub repository](https://github.com/baranzini-lab/PSEV)
-* [evidARA GitHub repository](https://github.com/brettasmi/evidARA)
+* SPOKE
+  * GitHub: https://github.com/baranzini-lab/PSEV
+* evidARA
+  * GitHub: https://github.com/brettasmi/evidARA
 * [Prototype presentation](https://drive.google.com/file/d/1FmVjHEoSwdyq0-NSEewMMusRNBh8OwEE/view)
 
 Deploy:
@@ -239,7 +245,7 @@ Deploy:
 
 Access:
 
-* [DOCKET GitHub repository](https://github.com/PriceLab/DOCKET)
+* GitHub: https://github.com/PriceLab/DOCKET
 
 Deploy:
 
@@ -255,7 +261,7 @@ Build and deploy BioThings APIs from flat data files.
 
 Access:
 
-* [GitHub repository for the BioThing organization](https://github.com/biothings/)
+* Organization GitHub: https://github.com/biothings
 
 Deploy:
 
@@ -272,7 +278,7 @@ Explore BioThings APIs
 Access:
 
 * The BioThings Explorer web UI: https://biothings.io/explorer
-* [BioThings Explorer GitHub repository](https://github.com/biothings/biothings_explorer)
+* GitHub: https://github.com/biothings/biothings_explorer
 * [Prototype presentation](https://docs.google.com/presentation/d/1r3gAO3P_YxHUch3Rn9gHZf4FBPp6VxK3O98iVK1_JfI/edit#slide=id.p)
 
 ## Additional Translator resources
