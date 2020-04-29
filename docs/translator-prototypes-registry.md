@@ -9,7 +9,7 @@ title: Translator Prototypes
 
 ### COHD Clinical Data2Services Provider
 
-Provides:
+##### Provides
 
 * Columbia Open Health Data (COHD)
   * Clinical associations mined from observational EHR data
@@ -23,7 +23,7 @@ Provides:
   * Automatically deploy a Reasoner API over a [BioLink-compliant](https://biolink.github.io/biolink-model/docs/) RDF triplestore
   * Deploy additional interfaces to explore the knowledge graph
 
-Access:
+##### Access
 
 * COHD Reasoner API at http://cohd.io/api (see on [GitHub](https://github.com/WengLab-InformaticsResearch/cohd_api))
 * Data2Services documentation at https://d2s.semanticscience.org
@@ -31,7 +31,7 @@ Access:
 * Into-the-graph web UI to browse a BioLink RDF triplestore leveraging metadata and services at http://trek.semanticscience.org
 * GitHub repositories for Data2Services [project template](https://github.com/MaastrichtU-IDS/d2s-transform-template) and [command line interface](https://github.com/MaastrichtU-IDS/d2s-cli).
 
-Deploy:
+##### Deploy
 
 ```shell
 pip install d2s cwlref-runner
@@ -44,7 +44,7 @@ d2s init my-project
 
 A Molecular Data Provider translating molecular scale to systems scale through a Reasoner API.
 
-Access:
+##### Access
 
 * Open API: https://translator.broadinstitute.org/molecular_data_provider/api
 * Reasoner API: https://translator.broadinstitute.org/molepro_reasoner/predicates
@@ -54,14 +54,14 @@ Access:
 
 A tool to curate genetic associations for complex diseases, interpret their biological effects, and make these data available to the Translator.
 
-Access:
+##### Access
 
 * Reasoner API: https://translator.broadinstitute.org/genetics_data_provider/query
 * GitHub: https://github.com/broadinstitute/genetics-kp-dev
 
 ### ICEES+ KP Exposure Provider
 
-Provides:
+##### Provides
 
 * Patient data + environmental exposures data
 * Integrated at patient- and visit-level
@@ -69,7 +69,7 @@ Provides:
 * Observational EHR data, EPR survey data, SNP data, exposures data 
 * Available for years 2010 – 2016
 
-Access:
+##### Access
 
 * ICEES+ Open APIs
   * API KP: http://icees.renci.org:16339/apidocs
@@ -86,7 +86,7 @@ Access:
   * Secure Multiparty Computation: https://github.com/RENCI-NRIG/impact-smc
   * Machine learning: https://github.com/NCATS-Tangerine/iceesnn
 
-Deploy:
+##### Deploy
 
 ```shell
 git clone https://github.com/NCATS-Tangerine/icees-api.git
@@ -99,13 +99,13 @@ docker-compose up --build
 
 Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined from the available full-text biomedical literature using high-performance text mining systems
 
-Access:
+##### Access
 
 * Roadmap on GitHub: https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap
 
 ### Connections Hypothesis Provider
 
-Provides:
+##### Provides
 
 * Access Heterogeneous Data
    * Researcher clinical data
@@ -116,19 +116,19 @@ Provides:
 
 ### DOCKET multiomics provider
 
-Provides:
+##### Provides
 
 * Big GIM (Gene Interaction Miner), function interaction data for all pairs of genes.  Functional interaction data are available from four different sources:  1) tissue-specific gene expression correlations from healthy tissue  samples (GTEx), 2) tissue-specific gene expression correlations from  cancer samples (TCGA), 3) tissue-specific probabilities of function  interaction (GIANT), and 4) direct interactions (BioGRID).
 
 * Big CLAM (Cell Line Association Miner), integrates large-scale high-quality data of various cell line  resources to uncover associations between genomic and molecular features of cell lines, drug response measurements and gene knockdown viability  scores. The cell line data comes from five different sources: 1) CCLE -  Cancer Cell Line Encyclopedia, 2) GDSC - Genomics of Drug Sensitivity in Cancer, 3) CTRP - Cancer Therapeutics Response Portal, 4) CMap -  Connectivity Map, and 5) CDM - Cancer Dependency Map.
 
-Access:
+##### Access
 
 * Reasoner API: http://biggim.ncats.io/api
 * GitHub: https://github.com/PriceLab/DOCKET
 * [Running instructions](https://drive.google.com/drive/u/0/folders/19CT2bu1kzVnXgORhgIQijJd7x8O8Ez6D)
 
-Deploy:
+##### Deploy
 
 Documentation and integration to `d2s` [started here](https://d2s.semanticscience.org/docs/services-utilities#docket-multiomics-data-provider).
 
@@ -144,7 +144,7 @@ Build and deploy BioThings APIs from flat data files.
 * Use BioThings SDK in Python to download and parse input data sources
 * Integrate your API to a meta-KG using Smart API
 
-Access:
+##### Access
 
 * Translator KP APIs powered by BioThings SDK: https://biothings.ncats.io
 
@@ -172,7 +172,7 @@ Access:
   * GitHub: https://github.com/biothings/biothings_studio
   * Docs: https://docs.biothings.io/en/latest/doc/studio.html
 
-Deploy:
+#### Deploy
 
 Documentation and integration to `d2s` [started here](https://d2s.semanticscience.org/docs/d2s-biothings). See the [BioLink Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
 
@@ -189,7 +189,7 @@ Federated querying of BioThings APIs, done in 2 steps:
 * Build a query path plan defining APIs relevant to answer the query
 * Execute the query path plan to retrieve data from the different APIs.
 
-Access:
+###### Access
 
 * BioThings Explorer UI demo: https://biothings.io/explorer
 * Docs: https://biothings_explorer.readthedocs.io/en/latest
@@ -204,7 +204,7 @@ Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowle
 * bridge the precision mismatch between data specificity in KPs and more abstract level of user queries
 * generalize answer ranking
 
-Access:
+###### Access
 
 * Reasoner and Open API at https://automat.renci.org
 * [KITCHEN GitHub repository](https://github.com/TranslatorIIPrototypes/KITCHEN)
@@ -212,7 +212,7 @@ Access:
   * Open API: https://questionaugmentation.renci.org/apidocs
   * GitHub: https://github.com/ranking-agent/QuestionRewrite
 
-Deploy:
+##### Deploy
 
 * Notebook Visualization component at https://github.com/ranking-agent/gamma-viewer
 
@@ -220,7 +220,7 @@ Deploy:
 
 Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reasoning capabilities within a language: **ARAXi**.
 
-Access:
+##### Access
 
 * ARAX
   * Open API: https://tiny.cc/arax-api-docs
@@ -233,7 +233,7 @@ Access:
 
 ### Explanatory ARA
 
-Provides:
+##### Provides
 
 * Analogical reasoning engine
 
@@ -250,13 +250,13 @@ Provides:
 
 Based on the [miniKanren](http://minikanren.org/) logic programming language for reasoning over Knowledge Graoph (SemMedDB).
 
-Access:
+##### Access
 
 * GitHub: https://github.com/webyrd/mediKanren
 * [MediKanren BioLink interface on GitHub](https://github.com/webyrd/mediKanren/tree/master/biolink)
 
 
-Deploy:
+##### Deploy
 
 * See [documentation on GitHub](https://github.com/webyrd/mediKanren#setup).
 
@@ -264,7 +264,7 @@ Deploy:
 
 Services to explore and validate implementation against the Translator standards.
 
-Access:
+##### Access
 
 * BioLink Model Lookup service
   * Open API: https://bl-lookup-sri.renci.org/apidocs/
@@ -290,7 +290,7 @@ Access:
 
 ### (im)proving agent
 
-Provides:
+##### Provides
 
 * SPOKE: a biomedical knowledge metagraph (~25 sources)
   * reasoning to support facts from empirical evidences (Electronic Health Records, multi-omics studies)
@@ -299,17 +299,17 @@ Provides:
   * takes query from ARS and extracts a graph q (output graph) from its internal Knowledge Network (SPOKE)
   * checks empirical evidence from raw data of cohorts (EHR and multi-omics studies)
 
-Access:
+##### Access
 
 * SPOKE
   * GitHub: https://github.com/baranzini-lab/PSEV
 * evidARA
   * GitHub: https://github.com/brettasmi/evidARA
 
-Deploy:
+##### Deploy
 
 * SPOKE on neo4j. See [documentation on GitHub](https://github.com/baranzini-lab/PSEV).
 
 ## Additional Translator resources
 
-Access [Jupyter Notebook to combine data from various Knowledge Providers](https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb), produced during the Relay Days.
+* [Jupyter Notebook to combine data from various Knowledge Providers](https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb), produced during the Relay Days.
