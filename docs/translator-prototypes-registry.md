@@ -9,11 +9,9 @@ title: Translator Prototypes
 
 ### COHD Clinical Data2Services Provider
 
-##### Provides
+
 
 [![COHD](https://img.shields.io/github/stars/WengLab-InformaticsResearch/cohd_api?label=cohd-api&style=social)](https://github.com/WengLab-InformaticsResearch/cohd_api)
-
-https://github.com/WengLab-InformaticsResearch/cohd_api
 
 * Columbia Open Health Data (COHD)
   * Clinical associations mined from observational EHR data
@@ -78,7 +76,7 @@ A tool to curate genetic associations for complex diseases, interpret their biol
 
 [![ICEES+ KP Exposure Provider](https://img.shields.io/github/stars/NCATS-Tangerine/icees-api?label=icees-api&style=social)](https://github.com/NCATS-Tangerine/icees-api)
 
-##### Provides
+
 
 * Patient data + environmental exposures data
 * Integrated at patient- and visit-level
@@ -123,7 +121,7 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 
 ### Connections Hypothesis Provider
 
-##### Provides
+
 
 * Access Heterogeneous Data
    * Researcher clinical data
@@ -138,7 +136,7 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 
 [![DOCKET multiomics provider](https://img.shields.io/github/stars/PriceLab/DOCKET?label=DOCKET&style=social)](https://github.com/PriceLab/DOCKET)
 
-##### Provides
+
 
 * Big GIM (Gene Interaction Miner), function interaction data for all pairs of genes.  Functional interaction data are available from four different sources:  1) tissue-specific gene expression correlations from healthy tissue  samples (GTEx), 2) tissue-specific gene expression correlations from  cancer samples (TCGA), 3) tissue-specific probabilities of function  interaction (GIANT), and 4) direct interactions (BioGRID).
 
@@ -180,8 +178,8 @@ Build and deploy BioThings APIs from flat data files.
 
 * SmartAPI: https://smart-api.info
 
-* - GitHub: https://github.com/SmartAPI/smartAPI
-  - Up-to-date Meta-KG: https://smart-api.info/registry/translator/meta-kg 
+  * GitHub: https://github.com/SmartAPI/smartAPI
+  * Up-to-date Meta-KG: https://smart-api.info/registry/translator/meta-kg 
 
 
 * Example Disease KP API: https://biothings.ncats.io/DISEASES
@@ -219,8 +217,8 @@ Federated querying of BioThings APIs, done in 2 steps:
 ###### Access
 
 * BioThings Explorer UI demo: https://biothings.io/explorer
-* Docs: https://biothings_explorer.readthedocs.io/en/latest
-* [Jupyter Notebooks](https://github.com/biothings/biothings_explorer/tree/master/jupyter notebooks)
+* Docs: [https://biothings_explorer.readthedocs.io/en/latest](https://biothings_explorer.readthedocs.io/en/latest)
+* [Jupyter Notebooks](https://github.com/biothings/biothings_explorer/tree/master/jupyter%20notebooks)
 
 ---
 
@@ -268,7 +266,7 @@ Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reas
 
 ### Explanatory ARA
 
-##### Provides
+
 
 * Analogical reasoning engine
 
@@ -301,14 +299,14 @@ Based on the [miniKanren](http://minikanren.org/) logic programming language for
 
 ### (im)proving agent
 
+
+
 [![PSEV](https://img.shields.io/github/stars/baranzini-lab/PSEV?label=PSEV&style=social)](https://github.com/baranzini-lab/PSEV)
-
-[![evidARA](https://img.shields.io/github/stars/brettasmi/evidARA?label=evidARA&style=social)](https://github.com/brettasmi/evidARA)
-
-##### Provides
 
 * SPOKE: a biomedical knowledge metagraph (~25 sources)
   * reasoning to support facts from empirical evidences (Electronic Health Records, multi-omics studies)
+
+[![evidARA](https://img.shields.io/github/stars/brettasmi/evidARA?label=evidARA&style=social)](https://github.com/brettasmi/evidARA)
 
 * EvidARA
   * takes query from ARS and extracts a graph q (output graph) from its internal Knowledge Network (SPOKE)
