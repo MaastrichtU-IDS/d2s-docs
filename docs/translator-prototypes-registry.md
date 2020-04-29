@@ -249,15 +249,18 @@ Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowle
 
 [![RTX](https://img.shields.io/github/stars/RTXteam/RTX?label=RTX&style=social)](https://github.com/RTXteam/RTX)
 
-Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reasoning capabilities within a language: **ARAXi**.
+Team Expander Agent: *A tool for enhancing query graphs*. ARAX exposes all graph reasoning capabilities within a domain specific language: **ARAXi**.
+ARAX is a tool for querying, manipulating, filtering, learning on, and exploring biomedical knowledge graphs.
 
 ##### Access
 
 * ARAX
   * Open API: https://tiny.cc/arax-api-docs
   * GitHub: https://github.com/RTXteam/RTX/tree/master/code/ARAX
-  * [ARAX examples Notebook](https://github.com/RTXteam/RTX/blob/demo/code/ARAX/Examples/ARAX_Example4.ipynb)
-  * ARAXi documentation: https://tiny.cc/araxi-docs
+  * GUI: https://arax.rtx.ai/ 
+  * [ARAX examples Notebook](https://github.com/RTXteam/RTX/blob/demo/code/ARAX/Examples/ARAX_Example3.ipynb)
+  * [ARAXi documentation](https://github.com/RTXteam/RTX/blob/master/code/ARAX/Documentation/DSL_Documentation.md)
+  * [Team/Tool/Code Readme](https://github.com/RTXteam/RTX/blob/master/README.md)
 * RTX-KG2
   * RTX-KG2 Neo4j UI: https://tiny.cc/arax-kg2-neo4j
   * GitHub: https://github.com/RTXteam/RTX/tree/demo/code/kg2
