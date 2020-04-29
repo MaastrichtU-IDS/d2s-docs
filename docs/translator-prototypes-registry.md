@@ -11,12 +11,19 @@ title: Translator Prototypes
 
 ##### Provides
 
+[![COHD](https://img.shields.io/github/stars/WengLab-InformaticsResearch/cohd_api?label=cohd-api&style=social)](https://github.com/WengLab-InformaticsResearch/cohd_api)
+
+https://github.com/WengLab-InformaticsResearch/cohd_api
+
 * Columbia Open Health Data (COHD)
   * Clinical associations mined from observational EHR data
   * Conditions, drugs, procedures, gender, race, ethnicity
   * EHR prevalence and Co-occurrence count
   * Associations calculated from EHR prevalence and co-occurrence count
   * Privacy protection measures
+
+[![Data2Services documentation](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-documentation?label=d2s-documentation&style=social)](https://github.com/MaastrichtU-IDS/d2s-documentation)
+
 * Data2Services
   * A framework and Command Line Interface for building and deploying Translator data and services in a reproducible manner.
   * Documentation and tools to transform your data to a BioLink-compliant RDF knowledge graph
@@ -25,7 +32,7 @@ title: Translator Prototypes
 
 ##### Access
 
-* COHD Reasoner API at http://cohd.io/api (see on [GitHub](https://github.com/WengLab-InformaticsResearch/cohd_api))
+* COHD Reasoner API at http://cohd.io/api
 * Data2Services documentation at https://d2s.semanticscience.org
 * Data2Services Reasoner API over BioLink RDF at http://api.trek.semanticscience.org (see on [GitHub](https://github.com/MaastrichtU-IDS/d2s-api))
 * Into-the-graph web UI to browse a BioLink RDF triplestore leveraging metadata and services at http://trek.semanticscience.org
@@ -42,24 +49,28 @@ d2s init my-project
 
 ### MolePro Molecular Data Provider
 
+[![MolePro](https://img.shields.io/github/stars/broadinstitute/molecular-data-provider?label=molecular-data-provider&style=social)](https://github.com/broadinstitute/molecular-data-provider)
+
 A Molecular Data Provider translating molecular scale to systems scale through a Reasoner API.
 
 ##### Access
 
 * Open API: https://translator.broadinstitute.org/molecular_data_provider/api
 * Reasoner API: https://translator.broadinstitute.org/molepro_reasoner/predicates
-* GitHub: https://github.com/broadinstitute/molecular-data-provider
 
 ### Genetic Knowledge Provider
+
+[![Genetic Knowledge Provider](https://img.shields.io/github/stars/broadinstitute/genetics-kp-dev?label=genetics-kp-dev&style=social)](https://github.com/broadinstitute/genetics-kp-dev)
 
 A tool to curate genetic associations for complex diseases, interpret their biological effects, and make these data available to the Translator.
 
 ##### Access
 
 * Reasoner API: https://translator.broadinstitute.org/genetics_data_provider/query
-* GitHub: https://github.com/broadinstitute/genetics-kp-dev
 
 ### ICEES+ KP Exposure Provider
+
+[![ICEES+ KP Exposure Provider](https://img.shields.io/github/stars/NCATS-Tangerine/icees-api?label=icees-api&style=social)](https://github.com/NCATS-Tangerine/icees-api)
 
 ##### Provides
 
@@ -76,7 +87,6 @@ A tool to curate genetic associations for complex diseases, interpret their biol
   * API UNC: https://icees.renci.org:16335/apidocs
   * API NIEHS: https://icees.renci.org:16336/apidocs
   * API Duke: https://icees.renci.org:16337/apidocs
-  * GitHub: https://github.com/NCATS-Tangerine/icees-api
   * Prototype ICEES+ Wireframe UI: http://robokop.renci.org:3001
 * TranQL: 
   * Web UI: https://tranql.renci.org
@@ -97,11 +107,9 @@ docker-compose up --build
 
 ### Text Mining Provider
 
+[![Text Mining Provider roadmap](https://img.shields.io/github/stars/NCATSTranslator/Text-Mining-Provider-Roadmap?label=Text-Mining-Provider-Roadmap&style=social)](https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap)
+
 Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined from the available full-text biomedical literature using high-performance text mining systems
-
-##### Access
-
-* Roadmap on GitHub: https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap
 
 ### Connections Hypothesis Provider
 
@@ -116,6 +124,8 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 
 ### DOCKET multiomics provider
 
+[![DOCKET multiomics provider](https://img.shields.io/github/stars/PriceLab/DOCKET?label=DOCKET&style=social)](https://github.com/PriceLab/DOCKET)
+
 ##### Provides
 
 * Big GIM (Gene Interaction Miner), function interaction data for all pairs of genes.  Functional interaction data are available from four different sources:  1) tissue-specific gene expression correlations from healthy tissue  samples (GTEx), 2) tissue-specific gene expression correlations from  cancer samples (TCGA), 3) tissue-specific probabilities of function  interaction (GIANT), and 4) direct interactions (BioGRID).
@@ -125,7 +135,6 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 ##### Access
 
 * Reasoner API: http://biggim.ncats.io/api
-* GitHub: https://github.com/PriceLab/DOCKET
 * [Running instructions](https://drive.google.com/drive/u/0/folders/19CT2bu1kzVnXgORhgIQijJd7x8O8Ez6D)
 
 ##### Deploy
@@ -137,6 +146,8 @@ d2s start docket
 ```
 
 ### BioThings API
+
+[![BioThings API](https://img.shields.io/github/stars/biothings/biothings.api?label=biothings.api&style=social)](https://github.com/biothings/biothings.api)
 
 Build and deploy BioThings APIs from flat data files.
 
@@ -150,7 +161,6 @@ Build and deploy BioThings APIs from flat data files.
 
 * BioThings SDK
 
-  * GitHub: [https://github.com/biothings/biothings.api](https://github.com/biothings/biothings.api/)
   * Docs: https://docs.biothings.io
   * PyPI package: https://pypi.org/project/biothings
 
@@ -166,7 +176,6 @@ Build and deploy BioThings APIs from flat data files.
   * GitHub: https://github.com/kevinxin90/DISEASES
 * Up-to-date Meta-KG: https://smart-api.info/registry/translator/meta-kg 
 * Service KP milestone dashboard: https://github.com/orgs/biothings/projects/5
-* GitHub BioThings API: https://github.com/biothings/biothings.api
 * BioThings Studio
 
   * GitHub: https://github.com/biothings/biothings_studio
@@ -184,6 +193,8 @@ d2s start biothings-studio
 
 ### BioThings Explorer
 
+[![BioThings Explorer](https://img.shields.io/github/stars/biothings/biothings_explorer?label=biothings-explorer&style=social)](https://github.com/biothings/biothings_explorer)
+
 Federated querying of BioThings APIs, done in 2 steps:
 
 * Build a query path plan defining APIs relevant to answer the query
@@ -194,9 +205,10 @@ Federated querying of BioThings APIs, done in 2 steps:
 * BioThings Explorer UI demo: https://biothings.io/explorer
 * Docs: https://biothings_explorer.readthedocs.io/en/latest
 * [Jupyter Notebooks](https://github.com/biothings/biothings_explorer/tree/master/jupyter notebooks)
-* GitHub: https://github.com/biothings/biothings_explorer
 
 ### ARAGORN
+
+[![BioThings Explorer](https://img.shields.io/github/stars/TranslatorIIPrototypes/KITCHEN?label=KITCHEN&style=social)](https://github.com/TranslatorIIPrototypes/KITCHEN)
 
 Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowledge Providers (KPs) and synthesize highly ranked answers relevant to user-specified questions
 
@@ -207,7 +219,6 @@ Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowle
 ###### Access
 
 * Reasoner and Open API at https://automat.renci.org
-* [KITCHEN GitHub repository](https://github.com/TranslatorIIPrototypes/KITCHEN)
 * Question Enhancement Resources
   * Open API: https://questionaugmentation.renci.org/apidocs
   * GitHub: https://github.com/ranking-agent/QuestionRewrite
@@ -217,6 +228,8 @@ Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowle
 * Notebook Visualization component at https://github.com/ranking-agent/gamma-viewer
 
 ### ARAX
+
+[![RTX](https://img.shields.io/github/stars/RTXteam/RTX?label=RTX&style=social)](https://github.com/RTXteam/RTX)
 
 Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reasoning capabilities within a language: **ARAXi**.
 
@@ -248,17 +261,45 @@ Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reas
 
 ### mediKanren 2.0
 
+[![mediKanren](https://img.shields.io/github/stars/webyrd/mediKanren?label=mediKanren&style=social)](https://github.com/webyrd/mediKanren)
+
 Based on the [miniKanren](http://minikanren.org/) logic programming language for reasoning over Knowledge Graoph (SemMedDB).
 
 ##### Access
 
-* GitHub: https://github.com/webyrd/mediKanren
 * [MediKanren BioLink interface on GitHub](https://github.com/webyrd/mediKanren/tree/master/biolink)
-
 
 ##### Deploy
 
 * See [documentation on GitHub](https://github.com/webyrd/mediKanren#setup).
+
+
+### (im)proving agent
+
+[![PSEV](https://img.shields.io/github/stars/baranzini-lab/PSEV?label=PSEV&style=social)](https://github.com/baranzini-lab/PSEV)
+
+[![evidARA](https://img.shields.io/github/stars/brettasmi/evidARA?label=evidARA&style=social)](https://github.com/brettasmi/evidARA)
+
+##### Provides
+
+* SPOKE: a biomedical knowledge metagraph (~25 sources)
+  * reasoning to support facts from empirical evidences (Electronic Health Records, multi-omics studies)
+
+* EvidARA
+  * takes query from ARS and extracts a graph q (output graph) from its internal Knowledge Network (SPOKE)
+  * checks empirical evidence from raw data of cohorts (EHR and multi-omics studies)
+
+##### Access
+
+* SPOKE
+  * GitHub: https://github.com/baranzini-lab/PSEV
+* evidARA
+  * GitHub: https://github.com/brettasmi/evidARA
+
+##### Deploy
+
+* SPOKE on neo4j. See [documentation on GitHub](https://github.com/baranzini-lab/PSEV).
+
 
 ### Standard Reasoner Implementations (SRI)
 
@@ -287,28 +328,6 @@ Services to explore and validate implementation against the Translator standards
   * [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb
     ) for documentation
   * GitHub: https://github.com/TranslatorIIPrototypes/BLComplianceService
-
-### (im)proving agent
-
-##### Provides
-
-* SPOKE: a biomedical knowledge metagraph (~25 sources)
-  * reasoning to support facts from empirical evidences (Electronic Health Records, multi-omics studies)
-
-* EvidARA
-  * takes query from ARS and extracts a graph q (output graph) from its internal Knowledge Network (SPOKE)
-  * checks empirical evidence from raw data of cohorts (EHR and multi-omics studies)
-
-##### Access
-
-* SPOKE
-  * GitHub: https://github.com/baranzini-lab/PSEV
-* evidARA
-  * GitHub: https://github.com/brettasmi/evidARA
-
-##### Deploy
-
-* SPOKE on neo4j. See [documentation on GitHub](https://github.com/baranzini-lab/PSEV).
 
 ## Additional Translator resources
 
