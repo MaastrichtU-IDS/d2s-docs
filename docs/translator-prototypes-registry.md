@@ -41,7 +41,7 @@ d2s init my-project
 
 > Docker must be installed.
 
-### MolePro
+### MolePro Molecular Data Provider
 
 A Molecular Data Provider translating molecular scale to systems scale through a Reasoner API.
 
@@ -52,7 +52,7 @@ Access:
 * GitHub: https://github.com/broadinstitute/molecular-data-provider
 * [MolePro prototype presentation](https://drive.google.com/file/d/1FdCPB0DsTP0nfhcFmzJx0D6RHuwxW_TO/view).
 
-### Translator Genetic Knowledge Provider
+### Genetic Knowledge Provider
 
 A tool to curate genetic associations for complex diseases, interpret their biological effects, and make these data available to the Translator.
 
@@ -61,27 +61,6 @@ Access:
 * Reasoner API: https://translator.broadinstitute.org/genetics_data_provider/query
 * GitHub: https://github.com/broadinstitute/genetics-kp-dev
 * [Translator Genetic Knowledge Provider presentation](https://drive.google.com/file/d/1w1CeLbiGQIfBUv5KwkJbJLs53PusI35N/view).
-
-### ARAGORN
-
-Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowledge Providers (KPs) and synthesize highly ranked answers relevant to user-specified questions
-
-* operate in a federated knowledge environment
-* bridge the precision mismatch between data specificity in KPs and more abstract level of user queries
-* generalize answer ranking
-
-Access:
-
-* Reasoner and Open API at https://automat.renci.org
-* [KITCHEN GitHub repository](https://github.com/TranslatorIIPrototypes/KITCHEN)
-* Question Enhancement Resources
-  * Open API: https://questionaugmentation.renci.org/apidocs
-  * GitHub: https://github.com/ranking-agent/QuestionRewrite
-* [Prototype presentation](https://docs.google.com/presentation/d/1Nt9GbEw-1R5ftAoqa1yJM4S7O5nxH0Ndo1NnoZTWdtE/edit#slide=id.p)
-
-Deploy:
-
-* Notebook Visualization component at https://github.com/ranking-agent/gamma-viewer
 
 ### ICEES+ KP Exposure Provider
 
@@ -113,22 +92,6 @@ cd icees-api
 docker-compose up --build
 ```
 
-### ARAX
-
-Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reasoning capabilities within a language: **ARAXi**.
-
-Access:
-
-* ARAX
-  * Open API: https://tiny.cc/arax-api-docs
-  * GitHub: https://github.com/RTXteam/RTX/tree/master/code/ARAX
-  * [ARAX examples Notebook](https://github.com/RTXteam/RTX/blob/demo/code/ARAX/Examples/ARAX_Example4.ipynb)
-  * ARAXi documentation: https://tiny.cc/araxi-docs
-* RTX-KG2
-  * RTX-KG2 Neo4j UI: https://tiny.cc/arax-kg2-neo4j
-  * GitHub: https://github.com/RTXteam/RTX/tree/demo/code/kg2
-* [ARAX prototype presentation](https://docs.google.com/presentation/d/1a93XbdMr0YGWh0BnuJEmcOoudZ9MGNdAh0N4XUTmVyE/edit#slide=id.p)
-
 ### Text Mining Provider
 
 Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined from the available full-text biomedical literature using high-performance text mining systems
@@ -153,7 +116,84 @@ Access:
 
 * [Prototype presentation](https://docs.google.com/presentation/d/1Hw2jR9ez57A--dB6HZdqIokS3OLxkgv4/edit#slide=id.p1)
 
+### DOCKET multiomics provider
+
+Access:
+
+* GitHub: https://github.com/PriceLab/DOCKET
+
+Deploy:
+
+Documentation and integration to `d2s` [started here](https://d2s.semanticscience.org/docs/services-utilities#docket-multiomics-data-provider).
+
+```shell
+d2s start docket
+```
+
+### BioThings API
+
+Build and deploy BioThings APIs from flat data files.
+
+Access:
+
+* Organization GitHub: https://github.com/biothings
+
+Deploy:
+
+Documentation and integration to `d2s` [started here](https://d2s.semanticscience.org/docs/d2s-biothings). See the [BioLink Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
+
+```shell
+d2s start biothings-studio
+```
+
 ## Autonomous Relay Agent (ARA)
+
+### BioThings Explorer
+
+Explore BioThings APIs
+
+Access:
+
+* The BioThings Explorer web UI: https://biothings.io/explorer
+* GitHub: https://github.com/biothings/biothings_explorer
+* [Prototype presentation](https://docs.google.com/presentation/d/1r3gAO3P_YxHUch3Rn9gHZf4FBPp6VxK3O98iVK1_JfI/edit#slide=id.p)
+
+### ARAGORN
+
+Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowledge Providers (KPs) and synthesize highly ranked answers relevant to user-specified questions
+
+* operate in a federated knowledge environment
+* bridge the precision mismatch between data specificity in KPs and more abstract level of user queries
+* generalize answer ranking
+
+Access:
+
+* Reasoner and Open API at https://automat.renci.org
+* [KITCHEN GitHub repository](https://github.com/TranslatorIIPrototypes/KITCHEN)
+* Question Enhancement Resources
+  * Open API: https://questionaugmentation.renci.org/apidocs
+  * GitHub: https://github.com/ranking-agent/QuestionRewrite
+* [Prototype presentation](https://docs.google.com/presentation/d/1Nt9GbEw-1R5ftAoqa1yJM4S7O5nxH0Ndo1NnoZTWdtE/edit#slide=id.p)
+
+Deploy:
+
+* Notebook Visualization component at https://github.com/ranking-agent/gamma-viewer
+
+### ARAX
+
+Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reasoning capabilities within a language: **ARAXi**.
+
+Access:
+
+* ARAX
+  * Open API: https://tiny.cc/arax-api-docs
+  * GitHub: https://github.com/RTXteam/RTX/tree/master/code/ARAX
+  * [ARAX examples Notebook](https://github.com/RTXteam/RTX/blob/demo/code/ARAX/Examples/ARAX_Example4.ipynb)
+  * ARAXi documentation: https://tiny.cc/araxi-docs
+* RTX-KG2
+  * RTX-KG2 Neo4j UI: https://tiny.cc/arax-kg2-neo4j
+  * GitHub: https://github.com/RTXteam/RTX/tree/demo/code/kg2
+* [ARAX prototype presentation](https://docs.google.com/presentation/d/1a93XbdMr0YGWh0BnuJEmcOoudZ9MGNdAh0N4XUTmVyE/edit#slide=id.p)
 
 ### Explanatory ARA
 
@@ -240,46 +280,6 @@ Access:
 Deploy:
 
 * SPOKE on neo4j. See [documentation on GitHub](https://github.com/baranzini-lab/PSEV).
-
-### DOCKET multiomics provider
-
-Access:
-
-* GitHub: https://github.com/PriceLab/DOCKET
-
-Deploy:
-
-Documentation and integration to `d2s` [started here](https://d2s.semanticscience.org/docs/services-utilities#docket-multiomics-data-provider).
-
-```shell
-d2s start docket
-```
-
-### BioThings API
-
-Build and deploy BioThings APIs from flat data files.
-
-Access:
-
-* Organization GitHub: https://github.com/biothings
-
-Deploy:
-
-Documentation and integration to `d2s` [started here](https://d2s.semanticscience.org/docs/d2s-biothings). See the [BioLink Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
-
-```shell
-d2s start biothings-studio
-```
-
-### BioThings Explorer
-
-Explore BioThings APIs
-
-Access:
-
-* The BioThings Explorer web UI: https://biothings.io/explorer
-* GitHub: https://github.com/biothings/biothings_explorer
-* [Prototype presentation](https://docs.google.com/presentation/d/1r3gAO3P_YxHUch3Rn9gHZf4FBPp6VxK3O98iVK1_JfI/edit#slide=id.p)
 
 ## Additional Translator resources
 
