@@ -116,9 +116,17 @@ Provides:
 
 ### DOCKET multiomics provider
 
+Provides:
+
+* Big GIM (Gene Interaction Miner), function interaction data for all pairs of genes.  Functional interaction data are available from four different sources:  1) tissue-specific gene expression correlations from healthy tissue  samples (GTEx), 2) tissue-specific gene expression correlations from  cancer samples (TCGA), 3) tissue-specific probabilities of function  interaction (GIANT), and 4) direct interactions (BioGRID).
+
+* Big CLAM (Cell Line Association Miner), integrates large-scale high-quality data of various cell line  resources to uncover associations between genomic and molecular features of cell lines, drug response measurements and gene knockdown viability  scores. The cell line data comes from five different sources: 1) CCLE -  Cancer Cell Line Encyclopedia, 2) GDSC - Genomics of Drug Sensitivity in Cancer, 3) CTRP - Cancer Therapeutics Response Portal, 4) CMap -  Connectivity Map, and 5) CDM - Cancer Dependency Map.
+
 Access:
 
+* Reasoner API: http://biggim.ncats.io/api
 * GitHub: https://github.com/PriceLab/DOCKET
+* [Running instructions](https://drive.google.com/drive/u/0/folders/19CT2bu1kzVnXgORhgIQijJd7x8O8Ez6D)
 
 Deploy:
 
@@ -132,9 +140,37 @@ d2s start docket
 
 Build and deploy BioThings APIs from flat data files.
 
+* API-fy knowledge sources on demand
+* Use BioThings SDK in Python to download and parse input data sources
+* Integrate your API to a meta-KG using Smart API
+
 Access:
 
-* Organization GitHub: https://github.com/biothings
+* Translator KP APIs powered by BioThings SDK: https://biothings.ncats.io
+
+* BioThings SDK
+
+  * GitHub: [https://github.com/biothings/biothings.api](https://github.com/biothings/biothings.api/)
+  * Docs: https://docs.biothings.io
+  * PyPI package: https://pypi.org/project/biothings
+
+* SmartAPI: https://smart-api.info
+
+* - GitHub: https://github.com/SmartAPI/smartAPI
+  - Up-to-date Meta-KG: https://smart-api.info/registry/translator/meta-kg 
+
+
+* Example Disease KP API: https://biothings.ncats.io/DISEASES
+
+  * Knowledge source: https://diseases.jensenlab.org
+  * GitHub: https://github.com/kevinxin90/DISEASES
+* Up-to-date Meta-KG: https://smart-api.info/registry/translator/meta-kg 
+* Service KP milestone dashboard: https://github.com/orgs/biothings/projects/5
+* GitHub BioThings API: https://github.com/biothings/biothings.api
+* BioThings Studio
+
+  * GitHub: https://github.com/biothings/biothings_studio
+  * Docs: https://docs.biothings.io/en/latest/doc/studio.html
 
 Deploy:
 
@@ -148,11 +184,16 @@ d2s start biothings-studio
 
 ### BioThings Explorer
 
-Explore BioThings APIs
+Federated querying of BioThings APIs, done in 2 steps:
+
+* Build a query path plan defining APIs relevant to answer the query
+* Execute the query path plan to retrieve data from the different APIs.
 
 Access:
 
-* The BioThings Explorer web UI: https://biothings.io/explorer
+* BioThings Explorer UI demo: https://biothings.io/explorer
+* Docs: https://biothings_explorer.readthedocs.io/en/latest
+* [Jupyter Notebooks](https://github.com/biothings/biothings_explorer/tree/master/jupyter notebooks)
 * GitHub: https://github.com/biothings/biothings_explorer
 
 ### ARAGORN
