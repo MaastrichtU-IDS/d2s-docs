@@ -47,6 +47,8 @@ d2s init my-project
 
 > Docker must be installed.
 
+---
+
 ### MolePro Molecular Data Provider
 
 [![MolePro](https://img.shields.io/github/stars/broadinstitute/molecular-data-provider?label=molecular-data-provider&style=social)](https://github.com/broadinstitute/molecular-data-provider)
@@ -58,6 +60,8 @@ A Molecular Data Provider translating molecular scale to systems scale through a
 * Open API: https://translator.broadinstitute.org/molecular_data_provider/api
 * Reasoner API: https://translator.broadinstitute.org/molepro_reasoner/predicates
 
+---
+
 ### Genetic Knowledge Provider
 
 [![Genetic Knowledge Provider](https://img.shields.io/github/stars/broadinstitute/genetics-kp-dev?label=genetics-kp-dev&style=social)](https://github.com/broadinstitute/genetics-kp-dev)
@@ -67,6 +71,8 @@ A tool to curate genetic associations for complex diseases, interpret their biol
 ##### Access
 
 * Reasoner API: https://translator.broadinstitute.org/genetics_data_provider/query
+
+---
 
 ### ICEES+ KP Exposure Provider
 
@@ -105,11 +111,15 @@ cd icees-api
 docker-compose up --build
 ```
 
+---
+
 ### Text Mining Provider
 
 [![Text Mining Provider roadmap](https://img.shields.io/github/stars/NCATSTranslator/Text-Mining-Provider-Roadmap?label=Text-Mining-Provider-Roadmap&style=social)](https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap)
 
 Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined from the available full-text biomedical literature using high-performance text mining systems
+
+---
 
 ### Connections Hypothesis Provider
 
@@ -121,6 +131,8 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 * Automate Source Selection
 * Effective Question-Response Ranking
 * Actionable Information
+
+---
 
 ### DOCKET multiomics provider
 
@@ -144,6 +156,8 @@ Documentation and integration to `d2s` [started here](https://d2s.semanticscienc
 ```shell
 d2s start docket
 ```
+
+---
 
 ### BioThings API
 
@@ -189,6 +203,8 @@ Documentation and integration to `d2s` [started here](https://d2s.semanticscienc
 d2s start biothings-studio
 ```
 
+---
+
 ## Autonomous Relay Agent (ARA)
 
 ### BioThings Explorer
@@ -205,6 +221,8 @@ Federated querying of BioThings APIs, done in 2 steps:
 * BioThings Explorer UI demo: https://biothings.io/explorer
 * Docs: https://biothings_explorer.readthedocs.io/en/latest
 * [Jupyter Notebooks](https://github.com/biothings/biothings_explorer/tree/master/jupyter notebooks)
+
+---
 
 ### ARAGORN
 
@@ -227,6 +245,8 @@ Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowle
 
 * Notebook Visualization component at https://github.com/ranking-agent/gamma-viewer
 
+---
+
 ### ARAX
 
 [![RTX](https://img.shields.io/github/stars/RTXteam/RTX?label=RTX&style=social)](https://github.com/RTXteam/RTX)
@@ -244,6 +264,8 @@ Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reas
   * RTX-KG2 Neo4j UI: https://tiny.cc/arax-kg2-neo4j
   * GitHub: https://github.com/RTXteam/RTX/tree/demo/code/kg2
 
+---
+
 ### Explanatory ARA
 
 ##### Provides
@@ -259,6 +281,8 @@ Expander agent, *A tool for enhancing query graphs*. ARAX exposes all graph reas
 
 * Open-world learning
 
+---
+
 ### mediKanren 2.0
 
 [![mediKanren](https://img.shields.io/github/stars/webyrd/mediKanren?label=mediKanren&style=social)](https://github.com/webyrd/mediKanren)
@@ -273,6 +297,7 @@ Based on the [miniKanren](http://minikanren.org/) logic programming language for
 
 * See [documentation on GitHub](https://github.com/webyrd/mediKanren#setup).
 
+---
 
 ### (im)proving agent
 
@@ -300,6 +325,7 @@ Based on the [miniKanren](http://minikanren.org/) logic programming language for
 
 * SPOKE on neo4j. See [documentation on GitHub](https://github.com/baranzini-lab/PSEV).
 
+---
 
 ### Standard Reasoner Implementations (SRI)
 
@@ -328,6 +354,8 @@ Services to explore and validate implementation against the Translator standards
   * [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb
     ) for documentation
   * GitHub: https://github.com/TranslatorIIPrototypes/BLComplianceService
+
+---
 
 ## Additional Translator resources
 
