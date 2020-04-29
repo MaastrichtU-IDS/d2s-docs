@@ -7,7 +7,7 @@ title: Use BioThings Studio
 
 The [BioThings SDK](https://docs.biothings.io/en/latest/) is a [Python package](https://pypi.org/project/biothings/) to build and deploy annotated [Smart APIs](https://smart-api.info/) from flat data files. Multiple BioThings APIs can be built using the BioThings Hub, and exposed using BioThings Web.
 
-BioThings APIs can then be queries by the [BioThings Explorer](https://biothings.io/explorer/).
+BioThings APIs can then be queries by the [BioThings Explorer](https://biothings.io/explorer/). See the [BioThings API Specifications](https://biothings.io/specs/).
 
 ## Deploy BioThings Studio
 
