@@ -30,7 +30,6 @@ Access:
 * Data2Services Reasoner API over BioLink RDF at http://api.trek.semanticscience.org (see on [GitHub](https://github.com/MaastrichtU-IDS/d2s-api))
 * Into-the-graph web UI to browse a BioLink RDF triplestore leveraging metadata and services at http://trek.semanticscience.org
 * GitHub repositories for Data2Services [project template](https://github.com/MaastrichtU-IDS/d2s-transform-template) and [command line interface](https://github.com/MaastrichtU-IDS/d2s-cli).
-* [Prototype presentation](https://docs.google.com/presentation/d/17p_KNIDf5YhD5wubGIx-RoexKeCmP4rN-VCAOstXKK8/edit#slide=id.p)
 
 Deploy:
 
@@ -50,7 +49,6 @@ Access:
 * Open API: https://translator.broadinstitute.org/molecular_data_provider/api
 * Reasoner API: https://translator.broadinstitute.org/molepro_reasoner/predicates
 * GitHub: https://github.com/broadinstitute/molecular-data-provider
-* [MolePro prototype presentation](https://drive.google.com/file/d/1FdCPB0DsTP0nfhcFmzJx0D6RHuwxW_TO/view).
 
 ### Genetic Knowledge Provider
 
@@ -60,7 +58,6 @@ Access:
 
 * Reasoner API: https://translator.broadinstitute.org/genetics_data_provider/query
 * GitHub: https://github.com/broadinstitute/genetics-kp-dev
-* [Translator Genetic Knowledge Provider presentation](https://drive.google.com/file/d/1w1CeLbiGQIfBUv5KwkJbJLs53PusI35N/view).
 
 ### ICEES+ KP Exposure Provider
 
@@ -74,14 +71,20 @@ Provides:
 
 Access:
 
-* ICEES+
-  * Open API: http://icees.renci.org:16339/apidocs/
+* ICEES+ Open APIs
+  * API KP: http://icees.renci.org:16339/apidocs
+  * API UNC: https://icees.renci.org:16335/apidocs
+  * API NIEHS: https://icees.renci.org:16336/apidocs
+  * API Duke: https://icees.renci.org:16337/apidocs
   * GitHub: https://github.com/NCATS-Tangerine/icees-api
-  * Prototype ICEES+ Wireframe UI: http://robokop.renci.org:3001/
+  * Prototype ICEES+ Wireframe UI: http://robokop.renci.org:3001
 * TranQL: 
-  * Web UI: https://tranql.renci.org/
-* [Prototype presentation](https://docs.google.com/presentation/d/1EOPFjExxdXahKS9vWICl9Bjw3QrWprcyhgMEHkCjxCE/edit#slide=id.p1)
-* [Resources summary slide](https://docs.google.com/presentation/d/1EOPFjExxdXahKS9vWICl9Bjw3QrWprcyhgMEHkCjxCE/edit#slide=id.g7122d33760_7_86)
+  * Web UI: https://tranql.renci.org
+  * [Sample TranQL queries](https://github.com/NCATS-Tangerine/tranql/blob/master/tranql/queries/ICEES+EPR_sample_query)
+* Components
+  * FHIR-PIT: https://github.com/NCATS-Tangerine/FHIR-PIT
+  * Secure Multiparty Computation: https://github.com/RENCI-NRIG/impact-smc
+  * Machine learning: https://github.com/NCATS-Tangerine/iceesnn
 
 Deploy:
 
@@ -99,7 +102,6 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 Access:
 
 * Roadmap on GitHub: https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap
-* [Prototype presentation](https://docs.google.com/presentation/d/1pF7MVm6pDdQLqKaHpGG40H3VjFY1ubfjYBy1Wx_lXHk/edit#slide=id.p)
 
 ### Connections Hypothesis Provider
 
@@ -111,10 +113,6 @@ Provides:
 * Automate Source Selection
 * Effective Question-Response Ranking
 * Actionable Information
-
-Access:
-
-* [Prototype presentation](https://docs.google.com/presentation/d/1Hw2jR9ez57A--dB6HZdqIokS3OLxkgv4/edit#slide=id.p1)
 
 ### DOCKET multiomics provider
 
@@ -156,7 +154,6 @@ Access:
 
 * The BioThings Explorer web UI: https://biothings.io/explorer
 * GitHub: https://github.com/biothings/biothings_explorer
-* [Prototype presentation](https://docs.google.com/presentation/d/1r3gAO3P_YxHUch3Rn9gHZf4FBPp6VxK3O98iVK1_JfI/edit#slide=id.p)
 
 ### ARAGORN
 
@@ -173,7 +170,6 @@ Access:
 * Question Enhancement Resources
   * Open API: https://questionaugmentation.renci.org/apidocs
   * GitHub: https://github.com/ranking-agent/QuestionRewrite
-* [Prototype presentation](https://docs.google.com/presentation/d/1Nt9GbEw-1R5ftAoqa1yJM4S7O5nxH0Ndo1NnoZTWdtE/edit#slide=id.p)
 
 Deploy:
 
@@ -193,7 +189,6 @@ Access:
 * RTX-KG2
   * RTX-KG2 Neo4j UI: https://tiny.cc/arax-kg2-neo4j
   * GitHub: https://github.com/RTXteam/RTX/tree/demo/code/kg2
-* [ARAX prototype presentation](https://docs.google.com/presentation/d/1a93XbdMr0YGWh0BnuJEmcOoudZ9MGNdAh0N4XUTmVyE/edit#slide=id.p)
 
 ### Explanatory ARA
 
@@ -210,10 +205,6 @@ Provides:
 
 * Open-world learning
 
-Access:
-
-* [Prototype presentation](https://drive.google.com/file/d/10dzT5ol8CzFh4VreCzd6ab9OWLZ2PfD4/view)
-
 ### mediKanren 2.0
 
 Based on the [miniKanren](http://minikanren.org/) logic programming language for reasoning over Knowledge Graoph (SemMedDB).
@@ -223,7 +214,6 @@ Access:
 * GitHub: https://github.com/webyrd/mediKanren
 * [MediKanren BioLink interface on GitHub](https://github.com/webyrd/mediKanren/tree/master/biolink)
 
-* [Prototype presentation](https://www.dropbox.com/sh/rh3vtiaulz0ln8i/AACDx4_Cyz0Ez1bprJ0rhvZUa?dl=0&preview=ncats2020launchtalk-pdf.pdf)
 
 Deploy:
 
@@ -256,7 +246,6 @@ Access:
   * [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb
     ) for documentation
   * GitHub: https://github.com/TranslatorIIPrototypes/BLComplianceService
-* [Prototype presentation](https://docs.google.com/presentation/d/1wGwe9syBvKI9-qiw-VOzg486skvUsB-G8vdgCO6jJG8/edit#slide=id.p)
 
 ### (im)proving agent
 
@@ -275,7 +264,6 @@ Access:
   * GitHub: https://github.com/baranzini-lab/PSEV
 * evidARA
   * GitHub: https://github.com/brettasmi/evidARA
-* [Prototype presentation](https://drive.google.com/file/d/1FmVjHEoSwdyq0-NSEewMMusRNBh8OwEE/view)
 
 Deploy:
 
