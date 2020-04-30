@@ -193,7 +193,7 @@ Build and deploy BioThings APIs from flat data files.
   * GitHub: https://github.com/biothings/biothings_studio
   * Docs: https://docs.biothings.io/en/latest/doc/studio.html
 
-#### Deploy
+##### Deploy
 
 Documentation and integration to `d2s` [started here](https://d2s.semanticscience.org/docs/d2s-biothings). See the [BioLink Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
 
@@ -214,7 +214,7 @@ Federated querying of BioThings APIs, done in 2 steps:
 * Build a query path plan defining APIs relevant to answer the query
 * Execute the query path plan to retrieve data from the different APIs.
 
-###### Access
+##### Access
 
 * BioThings Explorer UI demo: https://biothings.io/explorer
 * Docs: [https://biothings_explorer.readthedocs.io/en/latest](https://biothings_explorer.readthedocs.io/en/latest)
@@ -232,7 +232,7 @@ Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowle
 * bridge the precision mismatch between data specificity in KPs and more abstract level of user queries
 * generalize answer ranking
 
-###### Access
+##### Access
 
 * Reasoner and Open API at https://automat.renci.org
 * Question Enhancement Resources
@@ -269,8 +269,6 @@ ARAX is a tool for querying, manipulating, filtering, learning on, and exploring
 
 ### Explanatory ARA
 
-
-
 * Analogical reasoning engine
 
 * Ranking results through explanations
@@ -302,8 +300,6 @@ Based on the [miniKanren](http://minikanren.org/) logic programming language for
 
 ### (im)proving agent
 
-
-
 [![PSEV](https://img.shields.io/github/stars/baranzini-lab/PSEV?label=PSEV&style=social)](https://github.com/baranzini-lab/PSEV)
 
 * SPOKE: a biomedical knowledge metagraph (~25 sources)
@@ -328,33 +324,44 @@ Based on the [miniKanren](http://minikanren.org/) logic programming language for
 
 ---
 
-### Standard Reasoner Implementations (SRI)
+## Standard Reasoner Implementations (SRI)
 
-Services to explore and validate implementation against the Translator standards.
+Services to explore and validate implementations against the Translator standards.
 
-##### Access
+### NodeNormalization Service
 
-* BioLink Model Lookup service
-  * Open API: https://bl-lookup-sri.renci.org/apidocs/
-  * [BioLink Lookup Jupyter Notebook](https://github.com/TranslatorIIPrototypes/bl_lookup/blob/master/documentation/BiolinkLookup.ipynb) for documentation
-  * GitHub: https://github.com/TranslatorIIPrototypes/bl_lookup
-* NodeNormalization Service
-  * Open API: https://nodenormalization-sri.renci.org/apidocs/ 
-  * [NodeNormalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NodeNormalization/blob/master/documentation/NodeNormalization.ipynb) for documentation
-  * GitHub: https://github.com/TranslatorIIPrototypes/NodeNormalization
-* EdgeNormalization Service
-  * Open API: https://edgenormalization-sri.renci.org/apidocs/
-  * [EdgeNormnalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/EdgeNormalization/blob/master/documentation/EdgeNormalization.ipynb) for documentation
-  * GitHub: https://github.com/TranslatorIIPrototypes/EdgeNormalization
-* NameResolution
-  * Open API: http://robokop.renci.org:2434/docs
-  * [NameResolution Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NameResolution/blob/master/documentation/NameResolution.ipynb) for documentation
-  * GitHub: https://github.com/TranslatorIIPrototypes/NameResolution
-* BLCompliance
-  * Open API: https://monarch-sandbox.cgrb.oregonstate.edu/docs
-  * [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb
-    ) for documentation
-  * GitHub: https://github.com/TranslatorIIPrototypes/BLComplianceService
+[![NodeNormalization](https://img.shields.io/github/stars/TranslatorIIPrototypes/NodeNormalization?label=NodeNormalization&style=social)](https://github.com/TranslatorIIPrototypes/NodeNormalization)
+
+* Open API: https://nodenormalization-sri.renci.org/apidocs/ 
+* [NodeNormalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NodeNormalization/blob/master/documentation/NodeNormalization.ipynb) for documentation
+
+### EdgeNormalization Service
+
+[![EdgeNormalization](https://img.shields.io/github/stars/TranslatorIIPrototypes/EdgeNormalization?label=EdgeNormalization&style=social)](https://github.com/TranslatorIIPrototypes/EdgeNormalization)
+
+* Open API: https://edgenormalization-sri.renci.org/apidocs/
+* [EdgeNormnalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/EdgeNormalization/blob/master/documentation/EdgeNormalization.ipynb) for documentation
+
+### NameResolution
+
+[![NameResolution](https://img.shields.io/github/stars/TranslatorIIPrototypes/NameResolution?label=NameResolution&style=social)](https://github.com/TranslatorIIPrototypes/NameResolution)
+
+* Open API: http://robokop.renci.org:2434/docs
+* [NameResolution Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NameResolution/blob/master/documentation/NameResolution.ipynb) for documentation
+
+### BioLink Model Lookup service
+
+[![BioLink Lookup](https://img.shields.io/github/stars/TranslatorIIPrototypes/bl_lookup?label=BL_lookup&style=social)](https://github.com/TranslatorIIPrototypes/bl_lookup)
+
+* Open API: https://bl-lookup-sri.renci.org/apidocs/
+* [BioLink Lookup Jupyter Notebook](https://github.com/TranslatorIIPrototypes/bl_lookup/blob/master/documentation/BiolinkLookup.ipynb) for documentation
+
+### BLCompliance
+
+[![BLCompliance](https://img.shields.io/github/stars/TranslatorIIPrototypes/BLComplianceService?label=BLComplianceService&style=social)](https://github.com/TranslatorIIPrototypes/BLComplianceService)
+
+* Open API: https://monarch-sandbox.cgrb.oregonstate.edu/docs
+* [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb) for documentation
 
 ---
 
