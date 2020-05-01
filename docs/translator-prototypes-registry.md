@@ -121,8 +121,6 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 
 ### Connections Hypothesis Provider
 
-
-
 * Access Heterogeneous Data
    * Researcher clinical data
    * Knowledge captured in the Biomedical Data Translator project
@@ -374,8 +372,4 @@ Services to explore and validate implementations against the Translator standard
 
 ## Additional Translator resources
 
-<<<<<<< Updated upstream
-* [Jupyter Notebook to combine data from various Knowledge Providers](https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb), produced during the Relay Days.
-=======
 [Jupyter Notebook to combine data from various Knowledge Providers](https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb), produced during the Relay Days.
->>>>>>> Stashed changes
