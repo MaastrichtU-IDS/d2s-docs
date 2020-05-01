@@ -218,30 +218,37 @@ Federated querying of BioThings APIs, done in 2 steps:
 
 * BioThings Explorer UI demo: https://biothings.io/explorer
 * Docs: [https://biothings_explorer.readthedocs.io/en/latest](https://biothings_explorer.readthedocs.io/en/latest)
-* [Jupyter Notebooks](https://github.com/biothings/biothings_explorer/tree/master/jupyter%20notebooks)
+* [Jupyter Notebooks on gitHub](https://github.com/biothings/biothings_explorer/tree/master/jupyter%20notebooks)
 
 ---
 
 ### ARAGORN
 
-[![BioThings Explorer](https://img.shields.io/github/stars/TranslatorIIPrototypes/KITCHEN?label=KITCHEN&style=social)](https://github.com/TranslatorIIPrototypes/KITCHEN)
-
-Autonomous Relay Agent for Generation Of Ranked Networks. A tool to query Knowledge Providers (KPs) and synthesize highly ranked answers relevant to user-specified questions
+**Autonomous Relay Agent for Generation Of Ranked Networks**. A tool to query Knowledge Providers (KPs) and synthesize highly ranked answers relevant to user-specified questions
 
 * operate in a federated knowledge environment
 * bridge the precision mismatch between data specificity in KPs and more abstract level of user queries
 * generalize answer ranking
 
-##### Access
+##### Tools
 
-* Reasoner and Open API at https://automat.renci.org
-* Question Enhancement Resources
-  * Open API: https://questionaugmentation.renci.org/apidocs
-  * GitHub: https://github.com/ranking-agent/QuestionRewrite
+[![QuestionRewrite](https://img.shields.io/github/stars/ranking-agent/QuestionRewrite?label=QuestionRewrite&style=social)](https://github.com/ranking-agent/QuestionRewrite)
 
-##### Deploy
+* Question Augmentation
+  - Open API: https://questionaugmentation.renci.org/apidocs
+  - Example Notebooks:
+    - https://github.com/ranking-agent/QuestionRewrite/blob/master/documentation/QuestionAugmentationSimilarity_strider.ipynb
+    - https://github.com/ranking-agent/QuestionRewrite/blob/master/documentation/QuestionAugmentationEdges.ipynb
 
-* Notebook Visualization component at https://github.com/ranking-agent/gamma-viewer
+[![AnswerCoalesce](https://img.shields.io/github/stars/ranking-agent/AnswerCoalesce?label=AnswerCoalesce&style=social)](https://github.com/ranking-agent/AnswerCoalesce)
+
+* Answer Coalescence
+  - Open API: https://answercoalesce.renci.org/apidocs/
+  - Example Notebook: https://github.com/ranking-agent/AnswerCoalesce/blob/master/documentation/AnswerCoalescence.ipynb
+
+[![AnswerCoalesce](https://img.shields.io/github/stars/ranking-agent/gamma-viewer?label=gamma-viewer&style=social)](https://github.com/ranking-agent/gamma-viewer)
+
+* ReasonerStdAPI Message Jupyter Notebook visualizer: https://github.com/ranking-agent/gamma-viewer
 
 ---
 
@@ -367,4 +374,8 @@ Services to explore and validate implementations against the Translator standard
 
 ## Additional Translator resources
 
+<<<<<<< Updated upstream
 * [Jupyter Notebook to combine data from various Knowledge Providers](https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb), produced during the Relay Days.
+=======
+[Jupyter Notebook to combine data from various Knowledge Providers](https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb), produced during the Relay Days.
+>>>>>>> Stashed changes
