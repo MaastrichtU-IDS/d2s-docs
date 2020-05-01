@@ -3,13 +3,13 @@ id: translator-prototypes-registry
 title: Translator Prototypes
 ---
 
-[NCATS Biomedical Data Translator](https://ncats.nih.gov/translator) prototypes registry.
+[NCATS Biomedical Data Translator](https://ncats.nih.gov/translator) prototypes registry and documentation.
+
+> See the official Translator prototypes registry at https://ncatstranslator.github.io
 
 ## Knowledge Providers (KP)
 
 ### COHD Clinical Data2Services Provider
-
-
 
 [![COHD](https://img.shields.io/github/stars/WengLab-InformaticsResearch/cohd_api?label=cohd-api&style=social)](https://github.com/WengLab-InformaticsResearch/cohd_api)
 
