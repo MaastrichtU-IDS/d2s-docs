@@ -67,9 +67,9 @@ We improved the metadata for GeoNames and WorldBank datasets by editing those fi
 
 Some [templates mapping files](https://github.com/MaastrichtU-IDS/d2s-core/tree/master/support/template/dataset/mapping) are generated when creating a new dataset to help start mappings different king of file. Delete them and define mapping files for WorldBank and GeoName.
 
-* WorldBank mappings in [datasets/worldbank/mapping/gdp_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/worldbank/mapping/gdp_mapping.rml.ttl)
-* GeoName mappings in [datasets/geonames/mapping/country_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/geonames/mapping/country_mapping.rml.ttl)
-* Additional mapping file to map WorldBank and GeoNames using ISO2 and ISO3 code correspondance in [datasets/geonames/mapping/iso_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/geonames/mapping/iso_mapping.rml.ttl)
+* WorldBank mappings in [datasets/worldbank/mapping/gdp_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/worldbank/mapping/gdp_mapping.rml.ttl)
+* GeoName mappings in [datasets/geonames/mapping/country_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/geonames/mapping/country_mapping.rml.ttl)
+* Additional mapping file to map WorldBank and GeoNames using ISO2 and ISO3 code correspondance in [datasets/geonames/mapping/iso_mapping.rml.ttl](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/geonames/mapping/iso_mapping.rml.ttl)
 
 > More resources around RML mappings can be found at https://rml.io/, such as [specifications and tutorials](https://rml.io/docs/).
 

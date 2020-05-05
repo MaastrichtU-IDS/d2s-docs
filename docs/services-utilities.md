@@ -412,7 +412,7 @@ Convert RDF data to a neo4j property graph by mapping the RDF to Cypher queries 
 Simple container to execute Bash scripts from URL (e.g. hosted on GitHub). Mainly used to download datasets. See [download script example](https://github.com/MaastrichtU-IDS/d2s-download/blob/master/datasets/TEMPLATE/download.sh).
 
 ```shell
-docker run -it --rm -v $(pwd)/workspace/input:/data umids/d2s-bash-exec:latest https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-transform-template/master/datasets/stitch/download/download-stitch.sh
+docker run -it --rm -v $(pwd)/workspace/input:/data umids/d2s-bash-exec:latest https://raw.githubusercontent.com/MaastrichtU-IDS/d2s-project-template/master/datasets/stitch/download/download-stitch.sh
 ```
 
 > See on [DockerHub](https://hub.docker.com/r/umids/d2s-bash-exec).

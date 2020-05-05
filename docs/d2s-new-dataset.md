@@ -3,7 +3,7 @@ id: d2s-new-dataset
 title: Add a new dataset
 ---
 
-In this documentation I will use [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) as example, but you are encouraged to create a new Git repository [using the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/generate).
+In this documentation I will use [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template) as example, but you are encouraged to create a new Git repository [using the template](https://github.com/MaastrichtU-IDS/d2s-project-template/generate).
 
 ## Generate the new dataset
 
@@ -38,10 +38,10 @@ A dozen of metadata are defined using a SPARQL query for the summary of the data
 
 You can define the files to download using:
 
-* a [Bash file](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/download/download.sh)
+* a [Bash file](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/cohd/download/download.sh)
   * In `datasets/$dataset_id/download/download.sh`
   * Download with `d2s download $dataset_id`
-* a [Jupyter Notebook](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/process-cohd.ipynb)
+* a [Jupyter Notebook](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/cohd/process-cohd.ipynb)
   * In `datasets/$dataset_id/process-dataset_id.ipynb`
 
 The files will be downloaded in `workspace/input/$dataset_id`.

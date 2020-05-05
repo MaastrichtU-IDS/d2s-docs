@@ -15,7 +15,7 @@ The following documentation will use the COHD Clinical CSV data and a Geonames T
 d2s download cohd geonames
 ```
 
-> See the download Bash scripts for [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/download/download.sh) and [GeoNames](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/geonames/download/download.sh).
+> See the download Bash scripts for [COHD](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/cohd/download/download.sh) and [GeoNames](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/geonames/download/download.sh).
 
 > Downloaded files goes to `workspace/input/cohd`
 
@@ -61,7 +61,7 @@ d2s start rmlstreamer rmltask
 
 ### Run job
 
-We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/mapping/associations-mapping.rml.ttl) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
+We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/cohd/mapping/associations-mapping.rml.ttl) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s rml cohd
@@ -201,5 +201,5 @@ After the RDF Knowledge Graph has been generated and loaded in a triplestore, [H
 d2s run compute-hcls-metadata.cwl cohd
 ```
 
-* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
+* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/cohd/metadata) folder.
 * [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.

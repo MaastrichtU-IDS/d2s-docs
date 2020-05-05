@@ -5,13 +5,13 @@ title: Run Argo workflows
 
 [![Argo project](/img/argo-logo.png)](https://argoproj.github.io/argo)
 
-We will use [examples](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) from the [**d2s-transform-template**](https://github.com/MaastrichtU-IDS/d2s-transform-template) project.
+We will use [examples](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/drugbank) from the [**d2s-project-template**](https://github.com/MaastrichtU-IDS/d2s-project-template) project.
 
 ## Clone the repository
 
 ```shell
-git clone --recursive https://github.com/MaastrichtU-IDS/d2s-transform-template.git
-cd d2s-transform-template
+git clone --recursive https://github.com/MaastrichtU-IDS/d2s-project-template.git
+cd d2s-project-template
 ```
 
 ---

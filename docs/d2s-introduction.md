@@ -18,9 +18,9 @@ The `d2s` tool is following the Data2Services framework detailed in this figure:
 
 <img src="/img/d2s-architecture.png" alt="Data2Services infrastructure" style="max-width: 100%; max-height: 100%;" />
 
-We provide [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template/), a GitHub template repository with example mappings and workflows to start building your RDF Knowledge Graph from structured data. 
+We provide [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template/), a GitHub template repository with example mappings and workflows to start building your RDF Knowledge Graph from structured data. 
 
-Feel free to use directly the `d2s-transform-template` repository or create a new GitHub repository [from the template](https://github.com/MaastrichtU-IDS/d2s-transform-template/) to start your own project.
+Feel free to use directly the `d2s-project-template` repository or create a new GitHub repository [from the template](https://github.com/MaastrichtU-IDS/d2s-project-template/) to start your own project.
 
 > See [this presentation](/resources/2020-03-16-data2services-ncats_translator_presentation.pdf) for more details about the Data2Services project.
 
@@ -49,7 +49,7 @@ Data2Services aims to provide an [exhaustive documentation](/docs/d2s-services) 
 
 ## Project folder structure
 
-The [d2s client](https://pypi.org/manage/project/d2s/releases/) use the following directory structure, which can be found in the example project [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) (here with the `cohd` dataset):
+The [d2s client](https://pypi.org/manage/project/d2s/releases/) use the following directory structure, which can be found in the example project [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template) (here with the `cohd` dataset):
 
 ```bash
 root-directory
@@ -88,7 +88,7 @@ root-directory
 The Data2Services project uses multiples Git repositories:
 
 * [d2s-cli](https://github.com/MaastrichtU-IDS/d2s-cli): A Command Line Interface to orchestrate the integration of heterogenous  data and the deployment of services consuming the integrated data (Python).
-  * It will clone and use a [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template) repository to store your project services and workflows settings.
-* [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) as submodule.
-  * [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) (imported as submodule in [d2s-transform-template](https://github.com/MaastrichtU-IDS/d2s-transform-template)): CWL workflows to transform structured data to a target RDF model.
+  * It will clone and use a [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template) repository to store your project services and workflows settings.
+* [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) as submodule.
+  * [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) (imported as submodule in [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template)): CWL workflows to transform structured data to a target RDF model.
 * [d2s-documentation](https://github.com/MaastrichtU-IDS/d2s-documentation): source code of this documentation.

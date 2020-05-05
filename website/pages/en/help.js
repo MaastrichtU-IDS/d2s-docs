@@ -39,9 +39,9 @@ function Help(props) {
     target="_blank" aria-label="Issues d2s-cli on GitHub">
       <img alt="GitHub d2s-cli" src="https://img.shields.io/github/issues/MaastrichtU-IDS/d2s-cli?label=d2s-cli"/>
     </a><br/>
-    <a href="https://github.com/MaastrichtU-IDS/d2s-transform-template/issues"
-    target="_blank" aria-label="Issues d2s-transform-template on GitHub">
-      <img alt="GitHub d2s-transform-template" src="https://img.shields.io/github/issues/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template"/>
+    <a href="https://github.com/MaastrichtU-IDS/d2s-project-template/issues"
+    target="_blank" aria-label="Issues d2s-project-template on GitHub">
+      <img alt="GitHub d2s-project-template" src="https://img.shields.io/github/issues/MaastrichtU-IDS/d2s-project-template?label=d2s-project-template"/>
     </a>
     <p>Browse and submit [issues](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) or [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) 
     for bugs you find or any new features you would like to see implemented 🔧</p>`,

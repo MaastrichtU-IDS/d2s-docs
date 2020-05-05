@@ -15,7 +15,7 @@ Files to process (e.g. CSV, XML) needs to be downloaded before running a workflo
 d2s download <dataset_id>
 ```
 
-> Download script defined in [datasets/dataset_id/download/download.sh](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/cohd/download/download.sh).
+> Download script defined in [datasets/dataset_id/download/download.sh](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/cohd/download/download.sh).
 
 > Downloaded files goes to `workspace/input/dataset_id`.
 
@@ -33,7 +33,7 @@ d2s run <workflow_filename>.cwl <dataset_id>
 
 Use [AutoR2RML](https://github.com/amalic/autor2rml) and Apache Drill to generate R2RML mapping based on input data structure. 
 
-We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
+We provide an example converting a sample of [COHD](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/cohd) (clinical concepts co-occurences from FDA reports) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s download cohd
@@ -46,7 +46,7 @@ By default the workflow runs detached from your terminal, so you can close the W
 
 A workflow allows to **split a property** object: convert CSV/TSV and split statements (e.g. `?s ?p "value1,value2,value3"` would be splitted in 3 statements). 
 
-We provide a example converting a sample of the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
+We provide a example converting a sample of the [EggNOG](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/drugbank) dataset to the [BioLink](https://biolink.github.io/biolink-model/docs/) model:
 
 ```shell
 d2s download eggnog
@@ -61,7 +61,7 @@ d2s run split-csv-virtuoso.cwl eggnog
 
 Use [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) to generate RDF based on the XML structure. 
 
-We provide a example converting a sample of [DrugBank 💊️](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
+We provide a example converting a sample of [DrugBank 💊️](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/drugbank) (drug associations) to the [BioLink](https://biolink.github.io/biolink-model/docs/) model.
 
 ```shell
 d2s download drugbank
@@ -80,7 +80,7 @@ d2s run xml-virtuoso.cwl drugbank
 d2s run compute-hcls-metadata.cwl cohd
 ```
 
-* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/metadata) folder.
+* Insert dataset metadata defined in the [datasets/cohd/metadata](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/cohd/metadata) folder.
 * [Compute and insert HCLS](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats) descriptive statistics using SPARQL queries.
 
 ---
@@ -145,11 +145,11 @@ Converting data with Data2Services relies on 3 steps:
 You can find example of SPARQL mapping queries for:
 
 * **XML** files
-  * [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/drugbank/mappings)
+  * [DrugBank](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/drugbank/mappings)
 * **CSV/TSV** files
-  * [COHD clinical data](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/datasets/cohd/mappings)
-  * [Stitch](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/stitch/mappings/insert-stitch.rq)
-  * [EggNOG](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/datasets/eggnog/mappings/insert-eggnog.rq)
+  * [COHD clinical data](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/cohd/mappings)
+  * [Stitch](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/stitch/mappings/insert-stitch.rq)
+  * [EggNOG](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/eggnog/mappings/insert-eggnog.rq)
 
 > Defining the mappings is the hardest and most cumbersome part of data integration. We are working actively on making it easier, by working on mapping automation and graphical user interfaces.
 
@@ -162,7 +162,7 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
   * And write the statements corresponding to the target representation
 
 
-> [PharmGKB](https://github.com/MaastrichtU-IDS/d2s-transform-template/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq) is a good example of complex TSV file.
+> [PharmGKB](https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/mapping/pharmgkb/transform/1/insert-pharmgkb.rq) is a good example of complex TSV file.
 
 * [xml2rdf](https://github.com/MaastrichtU-IDS/xml2rdf) generates a SPARQL mapping file for each array it detects
   * Mapping generation for XML is still experimental as it is complex to detect which fields should be mapped.
@@ -172,4 +172,4 @@ If you are mapping a dataset for the first time we advice you to run [AutoR2RML]
     * E.g. if `drug:001` from a XML file has multiple `publications` and multiple `synonyms` nodes in its child, then it is preferable to get them in 2 different queries. Retrieving the 2 arrays in a single query would results in the returned row count be a cartesian product of the 2 arrays, which grows exponentially with the size of each array.
     * Final semantic results are the same, but the performance of the transformation is highly impacted.
 
-> [DrugBank](https://github.com/MaastrichtU-IDS/d2s-transform-template/tree/master/mapping/drugbank/transform/1) is a good example of multiple mappings files to handle arrays.
+> [DrugBank](https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/mapping/drugbank/transform/1) is a good example of multiple mappings files to handle arrays.

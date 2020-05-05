@@ -71,10 +71,10 @@ class Footer extends React.Component {
               aria-label="Star this project on GitHub">
               <img alt="GitHub d2s-cli" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-cli?label=d2s-cli&style=social"/>
             </a>
-            <a href="https://github.com/MaastrichtU-IDS/d2s-transform-template"
+            <a href="https://github.com/MaastrichtU-IDS/d2s-project-template"
               target="_blank"
               aria-label="Star this project on GitHub">
-              <img alt="GitHub d2s-transform-template" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-transform-template?label=d2s-transform-template&style=social"/>
+              <img alt="GitHub d2s-project-template" src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-project-template?label=d2s-project-template&style=social"/>
             </a> */}
             <a href={this.props.config.repoUrl}
               target="_blank">
@@ -84,7 +84,7 @@ class Footer extends React.Component {
               target="_blank">
                 The d2s tool
             </a>
-            <a href="https://github.com/MaastrichtU-IDS/d2s-transform-template"
+            <a href="https://github.com/MaastrichtU-IDS/d2s-project-template"
               target="_blank">
                 The template project folder
             </a>

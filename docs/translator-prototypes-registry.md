@@ -34,7 +34,7 @@ title: Translator Prototypes
 * Data2Services documentation at https://d2s.semanticscience.org
 * Data2Services Reasoner API over BioLink RDF at http://api.trek.semanticscience.org (see on [GitHub](https://github.com/MaastrichtU-IDS/d2s-api))
 * Into-the-graph web UI to browse a BioLink RDF triplestore leveraging metadata and services at http://trek.semanticscience.org
-* GitHub repositories for Data2Services [project template](https://github.com/MaastrichtU-IDS/d2s-transform-template) and [command line interface](https://github.com/MaastrichtU-IDS/d2s-cli).
+* GitHub repositories for Data2Services [project template](https://github.com/MaastrichtU-IDS/d2s-project-template) and [command line interface](https://github.com/MaastrichtU-IDS/d2s-cli).
 
 ##### Deploy
 
