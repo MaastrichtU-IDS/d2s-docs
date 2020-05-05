@@ -31,6 +31,7 @@ pipeline {
           },
           deploy: {
             sh 'docker stop d2s-documentation || true'
+            sh 'docker rm d2s-documentation || true'
             sh 'docker run -d --name d2s-documentation --restart unless-stopped -e VIRTUAL_HOST=d2s.semanticscience.org -e LETSENCRYPT_HOST=d2s.semanticscience.org -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
           }
         )
