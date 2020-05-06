@@ -7,43 +7,6 @@ Interfaces to browse and consume Knowledge Graphs data.
 
 ## Integrated interfaces
 
-### BioThings Studio
-
-[![RMLMapper](https://img.shields.io/github/stars/biothings/biothings_studio?label=GitHub&style=social)](https://github.com/biothings/biothings_studio)
-
-[BioThings Studio](https://github.com/biothings/biothings_studio) enables to deploy a Docker container with all dependencies required to build BioThings APIs. See the [BioThings Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
-
-```shell
-d2s start biothings-studio
-
-docker run -d --rm --name studio \
-  -p 8001:8080 -p 8000:8000 -p 9000:9000 \
-  -p 7022:7022 -p 7080:7080 -p 9200:9200 -p 27017:27017 \
-  -v $(pwd)/workspace/biothings:/data \
-  biothings/biothings-studio:0.2a
-```
-
-> Access BioThings Studio web UI at http://localhost:8880
-
-> Access BioThings API at http://localhost:7080
-
-### into-the-graph
-
-[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
-
-[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs.
-
-Browse various SPARQL endpoints and their graphs by providing the endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
-
-See an example deployment at [trek.semanticscience.org](http://trek.semanticscience.org). The SPARQL endpoint can be changed directly on the web app in [/settings](http://trek.semanticscience.org/settings).
-
-```shell
-d2s start into-the-graph
-
-docker run --rm -it -p 8082:80 umids/into-the-graph:latest
-```
-
-> Access on http://localhost:8082
 
 ### d2s-api
 
@@ -63,6 +26,26 @@ docker run -it --rm -p 8080:8080 \
 ```
 
 > Access on http://localhost:8080
+
+---
+
+### into-the-graph
+
+[![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/into-the-graph)
+
+[into-the-graph](https://github.com/MaastrichtU-IDS/into-the-graph) is a lightweight RDF linked data browser supporting graphs.
+
+Browse various SPARQL endpoints and their graphs by providing the endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed [HCLS descriptive statistics](https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats).
+
+See an example deployment at [trek.semanticscience.org](http://trek.semanticscience.org). The SPARQL endpoint can be changed directly on the web app in [/settings](http://trek.semanticscience.org/settings).
+
+```shell
+d2s start into-the-graph
+
+docker run --rm -it -p 8082:80 umids/into-the-graph:latest
+```
+
+> Access on http://localhost:8082
 
 ---
 
@@ -88,6 +71,28 @@ docker run -v $(pwd)/workspace/comunica-settings.json:/usr/share/nginx/html/quer
 > **TODO**: improve how settings and queries pass (script to download them from URL before starting nginx?.
 
 See [documentation](https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/) about Comunica's GraphQL-LD implementation.
+
+---
+
+### BioThings Studio
+
+[![RMLMapper](https://img.shields.io/github/stars/biothings/biothings_studio?label=GitHub&style=social)](https://github.com/biothings/biothings_studio)
+
+[BioThings Studio](https://github.com/biothings/biothings_studio) enables to deploy a Docker container with all dependencies required to build BioThings APIs. See the [BioThings Studio documentation](https://docs.biothings.io/en/latest/doc/studio.html).
+
+```shell
+d2s start biothings-studio
+
+docker run -d --rm --name studio \
+  -p 8001:8080 -p 8000:8000 -p 9000:9000 \
+  -p 7022:7022 -p 7080:7080 -p 9200:9200 -p 27017:27017 \
+  -v $(pwd)/workspace/biothings:/data \
+  biothings/biothings-studio:0.2a
+```
+
+> Access BioThings Studio web UI at http://localhost:8880
+
+> Access BioThings API at http://localhost:7080
 
 ---
 
