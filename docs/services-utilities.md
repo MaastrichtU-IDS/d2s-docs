@@ -11,6 +11,8 @@ Feel free to propose new services using [pull requests](https://github.com/Maast
 
 Each service is run using [Docker](https://docs.docker.com/install/). They have been configured to be deployed on a common network, sharing volumes in `workspace/`. Services configuration can be changed in the docker-compose.yml file or using deployments.
 
+> See also the list of tools to work with knowledge graphs published by STI Innsbruck at [stiinnsbruck.github.io/kgs](https://stiinnsbruck.github.io/kgs)
+
 ---
 
 ## Integrated services

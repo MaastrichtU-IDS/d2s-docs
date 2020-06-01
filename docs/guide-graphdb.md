@@ -48,6 +48,12 @@ If you face permissions issues with importing files try the following command (i
 d2s update --permissions
 ```
 
+### Configure GraphDB
+
+The memory allocated to the Java Virtual Machine can be increase, especially if you are facing Heap Space error when working with big graphs. See [GraphDB documentation about recommended Java memory allocation](http://graphdb.ontotext.com/documentation/standard/requirements.html).
+
+
+
 ## Create repository
 
 ### Using cURL
