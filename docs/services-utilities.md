@@ -379,6 +379,34 @@ docker run -it --rm -v $(pwd)/workspace:/data \
 
 ---
 
+### Jena riot validate RDF
+
+[![GitHub](https://img.shields.io/github/stars/stain/jena-docker?label=GitHub&style=social)](https://github.com/stain/jena-docker)
+
+Validate RDF or convert RDF to RDF using Apache Jena riot tool. See [Jena on DockerHub](https://hub.docker.com/r/stain/jena).
+
+```shell
+docker run --volume $(pwd)/workspace:/rdf stain/jena:3.14.0 riot --validate input.ttl
+```
+
+* Convert RDF to RDF
+
+```shell
+docker run --volume $(pwd)/workspace:/rdf stain/jena:3.14.0 riot --output=NQUADS input.ttl > output.nq
+```
+
+> Jena does not allow to provide a output file, it uses standard output.
+
+Use as [GitHub Action](https://github.com/marketplace/actions/validate-rdf-with-jena):
+
+```yaml
+- uses: vemonet/jena-riot-action@v3.14
+  with:
+    input: my_file.ttl
+```
+
+---
+
 ### Raptor rdf2rdf
 
 [Raptor](http://librdf.org/raptor/rapper.html) is a small and efficient Bash tool to convert from a RDF format to another (nq, nt, ttl, rdf/xml). It can help fix triple normalization and encoding issues.
@@ -432,3 +460,11 @@ docker run -it --rm -v $(pwd)/workspace/input:/data umids/d2s-bash-exec:latest h
 ```shell
 docker run -p 8183:8183 bigcatum/bridgedb
 ```
+
+### RDF tools to try
+
+Interesting tools to work with RDF that have not yet been tried.
+
+* [Astrea](https://astrea.linkeddata.es/): generate SHACL Shape from ontology
+* [AtomGraph json2rdf](https://github.com/AtomGraph/JSON2RDF): convert JSON to generic RDF based on its structure.
+* List of RDF tools published by the Semantic Technologie Institute (STI) Innsbruck: https://stiinnsbruck.github.io/kgs/

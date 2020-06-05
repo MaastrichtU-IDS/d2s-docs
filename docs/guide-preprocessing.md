@@ -78,7 +78,9 @@ Processing large files on node2 can lead to generating an important amount of lo
 
 To clear the memory perform `docker system prune`
 
-Test Drill query:
+## Test Apache Drill
+
+Example to test querying a tabular file with Apache Drill:
 
 ```sql
 select row_number() over (partition by filename) as autor2rml_rownum
@@ -86,13 +88,6 @@ select row_number() over (partition by filename) as autor2rml_rownum
     , NULLIF(trim(columns[1]), '') as `Concept_id_1`
     , NULLIF(trim(columns[2]), '') as `Concept_id_2`
     , NULLIF(trim(columns[3]), '') as `Concept_count`
-    , NULLIF(trim(columns[4]), '') as `Concept_prevalence`
-    , NULLIF(trim(columns[5]), '') as `Chi_square_t`
-    , NULLIF(trim(columns[6]), '') as `Chi_square_p`
-    , NULLIF(trim(columns[7]), '') as `Expected_count`
-    , NULLIF(trim(columns[8]), '') as `Ln_ratio`
-    , NULLIF(trim(columns[9]), '') as `Rel_freq_1`
-    , NULLIF(trim(columns[10]), '') as `Rel_freq_2`
-  from dfs.root.`/data/cohd/paired_concept_counts_associations.tsv` OFFSET 1;
+  from dfs.root.`/data/my_file.tsv` OFFSET 1;
 ```
 
