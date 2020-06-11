@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Data2Services Blog</title>
+        <link>https://d2s.semanticscience.org//blog</link>
+        <description>The best place to stay up-to-date with the latest Data2Services news and events.</description>
+        <lastBuildDate>Mon, 13 Apr 2020 06:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Data2Services Blog</title>
+            <url>https://d2s.semanticscience.org//img/d2s-logo.png</url>
+            <link>https://d2s.semanticscience.org//blog</link>
+        </image>
+        <copyright>Copyright © 2020 Institute of Data Science at Maastricht University</copyright>
+        <item>
+            <title><![CDATA[Publish Nanopublications]]></title>
+            <link>https://d2s.semanticscience.org//blog/2020/04/13/usecase-nanopublication.html</link>
+            <guid>https://d2s.semanticscience.org//blog/2020/04/13/usecase-nanopublication.html</guid>
+            <pubDate>Mon, 13 Apr 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Publish <a href="http://nanopub.org/" target="_blank" rel="nofollow noreferrer noopener">Nanopublications</a> using <a href="https://github.com/peta-pico/nanobench" target="_blank" rel="nofollow noreferrer noopener">Nanobench</a>.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Integrate Geoeconomics datasets]]></title>
+            <link>https://d2s.semanticscience.org//blog/2020/03/23/usecase-geoeconomics.html</link>
+            <guid>https://d2s.semanticscience.org//blog/2020/03/23/usecase-geoeconomics.html</guid>
+            <pubDate>Mon, 23 Mar 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Generate a RDF knowledge graph integrating geographical and economics data from <strong><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD" target="_blank" rel="nofollow noreferrer noopener">WorldBank</a></strong> and <strong><a href="https://www.geonames.org/" target="_blank" rel="nofollow noreferrer noopener">GeoNames</a></strong>. Using Linux or MacOS is recommended as the <a href="https://pypi.org/project/d2s/" target="_blank" rel="nofollow noreferrer noopener">d2s tool</a> support for Windows is still a work in progress.</p>
+]]></description>
+        </item>
+    </channel>
+</rss>

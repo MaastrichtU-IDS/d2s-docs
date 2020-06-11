@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Interfaces · Data2Services</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Interfaces to browse and consume Knowledge Graphs data."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Interfaces · Data2Services"/><meta property="og:type" content="website"/><meta property="og:url" content="https://d2s.semanticscience.org//"/><meta property="og:description" content="Interfaces to browse and consume Knowledge Graphs data."/><meta property="og:image" content="https://d2s.semanticscience.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/d2s-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://d2s.semanticscience.org/blog/atom.xml" title="Data2Services Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://d2s.semanticscience.org/blog/feed.xml" title="Data2Services Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700"/><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/d2s-logo.png" alt="Data2Services"/><h2 class="headerTitleWithLogo">Data2Services</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/d2s-introduction" target="_self">Documentation</a></li><li class=""><a href="/blog/" target="_self">Use-cases</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Get started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Get started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-workspace">Initialize and update</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-services">Start services</a></li><li class="navListItem"><a class="navItem" href="/docs/services-graph-databases">Graph databases</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/services-interfaces">Interfaces</a></li><li class="navListItem"><a class="navItem" href="/docs/services-utilities">Utilities</a></li><li class="navListItem"><a class="navItem" href="/docs/translator-prototypes-registry">Translator Prototypes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrate data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-new-dataset">Add a new dataset</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-rml">Run RML transformations</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-run">Run CWL workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-dipper">Use Monarch Dipper</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-biothings">Use BioThings Studio</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/guide-ontology">Choose an ontology</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-preprocessing">Preprocess input files</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-deploy-app">Deploy services publicly</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-filebrowser">Filebrowser utilities</a></li><li class="navListItem"><a class="navItem" href="/docs/cwl-create">Create a CWL tool</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-docker">Docker guide</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-jenkins">Experimental Jenkins workflows</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup databases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide-graphdb">Setting up GraphDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-virtuoso">Setting up Virtuoso</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-postgres">Setting up PostgreSQL</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mariadb">Setting up MariaDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mysql">Setting up MySQL</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Kubernetes workflows<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/argo-install">Argo installation</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-login">Login to OpenShift</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-volume">Define volumes</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-run">Run Argo workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-commands">Argo commands</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-debug">Debug Argo workflow</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-secret">Use OpenShift secrets</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/MaastrichtU-IDS/d2s-docs/edit/master/docs/services-interfaces.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Interfaces</h1></header><article><div><span><p>Interfaces to browse and consume Knowledge Graphs data.</p>
+<h2><a class="anchor" aria-hidden="true" id="integrated-interfaces"></a><a href="#integrated-interfaces" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Integrated interfaces</h2>
+<h3><a class="anchor" aria-hidden="true" id="d2s-api"></a><a href="#d2s-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>d2s-api</h3>
+<p><a href="https://www.openapis.org/" target="_blank" rel="nofollow noreferrer noopener"><img src="/img/openapi-logo.png" alt="OpenAPI"></a></p>
+<p><a href="https://github.com/MaastrichtU-IDS/d2s-api" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-api?label=GitHub&amp;style=social" alt="GitHub"></a></p>
+<p><a href="https://github.com/MaastrichtU-IDS/d2s-api" target="_blank" rel="nofollow noreferrer noopener">Web services</a> described following the <a href="http://spec.openapis.org/oas/v3.0.1" target="_blank" rel="nofollow noreferrer noopener">OpenAPI 3.0</a> specifications. The generated services enable the user to query a <a href="https://biolink.github.io/biolink-model/" target="_blank" rel="nofollow noreferrer noopener">BioLink-compliant</a> RDF knowledge graph using HTTP request following the <a href="https://github.com/NCATS-Tangerine/NCATS-ReasonerStdAPI/tree/master/API" target="_blank" rel="nofollow noreferrer noopener">Reasoner API Specifications</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> api
+<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -it</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> -p</span> 8080:8080 \
+ <span class="hljs-template-variable"> --net</span> d2s-core_network \
+ <span class="hljs-template-variable"> -e</span> ENDPOINT=<span class="hljs-string">"http://graphdb:7200/repositories/test"</span> \
+  umids/d2s-api
+</code></pre>
+<blockquote>
+<p>Access on <a href="http://localhost:8080" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8080</a></p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="into-the-graph"></a><a href="#into-the-graph" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>into-the-graph</h3>
+<p><a href="https://github.com/MaastrichtU-IDS/into-the-graph" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/MaastrichtU-IDS/into-the-graph?label=GitHub&amp;style=social" alt="GitHub"></a></p>
+<p><a href="https://github.com/MaastrichtU-IDS/into-the-graph" target="_blank" rel="nofollow noreferrer noopener">into-the-graph</a> is a lightweight RDF linked data browser supporting graphs.</p>
+<p>Browse various SPARQL endpoints and their graphs by providing the endpoint URL. It includes a YASGUI editor and provide insights about the graphs content using  precomputed <a href="https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats" target="_blank" rel="nofollow noreferrer noopener">HCLS descriptive statistics</a>.</p>
+<p>See an example deployment at <a href="http://trek.semanticscience.org" target="_blank" rel="nofollow noreferrer noopener">trek.semanticscience.org</a>. The SPARQL endpoint can be changed directly on the web app in <a href="http://trek.semanticscience.org/settings" target="_blank" rel="nofollow noreferrer noopener">/settings</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> into-the-graph
+<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> -it</span><span class="hljs-template-variable"> -p</span> 8082:80 umids/into-the-graph:latest
+</code></pre>
+<blockquote>
+<p>Access on <a href="http://localhost:8082" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8082</a></p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="comunica-widget"></a><a href="#comunica-widget" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comunica Widget</h3>
+<p><a href="https://github.com/comunica/jQuery-Widget.js" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/comunica/jQuery-Widget.js?label=GitHub&amp;style=social" alt="GitHub"></a></p>
+<p>A <a href="http://query.linkeddatafragments.org/" target="_blank" rel="nofollow noreferrer noopener">jQuery widget</a> to query heterogeneous interfaces using Comunica SPARQL and GraphQL.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> comunica
+<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -p</span> 8084:80<span class="hljs-template-variable"> -it</span><span class="hljs-template-variable"> --rm</span> umids/comunica-sparql-widget
+
+<span class="hljs-comment"># Provide a local queries.json file</span><span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -v</span> $(<span class="hljs-built_in">pwd</span>)/workspace/comunica-settings.json:/usr/share/nginx/html/queries.json<span class="hljs-template-variable"> -p</span> 8080:80<span class="hljs-template-variable"> -it</span><span class="hljs-template-variable"> --rm</span> umids/comunica-sparql-widget
+</code></pre>
+<blockquote>
+<p>Access on <a href="http://localhost:8084" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8084</a></p>
+</blockquote>
+<blockquote>
+<p><code>settings.json</code> file and <code>queries</code> needs to be changed before <code>docker build</code>. See <a href="https://github.com/vemonet/jQuery-Widget.js" target="_blank" rel="nofollow noreferrer noopener">documentation</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>TODO</strong>: improve how settings and queries pass (script to download them from URL before starting nginx?.</p>
+</blockquote>
+<p>See <a href="https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/" target="_blank" rel="nofollow noreferrer noopener">documentation</a> about Comunica's GraphQL-LD implementation.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="biothings-studio"></a><a href="#biothings-studio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BioThings Studio</h3>
+<p><a href="https://github.com/biothings/biothings_studio" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/biothings/biothings_studio?label=GitHub&amp;style=social" alt="RMLMapper"></a></p>
+<p><a href="https://github.com/biothings/biothings_studio" target="_blank" rel="nofollow noreferrer noopener">BioThings Studio</a> enables to deploy a Docker container with all dependencies required to build BioThings APIs. See the <a href="https://docs.biothings.io/en/latest/doc/studio.html" target="_blank" rel="nofollow noreferrer noopener">BioThings Studio documentation</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> biothings-studio
+<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -d</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> --name</span> studio \
+ <span class="hljs-template-variable"> -p</span> 8001:8080<span class="hljs-template-variable"> -p</span> 8000:8000<span class="hljs-template-variable"> -p</span> 9000:9000 \
+ <span class="hljs-template-variable"> -p</span> 7022:7022<span class="hljs-template-variable"> -p</span> 7080:7080<span class="hljs-template-variable"> -p</span> 9200:9200<span class="hljs-template-variable"> -p</span> 27017:27017 \
+ <span class="hljs-template-variable"> -v</span> $(<span class="hljs-built_in">pwd</span>)/workspace/biothings:/data \
+  biothings/biothings-studio:0.2a
+</code></pre>
+<blockquote>
+<p>Access BioThings Studio web UI at <a href="http://localhost:8880" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8880</a></p>
+</blockquote>
+<blockquote>
+<p>Access BioThings API at <a href="http://localhost:7080" target="_blank" rel="nofollow noreferrer noopener">http://localhost:7080</a></p>
+</blockquote>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="additional-interfaces"></a><a href="#additional-interfaces" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional interfaces</h2>
+<h3><a class="anchor" aria-hidden="true" id="linkeddatahub"></a><a href="#linkeddatahub" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LinkedDataHub</h3>
+<p><a href="https://github.com/AtomGraph/LinkedDataHub" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/AtomGraph/LinkedDataHub?label=GitHub&amp;style=social" alt=""></a></p>
+<p><a href="https://atomgraph.github.io/LinkedDataHub/" target="_blank" rel="nofollow noreferrer noopener">LinkedDataHub</a> is an <a href="https://github.com/AtomGraph/LinkedDataHub" target="_blank" rel="nofollow noreferrer noopener">Open Source</a> Knowledge Graph management system. You can use it to manage data, create visualizations and build apps on RDF Knowledge Graphs.</p>
+<p>Clone the repository and prepare the environment file:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">git </span><span class="hljs-built_in">clone</span> https://github.com/AtomGraph/LinkedDataHub.git<span class="hljs-keyword">
+cd </span>LinkedDataHub<span class="hljs-keyword">
+cp </span>.env_sample .env
+</code></pre>
+<p>Start LinkedDataHub:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">docker-compose </span><span class="hljs-built_in">up</span><span class="hljs-template-variable"> -d</span>
+</code></pre>
+<blockquote>
+<p>Access LinkedDataHub web UI at <strong><a href="https://localhost:4443" target="_blank" rel="nofollow noreferrer noopener">https://localhost:4443</a></strong></p>
+</blockquote>
+<p>You will need to <strong>accept the risk</strong> due to self-signed certificates.</p>
+<p>You can now follow the web UI instructions to create an account to login to your LinkedDataHub.</p>
+<blockquote>
+<p>Access Fuseki admin UI at <a href="http://localhost:3030/ds" target="_blank" rel="nofollow noreferrer noopener">http://localhost:3030/ds</a></p>
+</blockquote>
+<blockquote>
+<p>Access Fuseki end user UI at <a href="http://localhost:3031/ds?query=select%20*%20where%20{?s%20?p%20?o%20.}%20limit%2010" target="_blank" rel="nofollow noreferrer noopener">http://localhost:3031/ds</a></p>
+</blockquote>
+<p>To stop LinkedDataHub, run from the <code>LinkedDataHub</code> folder:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">docker-compose </span>down
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="linkedpipes"></a><a href="#linkedpipes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LinkedPipes</h3>
+<p><a href="https://linkedpipes.com/" target="_blank" rel="nofollow noreferrer noopener">LinkedPipes</a> is a Suite for Linked Data, with <a href="https://etl.linkedpipes.com/" target="_blank" rel="nofollow noreferrer noopener">ETL</a>, <a href="https://visualization.linkedpipes.com/" target="_blank" rel="nofollow noreferrer noopener">Visualization</a> services and <a href="https://applications.linkedpipes.com" target="_blank" rel="nofollow noreferrer noopener">Applications</a>.</p>
+<p>Try the <a href="https://demo.etl.linkedpipes.com/#/pipelines" target="_blank" rel="nofollow noreferrer noopener">ETL web UI</a> to define data transformation pipelines to RDF:</p>
+<pre><code class="hljs css language-bash">git <span class="hljs-built_in">clone</span> https://github.com/linkedpipes/etl linkedpipes-etl
+<span class="hljs-built_in">cd</span> linkedpipes-etl
+LP_ETL_PORT=8091 docker-compose up -d
+</code></pre>
+<blockquote>
+<p>Access at <a href="http://localhost:8091" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8091</a></p>
+</blockquote>
+<p>LinkedPipes proposes <a href="https://visualization.linkedpipes.com/" target="_blank" rel="nofollow noreferrer noopener">various visualisation services</a>:</p>
+<ul>
+<li><a href="https://github.com/ldvm/LDVMi/tree/master/doc/assistant" target="_blank" rel="nofollow noreferrer noopener">LinkedPipes Visualization Assistant</a>: lets you configure interactive views based on Linked Data</li>
+<li><a href="https://docs.applications.linkedpipes.com/" target="_blank" rel="nofollow noreferrer noopener">LinkedPipes Applications</a>: visualization web platform that allows the users to explore, visualize and publish LinkedData based visualizer applications</li>
+</ul>
+<p>To stop the LinkedPipes ETL, run from the <code>linkedpipes-etl</code> folder:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">docker-compose </span>down
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="yasgui"></a><a href="#yasgui" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>YASGUI</h3>
+<p><a href="http://doc.yasgui.org/" target="_blank" rel="nofollow noreferrer noopener"><img src="/img/yasgui-logo.png" alt="OpenLink Virtuoso"></a></p>
+<p><a href="https://github.com/OpenTriply/YASGUI" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&amp;style=social" alt="GitHub"></a></p>
+<p>The popular <a href="https://hub.docker.com/r/erikap/yasgui" target="_blank" rel="nofollow noreferrer noopener">Yet Another Sparql Graphical User Interface</a>. Integrated to <a href="/docs/services-interfaces#into-the-graph">into-the-graph</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -it</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> --name</span> yasgui<span class="hljs-template-variable"> -p</span> 8088:80 \
+   <span class="hljs-template-variable"> -e</span> <span class="hljs-string">"DEFAULT_SPARQL_ENDPOINT=http://dbpedia.org/sparql"</span> \
+   <span class="hljs-template-variable"> -e</span> <span class="hljs-string">"ENABLE_ENDPOINT_SELECTOR=true"</span> \
+    erikap/yasgui
+</code></pre>
+<blockquote>
+<p>Require the SPARQL endpoint to <a href="https://addons.mozilla.org/fr/firefox/addon/cors-everywhere/" target="_blank" rel="nofollow noreferrer noopener">allow Cross-Origin Requests</a>.</p>
+</blockquote>
+<blockquote>
+<p>Access at <a href="http://localhost:8088" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8088</a></p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="lodestar"></a><a href="#lodestar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LODEstar</h3>
+<p><a href="https://github.com/EBISPOT/lodestar" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/EBISPOT/lodestar?label=GitHub&amp;style=social" alt="GitHub"></a></p>
+<p><a href="https://www.w3.org/TR/sparql11-query/" target="_blank" rel="nofollow noreferrer noopener">SPARQL</a> query and URI resolution, available through <a href="https://hub.docker.com/r/netresearch/lodestar" target="_blank" rel="nofollow noreferrer noopener">DockerHub</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> -d</span><span class="hljs-template-variable"> --name</span> lodestar<span class="hljs-template-variable"> -p</span> 8082:8080 \
+ <span class="hljs-template-variable"> -e</span> ENDPOINT_URL=https://graphdb.dumontierlab.com/repositories/ncats-red-kg \
+ <span class="hljs-template-variable"> -e</span> TOP_RELATIONSHIP=http://w3id.org/biolink/vocab/id,http://w3id.org/biolink/vocab/name,http://w3id.org/biolink/vocab/description \
+ <span class="hljs-template-variable"> -e</span> LABEL=http://w3id.org/biolink/vocab/label \
+ <span class="hljs-template-variable"> -e</span> DESCRIPTION=http://w3id.org/biolink/vocab/description \
+ <span class="hljs-template-variable"> -e</span> MAX_OBJECTS=10 \
+ <span class="hljs-template-variable"> -e</span> SERVICE_BASE_URI=http://localhost:8080/ncats-red-kg netresearch/lodestar
+</code></pre>
+<blockquote>
+<p>Access at <a href="http://localhost:8082/lodestar/sparql" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8082/lodestar/sparql</a></p>
+</blockquote>
+<blockquote>
+<p>Does not support graphs 🚫</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="trifid"></a><a href="#trifid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trifid</h3>
+<p><a href="https://github.com/zazuko/trifid" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/zazuko/trifid?label=GitHub&amp;style=social" alt="GitHub"></a></p>
+<p>Linked Data Server: <a href="http://lod.opentransportdata.swiss/sparql/" target="_blank" rel="nofollow noreferrer noopener">URI dereferencing</a>, custom HTML render, <a href="http://lod.opentransportdata.swiss/sparql/" target="_blank" rel="nofollow noreferrer noopener">YASGUI SPARQL endpoint</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">git </span><span class="hljs-built_in">clone</span> https://github.com/vemonet/trifid.git<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">build</span><span class="hljs-template-variable"> -t</span> trifid ./trifid
+<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> -ti</span><span class="hljs-template-variable"> --name</span> trifid<span class="hljs-template-variable"> -p</span> 8080:8080 trifid<span class="hljs-template-variable"> --sparql-endpoint-url</span>=https://graphdb.dumontierlab.com/repositories/<span class="hljs-built_in">test</span><span class="hljs-template-variable"> --dataset-base-url</span>=https://w3id.org/d2s/
+<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> -ti</span><span class="hljs-template-variable"> --name</span> trifid<span class="hljs-template-variable"> -v</span> /home/vemonet/sandbox/trifid:/data<span class="hljs-template-variable"> -p</span> 8080:8080 trifid<span class="hljs-template-variable"> --config</span>=/data/<span class="hljs-built_in">config</span>-ncats-red-kg.json
+</code></pre>
+<blockquote>
+<p>Go to <a href="http://localhost:8080/dataset/huri/" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8080/dataset/huri/</a> to resolve <a href="https://w3id.org/d2s/dataset/huri/" target="_blank" rel="nofollow noreferrer noopener">https://w3id.org/d2s/dataset/huri/</a></p>
+</blockquote>
+<blockquote>
+<p>Modified version on <a href="https://github.com/vemonet/trifid" target="_blank" rel="nofollow noreferrer noopener">GitHub</a>.</p>
+</blockquote>
+<p><a href="https://github.com/zazuko/trifid" target="_blank" rel="nofollow noreferrer noopener">Original project</a> available on <a href="https://hub.docker.com/r/zazuko/trifid/" target="_blank" rel="nofollow noreferrer noopener">DockerHub</a>. But config not working.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -ti</span><span class="hljs-template-variable"> -p</span> 8080:8080 zazuko/trifid
+<span class="hljs-comment"># Not working, provide env config file?</span><span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -ti</span><span class="hljs-template-variable"> -p</span> 8080:8080<span class="hljs-template-variable"> -e</span> TRIFID_CONFIG=<span class="hljs-built_in">config</span>-ncats-red-kg.json zazuko/trifid<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -ti</span><span class="hljs-template-variable"> -p</span> 8080:8080<span class="hljs-template-variable"> -e</span> SPARQL_ENDPOINT_URL=https://graphdb.dumontierlab.com/repositories/<span class="hljs-built_in">test</span><span class="hljs-template-variable"> -e</span> DATASET_BASE_URL=https://w3id.org/d2s/ zazuko/trifid
+</code></pre>
+<blockquote>
+<p>Access <a href="https://github.com/zazuko/tbbt-ld/blob/master/dist/tbbt.nq" target="_blank" rel="nofollow noreferrer noopener">default example</a> on <a href="http://localhost:8080/data/person/mary-cooper" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8080/data/person/mary-cooper</a> to resolve URI.</p>
+</blockquote>
+<blockquote>
+<p>Does not support graphs 🚫</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="brwsr"></a><a href="#brwsr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>brwsr</h3>
+<p><a href="https://github.com/Data2Semantics/brwsr" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/Data2Semantics/brwsr?label=GitHub&amp;style=social" alt="GitHub"></a></p>
+<p>Lightweight Linked Data Browser.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">git </span><span class="hljs-built_in">clone</span> https://github.com/Data2Semantics/brwsr.git<span class="hljs-keyword">
+docker-compose </span><span class="hljs-built_in">up</span>
+</code></pre>
+<blockquote>
+<p>Go to <a href="http://localhost:5000" target="_blank" rel="nofollow noreferrer noopener">http://localhost:5000</a>.</p>
+</blockquote>
+<blockquote>
+<p>Change the SPARQL endpoint in the <a href="https://github.com/Data2Semantics/brwsr/blob/master/docker-compose.yml" target="_blank" rel="nofollow noreferrer noopener">docker-compose.yml</a>.</p>
+</blockquote>
+<blockquote>
+<p>Does not support graphs 🚫</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="rhizomereye"></a><a href="#rhizomereye" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RhizomerEye</h3>
+<p><a href="https://rhizomer.rhizomik.net/about" target="_blank" rel="nofollow noreferrer noopener">RhizomerEye</a> is a tool to expose a SPARQL endpoint as REST API and deploy a Web UI to browse the triplestore.</p>
+<p>See the source code for the <a href="https://github.com/rhizomik/rhizomerAPI" target="_blank" rel="nofollow noreferrer noopener">RhizomerAPI</a> and <a href="https://github.com/rhizomik/rhizomerEye" target="_blank" rel="nofollow noreferrer noopener">RhizomerEye</a>.</p>
+<p>The Web UI has been deployed publicly for a few triplestores:</p>
+<ul>
+<li><a href="https://rhizomer.rhizomik.net/datasets/covid19/ucsb:Record" target="_blank" rel="nofollow noreferrer noopener">COVID-19</a></li>
+<li><a href="https://rhizomer.rhizomik.net/datasets/dbpedia/describe?uri=http:%2F%2Fdbpedia.org%2Fresource%2FEngland" target="_blank" rel="nofollow noreferrer noopener">DBpedia</a></li>
+</ul>
+<blockquote>
+<p>Deployment will be integrated in <a href="https://pypi.org/project/d2s/" target="_blank" rel="nofollow noreferrer noopener">d2s</a> soon.</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="triplydb"></a><a href="#triplydb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TriplyDB</h3>
+<p>See <a href="https://triply.cc/docs/triply-db-getting-started" target="_blank" rel="nofollow noreferrer noopener">official documentation</a>. It allows to deploy the following services over a triplestore:</p>
+<ul>
+<li><a href="https://triplydb.com/wouter/linkedmdb/sparql/linkedmdb" target="_blank" rel="nofollow noreferrer noopener">YASGUI SPARQL endpoint</a></li>
+<li><a href="https://triplydb.com/wouter/linkedmdb/search/search" target="_blank" rel="nofollow noreferrer noopener">Search index</a> using ElasticSearch.</li>
+<li><a href="https://triplydb.com/wouter/linkedmdb/id/actor/1" target="_blank" rel="nofollow noreferrer noopener">Web UI</a> to resolve and browse a triplestore</li>
+<li>Supports graphs in the <a href="https://triplydb.com/wouter/linkedmdb/table" target="_blank" rel="nofollow noreferrer noopener">TPF table browser</a> (not in the <a href="https://triplydb.com/wouter/linkedmdb/browser?resource=https%3A%2F%2Ftriplydb.com%2Fwouter%2Flinkedmdb%2Fvocab%2FActor&amp;focus=forward" target="_blank" rel="nofollow noreferrer noopener">browser</a>)</li>
+</ul>
+<blockquote>
+<p><a href="https://triplydb.com/" target="_blank" rel="nofollow noreferrer noopener">TriplyDB</a> is hosted centrally and cannot be deployed locally 🚫</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/services-graph-databases"><span class="arrow-prev">← </span><span>Graph databases</span></a><a class="docs-next button" href="/docs/services-utilities"><span>Utilities</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#integrated-interfaces">Integrated interfaces</a><ul class="toc-headings"><li><a href="#d2s-api">d2s-api</a></li><li><a href="#into-the-graph">into-the-graph</a></li><li><a href="#comunica-widget">Comunica Widget</a></li><li><a href="#biothings-studio">BioThings Studio</a></li></ul></li><li><a href="#additional-interfaces">Additional interfaces</a><ul class="toc-headings"><li><a href="#linkeddatahub">LinkedDataHub</a></li><li><a href="#linkedpipes">LinkedPipes</a></li><li><a href="#yasgui">YASGUI</a></li><li><a href="#lodestar">LODEstar</a></li><li><a href="#trifid">Trifid</a></li><li><a href="#brwsr">brwsr</a></li><li><a href="#rhizomereye">RhizomerEye</a></li><li><a href="#triplydb">TriplyDB</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/um_logo.svg" alt="Data2Services" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/d2s-installation">Installation</a><a href="/docs/d2s-services">Start services</a><a href="/docs/d2s-new-dataset">Add a new dataset</a></div><div><h5>Source Code</h5><a href="https://github.com/MaastrichtU-IDS/d2s-docs" target="_blank">This documentation</a><a href="https://github.com/MaastrichtU-IDS/d2s-cli" target="_blank">The d2s tool</a><a href="https://github.com/MaastrichtU-IDS/d2s-project-template" target="_blank">The template project folder</a></div><div><h5>Community</h5><a href="https://maastrichtu-ids.github.io/dsri-documentation/" target="_blank" rel="noreferrer noopener">Data Science Research Infrastructure</a><a href="https://twitter.com/um_ids" target="_blank" rel="noreferrer noopener" aria-label="Follow on Twitter">Twitter</a><a href="https://www.facebook.com/IDSatUM/" target="_blank" rel="noreferrer noopener">Facebook</a></div></section><section class="copyright"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license" target="_blank"><img src="/img/cc-by.svg" alt="cc by license"/></a></div>Copyright © 2020 Institute of Data Science at Maastricht University</section><div><div class="gitter-open-chat-button">Ask about d2s</div><script type="text/javascript">
+        ((window.gitter = {}).chat = {}).options = {
+          showChatByDefault: false,
+          activationElement: '.gitter-open-chat-button',
+          room: 'um-dsri/data2services'
+        };
+      </script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script></div></footer></div></body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Run RML transformations · Data2Services</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF using a declarative mapping language. "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Run RML transformations · Data2Services"/><meta property="og:type" content="website"/><meta property="og:url" content="https://d2s.semanticscience.org//"/><meta property="og:description" content="Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF using a declarative mapping language. "/><meta property="og:image" content="https://d2s.semanticscience.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/d2s-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://d2s.semanticscience.org/blog/atom.xml" title="Data2Services Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://d2s.semanticscience.org/blog/feed.xml" title="Data2Services Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700"/><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/d2s-logo.png" alt="Data2Services"/><h2 class="headerTitleWithLogo">Data2Services</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/d2s-introduction" target="_self">Documentation</a></li><li class=""><a href="/blog/" target="_self">Use-cases</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Integrate data</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Get started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-workspace">Initialize and update</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-services">Start services</a></li><li class="navListItem"><a class="navItem" href="/docs/services-graph-databases">Graph databases</a></li><li class="navListItem"><a class="navItem" href="/docs/services-interfaces">Interfaces</a></li><li class="navListItem"><a class="navItem" href="/docs/services-utilities">Utilities</a></li><li class="navListItem"><a class="navItem" href="/docs/translator-prototypes-registry">Translator Prototypes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrate data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-new-dataset">Add a new dataset</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/d2s-rml">Run RML transformations</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-run">Run CWL workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-dipper">Use Monarch Dipper</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-biothings">Use BioThings Studio</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/guide-ontology">Choose an ontology</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-preprocessing">Preprocess input files</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-deploy-app">Deploy services publicly</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-filebrowser">Filebrowser utilities</a></li><li class="navListItem"><a class="navItem" href="/docs/cwl-create">Create a CWL tool</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-docker">Docker guide</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-jenkins">Experimental Jenkins workflows</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup databases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide-graphdb">Setting up GraphDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-virtuoso">Setting up Virtuoso</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-postgres">Setting up PostgreSQL</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mariadb">Setting up MariaDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mysql">Setting up MySQL</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Kubernetes workflows<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/argo-install">Argo installation</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-login">Login to OpenShift</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-volume">Define volumes</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-run">Run Argo workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-commands">Argo commands</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-debug">Debug Argo workflow</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-secret">Use OpenShift secrets</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/MaastrichtU-IDS/d2s-docs/edit/master/docs/d2s-rml.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Run RML transformations</h1></header><article><div><span><p>Use the <a href="https://rml.io/" target="_blank" rel="nofollow noreferrer noopener">RDF Mapping Language (RML)</a> to map your structured data (CSV, TSV, SQL, XML, JSON, YAML) to RDF using a declarative mapping language.</p>
+<p>By default we use <a href="https://rml.io/yarrrml/" target="_blank" rel="nofollow noreferrer noopener">YARRRML</a>, a YAML mapping language, to make the definition of RML mappings easier. RML mappings defined using Turtle can also be executed.</p>
+<h2><a class="anchor" aria-hidden="true" id="download-files-to-convert"></a><a href="#download-files-to-convert" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download files to convert</h2>
+<p>The following documentation will use the COHD Clinical CSV data and a Geonames TSV dataset as example. Download the dataset, if not already done:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">download</span> cohd geonames
+</code></pre>
+<blockquote>
+<p>See the download Bash scripts for <a href="https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/cohd/download/download.sh" target="_blank" rel="nofollow noreferrer noopener">COHD</a> and <a href="https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/geonames/download/download.sh" target="_blank" rel="nofollow noreferrer noopener">GeoNames</a>.</p>
+</blockquote>
+<blockquote>
+<p>Downloaded files goes to <code>workspace/input/cohd</code></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="run-rml-mapper"></a><a href="#run-rml-mapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run RML Mapper</h2>
+<p>The <a href="https://github.com/RMLio/rmlmapper-java/" target="_blank" rel="nofollow noreferrer noopener">rmlmapper-java</a> execute RML mappings to generate RDF Knowledge Graphs. It loads all data in memory, so be aware when working with big datasets.</p>
+<p>By default <code>d2s rml</code> will execute RML files defined in the RDF Turtle format, in files with the extension <code>.rml.ttl</code> (e.g. <code>datasets/&lt;dataset_id&gt;/mapping/associations-mapping.rml.ttl</code>)</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span>rml cohd<span class="hljs-template-variable"> --mapper</span>
+</code></pre>
+<blockquote>
+<p>Output goes to <code>workspace/import/rmlmapper-associations-mapping_rml_ttl-cohd.nt</code></p>
+</blockquote>
+<p>You can execute <a href="https://rml.io/yarrrml/spec/" target="_blank" rel="nofollow noreferrer noopener">YARRRML</a> mappings defined in files with the extension <code>.yarrr.yml</code>, by providing the argument <code>--yarrrml</code>:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span>rml geonames<span class="hljs-template-variable"> --yarrrml</span><span class="hljs-template-variable"> --mapper</span>
+</code></pre>
+<blockquote>
+<p>If you face memory issues, you might need to change the maximum memory allocated to Java (<code>-xmx</code>), or try using the RMLStreamer documented below.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="run-rml-streamer"></a><a href="#run-rml-streamer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run RML Streamer</h2>
+<p>The <a href="/docs/services-utilities#rmlstreamer">RMLStreamer</a> is a scalable implementation of the <a href="https://rml.io/specs/rml/" target="_blank" rel="nofollow noreferrer noopener">RDF Mapping Language Specifications</a> to generate RDF out of structured input data streams.</p>
+<blockquote>
+<p>⚠️ The RMLStreamer is still in development, some features such as functions are yet to be implemented.</p>
+</blockquote>
+<p>The <a href="https://rml.io/specs/rml/" target="_blank" rel="nofollow noreferrer noopener">RML mappings</a> needs to be defined as in a file with the extension <code>.rml.ttl</code>, in the mapping folder of the dataset to transform, e.g. <code>datasets/dataset_id/mapping/associations-mapping.rml.ttl</code></p>
+<h3><a class="anchor" aria-hidden="true" id="start-apache-flink"></a><a href="#start-apache-flink" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start Apache Flink</h3>
+<p><a href="https://flink.apache.org/" target="_blank" rel="nofollow noreferrer noopener"><img src="/img/flink-logo.png" alt="Apache Flink"></a></p>
+<p>Starting <a href="https://flink.apache.org/" target="_blank" rel="nofollow noreferrer noopener">Apache Flink</a> is required to stream the files:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> rmlstreamer rmltask
+</code></pre>
+<blockquote>
+<p>Access at <a href="http://localhost:8078" target="_blank" rel="nofollow noreferrer noopener">http://localhost:8078</a> to see running jobs.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="run-job"></a><a href="#run-job" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run job</h3>
+<p>We provide an example converting a sample of <a href="https://github.com/MaastrichtU-IDS/d2s-project-template/blob/master/datasets/cohd/mapping/associations-mapping.rml.ttl" target="_blank" rel="nofollow noreferrer noopener">COHD</a> (clinical concepts co-occurences from FDA reports) to the <a href="https://biolink.github.io/biolink-model/docs/" target="_blank" rel="nofollow noreferrer noopener">BioLink</a> model:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span>rml cohd
+</code></pre>
+<blockquote>
+<p>Output goes to <code>workspace/import/rmlstreamer-associations-mapping_rml_ttl-cohd.nt</code> and can then be loaded to a triplestore.</p>
+</blockquote>
+<p>You can also provide <a href="https://rml.io/yarrrml/spec/" target="_blank" rel="nofollow noreferrer noopener">YARRRML</a> files with the extensions <code>.yarrr.yml</code> to be processed to <code>.rml.ttl</code> files before running RML:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span>rml geonames<span class="hljs-template-variable"> --yarrrml</span>
+</code></pre>
+<p>The command run detached by default, you can keep the terminal attached and watch the execution:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span>rml cohd<span class="hljs-template-variable"> --watch</span>
+</code></pre>
+<p>Generate NQuads by adding the graph infos in the <code>rr:subjectMap</code> in RML mappings:</p>
+<pre><code class="hljs css language-turtle">rr:graphMap [ rr:constant &lt;https://w3id.org/trek/graph/drugbank&gt; ];
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="run-on-openshift"></a><a href="#run-on-openshift" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run on OpenShift</h3>
+<p><a href="https://maastrichtu-ids.github.io/dsri-documentation/" target="_blank" rel="nofollow noreferrer noopener"><img src="/img/openshift-logo.png" alt=""></a></p>
+<p>Still experimental, the RMLStreamer can be run on the <strong><a href="https://maastrichtu-ids.github.io/dsri-documentation/" target="_blank" rel="nofollow noreferrer noopener">Data Science Research Infrastructure</a></strong> OpenShift cluster.</p>
+<ul>
+<li><p>See the <a href="https://maastrichtu-ids.github.io/dsri-documentation/docs/deploy-services#apache-flink" target="_blank" rel="nofollow noreferrer noopener">DSRI documentation</a> to deploy Apache Flink.</p></li>
+<li><p>Copy the RMLStreamer.jar file, your mapping files and data files to the pod. It will be proposed when running <code>d2s rml</code> but they could be loaded manually before.</p></li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-comment"># get flink pod id</span><span class="hljs-keyword">
+oc </span><span class="hljs-built_in">get</span> pod<span class="hljs-template-variable"> --selector</span> app=flink<span class="hljs-template-variable"> --selector</span> component=jobmanager<span class="hljs-template-variable"> --no-headers</span><span class="hljs-template-variable"> -o</span>=custom-columns=NAME:.metadata.name
+<span class="hljs-keyword">
+oc </span><span class="hljs-built_in">exec</span> &lt;flink-jobmanager-id&gt;<span class="hljs-template-variable"> --</span><span class="hljs-keyword"> mkdir </span>-p /mnt/workspace/import<span class="hljs-keyword">
+oc </span>rsync workspace/input &lt;flink-jobmanager-id&gt;:/mnt/workspace/<span class="hljs-keyword">
+oc </span>rsync datasets &lt;flink-jobmanager-id&gt;:/mnt/
+</code></pre>
+<blockquote>
+<p>Transferring the files to the Apache Flink storage easily is still a work in progress. Use <code>oc cp</code> if rsync does not work.</p>
+</blockquote>
+<ul>
+<li>Run the RMLStreamer job on the GeoNames example:</li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span>rml geonames<span class="hljs-template-variable"> --openshift</span>
+</code></pre>
+<blockquote>
+<p>The progress of the job can be checked in the Apache Flink web UI.</p>
+</blockquote>
+<blockquote>
+<p>Output file in <code>/mnt/rdf_output-associations-mapping.nt</code> in the pod</p>
+<p>Or in <code>/apache-flink</code> in the persistent storage.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="edit-rml-mappings"></a><a href="#edit-rml-mappings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Edit RML mappings</h2>
+<h3><a class="anchor" aria-hidden="true" id="yarrrml-matey-web-editor"></a><a href="#yarrrml-matey-web-editor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>YARRRML Matey web editor</h3>
+<p><a href="https://rml.io/yarrrml/matey/#edit" target="_blank" rel="nofollow noreferrer noopener"><img src="/img/yarrrml-logo.png" alt=""></a></p>
+<p>The <strong><a href="https://rml.io/yarrrml/matey/#edit" target="_blank" rel="nofollow noreferrer noopener">Matey Web UI editor 🦜</a></strong> is available to easily write RML mappings in <a href="https://yaml.org/" target="_blank" rel="nofollow noreferrer noopener">YAML</a> files using the <a href="https://rml.io/yarrrml/" target="_blank" rel="nofollow noreferrer noopener">YARRRML</a> simplified mapping language. The mappings can be conveniently tested in the browser on a sample of the file to transform.</p>
+<p>RML Specifications can be found as a <a href="https://rml.io/specs/rml/" target="_blank" rel="nofollow noreferrer noopener">W3C unofficial draft</a>.</p>
+<blockquote>
+<p>See the <a href="https://rml.io/" target="_blank" rel="nofollow noreferrer noopener">rml.io</a> website for more documentation about RML and the various tools built and deployed by Ghent University.</p>
+</blockquote>
+<p>YARRRML can also be parsed locally using a npm package:</p>
+<pre><code class="hljs css language-shell">npm i @rmlio/yarrrml-parser<span class="hljs-template-variable"> -g</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="rmhell-web-editor"></a><a href="#rmhell-web-editor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RMHell web editor</h3>
+<p>Similar to Matey, <a href="https://semantifyit.github.io/rml/" target="_blank" rel="nofollow noreferrer noopener"><strong>RMHell web UI editor</strong></a> allow to write YARRRML or RML and test it against a sample input file in a web browser.</p>
+<h3><a class="anchor" aria-hidden="true" id="mapeathor"></a><a href="#mapeathor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mapeathor</h3>
+<p><a href="https://github.com/oeg-upm/Mapeathor" target="_blank" rel="nofollow noreferrer noopener">Mapeathor</a> converts Excel mappings into R2RML, RML or YARRRML mappings. Functions not supported.</p>
+<p>Run Mapeathor locally:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> mapeathor
+</code></pre>
+<p>Make sure the xlsx file is in the mapping folder of the datasets and execute the conversion to YARRRML:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">docker </span><span class="hljs-built_in">exec</span><span class="hljs-template-variable"> -it</span> mapeathor ./run.sh /Mapeathor/data/&lt;dataset_id&gt;/mapping/&lt;mapping_spreadsheet&gt;.xlsx YARRRML
+</code></pre>
+<blockquote>
+<p>Output format can be <code>RML</code>, <code>R2RML</code> and <code>YARRRML</code>.</p>
+</blockquote>
+<blockquote>
+<p>The RML file will be generated in <code>workspace/mapeathor</code></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="using-functions"></a><a href="#using-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using functions</h3>
+<p>RML functions are still not implemented in the RMLStreamer, use the RML Mapper if you want to make use of them. See the <a href="https://rml.io/docs/rmlmapper/default-functions/" target="_blank" rel="nofollow noreferrer noopener">full list of available default functions</a>.</p>
+<p>Example using the <a href="https://rml.io/docs/rmlmapper/default-functions/#split" target="_blank" rel="nofollow noreferrer noopener">split function</a>:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">prefixes:</span>
+  <span class="hljs-attr">grel:</span> <span class="hljs-string">"http://users.ugent.be/~bjdmeest/function/grel.ttl#"</span>
+  <span class="hljs-attr">rdfs:</span> <span class="hljs-string">"http://www.w3.org/2000/01/rdf-schema#"</span>
+  <span class="hljs-attr">gn:</span> <span class="hljs-string">"http://www.geonames.org/ontology#"</span>
+<span class="hljs-attr">mappings:</span>
+  <span class="hljs-attr">neighbours:</span>
+    <span class="hljs-attr">sources:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">['/mnt/workspace/input/geonames/dataset-geonames-countryInfo.csv~csv']</span>
+    <span class="hljs-attr">s:</span> <span class="hljs-string">http://www.geonames.org/ontology#$(ISO)</span>
+    <span class="hljs-attr">po:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">[a,</span> <span class="hljs-string">gn:Country]</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">p:</span> <span class="hljs-string">gn:neighbours</span>
+        <span class="hljs-attr">o:</span>
+            <span class="hljs-attr">function:</span> <span class="hljs-string">grel:string_split</span>
+            <span class="hljs-attr">parameters:</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">[grel:valueParameter,</span> <span class="hljs-string">$(neighbours)]</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">[grel:p_string_sep,</span> <span class="hljs-string">"\|"</span><span class="hljs-string">]</span>
+            <span class="hljs-attr">language:</span> <span class="hljs-string">en</span>
+</code></pre>
+<blockquote>
+<p><code>grel:p_string_sep</code> separators needs to be escaped with <code>\</code></p>
+</blockquote>
+<p>Additional function can be added by integrating them in a <code>.jar</code> file, see the <a href="https://github.com/RMLio/rmlmapper-java#including-functions" target="_blank" rel="nofollow noreferrer noopener">documentation</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="compute-hcls-metadata"></a><a href="#compute-hcls-metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compute HCLS metadata</h2>
+<p>After the RDF Knowledge Graph has been generated and loaded in a triplestore, <a href="https://www.w3.org/TR/hcls-dataset/" target="_blank" rel="nofollow noreferrer noopener">HCLS descriptive metadata and statistics</a> can be easily computed and inserted for the different datasets (graphs in the triplestore), by running a CWL workflow:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">run</span> compute-hcls-metadata.cwl cohd
+</code></pre>
+<ul>
+<li>Insert dataset metadata defined in the <a href="https://github.com/MaastrichtU-IDS/d2s-project-template/tree/master/datasets/cohd/metadata" target="_blank" rel="nofollow noreferrer noopener">datasets/cohd/metadata</a> folder.</li>
+<li><a href="https://github.com/MaastrichtU-IDS/d2s-scripts-repository/tree/master/sparql/compute-hcls-stats" target="_blank" rel="nofollow noreferrer noopener">Compute and insert HCLS</a> descriptive statistics using SPARQL queries.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/d2s-new-dataset"><span class="arrow-prev">← </span><span>Add a new dataset</span></a><a class="docs-next button" href="/docs/d2s-run"><span>Run CWL workflows</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#download-files-to-convert">Download files to convert</a></li><li><a href="#run-rml-mapper">Run RML Mapper</a></li><li><a href="#run-rml-streamer">Run RML Streamer</a><ul class="toc-headings"><li><a href="#start-apache-flink">Start Apache Flink</a></li><li><a href="#run-job">Run job</a></li><li><a href="#run-on-openshift">Run on OpenShift</a></li></ul></li><li><a href="#edit-rml-mappings">Edit RML mappings</a><ul class="toc-headings"><li><a href="#yarrrml-matey-web-editor">YARRRML Matey web editor</a></li><li><a href="#rmhell-web-editor">RMHell web editor</a></li><li><a href="#mapeathor">Mapeathor</a></li><li><a href="#using-functions">Using functions</a></li></ul></li><li><a href="#compute-hcls-metadata">Compute HCLS metadata</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/um_logo.svg" alt="Data2Services" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/d2s-installation">Installation</a><a href="/docs/d2s-services">Start services</a><a href="/docs/d2s-new-dataset">Add a new dataset</a></div><div><h5>Source Code</h5><a href="https://github.com/MaastrichtU-IDS/d2s-docs" target="_blank">This documentation</a><a href="https://github.com/MaastrichtU-IDS/d2s-cli" target="_blank">The d2s tool</a><a href="https://github.com/MaastrichtU-IDS/d2s-project-template" target="_blank">The template project folder</a></div><div><h5>Community</h5><a href="https://maastrichtu-ids.github.io/dsri-documentation/" target="_blank" rel="noreferrer noopener">Data Science Research Infrastructure</a><a href="https://twitter.com/um_ids" target="_blank" rel="noreferrer noopener" aria-label="Follow on Twitter">Twitter</a><a href="https://www.facebook.com/IDSatUM/" target="_blank" rel="noreferrer noopener">Facebook</a></div></section><section class="copyright"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license" target="_blank"><img src="/img/cc-by.svg" alt="cc by license"/></a></div>Copyright © 2020 Institute of Data Science at Maastricht University</section><div><div class="gitter-open-chat-button">Ask about d2s</div><script type="text/javascript">
+        ((window.gitter = {}).chat = {}).options = {
+          showChatByDefault: false,
+          activationElement: '.gitter-open-chat-button',
+          room: 'um-dsri/data2services'
+        };
+      </script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script></div></footer></div></body></html>

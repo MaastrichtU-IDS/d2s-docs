@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Translator Prototypes · Data2Services</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="[NCATS Biomedical Data Translator](https://ncats.nih.gov/translator) prototypes registry and documentation."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Translator Prototypes · Data2Services"/><meta property="og:type" content="website"/><meta property="og:url" content="https://d2s.semanticscience.org//"/><meta property="og:description" content="[NCATS Biomedical Data Translator](https://ncats.nih.gov/translator) prototypes registry and documentation."/><meta property="og:image" content="https://d2s.semanticscience.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/d2s-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://d2s.semanticscience.org/blog/atom.xml" title="Data2Services Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://d2s.semanticscience.org/blog/feed.xml" title="Data2Services Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700"/><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/d2s-logo.png" alt="Data2Services"/><h2 class="headerTitleWithLogo">Data2Services</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/d2s-introduction" target="_self">Documentation</a></li><li class=""><a href="/blog/" target="_self">Use-cases</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Get started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Get started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-workspace">Initialize and update</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-services">Start services</a></li><li class="navListItem"><a class="navItem" href="/docs/services-graph-databases">Graph databases</a></li><li class="navListItem"><a class="navItem" href="/docs/services-interfaces">Interfaces</a></li><li class="navListItem"><a class="navItem" href="/docs/services-utilities">Utilities</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/translator-prototypes-registry">Translator Prototypes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrate data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-new-dataset">Add a new dataset</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-rml">Run RML transformations</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-run">Run CWL workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-dipper">Use Monarch Dipper</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-biothings">Use BioThings Studio</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/guide-ontology">Choose an ontology</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-preprocessing">Preprocess input files</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-deploy-app">Deploy services publicly</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-filebrowser">Filebrowser utilities</a></li><li class="navListItem"><a class="navItem" href="/docs/cwl-create">Create a CWL tool</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-docker">Docker guide</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-jenkins">Experimental Jenkins workflows</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup databases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide-graphdb">Setting up GraphDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-virtuoso">Setting up Virtuoso</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-postgres">Setting up PostgreSQL</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mariadb">Setting up MariaDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mysql">Setting up MySQL</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Kubernetes workflows<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/argo-install">Argo installation</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-login">Login to OpenShift</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-volume">Define volumes</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-run">Run Argo workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-commands">Argo commands</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-debug">Debug Argo workflow</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-secret">Use OpenShift secrets</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/MaastrichtU-IDS/d2s-docs/edit/master/docs/translator-prototypes-registry.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Translator Prototypes</h1></header><article><div><span><p><a href="https://ncats.nih.gov/translator" target="_blank" rel="nofollow noreferrer noopener">NCATS Biomedical Data Translator</a> prototypes registry and documentation.</p>
+<blockquote>
+<p>See the official Translator prototypes registry at <a href="https://ncatstranslator.github.io" target="_blank" rel="nofollow noreferrer noopener">https://ncatstranslator.github.io</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="knowledge-providers-kp"></a><a href="#knowledge-providers-kp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Knowledge Providers (KP)</h2>
+<h3><a class="anchor" aria-hidden="true" id="cohd-clinical-data2services-provider"></a><a href="#cohd-clinical-data2services-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>COHD Clinical Data2Services Provider</h3>
+<p><a href="https://github.com/WengLab-InformaticsResearch/cohd_api" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/WengLab-InformaticsResearch/cohd_api?label=cohd-api&amp;style=social" alt="COHD"></a></p>
+<ul>
+<li>Columbia Open Health Data (COHD)
+<ul>
+<li>Clinical associations mined from observational EHR data</li>
+<li>Conditions, drugs, procedures, gender, race, ethnicity</li>
+<li>EHR prevalence and Co-occurrence count</li>
+<li>Associations calculated from EHR prevalence and co-occurrence count</li>
+<li>Privacy protection measures</li>
+</ul></li>
+</ul>
+<p><a href="https://github.com/MaastrichtU-IDS/d2s-docs" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-docs?label=d2s-docs&amp;style=social" alt="Data2Services documentation"></a></p>
+<ul>
+<li>Data2Services
+<ul>
+<li>A framework and Command Line Interface for building and deploying Translator data and services in a reproducible manner.</li>
+<li>Documentation and tools to transform your data to a BioLink-compliant RDF knowledge graph</li>
+<li>Automatically deploy a Reasoner API over a <a href="https://biolink.github.io/biolink-model/docs/" target="_blank" rel="nofollow noreferrer noopener">BioLink-compliant</a> RDF triplestore</li>
+<li>Deploy additional interfaces to explore the knowledge graph</li>
+</ul></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="access"></a><a href="#access" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>COHD Reasoner API at <a href="http://cohd.io/api" target="_blank" rel="nofollow noreferrer noopener">http://cohd.io/api</a></li>
+<li>Data2Services documentation at <a href="https://d2s.semanticscience.org" target="_blank" rel="nofollow noreferrer noopener">https://d2s.semanticscience.org</a></li>
+<li>Data2Services Reasoner API over BioLink RDF at <a href="http://api.trek.semanticscience.org" target="_blank" rel="nofollow noreferrer noopener">http://api.trek.semanticscience.org</a> (see on <a href="https://github.com/MaastrichtU-IDS/d2s-api" target="_blank" rel="nofollow noreferrer noopener">GitHub</a>)</li>
+<li>Into-the-graph web UI to browse a BioLink RDF triplestore leveraging metadata and services at <a href="http://trek.semanticscience.org" target="_blank" rel="nofollow noreferrer noopener">http://trek.semanticscience.org</a></li>
+<li>GitHub repositories for Data2Services <a href="https://github.com/MaastrichtU-IDS/d2s-project-template" target="_blank" rel="nofollow noreferrer noopener">project template</a> and <a href="https://github.com/MaastrichtU-IDS/d2s-cli" target="_blank" rel="nofollow noreferrer noopener">command line interface</a>.</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h5>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">pip </span><span class="hljs-built_in">install</span><span class="hljs-keyword"> d2s </span>cwlref-runner<span class="hljs-keyword">
+d2s </span><span class="hljs-built_in">init</span> my-project
+</code></pre>
+<blockquote>
+<p>Docker must be installed.</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="molepro-molecular-data-provider"></a><a href="#molepro-molecular-data-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MolePro Molecular Data Provider</h3>
+<p><a href="https://github.com/broadinstitute/molecular-data-provider" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/broadinstitute/molecular-data-provider?label=molecular-data-provider&amp;style=social" alt="MolePro"></a></p>
+<p>A Molecular Data Provider translating molecular scale to systems scale through a Reasoner API.</p>
+<h5><a class="anchor" aria-hidden="true" id="access-1"></a><a href="#access-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>Open API: <a href="https://translator.broadinstitute.org/molecular_data_provider/api" target="_blank" rel="nofollow noreferrer noopener">https://translator.broadinstitute.org/molecular_data_provider/api</a></li>
+<li>Reasoner API: <a href="https://translator.broadinstitute.org/molepro_reasoner/predicates" target="_blank" rel="nofollow noreferrer noopener">https://translator.broadinstitute.org/molepro_reasoner/predicates</a></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="genetic-knowledge-provider"></a><a href="#genetic-knowledge-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Genetic Knowledge Provider</h3>
+<p><a href="https://github.com/broadinstitute/genetics-kp-dev" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/broadinstitute/genetics-kp-dev?label=genetics-kp-dev&amp;style=social" alt="Genetic Knowledge Provider"></a></p>
+<p>A tool to curate genetic associations for complex diseases, interpret their biological effects, and make these data available to the Translator.</p>
+<h5><a class="anchor" aria-hidden="true" id="access-2"></a><a href="#access-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>Reasoner API: <a href="https://translator.broadinstitute.org/genetics_data_provider/query" target="_blank" rel="nofollow noreferrer noopener">https://translator.broadinstitute.org/genetics_data_provider/query</a></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="icees-kp-exposure-provider"></a><a href="#icees-kp-exposure-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ICEES+ KP Exposure Provider</h3>
+<p><a href="https://github.com/NCATS-Tangerine/icees-api" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/NCATS-Tangerine/icees-api?label=icees-api&amp;style=social" alt="ICEES+ KP Exposure Provider"></a></p>
+<ul>
+<li>Patient data + environmental exposures data</li>
+<li>Integrated at patient- and visit-level</li>
+<li>UNC Health Care System (UNCHCS) + NIEHS Environmental Polymorphisms Registry (EPR)</li>
+<li>Observational EHR data, EPR survey data, SNP data, exposures data</li>
+<li>Available for years 2010 – 2016</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="access-3"></a><a href="#access-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>ICEES+ Open APIs
+<ul>
+<li>API KP: <a href="http://icees.renci.org:16339/apidocs" target="_blank" rel="nofollow noreferrer noopener">http://icees.renci.org:16339/apidocs</a></li>
+<li>API UNC: <a href="https://icees.renci.org:16335/apidocs" target="_blank" rel="nofollow noreferrer noopener">https://icees.renci.org:16335/apidocs</a></li>
+<li>API NIEHS: <a href="https://icees.renci.org:16336/apidocs" target="_blank" rel="nofollow noreferrer noopener">https://icees.renci.org:16336/apidocs</a></li>
+<li>API Duke: <a href="https://icees.renci.org:16337/apidocs" target="_blank" rel="nofollow noreferrer noopener">https://icees.renci.org:16337/apidocs</a></li>
+<li>Prototype ICEES+ Wireframe UI: <a href="http://robokop.renci.org:3001" target="_blank" rel="nofollow noreferrer noopener">http://robokop.renci.org:3001</a></li>
+</ul></li>
+<li>TranQL:
+<ul>
+<li>Web UI: <a href="https://tranql.renci.org" target="_blank" rel="nofollow noreferrer noopener">https://tranql.renci.org</a></li>
+<li><a href="https://github.com/NCATS-Tangerine/tranql/blob/master/tranql/queries/ICEES+EPR_sample_query" target="_blank" rel="nofollow noreferrer noopener">Sample TranQL queries</a></li>
+</ul></li>
+<li>Components
+<ul>
+<li>FHIR-PIT: <a href="https://github.com/NCATS-Tangerine/FHIR-PIT" target="_blank" rel="nofollow noreferrer noopener">https://github.com/NCATS-Tangerine/FHIR-PIT</a></li>
+<li>Secure Multiparty Computation: <a href="https://github.com/RENCI-NRIG/impact-smc" target="_blank" rel="nofollow noreferrer noopener">https://github.com/RENCI-NRIG/impact-smc</a></li>
+<li>Machine learning: <a href="https://github.com/NCATS-Tangerine/iceesnn" target="_blank" rel="nofollow noreferrer noopener">https://github.com/NCATS-Tangerine/iceesnn</a></li>
+</ul></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="deploy-1"></a><a href="#deploy-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h5>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">git </span><span class="hljs-built_in">clone</span> https://github.com/NCATS-Tangerine/icees-api.git<span class="hljs-keyword">
+cd </span>icees-api
+<span class="hljs-comment"># Edit .env</span><span class="hljs-keyword">
+docker-compose </span><span class="hljs-built_in">up</span><span class="hljs-template-variable"> --build</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="text-mining-provider"></a><a href="#text-mining-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text Mining Provider</h3>
+<p><a href="https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/NCATSTranslator/Text-Mining-Provider-Roadmap?label=Text-Mining-Provider-Roadmap&amp;style=social" alt="Text Mining Provider roadmap"></a></p>
+<p>Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined from the available full-text biomedical literature using high-performance text mining systems</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="connections-hypothesis-provider"></a><a href="#connections-hypothesis-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connections Hypothesis Provider</h3>
+<ul>
+<li>Access Heterogeneous Data
+<ul>
+<li>Researcher clinical data</li>
+<li>Knowledge captured in the Biomedical Data Translator project</li>
+</ul></li>
+<li>Automate Source Selection</li>
+<li>Effective Question-Response Ranking</li>
+<li>Actionable Information</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="docket-multiomics-provider"></a><a href="#docket-multiomics-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DOCKET multiomics provider</h3>
+<p><a href="https://github.com/PriceLab/DOCKET" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/PriceLab/DOCKET?label=DOCKET&amp;style=social" alt="DOCKET multiomics provider"></a></p>
+<ul>
+<li><p>Big GIM (Gene Interaction Miner), function interaction data for all pairs of genes.  Functional interaction data are available from four different sources:  1) tissue-specific gene expression correlations from healthy tissue  samples (GTEx), 2) tissue-specific gene expression correlations from  cancer samples (TCGA), 3) tissue-specific probabilities of function  interaction (GIANT), and 4) direct interactions (BioGRID).</p></li>
+<li><p>Big CLAM (Cell Line Association Miner), integrates large-scale high-quality data of various cell line  resources to uncover associations between genomic and molecular features of cell lines, drug response measurements and gene knockdown viability  scores. The cell line data comes from five different sources: 1) CCLE -  Cancer Cell Line Encyclopedia, 2) GDSC - Genomics of Drug Sensitivity in Cancer, 3) CTRP - Cancer Therapeutics Response Portal, 4) CMap -  Connectivity Map, and 5) CDM - Cancer Dependency Map.</p></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="access-4"></a><a href="#access-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>Reasoner API: <a href="http://biggim.ncats.io/api" target="_blank" rel="nofollow noreferrer noopener">http://biggim.ncats.io/api</a></li>
+<li><a href="https://drive.google.com/drive/u/0/folders/19CT2bu1kzVnXgORhgIQijJd7x8O8Ez6D" target="_blank" rel="nofollow noreferrer noopener">Running instructions</a></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="deploy-2"></a><a href="#deploy-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h5>
+<p>Documentation and integration to <code>d2s</code> <a href="https://d2s.semanticscience.org/docs/services-utilities#docket-multiomics-data-provider" target="_blank" rel="nofollow noreferrer noopener">started here</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> docket
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="biothings-api"></a><a href="#biothings-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BioThings API</h3>
+<p><a href="https://github.com/biothings/biothings.api" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/biothings/biothings.api?label=biothings.api&amp;style=social" alt="BioThings API"></a></p>
+<p>Build and deploy BioThings APIs from flat data files.</p>
+<ul>
+<li>API-fy knowledge sources on demand</li>
+<li>Use BioThings SDK in Python to download and parse input data sources</li>
+<li>Integrate your API to a meta-KG using Smart API</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="access-5"></a><a href="#access-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li><p>Translator KP APIs powered by BioThings SDK: <a href="https://biothings.ncats.io" target="_blank" rel="nofollow noreferrer noopener">https://biothings.ncats.io</a></p></li>
+<li><p>BioThings SDK</p>
+<ul>
+<li>Docs: <a href="https://docs.biothings.io" target="_blank" rel="nofollow noreferrer noopener">https://docs.biothings.io</a></li>
+<li>PyPI package: <a href="https://pypi.org/project/biothings" target="_blank" rel="nofollow noreferrer noopener">https://pypi.org/project/biothings</a></li>
+</ul></li>
+<li><p>SmartAPI: <a href="https://smart-api.info" target="_blank" rel="nofollow noreferrer noopener">https://smart-api.info</a></p>
+<ul>
+<li>GitHub: <a href="https://github.com/SmartAPI/smartAPI" target="_blank" rel="nofollow noreferrer noopener">https://github.com/SmartAPI/smartAPI</a></li>
+<li>Up-to-date Meta-KG: <a href="https://smart-api.info/registry/translator/meta-kg" target="_blank" rel="nofollow noreferrer noopener">https://smart-api.info/registry/translator/meta-kg</a></li>
+</ul></li>
+</ul>
+<ul>
+<li><p>Example Disease KP API: <a href="https://biothings.ncats.io/DISEASES" target="_blank" rel="nofollow noreferrer noopener">https://biothings.ncats.io/DISEASES</a></p>
+<ul>
+<li>Knowledge source: <a href="https://diseases.jensenlab.org" target="_blank" rel="nofollow noreferrer noopener">https://diseases.jensenlab.org</a></li>
+<li>GitHub: <a href="https://github.com/kevinxin90/DISEASES" target="_blank" rel="nofollow noreferrer noopener">https://github.com/kevinxin90/DISEASES</a></li>
+</ul></li>
+<li><p>Up-to-date Meta-KG: <a href="https://smart-api.info/registry/translator/meta-kg" target="_blank" rel="nofollow noreferrer noopener">https://smart-api.info/registry/translator/meta-kg</a></p></li>
+<li><p>Service KP milestone dashboard: <a href="https://github.com/orgs/biothings/projects/5" target="_blank" rel="nofollow noreferrer noopener">https://github.com/orgs/biothings/projects/5</a></p></li>
+<li><p>BioThings Studio</p>
+<ul>
+<li>GitHub: <a href="https://github.com/biothings/biothings_studio" target="_blank" rel="nofollow noreferrer noopener">https://github.com/biothings/biothings_studio</a></li>
+<li>Docs: <a href="https://docs.biothings.io/en/latest/doc/studio.html" target="_blank" rel="nofollow noreferrer noopener">https://docs.biothings.io/en/latest/doc/studio.html</a></li>
+</ul></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="deploy-3"></a><a href="#deploy-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h5>
+<p>Documentation and integration to <code>d2s</code> <a href="https://d2s.semanticscience.org/docs/d2s-biothings" target="_blank" rel="nofollow noreferrer noopener">started here</a>. See the <a href="https://docs.biothings.io/en/latest/doc/studio.html" target="_blank" rel="nofollow noreferrer noopener">BioLink Studio documentation</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> biothings-studio
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="autonomous-relay-agent-ara"></a><a href="#autonomous-relay-agent-ara" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Autonomous Relay Agent (ARA)</h2>
+<h3><a class="anchor" aria-hidden="true" id="biothings-explorer"></a><a href="#biothings-explorer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BioThings Explorer</h3>
+<p><a href="https://github.com/biothings/biothings_explorer" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/biothings/biothings_explorer?label=biothings-explorer&amp;style=social" alt="BioThings Explorer"></a></p>
+<p>Federated querying of BioThings APIs, done in 2 steps:</p>
+<ul>
+<li>Build a query path plan defining APIs relevant to answer the query</li>
+<li>Execute the query path plan to retrieve data from the different APIs.</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="access-6"></a><a href="#access-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>BioThings Explorer UI demo: <a href="https://biothings.io/explorer" target="_blank" rel="nofollow noreferrer noopener">https://biothings.io/explorer</a></li>
+<li>Docs: <a href="https://biothings_explorer.readthedocs.io/en/latest" target="_blank" rel="nofollow noreferrer noopener">https://biothings_explorer.readthedocs.io/en/latest</a></li>
+<li><a href="https://github.com/biothings/biothings_explorer/tree/master/jupyter%20notebooks" target="_blank" rel="nofollow noreferrer noopener">Jupyter Notebooks on gitHub</a></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="aragorn"></a><a href="#aragorn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ARAGORN</h3>
+<p><strong>Autonomous Relay Agent for Generation Of Ranked Networks</strong>. A tool to query Knowledge Providers (KPs) and synthesize highly ranked answers relevant to user-specified questions</p>
+<ul>
+<li>operate in a federated knowledge environment</li>
+<li>bridge the precision mismatch between data specificity in KPs and more abstract level of user queries</li>
+<li>generalize answer ranking</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="tools"></a><a href="#tools" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tools</h5>
+<p><a href="https://github.com/ranking-agent/QuestionRewrite" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/ranking-agent/QuestionRewrite?label=QuestionRewrite&amp;style=social" alt="QuestionRewrite"></a></p>
+<ul>
+<li>Question Augmentation
+<ul>
+<li>Open API: <a href="https://questionaugmentation.renci.org/apidocs" target="_blank" rel="nofollow noreferrer noopener">https://questionaugmentation.renci.org/apidocs</a></li>
+<li>Example Notebooks:
+<ul>
+<li><a href="https://github.com/ranking-agent/QuestionRewrite/blob/master/documentation/QuestionAugmentationSimilarity_strider.ipynb" target="_blank" rel="nofollow noreferrer noopener">https://github.com/ranking-agent/QuestionRewrite/blob/master/documentation/QuestionAugmentationSimilarity_strider.ipynb</a></li>
+<li><a href="https://github.com/ranking-agent/QuestionRewrite/blob/master/documentation/QuestionAugmentationEdges.ipynb" target="_blank" rel="nofollow noreferrer noopener">https://github.com/ranking-agent/QuestionRewrite/blob/master/documentation/QuestionAugmentationEdges.ipynb</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><a href="https://github.com/ranking-agent/AnswerCoalesce" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/ranking-agent/AnswerCoalesce?label=AnswerCoalesce&amp;style=social" alt="AnswerCoalesce"></a></p>
+<ul>
+<li>Answer Coalescence
+<ul>
+<li>Open API: <a href="https://answercoalesce.renci.org/apidocs/" target="_blank" rel="nofollow noreferrer noopener">https://answercoalesce.renci.org/apidocs/</a></li>
+<li>Example Notebook: <a href="https://github.com/ranking-agent/AnswerCoalesce/blob/master/documentation/AnswerCoalescence.ipynb" target="_blank" rel="nofollow noreferrer noopener">https://github.com/ranking-agent/AnswerCoalesce/blob/master/documentation/AnswerCoalescence.ipynb</a></li>
+</ul></li>
+</ul>
+<p><a href="https://github.com/ranking-agent/gamma-viewer" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/ranking-agent/gamma-viewer?label=gamma-viewer&amp;style=social" alt="AnswerCoalesce"></a></p>
+<ul>
+<li>ReasonerStdAPI Message Jupyter Notebook visualizer: <a href="https://github.com/ranking-agent/gamma-viewer" target="_blank" rel="nofollow noreferrer noopener">https://github.com/ranking-agent/gamma-viewer</a></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="arax"></a><a href="#arax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ARAX</h3>
+<p><a href="https://github.com/RTXteam/RTX" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/RTXteam/RTX?label=RTX&amp;style=social" alt="RTX"></a></p>
+<p>Team Expander Agent: <em>A tool for enhancing query graphs</em>. ARAX exposes all graph reasoning capabilities within a domain specific language: <strong>ARAXi</strong>.
+ARAX is a tool for querying, manipulating, filtering, learning on, and exploring biomedical knowledge graphs.</p>
+<h5><a class="anchor" aria-hidden="true" id="access-7"></a><a href="#access-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>ARAX
+<ul>
+<li>Open API: <a href="https://tiny.cc/arax-api-docs" target="_blank" rel="nofollow noreferrer noopener">https://tiny.cc/arax-api-docs</a></li>
+<li>GitHub: <a href="https://github.com/RTXteam/RTX/tree/master/code/ARAX" target="_blank" rel="nofollow noreferrer noopener">https://github.com/RTXteam/RTX/tree/master/code/ARAX</a></li>
+<li>GUI: <a href="https://arax.rtx.ai/" target="_blank" rel="nofollow noreferrer noopener">https://arax.rtx.ai/</a></li>
+<li><a href="https://github.com/RTXteam/RTX/blob/demo/code/ARAX/Examples/ARAX_Example3.ipynb" target="_blank" rel="nofollow noreferrer noopener">ARAX examples Notebook</a></li>
+<li><a href="https://github.com/RTXteam/RTX/blob/master/code/ARAX/Documentation/DSL_Documentation.md" target="_blank" rel="nofollow noreferrer noopener">ARAXi documentation</a></li>
+<li><a href="https://github.com/RTXteam/RTX/blob/master/README.md" target="_blank" rel="nofollow noreferrer noopener">Team/Tool/Code Readme</a></li>
+</ul></li>
+<li>RTX-KG2
+<ul>
+<li>RTX-KG2 Neo4j UI: <a href="https://tiny.cc/arax-kg2-neo4j" target="_blank" rel="nofollow noreferrer noopener">https://tiny.cc/arax-kg2-neo4j</a></li>
+<li>GitHub: <a href="https://github.com/RTXteam/RTX/tree/demo/code/kg2" target="_blank" rel="nofollow noreferrer noopener">https://github.com/RTXteam/RTX/tree/demo/code/kg2</a></li>
+</ul></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="explanatory-ara"></a><a href="#explanatory-ara" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Explanatory ARA</h3>
+<ul>
+<li><p>Analogical reasoning engine</p></li>
+<li><p>Ranking results through explanations</p>
+<ul>
+<li>Explanatory evidence via NLU model</li>
+<li>Explanatory evidence via other methods</li>
+<li>Explaining information vs. explaining decisions</li>
+</ul></li>
+<li><p>Visualization of biomedical context</p></li>
+<li><p>Open-world learning</p></li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="medikanren-20"></a><a href="#medikanren-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mediKanren 2.0</h3>
+<p><a href="https://github.com/webyrd/mediKanren" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/webyrd/mediKanren?label=mediKanren&amp;style=social" alt="mediKanren"></a></p>
+<p>Based on the <a href="http://minikanren.org/" target="_blank" rel="nofollow noreferrer noopener">miniKanren</a> logic programming language for reasoning over Knowledge Graoph (SemMedDB).</p>
+<h5><a class="anchor" aria-hidden="true" id="access-8"></a><a href="#access-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li><a href="https://github.com/webyrd/mediKanren/tree/master/biolink" target="_blank" rel="nofollow noreferrer noopener">MediKanren BioLink interface on GitHub</a></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="deploy-4"></a><a href="#deploy-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h5>
+<ul>
+<li>See <a href="https://github.com/webyrd/mediKanren#setup" target="_blank" rel="nofollow noreferrer noopener">documentation on GitHub</a>.</li>
+</ul>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="improving-agent"></a><a href="#improving-agent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(im)proving agent</h3>
+<p><a href="https://github.com/baranzini-lab/PSEV" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/baranzini-lab/PSEV?label=PSEV&amp;style=social" alt="PSEV"></a></p>
+<ul>
+<li>SPOKE: a biomedical knowledge metagraph (~25 sources)
+<ul>
+<li>reasoning to support facts from empirical evidences (Electronic Health Records, multi-omics studies)</li>
+</ul></li>
+</ul>
+<p><a href="https://github.com/brettasmi/evidARA" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/brettasmi/evidARA?label=evidARA&amp;style=social" alt="evidARA"></a></p>
+<ul>
+<li>EvidARA
+<ul>
+<li>takes query from ARS and extracts a graph q (output graph) from its internal Knowledge Network (SPOKE)</li>
+<li>checks empirical evidence from raw data of cohorts (EHR and multi-omics studies)</li>
+</ul></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="access-9"></a><a href="#access-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access</h5>
+<ul>
+<li>SPOKE
+<ul>
+<li>GitHub: <a href="https://github.com/baranzini-lab/PSEV" target="_blank" rel="nofollow noreferrer noopener">https://github.com/baranzini-lab/PSEV</a></li>
+</ul></li>
+<li>evidARA
+<ul>
+<li>GitHub: <a href="https://github.com/brettasmi/evidARA" target="_blank" rel="nofollow noreferrer noopener">https://github.com/brettasmi/evidARA</a></li>
+</ul></li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="deploy-5"></a><a href="#deploy-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy</h5>
+<ul>
+<li>SPOKE on neo4j. See <a href="https://github.com/baranzini-lab/PSEV" target="_blank" rel="nofollow noreferrer noopener">documentation on GitHub</a>.</li>
+</ul>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="standard-reasoner-implementations-sri"></a><a href="#standard-reasoner-implementations-sri" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Standard Reasoner Implementations (SRI)</h2>
+<p>Services to explore and validate implementations against the Translator standards.</p>
+<h3><a class="anchor" aria-hidden="true" id="nodenormalization-service"></a><a href="#nodenormalization-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NodeNormalization Service</h3>
+<p><a href="https://github.com/TranslatorIIPrototypes/NodeNormalization" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/TranslatorIIPrototypes/NodeNormalization?label=NodeNormalization&amp;style=social" alt="NodeNormalization"></a></p>
+<ul>
+<li>Open API: <a href="https://nodenormalization-sri.renci.org/apidocs/" target="_blank" rel="nofollow noreferrer noopener">https://nodenormalization-sri.renci.org/apidocs/</a></li>
+<li><a href="https://github.com/TranslatorIIPrototypes/NodeNormalization/blob/master/documentation/NodeNormalization.ipynb" target="_blank" rel="nofollow noreferrer noopener">NodeNormalization Jupyter Notebook</a> for documentation</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="edgenormalization-service"></a><a href="#edgenormalization-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EdgeNormalization Service</h3>
+<p><a href="https://github.com/TranslatorIIPrototypes/EdgeNormalization" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/TranslatorIIPrototypes/EdgeNormalization?label=EdgeNormalization&amp;style=social" alt="EdgeNormalization"></a></p>
+<ul>
+<li>Open API: <a href="https://edgenormalization-sri.renci.org/apidocs/" target="_blank" rel="nofollow noreferrer noopener">https://edgenormalization-sri.renci.org/apidocs/</a></li>
+<li><a href="https://github.com/TranslatorIIPrototypes/EdgeNormalization/blob/master/documentation/EdgeNormalization.ipynb" target="_blank" rel="nofollow noreferrer noopener">EdgeNormnalization Jupyter Notebook</a> for documentation</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="nameresolution"></a><a href="#nameresolution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NameResolution</h3>
+<p><a href="https://github.com/TranslatorIIPrototypes/NameResolution" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/TranslatorIIPrototypes/NameResolution?label=NameResolution&amp;style=social" alt="NameResolution"></a></p>
+<ul>
+<li>Open API: <a href="http://robokop.renci.org:2434/docs" target="_blank" rel="nofollow noreferrer noopener">http://robokop.renci.org:2434/docs</a></li>
+<li><a href="https://github.com/TranslatorIIPrototypes/NameResolution/blob/master/documentation/NameResolution.ipynb" target="_blank" rel="nofollow noreferrer noopener">NameResolution Jupyter Notebook</a> for documentation</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="biolink-model-lookup-service"></a><a href="#biolink-model-lookup-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BioLink Model Lookup service</h3>
+<p><a href="https://github.com/TranslatorIIPrototypes/bl_lookup" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/TranslatorIIPrototypes/bl_lookup?label=BL_lookup&amp;style=social" alt="BioLink Lookup"></a></p>
+<ul>
+<li>Open API: <a href="https://bl-lookup-sri.renci.org/apidocs/" target="_blank" rel="nofollow noreferrer noopener">https://bl-lookup-sri.renci.org/apidocs/</a></li>
+<li><a href="https://github.com/TranslatorIIPrototypes/bl_lookup/blob/master/documentation/BiolinkLookup.ipynb" target="_blank" rel="nofollow noreferrer noopener">BioLink Lookup Jupyter Notebook</a> for documentation</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="blcompliance"></a><a href="#blcompliance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BLCompliance</h3>
+<p><a href="https://github.com/TranslatorIIPrototypes/BLComplianceService" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/github/stars/TranslatorIIPrototypes/BLComplianceService?label=BLComplianceService&amp;style=social" alt="BLCompliance"></a></p>
+<ul>
+<li>Open API: <a href="https://monarch-sandbox.cgrb.oregonstate.edu/docs" target="_blank" rel="nofollow noreferrer noopener">https://monarch-sandbox.cgrb.oregonstate.edu/docs</a></li>
+<li><a href="https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb" target="_blank" rel="nofollow noreferrer noopener">BLCompliance Jupyter Notebook</a> for documentation</li>
+</ul>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="additional-translator-resources"></a><a href="#additional-translator-resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional Translator resources</h2>
+<p><a href="https://github.com/vemonet/translator-sparql-notebook/blob/master/translator-relay-cluster4.ipynb" target="_blank" rel="nofollow noreferrer noopener">Jupyter Notebook to combine data from various Knowledge Providers</a>, produced during the Relay Days.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/services-utilities"><span class="arrow-prev">← </span><span>Utilities</span></a><a class="docs-next button" href="/docs/d2s-new-dataset"><span>Add a new dataset</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#knowledge-providers-kp">Knowledge Providers (KP)</a><ul class="toc-headings"><li><a href="#cohd-clinical-data2services-provider">COHD Clinical Data2Services Provider</a></li><li><a href="#molepro-molecular-data-provider">MolePro Molecular Data Provider</a></li><li><a href="#genetic-knowledge-provider">Genetic Knowledge Provider</a></li><li><a href="#icees-kp-exposure-provider">ICEES+ KP Exposure Provider</a></li><li><a href="#text-mining-provider">Text Mining Provider</a></li><li><a href="#connections-hypothesis-provider">Connections Hypothesis Provider</a></li><li><a href="#docket-multiomics-provider">DOCKET multiomics provider</a></li><li><a href="#biothings-api">BioThings API</a></li></ul></li><li><a href="#autonomous-relay-agent-ara">Autonomous Relay Agent (ARA)</a><ul class="toc-headings"><li><a href="#biothings-explorer">BioThings Explorer</a></li><li><a href="#aragorn">ARAGORN</a></li><li><a href="#arax">ARAX</a></li><li><a href="#explanatory-ara">Explanatory ARA</a></li><li><a href="#medikanren-20">mediKanren 2.0</a></li><li><a href="#improving-agent">(im)proving agent</a></li></ul></li><li><a href="#standard-reasoner-implementations-sri">Standard Reasoner Implementations (SRI)</a><ul class="toc-headings"><li><a href="#nodenormalization-service">NodeNormalization Service</a></li><li><a href="#edgenormalization-service">EdgeNormalization Service</a></li><li><a href="#nameresolution">NameResolution</a></li><li><a href="#biolink-model-lookup-service">BioLink Model Lookup service</a></li><li><a href="#blcompliance">BLCompliance</a></li></ul></li><li><a href="#additional-translator-resources">Additional Translator resources</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/um_logo.svg" alt="Data2Services" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/d2s-installation">Installation</a><a href="/docs/d2s-services">Start services</a><a href="/docs/d2s-new-dataset">Add a new dataset</a></div><div><h5>Source Code</h5><a href="https://github.com/MaastrichtU-IDS/d2s-docs" target="_blank">This documentation</a><a href="https://github.com/MaastrichtU-IDS/d2s-cli" target="_blank">The d2s tool</a><a href="https://github.com/MaastrichtU-IDS/d2s-project-template" target="_blank">The template project folder</a></div><div><h5>Community</h5><a href="https://maastrichtu-ids.github.io/dsri-documentation/" target="_blank" rel="noreferrer noopener">Data Science Research Infrastructure</a><a href="https://twitter.com/um_ids" target="_blank" rel="noreferrer noopener" aria-label="Follow on Twitter">Twitter</a><a href="https://www.facebook.com/IDSatUM/" target="_blank" rel="noreferrer noopener">Facebook</a></div></section><section class="copyright"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license" target="_blank"><img src="/img/cc-by.svg" alt="cc by license"/></a></div>Copyright © 2020 Institute of Data Science at Maastricht University</section><div><div class="gitter-open-chat-button">Ask about d2s</div><script type="text/javascript">
+        ((window.gitter = {}).chat = {}).options = {
+          showChatByDefault: false,
+          activationElement: '.gitter-open-chat-button',
+          room: 'um-dsri/data2services'
+        };
+      </script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script></div></footer></div></body></html>

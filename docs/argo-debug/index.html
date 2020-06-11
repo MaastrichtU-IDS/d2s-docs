@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Debug Argo workflow · Data2Services</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="![Argo project](/img/argo-logo.png)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Debug Argo workflow · Data2Services"/><meta property="og:type" content="website"/><meta property="og:url" content="https://d2s.semanticscience.org//"/><meta property="og:description" content="![Argo project](/img/argo-logo.png)"/><meta property="og:image" content="https://d2s.semanticscience.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/d2s-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://d2s.semanticscience.org/blog/atom.xml" title="Data2Services Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://d2s.semanticscience.org/blog/feed.xml" title="Data2Services Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700"/><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/d2s-logo.png" alt="Data2Services"/><h2 class="headerTitleWithLogo">Data2Services</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/d2s-introduction" target="_self">Documentation</a></li><li class=""><a href="/blog/" target="_self">Use-cases</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Kubernetes workflows</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Get started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-workspace">Initialize and update</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-services">Start services</a></li><li class="navListItem"><a class="navItem" href="/docs/services-graph-databases">Graph databases</a></li><li class="navListItem"><a class="navItem" href="/docs/services-interfaces">Interfaces</a></li><li class="navListItem"><a class="navItem" href="/docs/services-utilities">Utilities</a></li><li class="navListItem"><a class="navItem" href="/docs/translator-prototypes-registry">Translator Prototypes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrate data<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/d2s-new-dataset">Add a new dataset</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-rml">Run RML transformations</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-run">Run CWL workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-dipper">Use Monarch Dipper</a></li><li class="navListItem"><a class="navItem" href="/docs/d2s-biothings">Use BioThings Studio</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/guide-ontology">Choose an ontology</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-preprocessing">Preprocess input files</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-deploy-app">Deploy services publicly</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-filebrowser">Filebrowser utilities</a></li><li class="navListItem"><a class="navItem" href="/docs/cwl-create">Create a CWL tool</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-docker">Docker guide</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-jenkins">Experimental Jenkins workflows</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Setup databases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/guide-graphdb">Setting up GraphDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-virtuoso">Setting up Virtuoso</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-postgres">Setting up PostgreSQL</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mariadb">Setting up MariaDB</a></li><li class="navListItem"><a class="navItem" href="/docs/guide-mysql">Setting up MySQL</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Kubernetes workflows<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/argo-install">Argo installation</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-login">Login to OpenShift</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-volume">Define volumes</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-run">Run Argo workflows</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-commands">Argo commands</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/argo-debug">Debug Argo workflow</a></li><li class="navListItem"><a class="navItem" href="/docs/argo-secret">Use OpenShift secrets</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/MaastrichtU-IDS/d2s-docs/edit/master/docs/argo-debug.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Debug Argo workflow</h1></header><article><div><span><p><img src="/img/argo-logo.png" alt="Argo project"></p>
+<h2><a class="anchor" aria-hidden="true" id="debug-a-pod"></a><a href="#debug-a-pod" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug a pod</h2>
+<p>To get into the container. Create YAML with command <code>tail /dev/null</code> to keep it running.</p>
+<blockquote>
+<p>Example of test pod in <a href="https://github.com/MaastrichtU-IDS/d2s-core/blob/master/argo/tests/test-devnull-pod.yml" target="_blank" rel="nofollow noreferrer noopener">tests/test-devnull-pod.yml</a>:</p>
+</blockquote>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Pod</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">labels:</span>
+    <span class="hljs-attr">purpose:</span> <span class="hljs-string">test</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">test-devnull-pod</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">volumes:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">workdir</span>
+    <span class="hljs-attr">hostPath:</span>
+      <span class="hljs-attr">path:</span> <span class="hljs-string">/data/d2s-workspace</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">Directory</span>
+    <span class="hljs-comment"># persistentVolumeClaim:</span>
+    <span class="hljs-comment">#   claimName: d2s-storage</span>
+  <span class="hljs-attr">containers:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">test-devnull</span>
+    <span class="hljs-comment"># Change the image to test here</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">umids/rdfunit:latest</span>
+    <span class="hljs-attr">command:</span> <span class="hljs-string">[</span> <span class="hljs-string">"tail"</span><span class="hljs-string">,</span> <span class="hljs-string">"-f"</span><span class="hljs-string">,</span> <span class="hljs-string">"/dev/null"</span><span class="hljs-string">]</span>
+    <span class="hljs-attr">resources:</span>
+      <span class="hljs-attr">limits:</span>
+        <span class="hljs-attr">cpu:</span> <span class="hljs-string">1000m</span> 
+        <span class="hljs-attr">memory:</span> <span class="hljs-string">10Gi</span> 
+    <span class="hljs-attr">volumeMounts:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">workdir</span>
+      <span class="hljs-attr">mountPath:</span> <span class="hljs-string">/data</span>
+</code></pre>
+<blockquote>
+<p>Then start the pod:</p>
+</blockquote>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">oc </span><span class="hljs-built_in">create</span><span class="hljs-template-variable"> -f</span> tests/<span class="hljs-built_in">test</span>-devnull-pod.yml
+</code></pre>
+<blockquote>
+<p>Connect with the Shell:</p>
+</blockquote>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">oc </span><span class="hljs-built_in">rsh</span> <span class="hljs-built_in">test</span>-devnull-pod
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="debug-an-argo-workflow"></a><a href="#debug-an-argo-workflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug an Argo workflow</h2>
+<p>Pod can also be tested within an Argo workflow, see <a href="https://github.com/MaastrichtU-IDS/d2s-core/blob/master/argo/tests/test-devnull-argo.yml" target="_blank" rel="nofollow noreferrer noopener">tests/test-devnull-argo.yml</a>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">argo </span><span class="hljs-built_in">submit</span> tests/<span class="hljs-built_in">test</span>-devnull-argo.yml
+</code></pre>
+<p><img src="/img/openshift-logo.png" alt="OpenShift"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/argo-commands"><span class="arrow-prev">← </span><span>Argo commands</span></a><a class="docs-next button" href="/docs/argo-secret"><span class="function-name-prevnext">Use OpenShift secrets</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#debug-a-pod">Debug a pod</a></li><li><a href="#debug-an-argo-workflow">Debug an Argo workflow</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/um_logo.svg" alt="Data2Services" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/d2s-installation">Installation</a><a href="/docs/d2s-services">Start services</a><a href="/docs/d2s-new-dataset">Add a new dataset</a></div><div><h5>Source Code</h5><a href="https://github.com/MaastrichtU-IDS/d2s-docs" target="_blank">This documentation</a><a href="https://github.com/MaastrichtU-IDS/d2s-cli" target="_blank">The d2s tool</a><a href="https://github.com/MaastrichtU-IDS/d2s-project-template" target="_blank">The template project folder</a></div><div><h5>Community</h5><a href="https://maastrichtu-ids.github.io/dsri-documentation/" target="_blank" rel="noreferrer noopener">Data Science Research Infrastructure</a><a href="https://twitter.com/um_ids" target="_blank" rel="noreferrer noopener" aria-label="Follow on Twitter">Twitter</a><a href="https://www.facebook.com/IDSatUM/" target="_blank" rel="noreferrer noopener">Facebook</a></div></section><section class="copyright"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license" target="_blank"><img src="/img/cc-by.svg" alt="cc by license"/></a></div>Copyright © 2020 Institute of Data Science at Maastricht University</section><div><div class="gitter-open-chat-button">Ask about d2s</div><script type="text/javascript">
+        ((window.gitter = {}).chat = {}).options = {
+          showChatByDefault: false,
+          activationElement: '.gitter-open-chat-button',
+          room: 'um-dsri/data2services'
+        };
+      </script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script></div></footer></div></body></html>
