@@ -20,7 +20,7 @@ title: Translator Prototypes
   * Associations calculated from EHR prevalence and co-occurrence count
   * Privacy protection measures
 
-[![Data2Services documentation](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-documentation?label=d2s-documentation&style=social)](https://github.com/MaastrichtU-IDS/d2s-documentation)
+[![Data2Services documentation](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-docs?label=d2s-docs&style=social)](https://github.com/MaastrichtU-IDS/d2s-docs)
 
 * Data2Services
   * A framework and Command Line Interface for building and deploying Translator data and services in a reproducible manner.

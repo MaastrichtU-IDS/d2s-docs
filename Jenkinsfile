@@ -9,7 +9,7 @@ pipeline {
           branch 'master'
       }
       steps {
-        git 'https://github.com/MaastrichtU-IDS/d2s-documentation.git'
+        git 'https://github.com/MaastrichtU-IDS/d2s-docs.git'
       }
     }
     stage('build') {
@@ -17,7 +17,7 @@ pipeline {
           branch 'master'
       }
       steps {
-        sh 'docker build --no-cache -t umids/d2s-documentation:latest .'
+        sh 'docker build --no-cache -t umids/d2s-docs:latest .'
       }
     }
     stage('deploy') {
@@ -27,12 +27,12 @@ pipeline {
       steps {
         parallel(
           push: {
-            sh 'docker push umids/d2s-documentation:latest'
+            sh 'docker push umids/d2s-docs:latest'
           },
           deploy: {
-            sh 'docker stop d2s-documentation || true'
-            sh 'docker rm d2s-documentation || true'
-            sh 'docker run -d --name d2s-documentation --restart unless-stopped -e VIRTUAL_HOST=d2s.semanticscience.org -e LETSENCRYPT_HOST=d2s.semanticscience.org -e VIRTUAL_PORT=3000 umids/d2s-documentation:latest'
+            sh 'docker stop d2s-docs || true'
+            sh 'docker rm d2s-docs || true'
+            sh 'docker run -d --name d2s-docs --restart unless-stopped -e VIRTUAL_HOST=d2s.semanticscience.org -e LETSENCRYPT_HOST=d2s.semanticscience.org -e VIRTUAL_PORT=3000 umids/d2s-docs:latest'
           }
         )
       }

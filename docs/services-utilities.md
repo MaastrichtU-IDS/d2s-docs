@@ -7,7 +7,7 @@ We list here the services available for deployment within a Data2Services projec
 
 > The `d2s start` command is provided when available. A `docker run` command is provided for every module.
 
-Feel free to propose new services using [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) or creating a [new issue](https://github.com/MaastrichtU-IDS/d2s-documentation/issues).
+Feel free to propose new services using [pull requests](https://github.com/MaastrichtU-IDS/d2s-docs/pulls) or creating a [new issue](https://github.com/MaastrichtU-IDS/d2s-docs/issues).
 
 Each service is run using [Docker](https://docs.docker.com/install/). They have been configured to be deployed on a common network, sharing volumes in `workspace/`. Services configuration can be changed in the docker-compose.yml file or using deployments.
 

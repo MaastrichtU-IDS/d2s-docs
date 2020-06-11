@@ -31,9 +31,9 @@ function Help(props) {
       title: 'Ask on Gitter'
     },
     {
-      content: `<a href="https://github.com/MaastrichtU-IDS/d2s-documentation/issues"
-      target="_blank" aria-label="Issues d2s-documentation on GitHub">
-      <img alt="GitHub d2s-documentation" src="https://img.shields.io/github/issues/MaastrichtU-IDS/d2s-documentation?label=d2s-documentation"/>
+      content: `<a href="https://github.com/MaastrichtU-IDS/d2s-docs/issues"
+      target="_blank" aria-label="Issues d2s-docs on GitHub">
+      <img alt="GitHub d2s-docs" src="https://img.shields.io/github/issues/MaastrichtU-IDS/d2s-docs?label=d2s-docs"/>
     </a><br/>
     <a href="https://github.com/MaastrichtU-IDS/d2s-cli/issues"
     target="_blank" aria-label="Issues d2s-cli on GitHub">
@@ -43,7 +43,7 @@ function Help(props) {
     target="_blank" aria-label="Issues d2s-project-template on GitHub">
       <img alt="GitHub d2s-project-template" src="https://img.shields.io/github/issues/MaastrichtU-IDS/d2s-project-template?label=d2s-project-template"/>
     </a>
-    <p>Browse and submit [issues](https://github.com/MaastrichtU-IDS/d2s-documentation/issues) or [pull requests](https://github.com/MaastrichtU-IDS/d2s-documentation/pulls) 
+    <p>Browse and submit [issues](https://github.com/MaastrichtU-IDS/d2s-docs/issues) or [pull requests](https://github.com/MaastrichtU-IDS/d2s-docs/pulls) 
     for bugs you find or any new features you would like to see implemented 🔧</p>`,
       title: 'Submit issues',
     },

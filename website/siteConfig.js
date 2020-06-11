@@ -40,9 +40,9 @@ const siteConfig = {
 
   projectName: 'data2services',  // The name of your GitHub project. Same as above.
   organizationName: 'MaastrichtU-IDS', // Your GitHub username.
-  repoUrl: 'https://github.com/MaastrichtU-IDS/d2s-documentation',
+  repoUrl: 'https://github.com/MaastrichtU-IDS/d2s-docs',
   // URL for editing docs
-  editUrl: 'https://github.com/MaastrichtU-IDS/d2s-documentation/edit/master/docs/',
+  editUrl: 'https://github.com/MaastrichtU-IDS/d2s-docs/edit/master/docs/',
 
   // Deploy to GitHub pages (first generate build dir)
   // npm run build
