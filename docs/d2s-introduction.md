@@ -49,7 +49,7 @@ Data2Services aims to provide an [exhaustive documentation](/docs/d2s-services) 
 
 ## Project folder structure
 
-The [d2s client](https://pypi.org/manage/project/d2s/releases/) use the following directory structure, which can be found in the example project [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template) (here with the `cohd` dataset):
+The [d2s client](https://pypi.org/manage/project/d2s/releases/) uses the following directory structure, which can be found in the example project [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template) (here with the `cohd` dataset):
 
 ```bash
 root-directory
@@ -89,6 +89,6 @@ The Data2Services project uses multiples Git repositories:
 
 * [d2s-cli](https://github.com/MaastrichtU-IDS/d2s-cli): A Command Line Interface to orchestrate the integration of heterogenous  data and the deployment of services consuming the integrated data (Python).
   * It will clone and use a [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template) repository to store your project services and workflows settings.
-* [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template): template to create a Data2Services project folder, with example mappings to a few datasets, it include [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) as submodule.
+* [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template): template to create a Data2Services project folder, with example mappings to a few datasets, it includes [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) as submodule.
   * [d2s-core](https://github.com/MaastrichtU-IDS/d2s-core) (imported as submodule in [d2s-project-template](https://github.com/MaastrichtU-IDS/d2s-project-template)): CWL workflows to transform structured data to a target RDF model.
 * [d2s-docs](https://github.com/MaastrichtU-IDS/d2s-docs): source code of this documentation.
