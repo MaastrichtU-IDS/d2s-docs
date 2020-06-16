@@ -165,3 +165,13 @@ Export a Graph to nquads:
 curl -X GET --header 'Accept: application/n-quads' 'http://localhost:7200/repositories/test/rdf-graphs/service?graph=https%3A%2F%2Fw3id.org%2Fd2s%2Fgraph%2Fbiolink%2Fcohd'
 ```
 
+## Importing large files
+
+Recommendations when dealing with large RDF files to import:
+
+* Speaking in general terms, JVM cannot handle big heaps well (>30GB)  due to highly expensive full GC cycles.
+
+- If you load datasets larger than 4B RDF triples use 40-bit identifiers to enable more than 2B unique RDF resources 
+- When datasets bigger than 500M statements without inference use the preload  tool, which guarantees a sustained speed of 500M triples per hour 
+- Lower the heap to 30GB, the OS will cache some of the files so the big RAM will be still used to cache the files 
+- Expect a substantial offheap index (check the [off heap estimate in the GraphDB documentation](http://graphdb.ontotext.com/documentation/standard/requirements.html )) 
