@@ -38,7 +38,7 @@ const siteConfig = {
   baseUrl: '/', // Base URL for your project */
   // We deploy at https://data2services.github.io/data2services/
 
-  projectName: 'data2services',  // The name of your GitHub project. Same as above.
+  projectName: 'd2s-docs',  // The name of your GitHub project. Same as above.
   organizationName: 'MaastrichtU-IDS', // Your GitHub username.
   repoUrl: 'https://github.com/MaastrichtU-IDS/d2s-docs',
   // URL for editing docs
