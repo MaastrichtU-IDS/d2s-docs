@@ -35,9 +35,9 @@ jobs:
     - id: fix_custom_url
       uses: octokit/request-action@v2.x
       with:
-        route: PUT /repos/:owner/:repo/pages
+        route: PUT /repos/MaastrichtU-IDS/d2s-docs/pages
         mediaType: |
-          format: 
+          format:
             - v3
         cname: "d2s.semanticscience.org"
       env:
