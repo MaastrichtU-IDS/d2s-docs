@@ -60,10 +60,10 @@
 <p><a href="https://www.ontotext.com/products/graphdb/" target="_blank" rel="nofollow noreferrer noopener"><img src="/img/graphdb-logo.png" alt="GraphDB"></a></p>
 <p><a href="https://hub.docker.com/r/ontotext/graphdb/" target="_blank" rel="nofollow noreferrer noopener"><img src="https://img.shields.io/docker/pulls/ontotext/graphdb" alt="Docker Image Version (latest by date)"></a></p>
 <p><a href="https://www.ontotext.com/" target="_blank" rel="nofollow noreferrer noopener">Ontotext GraphDB™</a> triplestore includes a web UI, various <a href="http://graphdb.ontotext.com/documentation/free/exploring-data.html" target="_blank" rel="nofollow noreferrer noopener">data visualizations</a>, <a href="http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html" target="_blank" rel="nofollow noreferrer noopener">OntoRefine</a>, <a href="http://graphdb.ontotext.com/documentation/free/shacl-validation.html" target="_blank" rel="nofollow noreferrer noopener">SHACL validation</a>, RDFS/OWL <a href="http://graphdb.ontotext.com/documentation/standard/reasoning.html" target="_blank" rel="nofollow noreferrer noopener">reasoning</a> to infer new triples and the possibility to deploy multiple repositories. It uses mainly the <a href="https://rdf4j.org/" target="_blank" rel="nofollow noreferrer noopener">rdf4j</a> framework.</p>
-<p><a href="https://www.ontotext.com/products/graphdb/graphdb-free/" target="_blank" rel="nofollow noreferrer noopener">Download the zip file</a> of GraphDB standalone free version <code>9.1.1</code>, and place it in <code>d2s-core/support/graphdb</code> before building the image using <code>d2s update</code>(this step is also prompted during <code>d2s init</code>).</p>
+<p><a href="https://www.ontotext.com/products/graphdb/graphdb-free/" target="_blank" rel="nofollow noreferrer noopener">Download the zip file</a> of GraphDB standalone free version <code>9.3.0</code>, and place it in <code>d2s-core/support/graphdb</code> before building the image using <code>d2s update</code>(this step is also prompted during <code>d2s init</code>).</p>
 <pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> graphdb
 <span class="hljs-keyword">
-docker </span><span class="hljs-built_in">build</span><span class="hljs-template-variable"> -t</span> graphdb d2s-core/support/graphdb<span class="hljs-keyword">
+docker </span><span class="hljs-built_in">build</span><span class="hljs-template-variable"> -t</span> graphdb<span class="hljs-template-variable"> --build-arg</span> version=9.3.0 d2s-core/support/graphdb<span class="hljs-keyword">
 docker </span><span class="hljs-built_in">run</span><span class="hljs-template-variable"> -d</span><span class="hljs-template-variable"> --rm</span><span class="hljs-template-variable"> --name</span> graphdb<span class="hljs-template-variable"> -p</span> 7200:7200 \
    <span class="hljs-template-variable"> -v</span> $(<span class="hljs-built_in">pwd</span>)/workspace/graphdb:/opt/graphdb/home \
    <span class="hljs-template-variable"> -v</span> $(<span class="hljs-built_in">pwd</span>)/workspace/import:/root/graphdb-import \
@@ -73,11 +73,22 @@ docker </span><span class="hljs-built_in">run</span><span class="hljs-template-v
 <p>Access at <a href="http://localhost:7200/" target="_blank" rel="nofollow noreferrer noopener">http://localhost:7200/</a></p>
 </blockquote>
 <blockquote>
-<p>See <a href="http://graphdb.ontotext.com/documentation/" target="_blank" rel="nofollow noreferrer noopener">Ontotext GraphDB™ documentation</a> for more details.</p>
+<p>See the <a href="http://graphdb.ontotext.com/documentation/" target="_blank" rel="nofollow noreferrer noopener">official Ontotext GraphDB™ documentation</a> and the <a href="https://github.com/Ontotext-AD/graphdb-docker" target="_blank" rel="nofollow noreferrer noopener">source code for Docker images</a> for more details.</p>
 </blockquote>
 <blockquote>
 <p><a href="https://www.ontotext.com/products/graphdb/graphdb-enterprise/" target="_blank" rel="nofollow noreferrer noopener">Obtain a license</a> for more features such as performance improvement, easy deployment using the <a href="https://hub.docker.com/r/ontotext/graphdb/" target="_blank" rel="nofollow noreferrer noopener">official DockerHub image</a> or distributed deployment on multiple nodes with Kubernetes.</p>
 </blockquote>
+<p>GraphDB allow to perform <strong>bulk load on large files</strong> using a second container:</p>
+<ul>
+<li>Change the repository to be created and loaded in <code>workspace/graphdb/preload-config.ttl</code> (default: <code>demo</code>)</li>
+<li><strong>Put the files to be loaded</strong> in <code>workspace/import/preload</code> 📩</li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-keyword">d2s </span><span class="hljs-built_in">start</span> graphdb-preload
+</code></pre>
+<p>When the preload has completed, the <code>graphdb-preload</code> container will stop, you can then copy the loaded repository to the running GraphDB folder:</p>
+<pre><code class="hljs css language-bash">cp -r workspace/graphdb/preload-data/repositories/* workspace/graphdb/data/repositories/
+</code></pre>
+<p>And access the newly loaded repository in the running GraphDB instance.</p>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="virtuoso"></a><a href="#virtuoso" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Virtuoso</h3>
 <p><a href="https://virtuoso.openlinksw.com/" target="_blank" rel="nofollow noreferrer noopener"><img src="/img/openlink-virtuoso.png" alt="OpenLink Virtuoso"></a></p>
