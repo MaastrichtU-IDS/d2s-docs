@@ -36,9 +36,9 @@ jobs:
       uses: octokit/request-action@v2.x
       with:
         route: PUT /repos/:owner/:repo/pages
-        # mediaType: |
-        #   previews: 
-        #     - switcheroo
+        mediaType: |
+          format: 
+            - v3
         cname: "d2s.semanticscience.org"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
