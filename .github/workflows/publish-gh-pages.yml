@@ -36,10 +36,11 @@ jobs:
       uses: octokit/request-action@v2.x
       with:
         route: PUT /repos/MaastrichtU-IDS/d2s-docs/pages
-        mediaType: |
-          format:
-            - v3
+        # mediaType: |
+        #   format:
+        #     - v3
         cname: "d2s.semanticscience.org"
+        # data: "{'cname': 'd2s.semanticscience.org' }"
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
+        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
