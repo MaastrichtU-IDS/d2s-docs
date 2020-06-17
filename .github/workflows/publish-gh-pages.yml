@@ -3,9 +3,6 @@ name: Publish to GitHub Pages
 on:
   push:
     branches: [ master ]
-  # release:
-  #   types:
-  #     - created
 
 jobs:
   publish:
@@ -32,15 +29,12 @@ jobs:
         yarn build
         GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true yarn run publish-gh-pages
 
-    - id: fix_custom_url
+    - name: Fix custom GitHub Pages URL
       uses: octokit/request-action@v2.x
       with:
         route: PUT /repos/MaastrichtU-IDS/d2s-docs/pages
         cname: "d2s.semanticscience.org"
-        # mediaType: |
-        #   format:
-        #     - v3
+
       env:
         GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
-        ## Default token not working
-        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ## Default token not working: secrets.GITHUB_TOKEN
