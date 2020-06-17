@@ -1,4 +1,4 @@
-name: Publish to GitHub Pages
+name: Publish Docusaurus to GitHub Pages
 
 on:
   push:
@@ -34,7 +34,6 @@ jobs:
       with:
         route: PUT /repos/MaastrichtU-IDS/d2s-docs/pages
         cname: "d2s.semanticscience.org"
-
       env:
         GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
-        ## Default token not working: secrets.GITHUB_TOKEN
+        ## Default token does not have required access: secrets.GITHUB_TOKEN
