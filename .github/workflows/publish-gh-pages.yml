@@ -32,10 +32,14 @@ jobs:
         yarn build
         GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true yarn run publish-gh-pages
 
-    - name: Fix GitHub Pages custom URL
+    - id: fix_custom_url
       uses: octokit/request-action@v2.x
       with:
         route: PUT /repos/:owner/:repo/pages
+        mediaType: | # The | is significant!
+            previews: 
+              - application/vnd.github.switcheroo-preview+json
         cname: "d2s.semanticscience.org"
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
