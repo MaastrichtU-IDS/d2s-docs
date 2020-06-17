@@ -15,12 +15,12 @@ List of graph databases: RDF triplestores and property graphs.
 
 [Ontotext GraphDB™](https://www.ontotext.com/) triplestore includes a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), RDFS/OWL [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html) to infer new triples and the possibility to deploy multiple repositories. It uses mainly the [rdf4j](https://rdf4j.org/) framework.
 
-[Download the zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) of GraphDB standalone free version `9.1.1`, and place it in `d2s-core/support/graphdb` before building the image using `d2s update`(this step is also prompted during `d2s init`).
+[Download the zip file](https://www.ontotext.com/products/graphdb/graphdb-free/) of GraphDB standalone free version `9.3.0`, and place it in `d2s-core/support/graphdb` before building the image using `d2s update`(this step is also prompted during `d2s init`).
 
 ```shell
 d2s start graphdb
 
-docker build -t graphdb d2s-core/support/graphdb
+docker build -t graphdb --build-arg version=9.3.0 d2s-core/support/graphdb
 docker run -d --rm --name graphdb -p 7200:7200 \
 	-v $(pwd)/workspace/graphdb:/opt/graphdb/home \
 	-v $(pwd)/workspace/import:/root/graphdb-import \
@@ -29,9 +29,26 @@ docker run -d --rm --name graphdb -p 7200:7200 \
 
 > Access at [http://localhost:7200/](http://localhost:7200/)
 
-> See [Ontotext GraphDB™ documentation](http://graphdb.ontotext.com/documentation/) for more details.
+> See the [official Ontotext GraphDB™ documentation](http://graphdb.ontotext.com/documentation/) and the [source code for Docker images](https://github.com/Ontotext-AD/graphdb-docker) for more details.
 
 > [Obtain a license](https://www.ontotext.com/products/graphdb/graphdb-enterprise/) for more features such as performance improvement, easy deployment using the [official DockerHub image](https://hub.docker.com/r/ontotext/graphdb/) or distributed deployment on multiple nodes with Kubernetes.
+
+GraphDB allow to perform **bulk load on large files** using a second container:
+
+* Change the repository to be created and loaded in `workspace/graphdb/preload-config.ttl` (default: `demo`)
+* **Put the files to be loaded** in `workspace/import/preload` 📩
+
+```shell
+d2s start graphdb-preload
+```
+
+When the preload has completed, the `graphdb-preload` container will stop, you can then copy the loaded repository to the running GraphDB folder:
+
+```bash
+cp -r workspace/graphdb/preload-data/repositories/* workspace/graphdb/data/repositories/
+```
+
+And access the newly loaded repository in the running GraphDB instance.
 
 ---
 

@@ -52,7 +52,22 @@ d2s update --permissions
 
 The memory allocated to the Java Virtual Machine can be increase, especially if you are facing Heap Space error when working with big graphs. See [GraphDB documentation about recommended Java memory allocation](http://graphdb.ontotext.com/documentation/standard/requirements.html).
 
+## Preload a file
 
+When datasets bigger than 5G statements use the preload  tool, which load faster in a stopped graphdb. To avoid stopping our main GraphDB instance we will preload using a temporary GraphDB, then copy the loaded repository in the running GraphDB
+
+* Change the repository to be created and loaded in `workspace/graphdb/preload-config.ttl`
+* Put the files to be loaded in `workspace/import/preload`
+
+```shell
+d2s start graphdb-preload
+```
+
+When the preload has completed, the `graphdb-preload` will stop, you can then copy the loaded repository to the running GraphDB folder:
+
+```bash
+cp -r workspace/graphdb/preload-data/repositories/* workspace/graphdb/data/repositories/
+```
 
 ## Create repository
 
@@ -167,7 +182,7 @@ curl -X GET --header 'Accept: application/n-quads' 'http://localhost:7200/reposi
 
 ## Importing large files
 
-Recommendations when dealing with large RDF files to import:
+Recommendations when dealing with large RDF files to import.
 
 * Speaking in general terms, JVM cannot handle big heaps well (>30GB)  due to highly expensive full GC cycles.
 
@@ -175,3 +190,8 @@ Recommendations when dealing with large RDF files to import:
 - When datasets bigger than 500M statements without inference use the preload  tool, which guarantees a sustained speed of 500M triples per hour 
 - Lower the heap to 30GB, the OS will cache some of the files so the big RAM will be still used to cache the files 
 - Expect a substantial offheap index (check the [off heap estimate in the GraphDB documentation](http://graphdb.ontotext.com/documentation/standard/requirements.html )) 
+
+When creating the repo:
+
+* `owlim:entity-index-size "2000000000" ;`
+* `owlim:entity-id-size  "40" ;`
