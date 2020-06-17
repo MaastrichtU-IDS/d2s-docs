@@ -1,11 +1,11 @@
 name: Publish to GitHub Pages
 
 on:
-  release:
-    types:
-      - created
-  # push:
-  #   branches: [ master ]
+  # release:
+  #   types:
+  #     - created
+  push:
+    branches: [ master ]
 
 jobs:
   publish:
@@ -31,3 +31,11 @@ jobs:
         yarn install
         yarn build
         GIT_USER=MaastrichtU-IDS CURRENT_BRANCH=master USE_SSH=true yarn run publish-gh-pages
+
+    - name: Fix GitHub Pages custom URL
+      uses: octokit/request-action@v2.x
+      with:
+        route: PUT /repos/:owner/:repo/pages
+        cname: "d2s.semanticscience.org"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

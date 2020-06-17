@@ -37,18 +37,21 @@ GraphDB allow to perform **bulk load on large files** using a second container:
 
 * Change the repository to be created and loaded in `workspace/graphdb/preload-config.ttl` (default: `demo`)
 * **Put the files to be loaded** in `workspace/import/preload` 📩
+* Start `graphdb-preload` docker container
 
 ```shell
 d2s start graphdb-preload
 ```
 
-When the preload has completed, the `graphdb-preload` container will stop, you can then copy the loaded repository to the running GraphDB folder:
+When the preload has completed, the `graphdb-preload` container will stop, you can then copy the loaded repository from `workspace/graphdb/preload-data/repositories` to the running GraphDB folder:
 
 ```bash
 cp -r workspace/graphdb/preload-data/repositories/* workspace/graphdb/data/repositories/
 ```
 
-And access the newly loaded repository in the running GraphDB instance.
+And access the newly loaded repository in the running GraphDB instance without downtime.
+
+> See additional [d2s documentation about setting up GraphDB](/docs/guide-graphdb)
 
 ---
 
