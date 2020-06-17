@@ -38,8 +38,8 @@ jobs:
         route: PUT /repos/:owner/:repo/pages
         mediaType: | # The | is significant!
           previews: 
-            - application/vnd.github.switcheroo-preview+json
+            - switcheroo
         cname: "d2s.semanticscience.org"
       env:
-        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
