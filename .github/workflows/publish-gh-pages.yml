@@ -1,11 +1,11 @@
 name: Publish to GitHub Pages
 
 on:
+  push:
+    branches: [ master ]
   # release:
   #   types:
   #     - created
-  push:
-    branches: [ master ]
 
 jobs:
   publish:
@@ -36,9 +36,9 @@ jobs:
       uses: octokit/request-action@v2.x
       with:
         route: PUT /repos/:owner/:repo/pages
-        mediaType: | # The | is significant!
-          previews: 
-            - switcheroo
+        # mediaType: |
+        #   previews: 
+        #     - switcheroo
         cname: "d2s.semanticscience.org"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
