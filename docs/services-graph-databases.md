@@ -301,3 +301,13 @@ Licensed RDF triplestore 📜
 Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-marklogic) to deploy it.
 
 > You will need to download the [MarkLogic Server 📥](https://developer.marklogic.com/products/marklogic-server/10.0)
+
+---
+
+### RDFox
+
+Licensed RDF triplestore 📜
+
+[RDFox](https://www.oxfordsemantic.tech/) is a in-memory triplestore only supporting triples (no graph, nor nquads support). SPARQL available, but [not completely supported](https://oxfordsemtech.github.io/RDFoxDocs/_versions/1.3.3/#/03-sparql?id=unsupported-sparql-1.1-features). 
+
+See the [documentation](https://oxfordsemtech.github.io/RDFoxDocs/_versions/1.3.3/#/) to deploy it.
