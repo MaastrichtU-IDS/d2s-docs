@@ -308,6 +308,6 @@ Follow the [GitHub Docker instructions](https://github.com/alan-johnson/docker-m
 
 Licensed RDF triplestore 📜
 
-[RDFox](https://www.oxfordsemantic.tech/) is a in-memory triplestore only supporting triples (no graph, nor nquads support). SPARQL available, but [not completely supported](https://oxfordsemtech.github.io/RDFoxDocs/_versions/1.3.3/#/03-sparql?id=unsupported-sparql-1.1-features). 
+[RDFox](https://www.oxfordsemantic.tech/) is a in-memory triplestore only supporting triples. See the [documentation](https://oxfordsemtech.github.io/RDFoxDocs/_versions/1.3.3/#/) to deploy it.
 
-See the [documentation](https://oxfordsemtech.github.io/RDFoxDocs/_versions/1.3.3/#/) to deploy it.
+> Does not support graph, or nquads. SPARQL available, but [not completely supported](https://oxfordsemtech.github.io/RDFoxDocs/_versions/1.3.3/#/03-sparql?id=unsupported-sparql-1.1-features). 
