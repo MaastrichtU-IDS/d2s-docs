@@ -7,6 +7,25 @@ title: Translator Prototypes
 
 > See the official Translator prototypes registry at https://ncatstranslator.github.io
 
+## Translator Standards
+
+### ReasonerAPI
+
+[![ReasonerAPI](https://img.shields.io/github/stars/NCATSTranslator/ReasonerAPI?label=ReasonerAPI&style=social)](https://github.com/NCATSTranslator/ReasonerAPI)
+
+Standard recommended when serving an API in the Translator project. It consists in a JSON model for graph data, and allow to query and get answer from Translator APIs.
+
+### KGX
+
+[![kgx](https://img.shields.io/github/stars/NCATS-Tangerine/kgx?label=kgx&style=social)](https://github.com/NCATS-Tangerine/kgx)
+
+KGX (Knowledge Graph Exchange) is a Python library and set of command  line utilities for exchanging Knowledge Graphs (KGs) that conform to or  are aligned to the [Biolink Model](https://biolink.github.io/biolink-model/).
+
+##### Access
+
+* See [KGX presentation](https://docs.google.com/document/d/1eXB7bsT6-vnwyfsJjKF1Zlj1XqfOwYlmOwRV5AyRYpg/edit#).
+* See [KGX data preparation documentation](https://github.com/NCATS-Tangerine/kgx/blob/master/data-preparation.md).
+
 ## Knowledge Providers (KP)
 
 ### COHD Clinical Data2Services Provider
@@ -56,7 +75,7 @@ A Molecular Data Provider translating molecular scale to systems scale through a
 ##### Access
 
 * Open API: https://translator.broadinstitute.org/molecular_data_provider/api
-* Reasoner API: https://translator.broadinstitute.org/molepro_reasoner/predicates
+* Reasoner API: https://smart-api.info/ui/912372f46127b79fb387cd2397203709#
 
 ---
 
