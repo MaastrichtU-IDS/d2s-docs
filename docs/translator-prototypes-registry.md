@@ -23,8 +23,9 @@ KGX (Knowledge Graph Exchange) is a Python library and set of command  line util
 
 ##### Access
 
-* See [KGX presentation](https://docs.google.com/document/d/1eXB7bsT6-vnwyfsJjKF1Zlj1XqfOwYlmOwRV5AyRYpg/edit#).
+* See [KGX presentation](https://docs.google.com/presentation/d/1DHw-499n3mrjBnziSXYV_cCij4QMndrEH2IGWz8-Kzw/edit#slide=id.p).
 * See [KGX data preparation documentation](https://github.com/NCATS-Tangerine/kgx/blob/master/data-preparation.md).
+* See the [GitHub repository of the Knowledge Graph Exchange Working Group](https://github.com/NCATSTranslator/Knowledge-Graph-Exchange-Working-Group)
 
 ## Knowledge Providers (KP)
 
