@@ -7,7 +7,9 @@ title: Translator Prototypes
 
 > See the official Translator prototypes registry at https://ncatstranslator.github.io
 
-## Translator Standards
+## Standard Reasoner Implementations (SRI)
+
+Services to explore and validate implementations against the Translator standards.
 
 ### ReasonerAPI
 
@@ -26,6 +28,42 @@ KGX (Knowledge Graph Exchange) is a Python library and set of command  line util
 * See [KGX presentation](https://docs.google.com/presentation/d/1DHw-499n3mrjBnziSXYV_cCij4QMndrEH2IGWz8-Kzw/edit#slide=id.p).
 * See [KGX data preparation documentation](https://github.com/NCATS-Tangerine/kgx/blob/master/data-preparation.md).
 * See the [GitHub repository of the Knowledge Graph Exchange Working Group](https://github.com/NCATSTranslator/Knowledge-Graph-Exchange-Working-Group)
+
+
+### NodeNormalization Service
+
+[![NodeNormalization](https://img.shields.io/github/stars/TranslatorIIPrototypes/NodeNormalization?label=NodeNormalization&style=social)](https://github.com/TranslatorIIPrototypes/NodeNormalization)
+
+* Open API: https://nodenormalization-sri.renci.org/apidocs/ 
+* [NodeNormalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NodeNormalization/blob/master/documentation/NodeNormalization.ipynb) for documentation
+
+### EdgeNormalization Service
+
+[![EdgeNormalization](https://img.shields.io/github/stars/TranslatorIIPrototypes/EdgeNormalization?label=EdgeNormalization&style=social)](https://github.com/TranslatorIIPrototypes/EdgeNormalization)
+
+* Open API: https://edgenormalization-sri.renci.org/apidocs/
+* [EdgeNormnalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/EdgeNormalization/blob/master/documentation/EdgeNormalization.ipynb) for documentation
+
+### NameResolution
+
+[![NameResolution](https://img.shields.io/github/stars/TranslatorIIPrototypes/NameResolution?label=NameResolution&style=social)](https://github.com/TranslatorIIPrototypes/NameResolution)
+
+* Open API: http://robokop.renci.org:2434/docs
+* [NameResolution Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NameResolution/blob/master/documentation/NameResolution.ipynb) for documentation
+
+### BioLink Model Lookup service
+
+[![BioLink Lookup](https://img.shields.io/github/stars/TranslatorIIPrototypes/bl_lookup?label=BL_lookup&style=social)](https://github.com/TranslatorIIPrototypes/bl_lookup)
+
+* Open API: https://bl-lookup-sri.renci.org/apidocs/
+* [BioLink Lookup Jupyter Notebook](https://github.com/TranslatorIIPrototypes/bl_lookup/blob/master/documentation/BiolinkLookup.ipynb) for documentation
+
+### BLCompliance
+
+[![BLCompliance](https://img.shields.io/github/stars/TranslatorIIPrototypes/BLComplianceService?label=BLComplianceService&style=social)](https://github.com/TranslatorIIPrototypes/BLComplianceService)
+
+* Open API: https://monarch-sandbox.cgrb.oregonstate.edu/docs
+* [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb) for documentation
 
 ## Knowledge Providers (KP)
 
@@ -349,44 +387,10 @@ Based on the [miniKanren](http://minikanren.org/) logic programming language for
 
 ---
 
-## Standard Reasoner Implementations (SRI)
+## ARS 
 
-Services to explore and validate implementations against the Translator standards.
+ARS registry: https://ars.transltr.io/ars/app/status
 
-### NodeNormalization Service
-
-[![NodeNormalization](https://img.shields.io/github/stars/TranslatorIIPrototypes/NodeNormalization?label=NodeNormalization&style=social)](https://github.com/TranslatorIIPrototypes/NodeNormalization)
-
-* Open API: https://nodenormalization-sri.renci.org/apidocs/ 
-* [NodeNormalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NodeNormalization/blob/master/documentation/NodeNormalization.ipynb) for documentation
-
-### EdgeNormalization Service
-
-[![EdgeNormalization](https://img.shields.io/github/stars/TranslatorIIPrototypes/EdgeNormalization?label=EdgeNormalization&style=social)](https://github.com/TranslatorIIPrototypes/EdgeNormalization)
-
-* Open API: https://edgenormalization-sri.renci.org/apidocs/
-* [EdgeNormnalization Jupyter Notebook](https://github.com/TranslatorIIPrototypes/EdgeNormalization/blob/master/documentation/EdgeNormalization.ipynb) for documentation
-
-### NameResolution
-
-[![NameResolution](https://img.shields.io/github/stars/TranslatorIIPrototypes/NameResolution?label=NameResolution&style=social)](https://github.com/TranslatorIIPrototypes/NameResolution)
-
-* Open API: http://robokop.renci.org:2434/docs
-* [NameResolution Jupyter Notebook](https://github.com/TranslatorIIPrototypes/NameResolution/blob/master/documentation/NameResolution.ipynb) for documentation
-
-### BioLink Model Lookup service
-
-[![BioLink Lookup](https://img.shields.io/github/stars/TranslatorIIPrototypes/bl_lookup?label=BL_lookup&style=social)](https://github.com/TranslatorIIPrototypes/bl_lookup)
-
-* Open API: https://bl-lookup-sri.renci.org/apidocs/
-* [BioLink Lookup Jupyter Notebook](https://github.com/TranslatorIIPrototypes/bl_lookup/blob/master/documentation/BiolinkLookup.ipynb) for documentation
-
-### BLCompliance
-
-[![BLCompliance](https://img.shields.io/github/stars/TranslatorIIPrototypes/BLComplianceService?label=BLComplianceService&style=social)](https://github.com/TranslatorIIPrototypes/BLComplianceService)
-
-* Open API: https://monarch-sandbox.cgrb.oregonstate.edu/docs
-* [BLCompliance Jupyter Notebook](https://github.com/TranslatorIIPrototypes/BLComplianceService/blob/master/documentation/BLCompliance.ipynb) for documentation
 
 ---
 
