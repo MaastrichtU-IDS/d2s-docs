@@ -2,6 +2,8 @@
 
 # Data2Services project documentation
 
+The documentation website at [d2s.semanticscience.org](https://d2s.semanticscience.org) is automatically updated by a [GitHub Action](/actions) at each push to this `master` branch.
+
 ## Edit documentation pages
 
 Editing a documentation file is as easy as going to https://github.com/MaastrichtU-IDS/d2s-docs/edit/master/docs/start-introduction.md.
