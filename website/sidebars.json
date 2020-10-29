@@ -9,6 +9,9 @@
       "d2s-new-dataset", "d2s-rml", "d2s-run", 
       "d2s-dipper", "d2s-biothings"
     ],
+    "Publish FAIR data": [
+      "fair-data-publisher"
+    ],
     "Guides": [
       "guide-ontology", "guide-preprocessing", "guide-deploy-app", "guide-filebrowser", 
       "cwl-create", "guide-docker", "guide-jenkins",
