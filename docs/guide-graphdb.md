@@ -172,12 +172,18 @@ curl -X POST -u admin:root --header 'Content-Type: application/json' --header 'A
 
 > e.g. https://archive.monarchinitiative.org/latest/rdf/ctd.ttl
 
-### Export graph
+### Export graphs
 
-Export a Graph to nquads:
+Export **all graphs** of a repository to nquads:
+
+```bash
+wget -O rdf_output.nq --header 'Accept: text/x-nquads' 'https://graphdb.dumontierlab.com/repositories/ncats-red-kg/statements'
+```
+
+Export **one graph** to nquads:
 
 ```shell
-curl -X GET --header 'Accept: application/n-quads' 'http://localhost:7200/repositories/test/rdf-graphs/service?graph=https%3A%2F%2Fw3id.org%2Fd2s%2Fgraph%2Fbiolink%2Fcohd'
+wget -O rdf_output.nq --header 'Accept: application/n-quads' 'https://graphdb.dumontierlab.com/repositories/ncats-red-kg/rdf-graphs/service?graph=https://w3id.org/data2services/graph/biolink/drugbank/datasets'
 ```
 
 ## Importing large files

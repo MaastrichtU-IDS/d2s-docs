@@ -202,6 +202,7 @@ Up-to-date, BioLink-compatible, knowledge graph composed of assertions mined fro
 
 * Reasoner API: http://biggim.ncats.io/api
 * [Running instructions](https://drive.google.com/drive/u/0/folders/19CT2bu1kzVnXgORhgIQijJd7x8O8Ez6D)
+* Big GIM II API: https://github.com/gloriachin/BigGIMII_API
 
 ##### Deploy
 

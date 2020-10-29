@@ -12,7 +12,7 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
-function Help(props) {
+function (props) {
   const {config: siteConfig, language = ''} = props;
   const {baseUrl, docsUrl} = siteConfig;
   const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
@@ -21,14 +21,8 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `<a href="https://gitter.im/um-dsri/data2services"
-        target="_blank" rel="noreferrer noopener" aria-label="Chat on Gitter">
-        <img alt="Ask on Gitter" 
-        src="https://img.shields.io/gitter/room/um-dsri/data2services"/>
-      </a>
-      <p>Feel free to ask questions, or share issues and successes on the [Gitter Chat](https://gitter.im/um-dsri/data2services) 💬</p>
-      <p>Easy login with your GitHub or GitLab account.</p>`,
-      title: 'Ask on Gitter'
+      content: `<p>For more informations about the Institute of Data Science, see the [IDS website](https://maastrichtuniversity.nl/ids)</p>`,
+      title: 'Browse the IDS website'
     },
     {
       content: `<a href="https://github.com/MaastrichtU-IDS/d2s-docs/issues"

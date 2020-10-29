@@ -270,8 +270,6 @@ The Web UI has been deployed publicly for a few triplestores:
 * [COVID-19](https://rhizomer.rhizomik.net/datasets/covid19/ucsb:Record)
 * [DBpedia](https://rhizomer.rhizomik.net/datasets/dbpedia/describe?uri=http:%2F%2Fdbpedia.org%2Fresource%2FEngland)
 
-> Deployment will be integrated in [d2s](https://pypi.org/project/d2s/) soon.
-
 ---
 
 ### TriplyDB
