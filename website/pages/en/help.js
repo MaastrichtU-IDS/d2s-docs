@@ -12,9 +12,7 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
-// function (props) {
-class Help extends React.Component {
-  render() {
+function Help(props) {
   const {config: siteConfig, language = ''} = props;
   const {baseUrl, docsUrl} = siteConfig;
   const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
@@ -62,7 +60,6 @@ class Help extends React.Component {
       </Container>
     </div>
   );
-  }
 }
 
 module.exports = Help;
