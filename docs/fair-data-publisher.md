@@ -41,6 +41,10 @@ The [Linked Open Vocabulary (LOV)](https://lov.linkeddata.es/dataset/lov/) provi
 * [**DCAT**: Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-2/), to describe datasets
 * [**NCIT**: National Cancer Institute Thesaurus](https://bioportal.bioontology.org/ontologies/NCIT), a vocabulary for clinical care, translational and basic research, and public information and administrative activities.
 
+### Collaborative
+
+Report interesting ontologies for your domain by creating an issue.
+
 ## Use Python
 
 We provide example to easily build a RDF knowledge graph 
