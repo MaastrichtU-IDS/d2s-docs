@@ -7,10 +7,7 @@
     ],
     "Integrate data": [
       "d2s-new-dataset", "d2s-rml", "d2s-run", 
-      "d2s-dipper", "d2s-biothings"
-    ],
-    "Publish FAIR data": [
-      "fair-data-publisher"
+      "d2s-dipper", "d2s-biothings", "d2s-ottr"
     ],
     "Guides": [
       "guide-ontology", "guide-preprocessing", "guide-deploy-app", "guide-filebrowser", 
