@@ -5,7 +5,16 @@ title: Use Python
 
 ## Add a requirements file
 
-Always add `requirements.txt` to the root of the repository with all libraries required to run your Python scripts.
+Always add a `requirements.txt` file at the root of your repository with all libraries required to run your Python scripts.
+
+For example:
+
+```
+rdflib
+SPARQLWrapper
+pandas
+dipper
+```
 
 Command to install the dependencies:
 
@@ -19,11 +28,11 @@ Python is a good solution to perform preprocessing on the data for tasks not sup
 
 ## Python for RDF conversion
 
-### RDFlib
+### RDFLib
 
-You can perform the conversion to RDF using the `rdflib` library. You can access the `rdflib` documentation [here](https://rdflib.readthedocs.io/en/stable/).
+You can perform the conversion to RDF using the [RDFLib](https://rdflib.readthedocs.io/en/stable/) library.
 
-You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML) to RDF using Python and `rdflib`.
+You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML...) to RDF using Python and `rdflib`.
 
 ### Pandas
 

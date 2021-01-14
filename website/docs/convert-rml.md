@@ -27,10 +27,11 @@ Recommended workflow to easily create and test RML mappings:
 
 :::note YARRRML package
 
-YARRRML can also be parsed locally or automatically using a `npm` package:
+YARRRML can also be parsed locally or automatically using the [yarrrml-parser](https://github.com/RMLio/yarrrml-parser) `npm` package:
 
 ```shell
 npm i @rmlio/yarrrml-parser -g
+yarrrml-parser -i mappings.yarrr.yml
 ```
 
 ::::
@@ -68,7 +69,7 @@ mappings:
 You can also generate nquads by adding the graph infos in the `rr:subjectMap` in RML mappings (or just `g:` in YARRRML):
 
 ```turtle
-rr:graphMap [ rr:constant <https://w3id.org/trek/graph/drugbank> ];
+rr:graphMap [ rr:constant <https://w3id.org/d2s/graph> ];
 ```
 
 :::
@@ -83,13 +84,26 @@ The RML Mapper loads all data in memory, so be aware when working with big datas
 
 :::
 
+1. Download the rmlmapper `.jar` file at https://github.com/RMLio/rmlmapper-java/releases
+2. Run the RML mapper:
+
 ```bash
 java -jar rmlmapper.jar -m mapping.ttl -o rdf-output.nt
 ```
 
 :::tip Run automatically in workflow
 
-The RMLMapper can be easily run in GitHub Actions workflows, checkout the **[Run workflows](/docs/workflow-github)** page for more details
+The RMLMapper can be easily run in GitHub Actions workflows, checkout the **[Run workflows](/docs/workflow-github)** page for more details.
+
+```yaml
+- name: Run RML mapper
+  uses: vemonet/rmlmapper-java@v4.9.0
+  with:
+    mapping: mappings.rml.ttl
+    output: rdf-output.nt
+  env:
+    JAVA_OPTS: "-Xmx6g"
+```
 
 :::
 
@@ -116,15 +130,16 @@ To run the RMLStreamer you have 2 options:
 
 :::
 
-Copy the `RMLStreamer.jar` file, your mapping files and data files to the pod before running it. For example:
+Copy the `RMLStreamer.jar` file, your mapping files and data files to the Flink `jobmanager` pod before running it. 
+
+For example:
 
 ```shell
 # get flink pod id
 oc get pod --selector app=flink --selector component=jobmanager --no-headers -o=custom-columns=NAME:.metadata.name
 
 oc exec <flink-jobmanager-id> -- mkdir -p /mnt/workspace/import
-oc cp workspace/input <flink-jobmanager-id>:/mnt/workspace/
-oc cp datasets <flink-jobmanager-id>:/mnt/
+oc cp input <flink-jobmanager-id>:/mnt/input/
 ```
 
 Example of command to run the RMLStreamer from the Flink cluster master:
