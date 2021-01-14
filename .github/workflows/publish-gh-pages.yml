@@ -21,6 +21,9 @@ jobs:
         private-key: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
 
     - name: Build and publish
+      env:
+        USE_SSH: true
+        GIT_USER: MaastrichtU-IDS
       run: |
         git config --global user.email "vincent.emonet@maastrichtuniversity.nl"
         git config --global user.name "Vincent Emonet"
