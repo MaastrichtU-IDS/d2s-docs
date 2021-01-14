@@ -9,8 +9,6 @@ List of graph databases: RDF triplestores and property graphs.
 
 ### Ontotext GraphDB
 
-[![GraphDB](/img/graphdb-logo.png)](https://www.ontotext.com/products/graphdb/)
-
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/ontotext/graphdb)](https://hub.docker.com/r/ontotext/graphdb/)
 
 [Ontotext GraphDB™](https://www.ontotext.com/) triplestore includes a web UI, various [data visualizations](http://graphdb.ontotext.com/documentation/free/exploring-data.html), [OntoRefine](http://graphdb.ontotext.com/documentation/free/loading-data-using-ontorefine.html), [SHACL validation](http://graphdb.ontotext.com/documentation/free/shacl-validation.html), RDFS/OWL [reasoning](http://graphdb.ontotext.com/documentation/standard/reasoning.html) to infer new triples and the possibility to deploy multiple repositories. It uses mainly the [rdf4j](https://rdf4j.org/) framework.
@@ -56,8 +54,6 @@ And access the newly loaded repository in the running GraphDB instance without d
 ---
 
 ### Virtuoso
-
-[![OpenLink Virtuoso](/img/openlink-virtuoso.png)](https://virtuoso.openlinksw.com/)
 
 [![GitHub](https://img.shields.io/github/stars/tenforce/docker-virtuoso?label=GitHub&style=social)](https://github.com/tenforce/docker-virtuoso)
 
@@ -224,8 +220,6 @@ docker run -d -p 8086:8080 -p 8443:8443 --name anzograph -v $(pwd)/workspace/anz
 
 ### Linked Data Fragments Server
 
-[![Linked Data Fragments server](/img/linked-data-fragments.svg)](https://linkeddatafragments.org/)
-
 [![GitHub](https://img.shields.io/github/stars/LinkedDataFragments/Server.js?label=GitHub&style=social)](https://github.com/LinkedDataFragments/Server.js)
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/linkeddatafragments/server.js)](https://hub.docker.com/r/linkeddatafragments/server.js)
@@ -253,8 +247,6 @@ curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:30
 ## Property graphs
 
 ### Neo4j
-
-[![Neo4j](/img/neo4j_logo.png)](https://neo4j.com/)
 
 [![GitHub](https://img.shields.io/github/stars/neo4j/neo4j?label=GitHub&style=social)](https://github.com/neo4j/neo4j)
 

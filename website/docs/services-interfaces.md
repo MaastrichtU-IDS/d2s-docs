@@ -10,8 +10,6 @@ Interfaces to browse and consume Knowledge Graphs data.
 
 ### d2s-api
 
-[![OpenAPI](/img/openapi-logo.png)](https://www.openapis.org/)
-
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-api?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-api)
 
 [Web services](https://github.com/MaastrichtU-IDS/d2s-api) described following the [OpenAPI 3.0](http://spec.openapis.org/oas/v3.0.1) specifications. The generated services enable the user to query a [BioLink-compliant](https://biolink.github.io/biolink-model/) RDF knowledge graph using HTTP request following the [Reasoner API Specifications](https://github.com/NCATS-Tangerine/NCATS-ReasonerStdAPI/tree/master/API). 
@@ -164,8 +162,6 @@ docker-compose down
 ---
 
 ### YASGUI
-
-[![OpenLink Virtuoso](/img/yasgui-logo.png)](http://doc.yasgui.org/)
 
 [![GitHub](https://img.shields.io/github/stars/OpenTriply/YASGUI?label=GitHub&style=social)](https://github.com/OpenTriply/YASGUI)
 

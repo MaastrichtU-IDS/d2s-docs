@@ -11,6 +11,3 @@ Get the command from the `Copy Login Command` button, in the user details, at th
 oc login https://openshift_cluster:8443 --token=MY_TOKEN
 ```
 
-> Paste the command in your terminal.
-
-<!-- ![](/img/getting-started-preparation-verify.png) -->

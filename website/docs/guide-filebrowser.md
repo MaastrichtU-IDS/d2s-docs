@@ -21,8 +21,6 @@ docker run -p 8081:80 \
 
 ## Private filebrowser
 
-[![filebrowser](/img/filebrowser_banner.svg)](https://filebrowser.xyz/)
-
 Deploy a [filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) to access files stored on a remote server.
 
 ```shell

@@ -139,12 +139,13 @@ For example:
 ```shell
 # get flink pod id
 POD_ID=$(oc get pod --selector app=flink --selector component=jobmanager --no-headers -o=custom-columns=NAME:.metadata.name)
+DATASET=my-dataset
 oc rsh flink-jobmanager-7459cc58f7-5hqjb
 oc exec $POD_ID -- mkdir -p /mnt/project
-# If script run from mappings/dataset1/scripts/ :
+# If script run from datasets/dataset1/scripts/ :
 oc cp ../../mappings $POD_ID:/mnt/project/
-chmod +x /mnt/project/mappings/dataset1/scripts/download.sh
-oc exec $POD_ID -- /mnt/project/mappings/dataset1/scripts/download.sh
+chmod +x /mnt/project/datasets/$DATASET/scripts/download.sh
+oc exec $POD_ID -- /mnt/project/datasets/$DATASET/scripts/download.sh
 oc exec $POD_ID -- wget -O /mnt/RMLStreamer.jar https://github.com/RMLio/RMLStreamer/releases/download/v2.0.0/RMLStreamer-2.0.0.jar
 ```
 
@@ -161,14 +162,6 @@ nohup /opt/flink/bin/flink run -p 128 -c io.rml.framework.Main /mnt/RMLStreamer.
 The progress of the job can be checked in the Apache Flink web UI.
 
 :::
-
-Check if the conversion is running well in the pod:
-
-```bash
-oc rsh $POD_ID
-tail /mnt/cohd/openshift-rmlstreamer-cohd-associations.nt
-ls -alh /mnt/cohd/openshift-rmlstreamer-cohd-associations.nt
-```
 
 ### Merge and compress output
 

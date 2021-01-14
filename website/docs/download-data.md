@@ -3,7 +3,7 @@ id: download-data
 title: Download data
 ---
 
-Define a simple Bash script to download the data:
+Define a simple Bash script to download the data in `datasets/$dataset_id/download/download.sh`
 
 ```bash
 # Download file from URL

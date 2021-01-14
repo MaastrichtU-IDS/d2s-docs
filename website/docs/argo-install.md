@@ -14,8 +14,6 @@ Argo can be used to perform XML conversion. Apache Drill needs to be deployed on
 
 ## Install the OpenShift client
 
-[![OpenShift](/img/openshift-logo.png)](https://www.openshift.com/)
-
 [Download the oc client](https://www.okd.io/download.html) to connect to the [DSRI OpenShift cluster](https://app.dsri.unimaas.nl:8443/).
 
 ```shell
@@ -29,8 +27,6 @@ sudo mv oc kubectl /usr/local/bin/
 ---
 
 ## Install Argo
-
-[![Argo project](/img/argo-logo.png)](https://argoproj.github.io/argo/)
 
 [Argo](https://argoproj.github.io/argo/) allows you to describe and run workflows on [Kubernetes](https://kubernetes.io/) clusters.
 
@@ -133,7 +129,3 @@ kubectl delete -n kube-system deploy workflow-controller argo-ui
 kubectl delete -n kube-system sa argo argo-ui
 kubectl delete -n kube-system svc argo-ui
 ```
-
-[![Kubernetes](/img/Kubernetes.png)](https://kubernetes.io/)
-
-[![MapR](/img/mapr_logo.png)](https://mapr.com/)

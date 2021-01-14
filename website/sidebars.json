@@ -7,6 +7,12 @@
     "Deploy services": [
       "deploy-services", "deploy-additional-services", "translator-prototypes-registry"
     ],
+    "Use d2s CLI": [
+      "d2s-introduction", "d2s-installation", "d2s-workspace", "d2s-services",
+      "d2s-services", "services-graph-databases", "services-interfaces", "services-utilities",
+      "d2s-new-dataset", "d2s-rml", "d2s-run", 
+      "d2s-dipper", "d2s-biothings", "d2s-ottr"
+    ],
     "Guides": [
       "guide-preprocessing",
       "guide-docker", "guide-jenkins",

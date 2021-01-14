@@ -37,8 +37,6 @@ The [Linked Open Vocabulary (LOV)](https://lov.linkeddata.es/dataset/lov/) provi
 
 ## Ontology design with Protégé
 
-![protege](/img/protege-logo.png)
-
 You can use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
 
 * [Install Protégé](http://protegeproject.github.io/protege/installation/) on your computer for better performance than the web hosted service.

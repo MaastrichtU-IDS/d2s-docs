@@ -57,5 +57,3 @@ Pod can also be tested within an Argo workflow, see [tests/test-devnull-argo.yml
 ```shell
 argo submit tests/test-devnull-argo.yml
 ```
-
-![OpenShift](/img/openshift-logo.png)

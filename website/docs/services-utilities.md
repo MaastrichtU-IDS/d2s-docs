@@ -156,8 +156,6 @@ d2s start fairdatapoint
 
 ### Apache Drill
 
-[![Apache Drill](/img/drill-logo.png)](https://github.com/amalic/apache-drill)
-
 [![](https://img.shields.io/github/stars/MaastrichtU-IDS/apache-drill?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/apache-drill)
 
 Exposes tabular text files (CSV, TSV, PSV) as SQL, and enables queries on large datasets. Used by [AutoR2RML](https://github.com/amalic/AutoR2RML) and [R2RML](https://github.com/amalic/r2rml) to convert tabular files to a generic RDF representation.
@@ -215,8 +213,6 @@ See the [official documentation to use the deployed REST API](http://dice-group.
 
 ### d2s-sparql-operations
 
-[![RDF4J](/img/RDF4J_logo.png)](https://rdf4j.org/)
-
 [![GitHub](https://img.shields.io/github/stars/MaastrichtU-IDS/d2s-sparql-operations?label=GitHub&style=social)](https://github.com/MaastrichtU-IDS/d2s-sparql-operations)
 
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/). Available on [DockerHub](https://hub.docker.com/r/umids/d2s-sparql-operations).
@@ -238,8 +234,6 @@ docker run -it --rm umids/d2s-sparql-operations \
 ------
 
 ### Comunica
-
-[![OpenLink Virtuoso](/img/comunica.svg)](https://comunica.linkeddatafragments.org/)
 
 [![GitHub](https://img.shields.io/github/stars/comunica/comunica?label=GitHub&style=social)](https://github.com/comunica/comunica)
 
