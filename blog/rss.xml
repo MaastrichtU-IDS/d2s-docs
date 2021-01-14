@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Data2Services Blog</title>
+        <link>https://d2s.semanticscience.org/blog</link>
+        <description>Data2Services Blog</description>
+        <lastBuildDate>Mon, 13 Apr 2020 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Publish Nanopublications]]></title>
+            <link>https://d2s.semanticscience.org/blog/2020/04/13/usecase-nanopublication</link>
+            <guid>Publish Nanopublications</guid>
+            <pubDate>Mon, 13 Apr 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Publish Nanopublications using Nanobench.]]></description>
+        </item>
+    </channel>
+</rss>

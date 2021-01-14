@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://d2s.semanticscience.org//blog</id>
+    <id>https://d2s.semanticscience.org/blog</id>
     <title>Data2Services Blog</title>
-    <updated>2020-04-13T06:00:00.000Z</updated>
+    <updated>2020-04-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://d2s.semanticscience.org//blog"/>
-    <subtitle>The best place to stay up-to-date with the latest Data2Services news and events.</subtitle>
-    <logo>https://d2s.semanticscience.org//img/d2s-logo.png</logo>
-    <rights>Copyright © 2021 Institute of Data Science at Maastricht University</rights>
+    <link rel="alternate" href="https://d2s.semanticscience.org/blog"/>
+    <subtitle>Data2Services Blog</subtitle>
+    <icon>https://d2s.semanticscience.org/img/d2s-logo.png</icon>
     <entry>
         <title type="html"><![CDATA[Publish Nanopublications]]></title>
-        <id>https://d2s.semanticscience.org//blog/2020/04/13/usecase-nanopublication.html</id>
-        <link href="https://d2s.semanticscience.org//blog/2020/04/13/usecase-nanopublication.html"/>
-        <updated>2020-04-13T06:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>Publish <a href="http://nanopub.org/" target="_blank" rel="nofollow noreferrer noopener">Nanopublications</a> using <a href="https://github.com/peta-pico/nanobench" target="_blank" rel="nofollow noreferrer noopener">Nanobench</a>.</p>
-]]></summary>
-        <author>
-            <name>Vincent Emonet</name>
-            <uri>https://vemonet.github.io/</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Integrate Geoeconomics datasets]]></title>
-        <id>https://d2s.semanticscience.org//blog/2020/03/23/usecase-geoeconomics.html</id>
-        <link href="https://d2s.semanticscience.org//blog/2020/03/23/usecase-geoeconomics.html"/>
-        <updated>2020-03-23T06:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>Generate a RDF knowledge graph integrating geographical and economics data from <strong><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD" target="_blank" rel="nofollow noreferrer noopener">WorldBank</a></strong> and <strong><a href="https://www.geonames.org/" target="_blank" rel="nofollow noreferrer noopener">GeoNames</a></strong>. Using Linux or MacOS is recommended as the <a href="https://pypi.org/project/d2s/" target="_blank" rel="nofollow noreferrer noopener">d2s tool</a> support for Windows is still a work in progress.</p>
-]]></summary>
-        <author>
-            <name>Vincent Emonet</name>
-            <uri>https://vemonet.github.io/</uri>
-        </author>
+        <id>Publish Nanopublications</id>
+        <link href="https://d2s.semanticscience.org/blog/2020/04/13/usecase-nanopublication"/>
+        <updated>2020-04-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Publish Nanopublications using Nanobench.]]></summary>
     </entry>
 </feed>
