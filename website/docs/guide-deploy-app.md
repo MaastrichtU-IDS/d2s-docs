@@ -5,23 +5,13 @@ title: Deploy services publicly
 
 This guide describes different ways to make your app publicly available from your server.
 
-Consider using [GitHub](https://pages.github.com/) or [GitLab](https://docs.gitlab.com/ee/user/project/pages/) pages for simple static documentation websites.
+Consider using [GitHub Pages](https://pages.github.com/) or [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/) for simple static documentation websites.
 
 ## Deploy the nginx proxy
 
 Port 80 of your server needs to be publicly available (and 443 if you want to use https)
 
 Deploy [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) on port 80:
-
-```shell
-d2s start proxy
-```
-
-> You can now modify the [docker-compose.yml](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml#L15) to set the URL of the deployed services as the environment variable `VIRTUAL_HOST`.
-
-> If only one port is exposed it should pick it up. Otherwise you can set the port to expose using the environment variable `VIRTUAL_PORT`.
-
-The proxy can also be run manually:
 
 ```shell
 docker run -d --name nginxproxy \
@@ -31,6 +21,10 @@ docker run -d --name nginxproxy \
     --restart unless-stopped \
     jwilder/nginx-proxy:latest
 ```
+
+> You can now modify the [docker-compose.yml](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/docker-compose.yml#L15) to set the URL of the deployed services as the environment variable `VIRTUAL_HOST`.
+
+> If only one port is exposed it will use it. Otherwise you can set the port to expose using the environment variable `VIRTUAL_PORT`.
 
 ## Choose your DNS and URL
 

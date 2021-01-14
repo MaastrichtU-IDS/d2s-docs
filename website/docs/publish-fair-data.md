@@ -3,11 +3,13 @@ id: publish-fair-data
 title: Publish FAIR data
 ---
 
-## Enable persistent identifiers
+## Use persistent identifiers
 
 To resolve your concepts URIs.
 
-URLs and domain name can change fast. If you want your knowledge graph identifiers to be resolvable in a few years, it is highly recommended to use a service to redirect a Persistent identifier to the URL resolving the concept.
+URLs and domain name can change fast. If you want your knowledge graph identifiers to be resolvable in a few years, it is highly recommended to use a persistent identifier service that will redirect to the URL of your concept (which can then change in time). 
+
+Popular services to publish persistent identifiers are:
 
 - [w3id.org](http://w3id.org/)
 - [purl.org](http://purl.org/)
@@ -19,21 +21,22 @@ We recommend to use the [w3id.org](http://w3id.org/) system, as it allows any Gi
 3. **Add a `.htaccess` file** with the redirection to your ontology (and a `README.md` file shortly explaining the purpose of this namespace)
 4. **Send a pull request** to the https://github.com/perma-id/w3id.org repository. It usually takes between a few hours and a few days to be accepted.
 
-:::info See example
+:::info Examples
 
-[See this example](https://github.com/vemonet/w3id.org/blob/master/d2s/.htaccess ) for a `.htaccess` passing the original w3id URI queries
+* [See this example](https://github.com/vemonet/w3id.org/blob/master/d2s/.htaccess ) for a `.htaccess` passing the original w3id URI queries
+* [Or this example](https://github.com/vemonet/w3id.org/blob/master/um/.htaccess) to redirect to different websites depending on the path.
 
 :::
 
 The persistent identifiers can be easily modified later if necessary, you will just need to send a new pull request with the changes.
 
-## Get a Digital Object Identifier for your resource
+## Get a Digital Object Identifier
 
-Optionally, for research, it is recommended to publish your resource on a repository to get a DOI (Digital Object Identifier)
+Optionally, for research, it is recommended to publish your resource on a repository to get a [Digital Object Identifier (DOI)](https://doi.org):
 
-- https://zenodo.org/ 
+- [Zenodo](https://zenodo.org/ )
   - e.g. https://zenodo.org/record/4269952 
-- [https://fairsharing.org](https://fairsharing.org/)
+- [FairSharing.org](https://fairsharing.org/)
   - e.g. https://fairsharing.org/FAIRsharing.dpkb5f 
 
 :::tip Even more FINDABLE

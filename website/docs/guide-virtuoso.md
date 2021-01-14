@@ -8,17 +8,6 @@ title: Setting up Virtuoso
 
 ## Run it
 
-### Using the client
-
-```shell
-d2s start virtuoso
-```
-
-> Access at http://localhost:8890/ and SPARQL endpoint at http://localhost:8890/sparql.
-
-> Admin login: `dba`
-
-### Using docker run
 
 Be careful when changing the DBA_PASSWORD for [tenforce/virtuoso](tenforce/virtuoso). This doesn't work every time, so you might need to use the default `dba` password.
 
@@ -29,13 +18,16 @@ docker run --rm --name d2s-virtuoso \
     -e DBA_PASSWORD=dba \
     -e SPARQL_UPDATE=true \
     -e DEFAULT_GRAPH=https://w3id.org/d2s/graph \
-    -v /data/d2s-workspace:/data \
+    -v /data/virtuoso:/data \
     -d umids/d2s-virtuoso
 ```
 
-> Shared in `/data/d2s-workspace`
+> Access at http://localhost:8890/ and SPARQL endpoint at http://localhost:8890/sparql.
 
-> Navigate to http://localhost:8890/
+> Admin login: `dba` / `dba`
+
+> Shared in `/data/virtuoso`
+
 
 ## Use the Search Index
 

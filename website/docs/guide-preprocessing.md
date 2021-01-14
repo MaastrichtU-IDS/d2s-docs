@@ -3,7 +3,7 @@ id: guide-preprocessing
 title: Preprocess input files
 ---
 
-We recommend you to define Bash commands to preprocess your data (convert to CSV, add column header, split) in the download.sh script of the dataset. See the example for COHD clinical converted from TSV to CSV.
+Data files sometimes requires preprocessing  (convert to CSV, add column header, split), Python can be quite slow for some tasks, so Bash can be a good solution.
 
 ## Convert TSV to CSV
 
@@ -15,9 +15,7 @@ sed -e 's/"/\\"/g' -e 's/\t/","/g' -e 's/^/"/' -e 's/$/"/' -e 's/\r//' dataset.t
 
 ## Add Tabular file header label
 
-[AutoR2RML](https://github.com/MaastrichtU-IDS/AutoR2RML) generates the generic RDF predicates out of tabular files columns header. If the tabular files to process don't have a header, it can easily be added by using the `sed` command in the [download.sh](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/download/download_examples.sh#L68) script.
-
-> See the [example](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/download/download_examples.sh#L68) in the dataset template.
+RML use the tabular files columns header to map the data. If the tabular files to process don't have a header, it can easily be added by using the `sed` command in the [download.sh](https://github.com/MaastrichtU-IDS/d2s-core/blob/master/support/template/dataset/download/download_examples.sh#L68) script.
 
 ### CSV
 
@@ -39,12 +37,7 @@ sed -i '1s/^/column1|column2|column3\n/' *.psv
 
 ## Split big files
 
-To process large CSV or TSV file with Apache Drill, you might need to change some parameters in the [Drill web UI](http://localhost:8048/options) at http://localhost:8048/options:
-
-*  Increase the `max_memory_per_node`. The maximum value of this parameter is `8589934592` on our servers.
-* Try increasing `planner.memory_limit` to `8589934592`
-
-In case changing the parameters doesn't solve the issue, you can try to split the file:
+In case you need to split large files:
 
 ```shell
 rm -rf {1..90}
@@ -75,17 +68,3 @@ cp -r /data/translator/cohd/{1..90} /data/ddbiolink/workspace/input/cohd/
 Processing large files on node2 can lead to generating an important amount of logs which is overloading the memory. Logs generated in `/var/lib/docker/overlay2`
 
 To clear the memory perform `docker system prune`
-
-## Test Apache Drill
-
-Example to test querying a tabular file with Apache Drill:
-
-```sql
-select row_number() over (partition by filename) as autor2rml_rownum
-    , NULLIF(trim(columns[0]), '') as `Dataset_id`
-    , NULLIF(trim(columns[1]), '') as `Concept_id_1`
-    , NULLIF(trim(columns[2]), '') as `Concept_id_2`
-    , NULLIF(trim(columns[3]), '') as `Concept_count`
-  from dfs.root.`/data/my_file.tsv` OFFSET 1;
-```
-

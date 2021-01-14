@@ -21,7 +21,7 @@ Securely define credentials as GitHub secrets (API keys, username, password, etc
 
 A few GitHub Actions are available on the [GitHub marketplace](https://github.com/marketplace?query=rdf) to easily work with RDF data.
 
-### RML Mapper
+### 🗺️ RML Mapper
 
 A [GitHub Action for the rmlmapper-java](https://github.com/marketplace/actions/rml-mapper-java)
 
@@ -35,7 +35,7 @@ A [GitHub Action for the rmlmapper-java](https://github.com/marketplace/actions/
     JAVA_OPTS: "-Xmx6g"
 ```
 
-### SPARQL operations
+### 📬 SPARQL operations
 
 A [GitHub Action for d2s-sparql-operations](https://github.com/marketplace/actions/sparql-operations), it allows to perform operations on SPARQL endpoints using [RDF4J](https://rdf4j.org/) (SPARQL select, construct, insert, delete queries, upload RDF files, split statements...)
 
@@ -65,7 +65,7 @@ Upload RDF from local folder:
     password: ${{ secrets.SPARQL_PASSWORD }}
 ```
 
-### Validate RDF
+### ✔️ Validate RDF
 
 A [GitHub Action to validate RDF with Jena](https://github.com/marketplace/actions/validate-rdf-with-jena)
 
@@ -75,7 +75,7 @@ A [GitHub Action to validate RDF with Jena](https://github.com/marketplace/actio
     input: my_file.ttl
 ```
 
-### Convert YARRRML to RML
+### 📝 Convert YARRRML to RML
 
 A [GitHub Action for the yarrrml-parser](https://github.com/marketplace/actions/yarrrml-parser), to convert YARRRML YAML files to RML turtle files.
 

@@ -15,20 +15,6 @@ If you wish to use GraphDB free edition, you will need to download it from Ontot
 
 ## Run it
 
-### Using the client
-
-You can provide the .zip file required to build GraphDB when doing `d2s init`, otherwise it needs to be placed in [d2s-core/support/graphdb](https://github.com/MaastrichtU-IDS/d2s-core/tree/master/support) before running the build.
-
-```shell
-# Build
-d2s update graphdb
-
-# Run
-d2s start graphdb
-```
-
-### Docker build and run
-
 ```shell
 # Here shared locally at /data/graphdb and /data/graphdb-import
 docker build -t graphdb --build-arg version=9.1.1 .
@@ -38,13 +24,6 @@ docker run -d --rm --name graphdb -p 7200:7200 -v $(pwd)/workspace/graphdb:/opt/
 
 > Go to http://localhost:7200/
 
-### Permission issues
-
-If you face permissions issues with importing files try the following command (it will `chmod 777` the import folder):
-
-```shell
-d2s update --permissions
-```
 
 ### Configure GraphDB
 
@@ -57,9 +36,7 @@ When datasets bigger than 5G statements use the preload  tool, which load faster
 * Change the repository to be created and loaded in `workspace/graphdb/preload-config.ttl`
 * Put the files to be loaded in `workspace/import/preload`
 
-```shell
-d2s start graphdb-preload
-```
+Run the `docker-compose.yml` for preload 
 
 When the preload has completed, the `graphdb-preload` will stop, you can then copy the loaded repository to the running GraphDB folder:
 
@@ -105,6 +82,7 @@ To change your password:
 By default security is not enabled, click on **Security is off** to turn it on.
 
 To create a new user click **Create new user**
+
 ## Create Search Index
 
 Execute this insert SPARQL query in the repository:

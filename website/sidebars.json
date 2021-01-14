@@ -6,7 +6,7 @@
       "data-validation", "deploy-services"
     ],
     "Guides": [
-      "guide-preprocessing", "guide-deploy-app",
+      "guide-preprocessing",
       "guide-docker", "guide-jenkins",
       {
         "type": "category",

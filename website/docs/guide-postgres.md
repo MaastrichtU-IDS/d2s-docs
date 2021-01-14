@@ -5,14 +5,6 @@ title: Setting up PostgreSQL
 
 ## Run PostgreSQL
 
-### Use the client
-
-```shell
-d2s start postgres
-```
-
-### Use docker run
-
 ```shell
 docker run --name d2s-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d -v $(pwd)/workspace/input:/data postgres:10.4
 ```

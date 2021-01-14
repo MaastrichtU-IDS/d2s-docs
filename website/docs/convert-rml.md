@@ -3,16 +3,27 @@ id: convert-rml
 title: Convert with RML
 ---
 
-
 Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML) to RDF using a declarative mapping language. 
+
+## Define mappings
 
 We recommend to use [YARRRML](https://rml.io/yarrrml/), a mapping language to replace the RDF by YAML, to make the definition of RML mappings easier.
 
-The **[Matey Web UI editor 🦜](https://rml.io/yarrrml/matey/#edit)** is available to easily write and test RML mappings in [YAML](https://yaml.org/) files using the [YARRRML](https://rml.io/yarrrml/) simplified mapping language. The mappings can be conveniently tested in the browser on a sample of the file to transform.
+The **[Matey web UI 🦜](https://rml.io/yarrrml/matey/#edit)** is available to easily write and test RML mappings in [YAML](https://yaml.org/) files using the [YARRRML](https://rml.io/yarrrml/) simplified mapping language. The mappings can be conveniently tested in the browser on a sample of the file to transform.
+
+Recommended workflow to easily create and test RML mappings:
+
+1. Use the **[Matey web UI 🦜](https://rml.io/yarrrml/matey/#edit)** to write YARRRML mappings, and test them against a sample of your data
+2. Copy the YARRRML mappings to a file with the extension `.yarrr.yml`
+3. Copy the RML mappings to a file with same name, and the extension `.rml.ttl`
+4. Optionally you can automate the execution in a [GitHub Actions workflow](/docs/workflow-github).
+
+:::info Specifications
 
 * RML Specifications can be found as a [W3C unofficial draft](https://rml.io/specs/rml/).
-
 * See the [rml.io](https://rml.io/) website for more documentation about RML and the various tools built and deployed by Ghent University.
+
+:::
 
 :::note YARRRML package
 
@@ -78,7 +89,7 @@ java -jar rmlmapper.jar -m mapping.ttl -o rdf-output.nt
 
 :::tip Run automatically in workflow
 
-The RMLMapper can be easily run in GitHub Actions workflows, checkout the **[Run workflows](/docs/workflows-github)** page for more details
+The RMLMapper can be easily run in GitHub Actions workflows, checkout the **[Run workflows](/docs/workflow-github)** page for more details
 
 :::
 
