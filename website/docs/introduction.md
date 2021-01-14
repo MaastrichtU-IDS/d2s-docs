@@ -21,3 +21,28 @@ First step is to create a repository for your project on [GitHub](https://github
 * Add a `LICENSE` file with the license information (e.g. MIT license)
 * Follow a consistent pattern to store your mapping files and scripts.
 
+## Recommended project folder structure
+
+```bash
+root-directory
+├── .github/workflows
+│   ├── process-dataset1.yml
+│   └── process-dataset2.yml
+├── .gitignore
+├── LICENSE
+├── README.md
+├── docker-compose.yml	# If needed
+├── Dockerfile			# If needed
+└── mappings			# Folders of the different datasets mappings
+    └── my-dataset1
+        ├── README.md	# Notes about how and where to run those mappings
+        ├── mappings.yarrr.yml		# YARRRML mappings
+        ├── mappings.rml.ttl		# RML mappings
+        ├── scripts			# Script to download input files
+        │   ├── download.sh			# Bash script to download data
+        │   └── preprocessing.py	# Python script for preprocessing
+        └── metadata			# HCLS metadata about the dataset 
+            ├── metadata-summary.ttl
+            ├── metadata-version-1.ttl
+            └── metadata-version-2.ttl
+```
