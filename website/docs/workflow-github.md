@@ -1,6 +1,6 @@
 ---
 id: workflow-github
-title: Run workflows
+title: Deploy workflows
 ---
 
 We use GitHub Actions to automatically run the different part of the workflow in a reproducible way:

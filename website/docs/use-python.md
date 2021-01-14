@@ -3,23 +3,39 @@ id: use-python
 title: Use Python
 ---
 
-## For preprocessing
-
-Python is a good solution to perform preprocessing on the data for tasks not supported by RML. 
-
-## For RDF conversion
-
-You can also perform the conversion to RDF using the `rdflib` library. You can access the `rdflib` documentation [here](https://rdflib.readthedocs.io/en/stable/).
-
-* We recommend to use `pandas` to handle tabular files as dataframes efficiently.
-* You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML) to RDF using Python and `rdflib`.
-
 ## Add a requirements file
 
-Add `requirements.txt` to the root of the repository with all libraries required to run your Python scripts.
+Always add `requirements.txt` to the root of the repository with all libraries required to run your Python scripts.
 
-Install the dependencies:
+Command to install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+## Python for preprocessing
+
+Python is a good solution to perform preprocessing on the data for tasks not supported by RML. 
+
+## Python for RDF conversion
+
+### RDFlib
+
+You can perform the conversion to RDF using the `rdflib` library. You can access the `rdflib` documentation [here](https://rdflib.readthedocs.io/en/stable/).
+
+You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML) to RDF using Python and `rdflib`.
+
+### Pandas
+
+We recommend to use [Pandas](https://pandas.pydata.org/) to handle tabular files as dataframes efficiently.
+
+### Dipper
+
+[Dipper](https://dipper.readthedocs.io/en/latest/) is a [Python package](https://pypi.org/project/dipper/) to generate RDF triples from common scientific resources. It has been used to build and expose RDF from multiple sources for the [Monarch Initiative](https://monarchinitiative.org).
+
+Dipper includes subpackages and modules to create graphical models of this data, including:
+
+- Models package for generating common sets of triples, including  common OWL axioms, complex genotypes, associations, evidence and  provenance models.
+- Graph package for building graphs with RDFLib or streaming n-triples
+
+- Source package containing fetchers and parsers that interface with remote databases and web services

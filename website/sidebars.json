@@ -1,9 +1,11 @@
 {
   "docs": {
-    "Get started": [
-      "introduction", "create-repository", "choose-data-model", "convert-rml", "use-python",
-      "workflow-github", "store-rdf", "publish-fair-data",
-      "data-validation", "deploy-services"
+    "Publish data": [
+      "introduction", "choose-data-model", "convert-rml", "use-python",
+      "workflow-github", "store-rdf", "publish-fair-data", "data-validation"
+    ],
+    "Deploy services": [
+      "deploy-services", "deploy-additional-services", "translator-prototypes-registry"
     ],
     "Guides": [
       "guide-preprocessing",

@@ -12,3 +12,12 @@ This documentation provides straightforward guidelines to integrate and access d
 * Deploy user-friendly web UI to access the integrated data.
 
 The documented method allow to quickly publish structured data complying with the **FAIR principles** (Findable, Accessible, Interoperable, Re-usable).
+
+## Create a repository
+
+First step is to create a repository for your project on [GitHub](https://github.com). This will allow you to keep track of the changes to your scripts and mappings using `git`.
+
+* Add a `README.md` file with basic informations about your project: description, how to run it, etc.
+* Add a `LICENSE` file with the license information (e.g. MIT license)
+* Follow a consistent pattern to store your mapping files and scripts.
+
