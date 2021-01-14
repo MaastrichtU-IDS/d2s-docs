@@ -3,7 +3,7 @@ id: store-rdf
 title: Store RDF data
 ---
 
-Store RDF data in a triplestore.
+Store RDF data in a triplestore accessible by querying a SPARQL endpoint.
 
 
 ## Publish to our public GraphDB triplestore

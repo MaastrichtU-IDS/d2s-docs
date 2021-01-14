@@ -3,21 +3,6 @@ id: publish-fair-data
 title: Publish FAIR data
 ---
 
-## Get a Digital Object Identifier for your resource
-
-For research publish your resource on a repository to get a DOI (Digital Object Identifier)
-
-- https://zenodo.org/ 
-  - e.g. https://zenodo.org/record/4269952 
-- [https://fairsharing.org](https://fairsharing.org/)
-  - e.g. https://fairsharing.org/FAIRsharing.dpkb5f 
-
-:::tip Even more FINDABLE
-
-[ORCID](https://orcid.org/) is a good way to identify and authenticate yourself across research publishing platforms. Don't hesitate to create an account if you need it.
-
-:::
-
 ## Enable persistent identifiers
 
 To resolve your concepts URIs.
@@ -41,3 +26,18 @@ We recommend to use the [w3id.org](http://w3id.org/) system, as it allows any Gi
 :::
 
 The persistent identifiers can be easily modified later if necessary, you will just need to send a new pull request with the changes.
+
+## Get a Digital Object Identifier for your resource
+
+Optionally, for research, it is recommended to publish your resource on a repository to get a DOI (Digital Object Identifier)
+
+- https://zenodo.org/ 
+  - e.g. https://zenodo.org/record/4269952 
+- [https://fairsharing.org](https://fairsharing.org/)
+  - e.g. https://fairsharing.org/FAIRsharing.dpkb5f 
+
+:::tip Even more FINDABLE
+
+[ORCID](https://orcid.org/) is a good way to identify and authenticate yourself across research publishing platforms. Don't hesitate to create an account if you need it.
+
+:::
