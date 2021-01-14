@@ -1,7 +1,7 @@
 {
   "docs": {
     "Get started": [
-      "introduction", "choose-data-model", "convert-rml", "use-python",
+      "introduction", "create-repository", "choose-data-model", "convert-rml", "use-python",
       "workflow-github", "store-rdf", "publish-fair-data",
       "data-validation", "deploy-services"
     ],

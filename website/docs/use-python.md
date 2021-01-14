@@ -14,3 +14,12 @@ You can also perform the conversion to RDF using the `rdflib` library. You can a
 * We recommend to use `pandas` to handle tabular files as dataframes efficiently.
 * You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML) to RDF using Python and `rdflib`.
 
+## Add a requirements file
+
+Add `requirements.txt` to the root of the repository with all libraries required to run your Python scripts.
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
