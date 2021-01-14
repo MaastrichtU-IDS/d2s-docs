@@ -9,6 +9,12 @@ This documentation explains how to use the [d2s](https://pypi.org/project/d2s/) 
 * Deploy various interfaces to consume the Knowledge Graph data.
 * Deploy user-friendly web UI to access the integrated data.
 
+:::caution Not maintained anymore
+
+We are currently migrating from the CLI to using more GitHub Actions workflow, the `d2s` CLI is not maintained anymore. Prefer using the documentation at **Publish data** and **Deploy services**
+
+:::
+
 [d2s](https://pypi.org/project/d2s/) is a Command Line Interface, written in Python, that helps you define download scripts, metadata, mappings and Jupyter notebooks to integrate multiple datasets into a Knowledge Graph complying with a defined data model. `d2s` has been developed using mainly [RDF](https://www.w3.org/RDF/) Knowledge Graphs, but property graphs, such as Neo4j, can also be used. 
 
 This documentation is intended for people who are familiar with [Docker](https://www.docker.com/) and running simple commands in a Terminal. It is also preferable to be familiar with the [SPARQL](https://www.w3.org/TR/sparql11-query/) query language.
