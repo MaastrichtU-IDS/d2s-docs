@@ -21,7 +21,7 @@ const features = [
     imageUrl: 'img/rdf-icon-simple.png',
     description: (
       <>
-        Use the <a href="https://www.w3.org/RDF">Resource Description Framework</a> (RDF) to describe data complying with a stndard data model
+        Use the <a href="https://www.w3.org/RDF">Resource Description Framework</a> (RDF) to publish data complying with a standard data model or ontology.
       </>
     ),
   },
@@ -31,7 +31,7 @@ const features = [
     // imageUrl: 'img/undraw_collaborators.svg',
     description: (
       <>
-        Deploy a interfaces and services (SPARQL, HTTP OpenAPI, Web UI) to the integrated data more FAIR.
+        Deploy interfaces and services (SPARQL, HTTP OpenAPI, Web UI) to access the integrated data.
       </>
     ),
   },
