@@ -130,17 +130,25 @@ To run the RMLStreamer you have 2 options:
 
 :::
 
+### Prepare files
+
 Copy the `RMLStreamer.jar` file, your mapping files and data files to the Flink `jobmanager` pod before running it. 
 
 For example:
 
 ```shell
 # get flink pod id
-oc get pod --selector app=flink --selector component=jobmanager --no-headers -o=custom-columns=NAME:.metadata.name
-
-oc exec <flink-jobmanager-id> -- mkdir -p /mnt/workspace/import
-oc cp input <flink-jobmanager-id>:/mnt/input/
+POD_ID=$(oc get pod --selector app=flink --selector component=jobmanager --no-headers -o=custom-columns=NAME:.metadata.name)
+oc rsh flink-jobmanager-7459cc58f7-5hqjb
+oc exec $POD_ID -- mkdir -p /mnt/project
+# If script run from mappings/dataset1/scripts/ :
+oc cp ../../mappings $POD_ID:/mnt/project/
+chmod +x /mnt/project/mappings/dataset1/scripts/download.sh
+oc exec $POD_ID -- /mnt/project/mappings/dataset1/scripts/download.sh
+oc exec $POD_ID -- wget -O /mnt/RMLStreamer.jar https://github.com/RMLio/RMLStreamer/releases/download/v2.0.0/RMLStreamer-2.0.0.jar
 ```
+
+### Run the RMLStreamer
 
 Example of command to run the RMLStreamer from the Flink cluster master:
 
@@ -153,3 +161,73 @@ nohup /opt/flink/bin/flink run -p 128 -c io.rml.framework.Main /mnt/RMLStreamer.
 The progress of the job can be checked in the Apache Flink web UI.
 
 :::
+
+Check if the conversion is running well in the pod:
+
+```bash
+oc rsh $POD_ID
+tail /mnt/cohd/openshift-rmlstreamer-cohd-associations.nt
+ls -alh /mnt/cohd/openshift-rmlstreamer-cohd-associations.nt
+```
+
+### Merge and compress output
+
+The ntriples files produced by RMLStreamer in parallel:
+
+```bash
+cd /mnt/cohd/openshift-rmlstreamer-cohd-associations.nt
+nohup cat * >> openshift-rmlstreamer-cohd-associations.nt &
+
+ls -alh /mnt/cohd/openshift-rmlstreamer-cohd-associations.nt/openshift-rmlstreamer-cohd-associations.nt
+
+# Zip the merged output file:
+nohup gzip openshift-rmlstreamer-cohd-associations.nt &
+```
+
+### Copy to Node2
+
+SSH connect to node2, http_proxy var need to be changed temporary to access DSRI
+
+```bash
+export http_proxy=""
+export https_proxy=""
+
+# Copy with oc tool:
+oc login
+oc cp flink-jobmanager-7459cc58f7-cjcqf:/mnt/cohd/openshift-rmlstreamer-cohd-associations.nt/openshift-rmlstreamer-cohd-associations.nt.gz /data/graphdb/import/umids-download &!
+
+# Check (19G total):
+ls -alh /data/graphdb/import/umids-download
+cp /data/graphdb/import/umids-download/openshift-rmlstreamer-cohd-associations.nt.gz /data/d2s-project-trek/workspace/dumps/rdf/cohd/
+gzip -d openshift-rmlstreamer-cohd-associations.nt.gz
+```
+
+Reactivate the proxy (`EXPORT http_proxy`)
+
+### Preload in GraphDB
+
+Check the generated COHD file on node2 at:
+
+```bash
+cd /data/d2s-project-trek/workspace/dumps/rdf/cohd
+```
+
+Replace wrong triples:
+
+```bash
+sed -i 's/"-inf"^^<http:\/\/www.w3.org\/2001\/XMLSchema#double>/"-inf"/g' openshift-rmlstreamer-cohd-associations.nt
+```
+
+Start preload:
+
+```bash
+cd /data/deploy-ids-services/graphdb/preload-cohd
+docker-compose up -d
+```
+
+The COHD repository will be created in `/data/graphdb-preload/data`, copy it to the main GraphDB:
+
+```bash
+mv /data/graphdb-preload/data/repositories/cohd /data/graphdb/data/repositories
+```
+
