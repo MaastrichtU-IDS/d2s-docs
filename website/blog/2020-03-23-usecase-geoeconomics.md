@@ -1,7 +1,8 @@
 ---
 title: Integrate Geoeconomics datasets
 author: Vincent Emonet
-authorURL: https://vemonet.github.io/
+authorURL: "https://vemonet.github.io/"
+draft: true
 ---
 
 

@@ -1,0 +1,108 @@
+/* your custom css */
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+body {
+    font-family: "Open Sans", "Roboto", "Serif"
+}
+
+a:hover {
+    color: #ff6f00;
+    text-decoration: none;
+}
+/* Links color when dark background (index.js) */
+.darkBackground a:not(:hover) {
+    color: #1565c0;
+}
+
+/* Make sure the Gitter sidecar is over the navbar and change color */
+aside.gitter-chat-embed {
+    z-index: 9999;
+}
+div.fixedHeaderContainer {
+    z-index: 9998;
+}
+.gitter-open-chat-button {
+    background-color: #2196f3ff;
+}
+.gitter-open-chat-button:hover {
+    background-color: #1565c0;
+}
+
+/* Change weight of Website logo, nav left */
+.headerTitleWithLogo {
+    font-weight: 500;
+}
+/* Change weight of Documentation and Help, nav right */
+.navigationSlider .slidingNav ul li a {
+    font-weight: 400;
+}
+/* Change weight of main index page title */
+.projectTitle {
+    font-weight: 400;
+}
+/* Main index page subtitle */
+.projectTitle > small {
+    font-weight: 300;
+}
+/* Change weight of Get started button */
+.promoSection .button {
+    margin: 0.5em;
+    font-size: 20px;
+    font-weight: 400;
+    border-width: 1px;
+}
+
+.font300 {
+    font-weight: 300;
+}
+.font400 {
+    font-weight: 400;
+}
+
+/* Edit button in docs markdown */
+.edit-page-link {
+    font-size: 12px;
+}
+/* Docs markdown images size */
+article img, article p img {
+    max-width: 250px;
+    max-height: 80px;
+}
+
+.button {
+    text-transform: none;
+    padding: 1em;
+    border-radius: 7px;
+}
+
+.homeContainer .homeWrapper .projectLogo  {
+    position: inherit;
+    justify-content: center;
+}
+
+/* Resize index.js image */
+.imageAlignSide .blockImage {
+    flex: 0 1 700px;
+    max-width: 700px;
+}
+
+.imageAlignTop .blockImage {
+    max-width: 100%;
+}
+.gridBlock .fourByGridBlock img {
+    max-height: 100px;
+}

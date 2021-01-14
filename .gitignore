@@ -5,10 +5,37 @@ node_modules
 lib/core/metadata.js
 lib/core/MetadataBlog.js
 
+v1-website/translated_docs
+v1-website/build/
+v1-website/yarn.lock
+v1-website/node_modules
+v1-website/i18n/*
+v1-website/package-lock.json
+
 website/translated_docs
 website/build/
 website/yarn.lock
 website/node_modules
 website/i18n/*
-website/npm-debug.log
 website/package-lock.json
+
+# Docusaurus v2:
+/node_modules
+
+# production
+build
+
+# generated files
+.docusaurus
+.cache-loader
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,7 +1,7 @@
 ---
 title: Publish Nanopublications
 author: Vincent Emonet
-authorURL: https://vemonet.github.io/
+authorURL: "https://vemonet.github.io/"
 ---
 
 
