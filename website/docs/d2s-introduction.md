@@ -53,6 +53,9 @@ The [d2s client](https://pypi.org/manage/project/d2s/releases/) uses the followi
 ```bash
 root-directory
 ├── .d2sconfig						# The project config file
+├── .github/workflows
+│   ├── process-dataset1.yml
+│   └── process-dataset2.yml
 ├── LICENSE
 ├── README.md
 ├── d2s-core (submodule)	# docker-compose, CWL, Argo workflows files

@@ -33,7 +33,7 @@ root-directory
 ├── README.md
 ├── docker-compose.yml	# If needed
 ├── Dockerfile			# If needed
-└── mappings			# Folders of the different datasets mappings
+└── datasets			# Folders of the different datasets mappings
     └── my-dataset1
         ├── README.md	# Notes about how and where to run those mappings
         ├── mappings.yarrr.yml		# YARRRML mappings
@@ -46,3 +46,4 @@ root-directory
             ├── metadata-version-1.ttl
             └── metadata-version-2.ttl
 ```
+
