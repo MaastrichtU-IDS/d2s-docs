@@ -51,6 +51,44 @@ pip install biothings-explorer
 
 ---
 
+## Blue Brain Nexus
+
+[![Blue Brain Nexus](https://img.shields.io/github/stars/BlueBrain/nexus?label=GitHub&style=social)](https://github.com/BlueBrain/nexus)
+
+Quickly build, manage, and leverage Knowledge Graphs using a web application, Python framework, and web services with [Blue Brain Nexus](https://bluebrainnexus.io/).
+
+### [Nexus Fusion](https://bluebrainnexus.io/products/nexus-fusion/)
+
+:::info Enabling Collaborative Data and Knowledge Discovery
+
+An extensible, open-source web interface that thrives on your data. With workspaces, plugins, and an admin interface available out-of-the-box, you can start working with your ingested data immediately.
+
+:::
+
+Fusion is our extensible web application. It hosts different apps to  accommodate various use cases. It comes by default with Studios (where  you work with data), Admin (for managing the Nexus instance), and will  soon support Workflows to organise your data activities. It runs on top  of the Delta web services, and integrates neatly with our Forge Python  framework.
+
+### [Nexus Forge](https://bluebrainnexus.io/products/nexus-forge)
+
+:::warning Building and Using Knowledge Graphs Made Easy
+
+Blue Brain Nexus Forge is a domain-agnostic, generic and extensible Python framework enabling non-expert users to create and manage Knowledge Graphs.
+
+:::
+
+Knowledge Graphs are often built from heterogeneous data and  knowledge (i.e. data models such as ontologies, schemas) coming from  different sources and often with different formats (i.e. structured,  unstructured). Nexus Forge enables data scientists, data and knowledge  engineers to address these challenges by uniquely combining under a  consistent and generic Python Framework all necessary components to  build and search a Knowledge Graph.
+
+### [Nexus Delta](https://bluebrainnexus.io/products/nexus-delta)
+
+:::caution Managing the Data and Knowledge Graph Lifecycle
+
+A secure and scalable service that allows you to organize your data into a Knowledge Graph. Its API enables you to store your data, describe them with metadata, enforce format using schemas combined with automatic validation, capture provenance, and access revisions.
+
+:::
+
+A scalable and secure service to store and leverage all your data,  neatly organised in a Knowledge Graph. It offers an API to perform all  your data management operations, this way it can easily integrate with  your software stack. Its advanced indexing capabilities automatically build views from your metadata.
+
+---
+
 ## LinkedDataHub
 
 [![](https://img.shields.io/github/stars/AtomGraph/LinkedDataHub?label=GitHub&style=social)](https://github.com/AtomGraph/LinkedDataHub)
