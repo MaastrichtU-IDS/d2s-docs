@@ -55,7 +55,23 @@ pip install biothings-explorer
 
 [![Blue Brain Nexus](https://img.shields.io/github/stars/BlueBrain/nexus?label=GitHub&style=social)](https://github.com/BlueBrain/nexus)
 
-Quickly build, manage, and leverage Knowledge Graphs using a web application, Python framework, and web services with [Blue Brain Nexus](https://bluebrainnexus.io/).
+Quickly build, manage, and leverage Knowledge Graphs using a web application, Python framework, and web services with [Blue Brain Nexus](https://bluebrainnexus.io/). Using Blazegraph for RDF storage. 
+
+Login with GitHub or ORCID. Manage data access through fine grain Access Control List with organizations and users
+
+Data management oriented [SHACL](https://www.w3.org/TR/shacl/) version of [W3C PROV-O](https://www.w3.org/ns/prov-o-20130430). [SHACL](https://www.w3.org/TR/shacl/) version of a subset of schemas defined by [schema.org](http://schema.org/) that are commonly used in Blue Brain Nexus.
+
+Install Nexus Python SDK and CLI:
+
+```bash
+pip install nexus-sdk git+https://github.com/BlueBrain/nexus-cli
+```
+
+Install Nexus JavaScript SDK and React components (the SDK is written in Typescript, so type declarations for all operations are included in the package):
+
+```bash
+npm install @bbp/nexus-sdk @bbp/react-nexus
+```
 
 ### [Nexus Fusion](https://bluebrainnexus.io/products/nexus-fusion/)
 

@@ -90,6 +90,12 @@ For licensing reason the GraphDB RDF triplestore free edition distribution needs
     cp graphdb-free-*-dist.zip ~/
     ```
 
+:::caution Update GraphDB version
+
+Change the GraphDB version used by `d2s` to the one you downloaded by changing `GRAPHDB_VERSION` in the file `.env` in your project folder.
+
+:::
+
 ---
 
 ## Install pipx
