@@ -3,12 +3,22 @@ id: generate-metadata
 title: generate-metadata
 ---
 
-After the RDF Knowledge Graph has been generated and loaded in a triplestore, [HCLS dataset descriptive statistics](https://www.w3.org/TR/hcls-dataset/) can be easily generated and published for the published dataset. 
+After the RDF Knowledge Graph has been generated and loaded in a triplestore, [HCLS dataset descriptive statistics](https://www.w3.org/TR/hcls-dataset/) can be easily generated and published for the published dataset using the `d2s` library. 
 
-Use the `d2s` Python library to generate [HCLS metadata](https://www.w3.org/TR/hcls-dataset/) to analyze entities relations in a SPARQL endpoint:
+## Analyze a SPARQL endpoint
 
-```bash
+Generate descriptive [HCLS metadata](https://www.w3.org/TR/hcls-dataset/) to analyze entities and the relations between them in a SPARQL endpoint:
+
+```
 d2s metadata analyze https://graphdb.dumontierlab.com/repositories/d2s-projects -o metadata.ttl
+```
+
+## Create dataset metadata description
+
+Create complete metadata description for your dataset, you will be  asked a few questions (such as homepage, license and reference for this  dataset)
+
+```
+d2s metadata create -o dataset_metadata.ttl
 ```
 
 :::tip Automate the process
