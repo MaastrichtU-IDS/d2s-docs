@@ -1,6 +1,6 @@
 ---
 id: generate-metadata
-title: generate-metadata
+title: Generate metadata
 ---
 
 After the RDF Knowledge Graph has been generated and loaded in a triplestore, [HCLS dataset descriptive statistics](https://www.w3.org/TR/hcls-dataset/) can be easily generated and published for the published dataset using the `d2s` library. 
@@ -20,6 +20,10 @@ Create complete metadata description for your dataset, you will be  asked a few 
 ```
 d2s metadata create -o dataset_metadata.ttl
 ```
+
+:::caution Automate the process
+Fyi: currently creating a dataset using `d2s generate dataset` uses a slightly different mechanism to generate the metadata.
+:::
 
 :::tip Automate the process
 
