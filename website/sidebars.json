@@ -2,7 +2,7 @@
   "docs": {
     "Publish data": [
       "introduction", "choose-data-model", "convert-rml", "use-python",
-      "workflow-github", "store-rdf", "publish-fair-data", "data-validation"
+      "workflow-github", "store-rdf", "generate-metadata", "publish-fair-data", "data-validation"
     ],
     "Deploy services": [
       "deploy-services", "deploy-additional-services", "translator-prototypes-registry"
