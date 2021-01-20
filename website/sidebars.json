@@ -23,7 +23,8 @@
           "guide-graphdb", "guide-virtuoso", "guide-postgres", 
           "guide-mariadb", "guide-mysql"
         ]
-      } 
+      },
+      "translator-standards" 
     ],
     "Kubernetes workflows": [
       "argo-install", "argo-login", "argo-volume" , 

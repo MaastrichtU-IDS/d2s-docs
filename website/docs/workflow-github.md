@@ -135,6 +135,26 @@ You will need to define those 2 secrets in your GitHub repository workflows secr
 
 :::
 
+## Limitations
+
+The following [limitations apply to GitHub-hosted runner](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits) (they do not apply for self-hosted runners):
+
+- Each **job** in a workflow can run for up to **6 hours** of execution time.
+- Each **workflow** run is limited to **72 hours**.
+- Total **concurrent jobs** for the free plan: **20 jobs** (5 macOS)
+
+GitHub-hosted runners run on [machines with the following specifications](https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners):
+
+- **2-core CPU**
+- **7 GB** of RAM memory
+- **14 GB** of SSD disk space
+- Environments: `ubuntu-latest` (a.k.a. `ubuntu-18.04`), `ubuntu-20.04`, `windows-latest`, `macos-latest`
+
+[GitHub free plan](https://help.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions) allows to run Actions **in private repositories**, but impose execution time and storage limitations. By default GitHub set your spending limit to 0 €, so you will not be billed by surprise. The free plan provides the following credits per months, they are attached to the user or organization owning the repository running the workflows:
+
+- **2,000 minutes** of execution time (~33h)
+- **500 MB of storage** (for private artifacts and GitHub Packages)
+
 ## Test Actions locally
 
 [Act](https://github.com/nektos/act) allows to run GitHub Actions workflows directly on your local machine to test.

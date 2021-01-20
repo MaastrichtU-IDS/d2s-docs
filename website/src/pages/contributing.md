@@ -97,6 +97,14 @@ Most pages of this website are written in Markdown, hence they are really easy t
 * Images in `website/src/static/img`
 * Website configuration file in `website/docusaurus.config.js` 
 
+:::caution Blog specificities
+
+Blog articles files name needs to include the date at the beginning, e.g. `2020-12-31-my-article.md`
+
+And the text can be truncated to use the first part as description for the article on the main blog page using `<!--truncate-->`
+
+:::
+
 ### 🦄 Markdown tip
 
 :::warning Colorful boxes
