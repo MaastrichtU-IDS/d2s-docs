@@ -5,7 +5,7 @@ title: Translator Standards
 
 What we mean about a **Translator API**: an API developed in the context of the Translator project, by a Knowledge Provider (KP) or an Autonomous Relay Agent (ARA). A Translator API implements Translator standards to query the exposed data.
 
-# BioLink model
+## BioLink model
 
 A high-level semantic model to represent biological and biomedical knowledge. 
 
@@ -21,7 +21,7 @@ The [BioLink model is defined in a YAML file](https://github.com/biolink/biolink
 
 Visit the BioLink model documentation at [https://biolink.github.io/biolink-model/docs](https://biolink.github.io/biolink-model/docs)
 
-# Translator Reasoner API
+## Translator Reasoner API
 
 Also known as "**TRAPI**", or just "Reasoner API"
 
@@ -57,7 +57,7 @@ Example of a TRAPI 1.0.0 query message using the BioLink model:
 }
 ```
 
-# Knowledge Graph eXchange
+## Knowledge Graph eXchange
 
 Also known as "**KGX**"
 
@@ -67,9 +67,9 @@ KGX is particularly used to share large Knowledge Graphs as dumps.
 
 See the python library on GitHub at [https://github.com/biolink/kgx](https://github.com/biolink/kgx)
 
-# BioThings
+## BioThings
 
-Also known as "**BTE**", "**Smart API** specifications", or just BioThings
+Also known as "**BTE**", "**Smart API** specifications", or just "BioThings"
 
 This standard extend the [Smart API specifications](https://smart-api.info/guide) (which is an extension of the [OpenAPI specifications](https://www.openapis.org/)) enabling to annotate non-standard API calls to make them "more standard" (so that the BioThings Explorer can analyze the API specifications to retrieve more informations about the API call, such as the types of inputs and outputs)
 
