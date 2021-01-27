@@ -86,13 +86,50 @@ A [GitHub Action for the yarrrml-parser](https://github.com/marketplace/actions/
     output: mappings.rml.ttl
 ```
 
+###  💽 Compress RDF to HDT
+
+Convert ntriples to HDT using the [hdt-cpp docker image](https://hub.docker.com/r/rdfhdt/hdt-cpp):
+
+```yaml
+- name: Compress RDF to HDT
+  uses: vemonet/rdfhdt-action@master
+  with:
+    input: rdf-output.nt
+    output: hdt-output.hdt
+```
+
+### 📈 Compute metadata
+
+:::caution Work in progress
+
+Computing [HCLS descriptive metadata](https://www.w3.org/TR/hcls-dataset/) for a SPARQL endpoint is a work in development in the [`d2s` CLI](https://github.com/MaastrichtU-IDS/d2s-cli)
+
+:::
+
+Requires Python 3.6+ setup.
+
+```yaml
+- name: Generate HCLS metadata for a SPARQL endpoint
+  run: |
+  	pip install d2s
+    d2s metadata analyze $SPARQL_ENDPOINT -o metadata.ttl
+```
+
+> Metadata generated as turtle RDF in the `metadata.ttl` file.
+
 ## Automate data processing and loading
 
 RDF data can be automatically generated and loaded using GitHub Actions workflows.
 
 See [this workflow](https://github.com/MaastrichtU-IDS/food-claims-kg/blob/master/.github/workflows/generate-rdf.yml) to generate data using a simple `convert_to_rdf.py` file and load it in the triplestore
 
-1. Download input file from Google Docs
+1. Checkout the `git` repository file in your current folder:
+
+```yaml
+- uses: actions/checkout@v2
+```
+
+2. Download input file from Google Docs
 
 ```yaml
     - name: Download CSV files from Google docs
@@ -101,7 +138,7 @@ See [this workflow](https://github.com/MaastrichtU-IDS/food-claims-kg/blob/maste
         wget -O data/food-claims-kg.xlsx "https://docs.google.com/spreadsheets/d/1RWZ6AlGB8m7PO5kjsbbbeI4ETLwvKLOvkrzOpl8zAM8/export?format=xlsx&id=1RWZ6AlGB8m7PO5kjsbbbeI4ETLwvKLOvkrzOpl8zAM8"
 ```
 
-2. Install Python dependencies
+3. Install Python dependencies
 
 ```yaml
     - name: Install Python dependencies
@@ -109,7 +146,7 @@ See [this workflow](https://github.com/MaastrichtU-IDS/food-claims-kg/blob/maste
         python -m pip install -r requirements.txt
 ```
 
-3. Run the python script to generate RDF
+4. Run the python script to generate RDF
 
 ```yaml
     - name: Run Python script to generate RDF
@@ -117,7 +154,7 @@ See [this workflow](https://github.com/MaastrichtU-IDS/food-claims-kg/blob/maste
         python src/convert_to_rdf.py
 ```
 
-4. Optional: clear existing graph
+5. Optional: clear an existing graph in the triplestore
 
 ```yaml
     - name: Clear existing graph
@@ -128,6 +165,28 @@ See [this workflow](https://github.com/MaastrichtU-IDS/food-claims-kg/blob/maste
         user: ${{ secrets.GRAPHDB_USER }}
         password: ${{ secrets.GRAPHDB_PASSWORD }}
 ```
+
+6. Upload the output as artifact to be able to download them from the GitHub website, or pass them between jobs:
+
+```yaml
+- name: Upload RDF output artifact
+  id: stepupload
+  uses: actions/upload-artifact@v1
+  with:
+    name: rdf-output
+    path: rdf-file.nq
+```
+
+7. Optional: download the artifact (`rdf-output` here) back in another job:
+
+```yaml
+- name: Get RDF output artifact
+  uses: actions/download-artifact@v1
+  with:
+    name: rdf-output
+```
+
+The files in the artifact can be accessed directly, e.g. here `rdf-output/rdf-file.nq`
 
 :::caution Secrets
 

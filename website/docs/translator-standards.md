@@ -3,9 +3,9 @@ id: translator-standards
 title: Translator Standards
 ---
 
-This page provides a big picture of the various standards developed and used in the [Translator](https://ncatstranslator.github.io/) project.
+This page provides a big picture of the various standards developed and used in the NCATS Biomedical Data Translator project.
 
-What we mean about a **Translator API**: an API developed in the context of the Translator project, by a Knowledge Provider (KP) or an Autonomous Relay Agent (ARA). A Translator API implements Translator standards to query the exposed data, and is described using the OpenAPI specifications.
+What we mean about a **Translator API**: an API developed in the context of the Translator project, by a Knowledge Provider (KP), or an Autonomous Relay Agent (ARA). A Translator API implements Translator standards to query the exposed data, and is described using the OpenAPI specifications.
 
 ## BioLink model
 
@@ -29,7 +29,7 @@ Also known as "**TRAPI**", or just "Reasoner API"
 
 TRAPI defines standard operations to query a Translator API, described using the [OpenAPI specifications](https://www.openapis.org/) (in an `openapi.yml` file). The TRAPI API operations are implemented in every Translator API, and allow to query the data using the BioLink model and a standard JSON model. It returns the results using a standard JSON message. Note that Translator APIs can also implement their own operations, alongside the TRAPI operations.
 
-See the GitHub repository: [https://github.com/NCATSTranslator/ReasonerAPI](https://github.com/NCATSTranslator/ReasonerAPI)
+See the Translator Reasoner API standard GitHub repository: [https://github.com/NCATSTranslator/ReasonerAPI](https://github.com/NCATSTranslator/ReasonerAPI)
 
 Example of a TRAPI 1.0.0 query message using the BioLink model:
 
@@ -71,7 +71,7 @@ Also known as "**BTE**", "**Smart API** specifications", or just "BioThings"
 
 This standard extend the [Smart API specifications](https://smart-api.info/guide) (which is an extension of the [OpenAPI specifications](https://www.openapis.org/)) enabling to annotate non-standard API operations to make them "more standard" (so that the BioThings Explorer can analyze the API specifications to retrieve more informations about the API call, such as the types of inputs and outputs)
 
-Originally the BioThings specifications are part of the [BioThings API ecosystem](https://biothings.io/), which provides scalable tools to expose data as standard APIs.
+Originally the BioThings specifications are part of the [BioThings API ecosystem](https://biothings.io/), which provides scalable tools in Python to expose data as standard APIs.
 
 See the BioThings GitHub organization: [https://github.com/biothings](https://github.com/biothings)
 
