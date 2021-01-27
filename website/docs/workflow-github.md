@@ -98,13 +98,15 @@ Convert ntriples to HDT using the [hdt-cpp docker image](https://hub.docker.com/
     output: hdt-output.hdt
 ```
 
-### 📈 Compute metadata
+### 📈 Get a SPARQL endpoint metadata
 
 :::caution Work in progress
 
 Computing [HCLS descriptive metadata](https://www.w3.org/TR/hcls-dataset/) for a SPARQL endpoint is a work in development in the [`d2s` CLI](https://github.com/MaastrichtU-IDS/d2s-cli)
 
 :::
+
+`d2s metadata` will generate descriptive statistics for knowledge graphs, defined by the [Health Care and Life Science Community Profile](https://www.w3.org/TR/hcls-dataset/), for each graph in the SPARQL endpoint. The computed metadata provide an overview of the SPARQL endpoint content in RDF, with quantitative insights on entities classes, and the relations between them.
 
 Requires Python 3.6+ setup.
 
