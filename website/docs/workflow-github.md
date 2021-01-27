@@ -108,7 +108,7 @@ Computing [HCLS descriptive metadata](https://www.w3.org/TR/hcls-dataset/) for a
 
 `d2s metadata` will generate descriptive statistics for knowledge graphs, defined by the [Health Care and Life Science Community Profile](https://www.w3.org/TR/hcls-dataset/), for each graph in the SPARQL endpoint. The computed metadata provide an overview of the SPARQL endpoint content in RDF, with quantitative insights on entities classes, and the relations between them.
 
-Requires Python 3.6+ setup.
+Requires Python 3.6+ setup. Metadata are generated as turtle RDF in the `metadata.ttl` file.
 
 ```yaml
 - name: Generate HCLS metadata for a SPARQL endpoint
@@ -116,8 +116,6 @@ Requires Python 3.6+ setup.
   	pip install d2s
     d2s metadata analyze $SPARQL_ENDPOINT -o metadata.ttl
 ```
-
-> Metadata generated as turtle RDF in the `metadata.ttl` file.
 
 ## Automate data processing and loading
 
