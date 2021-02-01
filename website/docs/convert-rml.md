@@ -1,6 +1,6 @@
 ---
 id: convert-rml
-title: Convert with RML
+title: Define RML mappings
 ---
 
 Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML) to RDF using a declarative mapping language. 

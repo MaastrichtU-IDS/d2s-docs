@@ -29,21 +29,21 @@ root-directory
 │   ├── process-dataset1.yml
 │   └── process-dataset2.yml
 ├── .gitignore
+├── .env 				# Environment variables for docker-compose if needed
 ├── LICENSE
 ├── README.md
 ├── docker-compose.yml	# If needed
 ├── Dockerfile			# If needed
 └── datasets			# Folders of the different datasets mappings
-    └── my-dataset1
+    └── dataset1
         ├── README.md	# Notes about how and where to run those mappings
-        ├── mappings.yarrr.yml		# YARRRML mappings
-        ├── mappings.rml.ttl		# RML mappings
+        ├── mapping			# Script to download input files
+        │   ├── mappings.yarrr.yml		# YARRRML mappings
+        │   └── mappings.rml.ttl		# RML mappings
         ├── scripts			# Script to download input files
         │   ├── download.sh			# Bash script to download data
         │   └── preprocessing.py	# Python script for preprocessing
         └── metadata			# HCLS metadata about the dataset 
-            ├── metadata-summary.ttl
-            ├── metadata-version-1.ttl
-            └── metadata-version-2.ttl
+            └── metadata-dataset1.ttl
 ```
 

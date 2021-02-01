@@ -48,3 +48,23 @@ Dipper includes subpackages and modules to create graphical models of this data,
 - Graph package for building graphs with RDFLib or streaming n-triples
 
 - Source package containing fetchers and parsers that interface with remote databases and web services
+
+## Data Science on knowledge graphs
+
+### kglab
+
+[kglab](https://github.com/DerwenAI/kglab) is an abstraction layer in Python for building knowledge graphs, integrated with popular graph libraries – atop Pandas, RDFlib, pySHACL, NetworkX,  iGraph, PyVis, pslpython, pyarrow, etc. Check the [kglab documentation](https://derwen.ai/docs/kgl/).
+
+`kglab` features:
+
+* Load a RDF graph with `rdflib`
+* Validate the RDF with `pySHACL` 
+* RDFS, OWLRL and SKOS inference
+* Generate nodes/edges statistics
+* Generate graph embeddings from RDF subgraphs
+
+### pyRDF2Vec
+
+[pyRDF2vec](https://github.com/IBCNServices/pyRDF2Vec) is a Python implementation and extension of [RDF2Vec](http://rdf2vec.org/) to create a 2D feature matrix from a knowledge graph for downstream ML tasks. Check the [pyRDF2Vec documentation](https://pyrdf2vec.readthedocs.io/en/latest/).
+
+

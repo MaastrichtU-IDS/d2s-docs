@@ -1,7 +1,7 @@
 {
   "docs": {
     "Publish data": [
-      "introduction", "choose-data-model", "convert-rml", "use-python",
+      "introduction", "installation", "create-dataset", "choose-data-model", "convert-rml", "use-python",
       "workflow-github", "store-rdf", "generate-metadata", "publish-fair-data", "data-validation"
     ],
     "Deploy services": [

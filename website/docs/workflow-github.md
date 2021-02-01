@@ -3,6 +3,25 @@ id: workflow-github
 title: Deploy workflows
 ---
 
+[GitHub Actions](https://docs.github.com/en/actions) in a workflow engine proposed by GitHub, allowing users to define workflows in YAML files in the `.github/workflows` folder of their git repository. 
+
+Worklows are a succession of steps, each step being either a bash command, or a GitHub Action. GitHub Actions are steps that have been defined to be easily run in workflows, you can find all available Actions on the [GitHub Marketplace](https://github.com/marketplace/).
+
+The users can also define when the workflow should be run: at each push to the main branch, every week, manually triggered...
+
+Once the workflow is pushed to the GitHub repository, then GitHub will schedule the workflow automatically.
+
+GitHub Actions workflow can run on 2 types of environment:
+
+* GitHub runner: run in an isolated environment (Ubuntu) on GitHub servers (with resources limitations)
+* Self hosted runner: run the workflow directly on the machine where you deployed the self hosted runner (and have access to all its resurces)
+
+:::info Secure credentials 🔒
+
+Password, and other sensible informations, can be securely stored as GitHub secrets and used in the workflows.
+
+:::
+
 We use GitHub Actions to automatically run the different part of the workflow in a reproducible way:
 
 * Download the input data files
@@ -10,12 +29,6 @@ We use GitHub Actions to automatically run the different part of the workflow in
 * Run the RML mapper to generate the RDF data, if applicable
 * Upload the generated RDF file to the SPARQL endpoint
 * Generate and publish descriptive statistics for the published data
-
-:::info Secure credentials 🔒
-
-Securely define credentials as GitHub secrets (API keys, username, password, etc)
-
-:::
 
 ## GitHub Actions for RDF
 
@@ -98,7 +111,7 @@ Convert ntriples to HDT using the [hdt-cpp docker image](https://hub.docker.com/
     output: hdt-output.hdt
 ```
 
-### 📈 Get a SPARQL endpoint metadata
+### 📈 Get metadata from SPARQL
 
 :::caution Work in progress
 
@@ -193,6 +206,36 @@ The files in the artifact can be accessed directly, e.g. here `rdf-output/rdf-fi
 You will need to define those 2 secrets in your GitHub repository workflows secrets: `GRAPHDB_USER` and `GRAPHDB_PASSWORD`
 
 :::
+
+## Download from specific sources
+
+### Google docs
+
+Download input file from Google Docs
+
+```yaml
+- name: Download CSV files from Google docs
+  run: |
+  mkdir -p data/output
+  wget -O data/food-claims-kg.xlsx "https://docs.google.com/spreadsheets/d/1RWZ6AlGB8m7PO5kjsbbbeI4ETLwvKLOvkrzOpl8zAM8/export?format=xlsx&id=1RWZ6AlGB8m7PO5kjsbbbeI4ETLwvKLOvkrzOpl8zAM8"
+```
+
+### Kaggle
+
+Download input file from a Kaggle competition requires to define 2 secrets: 
+
+```yaml
+- name: Download data from Kaggle
+  env: 
+    KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+    KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+  run: |
+    pip install kaggle
+    kaggle competitions download -c whats-cooking-kernels-only
+    unzip -o \*.zip
+```
+
+
 
 ## Limitations
 
