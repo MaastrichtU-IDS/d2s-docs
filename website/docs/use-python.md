@@ -26,6 +26,14 @@ pip install -r requirements.txt
 
 Python is a good solution to perform preprocessing on the data for tasks not supported by RML. 
 
+For example you can use [`pandas`](https://pandas.pydata.org/) to quickly add a `id` column based on another column (e.g. here the `name` column without spaces and lowercase), to be used to build the entity URI:
+
+```python
+df = pd.read_csv("my-file.csv")
+df["id"] = df["name"].apply (lambda row: row.replace(' ','-').lower())
+df.to_csv("my-file-processed.csv", index=False)
+```
+
 ## Python for RDF conversion
 
 ### RDFLib
@@ -33,10 +41,6 @@ Python is a good solution to perform preprocessing on the data for tasks not sup
 You can perform the conversion to RDF using the [RDFLib](https://rdflib.readthedocs.io/en/stable/) library.
 
 You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML...) to RDF using Python and `rdflib`.
-
-### Pandas
-
-We recommend to use [Pandas](https://pandas.pydata.org/) to handle tabular files as dataframes efficiently.
 
 ### Dipper
 

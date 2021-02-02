@@ -47,7 +47,7 @@ prefixes:
 mappings:
   neighbours:
     sources:
-      - ['/mnt/workspace/input/geonames/dataset-geonames-countryInfo.csv~csv']
+      - ['countries.csv~csv']
     s: http://www.geonames.org/ontology#$(ISO)
     po:
       - [a, gn:Country]
