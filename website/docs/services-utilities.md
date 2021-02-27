@@ -218,15 +218,15 @@ See the [official documentation to use the deployed REST API](http://dice-group.
 Execute [SPARQL](https://www.w3.org/TR/sparql11-query/) queries from string, URL or multiple files using [RDF4J](http://rdf4j.org/). Available on [DockerHub](https://hub.docker.com/r/umids/d2s-sparql-operations).
 
 ```shell
-docker run -it --rm umids/d2s-sparql-operations:latest -op select \
-  -sp "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
-  -ep "http://dbpedia.org/sparql"
+docker run -it --rm umids/d2s-sparql-operations:latest -o select \
+  -q "select distinct ?Concept where {[] a ?Concept} LIMIT 10" \
+  -e "http://dbpedia.org/sparql"
   
 # Provide the URL to a GitHub folder to execute all .rq files in it
 docker run -it --rm umids/d2s-sparql-operations \
-  -ep "https://graphdb.dumontierlab.com/repositories/public/statements" \
-  -op update -un my_username -pw my_password \
-  -f "https://github.com/MaastrichtU-IDS/d2s-sparql-operations/tree/master/src/main/resources/insert-examples"
+  -e "https://graphdb.dumontierlab.com/repositories/public/statements" \
+  -o update -u my_username -p my_password \
+  -i "https://github.com/MaastrichtU-IDS/d2s-sparql-operations/tree/master/src/main/resources/insert-examples"
 ```
 
 > See [documentation](https://maastrichtu-ids.github.io/d2s-sparql-operations/).

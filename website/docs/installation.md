@@ -3,12 +3,19 @@ id: installation
 title: Installation
 ---
 
+Requirements:
+
+* [Python 3.6+](https://d2s.semanticscience.org/docs/d2s-installation#install-pip) (built using [python:3.6](https://github.com/MaastrichtU-IDS/d2s-cli/blob/master/publish.Dockerfile))
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* Optional: Java 11+ to use `d2s sparql upload`
+* Optional: [`oc` command line tool](https://maastrichtu-ids.github.io/dsri-documentation/docs/openshift-install) for deploying to the [DSRI OpenShift cluster](https://maastrichtu-ids.github.io/dsri-documentation/) (for Maastricht University academics and students)
+
 ## Install the d2s client
 
 Install the [d2s client](https://pypi.org/project/d2s) with [pip](https://pypi.org/project/pip/) on Linux, MacOS and Windows:
 
 ```shell
-pip3 install git+https://github.com/MaastrichtU-IDS/d2s-cli.git@develop
+pip install d2s
 ```
 
 :::tip Use your favorite pip tool
@@ -16,12 +23,6 @@ pip3 install git+https://github.com/MaastrichtU-IDS/d2s-cli.git@develop
 We recommend to use [pipx](https://pipxproject.github.io/pipx/) if you just want to execute `d2s`. You can also install with [pip](https://pypi.org/project/pip/) or pip3 depending on your system preferences.
 
 :::
-
-Requirements (see below for installation instructions):
-
-* [Python 3.6+](https://d2s.semanticscience.org/docs/d2s-installation#install-pip) and pip
-* [Docker-compose](https://docs.docker.com/compose/install/)
-* Git (download [Git for Windows](https://git-scm.com/download/win))
 
 :::note Additional documentation 
 
