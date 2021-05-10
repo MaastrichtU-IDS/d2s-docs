@@ -24,5 +24,8 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-sidecar": "^0.1.1"
+  },
+  "resolutions": {
+    "**/terser-webpack-plugin": "^1.4.3"
   }
 }

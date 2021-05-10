@@ -56,13 +56,13 @@ You can easily enable GraphDB [Lucene search index](https://lucene.apache.org/) 
 
 Here is an example to create a search index for the `rdfs:label` and `dct:description` properties.
 
-👨‍💻 Running this in your GraphDB repository SPARQL editor will insert the triples and the search index will be created (just wait a bit)
+👨‍💻 Running this in your GraphDB repository SPARQL editor will insert the triples and the search index will be created (this might take some time). Feel free to edit the predicates indexed.
 
 ```SPARQL
 PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
 INSERT DATA { 
     # luc:moleculeSize luc:setParam "1" .
-    luc:includePredicates luc:setParam "http://www.w3.org/2000/01/rdf-schema#label http://purl.org/dc/terms/description" .
+    luc:includePredicates luc:setParam "http://www.w3.org/2000/01/rdf-schema#label http://www.w3.org/2000/01/rdf-schema#comment http://purl.org/dc/terms/description" .
     luc:useRDFRank luc:setParam "yes" .
     luc:searchIndex luc:createIndex "true" .
 }
@@ -72,9 +72,9 @@ Query the GraphDB search index:
 
 ```SPARQL
 PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
-SELECT ?foundUri ?foundLabel {
+SELECT ?foundUri ?foundLabel ?score {
     ?foundLabel luc:searchIndex 'TEXT_TO_SEARCH*' ;
-    luc:score ?score .
+      luc:score ?score .
     ?foundUri ?p ?foundLabel .
 } ORDER BY ?score LIMIT 200
 ```
