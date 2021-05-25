@@ -241,6 +241,8 @@ docker-compose -f d2s-core/docker-compose.yml \
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stardog/stardog)](https://hub.docker.com/r/stardog/stardog)
 
+Requires to [download the free license](https://www.stardog.com/get-started/) first, then place it in the folder shared with Stardog.
+
 See the [official Stardog documentation](https://docs.stardog.com/get-started/install-stardog/docker) for Docker. A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
 
 ```shell
