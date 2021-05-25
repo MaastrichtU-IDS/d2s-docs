@@ -169,6 +169,20 @@ docker-compose -f d2s-core/docker-compose.yml \
 
 ---
 
+### Stardog
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stardog/stardog)](https://hub.docker.com/r/stardog/stardog)
+
+See the [official Stardog documentation](https://docs.stardog.com/get-started/install-stardog/docker) for Docker. A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
+
+```shell
+docker run -v $(pwd)/workspace/stardog:/var/opt/stardog -p 5820:5820 -e STARDOG_SERVER_JAVA_ARGS="-Xmx8g -Xms8g -XX:MaxDirectMemorySize=12g" stardog/stardog:latest
+```
+
+>  Access at http://localhost:5820, volume shared at `workspace/stardog`
+
+---
+
 ### AllegroGraph
 
 [![GitHub](https://img.shields.io/github/stars/franzinc/docker-agraph?label=GitHub&style=social)](https://github.com/franzinc/docker-agraph)
@@ -267,24 +281,6 @@ docker run -p 7474:7474 -p 7687:7687 -v $(pwd)/workspace/neo4j:/data neo4j
 ---
 
 ## Additional triplestores
-
-### Stardog
-
-[![Docker Image Version (latest by date)](https://img.shields.io/docker/pulls/stardog/stardog)](https://hub.docker.com/r/stardog/stardog)
-
-Licensed RDF triplestore 📜
-
-See the [official Stardog documentation](https://www.stardog.com/docs/#_docker) for Docker. A [JavaScript wrapper is available](https://github.com/stardog-union/stardog.js) to communicate with Stardog API and SPARQL endpoint.
-
-```shell
-docker run -v $(pwd)/workspace/stardog-license:/var/opt/stardog -e STARDOG_SERVER_JAVA_ARGS="-Xmx8g -Xms8g -XX:MaxDirectMemorySize=2g" stardog/stardog:latest
-```
-
-> ✔️ If you have a Stardog license, then put `stardog-license-key.bin` in the `workspace/stardog-license` folder.
-
-> ❌ If you don't have a license key, you will be able to retrieve a trial license-key via the command line once you start Stardog.
-
----
 
 ### MarkLogic
 
