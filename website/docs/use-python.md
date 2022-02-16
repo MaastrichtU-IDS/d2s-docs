@@ -1,26 +1,7 @@
 ---
 id: use-python
-title: Use Python
+title: Convert with Python
 ---
-
-## Add a requirements file
-
-Always add a `requirements.txt` file at the root of your repository with all libraries required to run your Python scripts.
-
-For example:
-
-```
-rdflib
-SPARQLWrapper
-pandas
-dipper
-```
-
-Command to install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
 
 ## Python for preprocessing
 
@@ -29,10 +10,20 @@ Python is a good solution to perform preprocessing on the data for tasks not sup
 For example you can use [`pandas`](https://pandas.pydata.org/) to quickly add a `id` column based on another column (e.g. here the `name` column without spaces and lowercase), to be used to build the entity URI:
 
 ```python
+import pandas as pd
 df = pd.read_csv("my-file.csv")
 df["id"] = df["name"].apply (lambda row: row.replace(' ','-').lower())
 df.to_csv("my-file-processed.csv", index=False)
 ```
+
+<details><summary>Add a `requirements.txt` file at the root of your repository with all libraries required to run your Python scripts.</summary>
+
+Command to install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+</details>
 
 ## Python for RDF conversion
 
@@ -70,5 +61,4 @@ Dipper includes subpackages and modules to create graphical models of this data,
 ### pyRDF2Vec
 
 [pyRDF2vec](https://github.com/IBCNServices/pyRDF2Vec) is a Python implementation and extension of [RDF2Vec](http://rdf2vec.org/) to create a 2D feature matrix from a knowledge graph for downstream ML tasks. Check the [pyRDF2Vec documentation](https://pyrdf2vec.readthedocs.io/en/latest/).
-
 

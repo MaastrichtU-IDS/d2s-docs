@@ -1,27 +1,42 @@
 ---
-id: choose-data-model
-title: Choose a data model
+id: data-model
+title: Define the data model
 ---
+
+## Define a conceptual model 
+
+Define a conceptual model of the data you want to convert.
+
+For example with CSV files or relational databases tables, most of the time:
+
+* each **file/table** represents a **class** (aka. type),
+* each **row** is an **entity**,
+* each **column** is a **property** of this entity
+
+![Tables to RDF](/img/tables_to_rdf.png)
+
+> *Source: https://kgbook.org*
+
+If you create a diagram for your conceptual model, we encourage you to add an image of it in the `model` folder of your repository.
+
+## Search for ontology concepts
 
 You will need to define the class and relations for the properties in your data. The easiest way is to find classes and properties in existing model (aka. ontologies). Some properties are standard like `rdf:type` and  `rdfs:label`, but for more specific concepts the best is to find an existing data model matching your model.
 
-> Feel free to [contact us](https://gitter.im/um-dsri/data2services) to ask for help with choosing a data model.
+📝 Write an **example RDF entity** in the turtle format for each class you expect to create. Put the file(s) in the `model` folder
 
-## Search for ontologies
+You can search for relevant concepts in existing models in ontology repositories:
 
-Search for relevant existing models in ontology repositories:
-
-* [BioPortal](https://bioportal.bioontology.org/recommender) for biomedical concepts by the NCBI.
+* [Linked Open Vocabulary (LOV)](https://lov.linkeddata.es/dataset/lov/) for generic ontologies
+* [BioPortal](https://bioportal.bioontology.org/recommender) for biomedical concepts by the NCBI 🇺🇸
 * [OntologyLookupService](https://www.ebi.ac.uk/ols/ontologies
-  ) by the EBI
-* [AgroPortal](http://agroportal.lirmm.fr/recommender) for agronomy by INRIA.
-* [EcoPortal](http://ecoportal.lifewatchitaly.eu/) for ecology by Life Watch Italy.
+  ) for biomedical concepts by the EBI 🇪🇺
+* [AgroPortal](http://agroportal.lirmm.fr/recommender) for agronomy by INRIA 🌾
+* [EcoPortal](http://ecoportal.lifewatchitaly.eu/) for ecology by Life Watch Italy 
 
 > The [BioPortal Recommender](https://bioportal.bioontology.org/recommender) and [Search](https://bioportal.bioontology.org/search) services are efficient to look for concepts in most existing biomedical ontologies.
 
-## Common ontologies
-
-The [Linked Open Vocabulary (LOV)](https://lov.linkeddata.es/dataset/lov/) provide an overview of existing ontologies and the links between them.
+Here is a list of popular ontologies for generic or biomedical concepts:
 
 * [**Semanticscience Integrated Ontology** (SIO)](https://github.com/MaastrichtU-IDS/semanticscience), a simple, integrated ontology of types and relations for rich description of objects, processes and their attributes.
 * [**BioLink Model**](https://biolink.github.io/biolink-model/), A high level datamodel of biological entities ([genes](https://biolink.github.io/biolink-model/docs/Gene), [diseases](https://biolink.github.io/biolink-model/docs/Disease), [phenotypes](https://biolink.github.io/biolink-model/docs/Phenotype), [pathways](https://biolink.github.io/biolink-model/docs/Pathway), [individuals](https://biolink.github.io/biolink-model/docs/IndividualOrganism), [substances](https://biolink.github.io/biolink-model/docs/ChemicalSubstance), etc) and their [associations](https://biolink.github.io/biolink-model/docs/Association).
@@ -35,18 +50,9 @@ The [Linked Open Vocabulary (LOV)](https://lov.linkeddata.es/dataset/lov/) provi
 * [**DCAT**: Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-2/), to describe datasets
 * [**NCIT**: National Cancer Institute Thesaurus](https://bioportal.bioontology.org/ontologies/NCIT), a vocabulary for clinical care, translational and basic research, and public information and administrative activities.
 
-## Ontology design with Protégé
+If you need to know which URI is behind a mysterious prefix, http://prefix.cc is a handy service to resolve prefixes., e.g. http://prefix.cc/bl
 
-You can use the [Protégé ontology editor](https://protege.stanford.edu/) to build your ontology.
+## Define a validation shape
 
-* [Install Protégé](http://protegeproject.github.io/protege/installation/) on your computer for better performance than the web hosted service.
-* Or use Web Protégé for its collaborative features.
-
-## Resolve prefixes
-
-http://prefix.cc is a handy service to resolve prefixes.
-
-> E.g. http://prefix.cc/bl
-
-
+📝 Write a **SHACL or ShEx shape** file describing exactly the model (classes and properties) you expect to use in the `model` folder. This will be used later for validating the created KG.
 

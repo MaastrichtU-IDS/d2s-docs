@@ -45,7 +45,7 @@ module.exports={
       null,
       null
     ],
-    "gaGtag": true
+    "gaGtag": false
   },
   "onBrokenLinks": "log",
   "onBrokenMarkdownLinks": "log",
@@ -129,8 +129,8 @@ module.exports={
         "src": "img/um_logo.svg"
       }
     },
-    "gtag": {
-      "trackingID": "UA-172146359-2"
-    }
+    // "gtag": {
+    //   "trackingID": "UA-172146359-2"
+    // }
   }
 }

@@ -1,9 +1,19 @@
 ---
 id: convert-rml
-title: Define RML mappings
+title: Convert with RML
 ---
 
 Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML) to RDF using a declarative mapping language. 
+
+## Create mapping for a dataset
+
+Run this command at the root of your repository to generate the dataset mappings files in the `datasets` folder, you will be prompted to enter some metadata about the dataset to create.
+
+```shell
+d2s new dataset
+```
+
+The dataset readme, mappings, metadata, and download files are created in the `datasets/$dataset_id` folder. Check the download script generated in `datasets/$dataset_id/scripts/download.sh` and edit it if needed. We use bash for it's performance and reliability with large file download. But you are free to use a python script or other documented methods.
 
 ## Define mappings
 

@@ -7,14 +7,13 @@ Optionally you can setup data validation to make sure all data added to the know
 
 ### SHACL validation
 
-We recommend to use Ontotext GraphDB free edition to enable SHACL validation. Enable SHACL validation when creating a new GraphDB repository. 
-
 For more informations about creating SHACL shapes, checkout the SHACL Shapes repository of the Institute of Data Science at Maastricht University: **https://github.com/MaastrichtU-IDS/shacl-shapes**
 
 To find SHACL shapes, checkout the **Shapes of You** SHACL shapes registry: **http://index.semanticscience.org**
 
 Here are a few solutions to validate RDF with SHACL:
 
+* Enable SHACL validation when creating a new repository if using Ontotext GraphDB free edition. 
 * Use [RDF4J](https://rdf4j.org/documentation/programming/shacl/) with java (good if your already working on a java app based on RDF4J) 
 * [TopQuadrant/shacl](https://github.com/TopQuadrant/shacl) (java)
 * [RDFLib/pySHACL](https://github.com/RDFLib/pySHACL) (python, requires to load the RDF in rdflib)
