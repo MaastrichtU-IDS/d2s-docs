@@ -13,7 +13,9 @@ Run this command at the root of your repository to generate the dataset mappings
 d2s new dataset
 ```
 
-The dataset readme, mappings, metadata, and download files are created in the `datasets/$dataset_id` folder. Check the download script generated in `datasets/$dataset_id/scripts/download.sh` and edit it if needed. We use bash for it's performance and reliability with large file download. But you are free to use a python script or other documented methods.
+The dataset readme, mappings, metadata, and download files are created in the `datasets/$dataset_id` folder. Check the download script generated in `datasets/$dataset_id/scripts/download.sh` and edit it if needed. 
+
+We use bash for it's performance and reliability with large file download. But you are free to use a python script or other documented methods.
 
 ## Define mappings
 

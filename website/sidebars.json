@@ -1,10 +1,11 @@
 {
   "docs": {
     "Publish data": [
-      "introduction", "installation", "create-dataset",
+      "introduction", "installation",
       "data-model", "data-validation", 
       "use-python", "convert-rml",
-      "store-rdf", "generate-metadata", "publish-fair-data", "workflow-github"
+      "store-rdf", "sparql-queries", "generate-metadata", 
+      "publish-fair-data", "workflow-github"
     ],
     "Deploy services": [
       "deploy-services", "deploy-additional-services", "translator-prototypes-registry"

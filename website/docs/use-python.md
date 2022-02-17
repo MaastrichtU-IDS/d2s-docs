@@ -16,7 +16,8 @@ df["id"] = df["name"].apply (lambda row: row.replace(' ','-').lower())
 df.to_csv("my-file-processed.csv", index=False)
 ```
 
-<details><summary>Add a `requirements.txt` file at the root of your repository with all libraries required to run your Python scripts.</summary>
+<details><summary>Add a <code>requirements.txt</code> file at the root of your repository with all libraries required to run your Python scripts.</summary>
+
 
 Command to install the dependencies:
 
@@ -31,7 +32,27 @@ pip install -r requirements.txt
 
 You can perform the conversion to RDF using the [RDFLib](https://rdflib.readthedocs.io/en/stable/) library.
 
-You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML...) to RDF using Python and `rdflib`.
+You can easily map any structured data (CSV, TSV, XLSX, SPSS, SQL, XML, JSON, YAML...) to RDF using Python and `rdflib`. 
+
+For example, to map a CSV with 2 columns `Entity ID` and `Entity name`:
+
+```python
+from rdflib import ConjunctiveGraph, URIRef, RDFS
+import pandas as pd
+
+df = pd.read_csv("datasets/dataset1/data/file1.csv")
+g = ConjunctiveGraph()
+graph = URIRef('https://w3id.org/d2s/graph/file1')
+
+for index, row in df.iterrows():
+    subj = URIRef(row['Entity ID'])
+    pred = RDFS.label
+    obj = URIRef(row['Entity name'])
+    # Add the quad to the graph:
+	g.add((subj, pred, obj, graph))
+
+g.serialize('output.ttl', format='turtle')
+```
 
 ### Dipper
 
