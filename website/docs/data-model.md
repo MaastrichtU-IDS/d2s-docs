@@ -33,9 +33,7 @@ You can search for relevant concepts in existing models in ontology repositories
   ) for biomedical concepts by the EBI 🇪🇺
 * [AgroPortal](http://agroportal.lirmm.fr/recommender) for agronomy by INRIA 🌾
 * [EcoPortal](http://ecoportal.lifewatchitaly.eu/) for ecology by Life Watch Italy 
-* [Bartoc.org](https://bartoc.org) for social and humanities sciences by DANS
-
-> The [BioPortal Recommender](https://bioportal.bioontology.org/recommender) and [Search](https://bioportal.bioontology.org/search) services are efficient to look for concepts in most existing biomedical ontologies.
+* [Bartoc.org](https://bartoc.org) for social science and digital humanities
 
 Here is a list of popular ontologies for generic or biomedical concepts:
 
