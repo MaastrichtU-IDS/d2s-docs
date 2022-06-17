@@ -1,4 +1,6 @@
-[![Publish to GitHub Pages](https://github.com/MaastrichtU-IDS/d2s-docs/workflows/Publish%20to%20GitHub%20Pages/badge.svg)](https://github.com/MaastrichtU-IDS/d2s-docs/actions?query=workflow%3A%22Publish+to+GitHub+Pages%22) [![Gitter](https://badges.gitter.im/um-dsri/data2services.svg)](https://gitter.im/um-dsri/data2services?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Publish to GitHub Pages](https://github.com/MaastrichtU-IDS/d2s-docs/workflows/Publish%20to%20GitHub%20Pages/badge.svg)](https://github.com/MaastrichtU-IDS/d2s-docs/actions?query=workflow%3A%22Publish+to+GitHub+Pages%22) 
+
+<!-- [![Gitter](https://badges.gitter.im/um-dsri/data2services.svg)](https://gitter.im/um-dsri/data2services?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)-->
 
 # Data2Services project documentation
 
