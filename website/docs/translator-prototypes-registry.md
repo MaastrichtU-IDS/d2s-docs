@@ -326,8 +326,9 @@ ARAX is a tool for querying, manipulating, filtering, learning on, and exploring
   * [ARAXi documentation](https://github.com/RTXteam/RTX/blob/master/code/ARAX/Documentation/DSL_Documentation.md)
   * [Team/Tool/Code Readme](https://github.com/RTXteam/RTX/blob/master/README.md)
 * RTX-KG2
-  * RTX-KG2 Neo4j UI: https://tiny.cc/arax-kg2-neo4j
-  * GitHub: https://github.com/RTXteam/RTX/tree/demo/code/kg2
+  * RTX-KG2 Neo4j UI: http://kg2canonicalized2.rtx.ai:7474
+  * RTX-KG2 API: https://smart-api.info/ui/00bab7d59abe031098d5cb1597f7f1c4
+  * GitHub: https://github.com/RTXteam/RTX-KG2
 
 ---
 
