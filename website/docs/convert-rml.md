@@ -7,7 +7,7 @@ Use the [RDF Mapping Language (RML)](https://rml.io/) to map your structured dat
 
 ## Create mapping for a dataset
 
-Run this command at the root of your repository to generate the dataset mappings files in the `datasets` folder, you will be prompted to enter some metadata about the dataset to create.
+You can run this command at the root of your repository to generate the dataset mappings files in the `datasets` folder, you will be prompted to enter some metadata about the dataset to create.
 
 ```shell
 d2s new dataset
@@ -19,7 +19,7 @@ We use bash for it's performance and reliability with large file download. But y
 
 ## Define mappings
 
-We recommend to use [YARRRML](https://rml.io/yarrrml/), a mapping language to replace the RDF by YAML, to make the definition of RML mappings easier.
+We recommend to use [YARRRML](https://rml.io/yarrrml/), a mapping language to make the definition of RML mappings easier using a simplified YAML, which is then converted to proper RML.
 
 The **[Matey web UI 🦜](https://rml.io/yarrrml/matey/#edit)** is available to easily write and test RML mappings in [YAML](https://yaml.org/) files using the [YARRRML](https://rml.io/yarrrml/) simplified mapping language. The mappings can be conveniently tested in the browser on a sample of the file to transform.
 
@@ -86,7 +86,43 @@ rr:graphMap [ rr:constant <https://w3id.org/d2s/graph> ];
 
 :::
 
-## Convert with the RML Mapper
+⚠️ Most RML engines does not support YARRRML by default, so you will need to convert it to RML and use the RML mappings for the conversion.
+
+## Tools for RML conversion
+
+There are multiple tools available to generate RDF from RML mappings, with various efficiency, stability, and features.
+
+[rmlmapper-java](https://github.com/RMLio/rmlmapper-java)
+
+* Reference implementation, written in java
+* Not suited for large files
+* Supports custom functions (in java, compiled as separate `.jar` files)
+
+[RMLStreamer](https://github.com/RMLio/RMLStreamer)
+
+* Streaming implementation for large files, written in Scala
+* Works well for really large CSV files
+* Can be parallelized on Apache Flink clusters
+* Does not support custom functions yet
+
+[SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer)
+
+* Written in Python
+* Can use a separate tool, [Dragoman](https://github.com/SDM-TIB/Dragoman), for executing custom functions
+
+[morph-kgc](https://morph-kgc.readthedocs.io/en/latest/documentation/)
+
+* Written in Python
+* Does not support custom functions
+
+[RocketRML](https://github.com/semantifyit/RocketRML)
+
+* Written in JavaScript
+* Provide an easy way to define custom functions
+
+We currently only implemented the rmlmapper-java and the RMLStreamer in `d2s`, but you are encouraged to use the tool that fits your needs.
+
+### Convert with the RML Mapper
 
 The [rmlmapper-java](https://github.com/RMLio/rmlmapper-java/) execute RML mappings to generate RDF Knowledge Graphs.
 
@@ -119,7 +155,7 @@ The RMLMapper can be easily run in GitHub Actions workflows, checkout the **[Run
 
 :::
 
-## Convert with the RML Streamer
+### Convert with the RML Streamer
 
 The [RMLStreamer](https://github.com/RMLio/RMLStreamer/) is a scalable implementation of the [RDF Mapping Language Specifications](https://rml.io/specs/rml/) to generate RDF out of structured input data streams.
 
@@ -142,7 +178,7 @@ To run the RMLStreamer you have 2 options:
 
 :::
 
-### Prepare files
+#### Prepare files
 
 Copy the `RMLStreamer.jar` file, your mapping files and data files to the Flink `jobmanager` pod before running it. 
 
@@ -161,7 +197,7 @@ oc exec $POD_ID -- /mnt/project/datasets/$DATASET/scripts/download.sh
 oc exec $POD_ID -- wget -O /mnt/RMLStreamer.jar https://github.com/RMLio/RMLStreamer/releases/download/v2.0.0/RMLStreamer-2.0.0.jar
 ```
 
-### Run the RMLStreamer
+#### Run the RMLStreamer
 
 Example of command to run the RMLStreamer from the Flink cluster master:
 
@@ -175,7 +211,7 @@ The progress of the job can be checked in the Apache Flink web UI.
 
 :::
 
-### Merge and compress output
+#### Merge and compress output
 
 The ntriples files produced by RMLStreamer in parallel:
 
@@ -189,9 +225,9 @@ ls -alh /mnt/cohd/openshift-rmlstreamer-cohd-associations.nt/openshift-rmlstream
 nohup gzip openshift-rmlstreamer-cohd-associations.nt &
 ```
 
-### Copy to Node2
+#### Copy to your server
 
-SSH connect to node2, http_proxy var need to be changed temporary to access DSRI
+SSH connect to your server, http_proxy var might need to be changed temporarily to access the DSRI
 
 ```bash
 export http_proxy=""
@@ -209,9 +245,9 @@ gzip -d openshift-rmlstreamer-cohd-associations.nt.gz
 
 Reactivate the proxy (`EXPORT http_proxy`)
 
-### Preload in GraphDB
+#### Preload in GraphDB
 
-Check the generated COHD file on node2 at:
+Check the generated COHD file on the server at:
 
 ```bash
 cd /data/d2s-project-trek/workspace/dumps/rdf/cohd

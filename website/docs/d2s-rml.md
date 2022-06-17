@@ -19,39 +19,6 @@ d2s download cohd geonames
 
 > Downloaded files goes to `workspace/input/cohd`
 
-## Tools for RML conversion
-
-There are multiple tools to generate RDF from RML mappings.
-
-[rmlmapper-java](https://github.com/RMLio/rmlmapper-java)
-
-* Reference implementation, written in java
-* Not suited for large file
-* Supports custom functions (in java, compiled as separate `.jar` files)
-
-[RMLStreamer](https://github.com/RMLio/RMLStreamer)
-
-* Streaming implementation for really large files, written in Scala
-* Can be parallelized on Apache Flink clusters
-* Does not support custom functions yet
-
-[SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer)
-
-* Written in Python
-* Can use a separate tool, [Dragoman](https://github.com/SDM-TIB/Dragoman), for executing custom functions
-
-[morph-kgc](https://morph-kgc.readthedocs.io/en/latest/documentation/)
-
-* Written in Python
-* Does not support custom functions
-
-[RocketRML](https://github.com/semantifyit/RocketRML)
-
-* Written in JavaScript
-* Provide an easy way to define custom functions
-
-> We currently only implemented the rmlmapper-java and the RMLStreamer in `d2s`, but you are encouraged to use the tool that fits your needs.
-
 ## Run RML Mapper
 
 The [rmlmapper-java](https://github.com/RMLio/rmlmapper-java/) execute RML mappings to generate RDF Knowledge Graphs. It loads all data in memory, so be aware when working with big datasets.
