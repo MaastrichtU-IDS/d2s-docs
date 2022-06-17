@@ -19,6 +19,17 @@ For example with CSV files or relational databases tables, most of the time:
 
 If you create a diagram for your conceptual model, we encourage you to add an image of it in the `model` folder of your repository.
 
+## Tools to build your model
+
+Depending on what you are trying to achieve you might not need to use the same tools. If you want to build a complete OWL ontology, then a specialized tool like Protege would be more suited.
+
+If you just want to define a schema with only a few classes and properties, then your favorite drawing tool will be probably enough. A popular tool used for defining data model is Diagram.io (previously yed and draw.io). There is also the [Graffoo](https://essepuntato.it/graffoo/) tool to generate an ontology from your Diagram.io diagram.
+
+Here is a non-exhaustive list of tools specialized to define data models:
+
+* Protege is the most popular and mature tool to build OWL ontologies. It is available as Desktop version and Web version (the desktop version has more functionalities)
+* Gra.fo is a commercial website that will allow you to define your model using a nice graphical interface with nodes and edges. It can be useful for small simple models, but will require you to pay to unlock advanced features.
+
 ## Search for ontology concepts
 
 You will need to define the class and relations for the properties in your data. The easiest way is to find classes and properties in existing model (aka. ontologies). Some properties are standard like `rdf:type` and  `rdfs:label`, but for more specific concepts the best is to find an existing data model matching your model.
