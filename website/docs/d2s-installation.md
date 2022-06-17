@@ -20,7 +20,8 @@ Requirements (see below for installation instructions):
 * Git (download [Git for Windows](https://git-scm.com/download/win))
 * The [OpenShift CLI](https://maastrichtu-ids.github.io/dsri-documentation/docs/openshift-install) (`oc` command) is required if you want to use experimental features to run services and workflows on OpenShift
 
-See those [instructions to install d2s on Windows](/docs/d2s-installation#install-pipx-on-windows) using Chocolatey and pipx. Some features support on Windows is still a work in progress, such as CWL workflows (see the [official CWL Windows documentation](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md) to make it work).
+See those [instructions to install d2s on Windows](/docs/d2s-installation#install-pipx-on-windows) using Chocolatey and pipx. CWL Workflow execution on Windows
+with the CWL reference runner [requires WSL 2 and Docker Desktop](https://github.com/common-workflow-language/cwltool/#ms-windows-users).
 
 ### Enable autocompletion
 
@@ -57,7 +58,7 @@ Support of the [d2s tool](https://pypi.org/project/d2s/) on Windows is a work in
 * Most workflow orchestrators do not support Windows, as workflows are based on Linux containers, see CWL workflows and [Nextflow](https://www.nextflow.io/).
 * Windows can run [Docker](https://www.docker.com/), but not natively like [Linux](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0), making it more prone to errors.
 
-> You still can try running [CWL](https://www.commonwl.org/) workflows with [cwltool](https://github.com/common-workflow-language/cwltool/blob/master/windowsdoc.md). But it is not tested on Windows.
+CWL Workflow execution on Windows with the CWL reference runner works great [with WSL 2 and Docker Desktop](https://github.com/common-workflow-language/cwltool/#ms-windows-users).
 
 We recommend to use the Windows [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell) terminal (which is easier to use than the basic terminal).
 
