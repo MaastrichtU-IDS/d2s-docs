@@ -92,33 +92,46 @@ rr:graphMap [ rr:constant <https://w3id.org/d2s/graph> ];
 
 There are multiple tools available to generate RDF from RML mappings, with various efficiency, stability, and features.
 
-[rmlmapper-java](https://github.com/RMLio/rmlmapper-java)
+* [rmlmapper-java](https://github.com/RMLio/rmlmapper-java)
 
-* Reference implementation, written in java
-* Not suited for large files
-* Supports custom functions (in java, compiled as separate `.jar` files)
+  * Reference implementation, written in java
 
-[RMLStreamer](https://github.com/RMLio/RMLStreamer)
+  * Not suited for large files
 
-* Streaming implementation for large files, written in Scala
-* Works well for really large CSV files
-* Can be parallelized on Apache Flink clusters
-* Does not support custom functions yet
+  * Supports custom functions (in java, compiled as separate `.jar` files)
 
-[SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer)
 
-* Written in Python
-* Can use a separate tool, [Dragoman](https://github.com/SDM-TIB/Dragoman), for executing custom functions
+* [RMLStreamer](https://github.com/RMLio/RMLStreamer)
 
-[morph-kgc](https://morph-kgc.readthedocs.io/en/latest/documentation/)
+  * Streaming implementation for large files, written in Scala
 
-* Written in Python
-* Does not support custom functions
+  * Works well for really large CSV files
 
-[RocketRML](https://github.com/semantifyit/RocketRML)
+  * Can be parallelized on Apache Flink clusters
 
-* Written in JavaScript
-* Provide an easy way to define custom functions
+  * Does not support custom functions yet
+
+
+* [SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer)
+
+  * Written in Python
+
+  * Can use a separate tool, [Dragoman](https://github.com/SDM-TIB/Dragoman), for executing custom functions
+
+
+* [morph-kgc](https://morph-kgc.readthedocs.io/en/latest/documentation/)
+
+  * Written in Python
+
+  * Does not support custom functions
+
+
+* [RocketRML](https://github.com/semantifyit/RocketRML)
+
+  * Written in JavaScript
+
+  * Provide an easy way to define custom functions
+
 
 We currently only implemented the rmlmapper-java and the RMLStreamer in `d2s`, but you are encouraged to use the tool that fits your needs.
 
